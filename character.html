@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ХҮН — Character Studio</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; color: #e9e5dc; background: #11151b; }
+    * { box-sizing: border-box; }
+    body { margin: 0; display: grid; grid-template-columns: 300px 1fr; height: 100dvh; overflow: hidden; }
+    aside { padding: 30px 24px; overflow-y: auto; background: #191d23; border-right: 1px solid #32373e; }
+    .eyebrow { color: #c7aa76; font-size: 10px; font-weight: 650; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { margin: 10px 0 8px; font-size: 34px; font-weight: 500; letter-spacing: .06em; }
+    .intro { color: #a4aab0; font-size: 12px; line-height: 1.65; margin: 0 0 24px; }
+    fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+    label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: #bfc3c7; margin: 18px 0 8px; }
+    select, button { font: inherit; color: #e9e5dc; border: 1px solid #424850; border-radius: 5px; background: #242930; }
+    select { width: 100%; padding: 10px 9px; font-size: 12px; }
+    button { cursor: pointer; padding: 10px 12px; font-size: 12px; }
+    button:hover { background: #343b44; border-color: #a58b61; }
+    button[aria-pressed="true"] { color: #f4dab0; border-color: #b59b6e; background: #35312a; }
+    button:focus-visible, select:focus-visible, canvas:focus-visible { outline: 2px solid #e3bf7e; outline-offset: 3px; }
+    :disabled { opacity: .5; cursor: wait; }
+    .row { display: flex; gap: 7px; margin-top: 12px; }
+    .row > * { flex: 1; }
+    .divider { border-top: 1px solid #32373e; margin: 24px 0; }
+    #outfit-name { font-size: 13px; line-height: 1.6; margin-bottom: 4px; }
+    #outfit-number, .footnote { font-size: 11px; color: #959da5; line-height: 1.65; }
+    .footnote { margin-top: 18px; }
+    #status { color: #c7aa76; font-size: 11px; min-height: 32px; line-height: 1.5; margin: 18px 0 0; }
+    #status.error { color: #f4a99a; }
+    main { min-width: 0; position: relative; overflow: hidden; }
+    #game { display: block; width: 100%; height: 100%; touch-action: none; }
+    .viewport-title { position: absolute; left: 30px; top: 26px; pointer-events: none; }
+    .viewport-title strong { display: block; font-size: 15px; font-weight: 450; margin-top: 7px; color: #c8c9c9; }
+    .viewport-footer { position: absolute; left: 30px; bottom: 26px; color: #9ba3ac; font-size: 11px; line-height: 1.7; pointer-events: none; }
+    @media (max-width: 700px) {
+      body { grid-template-columns: 1fr; grid-template-rows: 57dvh 43dvh; }
+      main { grid-row: 1; } aside { grid-row: 2; padding: 18px 22px; border-right: 0; border-top: 1px solid #32373e; }
+      h1 { font-size: 24px; } .intro { margin-bottom: 12px; } .viewport-title { left: 20px; top: 18px; }
+      .viewport-footer { left: 20px; bottom: 15px; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <aside aria-label="Character wardrobe and animation controls">
+    <div class="eyebrow">Mongolian character study</div>
+    <h1>ХҮН</h1>
+    <p class="intro">A shared character, dressed for many stories. Inspect the face, fit, and movement.</p>
+    <fieldset id="controls" disabled>
+      <label for="garment">Garment silhouette</label><select id="garment"></select>
+      <label for="palette">Fabric & trim</label><select id="palette"></select>
+      <label for="headwear">Headwear</label><select id="headwear"></select>
+      <div class="row"><button id="previous" type="button" aria-label="Previous outfit">← Previous</button><button id="next" type="button" aria-label="Next outfit">Next →</button></div>
+      <div class="divider"></div>
+      <div id="outfit-name"></div><div id="outfit-number"></div>
+      <label for="motion">Movement preview</label>
+      <select id="motion"><option value="idle">Breathing & looking</option><option value="walk">Walk in place</option><option value="wave">Wave</option><option value="rest">Rest pose</option></select>
+      <label for="detail">Character detail</label><select id="detail"><option value="hero">Main character</option><option value="crowd">Background character</option></select>
+      <div class="row"><button id="full-view" type="button" aria-pressed="true">Full body</button><button id="face-view" type="button" aria-pressed="false">Face close-up</button></div>
+      <div class="row"><button id="rotate" type="button" aria-pressed="false">Turntable</button><button id="render-style" type="button" aria-pressed="false">PSX preview</button></div>
+      <div class="row"><button id="export" type="button">Export outfit JSON</button></div>
+    </fieldset>
+    <p id="status" role="status" aria-live="polite">Loading character and refined texture…</p>
+    <p class="footnote">10 reusable garment shapes · 8 palettes · 4 headwear choices.<br>320 outfit combinations, all on the same body rig.</p>
+  </aside>
+  <main id="viewport" aria-label="Character preview">
+    <canvas id="game" role="img" aria-label="Interactive Mongolian character preview" tabindex="0"></canvas>
+    <div class="viewport-title"><div class="eyebrow" id="view-label">Full-resolution studio</div><strong>Default character / clothing study</strong></div>
+    <div class="viewport-footer">Drag to orbit · Scroll to zoom · Right-drag to pan<br>Use Face close-up to inspect the refined texture.</div>
+  </main>
+  <script src="dist/character.js"></script>
+</body>
+</html>
