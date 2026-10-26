@@ -1203,6 +1203,8 @@ export function buildWaterKiosk() {
   addCylinder(group, 0.88, 0.88, 0.1, solid(0x1d4e78), 0, 3.15, 0, 12);
   addCylinder(group, 0.06, 0.06, 0.7, solid(0x9a9a92), 0.2, 1.45, 0.7, 5);
   addBox(group, 0.16, 0.1, 0.1, solid(0xc8c8c0), 0.5, 1.38, 0.7);
+  addBox(group, 0.08, 0.08, 0.18, solid(0x6a6a64), 0.55, 1.32, 0.78); // spout tip
+  addBox(group, 0.9, 0.12, 0.55, solid(0x8a8270), 0.4, 0.28, 0.95); // step / grate
   addSignPlane(group, "УС", {
     width: 128, height: 64, bg: "#2f6ea5", fg: "#f4f7fb", accent: "#f4f7fb",
   }, 1.15, 0.55, 0, 1.55, 0.82);
@@ -1213,6 +1215,13 @@ export function buildWaterKiosk() {
   puddle.rotation.x = -Math.PI / 2;
   puddle.position.set(0.55, 0.23, 0.85);
   group.add(puddle);
+  const puddle2 = new THREE.Mesh(
+    new THREE.CircleGeometry(0.28, 6),
+    solid(0x4a5a5a, { transparent: true, opacity: 0.35 })
+  );
+  puddle2.rotation.x = -Math.PI / 2;
+  puddle2.position.set(0.9, 0.22, 1.15);
+  group.add(puddle2);
   return group;
 }
 

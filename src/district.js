@@ -14,6 +14,7 @@ import {
   buildGate,
   buildGer,
   buildGrassTuft,
+  buildHoop,
   buildHorse,
   buildOuthouse,
   buildPerson,
@@ -28,6 +29,10 @@ import {
   buildTireStack,
   buildTree,
   buildGasCylinder,
+  buildYardShed,
+  buildBollard,
+  buildIceBox,
+  buildSolarPanel,
   buildWoodpile,
   contactShadow,
   dirtMaterial,
@@ -276,11 +281,36 @@ function placeKhashaa(scene, bags, options) {
     plot.add(frost);
   }
 
+  // Packed yard dirt + wear paths so north/outer yards don't clone.
+  const yardTones = ["#9a8c6e", "#8f8268", "#a09274", "#867a60", "#94866c"];
+  const packed = groundPlane(12.4, 12.4, dirtMaterial(4 + (seed % 4), 4), 0, 0, 0.032);
+  packed.name = "yard-dirt";
+  plot.add(packed);
+  if (seed % 3 !== 2) {
+    const wear = groundPlane(4.5 + (seed % 3), 2.2, plasterMaterial(yardTones[seed % yardTones.length]),
+      (seed % 2 ? -2.2 : 2.4), back * (seed % 2 ? 1.5 : -1.8), 0.04);
+    wear.name = "yard-wear";
+    plot.add(wear);
+  }
+  // Extra frost accents (separate from sheltered-frost quota).
+  if (seed % 4 === 1) {
+    const frost2 = groundPlane(1.8 + (seed % 3) * 0.4, 0.55, solid(0xc5c7b6, { transparent: true, opacity: 0.32 }),
+      -3.2 + (seed % 5) * 0.3, gateNorth ? 5.8 : -5.8, 0.062);
+    frost2.name = "yard-frost";
+    plot.add(frost2);
+  }
+  if (seed % 5 === 2) {
+    const frost3 = groundPlane(2.1, 0.5, solid(0xb8bcaa, { transparent: true, opacity: 0.28 }),
+      2.4, gateNorth ? -4.2 : 4.2, 0.062);
+    frost3.name = "yard-frost";
+    plot.add(frost3);
+  }
+
   const rotY = gateNorth ? Math.PI : 0;
   const gerScale = house ? 0.78 : 0.92;
   const gerX = house ? -3.7 : 0.2;
   const gerZ = house ? 0.2 : -0.4;
-  const ger = buildGer(gerScale);
+  const ger = buildGer(gerScale, seed);
   ger.position.set(gerX, 0.02, gerZ);
   ger.rotation.y = rotY;
   plot.add(ger);
@@ -351,8 +381,9 @@ function placeKhashaa(scene, bags, options) {
     plot.add(barrel);
   }
 
-  const laundry = buildClothesline(house ? 3.2 : 4.2);
+  const laundry = buildClothesline(house ? 3.2 : 4.2, seed);
   laundry.group.position.set(house ? -0.4 : -1.2, 0, back * 5.3);
+  laundry.group.rotation.y = (seed % 5) * 0.05;
   plot.add(laundry.group);
   for (const cloth of laundry.cloths) cloth.userData.dynamic = true;
   bags.clothGroups.push({ cloths: laundry.cloths, phase: seed * 0.7 });
@@ -446,6 +477,29 @@ function placeKhashaa(scene, bags, options) {
   const bin = buildTrashCan();
   bin.position.set(5.6, 0, -back * 5.2);
   plot.add(bin);
+
+  // Shed / solar / icebox — varied so outer yards feel occupied, not stamped.
+  if (seed % 4 === 0 || (!house && seed % 5 === 1)) {
+    const shed = buildYardShed(seed);
+    shed.name = "yard-shed";
+    shed.position.set(-5.2, 0, back * 0.2);
+    shed.rotation.y = gateNorth ? 0.2 : Math.PI - 0.15;
+    shed.scale.setScalar(0.85 + yardRand() * 0.2);
+    plot.add(shed);
+  }
+  if (seed % 5 === 0) {
+    const solar = buildSolarPanel();
+    solar.name = "yard-solar";
+    solar.position.set(house ? -1.2 : 4.6, 0, back * 2.8);
+    solar.rotation.y = yardRand() * 0.4;
+    plot.add(solar);
+  }
+  if (seed % 6 === 2) {
+    const ice = buildIceBox();
+    ice.position.set(4.4, 0, -back * 4.6);
+    ice.rotation.y = yardRand();
+    plot.add(ice);
+  }
 }
 
 function standing(scene, options, x, y, z, rotY) {
@@ -526,14 +580,30 @@ export function placeTown(scene) {
     strip.name = "avenue-shoulder";
     scene.add(strip);
   }
-  // Local frost pools in the shade of the north walk and school approach.
+  // Local frost pools in the shade of walks, school, square, and heating plant.
   for (const [x, z, w, d] of [
     [-42, -8.05, 5.5, 0.7], [8, -8.05, 4.2, 0.65], [52, -8.05, 4.8, 0.7],
     [66, -30.6, 6.5, 1.1], [62, -32.2, 3.2, 0.55],
+    [-18, 7.35, 4.0, 0.55], [34, 7.35, 3.6, 0.5], [96, 7.35, 4.4, 0.55],
+    [18, -14.2, 5.0, 0.8], [148, -36, 4.5, 0.7], [-78, -18, 3.8, 0.55],
+    [58, -48, 3.5, 0.6], [-110, -6, 3.2, 0.5],
   ]) {
     const frost = groundPlane(w, d, solid(0xc2c4b4, { transparent: true, opacity: 0.34 }), x, z, 0.055);
     frost.name = "civic-frost";
     scene.add(frost);
+  }
+
+  // Crosswalk paint where the south avenue meets the main road.
+  const zebra = solid(0xd8d4c8, { transparent: true, opacity: 0.45 });
+  for (const zBase of [-4.2, 4.2]) {
+    for (let i = 0; i < 6; i++) {
+      addBox(scene, 0.55, 0.02, 2.4, zebra, -2.2 + i * 0.9, 0.045, zBase);
+    }
+  }
+  for (const xBase of [-54, 54]) {
+    for (let i = 0; i < 5; i++) {
+      addBox(scene, 2.2, 0.02, 0.5, zebra, xBase, 0.045, -2.0 + i * 0.85);
+    }
   }
 
   for (let i = 0; i < SOUTH_ROWS.length; i++) {
@@ -760,6 +830,15 @@ export function placeTown(scene) {
   const playWater = buildWaterKiosk();
   playWater.position.set(18.4, playY, 40.2);
   scene.add(playWater);
+  const hoop = buildHoop();
+  hoop.position.set(20.5, playY, 46.5);
+  hoop.rotation.y = -0.3;
+  scene.add(hoop);
+  const playBench2 = buildBench();
+  playBench2.position.set(17.8, playY, 47.4);
+  playBench2.rotation.y = 0.8;
+  scene.add(playBench2);
+  scene.add(groundPlane(8, 5.5, plasterMaterial("#a99a7e"), 14.5, 43.5, playY + 0.04));
 
   const treeSpots = [
     [-96, -8.2], [-78, -8.2], [-60, -8.2], [-28, -8.2], [4, -8.2], [22, -8.2],
@@ -971,6 +1050,54 @@ export function placeTown(scene) {
   const crate = buildCrate();
   crate.position.set(98.5, 0, 9.4);
   scene.add(crate);
+
+  // Street furniture along walks, square edge, school, heating plant.
+  for (const [x, z, rot] of [
+    [-60, -8.9, 0], [-20, -8.9, 0], [20, -8.9, 0], [70, -8.9, 0], [120, -8.9, 0],
+    [-50, 8.0, Math.PI], [10, 8.0, Math.PI], [50, 8.0, Math.PI], [100, 8.0, Math.PI],
+    [12, -15.5, 0.4], [28, -15.2, -0.3], [62, -28, 0.2], [148, -24, -0.5],
+  ]) {
+    const bench = buildBench();
+    bench.position.set(x, townHeight(x, z), z);
+    bench.rotation.y = rot;
+    scene.add(bench);
+  }
+  for (const [x, z] of [
+    [14, -9.5], [16, -9.5], [20, -9.5], [22, -9.5],
+    [30, -7.2], [32, -7.2], [-6, 9.0], [-4, 9.0],
+    [110, -10], [112, -10],
+  ]) {
+    const bollard = buildBollard(x % 20 === 0 ? 0x2b4a7a : 0x8a3a2c);
+    bollard.position.set(x, 0, z);
+    scene.add(bollard);
+  }
+  for (const [x, z] of [[-40, 9.0], [80, 9.2], [150, -22], [54, -46], [-90, -10]]) {
+    const bin = buildTrashCan();
+    bin.position.set(x, townHeight(x, z), z);
+    scene.add(bin);
+  }
+  for (const [x, z] of [[86, 9.5], [154, -34], [-70, -9.5]]) {
+    const d = buildDumpster();
+    d.position.set(x, townHeight(x, z), z);
+    d.rotation.y = 0.2;
+    scene.add(d);
+  }
+
+  // Extra walkers / loiterers for path readability.
+  walker(scene, bags, { coat: 0x5a4a3a, hat: 0x8c2f24, pants: 0x3a3630 }, { x: 40, z: -6.6 }, { x: 100, z: -6.6 }, 15, 0.2);
+  walker(scene, bags, { coat: 0x2b4a7a, hat: 0x2a2a28, pants: 0x4a4a42, backpack: true }, { x: 8, z: 6.5 }, { x: -40, z: 6.5 }, 17, 0.7);
+  walker(scene, bags, { coat: 0xc85a3c, hat: 0x2b4a7a, pants: 0x3a3630, child: true, scale: 0.7 }, { x: 60, z: -6.5 }, { x: 90, z: -6.5 }, 11, 0.4);
+  standing(scene, { coat: 0x6a5a4a, hat: 0x8c2f24, pants: 0x3a3630, stance: true }, 66, 0, -32, 1.2);
+  standing(scene, { coat: 0x3a5a48, hat: 0x2b4a7a, pants: 0x3a3630, stance: true }, 150, 0, -26, -0.8);
+  standing(scene, { coat: 0xb04a32, hat: 0x2a2a28, pants: 0x3a3630, stance: true }, 18, 0, -10.5, 0.2);
+  standing(scene, { coat: 0x4a6a5a, hat: 0x8c2f24, pants: 0x3a3630, child: true, scale: 0.72 }, 15.5, playY, 45.5, 2.4);
+
+  // Dirt path cues from south rows onto the avenue.
+  for (const x of [-72, -36, 12, 48, 84, 120]) {
+    const path = groundPlane(2.0, 4.5, dirtMaterial(2, 3), x, 10.5, 0.028);
+    path.name = "yard-path";
+    scene.add(path);
+  }
 
   return {
     ...bags,

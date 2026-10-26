@@ -115,6 +115,22 @@ test("the civic pad flattens heating plant and eastern apartments", () => {
   }
 });
 
+test("yards and civic strip keep lived-in dirt, sheds, and frost accents", () => {
+  const scene = new THREE.Scene();
+  placeTown(scene);
+  const count = name => {
+    let found = 0;
+    scene.traverse(object => { if (object.name === name) found++; });
+    return found;
+  };
+  assert.ok(count("yard-dirt") >= 40, `yard-dirt ${count("yard-dirt")}`);
+  assert.ok(count("yard-shed") >= 8, `yard-shed ${count("yard-shed")}`);
+  assert.ok(count("yard-frost") >= 10, `yard-frost ${count("yard-frost")}`);
+  assert.ok(count("civic-frost") >= 10, `civic-frost ${count("civic-frost")}`);
+  assert.ok(count("yard-path") >= 4, `yard-path ${count("yard-path")}`);
+  assert.ok(count("sheltered-frost") > 0 && count("sheltered-frost") < 49 / 5);
+});
+
 test("district density keeps readable flocks, parked cars, and autumn trees", () => {
   const scene = new THREE.Scene();
   const bags = placeTown(scene);

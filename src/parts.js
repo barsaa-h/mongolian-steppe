@@ -297,9 +297,15 @@ export function buildFenceRun(length, tone = "warm") {
   for (let i = 0; i < count; i++) {
     const x = -length / 2 + (length / (count - 1)) * i;
     addBox(group, 0.15, 1.72, 0.15, postMat, x, 0.86, 0);
+    // Short brace so runs read as timber posts, not a flat sheet.
+    if (i < count - 1) {
+      const mid = x + length / (count - 1) * 0.5;
+      addBox(group, length / (count - 1) * 0.92, 0.06, 0.05, postMat, mid, 1.05, 0.04);
+    }
   }
   addBox(group, length, 0.12, 0.13, postMat, 0, 1.58, 0);
   addBox(group, length, 0.1, 0.12, postMat, 0, 0.22, 0);
+  addBox(group, length * 0.98, 0.05, 0.04, solid(0x4a4034), 0, 0.92, 0.05);
   return group;
 }
 
@@ -325,11 +331,15 @@ export function buildGate(width = 3) {
   leaf2.rotation.y = 0.45;
   group.add(leaf2);
   addBox(group, width * 0.5, 0.08, 0.5, postMat, 0, 1.6, 0.15);
+  addBox(group, 0.18, 0.08, 0.28, solid(0x8a7a5a), 0, 0.95, 0.28); // latch bar
+  addBox(group, 0.08, 0.18, 0.08, solid(0x5a4a34), -0.12, 0.95, 0.36);
   return group;
 }
 
-export function buildGer(scale = 1) {
+export function buildGer(scale = 1, seed = 0) {
+  const rand = mulberry(seed * 43 + 5);
   const group = new THREE.Group();
+  group.userData.propKind = "ger";
   const wall = new THREE.Mesh(
     new THREE.CylinderGeometry(2.25, 2.32, 1.55, 14, 1, true),
     gerWallMaterial()
@@ -343,6 +353,12 @@ export function buildGer(scale = 1) {
   );
   roof.position.y = 2.1;
   group.add(roof);
+
+  // Felt bands / rope rings so gers don't read as featureless cans.
+  const bandColors = [0xc06a34, 0x8c3a2a, 0xb07a40, 0x6a4a2c];
+  const band = solid(bandColors[(rand() * bandColors.length) | 0]);
+  addCylinder(group, 2.34, 2.34, 0.1, band, 0, 1.45, 0, 14);
+  addCylinder(group, 2.33, 2.33, 0.07, solid(0xd8c8a8), 0, 0.35, 0, 14);
 
   const trim = solid(0xc06a34);
   const crown = new THREE.Mesh(new THREE.TorusGeometry(0.78, 0.09, 4, 12), trim);
@@ -383,6 +399,12 @@ export function buildGer(scale = 1) {
 
   const chimney = addCylinder(group, 0.06, 0.07, 1.5, solid(0x55565c), -1.05, 2.72, -0.5, 5);
   addCylinder(group, 0.1, 0.1, 0.08, solid(0x44454a), -1.05, 3.49, -0.5, 5);
+  // Guy-rope stubs around the skirt — cheap silhouette detail from overview.
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2 + 0.2;
+    const peg = addCylinder(group, 0.03, 0.04, 0.35, solid(0x5a4a34), Math.sin(a) * 2.7, 0.18, Math.cos(a) * 2.7, 4);
+    peg.rotation.z = Math.sin(a) * 0.35;
+  }
 
   group.scale.setScalar(scale);
   return group;
@@ -455,7 +477,8 @@ export function buildBarrel(color = 0x4a6a8a) {
   return group;
 }
 
-export function buildClothesline(length = 6) {
+export function buildClothesline(length = 6, seed = 0) {
+  const rand = mulberry(seed * 29 + 3);
   const group = new THREE.Group();
   const postMat = solid(0x6a4c30);
   addCylinder(group, 0.06, 0.08, 2.3, postMat, -length / 2, 1.15, 0, 5);
@@ -476,14 +499,18 @@ export function buildClothesline(length = 6) {
   group.add(line);
 
   const cloths = [];
-  const colors = [0xc8c0a8, 0x8a5a5a, 0x5a7a8a, 0xd8c070, 0xb8b0a0, 0x7a8a6a];
-  for (let i = 0; i < 5; i++) {
-    const x = -length * 0.32 + i * (length * 0.16);
+  const colors = [0xc8c0a8, 0x8a5a5a, 0x5a7a8a, 0xd8c070, 0xb8b0a0, 0x7a8a6a, 0x9a4a3a, 0x4a5a6a, 0xd0d0c8];
+  const count = 4 + ((rand() * 3) | 0);
+  for (let i = 0; i < count; i++) {
+    const x = -length * 0.35 + i * (length * 0.7 / Math.max(1, count - 1));
+    const h = 0.55 + rand() * 0.45;
+    const w = 0.4 + rand() * 0.28;
     const cloth = new THREE.Mesh(
-      new THREE.PlaneGeometry(0.55, 0.75, 2, 2),
-      solid(colors[i], { side: THREE.DoubleSide })
+      new THREE.PlaneGeometry(w, h, 2, 2),
+      solid(colors[(rand() * colors.length) | 0], { side: THREE.DoubleSide })
     );
-    cloth.position.set(x, 1.9, 0.02);
+    cloth.position.set(x, 2.2 - h * 0.5, 0.02 + (rand() - 0.5) * 0.04);
+    cloth.rotation.y = (rand() - 0.5) * 0.15;
     group.add(cloth);
     cloths.push(cloth);
   }
@@ -536,17 +563,25 @@ export function buildTrashCan() {
   const group = new THREE.Group();
   addCylinder(group, 0.25, 0.22, 0.7, solid(0x5a6a5a), 0, 0.35, 0, 8);
   addCylinder(group, 0.27, 0.27, 0.06, solid(0x3a4a3a), 0, 0.72, 0, 8);
+  addBox(group, 0.08, 0.18, 0.04, solid(0x3a4a3a), 0.26, 0.55, 0);
+  addBox(group, 0.08, 0.18, 0.04, solid(0x3a4a3a), -0.26, 0.55, 0);
+  addBox(group, 0.35, 0.08, 0.02, solid(0x8a5a3c), 0, 0.4, 0.23); // rust stripe
   return group;
 }
 
 export function buildBench() {
   const group = new THREE.Group();
   const wood = woodMaterial();
-  addBox(group, 1.8, 0.08, 0.45, wood, 0, 0.46, 0);
-  addBox(group, 1.8, 0.35, 0.06, wood, 0, 0.72, -0.2);
+  addBox(group, 1.8, 0.06, 0.18, wood, 0, 0.48, 0.12);
+  addBox(group, 1.8, 0.06, 0.18, wood, 0, 0.48, -0.05);
+  addBox(group, 1.8, 0.06, 0.18, wood, 0, 0.48, -0.22);
+  addBox(group, 1.8, 0.12, 0.06, wood, 0, 0.78, -0.28);
+  addBox(group, 1.8, 0.12, 0.06, wood, 0, 0.62, -0.28);
   const metal = solid(0x3a3a38);
-  addBox(group, 0.06, 0.45, 0.4, metal, -0.75, 0.22, 0);
-  addBox(group, 0.06, 0.45, 0.4, metal, 0.75, 0.22, 0);
+  addBox(group, 0.06, 0.48, 0.42, metal, -0.78, 0.24, -0.05);
+  addBox(group, 0.06, 0.48, 0.42, metal, 0.78, 0.24, -0.05);
+  addBox(group, 0.08, 0.05, 0.45, metal, -0.78, 0.04, -0.05);
+  addBox(group, 0.08, 0.05, 0.45, metal, 0.78, 0.04, -0.05);
   return group;
 }
 
@@ -892,6 +927,10 @@ export function buildSwingSet() {
   const group = new THREE.Group();
   const metal = solid(0x8a3a2c);
   const barY = 2.45;
+  // Worn pads under the A-frame feet.
+  for (const [x, z] of [[-1.55, -1.55], [1.55, -1.55], [-1.55, 1.55], [1.55, 1.55]]) {
+    addBox(group, 0.45, 0.05, 0.45, solid(0x8a7a5a), x, 0.03, z);
+  }
   addCylinder(group, 0.06, 0.07, barY, metal, 0, barY / 2, -1.1, 5).rotation.x = 0.22;
   addCylinder(group, 0.06, 0.07, barY, metal, 0, barY / 2, 1.1, 5).rotation.x = -0.22;
   addCylinder(group, 0.06, 0.07, 0.9, metal, 1.6, barY / 2, -1.6, 5).rotation.z = 0;
@@ -970,6 +1009,13 @@ export function buildSandbox() {
   sand.rotation.x = -Math.PI / 2;
   sand.position.y = 0.06;
   group.add(sand);
+  for (const [x, z, s] of [[-0.6, 0.4, 0.35], [0.7, -0.5, 0.28], [0.1, 0.7, 0.22]]) {
+    const mound = new THREE.Mesh(new THREE.SphereGeometry(s, 5, 3), solid(0xd2bc88));
+    mound.position.set(x, 0.1, z);
+    mound.scale.y = 0.45;
+    group.add(mound);
+  }
+  addBox(group, 0.35, 0.08, 0.18, solid(0x8a6a44), 0.9, 0.18, 0.9); // toy crate hint
   return group;
 }
 
@@ -1083,6 +1129,32 @@ export function buildGrassTuft(seed = 0) {
     blade.rotation.y = rand() * Math.PI;
     group.add(blade);
   }
+  return group;
+}
+
+export function buildYardShed(seed = 0) {
+  const rand = mulberry(seed * 19 + 7);
+  const group = new THREE.Group();
+  group.userData.propKind = "shed";
+  const body = mat({ map: cloneRepeat(fenceTexture(rand() < 0.5 ? "grey" : "warm"), 1.6, 1) });
+  const w = 2.2 + rand() * 0.5;
+  const d = 1.6 + rand() * 0.35;
+  const h = 1.55 + rand() * 0.35;
+  addBox(group, w, h, d, body, 0, h / 2, 0);
+  const roof = box(w + 0.25, 0.1, d + 0.3, corrugatedMaterial(rand() < 0.5 ? "#7c7468" : "#8b8b84"));
+  roof.position.set(0, h + 0.08, 0.05);
+  roof.rotation.x = -0.12;
+  group.add(roof);
+  addBox(group, 0.7, 1.15, 0.05, woodenDoorMat(), 0, 0.6, d / 2 + 0.02);
+  addBox(group, 0.08, 0.08, 0.08, solid(0x5a4a34), 0.22, 0.7, d / 2 + 0.04);
+  if (rand() < 0.55) addBox(group, 0.35, 0.25, 0.04, solid(0x3a4a50), -w * 0.25, h * 0.7, d / 2 + 0.03);
+  return group;
+}
+
+export function buildBollard(color = 0x8a3a2c) {
+  const group = new THREE.Group();
+  addCylinder(group, 0.12, 0.14, 0.85, solid(color), 0, 0.42, 0, 8);
+  addCylinder(group, 0.13, 0.13, 0.08, solid(0xd8d0c0), 0, 0.86, 0, 8);
   return group;
 }
 

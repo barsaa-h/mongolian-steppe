@@ -332,8 +332,10 @@ export function buildWorld() {
 
     const nightLights = Math.max(sstep(state.night, 0.12, 0.72), state.dusk * 0.72);
     for (let i = 0; i < windowMats.length; i++) {
-      const flicker = 1 + Math.sin(t * 42 + i * 2.3) * 0.03;
-      windowMats[i].emissiveIntensity = 3.2 * nightLights * flicker;
+      // Stagger occupancy so the civic strip doesn't light up as one slab.
+      const occupied = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(i * 1.7 + 0.4));
+      const flicker = 1 + Math.sin(t * 42 + i * 2.3) * 0.04 * occupied;
+      windowMats[i].emissiveIntensity = 3.2 * nightLights * flicker * occupied;
     }
     shopMat.emissiveIntensity = 0.08 + nightLights * 1.35;
     for (let i = 0; i < signMats.length; i++) {
