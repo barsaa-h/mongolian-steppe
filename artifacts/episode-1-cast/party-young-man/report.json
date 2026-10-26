@@ -1,0 +1,256 @@
+{
+  "name": "Залуу эрэгтэй зочин",
+  "bodyHeightM": 1.73,
+  "sourceBodyVertices": 19158,
+  "headHeightFraction": 0.0964017342686443,
+  "waistWidthM": 0.3294129322936049,
+  "sourceShapeKeys": 38,
+  "rigBones": 137,
+  "fingerBones": 30,
+  "garmentCorrections": {
+    "Clothes.Outfit": 265,
+    "Shoes": 0
+  },
+  "fullBodyRetained": true,
+  "renderBodyUsesClothingMasks": true,
+  "meshes": [
+    {
+      "name": "Eyebrows",
+      "role": "Eyebrows",
+      "vertices": 124,
+      "triangles": 192
+    },
+    {
+      "name": "Eyes",
+      "role": "Eyes",
+      "vertices": 1064,
+      "triangles": 2040
+    },
+    {
+      "name": "Shoes",
+      "role": "Shoes",
+      "vertices": 1594,
+      "triangles": 3064
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 1755,
+      "triangles": 3344
+    },
+    {
+      "name": "Teeth",
+      "role": "Teeth",
+      "vertices": 3868,
+      "triangles": 7120
+    },
+    {
+      "name": "Tongue",
+      "role": "Tongue",
+      "vertices": 226,
+      "triangles": 448
+    },
+    {
+      "name": "Clothes.Top",
+      "role": "Clothes.Top",
+      "vertices": 4002,
+      "triangles": 7818
+    },
+    {
+      "name": "Clothes.Bottom",
+      "role": "Clothes.Bottom",
+      "vertices": 4514,
+      "triangles": 8854
+    },
+    {
+      "name": "Hands.L",
+      "role": "Hands.L",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Hands.R",
+      "role": "Hands.R",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Body.Skin",
+      "role": "Body",
+      "vertices": 4620,
+      "triangles": 9112
+    },
+    {
+      "name": "Details.Blemish.01",
+      "role": "Details.Blemish.01",
+      "vertices": 13,
+      "triangles": 12
+    },
+    {
+      "name": "Details.Blemish.02",
+      "role": "Details.Blemish.02",
+      "vertices": 13,
+      "triangles": 12
+    },
+    {
+      "name": "Details.Blemish.03",
+      "role": "Details.Blemish.03",
+      "vertices": 13,
+      "triangles": 12
+    },
+    {
+      "name": "Details.Blemish.04",
+      "role": "Details.Blemish.04",
+      "vertices": 13,
+      "triangles": 12
+    },
+    {
+      "name": "Details.Blemish.05",
+      "role": "Details.Blemish.05",
+      "vertices": 13,
+      "triangles": 12
+    },
+    {
+      "name": "Details.Blemish.06",
+      "role": "Details.Blemish.06",
+      "vertices": 13,
+      "triangles": 12
+    },
+    {
+      "name": "Details.Blemish.07",
+      "role": "Details.Blemish.07",
+      "vertices": 13,
+      "triangles": 12
+    }
+  ],
+  "packedTextures": [
+    {
+      "name": "brown_eye.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Bottom | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Top | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eyebrow001.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "eyelashes01.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "Eyes | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Hair | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "male_casualsuit01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "party-young-man | Skin detail normal",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "shoes02_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "short02_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Skin layer bake | Cast albedo",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "teeth.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "tongue01_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "young_lightskinned_male_diffuse3.png",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "id": "party-young-man",
+  "episode": 1,
+  "scriptAge": null,
+  "skinSource": "young_asian_male",
+  "skinDetailCount": 7,
+  "wrinkleParts": 0,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "guest",
+  "casting": "Mongolian",
+  "dnaHash": "445a2ef7a26122e355302bc0ae1fa9d2d845b0fa6970f9a1d803283877e8c1f8",
+  "baseStage": "adult",
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "sourceIndexMap": true
+}

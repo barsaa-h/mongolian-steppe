@@ -1,0 +1,72 @@
+{
+  "id": "dulmaa",
+  "name": "Дулмаа",
+  "episode": 1,
+  "category": "principal",
+  "scriptAge": 65,
+  "ageNote": "EP1 party: DULMAA 65, Ganaa’s mother-in-law. Notices his wrist; exact infection and later fate are unspecified.",
+  "casting": "Mongolian",
+  "wardrobe": "deel",
+  "hairstyle": "bun",
+  "skinLook": "elder",
+  "pimples": 0,
+  "topColor": "#345e59",
+  "bottomColor": "#323c38",
+  "hairColor": "#68645d",
+  "accentColor": "#ad9470",
+  "base": {
+    "name": "dulmaa",
+    "height_m": 1.54,
+    "body": {
+      "weight": 0.66,
+      "muscle": 0.22,
+      "proportions": 0.5,
+      "height": 0.5,
+      "gender": 0,
+      "age": 0.8076923076923077,
+      "race": {
+        "asian": 1,
+        "caucasian": 0,
+        "african": 0
+      }
+    },
+    "skin": "old_asian_female",
+    "hair": "ponytail01",
+    "outfit": "male_casualsuit02",
+    "shoes": "shoes02",
+    "targets": {
+      "head/head-scale-vert-decr": 0.23,
+      "head/head-scale-horiz-incr": 0.27,
+      "head/head-round": 0.56,
+      "eyes/l-eye-eyefold-down": 0.82,
+      "eyes/r-eye-eyefold-down": 0.746,
+      "eyes/l-eye-height2-decr": 0.128,
+      "eyes/r-eye-height2-decr": 0.116,
+      "eyes/l-eye-epicanthus-out": 0.63,
+      "eyes/r-eye-epicanthus-out": 0.573,
+      "eyebrows/eyebrows-trans-up": 0.24,
+      "nose/nose-point-down": 0.28,
+      "nose/nose-scale-horiz-incr": 0.3,
+      "mouth/mouth-scale-horiz-decr": 0.14,
+      "mouth/mouth-upperlip-volume-decr": 0.44,
+      "mouth/mouth-angles-down": 0.28,
+      "chin/chin-width-incr": 0.3,
+      "chin/chin-height-decr": 0.3,
+      "cheek/l-cheek-bones-incr": 0.55,
+      "cheek/r-cheek-bones-incr": 0.55,
+      "cheek/l-cheek-volume-incr": 0.08,
+      "cheek/r-cheek-volume-incr": 0.08,
+      "nose/nose-width3-incr": 0.28,
+      "head/head-age-incr": 0.48,
+      "eyes/l-eye-bag-incr": 0.52,
+      "eyes/r-eye-bag-incr": 0.473,
+      "mouth/mouth-upperlip-middle-down": 0.1,
+      "mouth/mouth-lowerlip-middle-up": 0.12
+    }
+  },
+  "states": [
+    "normal"
+  ],
+  "faceDesign": "Broad older face, soft jaw, downward nose tip, hooded asymmetrical lids and thin downturned lips",
+  "dnaHash": "39163de927d42d1bff9fc21487c1a846c03e793e32f05515f86394acc4957de9"
+}

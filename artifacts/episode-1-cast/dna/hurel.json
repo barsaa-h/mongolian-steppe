@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "id": "hurel",
+  "name": "Хүрэл",
+  "episode": 1,
+  "category": "principal",
+  "script_age": null,
+  "source": {
+    "facts": "EP1 truck-stop: HÜREL, cook in his 50s with stained apron. Eaten and explicitly stays dead; not a confirmed infected survivor.",
+    "references": [
+      "research/appearance-notes.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 2180922952,
+  "face": {
+    "head_height": -0.35,
+    "head_width": 0,
+    "head_depth": 0,
+    "skull_depth": 0,
+    "forehead_slope": 0,
+    "forehead_height": 0,
+    "temple_width": 0,
+    "head_round": 0.9,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.55,
+    "eye_size": 0,
+    "eye_spacing": 0,
+    "eye_tilt": 0,
+    "eye_depth": 0,
+    "upper_lid_fold": 0.72,
+    "eye_opening": -0.056,
+    "inner_lid_fold": 0.585,
+    "lower_lid_height": 0,
+    "brow_height": 0.12,
+    "brow_angle": 0,
+    "brow_depth": 0,
+    "nose_bridge_width": 0,
+    "nose_tip_width": 0,
+    "nose_tip_angle": 0.22,
+    "nose_width": 0.52,
+    "nose_length": 0,
+    "nose_projection": 0,
+    "nose_curve": 0,
+    "nostril_width": 0,
+    "nostril_angle": 0,
+    "nose_hump": 0,
+    "mouth_width": -0.22,
+    "upper_lip_fullness": 0,
+    "lower_lip_fullness": 0.38,
+    "mouth_corner_tilt": -0.13,
+    "philtrum_length": 0,
+    "cupids_bow": 0,
+    "mouth_depth": 0,
+    "upper_lip_height": 0,
+    "lower_lip_height": 0,
+    "jaw_width": 0,
+    "chin_width": 0.12,
+    "chin_length": -0.48,
+    "chin_projection": 0,
+    "chin_prognathism": 0,
+    "chin_cleft": 0,
+    "cheek_height": 0,
+    "cheekbone_prominence": 0.22,
+    "cheek_fullness": 0.5,
+    "cheek_hollow": 0,
+    "ear_size": 0,
+    "ear_angle": 0,
+    "ear_lobe": 0,
+    "nose_mid_width": 0,
+    "nose_base_width": 0.3
+  },
+  "asymmetry": {
+    "eye_size": 0,
+    "eye_spacing": 0,
+    "eye_tilt": 0,
+    "eye_depth": 0,
+    "upper_lid_fold": -0.065,
+    "eye_opening": 0.005,
+    "inner_lid_fold": -0.052,
+    "lower_lid_height": 0,
+    "cheek_height": 0,
+    "cheekbone_prominence": 0.0,
+    "cheek_fullness": 0.0,
+    "cheek_hollow": 0,
+    "ear_size": 0,
+    "ear_angle": 0,
+    "ear_lobe": 0
+  },
+  "age": {
+    "years": 55,
+    "features": {
+      "head_age": 0,
+      "eye_bags_left": 0.35,
+      "eye_bags_right": 0.319,
+      "sagging": 0,
+      "lip_thinning": 0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.65,
+    "weight": 0.87,
+    "muscle": 0.3,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "old_asian_male",
+    "tone": 1,
+    "ruddiness": 0,
+    "freckles": 0,
+    "pimples": 0,
+    "look": "weathered",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "short01",
+    "style": "short",
+    "color": "#29231f",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1,
+    "color": "#51483b",
+    "greying": 0.35
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit01",
+    "shoes": "shoes02",
+    "wardrobe": "apron",
+    "top_color": "#b2b0a2",
+    "bottom_color": "#3f403a",
+    "accent_color": "#ad9470"
+  },
+  "signature_traits": [
+    "Short round face",
+    "full cheeks",
+    "broad upturned nose"
+  ],
+  "face_design": "Short round face, full cheeks, broad upturned nose, heavy soft lids and smaller full mouth",
+  "states": [
+    "normal"
+  ],
+  "review": "draft"
+}

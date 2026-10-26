@@ -1,0 +1,72 @@
+{
+  "id": "party-young-man",
+  "name": "Залуу эрэгтэй зочин",
+  "episode": 1,
+  "category": "background",
+  "scriptAge": null,
+  "ageNote": "Anonymous episode-1 background design; no invented speaking identity or exact canon age.",
+  "casting": "Mongolian",
+  "wardrobe": "guest",
+  "hairstyle": "short",
+  "skinLook": "young",
+  "pimples": 7,
+  "topColor": "#786951",
+  "bottomColor": "#343e4b",
+  "hairColor": "#29231f",
+  "accentColor": "#ad9470",
+  "base": {
+    "name": "party-young-man",
+    "height_m": 1.73,
+    "body": {
+      "weight": 0.35,
+      "muscle": 0.33,
+      "proportions": 0.5,
+      "height": 0.5,
+      "gender": 1,
+      "age": 0.4375,
+      "race": {
+        "asian": 1,
+        "caucasian": 0,
+        "african": 0
+      }
+    },
+    "skin": "young_asian_male",
+    "hair": "short02",
+    "outfit": "male_casualsuit01",
+    "shoes": "shoes02",
+    "targets": {
+      "head/head-scale-vert-incr": 0.12,
+      "head/head-invertedtriangular": 0.75,
+      "eyes/l-eye-trans-out": 0.16,
+      "eyes/r-eye-trans-out": 0.16,
+      "eyes/l-eye-eyefold-down": 0.32,
+      "eyes/r-eye-eyefold-down": 0.291,
+      "eyes/l-eye-height2-decr": 0.024,
+      "eyes/r-eye-height2-decr": 0.022,
+      "eyes/l-eye-epicanthus-out": 0.216,
+      "eyes/r-eye-epicanthus-out": 0.196,
+      "eyebrows/eyebrows-angle-up": 0.18,
+      "nose/nose-width1-decr": 0.2,
+      "nose/nose-point-width-incr": 0.18,
+      "nose/nose-scale-depth-decr": 0.18,
+      "mouth/mouth-scale-horiz-incr": 0.28,
+      "mouth/mouth-upperlip-volume-incr": 0.2,
+      "mouth/mouth-lowerlip-volume-incr": 0.25,
+      "chin/chin-width-decr": 0.45,
+      "chin/chin-height-incr": 0.12,
+      "cheek/l-cheek-bones-incr": 0.42,
+      "cheek/r-cheek-bones-incr": 0.42,
+      "cheek/l-cheek-volume-incr": 0.08,
+      "cheek/r-cheek-volume-incr": 0.08,
+      "eyes/l-eye-bag-incr": 0.05,
+      "eyes/r-eye-bag-incr": 0.046,
+      "mouth/mouth-upperlip-middle-down": 0.1,
+      "mouth/mouth-lowerlip-middle-up": 0.12
+    }
+  },
+  "states": [
+    "normal"
+  ],
+  "faceDesign": "Heart-shaped face, narrow chin, wider spaced open almond eyes and fuller wide lips",
+  "dnaHash": "445a2ef7a26122e355302bc0ae1fa9d2d845b0fa6970f9a1d803283877e8c1f8"
+}

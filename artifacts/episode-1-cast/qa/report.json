@@ -1,0 +1,488 @@
+{
+  "passed": true,
+  "characters": [
+    {
+      "id": "ganaa",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008840887351152864
+        },
+        "frown": {
+          "maxMotionM": 0.003951042649622814
+        },
+        "blink": {
+          "maxMotionM": 0.010593970071047443
+        },
+        "viseme_A": {
+          "maxMotionM": 0.026232793577200667
+        },
+        "viseme_E": {
+          "maxMotionM": 0.007281553166258797
+        },
+        "viseme_O": {
+          "maxMotionM": 0.013355200708274699
+        },
+        "viseme_M": {
+          "maxMotionM": 0.005439216412753914
+        }
+      },
+      "neutralRecoveryM": 3.8685842444204014e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "irina",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.007738062538391879
+        },
+        "frown": {
+          "maxMotionM": 0.0034581629418892795
+        },
+        "blink": {
+          "maxMotionM": 0.009272299577927565
+        },
+        "viseme_A": {
+          "maxMotionM": 0.0229601484605039
+        },
+        "viseme_E": {
+          "maxMotionM": 0.006372957608293816
+        },
+        "viseme_O": {
+          "maxMotionM": 0.011688943517310505
+        },
+        "viseme_M": {
+          "maxMotionM": 0.004760785229723459
+        }
+      },
+      "neutralRecoveryM": 1.4704724638861128e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "dasha",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008185601899362033
+        },
+        "frown": {
+          "maxMotionM": 0.0036582681651737975
+        },
+        "blink": {
+          "maxMotionM": 0.009809021919111153
+        },
+        "viseme_A": {
+          "maxMotionM": 0.024288597962977363
+        },
+        "viseme_E": {
+          "maxMotionM": 0.006741712859280749
+        },
+        "viseme_O": {
+          "maxMotionM": 0.012365254124827271
+        },
+        "viseme_M": {
+          "maxMotionM": 0.0050361517875788095
+        }
+      },
+      "neutralRecoveryM": 2.498057856219104e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "hurel",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.007997770996530153
+        },
+        "frown": {
+          "maxMotionM": 0.003574229282175555
+        },
+        "blink": {
+          "maxMotionM": 0.009583843909491817
+        },
+        "viseme_A": {
+          "maxMotionM": 0.023731188601098182
+        },
+        "viseme_E": {
+          "maxMotionM": 0.0065869792926674395
+        },
+        "viseme_O": {
+          "maxMotionM": 0.012081488787781787
+        },
+        "viseme_M": {
+          "maxMotionM": 0.00492056718552152
+        }
+      },
+      "neutralRecoveryM": 2.6739459092115753e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "tsetsegmaa",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008483188974195399
+        },
+        "frown": {
+          "maxMotionM": 0.003791197743923598
+        },
+        "blink": {
+          "maxMotionM": 0.01016548012522562
+        },
+        "viseme_A": {
+          "maxMotionM": 0.025171625081615964
+        },
+        "viseme_E": {
+          "maxMotionM": 0.0069869723904335485
+        },
+        "viseme_O": {
+          "maxMotionM": 0.012814906799692662
+        },
+        "viseme_M": {
+          "maxMotionM": 0.005219259790334847
+        }
+      },
+      "neutralRecoveryM": 1.4672410683036927e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "dulmaa",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008262408033539646
+        },
+        "frown": {
+          "maxMotionM": 0.00369266580621755
+        },
+        "blink": {
+          "maxMotionM": 0.009900875441558158
+        },
+        "viseme_A": {
+          "maxMotionM": 0.02451636970124617
+        },
+        "viseme_E": {
+          "maxMotionM": 0.00680480718024109
+        },
+        "viseme_O": {
+          "maxMotionM": 0.012481071063499683
+        },
+        "viseme_M": {
+          "maxMotionM": 0.0050833180995880755
+        }
+      },
+      "neutralRecoveryM": 2.5208428313891207e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "sukhee",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008001357838508005
+        },
+        "frown": {
+          "maxMotionM": 0.003575870450400755
+        },
+        "blink": {
+          "maxMotionM": 0.009588038251961747
+        },
+        "viseme_A": {
+          "maxMotionM": 0.02374204443052397
+        },
+        "viseme_E": {
+          "maxMotionM": 0.006590147279172085
+        },
+        "viseme_O": {
+          "maxMotionM": 0.012087110727349287
+        },
+        "viseme_M": {
+          "maxMotionM": 0.004922778356331549
+        }
+      },
+      "neutralRecoveryM": 3.741828612508641e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "altan",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.007381771716269639
+        },
+        "frown": {
+          "maxMotionM": 0.003299141940533661
+        },
+        "blink": {
+          "maxMotionM": 0.008845844604427796
+        },
+        "viseme_A": {
+          "maxMotionM": 0.021903783465048128
+        },
+        "viseme_E": {
+          "maxMotionM": 0.006079797072559755
+        },
+        "viseme_O": {
+          "maxMotionM": 0.01115112494788583
+        },
+        "viseme_M": {
+          "maxMotionM": 0.004541533258448744
+        }
+      },
+      "neutralRecoveryM": 1.5213562328797393e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "yard-guard",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008629955073834308
+        },
+        "frown": {
+          "maxMotionM": 0.0038568258416565335
+        },
+        "blink": {
+          "maxMotionM": 0.010341490126585648
+        },
+        "viseme_A": {
+          "maxMotionM": 0.025606775346109792
+        },
+        "viseme_E": {
+          "maxMotionM": 0.007107884578892767
+        },
+        "viseme_O": {
+          "maxMotionM": 0.013036601817463573
+        },
+        "viseme_M": {
+          "maxMotionM": 0.00530948231575799
+        }
+      },
+      "neutralRecoveryM": 2.675724053953552e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "yard-runner",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008740138426101662
+        },
+        "frown": {
+          "maxMotionM": 0.003906096515938069
+        },
+        "blink": {
+          "maxMotionM": 0.010473824656783412
+        },
+        "viseme_A": {
+          "maxMotionM": 0.02593423881726127
+        },
+        "viseme_E": {
+          "maxMotionM": 0.007198397550686341
+        },
+        "viseme_O": {
+          "maxMotionM": 0.013202955158330393
+        },
+        "viseme_M": {
+          "maxMotionM": 0.0053773299748111165
+        }
+      },
+      "neutralRecoveryM": 3.956557517270538e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "party-young-man",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.00889821566773172
+        },
+        "frown": {
+          "maxMotionM": 0.003976714861936124
+        },
+        "blink": {
+          "maxMotionM": 0.010662948508424887
+        },
+        "viseme_A": {
+          "maxMotionM": 0.026403202744016915
+        },
+        "viseme_E": {
+          "maxMotionM": 0.007328671899308844
+        },
+        "viseme_O": {
+          "maxMotionM": 0.013441797258313827
+        },
+        "viseme_M": {
+          "maxMotionM": 0.005474540552230273
+        }
+      },
+      "neutralRecoveryM": 2.719026656261376e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "party-young-woman",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008391338972647492
+        },
+        "frown": {
+          "maxMotionM": 0.0037501375345087864
+        },
+        "blink": {
+          "maxMotionM": 0.010055319472052801
+        },
+        "viseme_A": {
+          "maxMotionM": 0.024898936617931158
+        },
+        "viseme_E": {
+          "maxMotionM": 0.006911254428239646
+        },
+        "viseme_O": {
+          "maxMotionM": 0.012676001412332978
+        },
+        "viseme_M": {
+          "maxMotionM": 0.005162695864019268
+        }
+      },
+      "neutralRecoveryM": 2.683233239806343e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "party-older-man",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.007514234311809905
+        },
+        "frown": {
+          "maxMotionM": 0.003358155850922077
+        },
+        "blink": {
+          "maxMotionM": 0.009004055689041965
+        },
+        "viseme_A": {
+          "maxMotionM": 0.022296060776574273
+        },
+        "viseme_E": {
+          "maxMotionM": 0.00618849808248851
+        },
+        "viseme_O": {
+          "maxMotionM": 0.011350761419885159
+        },
+        "viseme_M": {
+          "maxMotionM": 0.004623046059328662
+        }
+      },
+      "neutralRecoveryM": 2.4793840098155676e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    }
+  ],
+  "diversityPassed": true,
+  "humanReview": "pending"
+}

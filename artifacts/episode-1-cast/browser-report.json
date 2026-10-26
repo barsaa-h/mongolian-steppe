@@ -1,0 +1,410 @@
+{
+  "passed": true,
+  "generatedAt": "2026-10-26T15:37:57.790Z",
+  "results": [
+    {
+      "id": "ganaa",
+      "meshes": 19,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.0001361212918951888
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.0001361212918951888
+        }
+      ],
+      "motion": 0.2584709288393711,
+      "expressionMotion": {
+        "smile": 0.11142123333119805,
+        "frown": 0.11142123333119805,
+        "blink": 0.11615999759778382,
+        "viseme_A": 0.12314886663294895,
+        "viseme_E": 0.11142123333119805,
+        "viseme_O": 0.11402122131853208,
+        "viseme_M": 0.11142123333119805
+      },
+      "height": 1.7,
+      "headFraction": 0.08509144682587283,
+      "blemishes": 0,
+      "wrinkleParts": 7
+    },
+    {
+      "id": "irina",
+      "meshes": 16,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.00014132795470578075
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00014132795470578075
+        }
+      ],
+      "motion": 0.24222919941121357,
+      "expressionMotion": {
+        "smile": 0.05559831197209352,
+        "frown": 0.05559831197209352,
+        "blink": 0.0617361122541216,
+        "viseme_A": 0.0705497273733195,
+        "viseme_E": 0.05653897370720239,
+        "viseme_O": 0.06208690201652683,
+        "viseme_M": 0.05559831197209352
+      },
+      "height": 1.6500000000000001,
+      "headFraction": 0.0957622757820167,
+      "blemishes": 0,
+      "wrinkleParts": 5
+    },
+    {
+      "id": "dasha",
+      "meshes": 16,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.00009999648428767434
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00013722400298586332
+        }
+      ],
+      "motion": 0.24141572781838855,
+      "expressionMotion": {
+        "smile": 0.08734426597337544,
+        "frown": 0.08734426597337544,
+        "blink": 0.09197489892189142,
+        "viseme_A": 0.09974933553785416,
+        "viseme_E": 0.08734426597337544,
+        "viseme_O": 0.09108314080037985,
+        "viseme_M": 0.08734426597337544
+      },
+      "height": 1.6600000000000001,
+      "headFraction": 0.08555059799820877,
+      "blemishes": 4,
+      "wrinkleParts": 0
+    },
+    {
+      "id": "hurel",
+      "meshes": 22,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 23,
+          "maxDelta": 0.0001730069556015042
+        },
+        {
+          "hand": "HandsR",
+          "matched": 23,
+          "maxDelta": 0.0001730069556015042
+        }
+      ],
+      "motion": 0.2410055676090953,
+      "expressionMotion": {
+        "smile": 0.0680510628121736,
+        "frown": 0.0680510628121736,
+        "blink": 0.07434265185734179,
+        "viseme_A": 0.08274751355528706,
+        "viseme_E": 0.06849097543046666,
+        "viseme_O": 0.07423653628517801,
+        "viseme_M": 0.0680510628121736
+      },
+      "height": 1.65,
+      "headFraction": 0.08458039982147765,
+      "blemishes": 0,
+      "wrinkleParts": 8
+    },
+    {
+      "id": "tsetsegmaa",
+      "meshes": 12,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.00014060566413186937
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.000139410935144502
+        }
+      ],
+      "motion": 0.23300527600699378,
+      "expressionMotion": {
+        "smile": 0.11699935052580267,
+        "frown": 0.11699935052580267,
+        "blink": 0.12012643564354088,
+        "viseme_A": 0.12617088554438013,
+        "viseme_E": 0.11699935052580267,
+        "viseme_O": 0.11732075224172292,
+        "viseme_M": 0.11699935052580267
+      },
+      "height": 1.6000000000000003,
+      "headFraction": 0.08774466633716219,
+      "blemishes": 1,
+      "wrinkleParts": 0
+    },
+    {
+      "id": "dulmaa",
+      "meshes": 25,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.0001405517114329598
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00014059171909554656
+        }
+      ],
+      "motion": 0.22421971766077325,
+      "expressionMotion": {
+        "smile": 0.06736335557789046,
+        "frown": 0.06736335557789046,
+        "blink": 0.07372166413129724,
+        "viseme_A": 0.082491880078289,
+        "viseme_E": 0.06765964427689647,
+        "viseme_O": 0.0735285879921159,
+        "viseme_M": 0.06736335557789046
+      },
+      "height": 1.5400000000000003,
+      "headFraction": 0.08370385808920769,
+      "blemishes": 0,
+      "wrinkleParts": 8
+    },
+    {
+      "id": "sukhee",
+      "meshes": 11,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.00016943989503802608
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00016943989503802608
+        }
+      ],
+      "motion": 0.2505057484704172,
+      "expressionMotion": {
+        "smile": 0.07743467530549542,
+        "frown": 0.07743467530549542,
+        "blink": 0.082746193048414,
+        "viseme_A": 0.09035090356396953,
+        "viseme_E": 0.07743467530549542,
+        "viseme_O": 0.08187987609087256,
+        "viseme_M": 0.07743467530549542
+      },
+      "height": 1.68,
+      "headFraction": 0.0964744163809545,
+      "blemishes": 0,
+      "wrinkleParts": 0
+    },
+    {
+      "id": "altan",
+      "meshes": 12,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.00014105530881618935
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00014105530881618935
+        }
+      ],
+      "motion": 0.14876180506336864,
+      "expressionMotion": {
+        "smile": 0.19158191516938833,
+        "frown": 0.19158191516938833,
+        "blink": 0.19158191516938833,
+        "viseme_A": 0.19158191516938833,
+        "viseme_E": 0.19158191516938833,
+        "viseme_O": 0.19158191516938833,
+        "viseme_M": 0.19158191516938833
+      },
+      "height": 0.95,
+      "headFraction": 0.13146882872264096,
+      "blemishes": 0,
+      "wrinkleParts": 0
+    },
+    {
+      "id": "yard-guard",
+      "meshes": 19,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.00011051177341345658
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00011455956904486694
+        }
+      ],
+      "motion": 0.2511484500712876,
+      "expressionMotion": {
+        "smile": 0.13267234285570623,
+        "frown": 0.13267234285570623,
+        "blink": 0.13523977137372292,
+        "viseme_A": 0.14057324687594638,
+        "viseme_E": 0.13267234285570623,
+        "viseme_O": 0.13267234285570623,
+        "viseme_M": 0.13267234285570623
+      },
+      "height": 1.72,
+      "headFraction": 0.09152378600266392,
+      "blemishes": 0,
+      "wrinkleParts": 7
+    },
+    {
+      "id": "yard-runner",
+      "meshes": 11,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.0001729162370205363
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00017131310887988534
+        }
+      ],
+      "motion": 0.2742863015656769,
+      "expressionMotion": {
+        "smile": 0.1686083140965336,
+        "frown": 0.1686083140965336,
+        "blink": 0.1686083140965336,
+        "viseme_A": 0.17151243550602915,
+        "viseme_E": 0.1686083140965336,
+        "viseme_O": 0.1686083140965336,
+        "viseme_M": 0.1686083140965336
+      },
+      "height": 1.7800000000000002,
+      "headFraction": 0.09905739661031347,
+      "blemishes": 0,
+      "wrinkleParts": 0
+    },
+    {
+      "id": "party-young-man",
+      "meshes": 18,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 23,
+          "maxDelta": 0.0001411851628787416
+        },
+        {
+          "hand": "HandsR",
+          "matched": 23,
+          "maxDelta": 0.00014121370936637866
+        }
+      ],
+      "motion": 0.26895951193554785,
+      "expressionMotion": {
+        "smile": 0.17813917943474536,
+        "frown": 0.17813917943474536,
+        "blink": 0.17813917943474536,
+        "viseme_A": 0.18058271196029457,
+        "viseme_E": 0.17813917943474536,
+        "viseme_O": 0.17813917943474536,
+        "viseme_M": 0.17813917943474536
+      },
+      "height": 1.73,
+      "headFraction": 0.0964017342686443,
+      "blemishes": 7,
+      "wrinkleParts": 0
+    },
+    {
+      "id": "party-young-woman",
+      "meshes": 16,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.00013499577104588312
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00013499577104588312
+        }
+      ],
+      "motion": 0.23778447980291811,
+      "expressionMotion": {
+        "smile": 0.18129865617808819,
+        "frown": 0.18129865617808819,
+        "blink": 0.18129865617808819,
+        "viseme_A": 0.18328382542882726,
+        "viseme_E": 0.18129865617808819,
+        "viseme_O": 0.18129865617808819,
+        "viseme_M": 0.18129865617808819
+      },
+      "height": 1.6200000000000003,
+      "headFraction": 0.08247383233114645,
+      "blemishes": 5,
+      "wrinkleParts": 0
+    },
+    {
+      "id": "party-older-man",
+      "meshes": 18,
+      "bones": 137,
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 27,
+          "maxDelta": 0.00014085618195147688
+        },
+        {
+          "hand": "HandsR",
+          "matched": 27,
+          "maxDelta": 0.00009865655962481522
+        }
+      ],
+      "motion": 0.23440337493679503,
+      "expressionMotion": {
+        "smile": 0.034665386730085734,
+        "frown": 0.03542275130905693,
+        "blink": 0.042293296181848496,
+        "viseme_A": 0.051977334843573524,
+        "viseme_E": 0.03809547061655817,
+        "viseme_O": 0.043673432964166994,
+        "viseme_M": 0.034665386730085734
+      },
+      "height": 1.64,
+      "headFraction": 0.10397844022374618,
+      "blemishes": 0,
+      "wrinkleParts": 7
+    }
+  ],
+  "errors": []
+}

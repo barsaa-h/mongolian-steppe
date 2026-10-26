@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "id": "altan",
+  "name": "Алтан",
+  "episode": 1,
+  "category": "principal",
+  "script_age": 3,
+  "source": {
+    "facts": "EP1 birthday: ALTAN is explicitly a three-year-old girl wearing a paper crown. Her fate after the cut is not established.",
+    "references": [
+      "research/appearance-notes.md"
+    ]
+  },
+  "base": "child",
+  "sex": "female",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 3536761725,
+  "face": {
+    "head_height": 0,
+    "head_width": 0.16,
+    "head_depth": 0,
+    "skull_depth": 0,
+    "forehead_slope": 0,
+    "forehead_height": 0,
+    "temple_width": 0,
+    "head_round": 0.48,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0,
+    "eye_size": 0,
+    "eye_spacing": 0,
+    "eye_tilt": 0,
+    "eye_depth": 0,
+    "upper_lid_fold": 0.38,
+    "eye_opening": -0.016,
+    "inner_lid_fold": 0.315,
+    "lower_lid_height": 0,
+    "brow_height": 0,
+    "brow_angle": 0,
+    "brow_depth": 0,
+    "nose_bridge_width": 0,
+    "nose_tip_width": 0,
+    "nose_tip_angle": 0.18,
+    "nose_width": 0,
+    "nose_length": -0.3,
+    "nose_projection": -0.3,
+    "nose_curve": 0,
+    "nostril_width": 0,
+    "nostril_angle": 0,
+    "nose_hump": 0,
+    "mouth_width": -0.2,
+    "upper_lip_fullness": 0,
+    "lower_lip_fullness": 0.08,
+    "mouth_corner_tilt": 0,
+    "philtrum_length": 0,
+    "cupids_bow": 0,
+    "mouth_depth": 0,
+    "upper_lip_height": 0,
+    "lower_lip_height": 0,
+    "jaw_width": 0,
+    "chin_width": -0.1,
+    "chin_length": -0.38,
+    "chin_projection": 0,
+    "chin_prognathism": 0,
+    "chin_cleft": 0,
+    "cheek_height": 0,
+    "cheekbone_prominence": 0.24,
+    "cheek_fullness": 0.45,
+    "cheek_hollow": 0,
+    "ear_size": 0,
+    "ear_angle": 0,
+    "ear_lobe": 0,
+    "nose_mid_width": 0,
+    "nose_base_width": 0
+  },
+  "asymmetry": {
+    "eye_size": 0,
+    "eye_spacing": 0,
+    "eye_tilt": 0,
+    "eye_depth": 0,
+    "upper_lid_fold": -0.011,
+    "eye_opening": 0.0,
+    "inner_lid_fold": -0.01,
+    "lower_lid_height": 0,
+    "cheek_height": 0,
+    "cheekbone_prominence": 0.0,
+    "cheek_fullness": 0.0,
+    "cheek_hollow": 0,
+    "ear_size": 0,
+    "ear_angle": 0,
+    "ear_lobe": 0
+  },
+  "age": {
+    "years": 3,
+    "features": {
+      "head_age": 0,
+      "eye_bags_left": 0,
+      "eye_bags_right": 0,
+      "sagging": 0,
+      "lip_thinning": 0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 0.95,
+    "weight": 0.5,
+    "muscle": 0.2,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "young_asian_female",
+    "tone": 1,
+    "ruddiness": 0,
+    "freckles": 0,
+    "pimples": 0,
+    "look": "toddler",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "ponytail01",
+    "style": "ponytail",
+    "color": "#29231f",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.5,
+    "color": "#30251f",
+    "greying": 0
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "female_elegantsuit01",
+    "shoes": "shoes02",
+    "wardrobe": "toddler-dress",
+    "top_color": "#bd8b72",
+    "bottom_color": "#aaa08a",
+    "accent_color": "#ad9470"
+  },
+  "signature_traits": [
+    "Toddler round cheeks and short button nose; echoes her mother without adult facial creases",
+    "Individual eyelids and nose"
+  ],
+  "face_design": "Toddler round cheeks and short button nose; echoes her mother without adult facial creases",
+  "states": [
+    "normal"
+  ],
+  "review": "draft"
+}

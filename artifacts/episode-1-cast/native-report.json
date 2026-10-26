@@ -1,0 +1,227 @@
+{
+  "passed": true,
+  "blender": "5.2.2 LTS",
+  "results": [
+    {
+      "id": "ganaa",
+      "meshes": 19,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 7,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "irina",
+      "meshes": 16,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 5,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "dasha",
+      "meshes": 16,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 4,
+      "wrinkleParts": 0,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "hurel",
+      "meshes": 22,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 8,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "tsetsegmaa",
+      "meshes": 12,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 1,
+      "wrinkleParts": 0,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "dulmaa",
+      "meshes": 25,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 8,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "sukhee",
+      "meshes": 11,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 0,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "altan",
+      "meshes": 12,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 0,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "yard-guard",
+      "meshes": 19,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 7,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "yard-runner",
+      "meshes": 11,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 0,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "party-young-man",
+      "meshes": 18,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 7,
+      "wrinkleParts": 0,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "party-young-woman",
+      "meshes": 16,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 5,
+      "wrinkleParts": 0,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    },
+    {
+      "id": "party-older-man",
+      "meshes": 18,
+      "sourceVertices": 19158,
+      "bones": 137,
+      "fingerBones": 30,
+      "packedImages": 15,
+      "blemishes": 0,
+      "wrinkleParts": 7,
+      "eyeVertices": 1064,
+      "stockLashCardsRemoved": true,
+      "poses": [
+        1,
+        25,
+        49
+      ]
+    }
+  ]
+}
