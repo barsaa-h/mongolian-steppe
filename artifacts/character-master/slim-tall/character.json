@@ -1,0 +1,22 @@
+{
+  "name": "Slim Tall",
+  "height_m": 1.9,
+  "body": {
+    "gender": 0.0,
+    "age": 0.5,
+    "weight": 0.15,
+    "muscle": 0.35,
+    "proportions": 0.5,
+    "height": 0.8,
+    "race": {
+      "asian": 1.0,
+      "african": 0.0,
+      "caucasian": 0.0
+    }
+  },
+  "skin": "young_asian_female",
+  "hair": "short02",
+  "outfit": "male_casualsuit01",
+  "shoes": "shoes02",
+  "targets": {}
+}

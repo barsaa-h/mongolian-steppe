@@ -1,0 +1,188 @@
+{
+  "passed": true,
+  "generatedAt": "2026-10-26T13:23:15.713Z",
+  "startupFailureHandled": true,
+  "results": [
+    {
+      "id": "default",
+      "meshes": 12,
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ],
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 23,
+          "normalDelta": 0.00011529429544272836
+        },
+        {
+          "hand": "HandsR",
+          "matched": 23,
+          "normalDelta": 0.00011529429544272836
+        }
+      ],
+      "bones": 137,
+      "maxMotion": 0.2564477318284787,
+      "height": 1.7,
+      "headFraction": 0.08732693376314583,
+      "waist": 0.3786948784479454,
+      "problems": []
+    },
+    {
+      "id": "male",
+      "meshes": 12,
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ],
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 23,
+          "normalDelta": 0.00014039773807580556
+        },
+        {
+          "hand": "HandsR",
+          "matched": 23,
+          "normalDelta": 0.00017237693571983475
+        }
+      ],
+      "bones": 137,
+      "maxMotion": 0.2777218211158586,
+      "height": 1.7,
+      "headFraction": 0.09336266578384302,
+      "waist": 0.3313299074450999,
+      "problems": []
+    },
+    {
+      "id": "heavy",
+      "meshes": 12,
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ],
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 23,
+          "normalDelta": 0.00014146705381589493
+        },
+        {
+          "hand": "HandsR",
+          "matched": 23,
+          "normalDelta": 0.00014146705381589493
+        }
+      ],
+      "bones": 137,
+      "maxMotion": 0.27680925167654735,
+      "height": 1.7000000000000002,
+      "headFraction": 0.09336259953450582,
+      "waist": 0.3548917803156306,
+      "problems": []
+    },
+    {
+      "id": "slim-tall",
+      "meshes": 12,
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ],
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 23,
+          "normalDelta": 0.00017318980674645469
+        },
+        {
+          "hand": "HandsR",
+          "matched": 23,
+          "normalDelta": 0.00017318980674645469
+        }
+      ],
+      "bones": 137,
+      "maxMotion": 0.2839034962125611,
+      "height": 1.9,
+      "headFraction": 0.08071306153948486,
+      "waist": 0.35747262158095144,
+      "problems": []
+    },
+    {
+      "id": "child",
+      "meshes": 12,
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ],
+      "wrists": [
+        {
+          "hand": "HandsL",
+          "matched": 23,
+          "normalDelta": 0.00010000044804416292
+        },
+        {
+          "hand": "HandsR",
+          "matched": 23,
+          "normalDelta": 0.00010000044804416292
+        }
+      ],
+      "bones": 137,
+      "maxMotion": 0.1955979599724066,
+      "height": 1.3,
+      "headFraction": 0.09961138813105504,
+      "waist": 0.25725387745515965,
+      "problems": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,19 @@
+{
+  "hair": [
+    "bob01",
+    "short02"
+  ],
+  "clothes": [
+    "female_casualsuit01",
+    "female_casualsuit02",
+    "male_casualsuit01",
+    "male_casualsuit02",
+    "shoes02",
+    "shoes03"
+  ],
+  "skins": [
+    "young_asian_female",
+    "young_asian_male",
+    "young_caucasian_female"
+  ]
+}

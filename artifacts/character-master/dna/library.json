@@ -1,0 +1,178 @@
+{
+  "license": "CC0-1.0 for bundled graphical sources; MPFB code GPL-3.0",
+  "hair": [
+    {
+      "id": "bob01",
+      "asset": "bob01",
+      "style": "bob",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "bob02",
+      "asset": "bob02",
+      "style": "bob",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "braid01",
+      "asset": "braid01",
+      "style": "long",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "long01",
+      "asset": "long01",
+      "style": "long",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "ponytail01",
+      "asset": "ponytail01",
+      "style": "ponytail",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "short01",
+      "asset": "short01",
+      "style": "short",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "short02",
+      "asset": "short02",
+      "style": "short",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "short03",
+      "asset": "short03",
+      "style": "short",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "short04",
+      "asset": "short04",
+      "style": "short",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "long-bob",
+      "asset": "long01",
+      "style": "bob",
+      "length": 1,
+      "volume": 1
+    },
+    {
+      "id": "low-bun",
+      "asset": "ponytail01",
+      "style": "bun",
+      "length": 1,
+      "volume": 0.95
+    },
+    {
+      "id": "cropped-receding",
+      "asset": "short04",
+      "style": "receding",
+      "length": 0.85,
+      "volume": 1
+    },
+    {
+      "id": "compact-crew",
+      "asset": "short03",
+      "style": "short",
+      "length": 0.65,
+      "volume": 0.9
+    },
+    {
+      "id": "compact-long",
+      "asset": "long01",
+      "style": "long",
+      "length": 0.8,
+      "volume": 0.9
+    },
+    {
+      "id": "wide-bob",
+      "asset": "bob01",
+      "style": "bob",
+      "length": 0.9,
+      "volume": 1.1
+    }
+  ],
+  "hairNote": "15 fitted style recipes from 9 source meshes; cropped/bun variants also use the shared builder. Different colors do not count as additional styles.",
+  "brows": [
+    {
+      "id": "heavy-straight",
+      "thickness": 1.2,
+      "greying": 0,
+      "brow_angle": -0.15
+    },
+    {
+      "id": "fine-soft",
+      "thickness": 0.65,
+      "greying": 0,
+      "brow_angle": 0
+    },
+    {
+      "id": "arched",
+      "thickness": 0.8,
+      "greying": 0,
+      "brow_angle": 0.3
+    },
+    {
+      "id": "silver-thin",
+      "thickness": 0.55,
+      "greying": 0.6,
+      "brow_angle": 0.1
+    },
+    {
+      "id": "child-fine",
+      "thickness": 0.5,
+      "greying": 0,
+      "brow_angle": 0
+    }
+  ],
+  "clothing": [
+    "female_casualsuit01",
+    "female_casualsuit02",
+    "female_elegantsuit01",
+    "female_sportsuit01",
+    "male_casualsuit01",
+    "male_casualsuit02",
+    "male_casualsuit03",
+    "male_casualsuit04",
+    "male_casualsuit05",
+    "male_casualsuit06",
+    "male_elegantsuit01",
+    "male_worksuit01",
+    "shoes02",
+    "shoes03"
+  ],
+  "eyes": [
+    "brown",
+    "brownlight",
+    "blue",
+    "bluegreen",
+    "grey",
+    "green"
+  ],
+  "accessories": [
+    "Clothes.GuardCap",
+    "Props.PaperCrown",
+    "Story.ForearmBandage"
+  ],
+  "wardrobeAdapters": [
+    "deel with overlap collar/sash/boots",
+    "apron",
+    "birthday/toddler skirt"
+  ],
+  "propsNote": "Existing episode props only. New shot-specific props require their own assets."
+}

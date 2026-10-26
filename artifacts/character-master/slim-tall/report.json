@@ -1,0 +1,155 @@
+{
+  "name": "Slim Tall",
+  "bodyHeightM": 1.9,
+  "sourceBodyVertices": 19158,
+  "headHeightFraction": 0.08071306153948486,
+  "waistWidthM": 0.35747262158095144,
+  "sourceShapeKeys": 10,
+  "rigBones": 137,
+  "fingerBones": 30,
+  "garmentCorrections": {
+    "Clothes.Outfit": 230,
+    "Shoes": 0
+  },
+  "fullBodyRetained": true,
+  "renderBodyUsesClothingMasks": true,
+  "meshes": [
+    {
+      "name": "Eyebrows",
+      "role": "Eyebrows",
+      "vertices": 124,
+      "triangles": 192
+    },
+    {
+      "name": "Eyelashes",
+      "role": "Eyelashes",
+      "vertices": 250,
+      "triangles": 368
+    },
+    {
+      "name": "Eyes",
+      "role": "Eyes",
+      "vertices": 96,
+      "triangles": 172
+    },
+    {
+      "name": "Shoes",
+      "role": "Shoes",
+      "vertices": 1594,
+      "triangles": 3064
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 1755,
+      "triangles": 3344
+    },
+    {
+      "name": "Teeth",
+      "role": "Teeth",
+      "vertices": 3868,
+      "triangles": 7120
+    },
+    {
+      "name": "Tongue",
+      "role": "Tongue",
+      "vertices": 226,
+      "triangles": 448
+    },
+    {
+      "name": "Clothes.Top",
+      "role": "Clothes.Top",
+      "vertices": 4130,
+      "triangles": 8066
+    },
+    {
+      "name": "Clothes.Bottom",
+      "role": "Clothes.Bottom",
+      "vertices": 4394,
+      "triangles": 8606
+    },
+    {
+      "name": "Hands.L",
+      "role": "Hands.L",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Hands.R",
+      "role": "Hands.R",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Body.Skin",
+      "role": "Body",
+      "vertices": 4620,
+      "triangles": 9112
+    }
+  ],
+  "packedTextures": [
+    {
+      "name": "brown_eye.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eyebrow001.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "eyelashes01.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "male_casualsuit01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "shoes02_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "short02_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "teeth.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "tongue01_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "young_lightskinned_female_diffuse3.png",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}

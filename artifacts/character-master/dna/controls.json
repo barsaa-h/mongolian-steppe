@@ -1,0 +1,558 @@
+{
+  "head_height": {
+    "group": "head",
+    "negative": [
+      "head/head-scale-vert-decr"
+    ],
+    "positive": [
+      "head/head-scale-vert-incr"
+    ]
+  },
+  "head_width": {
+    "group": "head",
+    "negative": [
+      "head/head-scale-horiz-decr"
+    ],
+    "positive": [
+      "head/head-scale-horiz-incr"
+    ]
+  },
+  "head_depth": {
+    "group": "head",
+    "negative": [
+      "head/head-scale-depth-decr"
+    ],
+    "positive": [
+      "head/head-scale-depth-incr"
+    ]
+  },
+  "skull_depth": {
+    "group": "head",
+    "negative": [
+      "head/head-back-scale-depth-decr"
+    ],
+    "positive": [
+      "head/head-back-scale-depth-incr"
+    ]
+  },
+  "forehead_slope": {
+    "group": "head",
+    "negative": [
+      "forehead/forehead-trans-backward"
+    ],
+    "positive": [
+      "forehead/forehead-trans-forward"
+    ]
+  },
+  "forehead_height": {
+    "group": "head",
+    "negative": [
+      "forehead/forehead-scale-vert-decr"
+    ],
+    "positive": [
+      "forehead/forehead-scale-vert-incr"
+    ]
+  },
+  "temple_width": {
+    "group": "head",
+    "negative": [
+      "forehead/forehead-temple-decr"
+    ],
+    "positive": [
+      "forehead/forehead-temple-incr"
+    ]
+  },
+  "head_round": {
+    "group": "head",
+    "negative": [],
+    "positive": [
+      "head/head-round"
+    ]
+  },
+  "head_square": {
+    "group": "head",
+    "negative": [],
+    "positive": [
+      "head/head-square"
+    ]
+  },
+  "head_oval": {
+    "group": "head",
+    "negative": [],
+    "positive": [
+      "head/head-oval"
+    ]
+  },
+  "head_diamond": {
+    "group": "head",
+    "negative": [],
+    "positive": [
+      "head/head-diamond"
+    ]
+  },
+  "head_rectangular": {
+    "group": "head",
+    "negative": [],
+    "positive": [
+      "head/head-rectangular"
+    ]
+  },
+  "head_heart": {
+    "group": "head",
+    "negative": [],
+    "positive": [
+      "head/head-invertedtriangular"
+    ]
+  },
+  "head_triangular": {
+    "group": "head",
+    "negative": [],
+    "positive": [
+      "head/head-triangular"
+    ]
+  },
+  "head_fullness": {
+    "group": "head",
+    "negative": [
+      "head/head-fat-decr"
+    ],
+    "positive": [
+      "head/head-fat-incr"
+    ]
+  },
+  "eye_size": {
+    "group": "eyes",
+    "negative": [
+      "eyes/l-eye-scale-decr",
+      "eyes/r-eye-scale-decr"
+    ],
+    "positive": [
+      "eyes/l-eye-scale-incr",
+      "eyes/r-eye-scale-incr"
+    ]
+  },
+  "eye_spacing": {
+    "group": "eyes",
+    "negative": [
+      "eyes/l-eye-trans-in",
+      "eyes/r-eye-trans-in"
+    ],
+    "positive": [
+      "eyes/l-eye-trans-out",
+      "eyes/r-eye-trans-out"
+    ]
+  },
+  "eye_tilt": {
+    "group": "eyes",
+    "negative": [
+      "eyes/l-eye-corner2-down",
+      "eyes/r-eye-corner2-down"
+    ],
+    "positive": [
+      "eyes/l-eye-corner2-up",
+      "eyes/r-eye-corner2-up"
+    ]
+  },
+  "eye_depth": {
+    "group": "eyes",
+    "negative": [
+      "eyes/l-eye-push1-in",
+      "eyes/r-eye-push1-in"
+    ],
+    "positive": [
+      "eyes/l-eye-push1-out",
+      "eyes/r-eye-push1-out"
+    ]
+  },
+  "upper_lid_fold": {
+    "group": "eyes",
+    "negative": [
+      "eyes/l-eye-eyefold-up",
+      "eyes/r-eye-eyefold-up"
+    ],
+    "positive": [
+      "eyes/l-eye-eyefold-down",
+      "eyes/r-eye-eyefold-down"
+    ]
+  },
+  "eye_opening": {
+    "group": "eyes",
+    "negative": [
+      "eyes/l-eye-height2-decr",
+      "eyes/r-eye-height2-decr"
+    ],
+    "positive": [
+      "eyes/l-eye-height2-incr",
+      "eyes/r-eye-height2-incr"
+    ]
+  },
+  "inner_lid_fold": {
+    "group": "eyes",
+    "negative": [
+      "eyes/l-eye-epicanthus-in",
+      "eyes/r-eye-epicanthus-in"
+    ],
+    "positive": [
+      "eyes/l-eye-epicanthus-out",
+      "eyes/r-eye-epicanthus-out"
+    ]
+  },
+  "lower_lid_height": {
+    "group": "eyes",
+    "negative": [
+      "eyes/l-eye-height1-decr",
+      "eyes/r-eye-height1-decr"
+    ],
+    "positive": [
+      "eyes/l-eye-height1-incr",
+      "eyes/r-eye-height1-incr"
+    ]
+  },
+  "brow_height": {
+    "group": "brow",
+    "negative": [
+      "eyebrows/eyebrows-trans-down"
+    ],
+    "positive": [
+      "eyebrows/eyebrows-trans-up"
+    ]
+  },
+  "brow_angle": {
+    "group": "brow",
+    "negative": [
+      "eyebrows/eyebrows-angle-down"
+    ],
+    "positive": [
+      "eyebrows/eyebrows-angle-up"
+    ]
+  },
+  "brow_depth": {
+    "group": "brow",
+    "negative": [
+      "eyebrows/eyebrows-trans-backward"
+    ],
+    "positive": [
+      "eyebrows/eyebrows-trans-forward"
+    ]
+  },
+  "nose_bridge_width": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-width1-decr"
+    ],
+    "positive": [
+      "nose/nose-width1-incr"
+    ]
+  },
+  "nose_tip_width": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-point-width-decr"
+    ],
+    "positive": [
+      "nose/nose-point-width-incr"
+    ]
+  },
+  "nose_tip_angle": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-point-down"
+    ],
+    "positive": [
+      "nose/nose-point-up"
+    ]
+  },
+  "nose_width": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-scale-horiz-decr"
+    ],
+    "positive": [
+      "nose/nose-scale-horiz-incr"
+    ]
+  },
+  "nose_length": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-scale-vert-decr"
+    ],
+    "positive": [
+      "nose/nose-scale-vert-incr"
+    ]
+  },
+  "nose_projection": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-scale-depth-decr"
+    ],
+    "positive": [
+      "nose/nose-scale-depth-incr"
+    ]
+  },
+  "nose_curve": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-curve-concave"
+    ],
+    "positive": [
+      "nose/nose-curve-convex"
+    ]
+  },
+  "nostril_width": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-nostrils-width-decr"
+    ],
+    "positive": [
+      "nose/nose-nostrils-width-incr"
+    ]
+  },
+  "nostril_angle": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-nostrils-angle-down"
+    ],
+    "positive": [
+      "nose/nose-nostrils-angle-up"
+    ]
+  },
+  "nose_hump": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-hump-decr"
+    ],
+    "positive": [
+      "nose/nose-hump-incr"
+    ]
+  },
+  "mouth_width": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-scale-horiz-decr"
+    ],
+    "positive": [
+      "mouth/mouth-scale-horiz-incr"
+    ]
+  },
+  "upper_lip_fullness": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-upperlip-volume-decr"
+    ],
+    "positive": [
+      "mouth/mouth-upperlip-volume-incr"
+    ]
+  },
+  "lower_lip_fullness": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-lowerlip-volume-decr"
+    ],
+    "positive": [
+      "mouth/mouth-lowerlip-volume-incr"
+    ]
+  },
+  "mouth_corner_tilt": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-angles-down"
+    ],
+    "positive": [
+      "mouth/mouth-angles-up"
+    ]
+  },
+  "philtrum_length": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-trans-up"
+    ],
+    "positive": [
+      "mouth/mouth-trans-down"
+    ]
+  },
+  "cupids_bow": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-cupidsbow-decr"
+    ],
+    "positive": [
+      "mouth/mouth-cupidsbow-incr"
+    ]
+  },
+  "mouth_depth": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-scale-depth-decr"
+    ],
+    "positive": [
+      "mouth/mouth-scale-depth-incr"
+    ]
+  },
+  "upper_lip_height": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-upperlip-height-decr"
+    ],
+    "positive": [
+      "mouth/mouth-upperlip-height-incr"
+    ]
+  },
+  "lower_lip_height": {
+    "group": "mouth",
+    "negative": [
+      "mouth/mouth-lowerlip-height-decr"
+    ],
+    "positive": [
+      "mouth/mouth-lowerlip-height-incr"
+    ]
+  },
+  "jaw_width": {
+    "group": "jaw",
+    "negative": [
+      "chin/chin-bones-decr"
+    ],
+    "positive": [
+      "chin/chin-bones-incr"
+    ]
+  },
+  "chin_width": {
+    "group": "jaw",
+    "negative": [
+      "chin/chin-width-decr"
+    ],
+    "positive": [
+      "chin/chin-width-incr"
+    ]
+  },
+  "chin_length": {
+    "group": "jaw",
+    "negative": [
+      "chin/chin-height-decr"
+    ],
+    "positive": [
+      "chin/chin-height-incr"
+    ]
+  },
+  "chin_projection": {
+    "group": "jaw",
+    "negative": [
+      "chin/chin-prominent-decr"
+    ],
+    "positive": [
+      "chin/chin-prominent-incr"
+    ]
+  },
+  "chin_prognathism": {
+    "group": "jaw",
+    "negative": [
+      "chin/chin-prognathism-decr"
+    ],
+    "positive": [
+      "chin/chin-prognathism-incr"
+    ]
+  },
+  "chin_cleft": {
+    "group": "jaw",
+    "negative": [
+      "chin/chin-cleft-decr"
+    ],
+    "positive": [
+      "chin/chin-cleft-incr"
+    ]
+  },
+  "cheek_height": {
+    "group": "cheeks",
+    "negative": [
+      "cheek/l-cheek-trans-down",
+      "cheek/r-cheek-trans-down"
+    ],
+    "positive": [
+      "cheek/l-cheek-trans-up",
+      "cheek/r-cheek-trans-up"
+    ]
+  },
+  "cheekbone_prominence": {
+    "group": "cheeks",
+    "negative": [
+      "cheek/l-cheek-bones-decr",
+      "cheek/r-cheek-bones-decr"
+    ],
+    "positive": [
+      "cheek/l-cheek-bones-incr",
+      "cheek/r-cheek-bones-incr"
+    ]
+  },
+  "cheek_fullness": {
+    "group": "cheeks",
+    "negative": [
+      "cheek/l-cheek-volume-decr",
+      "cheek/r-cheek-volume-decr"
+    ],
+    "positive": [
+      "cheek/l-cheek-volume-incr",
+      "cheek/r-cheek-volume-incr"
+    ]
+  },
+  "cheek_hollow": {
+    "group": "cheeks",
+    "negative": [
+      "cheek/l-cheek-inner-incr",
+      "cheek/r-cheek-inner-incr"
+    ],
+    "positive": [
+      "cheek/l-cheek-inner-decr",
+      "cheek/r-cheek-inner-decr"
+    ]
+  },
+  "ear_size": {
+    "group": "ears",
+    "negative": [
+      "ears/l-ear-scale-decr",
+      "ears/r-ear-scale-decr"
+    ],
+    "positive": [
+      "ears/l-ear-scale-incr",
+      "ears/r-ear-scale-incr"
+    ]
+  },
+  "ear_angle": {
+    "group": "ears",
+    "negative": [
+      "ears/l-ear-rot-backward",
+      "ears/r-ear-rot-backward"
+    ],
+    "positive": [
+      "ears/l-ear-rot-forward",
+      "ears/r-ear-rot-forward"
+    ]
+  },
+  "ear_lobe": {
+    "group": "ears",
+    "negative": [
+      "ears/l-ear-lobe-decr",
+      "ears/r-ear-lobe-decr"
+    ],
+    "positive": [
+      "ears/l-ear-lobe-incr",
+      "ears/r-ear-lobe-incr"
+    ]
+  },
+  "nose_mid_width": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-width2-decr"
+    ],
+    "positive": [
+      "nose/nose-width2-incr"
+    ]
+  },
+  "nose_base_width": {
+    "group": "nose",
+    "negative": [
+      "nose/nose-width3-decr"
+    ],
+    "positive": [
+      "nose/nose-width3-incr"
+    ]
+  }
+}

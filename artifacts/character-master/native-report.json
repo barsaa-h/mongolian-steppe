@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "blenderVersion": "5.2.2 LTS",
+  "results": [
+    {
+      "id": "default",
+      "sourceVertices": 19158,
+      "sourceShapeKeys": 6,
+      "bones": 137,
+      "packedImages": 9,
+      "posesChecked": [
+        1,
+        25,
+        49
+      ],
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ]
+    },
+    {
+      "id": "male",
+      "sourceVertices": 19158,
+      "sourceShapeKeys": 6,
+      "bones": 137,
+      "packedImages": 9,
+      "posesChecked": [
+        1,
+        25,
+        49
+      ],
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ]
+    },
+    {
+      "id": "heavy",
+      "sourceVertices": 19158,
+      "sourceShapeKeys": 6,
+      "bones": 137,
+      "packedImages": 9,
+      "posesChecked": [
+        1,
+        25,
+        49
+      ],
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ]
+    },
+    {
+      "id": "slim-tall",
+      "sourceVertices": 19158,
+      "sourceShapeKeys": 10,
+      "bones": 137,
+      "packedImages": 9,
+      "posesChecked": [
+        1,
+        25,
+        49
+      ],
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ]
+    },
+    {
+      "id": "child",
+      "sourceVertices": 19158,
+      "sourceShapeKeys": 9,
+      "bones": 137,
+      "packedImages": 9,
+      "posesChecked": [
+        1,
+        25,
+        49
+      ],
+      "roles": [
+        "Body",
+        "Clothes.Bottom",
+        "Clothes.Top",
+        "Eyebrows",
+        "Eyelashes",
+        "Eyes",
+        "Hair",
+        "Hands.L",
+        "Hands.R",
+        "Shoes",
+        "Teeth",
+        "Tongue"
+      ]
+    }
+  ]
+}

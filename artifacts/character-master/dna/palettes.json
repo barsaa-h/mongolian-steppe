@@ -1,0 +1,74 @@
+{
+  "mongolian": {
+    "macro": {
+      "asian": 1,
+      "caucasian": 0,
+      "african": 0
+    },
+    "face_center": {
+      "upper_lid_fold": 0.4,
+      "inner_lid_fold": 0.3,
+      "nose_projection": -0.16,
+      "cheekbone_prominence": 0.35
+    },
+    "spread": {
+      "head": 0.22,
+      "eyes": 0.28,
+      "nose": 0.3,
+      "mouth": 0.28,
+      "jaw": 0.3,
+      "cheeks": 0.25,
+      "ears": 0.18,
+      "brow": 0.2
+    },
+    "meaning": "Fictional art-direction palette, not population statistics, ancestry classification or an ethnic average. Ranges overlap and identity is independently varied."
+  },
+  "buryat-inspired": {
+    "macro": {
+      "asian": 1,
+      "caucasian": 0,
+      "african": 0
+    },
+    "face_center": {
+      "upper_lid_fold": 0.4,
+      "inner_lid_fold": 0.3,
+      "nose_projection": -0.12,
+      "cheekbone_prominence": 0.3
+    },
+    "spread": {
+      "head": 0.22,
+      "eyes": 0.28,
+      "nose": 0.3,
+      "mouth": 0.28,
+      "jaw": 0.3,
+      "cheeks": 0.25,
+      "ears": 0.18,
+      "brow": 0.2
+    },
+    "meaning": "Fictional art-direction palette, not population statistics, ancestry classification or an ethnic average. Ranges overlap and identity is independently varied."
+  },
+  "slavic": {
+    "macro": {
+      "asian": 0,
+      "caucasian": 1,
+      "african": 0
+    },
+    "face_center": {
+      "upper_lid_fold": 0.1,
+      "inner_lid_fold": -0.05,
+      "nose_projection": 0.16,
+      "cheekbone_prominence": 0.18
+    },
+    "spread": {
+      "head": 0.22,
+      "eyes": 0.28,
+      "nose": 0.3,
+      "mouth": 0.28,
+      "jaw": 0.3,
+      "cheeks": 0.25,
+      "ears": 0.18,
+      "brow": 0.2
+    },
+    "meaning": "Fictional art-direction palette, not population statistics, ancestry classification or an ethnic average. Ranges overlap and identity is independently varied."
+  }
+}

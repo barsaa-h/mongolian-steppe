@@ -1,0 +1,22 @@
+{
+  "name": "Child",
+  "height_m": 1.3,
+  "body": {
+    "gender": 0.5,
+    "age": 0.1875,
+    "weight": 0.5,
+    "muscle": 0.25,
+    "proportions": 0.5,
+    "height": 0.5,
+    "race": {
+      "asian": 1.0,
+      "african": 0.0,
+      "caucasian": 0.0
+    }
+  },
+  "skin": "young_asian_female",
+  "hair": "short02",
+  "outfit": "male_casualsuit01",
+  "shoes": "shoes02",
+  "targets": {}
+}
