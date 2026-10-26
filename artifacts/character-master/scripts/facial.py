@@ -50,7 +50,7 @@ def add_expressions(dna,collection,rig):
         elif obj.get('source_asset'):maps[obj.name]=source_map(ROOT.parents[1]/'assets/sources/makehuman-core'/obj['source_asset'],len(obj.data.vertices))
         else:maps[obj.name]=[[(nearest.find(v.co)[1],1)] for v in obj.data.vertices]
         obj.shape_key_add(name='Basis',from_mix=False)
-    family='caucasian' if dna['ancestry_preset']=='slavic' else 'asian'
+    family={'slavic':'caucasian','mongolian':'asian','buryat-inspired':'asian'}.get(dna['ancestry_preset'],dna['ancestry_preset'])
     eye_distance=(rig.data.bones['eye.L'].head_local-rig.data.bones['eye.R'].head_local).length
     head_scale=min(1.4,max(.45,eye_distance/.062))
     for name,units in EXPRESSIONS.items():

@@ -186,8 +186,9 @@ renderer.setAnimationLoop(now => {
   controls.update();
   renderer.render(scene, camera);
 });
-const dnaFiles = { default: './dna/bases/adult-female.json', male: './dna/bases/adult-male.json' };
+const dnaFiles = { default: './default/character.json', male: './male/character.json', heavy: './heavy/character.json', 'slim-tall': './slim-tall/character.json', child: './child/character.json' };
 let draft = null;
+let draftBaseFace = {};
 const sliderBox = document.getElementById('sliders');
 const dnaLink = document.getElementById('dna-download');
 const customizeNote = document.getElementById('customize-note');
@@ -210,12 +211,14 @@ function applyDraft() {
   if (!draft || !actor) return;
   actor.traverse(object => {
     const dictionary = object.morphTargetDictionary;
+    // FACE morphs are baked relative to this identity: a slider only adds the delta from the recipe value.
     if (dictionary && draft.face) {
       for (const [name, value] of Object.entries(draft.face)) {
+        const base = draftBaseFace[name] || 0;
         const positive = dictionary[`FACE.${name}.pos`];
         const negative = dictionary[`FACE.${name}.neg`];
-        if (positive !== undefined) object.morphTargetInfluences[positive] = Math.max(0, value);
-        if (negative !== undefined) object.morphTargetInfluences[negative] = Math.max(0, -value);
+        if (positive !== undefined) object.morphTargetInfluences[positive] = Math.max(0, value - base);
+        if (negative !== undefined) object.morphTargetInfluences[negative] = Math.max(0, base - value);
       }
     }
     if (!object.isMesh) return;
@@ -223,7 +226,7 @@ function applyDraft() {
     const materials = Array.isArray(object.material) ? object.material : [object.material];
     for (const material of materials) {
       if (!material?.color) continue;
-      if (role === 'Body' || role === 'Hands.L' || role === 'Hands.R') material.color.setScalar(draft.skin?.tone || 1);
+      if (role === 'Body' || role === 'Hands.L' || role === 'Hands.R') material.color.setScalar(draft.skin_detail?.tone || draft.skin?.tone || 1);
       if (role === 'Eyebrows' && draft.brows?.color) material.color.set(draft.brows.color);
     }
   });
@@ -240,7 +243,7 @@ function buildSliders(dna) {
   const groups = [
     ['Eyes', dna.eyes, { iris_scale: [.7, 1.3], pupil_size: [.6, 1.4], limbal_darkness: [0, 1], veins: [0, 1], catchlight: [0, 1], wetness: [0, 1], lash_density: [0, 1] }],
     ['Brows', dna.brows, { thickness: [.3, 1.5], head_thickness: [.4, 1.6], tail_thickness: [.2, 1.4], arch: [-1, 1], tail_length: [.7, 1.3], density: [0, 1], thickness_asymmetry: [-.25, .25] }],
-    ['Skin', dna.skin, { tone: [.7, 1.3], undertone: [-1, 1], ruddiness: [0, 1], pores: [0, 1], oiliness: [0, 1], age_lines: [0, 1], detail: [0, .3] }],
+    ['Skin', dna.skin_detail || dna.skin, { tone: [.7, 1.3], undertone: [-1, 1], ruddiness: [0, 1], pores: [0, 1], oiliness: [0, 1], age_lines: [0, 1], detail: [0, .3] }],
     ['Body', dna.body, { height_m: [.65, 2.3], weight: [0, 1], muscle: [0, 1], proportions: [0, 1], shoulders: [-1, 1], chest: [-1, 1], belly: [-1, 1], hips: [-1, 1] }],
   ];
   for (const [title, section, ranges] of groups) {
@@ -272,15 +275,17 @@ function buildSliders(dna) {
 }
 async function loadDraft(id) {
   draft = null;
+  draftBaseFace = {};
   if (sliderBox) sliderBox.replaceChildren();
   const path = dnaFiles[id];
   if (!path) {
-    if (customizeNote) customizeNote.textContent = 'Live zeros are the female and male bases. Other examples stay as generated files.';
+    if (customizeNote) customizeNote.textContent = 'This example has no editable recipe.';
     return;
   }
   const response = await fetch(path);
   if (!response.ok) throw new Error(`DNA: HTTP ${response.status}`);
   draft = await response.json();
+  draftBaseFace = { ...(draft.face || {}) };
   buildSliders(draft);
   applyDraft();
   const live = actor?.getObjectByProperty?.('type', 'SkinnedMesh');

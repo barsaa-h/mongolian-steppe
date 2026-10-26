@@ -28,6 +28,58 @@ SKIN_DEFAULTS={'undertone':0,'pores':.35,'oiliness':.16,'age_lines':0}
 def resolve_appearance(dna):
     return {'eyes':{**EYE_DEFAULTS,**dna['eyes']},'brows':{**BROW_DEFAULTS,**dna['brows']},'skin':{**SKIN_DEFAULTS,**dna['skin']}}
 
+# Optional low-level recipe fields; ranges mirror the full DNA validation above.
+RECIPE_APPEARANCE_FIELDS={'eyes':EYE_FIELDS|EYE_OPTIONAL,'brows':BROW_FIELDS|BROW_OPTIONAL,'facial_hair':{'style','coverage','greying'},'skin_detail':(SKIN_FIELDS-{'asset'})|SKIN_OPTIONAL,'hair_dna':{'volume','length'}}
+RECIPE_APPEARANCE_RANGES={'eyes':{'iris_scale':(.7,1.3),'pupil_size':(.6,1.4),'limbal_darkness':(0,1),'veins':(0,1),'catchlight':(0,1),'wetness':(0,1),'lash_density':(0,1)},'brows':{'thickness':(.3,1.5),'greying':(0,1),'head_thickness':(.4,1.6),'tail_thickness':(.2,1.4),'arch':(-1,1),'tail_length':(.7,1.3),'density':(0,1),'thickness_asymmetry':(-.25,.25)},'skin_detail':{'tone':(.7,1.3),'ruddiness':(0,1),'detail':(0,.3),'freckles':(0,100),'pimples':(0,30),'undertone':(-1,1),'pores':(0,1),'oiliness':(0,1),'age_lines':(0,1)},'facial_hair':{'coverage':(0,1),'greying':(0,1)},'hair_dna':{'volume':(.7,1.4),'length':(.5,1.5)}}
+RECIPE_APPEARANCE_INTS={'skin_detail':{'freckles','pimples'}}
+RECIPE_APPEARANCE_ENUMS={'eyes':{'color':['brown','brownlight','blue','bluegreen','grey','green']},'brows':{'style':BROW_STYLES},'skin_detail':{'look':['adult','young','toddler','weathered','tired','elder']},'facial_hair':{'style':['none','stubble']}}
+RECIPE_APPEARANCE_COLORS={'eyes':{'sclera_tint'},'brows':{'color'}}
+
+def validate_recipe_extras(config):
+    """Validate the optional recipe face/asymmetry/age/appearance overrides; absent fields keep the previous look."""
+    face=config.get('face') or {}
+    if not isinstance(face,dict):raise ValueError('face must map named controls to weights')
+    if set(face)-set(FACE_CONTROLS):raise ValueError(f'Unknown face controls: {sorted(set(face)-set(FACE_CONTROLS))}')
+    for name,value in face.items():finite(value,-1 if FACE_CONTROLS[name]['negative'] else 0,1,'face.'+name)
+    asymmetry=config.get('asymmetry') or {}
+    if not isinstance(asymmetry,dict):raise ValueError('asymmetry must map paired controls to right-side offsets')
+    paired={n for n,c in FACE_CONTROLS.items() if len(c['positive'])==2}
+    if set(asymmetry)-paired:raise ValueError(f'Asymmetry supports only paired face controls: {sorted(set(asymmetry)-paired)}')
+    if set(asymmetry)-set(face):raise ValueError(f'Asymmetry needs its base face control: {sorted(set(asymmetry)-set(face))}')
+    for name,value in asymmetry.items():
+        finite(value,-.25,.25,'asymmetry.'+name)
+        finite(face[name]+value,-1,1,'right face.'+name)
+    age=config.get('age') or {}
+    if not isinstance(age,dict) or set(age)-set(AGE_TARGETS):raise ValueError(f'age supports only {sorted(AGE_TARGETS)}')
+    for name,value in age.items():finite(value,0,1,'age.'+name)
+    for field,allowed in RECIPE_APPEARANCE_FIELDS.items():
+        override=config.get(field) or {}
+        if not isinstance(override,dict):raise ValueError(field+' must be an object')
+        if set(override)-allowed:raise ValueError(f'Unknown {field} fields: {sorted(set(override)-allowed)}')
+        for name,value in override.items():
+            if name in RECIPE_APPEARANCE_RANGES.get(field,()):finite(value,*RECIPE_APPEARANCE_RANGES[field][name],field+'.'+name)
+            if name in RECIPE_APPEARANCE_INTS.get(field,()) and not isinstance(value,int):raise ValueError(f'{field}.{name} must be an integer count')
+            if name in RECIPE_APPEARANCE_ENUMS.get(field,()) and value not in RECIPE_APPEARANCE_ENUMS[field][name]:raise ValueError(f'Unknown {field}.{name}: {value}')
+            if name in RECIPE_APPEARANCE_COLORS.get(field,()) and (not isinstance(value,str) or not re.fullmatch(r'#[0-9a-fA-F]{6}',value)):raise ValueError(f'Invalid color {field}.{name}')
+    return config
+
+def recipe_targets(config):
+    """Compile the optional recipe face/asymmetry/age fields into additive upstream targets."""
+    face=config.get('face') or {};asymmetry=config.get('asymmetry') or {};age=config.get('age') or {}
+    if not (face or age):return {}
+    targets={}
+    def add(path,value):
+        if value>0:targets[path]=round(min(1,targets.get(path,0)+value),6)
+    for name,value in face.items():
+        control=FACE_CONTROLS[name]
+        for i in range(len(control['positive'])):
+            side=value+(asymmetry.get(name,0) if i else 0)
+            paths=control['positive'] if side>=0 else control['negative']
+            if paths:add(paths[i],abs(side))
+    for name,path in AGE_TARGETS.items():add(path,age.get(name,0))
+    targets.update({'mouth/mouth-upperlip-middle-down':.1,'mouth/mouth-lowerlip-middle-up':.12})
+    return targets
+
 def finite(value,low,high,label):
     if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or not low<=value<=high:raise ValueError(f'{label}: expected finite {low}..{high}')
 

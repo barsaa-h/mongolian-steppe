@@ -2,6 +2,7 @@ import * as THREE from "three";
 import {
   buildBird,
   buildCloud,
+  foliageMaterials,
   lampMaterials,
   mat,
   mulberry,
@@ -9,7 +10,7 @@ import {
   signMaterials,
   windowMaterials,
 } from "./parts.js";
-import { cloneRepeat, glowTexture, steppeTexture } from "./textures.js";
+import { cloneRepeat, glowTexture, smokeTexture, steppeTexture } from "./textures.js";
 import { mergeStatic } from "./mergeStatic.js";
 import { placeTown, townHeight } from "./district.js";
 import { terrainHeight, groundGeometry } from "./terrain.js";
@@ -52,9 +53,8 @@ export function worldState(t) {
   const hemiGround = new THREE.Color("#20222a")
     .lerp(new THREE.Color("#8a8456"), day);
 
-  const fogColor = new THREE.Color("#1a2233")
-    .lerp(new THREE.Color("#bcc8c6"), day)
-    .lerp(new THREE.Color("#d29a78"), dusk * 0.55);
+  // Fog takes its color from the sky gradient so the horizon never shows a seam.
+  const fogColor = skyHorizon.clone().lerp(skyTop, 0.12);
 
   const cloudColor = new THREE.Color("#2c3448")
     .lerp(new THREE.Color("#f2f0e4"), day)
@@ -219,6 +219,7 @@ export function buildWorld() {
     lampPoolMaterial,
     walkers,
     horses,
+    tumbleLeaves,
     storeShopper,
     standpipePerson,
     herder,
@@ -257,20 +258,21 @@ export function buildWorld() {
     });
   }
 
+  const smoke = smokeTexture();
   const smokePuffs = [];
-  const puffGeo = new THREE.SphereGeometry(1, 5, 4);
   for (let s = 0; s < smokeSources.length; s++) {
     const source = smokeSources[s];
     const count = source.scale > 1.2 ? 6 : 3;
     for (let i = 0; i < count; i++) {
-      const material = new THREE.MeshBasicMaterial({
+      const material = new THREE.SpriteMaterial({
+        map: smoke,
         color: 0xd8d4cc,
         transparent: true,
         opacity: 0.4,
         depthWrite: false,
         fog: true,
       });
-      const puff = new THREE.Mesh(puffGeo, material);
+      const puff = new THREE.Sprite(material);
       puff.userData.dynamic = true;
       scene.add(puff);
       smokePuffs.push({
@@ -299,6 +301,30 @@ export function buildWorld() {
     object.receiveShadow = true;
   });
 
+  // Foliage wind: shader-side sway keyed on world position, so it also moves the
+  // merged static batches. Amplitude stays small to keep crowns on their trunks.
+  const windTime = { value: 0 };
+  for (const material of foliageMaterials()) {
+    material.onBeforeCompile = (shader) => {
+      shader.uniforms.uWindTime = windTime;
+      shader.vertexShader = "uniform float uWindTime;\n" + shader.vertexShader;
+      shader.vertexShader = shader.vertexShader.replace("#include <begin_vertex>", `
+        #include <begin_vertex>
+        vec4 windWorld = modelMatrix * vec4(transformed, 1.0);
+        float windPhase = windWorld.x * 0.29 + windWorld.z * 0.35;
+        float windAmp = 0.04 + 0.03 * fract(sin(windPhase * 12.9898) * 43758.5453);
+        vec3 windDir = vec3(
+          sin(uWindTime * 1.25 + windPhase) + 0.35 * sin(uWindTime * 2.9 + windPhase * 1.7),
+          0.0,
+          cos(uWindTime * 0.9 + windPhase * 1.3)
+        );
+        transformed += (modelMatrix * vec4(windDir, 0.0)).xyz * windAmp;
+      `);
+    };
+    material.customProgramCacheKey = () => "foliage-wind-v1";
+    material.needsUpdate = true;
+  }
+
   const windowMats = windowMaterials();
   const signMats = signMaterials();
   const lampMats = lampMaterials();
@@ -306,6 +332,7 @@ export function buildWorld() {
 
   function apply(state, animationTime = state.t) {
     const t = animationTime;
+    windTime.value = t;
 
     sun.position.copy(state.sunDir).multiplyScalar(360);
     sun.color.copy(state.sunColor);
@@ -366,9 +393,20 @@ export function buildWorld() {
         source.z + Math.cos(p * 5.2 + phase) * 0.45
       );
       const scale = source.scale * (0.35 + p * 1.6);
-      puff.mesh.scale.set(scale, scale, scale);
+      puff.mesh.scale.set(scale, scale, 1);
       puff.mesh.material.opacity = (1 - p) * source.opacity;
       puff.mesh.material.color.setHex(state.night > 0.5 ? 0x8a8c94 : 0xd8d4cc);
+    }
+
+    for (const leaf of tumbleLeaves) {
+      const u = (t * leaf.speed + leaf.phase) % 1;
+      leaf.mesh.position.set(
+        -168 + u * 336,
+        leaf.baseY + Math.abs(Math.sin(u * 24 + leaf.phase * 9)) * leaf.hop,
+        leaf.z + Math.sin(u * 40 + leaf.phase * 5) * 1.4
+      );
+      leaf.mesh.rotation.x = u * 44 + leaf.phase * 7;
+      leaf.mesh.rotation.z = u * 31 + leaf.phase * 3;
     }
 
     for (const walker of walkers) {

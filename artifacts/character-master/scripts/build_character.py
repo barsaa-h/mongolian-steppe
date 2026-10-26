@@ -4,6 +4,7 @@ import importlib.util
 import json
 import math
 import os
+import re
 import sys
 import types
 from pathlib import Path
@@ -112,13 +113,17 @@ def extract_faces(source, face_indices, name, collection):
 
 def master_dna(config):
     female = config['body']['gender'] < .5
-    return {
+    dna = {
+        'ancestry_preset': max(config['body']['race'], key=config['body']['race'].get),
         'hair': {'volume': 1, 'length': 1, 'greying': 0, 'color': '#29231f'},
         'facial_hair': {'style': 'none', 'coverage': 0, 'greying': 0},
         'eyes': {'color': 'brown', 'iris_scale': 1, 'sclera_tint': '#f4efe6', 'pupil_size': 1, 'limbal_darkness': .55, 'veins': .25, 'catchlight': .4, 'wetness': .24, 'lash_density': 0},
         'brows': {'thickness': 1.15 if female else 1.2, 'color': '#30251f', 'greying': 0, 'style': 'soft' if female else 'straight', 'head_thickness': 1.15 if female else 1.25, 'tail_thickness': .62 if female else .75, 'arch': .16 if female else 0, 'tail_length': 1, 'density': .9 if female else .95, 'thickness_asymmetry': 0},
         'skin': {'asset': config['skin'], 'tone': 1, 'ruddiness': 0, 'freckles': 0, 'pimples': 0, 'look': 'young', 'detail': .16, 'undertone': .04 if female else 0, 'pores': .34 if female else .38, 'oiliness': .18 if female else .14, 'age_lines': 0},
     }
+    for section, field in [('eyes', 'eyes'), ('brows', 'brows'), ('facial_hair', 'facial_hair'), ('skin', 'skin_detail'), ('hair', 'hair_dna')]:
+        dna[section].update(config.get(field) or {})
+    return dna
 
 def bake_skin(obj, size=2048):
     import bpy
@@ -168,6 +173,12 @@ def build(config, destination, *, render=True, eye_asset='high-poly', appearance
     for polygon in body.data.polygons:
         polygon.material_index = 0
         polygon.use_smooth = True
+    from dna import recipe_targets
+    compiled_targets = recipe_targets(config)
+    for path, weight in config['targets'].items():
+        compiled_targets[path] = round(min(1, compiled_targets.get(path, 0) + weight), 6)
+    for target, weight in compiled_targets.items():
+        TargetService.load_target(body, str(LIBRARY / 'data/targets' / (target + '.target.gz')), weight=weight)
     rig = HumanService.add_builtin_rig(body, 'default_no_toes')
     rig.name = 'SOURCE.Rig | Refit after source edits'
     bpy.context.view_layer.update()
@@ -307,12 +318,14 @@ def build(config, destination, *, render=True, eye_asset='high-poly', appearance
     bpy.data.objects.remove(visible_body, do_unlink=True)
     skin_body.name = 'Body.Skin'
     control_morphs = []
+    expressions = []
     if appearance:
         from appearance import apply_appearance
-        from facial import add_control_morphs
-        apply_appearance(master_dna(config), visible_rig, render_collection, bake_skin)
-        if config['name'] in {'Default', 'Male'}:
-            control_morphs = add_control_morphs(bpy.data.objects['Body.Skin'])
+        from facial import add_control_morphs, add_expressions
+        dna = master_dna(config)
+        apply_appearance(dna, visible_rig, render_collection, bake_skin)
+        control_morphs = add_control_morphs(bpy.data.objects['Body.Skin'])
+        expressions = add_expressions(dna, render_collection, visible_rig)
     meshes = [o for o in render_collection.objects if o.type == 'MESH']
     for obj in meshes:
         for vertex in obj.data.vertices:
@@ -357,6 +370,12 @@ def build(config, destination, *, render=True, eye_asset='high-poly', appearance
     destination.mkdir(parents=True, exist_ok=True)
     (destination / OUTPUT_MARKER).write_text('character-master-v1\n')
     (destination / 'character.json').write_text(json.dumps(config, indent=2) + '\n')
+    # QA framing metadata; the recipe itself stays authoritative in character.json.
+    macro_age = config['body']['age']
+    base = 'child' if macro_age < .3 else 'elder' if macro_age > .75 else 'adult'
+    slug = re.sub(r'[^a-z0-9-]+', '-', config['name'].lower()).strip('-') or 'character'
+    (destination / 'dna.json').write_text(json.dumps({'id': slug, 'name': config['name'], 'base': base,
+        'body': {'height_m': config['height_m']}, 'source': 'Compiled from character.json recipe'}, indent=2) + '\n')
 
     if render:
         stage(scene, destination, config['height_m'], visible_rig)
@@ -376,9 +395,11 @@ def build(config, destination, *, render=True, eye_asset='high-poly', appearance
         'garmentCorrections': corrections, 'fullBodyRetained': True, 'renderBodyUsesClothingMasks': True,
         'meshes': [{'name': o.name, 'role': o.get('role'), 'vertices': len(o.data.vertices),
             'triangles': sum(len(p.vertices) - 2 for p in o.data.polygons)} for o in meshes],
-        'packedTextures': [{'name': i.name, 'size': list(i.size)} for i in bpy.data.images if i.packed_file]}
+        'packedTextures': [{'name': i.name, 'size': list(i.size)} for i in bpy.data.images if i.packed_file],
+        'expressions': expressions, 'controlMorphs': len(control_morphs), 'talkCheck': bool(expressions)}
     assert report['rigBones'] == 137 and report['fingerBones'] == 30
     assert abs(report['bodyHeightM'] - config['height_m']) < .001
+    assert report['talkCheck'] and report['controlMorphs'] > 0, 'Expression morphs missing'
     (destination / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
     print('CHARACTER_BUILD_OK', json.dumps(report), flush=True)
     return report

@@ -1,0 +1,9 @@
+{
+  "id": "heavy",
+  "name": "Heavy",
+  "base": "adult",
+  "body": {
+    "height_m": 1.7
+  },
+  "source": "Compiled from character.json recipe"
+}

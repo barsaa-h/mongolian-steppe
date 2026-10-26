@@ -28,8 +28,11 @@ The pinned MPFB code is loaded for that background process; no global add-on
 installation is needed. Opening the resulting Blender file needs no MPFB add-on.
 
 Outputs: `Character-Master.blend`, `character.glb`, the resolved `character.json`,
-`report.json`, and (unless skipped) `full.png` and `face.png`. Textures are packed.
-The GLB loads with Three.js `GLTFLoader` and includes the `Deformation_Check` clip.
+a QA-facing `dna.json`, `report.json`, and (unless skipped) `full.png` and
+`face.png`. Textures are packed. The GLB loads with Three.js `GLTFLoader` and
+includes the `Deformation_Check` clip, the `Talk_Check` viseme/blink clip, the
+seven additive `EXP.*` expression morphs and the named `FACE.*` control morphs
+for every preset.
 
 ## Recipe fields
 
@@ -49,6 +52,14 @@ All `body` values are finite numbers from 0 to 1. Keep every field in the exampl
 | `skin`, `hair`, `outfit`, `shoes` | Local asset identifiers from `asset-inventory.json` |
 | `targets` | Optional additional shape targets, mapping inventory paths to weights 0–1 |
 | `tints` | Optional `hair`, `outfit`, `shoes` colors as `#rrggbb`, multiplied with diffuse maps |
+| `face` | Optional named face controls from `dna/controls.json`, signed -1..1 (0..1 for one-way head shapes); compiled additively into the targets |
+| `asymmetry` | Optional right-side offsets for paired face controls, -0.25..0.25; each needs its base control in `face` |
+| `age` | Optional additive age features `head_age`, `eye_bags_left`, `eye_bags_right`, `sagging`, `lip_thinning`, `brow_droop`, 0..1 |
+| `eyes`, `brows`, `skin_detail`, `facial_hair`, `hair_dna` | Optional appearance overrides merged over the generator defaults; allowed keys and ranges follow the [DNA workflow](DNA.md) (`dna.py validate_recipe_extras`) |
+
+All override fields are optional; leaving them out keeps the previous look. The
+five shipped presets are distinct identities built only from these fields —
+compare `presets/*.json`.
 
 For example, replace `targets: {}` with:
 
@@ -65,9 +76,14 @@ on the clothed child example. A finished child asset needs age-specific texture
 art as well as the supplied child geometry.
 
 Five recipes demonstrate default female anatomy, male, heavier male, slim/tall,
-and child proportions. The child uses age targets, a fitted rig and refitted
-clothes, rather than shrinking an adult model. This is a useful editable base;
-it is not a complete wardrobe or an assertion that every target combination fits.
+and child proportions — each with its own face vector, age features, eyes, brows
+and skin layers, so no two examples share an identity. The child uses age
+targets, a fitted rig and refitted clothes, rather than shrinking an adult
+model. This is a useful editable base; it is not a complete wardrobe or an
+assertion that every target combination fits. Known limits: the supplied skin
+textures are adult source atlases even on the child example, the eyebrow
+source textures are pencil-thin strokes, and stubble uses a procedural beard
+region without a dedicated painted mask.
 
 ## Blender edit points
 
@@ -114,9 +130,20 @@ Keep that terminal running, then open
 the preview cannot load. This command serves the repository on localhost only.
 The inspector
 provides five generated examples, neck/face and hand views, a bend test and a
-wireframe view. The female and male examples also expose DNA sliders. Face
-morphs update in the view. Texture, hair and clothes changes download as DNA
-and are applied by rebuilding.
+wireframe view. Every example exposes DNA sliders seeded from its own recipe;
+face sliders add to the baked identity from the recipe value. Eye, brow and
+skin texture changes download as DNA and are applied by rebuilding.
+
+Each character folder's `qa/` holds the matching-material bald head turnaround
+and expression sheet. Rebuild the full set with:
+
+```sh
+python3 artifacts/character-master/scripts/qa_all.py
+```
+
+It renders front/three-quarter/profile and expression views per character,
+assembles `qa/lineup.png` plus a grayscale counterpart, and fails when two
+default characters' face controls are too close (`qa/distance-report.json`).
 
 ```sh
 python3 artifacts/character-master/scripts/test_config.py
@@ -127,8 +154,8 @@ CHROMIUM_EXECUTABLE_PATH=/opt/brave.com/brave/brave \
 
 The browser check requires Playwright (the bundled Codex runtime is supported)
 and the repository server at `http://127.0.0.1:5180`. It checks the actual GLBs,
-weights, moving skinned vertices, separate meshes and proportion differences.
-Omit `CHROMIUM_EXECUTABLE_PATH` to use Playwright's installed Chromium.
+weights, moving skinned vertices, separate meshes, proportion differences,
+expression morphs and the talk clip on every example.
 `browser-report.json` and `native-report.json` record verification results.
 
 ## Sources and limits

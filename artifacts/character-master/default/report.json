@@ -2,18 +2,24 @@
   "name": "Default",
   "bodyHeightM": 1.7,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.0873304477505854,
-  "waistWidthM": 0.3842918837398082,
-  "sourceShapeKeys": 6,
+  "headHeightFraction": 0.09467893033880452,
+  "waistWidthM": 0.370057884213821,
+  "sourceShapeKeys": 78,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 127,
+    "Clothes.Outfit": 129,
     "Shoes": 0
   },
   "fullBodyRetained": true,
   "renderBodyUsesClothingMasks": true,
   "meshes": [
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 5203,
+      "triangles": 8474
+    },
     {
       "name": "Eyebrows",
       "role": "Eyebrows",
@@ -25,12 +31,6 @@
       "role": "Eyes",
       "vertices": 1064,
       "triangles": 2040
-    },
-    {
-      "name": "Hair",
-      "role": "Hair",
-      "vertices": 3718,
-      "triangles": 5352
     },
     {
       "name": "Shoes",
@@ -79,9 +79,28 @@
       "role": "Body",
       "vertices": 5378,
       "triangles": 10624
+    },
+    {
+      "name": "Eyelashes.Fine",
+      "role": "Eyelashes.Fine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Eyelashes.Fine.001",
+      "role": "Eyelashes.Fine",
+      "vertices": 20,
+      "triangles": 18
     }
   ],
   "packedTextures": [
+    {
+      "name": "bob01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
     {
       "name": "brown.png",
       "size": [
@@ -136,13 +155,6 @@
       "size": [
         1024,
         1024
-      ]
-    },
-    {
-      "name": "ponytail01_diffuse.png",
-      "size": [
-        2048,
-        2048
       ]
     },
     {
@@ -208,5 +220,16 @@
         2048
       ]
     }
-  ]
+  ],
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "controlMorphs": 113,
+  "talkCheck": true
 }

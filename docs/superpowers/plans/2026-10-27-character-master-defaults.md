@@ -109,3 +109,31 @@ choices labeled as such; all stay `draft` until human approval.
   not establish identity.
 - Manual edits stay out of generated output folders; the builder may replace
   anything under a `.character-master-output` marker.
+
+## Completed verification (2026-10-27)
+
+- Phase 0: `__pycache__/` untracked and ignored; the uncommitted DNA session
+  work committed as the baseline before any new changes.
+- Phase 1: recipe schema accepts optional `face`, `asymmetry`, `age`, `eyes`,
+  `brows`, `skin_detail`, `facial_hair` and `hair_dna`, validated by
+  `dna.py validate_recipe_extras` and compiled by `recipe_targets`. All five
+  characters now get 113 `FACE.*` control morphs, seven `EXP.*` expression
+  morphs and the `Talk_Check` clip regardless of name. 10 config tests, 9 DNA
+  tests, 5 cast recipe tests and the project node suite pass.
+- Phase 2: five distinct identities built and rebuilt over three rounds (hair
+  and stubble fixes between rounds). The shared stubble layer now uses fine
+  grain on a geometric beard mask instead of blobs over the whole head.
+- Phase 3: `scripts/qa_all.py` renders each character's matching-material bald
+  turnaround and expression sheet, assembles `qa/lineup.png` and the grayscale
+  counterpart, and fails on near-identical faces. All ten pairs pass
+  (closest pair 0.141 vs threshold 0.055). The browser check exercises
+  expression morphs and the talk clip on every GLB and passes; the native
+  check passes. See `artifacts/character-master/qa/`.
+- Phase 4: README recipe table and QA sections updated; DNA.md describes the
+  master presets; the viewer loads every character's own recipe, with face
+  sliders applying deltas relative to the baked identity.
+- Human review still pending: the designs stay draft. Remaining defects to
+  review: the child's wide-eyed stare, the smile expression closing the eyes
+  (shared expression-unit quirk, also present in the episode cast), pencil-thin
+  eyebrow source textures, the adult skin atlas on the child, and the default
+  bob partly covering one eye.

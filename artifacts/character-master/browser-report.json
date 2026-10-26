@@ -1,53 +1,56 @@
 {
   "passed": true,
-  "generatedAt": "2026-10-26T18:51:43.537Z",
+  "generatedAt": "2026-10-26T21:57:17.284Z",
   "startupFailureHandled": true,
   "results": [
     {
       "id": "default",
-      "meshes": 12,
+      "meshes": 13,
       "roles": [
         "Body",
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
         "Eyes",
         "Hair",
         "Hands.L",
         "Hands.R",
         "Shoes",
         "Teeth",
-        "Tongue"
+        "Tongue",
+        "Eyelashes.Fine",
+        "Eyelashes.Fine"
       ],
       "wrists": [
         {
           "hand": "HandsL",
-          "matched": 23,
-          "normalDelta": 0.00011529429544272836
+          "matched": 27,
+          "normalDelta": 0.0001708618084345013
         },
         {
           "hand": "HandsR",
-          "matched": 23,
-          "normalDelta": 0.00011529429544272836
+          "matched": 27,
+          "normalDelta": 0.0001708618084345013
         }
       ],
       "bones": 137,
-      "maxMotion": 0.2564477318284787,
+      "maxMotion": 0.2545013428091556,
+      "faceMorphs": 113,
+      "expressionMeshes": 4,
+      "talkMorphMeshes": 4,
       "height": 1.7,
-      "headFraction": 0.08732693376314583,
-      "waist": 0.3786948784479454,
+      "headFraction": 0.09467893033880452,
+      "waist": 0.370057884213821,
       "problems": []
     },
     {
       "id": "male",
-      "meshes": 12,
+      "meshes": 11,
       "roles": [
         "Body",
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
         "Eyes",
         "Hair",
         "Hands.L",
@@ -60,30 +63,32 @@
         {
           "hand": "HandsL",
           "matched": 23,
-          "normalDelta": 0.00014039773807580556
+          "normalDelta": 0.00017119538326308201
         },
         {
           "hand": "HandsR",
           "matched": 23,
-          "normalDelta": 0.00017237693571983475
+          "normalDelta": 0.00014056186922616434
         }
       ],
       "bones": 137,
-      "maxMotion": 0.2777218211158586,
-      "height": 1.7,
-      "headFraction": 0.09336266578384302,
-      "waist": 0.3313299074450999,
+      "maxMotion": 0.27854222310598015,
+      "faceMorphs": 113,
+      "expressionMeshes": 4,
+      "talkMorphMeshes": 4,
+      "height": 1.7000000000000002,
+      "headFraction": 0.0915604492123143,
+      "waist": 0.3371443832396324,
       "problems": []
     },
     {
       "id": "heavy",
-      "meshes": 12,
+      "meshes": 11,
       "roles": [
         "Body",
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
         "Eyes",
         "Hair",
         "Hands.L",
@@ -95,31 +100,33 @@
       "wrists": [
         {
           "hand": "HandsL",
-          "matched": 23,
-          "normalDelta": 0.00014146705381589493
+          "matched": 27,
+          "normalDelta": 0.00014104088792270028
         },
         {
           "hand": "HandsR",
-          "matched": 23,
-          "normalDelta": 0.00014146705381589493
+          "matched": 27,
+          "normalDelta": 0.00014104088792270028
         }
       ],
       "bones": 137,
-      "maxMotion": 0.27680925167654735,
-      "height": 1.7000000000000002,
-      "headFraction": 0.09336259953450582,
-      "waist": 0.3548917803156306,
+      "maxMotion": 0.26966398971753436,
+      "faceMorphs": 113,
+      "expressionMeshes": 4,
+      "talkMorphMeshes": 4,
+      "height": 1.7,
+      "headFraction": 0.08933205062403764,
+      "waist": 0.37094996720579576,
       "problems": []
     },
     {
       "id": "slim-tall",
-      "meshes": 12,
+      "meshes": 11,
       "roles": [
         "Body",
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
         "Eyes",
         "Hair",
         "Hands.L",
@@ -131,56 +138,63 @@
       "wrists": [
         {
           "hand": "HandsL",
-          "matched": 23,
-          "normalDelta": 0.00017318980674645469
+          "matched": 27,
+          "normalDelta": 0.0001410508908474636
         },
         {
           "hand": "HandsR",
-          "matched": 23,
-          "normalDelta": 0.00017318980674645469
+          "matched": 27,
+          "normalDelta": 0.0001410508908474636
         }
       ],
       "bones": 137,
-      "maxMotion": 0.2839034962125611,
+      "maxMotion": 0.2805030568236833,
+      "faceMorphs": 113,
+      "expressionMeshes": 4,
+      "talkMorphMeshes": 4,
       "height": 1.9,
-      "headFraction": 0.08071306153948486,
-      "waist": 0.35747262158095144,
+      "headFraction": 0.09354369136898848,
+      "waist": 0.3472166566249692,
       "problems": []
     },
     {
       "id": "child",
-      "meshes": 12,
+      "meshes": 13,
       "roles": [
         "Body",
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
         "Eyes",
         "Hair",
         "Hands.L",
         "Hands.R",
         "Shoes",
         "Teeth",
-        "Tongue"
+        "Tongue",
+        "Eyelashes.Fine",
+        "Eyelashes.Fine"
       ],
       "wrists": [
         {
           "hand": "HandsL",
-          "matched": 23,
-          "normalDelta": 0.00010000044804416292
+          "matched": 27,
+          "normalDelta": 0.00009976726370698185
         },
         {
           "hand": "HandsR",
-          "matched": 23,
-          "normalDelta": 0.00010000044804416292
+          "matched": 27,
+          "normalDelta": 0.00009981633955443564
         }
       ],
       "bones": 137,
-      "maxMotion": 0.1955979599724066,
-      "height": 1.3,
-      "headFraction": 0.09961138813105504,
-      "waist": 0.25725387745515965,
+      "maxMotion": 0.1940273504173458,
+      "faceMorphs": 113,
+      "expressionMeshes": 4,
+      "talkMorphMeshes": 4,
+      "height": 1.3000000000000003,
+      "headFraction": 0.10770383623560223,
+      "waist": 0.25518808242259716,
       "problems": []
     }
   ],

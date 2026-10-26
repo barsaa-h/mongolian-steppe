@@ -16,7 +16,7 @@ try {
   for (const id of ['default', 'male', 'heavy', 'slim-tall', 'child']) {
     if (id !== 'default') await page.evaluate(id => window.__master.select(id), id);
     const result = await page.evaluate(async id => {
-      const { getActor, getState, setTest, setTime } = window.__master;
+      const { getActor, getState, setTest, setTime, setExpression, setPerformance } = window.__master;
       if (!getState().loaded || getState().preset !== id) throw Error(`Preset failed: ${id}`);
       const actor = getActor();
       const meshes = [];
@@ -38,8 +38,10 @@ try {
           if (!w.every(value => Number.isFinite(value) && value >= 0) || Math.abs(w.reduce((a,b) => a+b, 0) - 1) > .001) throw Error(`Invalid weights: ${mesh.name}/${v}`);
           for (let slot = 0; slot < 4; slot++) if (indices.array[v*4+slot] >= mesh.skeleton.bones.length) throw Error('Invalid bone index');
         }
-        const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
-        for (const material of materials) if (!material.map?.image?.width) problems.push(`Missing texture: ${mesh.name}`);
+        if (!mesh.userData.role?.startsWith('Eyelashes.Fine')) {
+          const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+          for (const material of materials) if (!material.map?.image?.width) problems.push(`Missing texture: ${mesh.name}`);
+        }
       }
       const body = meshes.find(mesh => mesh.userData.role === 'Body');
       const positionKey = (attribute, index) => [attribute.getX(index), attribute.getY(index), attribute.getZ(index)].map(value => Math.round(value * 1e5)).join(',');
@@ -79,8 +81,24 @@ try {
       const maxMotion = Math.max(...rest.map((value, i) => Math.abs(value - bent[i])));
       if (maxMotion < .01) problems.push('Animation did not deform vertices');
       setTest(false);
+      const facial = meshes.filter(mesh => mesh.morphTargetDictionary && Object.keys(mesh.morphTargetDictionary).some(name => name.startsWith('EXP.')));
+      if (!facial.length) problems.push('No EXP.* morph targets');
+      const faceMorphs = meshes.reduce((sum, mesh) => sum + (mesh.morphTargetDictionary ? Object.keys(mesh.morphTargetDictionary).filter(name => name.startsWith('FACE.')).length : 0), 0);
+      if (!faceMorphs) problems.push('No FACE.* control morphs');
+      let talking = [];
+      try {
+        setExpression('smile', 1);
+        if (!facial.some(mesh => mesh.morphTargetInfluences.some(value => value > .05))) problems.push('smile morph did not engage');
+        setPerformance(true);
+        setTime(.3);
+        talking = facial.filter(mesh => mesh.morphTargetInfluences.some(value => value > .05));
+        setPerformance(false);
+        if (!talking.length) problems.push('Talk_Check moved no morphs');
+      } catch (error) {
+        problems.push(`Expression check failed: ${error.message}`);
+      }
       const report = await fetch(`./${id}/report.json`).then(r => r.json());
-      return { id, meshes: meshes.length, roles, wrists, bones: bones.length, maxMotion, height: report.bodyHeightM, headFraction: report.headHeightFraction, waist: report.waistWidthM, problems };
+      return { id, meshes: meshes.length, roles, wrists, bones: bones.length, maxMotion, faceMorphs, expressionMeshes: facial.length, talkMorphMeshes: talking.length, height: report.bodyHeightM, headFraction: report.headHeightFraction, waist: report.waistWidthM, problems };
     }, id);
     assert.deepEqual(result.problems, [], `${id}: ${result.problems.join(', ')}`);
     results.push(result);
@@ -90,6 +108,11 @@ try {
   assert.ok(results.find(r => r.id === 'heavy').waist > results.find(r => r.id === 'male').waist * 1.05, 'Heavy build must widen the waist');
   assert.ok(results.find(r => r.id === 'child').headFraction > results[0].headFraction * 1.1, 'Child must use different head/body proportions');
   assert.equal(results.find(r => r.id === 'slim-tall').height, 1.9);
+  for (const result of results) {
+    assert.ok(result.faceMorphs > 0, `${result.id}: no FACE control morphs`);
+    assert.ok(result.expressionMeshes > 0, `${result.id}: no EXP morph meshes`);
+    assert.ok(result.talkMorphMeshes > 0, `${result.id}: Talk_Check moved no morphs`);
+  }
   await page.selectOption('#preset', 'default');
   await page.waitForFunction(() => window.__master.getState().loaded && window.__master.getState().preset === 'default');
   await page.click('#face');

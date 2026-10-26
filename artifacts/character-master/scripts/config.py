@@ -12,10 +12,11 @@ def validate_output_directory(path):
 def validate_config(config, assets, targets):
     if not isinstance(config, dict):
         raise ValueError('Character configuration must be an object')
-    fields = {'name', 'height_m', 'body', 'skin', 'hair', 'outfit', 'shoes', 'targets', 'tints'}
+    fields = {'name', 'height_m', 'body', 'skin', 'hair', 'outfit', 'shoes', 'targets', 'tints',
+              'face', 'asymmetry', 'age', 'eyes', 'brows', 'skin_detail', 'facial_hair', 'hair_dna'}
     if set(config) - fields:
         raise ValueError(f'Unknown configuration keys: {set(config) - fields}')
-    required = fields - {'tints'}
+    required = fields - {'tints', 'face', 'asymmetry', 'age', 'eyes', 'brows', 'skin_detail', 'facial_hair', 'hair_dna'}
     if required - set(config):
         raise ValueError(f'Missing configuration keys: {required - set(config)}')
     if not isinstance(config['name'], str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9 _-]{0,63}', config['name']):
@@ -57,4 +58,7 @@ def validate_config(config, assets, targets):
     for key, color in tints.items():
         if not isinstance(color, str) or not re.fullmatch(r'#[0-9a-fA-F]{6}', color):
             raise ValueError(f'tints.{key} must be #rrggbb')
+    # Deferred import: dna.py imports this module at load time.
+    from dna import validate_recipe_extras
+    validate_recipe_extras(config)
     return config

@@ -1,0 +1,192 @@
+{
+  "passed": true,
+  "characters": [
+    {
+      "id": "default",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008894032400922031
+        },
+        "frown": {
+          "maxMotionM": 0.00397487782232298
+        },
+        "blink": {
+          "maxMotionM": 0.0032624956756508523
+        },
+        "viseme_A": {
+          "maxMotionM": 0.02639063854847777
+        },
+        "viseme_E": {
+          "maxMotionM": 0.007325310165146508
+        },
+        "viseme_O": {
+          "maxMotionM": 0.013435525933876839
+        },
+        "viseme_M": {
+          "maxMotionM": 0.005472031202790507
+        }
+      },
+      "neutralRecoveryM": 3.089732835973746e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "male",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008915188421169581
+        },
+        "frown": {
+          "maxMotionM": 0.003984255880441874
+        },
+        "blink": {
+          "maxMotionM": 0.00314096124087526
+        },
+        "viseme_A": {
+          "maxMotionM": 0.026452892940068994
+        },
+        "viseme_E": {
+          "maxMotionM": 0.007342591032696324
+        },
+        "viseme_O": {
+          "maxMotionM": 0.013467205517883172
+        },
+        "viseme_M": {
+          "maxMotionM": 0.005485039752005591
+        }
+      },
+      "neutralRecoveryM": 2.5404218683696083e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "heavy",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.009108772767068863
+        },
+        "frown": {
+          "maxMotionM": 0.004070706564401817
+        },
+        "blink": {
+          "maxMotionM": 0.0031825868166645887
+        },
+        "viseme_A": {
+          "maxMotionM": 0.02702739205807589
+        },
+        "viseme_E": {
+          "maxMotionM": 0.007501887350676447
+        },
+        "viseme_O": {
+          "maxMotionM": 0.013759515307915143
+        },
+        "viseme_M": {
+          "maxMotionM": 0.005604135010908087
+        }
+      },
+      "neutralRecoveryM": 3.8463374189726633e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "slim-tall",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.008532986559667485
+        },
+        "frown": {
+          "maxMotionM": 0.0038135799025782913
+        },
+        "blink": {
+          "maxMotionM": 0.0031630454245773648
+        },
+        "viseme_A": {
+          "maxMotionM": 0.02531919601322383
+        },
+        "viseme_E": {
+          "maxMotionM": 0.007027827697337613
+        },
+        "viseme_O": {
+          "maxMotionM": 0.0128899132462661
+        },
+        "viseme_M": {
+          "maxMotionM": 0.005249808208010606
+        }
+      },
+      "neutralRecoveryM": 2.403044629462362e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    },
+    {
+      "id": "child",
+      "passed": true,
+      "views": [
+        "front",
+        "three-quarter",
+        "profile"
+      ],
+      "expressions": {
+        "smile": {
+          "maxMotionM": 0.007765958763965349
+        },
+        "frown": {
+          "maxMotionM": 0.003470781691829806
+        },
+        "blink": {
+          "maxMotionM": 0.0029618513199992404
+        },
+        "viseme_A": {
+          "maxMotionM": 0.023043233327960412
+        },
+        "viseme_E": {
+          "maxMotionM": 0.006396202869197378
+        },
+        "viseme_O": {
+          "maxMotionM": 0.011731440768472795
+        },
+        "viseme_M": {
+          "maxMotionM": 0.004777922010119319
+        }
+      },
+      "neutralRecoveryM": 2.4595601691163606e-07,
+      "identicalMaterials": true,
+      "hairAndClothesHidden": true,
+      "animationClip": "Talk_Check",
+      "humanReview": "pending"
+    }
+  ],
+  "diversityPassed": true,
+  "humanReview": "pending"
+}

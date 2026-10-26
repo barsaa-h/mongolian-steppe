@@ -685,6 +685,298 @@ export function glowTexture() {
   }));
 }
 
+// Drawn in near-neutral tones so material.color carries the foliage palette;
+// the mottle breaks up the flat per-face color of low-poly crowns.
+export function foliageTexture(variant = 0) {
+  return cached(`foliage:${variant}`, () => canvasTexture(64, 64, (ctx, w, h) => {
+    ctx.fillStyle = "#d9d9d4";
+    ctx.fillRect(0, 0, w, h);
+    const fine = variant % 2 === 1;
+    const specks = fine ? 900 : 430;
+    for (let i = 0; i < specks; i++) {
+      const shade = Math.random();
+      ctx.fillStyle = shade < 0.42 ? "rgba(36,46,28,0.36)"
+        : shade < 0.8 ? "rgba(255,255,238,0.32)"
+        : "rgba(18,24,14,0.44)";
+      const s = fine ? 1 + Math.random() * 1.6 : 2 + Math.random() * 2.4;
+      ctx.fillRect(Math.random() * w, Math.random() * h, s, s);
+    }
+    for (let i = 0; i < 14; i++) {
+      ctx.fillStyle = Math.random() < 0.5 ? "rgba(28,38,22,0.13)" : "rgba(255,255,234,0.11)";
+      ctx.beginPath();
+      ctx.ellipse(Math.random() * w, Math.random() * h, 4 + Math.random() * 8, 3 + Math.random() * 6,
+        Math.random() * 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }));
+}
+
+// Autumn leaf carpet with a wobbly cutout edge, for alpha-tested ground discs.
+export function leafLitterTexture() {
+  return cached("leafLitter", () => canvasTexture(64, 64, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    ctx.beginPath();
+    const points = 18;
+    for (let i = 0; i <= points; i++) {
+      const a = (i / points) * Math.PI * 2;
+      const r = w * 0.46 * (0.86 + Math.sin(i * 2.7) * 0.07 + Math.random() * 0.06);
+      const x = w / 2 + Math.cos(a) * r;
+      const y = h / 2 + Math.sin(a) * r * 0.92;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = "#8a6a3c";
+    ctx.fill();
+    ctx.clip();
+    const leaf = ["#a8763c", "#b8894a", "#8a5a30", "#c49a58", "#7c6434", "#9c8248", "#b06a38", "#6e5a2c"];
+    for (let i = 0; i < 460; i++) {
+      ctx.fillStyle = leaf[(Math.random() * leaf.length) | 0];
+      ctx.save();
+      ctx.translate(Math.random() * w, Math.random() * h);
+      ctx.rotate(Math.random() * Math.PI);
+      ctx.fillRect(-2.5, -1.2, 5, 2.4);
+      ctx.restore();
+    }
+    for (let i = 0; i < 60; i++) {
+      ctx.fillStyle = "rgba(52,38,20,0.45)";
+      ctx.fillRect(Math.random() * w, Math.random() * h, 2 + Math.random() * 4, 1 + Math.random() * 2);
+    }
+  }));
+}
+
+// Paper scraps with torn edges: kind 0 is a red-header announcement, kind 1 newsprint.
+export function paperTexture(kind = 0) {
+  return cached(`paper:${kind}`, () => canvasTexture(32, 40, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    const jig = (x, y) => [x + (Math.random() - 0.5) * 2.6, y + (Math.random() - 0.5) * 2.6];
+    const corners = [[2, 1.5], [w - 2, 2.5], [w - 1.5, h - 3], [3, h - 2]];
+    ctx.beginPath();
+    corners.forEach(([x, y], i) => {
+      const [jx, jy] = jig(x, y);
+      if (i === 0) ctx.moveTo(jx, jy);
+      else ctx.lineTo(jx, jy);
+    });
+    ctx.closePath();
+    ctx.fillStyle = kind === 0 ? "#ddd4bc" : "#cfcabc";
+    ctx.fill();
+    ctx.clip();
+    if (kind === 0) {
+      ctx.fillStyle = "#a03428";
+      ctx.fillRect(3, 4, w - 6, 6);
+      ctx.fillStyle = "#3a3226";
+      for (let row = 0; row < 5; row++) {
+        ctx.fillRect(4, 14 + row * 5, w - 8 - Math.random() * 7, 2);
+      }
+    } else {
+      ctx.fillStyle = "rgba(70,64,54,0.7)";
+      for (let col = 0; col < 2; col++) {
+        for (let row = 0; row < 9; row++) {
+          ctx.fillRect(3 + col * 14, 4 + row * 4, 11, 1.4);
+        }
+      }
+    }
+    ctx.fillStyle = "rgba(60,50,40,0.2)";
+    ctx.beginPath();
+    ctx.moveTo(w * 0.2, h);
+    ctx.lineTo(w, h * 0.25);
+    ctx.lineTo(w, h);
+    ctx.fill();
+  }));
+}
+
+// Alpha-cutout grass blades for crossed weed quads.
+export function grassBladeTexture() {
+  return cached("grassBlade", () => canvasTexture(32, 32, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < 9; i++) {
+      const x = 2 + (w - 4) * (i / 8) + (Math.random() - 0.5) * 2;
+      const top = 2 + Math.random() * 8;
+      const lean = (Math.random() - 0.5) * 7;
+      ctx.strokeStyle = ["#7e804e", "#9a9a5e", "#6e7642", "#a89e66", "#8a8a50"][(Math.random() * 5) | 0];
+      ctx.lineWidth = 1.6 + Math.random();
+      ctx.beginPath();
+      ctx.moveTo(x, h);
+      ctx.quadraticCurveTo(x + lean * 0.4, h * 0.55, x + lean, top);
+      ctx.stroke();
+    }
+  }));
+}
+
+export function smokeTexture() {
+  return cached("smoke", () => canvasTexture(64, 64, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    const puffs = [[32, 34, 22], [22, 40, 14], [44, 28, 15], [36, 20, 11], [46, 42, 12]];
+    for (const [x, y, r] of puffs) {
+      const g = ctx.createRadialGradient(x, y, 2, x, y, r);
+      g.addColorStop(0, "rgba(255,255,255,0.55)");
+      g.addColorStop(0.6, "rgba(240,240,238,0.30)");
+      g.addColorStop(1, "rgba(230,230,230,0)");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }));
+}
+
+// Transparent rust blotches overlaid on worn car panels.
+export function rustTexture() {
+  return cached("rust", () => canvasTexture(64, 64, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < 26; i++) {
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      const r = 2 + Math.random() * 7;
+      const g = ctx.createRadialGradient(x, y, 0.5, x, y, r);
+      g.addColorStop(0, "rgba(96,52,24,0.55)");
+      g.addColorStop(0.55, "rgba(130,74,32,0.35)");
+      g.addColorStop(1, "rgba(130,74,32,0)");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    for (let i = 0; i < 8; i++) {
+      ctx.fillStyle = "rgba(80,44,20,0.3)";
+      ctx.fillRect(Math.random() * w, Math.random() * h, 1 + Math.random() * 2, 4 + Math.random() * 10);
+    }
+  }));
+}
+
+// Soft dark trampled-earth blotch; stretched for paths, scaled for terrace patches.
+export function wearTexture() {
+  return cached("wear", () => canvasTexture(64, 64, (ctx, w, h) => {
+    ctx.clearRect(0, 0, w, h);
+    const g = ctx.createRadialGradient(w / 2, h / 2, 3, w / 2, h / 2, w / 2);
+    g.addColorStop(0, "rgba(58,46,30,0.6)");
+    g.addColorStop(0.55, "rgba(58,46,30,0.38)");
+    g.addColorStop(0.82, "rgba(58,46,30,0.12)");
+    g.addColorStop(1, "rgba(58,46,30,0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 24; i++) {
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      const r = 3 + Math.random() * 9;
+      const gg = ctx.createRadialGradient(x, y, 1, x, y, r);
+      gg.addColorStop(0, Math.random() < 0.6 ? "rgba(56,44,28,0.28)" : "rgba(210,190,150,0.2)");
+      gg.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = gg;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }));
+}
+
+// Faded institutional wallpaper; variant 0 is striped, variant 1 floral dots.
+export function wallpaperTexture(variant = 0) {
+  return cached(`wallpaper:${variant}`, () => canvasTexture(64, 64, (ctx, w, h) => {
+    const base = variant % 2 ? "#b8ac8c" : "#a8b098";
+    ctx.fillStyle = base;
+    ctx.fillRect(0, 0, w, h);
+    if (variant % 2 === 0) {
+      for (let x = 0; x < w; x += 8) {
+        ctx.fillStyle = x % 16 === 0 ? "rgba(90,98,80,0.35)" : "rgba(220,216,190,0.28)";
+        ctx.fillRect(x, 0, 4, h);
+      }
+    } else {
+      for (let y = 4; y < h; y += 12) {
+        for (let x = 4; x < w; x += 12) {
+          ctx.fillStyle = "rgba(150,110,90,0.5)";
+          ctx.beginPath();
+          ctx.arc(x + ((y / 12) % 2) * 6, y, 2.2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = "rgba(90,110,70,0.4)";
+          ctx.fillRect(x + ((y / 12) % 2) * 6 - 1, y + 2.4, 2, 2);
+        }
+      }
+    }
+    for (let i = 0; i < 26; i++) {
+      ctx.fillStyle = `rgba(70,64,48,${0.04 + Math.random() * 0.08})`;
+      ctx.fillRect(Math.random() * w, Math.random() * h, 2 + Math.random() * 8, 1 + Math.random() * 3);
+    }
+    // grime creeps up from the skirting board
+    const g = ctx.createLinearGradient(0, h, 0, h * 0.45);
+    g.addColorStop(0, "rgba(52,46,34,0.4)");
+    g.addColorStop(1, "rgba(52,46,34,0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, h * 0.45, w, h * 0.55);
+  }));
+}
+
+// Worn brown-green checkered linoleum with scuffs.
+export function linoleumTexture() {
+  return cached("linoleum", () => canvasTexture(64, 64, (ctx, w, h) => {
+    ctx.fillStyle = "#6e6a50";
+    ctx.fillRect(0, 0, w, h);
+    const tile = 16;
+    for (let y = 0; y < h; y += tile) {
+      for (let x = 0; x < w; x += tile) {
+        const dark = ((x / tile) + (y / tile)) % 2 === 0;
+        ctx.fillStyle = dark ? "#77745c" : "#5c5a44";
+        ctx.fillRect(x + 1, y + 1, tile - 2, tile - 2);
+      }
+    }
+    ctx.strokeStyle = "rgba(40,38,28,0.5)";
+    for (let i = 0; i < 10; i++) {
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * w, Math.random() * h);
+      ctx.lineTo(Math.random() * w, Math.random() * h);
+      ctx.stroke();
+    }
+    speckle(ctx, w, h, ["rgba(30,28,20,0.2)", "rgba(200,190,160,0.12)"], 300, 1, 2);
+  }));
+}
+
+// Institutional wall tiles; some discolored, grout stained.
+export function tileTexture() {
+  return cached("tile", () => canvasTexture(64, 64, (ctx, w, h) => {
+    ctx.fillStyle = "#8a8878";
+    ctx.fillRect(0, 0, w, h);
+    const tile = 16;
+    for (let y = 0; y < h; y += tile) {
+      for (let x = 0; x < w; x += tile) {
+        const tint = Math.random();
+        ctx.fillStyle = tint < 0.82 ? "#d8d8cc" : tint < 0.94 ? "#c2c8b4" : "#b0b8a8";
+        ctx.fillRect(x + 1, y + 1, tile - 2, tile - 2);
+        ctx.fillStyle = "rgba(255,255,250,0.25)";
+        ctx.fillRect(x + 1, y + 1, tile - 2, 2);
+      }
+    }
+    for (let i = 0; i < 8; i++) {
+      ctx.fillStyle = "rgba(96,110,90,0.3)";
+      ctx.fillRect(Math.random() * w, Math.random() * h, 2 + Math.random() * 5, 2 + Math.random() * 5);
+    }
+  }));
+}
+
+// Stained ceiling boards.
+export function ceilingTexture() {
+  return cached("ceiling", () => canvasTexture(64, 64, (ctx, w, h) => {
+    ctx.fillStyle = "#c9c4b2";
+    ctx.fillRect(0, 0, w, h);
+    for (let x = 0; x < w; x += 16) {
+      ctx.fillStyle = "rgba(90,84,66,0.35)";
+      ctx.fillRect(x, 0, 1, h);
+    }
+    for (let i = 0; i < 6; i++) {
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      const r = 5 + Math.random() * 9;
+      const g = ctx.createRadialGradient(x, y, 1, x, y, r);
+      g.addColorStop(0, "rgba(150,128,88,0.25)");
+      g.addColorStop(1, "rgba(150,128,88,0)");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.ellipse(x, y, r, r * 0.6, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    speckle(ctx, w, h, ["rgba(120,112,92,0.14)", "rgba(240,238,224,0.14)"], 220, 1, 2);
+  }));
+}
+
 export function posterTexture(kind = 0) {
   return cached(`poster:${kind}`, () => canvasTexture(64, 96, (ctx, w, h) => {
     ctx.fillStyle = kind === 0 ? "#d8cdb2" : "#c8b8a0";

@@ -1,0 +1,235 @@
+{
+  "passed": true,
+  "threshold": 0.055,
+  "controls": 60,
+  "metric": "Equal-weight RMS by face region; excludes age, ancestry, skin, hair and clothing",
+  "pairs": [
+    {
+      "a": "default",
+      "b": "child",
+      "distance": 0.14129,
+      "groups": {
+        "brow": 0.079373,
+        "cheeks": 0.152151,
+        "ears": 0.215561,
+        "eyes": 0.157797,
+        "head": 0.173359,
+        "jaw": 0.124164,
+        "mouth": 0.065574,
+        "nose": 0.095481
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "mouth",
+        "brow",
+        "nose"
+      ]
+    },
+    {
+      "a": "male",
+      "b": "heavy",
+      "distance": 0.180847,
+      "groups": {
+        "brow": 0.081854,
+        "cheeks": 0.351355,
+        "ears": 0.042426,
+        "eyes": 0.143353,
+        "head": 0.248153,
+        "jaw": 0.19975,
+        "mouth": 0.041096,
+        "nose": 0.077298
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "mouth",
+        "ears",
+        "nose"
+      ]
+    },
+    {
+      "a": "default",
+      "b": "slim-tall",
+      "distance": 0.223024,
+      "groups": {
+        "brow": 0.076158,
+        "cheeks": 0.387911,
+        "ears": 0.167133,
+        "eyes": 0.111915,
+        "head": 0.118293,
+        "jaw": 0.182848,
+        "mouth": 0.355996,
+        "nose": 0.164393
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "brow",
+        "eyes",
+        "head"
+      ]
+    },
+    {
+      "a": "male",
+      "b": "slim-tall",
+      "distance": 0.257972,
+      "groups": {
+        "brow": 0.226348,
+        "cheeks": 0.190919,
+        "ears": 0.118181,
+        "eyes": 0.132382,
+        "head": 0.285774,
+        "jaw": 0.495765,
+        "mouth": 0.090676,
+        "nose": 0.278478
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "mouth",
+        "ears",
+        "eyes"
+      ]
+    },
+    {
+      "a": "heavy",
+      "b": "child",
+      "distance": 0.274954,
+      "groups": {
+        "brow": 0.257747,
+        "cheeks": 0.130288,
+        "ears": 0.110905,
+        "eyes": 0.238851,
+        "head": 0.13938,
+        "jaw": 0.403609,
+        "mouth": 0.328955,
+        "nose": 0.401871
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "head"
+      ]
+    },
+    {
+      "a": "default",
+      "b": "heavy",
+      "distance": 0.278314,
+      "groups": {
+        "brow": 0.243858,
+        "cheeks": 0.267348,
+        "ears": 0.152862,
+        "eyes": 0.195384,
+        "head": 0.198394,
+        "jaw": 0.420971,
+        "mouth": 0.32503,
+        "nose": 0.323986
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "head"
+      ]
+    },
+    {
+      "a": "slim-tall",
+      "b": "child",
+      "distance": 0.280565,
+      "groups": {
+        "brow": 0.104083,
+        "cheeks": 0.491655,
+        "ears": 0.082462,
+        "eyes": 0.178536,
+        "head": 0.261572,
+        "jaw": 0.283108,
+        "mouth": 0.363303,
+        "nose": 0.240711
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "default",
+      "b": "male",
+      "distance": 0.2951,
+      "groups": {
+        "brow": 0.3005,
+        "cheeks": 0.242642,
+        "ears": 0.142478,
+        "eyes": 0.18412,
+        "head": 0.255382,
+        "jaw": 0.479183,
+        "mouth": 0.303315,
+        "nose": 0.32628
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "heavy",
+      "b": "slim-tall",
+      "distance": 0.313716,
+      "groups": {
+        "brow": 0.171075,
+        "cheeks": 0.535023,
+        "ears": 0.125565,
+        "eyes": 0.171683,
+        "head": 0.290964,
+        "jaw": 0.486021,
+        "mouth": 0.092014,
+        "nose": 0.311836
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "mouth",
+        "ears",
+        "brow"
+      ]
+    },
+    {
+      "a": "male",
+      "b": "child",
+      "distance": 0.331108,
+      "groups": {
+        "brow": 0.31791,
+        "cheeks": 0.315,
+        "ears": 0.125831,
+        "eyes": 0.27074,
+        "head": 0.270222,
+        "jaw": 0.5007,
+        "mouth": 0.310036,
+        "nose": 0.409624
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "head",
+        "eyes"
+      ]
+    }
+  ],
+  "baseCounts": {
+    "child": 1,
+    "adult": 4,
+    "elder": 0
+  },
+  "ageRange": [
+    10,
+    41
+  ],
+  "heightRangeM": [
+    1.3,
+    1.9
+  ],
+  "weightRange": [
+    0.15,
+    0.9
+  ]
+}

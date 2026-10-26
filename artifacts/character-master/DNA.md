@@ -1,10 +1,15 @@
 # Character DNA workflow
 
-Use `artifacts/episode-1-cast/dna/<id>.json` as the editable source of truth.
-The episode recipes, Blender scenes, GLBs and previews are generated outputs.
-Changing a face means changing its DNA and regenerating, rather than sculpting
-one output or swapping its hairstyle. The current 13 identities remain drafts
-for human creative review.
+Use `artifacts/episode-1-cast/dna/<id>.json` as the editable source of truth
+for the 13 episode cast actors. The five master presets in
+`artifacts/character-master/presets/` carry the same identity system at recipe
+level: optional `face`, `asymmetry`, `age`, `eyes`, `brows`, `skin_detail`,
+`facial_hair` and `hair_dna` fields compile through the same
+`scripts/dna.py` controls. The episode recipes, Blender scenes, GLBs and
+previews are generated outputs. Changing a face means changing its DNA and
+regenerating, rather than sculpting one output or swapping its hairstyle. The
+current 13 cast identities and the five master presets remain drafts for
+human creative review.
 
 ## Adopted foundation
 
@@ -117,6 +122,16 @@ Stubble and freckles are procedural material layers; pimples and the existing
 soft age lines remain editable skinned detail meshes.
 
 ## QA and review
+
+For the five master presets, `qa_all.py` renders the matching-material bald
+lineup, turnarounds and expression sheets, and checks that no two default
+characters share a face:
+
+```sh
+python3 artifacts/character-master/scripts/qa_all.py
+```
+
+For the episode cast:
 
 ```sh
 python3 artifacts/character-master/scripts/test_dna.py

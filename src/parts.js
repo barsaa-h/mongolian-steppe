@@ -8,11 +8,18 @@ import {
   dirtTexture,
   fenceTexture,
   flagTexture,
+  foliageTexture,
   gerRoofTexture,
   gerWallTexture,
   doorTexture,
+  grassBladeTexture,
+  leafLitterTexture,
+  paperTexture,
+  rustTexture,
   shadowTexture,
+  smokeTexture,
   stoneTexture,
+  wearTexture,
   woodTexture,
   windowTexture,
   windowGlowTexture,
@@ -29,6 +36,7 @@ const matCache = new Map();
 const windowMats = [];
 const signMats = [];
 const lampMats = [];
+const foliageMats = [];
 
 function cachedGeo(key, make) {
   let geo = geoCache.get(key);
@@ -269,6 +277,208 @@ export function groundPlane(w, d, material, x = 0, z = 0, y = 0.02) {
   mesh.position.set(x, y, z);
   return mesh;
 }
+
+export function planeGeo(w, h, sx = 1, sy = 1) {
+  return cachedGeo(`plane:${w}:${h}:${sx}:${sy}`, () => new THREE.PlaneGeometry(w, h, sx, sy));
+}
+
+// Foliage crowns share a small set of mottled materials; world.js animates wind
+// through every material returned here, which also covers the merged batches.
+export function foliageMaterial(variant = 0, color = 0x6d7c4a) {
+  const texVariant = variant % 2;
+  const key = `foliage:${texVariant}:${color}`;
+  if (!matCache.has(key)) {
+    const material = mat({ map: foliageTexture(texVariant), color });
+    material.userData.isFoliage = true;
+    matCache.set(key, material);
+    foliageMats.push(material);
+  }
+  return matCache.get(key);
+}
+
+export function foliageMaterials() {
+  return foliageMats;
+}
+
+export function leafLitterMaterial() {
+  if (!matCache.has("leafLitter")) {
+    matCache.set("leafLitter", mat({
+      map: leafLitterTexture(),
+      alphaTest: 0.45,
+      side: THREE.DoubleSide,
+    }));
+  }
+  return matCache.get("leafLitter");
+}
+
+export function paperMaterial(kind = 0) {
+  const key = `paperMat:${kind}`;
+  if (!matCache.has(key)) {
+    matCache.set(key, mat({
+      map: paperTexture(kind),
+      alphaTest: 0.4,
+      side: THREE.DoubleSide,
+    }));
+  }
+  return matCache.get(key);
+}
+
+export function weedMaterial() {
+  if (!matCache.has("weed")) {
+    matCache.set("weed", mat({
+      map: grassBladeTexture(),
+      alphaTest: 0.45,
+      side: THREE.DoubleSide,
+    }));
+  }
+  return matCache.get("weed");
+}
+
+export function groundWearMaterial() {
+  if (!matCache.has("wear:ground")) {
+    matCache.set("wear:ground", mat({
+      map: wearTexture(),
+      transparent: true,
+      opacity: 0.5,
+      depthWrite: false,
+    }));
+  }
+  return matCache.get("wear:ground");
+}
+
+export function trackWearMaterial() {
+  if (!matCache.has("wear:track")) {
+    matCache.set("wear:track", mat({
+      map: cloneRepeat(wearTexture(), 1, 2),
+      transparent: true,
+      opacity: 0.42,
+      depthWrite: false,
+    }));
+  }
+  return matCache.get("wear:track");
+}
+
+export function terraceWearMaterial() {
+  if (!matCache.has("wear:terrace")) {
+    matCache.set("wear:terrace", mat({
+      map: wearTexture(),
+      transparent: true,
+      opacity: 0.13,
+      depthWrite: false,
+    }));
+  }
+  return matCache.get("wear:terrace");
+}
+
+export function rustMaterial() {
+  if (!matCache.has("rust")) {
+    matCache.set("rust", new THREE.MeshLambertMaterial({
+      map: rustTexture(),
+      transparent: true,
+      depthWrite: false,
+      flatShading: true,
+    }));
+  }
+  return matCache.get("rust");
+}
+
+// Irregular leaf-litter disc that sits under a tree and breaks up bare ground.
+export function buildLeafCarpet(radius = 2.2, seed = 0) {
+  const rand = mulberry(seed * 313 + 17);
+  const segments = 12;
+  const positions = [];
+  const uvs = [];
+  const ring = [];
+  for (let i = 0; i <= segments; i++) {
+    const a = (i / segments) * Math.PI * 2;
+    const r = radius * (0.72 + rand() * 0.38);
+    ring.push([Math.cos(a) * r, Math.sin(a) * r]);
+  }
+  for (let i = 0; i < segments; i++) {
+    const [ax, az] = ring[i];
+    const [bx, bz] = ring[i + 1];
+    for (const [x, z] of [[0, 0], [ax, az], [bx, bz]]) {
+      positions.push(x, 0, z);
+      uvs.push(0.5 + x / (radius * 2.2), 0.5 + z / (radius * 2.2));
+    }
+  }
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+  geometry.setAttribute("uv", new THREE.Float32BufferAttribute(uvs, 2));
+  geometry.computeVertexNormals();
+  const mesh = new THREE.Mesh(geometry, leafLitterMaterial());
+  mesh.position.y = 0.045;
+  return mesh;
+}
+
+// Small crop of the litter texture used as individual fallen leaves.
+const LEAF_QUAD_UVS = [[0.08, 0.08], [0.42, 0.18], [0.2, 0.5], [0.58, 0.6]];
+
+function leafQuadGeometry(corner) {
+  const key = `leafQuad:${corner}`;
+  return cachedGeo(key, () => {
+    const geo = planeGeo(0.15, 0.1).clone();
+    const [u, v] = LEAF_QUAD_UVS[corner % LEAF_QUAD_UVS.length];
+    const uv = geo.attributes.uv;
+    const remapped = new Float32Array(uv.array.length);
+    for (let i = 0; i < uv.count; i++) {
+      remapped[i * 2] = u + uv.getX(i) * 0.24;
+      remapped[i * 2 + 1] = v + uv.getY(i) * 0.24;
+    }
+    geo.setAttribute("uv", new THREE.Float32BufferAttribute(remapped, 2));
+    return geo;
+  });
+}
+
+export function buildLeafScatter(count = 8, spread = 2, seed = 0) {
+  const rand = mulberry(seed * 257 + 41);
+  const group = new THREE.Group();
+  for (let i = 0; i < count; i++) {
+    const leaf = new THREE.Mesh(
+      leafQuadGeometry((rand() * 4) | 0),
+      leafLitterMaterial()
+    );
+    const angle = rand() * Math.PI * 2;
+    const distance = Math.sqrt(rand()) * spread;
+    leaf.position.set(Math.sin(angle) * distance, rand() * 0.02, Math.cos(angle) * distance);
+    leaf.rotation.set(-Math.PI / 2 + (rand() - 0.5) * 0.5, rand() * Math.PI * 2, 0);
+    leaf.rotation.order = "YXZ";
+    group.add(leaf);
+  }
+  return group;
+}
+
+export function buildPaperScrap(kind = 0, seed = 0) {
+  const rand = mulberry(seed * 57 + 29);
+  const scrap = new THREE.Mesh(planeGeo(0.3, 0.42), paperMaterial(kind));
+  scrap.rotation.order = "YXZ";
+  scrap.rotation.y = rand() * Math.PI * 2;
+  scrap.rotation.x = -Math.PI / 2 + (rand() - 0.5) * 0.3;
+  scrap.rotation.z = (rand() - 0.5) * 0.3;
+  scrap.position.y = 0.05;
+  return scrap;
+}
+
+export function buildWeedTuft(seed = 0) {
+  const rand = mulberry(seed * 83 + 19);
+  const group = new THREE.Group();
+  const material = weedMaterial();
+  for (const yaw of [0, Math.PI / 2]) {
+    const quad = new THREE.Mesh(planeGeo(0.38, 0.44), material);
+    quad.position.y = 0.2;
+    quad.rotation.y = yaw + rand() * 0.6;
+    group.add(quad);
+  }
+  group.rotation.y = rand() * Math.PI * 2;
+  return group;
+}
+
+export function buildTumblingLeaf(seed = 0) {
+  const leaf = new THREE.Mesh(leafQuadGeometry(seed % 4), leafLitterMaterial());
+  leaf.rotation.order = "YXZ";
+  return leaf;
+}
+
 
 export function buildFenceRun(length, tone = "warm") {
   const group = new THREE.Group();
@@ -513,7 +723,7 @@ export function buildSatelliteDish() {
   const pole = addCylinder(group, 0.04, 0.05, 1.7, solid(0x6a6a64), 0, 0.85, 0, 5);
   const dish = new THREE.Mesh(
     new THREE.SphereGeometry(0.42, 8, 4, 0, Math.PI * 2, 0, Math.PI * 0.42),
-    solid(0xc8c0b0, { side: THREE.DoubleSide })
+    solid(0xb5ad98, { side: THREE.DoubleSide })
   );
   dish.rotation.x = Math.PI * 0.72;
   dish.rotation.z = 0.4;
@@ -759,66 +969,177 @@ export function buildBird() {
   return { group, left, right };
 }
 
-export function buildCar(color = 0x9a3a2e, type = "sedan") {
+let carGlassCache = null;
+function carGlassMaterial() {
+  if (!carGlassCache) {
+    carGlassCache = new THREE.MeshLambertMaterial({
+      color: 0x36444c,
+      transparent: true,
+      opacity: 0.32,
+      depthWrite: false,
+      flatShading: true,
+    });
+  }
+  return carGlassCache;
+}
+
+function carWheel(group, x, z, radius, paint, flareZ) {
+  const trim = solid(0x24262a);
+  const wheel = cylinder(radius, radius, 0.2, trim, 10);
+  wheel.rotation.x = Math.PI / 2;
+  wheel.position.set(x, radius, z);
+  group.add(wheel);
+  const hub = cylinder(radius * 0.45, radius * 0.45, 0.21, solid(0x9a9a92), 8);
+  hub.rotation.x = Math.PI / 2;
+  hub.position.set(x, radius, z);
+  group.add(hub);
+  // Fender flare hinting at an arch over the tucked-in wheel.
+  addBox(group, radius * 2.6, 0.24, 0.09, paint, x, radius + 0.28, Math.sign(z) * flareZ);
+}
+
+function carRust(group, w, h, x, y, z, face = "side") {
+  const patch = new THREE.Mesh(planeGeo(w, h), rustMaterial());
+  if (face === "top") patch.rotation.x = -Math.PI / 2;
+  else patch.rotation.y = z > 0 ? 0 : Math.PI;
+  patch.position.set(x, y, z + Math.sign(z || 1) * 0.005);
+  group.add(patch);
+}
+
+export function buildCar(color = 0x9a3a2e, type = "sedan", variant = 0) {
   const group = new THREE.Group();
   const paint = solid(color);
-  const glass = solid(0x3a4a50);
-  const tire = solid(0x2a2a28);
+  const glass = carGlassMaterial();
+  const trim = solid(0x2c2e2c);
   const chrome = solid(0x9a9a92);
   const light = solid(0xd8cc9a);
   const red = solid(0x8c2a22);
+  const worn = ((variant % 2) + 2) % 2 === 1;
 
   if (type === "van") {
-    addBox(group, 4.5, 0.9, 1.9, paint, 0, 0.78, 0);
-    addBox(group, 4.3, 0.95, 1.84, paint, 0, 1.68, 0);
-    addBox(group, 4.32, 0.48, 1.86, glass, 0, 1.72, 0);
-    addBox(group, 4.36, 0.12, 1.86, paint, 0, 2.2, 0);
-    addBox(group, 0.14, 0.5, 1.9, paint, 2.2, 1.65, 0);
-    addBox(group, 0.03, 0.5, 1.7, glass, 2.28, 1.68, 0);
-    addBox(group, 0.24, 0.28, 0.34, light, 2.3, 0.82, 0.7);
-    addBox(group, 0.24, 0.28, 0.34, light, 2.3, 0.82, -0.7);
-    addBox(group, 0.3, 0.16, 1.9, chrome, 2.32, 0.55, 0);
-    addBox(group, 4.55, 0.16, 1.92, chrome, 0, 0.46, 0);
-    for (const x of [-1.45, 1.45]) {
-      for (const z of [-0.92, 0.92]) {
-        const wheel = cylinder(0.36, 0.36, 0.22, tire, 10);
-        wheel.rotation.x = Math.PI / 2;
-        wheel.position.set(x, 0.38, z);
-        group.add(wheel);
-        const hub = cylinder(0.14, 0.14, 0.24, chrome, 8);
-        hub.rotation.x = Math.PI / 2;
-        hub.position.set(x, 0.38, z);
-        group.add(hub);
+    // Tall 4x4 "loaf" van: flat face, short protruding hood, window band with pillars.
+    addBox(group, 4.25, 0.22, 1.72, solid(0x1f2220), -0.05, 0.4, 0);
+    addBox(group, 4.35, 1.5, 1.9, paint, -0.05, 1.28, 0);
+    addBox(group, 4.45, 0.1, 1.94, paint, -0.05, 2.08, 0);
+    addBox(group, 0.4, 0.35, 1.88, paint, 2.1, 0.95, 0);
+    const windshield = box(0.04, 0.55, 1.68, glass);
+    windshield.rotation.z = 0.08;
+    windshield.position.set(2.15, 1.62, 0);
+    group.add(windshield);
+    for (const z of [-0.96, 0.96]) {
+      addBox(group, 3.1, 0.45, 0.03, glass, -0.1, 1.62, z);
+      for (const x of [1.3, 0.4, -0.5, -1.4]) {
+        addBox(group, 0.09, 0.5, 0.04, paint, x, 1.62, z);
       }
+      addBox(group, 0.02, 0.7, 0.02, trim, 1.75, 1.1, z);
+      addBox(group, 0.05, 0.14, 0.16, red, -2.26, 1.0, z * 0.73);
+      const stalk = addBox(group, 0.03, 0.03, 0.09, trim, 2.0, 1.55, z * 1.06);
+      stalk.position.z = z * 1.01;
+      addBox(group, 0.05, 0.1, 0.05, paint, 2.0, 1.58, z * 1.06);
     }
-    addBox(group, 0.02, 0.3, 0.6, red, -2.27, 0.9, -0.5);
-    addBox(group, 0.02, 0.3, 0.6, red, -2.27, 0.9, 0.5);
-    addBox(group, 0.54, 0.14, 0.06, solid(0xe0e0d0), -2.32, 0.7, 0);
+    addBox(group, 0.04, 0.18, 0.5, trim, 2.31, 1.05, 0);
+    for (const z of [-0.6, 0.6]) {
+      const lamp = cylinder(0.09, 0.09, 0.07, light, 8);
+      lamp.rotation.z = Math.PI / 2;
+      lamp.position.set(2.31, 1.05, z);
+      group.add(lamp);
+    }
+    addBox(group, 0.14, 0.14, 1.9, chrome, 2.28, 0.52, 0);
+    addBox(group, 0.14, 0.14, 1.9, chrome, -2.33, 0.52, 0);
+    addBox(group, 0.02, 0.12, 0.4, solid(0xe0e0d0), 2.36, 0.62, 0);
+    addBox(group, 0.02, 0.12, 0.4, solid(0xe0e0d0), -2.41, 0.62, 0);
+    for (const x of [-1.42, 1.42]) {
+      for (const z of [-0.78, 0.78]) carWheel(group, x, z, 0.36, paint, 0.99);
+    }
+    const exhaust = cylinder(0.03, 0.03, 0.14, trim, 6);
+    exhaust.rotation.z = Math.PI / 2;
+    exhaust.position.set(-2.3, 0.3, -0.55);
+    group.add(exhaust);
+    if (worn) {
+      carRust(group, 0.5, 0.5, 1.6, 1.62, 0.975);
+      carRust(group, 0.9, 0.4, -0.6, 0.75, -0.96);
+    }
   } else {
-    addBox(group, 4.1, 0.55, 1.72, paint, 0, 0.66, 0);
-    addBox(group, 2.15, 0.5, 1.58, glass, -0.1, 1.18, 0);
-    addBox(group, 2.25, 0.14, 1.64, paint, -0.1, 1.46, 0);
-    addBox(group, 0.13, 0.44, 1.62, paint, -1.16, 1.18, 0);
-    addBox(group, 0.13, 0.44, 1.62, paint, 0.97, 1.18, 0);
-    addBox(group, 2.2, 0.05, 0.08, chrome, -0.1, 1.38, 0.8);
-    addBox(group, 2.2, 0.05, 0.08, chrome, -0.1, 1.38, -0.8);
-    addBox(group, 0.2, 0.22, 0.34, light, 2.02, 0.68, 0.58);
-    addBox(group, 0.2, 0.22, 0.34, light, 2.02, 0.68, -0.58);
-    addBox(group, 0.16, 0.18, 0.3, red, -2.02, 0.68, 0.58);
-    addBox(group, 0.16, 0.18, 0.3, red, -2.02, 0.68, -0.58);
-    addBox(group, 4.2, 0.14, 1.78, chrome, 0, 0.42, 0);
-    addBox(group, 0.52, 0.14, 0.05, solid(0xe0e0d0), -2.1, 0.58, 0);
-    for (const x of [-1.32, 1.32]) {
-      for (const z of [-0.84, 0.84]) {
-        const wheel = cylinder(0.32, 0.32, 0.22, tire, 10);
-        wheel.rotation.x = Math.PI / 2;
-        wheel.position.set(x, 0.34, z);
-        group.add(wheel);
-        const hub = cylinder(0.13, 0.13, 0.24, chrome, 8);
-        hub.rotation.x = Math.PI / 2;
-        hub.position.set(x, 0.34, z);
-        group.add(hub);
+    const hatch = type === "hatch";
+    const nose = hatch ? 1.95 : 2.2;
+    const tail = hatch ? -1.85 : -2.15;
+    const frontAxle = hatch ? 1.08 : 1.28;
+    const rearAxle = hatch ? -1.08 : -1.28;
+    addBox(group, nose - tail - 0.4, 0.2, 1.5, solid(0x1f2220), 0, 0.32, 0);
+    addBox(group, nose - tail, 0.34, 1.66, paint, 0, 0.62, 0);
+    addBox(group, 2.3, 0.14, 1.7, solid(0x35322e), 0, 0.42, 0);
+    addBox(group, hatch ? 0.95 : 1.2, 0.16, 1.58, paint, hatch ? 1.2 : 1.38, 0.87, 0);
+    if (!hatch) addBox(group, 1.0, 0.16, 1.58, paint, -1.48, 0.87, 0);
+    else addBox(group, 0.12, 0.5, 1.6, paint, tail + 0.06, 0.82, 0);
+
+    // Cabin: dark tub and seats read through the transparent glass.
+    addBox(group, hatch ? 2.0 : 1.7, 0.3, 1.46, solid(0x22201c), hatch ? -0.4 : -0.12, 0.97, 0);
+    for (const z of [-0.36, 0.36]) {
+      const seatX = hatch ? -0.55 : -0.3;
+      addBox(group, 0.42, 0.12, 0.44, solid(0x2e2a24), seatX, 1.06, z);
+      addBox(group, 0.12, 0.36, 0.44, solid(0x2e2a24), seatX - 0.22, 1.22, z);
+    }
+    const cabinCenter = hatch ? -0.45 : -0.12;
+    addBox(group, hatch ? 2.05 : 1.95, 0.09, 1.56, paint, cabinCenter, 1.38, 0);
+    for (const z of [-0.78, 0.78]) {
+      addBox(group, hatch ? 1.9 : 1.6, 0.3, 0.03, glass, cabinCenter, 1.12, z);
+      addBox(group, 0.07, 0.36, 0.04, paint, cabinCenter - (hatch ? 0.45 : 0.15), 1.12, z);
+    }
+    const windshield = box(0.04, hatch ? 0.46 : 0.44, 1.5, glass);
+    windshield.rotation.z = hatch ? 0.42 : 0.38;
+    windshield.position.set(hatch ? 0.5 : 0.6, 1.15, 0);
+    group.add(windshield);
+    for (const z of [-0.76, 0.76]) {
+      const pillar = box(0.06, hatch ? 0.48 : 0.44, 0.06, paint);
+      pillar.rotation.z = windshield.rotation.z;
+      pillar.position.set(hatch ? 0.52 : 0.62, 1.15, z);
+      group.add(pillar);
+    }
+    const rearGlass = box(0.04, hatch ? 0.55 : 0.4, 1.5, glass);
+    rearGlass.rotation.z = hatch ? -0.72 : -0.5;
+    rearGlass.position.set(hatch ? -1.42 : -1.02, 1.12, 0);
+    group.add(rearGlass);
+    for (const z of [-0.76, 0.76]) {
+      const pillar = box(0.06, hatch ? 0.56 : 0.42, 0.06, paint);
+      pillar.rotation.z = rearGlass.rotation.z;
+      pillar.position.set(hatch ? -1.44 : -1.04, 1.13, z);
+      group.add(pillar);
+    }
+
+    for (const z of [-0.835, 0.835]) {
+      for (const x of [cabinCenter + 0.75, cabinCenter - 0.75]) {
+        addBox(group, 0.02, 0.26, 0.02, trim, x, 0.62, z);
       }
+      addBox(group, 0.12, 0.03, 0.02, chrome, cabinCenter + 0.35, 0.74, z);
+      addBox(group, 0.03, 0.03, 0.09, trim, 0.55, 1.1, z * 1.02);
+      addBox(group, 0.06, 0.09, 0.04, paint, 0.55, 1.15, z * 1.07);
+    }
+    const front = (nose - tail) / 2;
+    const rear = -front;
+    addBox(group, 0.05, 0.16, 0.72, trim, front + 0.005, 0.76, 0);
+    addBox(group, 0.055, 0.03, 0.7, chrome, front + 0.01, 0.76, 0);
+    for (const z of [-0.52, 0.52]) {
+      const lamp = cylinder(0.085, 0.085, 0.06, light, 8);
+      lamp.rotation.z = Math.PI / 2;
+      lamp.position.set(front + 0.01, 0.78, z);
+      group.add(lamp);
+      addBox(group, 0.05, 0.08, 0.12, solid(0xc88030), front, 0.78, z + Math.sign(z) * 0.16);
+      addBox(group, 0.05, 0.12, 0.28, red, rear - 0.01, 0.72, z);
+    }
+    addBox(group, 0.16, 0.13, 1.72, chrome, front + 0.08, 0.5, 0);
+    addBox(group, 0.16, 0.13, 1.72, chrome, rear - 0.08, 0.5, 0);
+    addBox(group, 0.02, 0.12, 0.4, solid(0xe0e0d0), front + 0.17, 0.56, 0);
+    addBox(group, 0.02, 0.12, 0.4, solid(0xe0e0d0), rear - 0.17, 0.56, 0);
+    for (const x of [frontAxle, rearAxle]) {
+      for (const z of [-0.66, 0.66]) carWheel(group, x, z, 0.31, paint, 0.85);
+    }
+    const exhaust = cylinder(0.03, 0.03, 0.14, trim, 6);
+    exhaust.rotation.z = Math.PI / 2;
+    exhaust.position.set(rear - 0.02, 0.28, -0.5);
+    group.add(exhaust);
+    if (worn) {
+      carRust(group, 0.75, 0.45, hatch ? 1.2 : 1.35, 0.955, 0.12, "top");
+      carRust(group, 0.6, 0.32, rearAxle - 0.35, 0.66, 0.845);
+      carRust(group, 0.7, 0.3, rearAxle, 0.55, -0.845);
     }
   }
   return group;
@@ -916,6 +1237,29 @@ export function buildTree(kind = "poplar", seed = 0) {
   const greens = [0x5f7246, 0x6d7c4a, 0x556a40, 0x7a8450, 0x66784a];
   const golds = [0xa39953, 0xb0a25b, 0x8f8846, 0xb5a86b, 0x897542];
 
+  // Craggy crown: identical vertex positions get identical displacement, so the
+  // shell stays watertight while the silhouette stops reading as a smooth ball.
+  const crown = (radius, color, stretch = 1) => {
+    const geometry = new THREE.IcosahedronGeometry(radius, 1);
+    const position = geometry.attributes.position;
+    for (let i = 0; i < position.count; i++) {
+      const x = position.getX(i);
+      const y = position.getY(i);
+      const z = position.getZ(i);
+      const h = Math.abs(Math.sin(x * 12.9898 + y * 78.233 + z * 37.719) * 43758.5453) % 1;
+      position.setXYZ(
+        i,
+        x * (1 + (h - 0.5) * 0.44),
+        y * (1 + (h - 0.5) * 0.34) * stretch,
+        z * (1 + (h - 0.5) * 0.44)
+      );
+    }
+    geometry.computeVertexNormals();
+    const mesh = new THREE.Mesh(geometry, foliageMaterial((rand() * 2) | 0, color));
+    mesh.rotation.y = rand() * Math.PI;
+    return mesh;
+  };
+
   if (kind === "winter") {
     const height = 6 + rand() * 3;
     addCylinder(group, 0.06, 0.22, height, trunkMat, 0, height / 2, 0, 5);
@@ -926,47 +1270,54 @@ export function buildTree(kind = "poplar", seed = 0) {
       branch.rotation.set(Math.cos(angle) * 0.5, 0, Math.sin(angle) * 0.5);
       group.add(branch);
     }
-  } else if (kind === "poplar" || kind === "autumn") {
+  } else if (kind === "poplar") {
+    const height = 7 + rand() * 3;
+    addCylinder(group, 0.1, 0.2, height, trunkMat, 0, height / 2, 0, 5);
+    const tiers = 3 + ((rand() * 2) | 0);
+    for (let i = 0; i < tiers; i++) {
+      const p = i / Math.max(1, tiers - 1);
+      const palette = rand() < 0.3 ? golds : greens;
+      const blob = crown(0.85 + rand() * 0.3, palette[(rand() * palette.length) | 0], 1.9 + rand() * 0.4);
+      blob.position.set((rand() - 0.5) * 0.3, height * (0.5 + p * 0.5), (rand() - 0.5) * 0.3);
+      blob.scale.set(0.72, 1, 0.72);
+      group.add(blob);
+    }
+  } else if (kind === "autumn" || kind === "elm") {
     const height = 6.5 + rand() * 3;
     addCylinder(group, 0.12, 0.22, height, trunkMat, 0, height / 2, 0, 5);
-    const crowns = 3 + ((rand() * 2) | 0);
+    const branches = 1 + ((rand() * 2) | 0);
+    for (let b = 0; b < branches; b++) {
+      const angle = rand() * Math.PI * 2;
+      const branch = cylinder(0.04, 0.09, 1.5 + rand(), trunkMat, 4);
+      branch.position.set(Math.sin(angle) * 0.55, height * 0.62, Math.cos(angle) * 0.55);
+      branch.rotation.set(Math.cos(angle) * 0.7, 0, Math.sin(angle) * 0.7);
+      group.add(branch);
+    }
+    const crowns = 3 + ((rand() * 3) | 0);
     for (let i = 0; i < crowns; i++) {
-      const p = i / (crowns - 1);
-      const palette = rand() < (kind === "autumn" ? 0.68 : 0.18) ? golds : greens;
-      const crown = new THREE.Mesh(
-        new THREE.IcosahedronGeometry(1.0 + rand() * 0.35, 0),
-        solid(palette[(rand() * palette.length) | 0])
-      );
-      crown.position.set((rand() - 0.5) * 0.7, height * (0.6 + p * 0.4), (rand() - 0.5) * 0.7);
-      crown.scale.set(0.9 + rand() * 0.35, 1.3 + rand() * 0.6, 0.9 + rand() * 0.35);
-      crown.rotation.y = rand() * Math.PI;
-      group.add(crown);
+      const p = i / Math.max(1, crowns - 1);
+      const palette = rand() < 0.66 ? golds : greens;
+      const blob = crown(0.95 + rand() * 0.5, palette[(rand() * palette.length) | 0], 0.85 + rand() * 0.35);
+      blob.position.set((rand() - 0.5) * 1.15, height * (0.58 + p * 0.42), (rand() - 0.5) * 1.15);
+      group.add(blob);
     }
   } else if (kind === "bush") {
     const trunkH = 0.7;
     addCylinder(group, 0.07, 0.1, trunkH, trunkMat, 0, trunkH / 2, 0, 4);
     for (let i = 0; i < 3; i++) {
-      const crown = new THREE.Mesh(
-        new THREE.IcosahedronGeometry(0.5 + rand() * 0.3, 0),
-        solid(greens[(rand() * greens.length) | 0])
-      );
-      crown.position.set((rand() - 0.5) * 0.8, 0.9 + rand() * 0.5, (rand() - 0.5) * 0.8);
-      crown.scale.set(1.1, 0.8, 1.1);
-      group.add(crown);
+      const blob = crown(0.5 + rand() * 0.3, greens[(rand() * greens.length) | 0], 0.8);
+      blob.position.set((rand() - 0.5) * 0.8, 0.9 + rand() * 0.5, (rand() - 0.5) * 0.8);
+      blob.scale.set(1.1, 1, 1.1);
+      group.add(blob);
     }
   } else {
     const height = 2.8 + rand() * 1.8;
     addCylinder(group, 0.16, 0.3, height, trunkMat, 0, height / 2, 0, 5);
     for (let i = 0; i < 3; i++) {
       const palette = rand() < 0.2 ? golds : greens;
-      const crown = new THREE.Mesh(
-        new THREE.IcosahedronGeometry(1.2 + rand() * 0.6, 0),
-        solid(palette[(rand() * palette.length) | 0])
-      );
-      crown.position.set((rand() - 0.5) * 1.6, height + (rand() - 0.2) * 1.2, (rand() - 0.5) * 1.6);
-      crown.scale.set(1.2, 0.9 + rand() * 0.3, 1.2);
-      crown.rotation.y = rand() * Math.PI;
-      group.add(crown);
+      const blob = crown(1.2 + rand() * 0.6, palette[(rand() * palette.length) | 0], 0.85);
+      blob.position.set((rand() - 0.5) * 1.6, height + (rand() - 0.2) * 1.2, (rand() - 0.5) * 1.6);
+      group.add(blob);
     }
   }
   return group;

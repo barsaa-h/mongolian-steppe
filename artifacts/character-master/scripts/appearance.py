@@ -361,8 +361,16 @@ def add_skin(dna, look, rig, collection, bake):
         color = mix_color(nodes, links, color, rgb('#8a6851'), scale_socket(nodes, links, scale_socket(nodes, links, spots, head), min(1, settings['freckles'] / 40)), 'MIX')
     beard = dna['facial_hair']
     if beard['style'] == 'stubble' and beard['coverage'] and head is not None:
-        dots = math_node(nodes, links, 'GREATER_THAN', noise.outputs['Fac'], .58)
-        color = mix_color(nodes, links, color, rgb(grey_color('#4c3d32', beard['greying'])), scale_socket(nodes, links, scale_socket(nodes, links, dots, head), beard['coverage'] * .55), 'MIX')
+        # Fine grain on a geometric beard mask: the head mask alone would speckle the whole skull.
+        mask_path = beard_mask(source, rig)
+        beard_area = mask_image(nodes, links, uv, mask_path) if mask_path else head
+        grain = nodes.new('ShaderNodeTexNoise')
+        grain.inputs['Scale'].default_value = 150
+        grain.inputs['Detail'].default_value = 2
+        links.new(uv.outputs['UV'], grain.inputs['Vector'])
+        dots = math_node(nodes, links, 'GREATER_THAN', grain.outputs['Fac'], .55)
+        area = beard_area if beard_area is not None else head
+        color = mix_color(nodes, links, color, rgb(grey_color('#4c3d32', beard['greying'])), scale_socket(nodes, links, scale_socket(nodes, links, dots, area), beard['coverage'] * .55), 'MIX')
     links.new(color, shader.inputs['Base Color'])
     normal_path = TEXTURES / 'skin' / f"{settings['asset']}_normal.png"
     if normal_path.is_file():
@@ -439,6 +447,36 @@ def math_node(nodes, links, operation, left, right):
 
 def scale_socket(nodes, links, socket, factor):
     return math_node(nodes, links, 'MULTIPLY', socket, factor)
+
+def beard_mask(body, rig, size=1024):
+    """Rasterize the beard region of the body UVs so stubble stays off the forehead and scalp."""
+    from PIL import Image, ImageDraw, ImageFilter
+    eyes = [rig.data.bones[name].head_local for name in ('eye.L', 'eye.R') if name in rig.data.bones]
+    if len(eyes) != 2:
+        return None
+    import mathutils
+    span = (mathutils.Vector(eyes[0]) - mathutils.Vector(eyes[1])).length
+    eye_z = (eyes[0].z + eyes[1].z) / 2
+    eye_y = min(eyes[0].y, eyes[1].y)
+    top, bottom = eye_z - .32 * span, eye_z - 2.4 * span
+    front = eye_y + .62 * span
+    uv = body.data.uv_layers.active
+    if uv is None:
+        return None
+    image = Image.new('L', (size, size), 0)
+    draw = ImageDraw.Draw(image)
+    for polygon in body.data.polygons:
+        vertices = polygon.vertices
+        points = [body.data.vertices[i].co for i in vertices]
+        center = sum(points, mathutils.Vector()) / len(points)
+        if not (bottom < center.z < top and center.y < front):
+            continue
+        loop_uvs = [uv.data[loop_index].uv for loop_index in polygon.loop_indices]
+        draw.polygon([(u * (size - 1), (1 - v) * (size - 1)) for u, v in loop_uvs], fill=255)
+    image = image.filter(ImageFilter.GaussianBlur(2))
+    destination = Path('/tmp') / 'beard-region-mask.png'
+    image.save(destination)
+    return destination
 
 def mask_image(nodes, links, uv, path):
     if not path.is_file():

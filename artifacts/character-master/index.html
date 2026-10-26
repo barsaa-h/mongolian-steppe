@@ -11,7 +11,7 @@
 <body>
   <header><div><div class="eyebrow">Agent source / Modular character</div><h1>Character Master</h1></div><p class="intro">A complete anatomical source with separate clothes, hands and accessories. These are generated examples; your agent customizes the JSON recipe and regenerates the Blender source and GLB.</p></header>
   <main>
-    <section class="stage" aria-label="Character inspection"><canvas id="viewer" aria-label="Interactive 3D character. Drag to orbit and scroll to zoom."></canvas><div class="caption"><strong id="name">Default</strong><span id="facts">Loading character…</span></div><div class="hint">Drag to orbit · Scroll to zoom · Sliders edit the female and male zeros</div></section>
+    <section class="stage" aria-label="Character inspection"><canvas id="viewer" aria-label="Interactive 3D character. Drag to orbit and scroll to zoom."></canvas><div class="caption"><strong id="name">Default</strong><span id="facts">Loading character…</span></div><div class="hint">Drag to orbit · Scroll to zoom · Sliders edit every example</div></section>
     <aside>
       <div id="status" class="status" role="status">Loading the character master…</div>
       <label for="preset">Generated examples</label><select id="preset"><option value="default">Default · 1.70 m</option><option value="male">Male · 1.70 m</option><option value="heavy">Heavy · 1.70 m</option><option value="slim-tall">Slim / tall · 1.90 m</option><option value="child">Child proportions · 1.30 m</option></select>
@@ -19,7 +19,7 @@
       <h2>Customize</h2>
       <details id="customize">
         <summary>Eyes, brows, skin and face</summary>
-        <p class="notes" id="customize-note">Loads the female or male zero. Face sliders move when this GLB has FACE morphs. Download the DNA and rebuild for a new texture.</p>
+        <p class="notes" id="customize-note">Loads the character's own recipe. Face sliders add to the baked identity from its recipe value. Download the DNA and rebuild for texture changes.</p>
         <div id="sliders"></div>
         <a id="dna-download" href="#" download="character-dna.json">Download DNA</a>
       </details>

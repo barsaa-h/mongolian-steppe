@@ -5,9 +5,9 @@
     {
       "id": "default",
       "sourceVertices": 19158,
-      "sourceShapeKeys": 6,
+      "sourceShapeKeys": 78,
       "bones": 137,
-      "packedImages": 9,
+      "packedImages": 15,
       "posesChecked": [
         1,
         25,
@@ -18,7 +18,7 @@
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
+        "Eyelashes.Fine",
         "Eyes",
         "Hair",
         "Hands.L",
@@ -31,9 +31,9 @@
     {
       "id": "male",
       "sourceVertices": 19158,
-      "sourceShapeKeys": 6,
+      "sourceShapeKeys": 80,
       "bones": 137,
-      "packedImages": 9,
+      "packedImages": 16,
       "posesChecked": [
         1,
         25,
@@ -44,7 +44,6 @@
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
         "Eyes",
         "Hair",
         "Hands.L",
@@ -57,9 +56,9 @@
     {
       "id": "heavy",
       "sourceVertices": 19158,
-      "sourceShapeKeys": 6,
+      "sourceShapeKeys": 78,
       "bones": 137,
-      "packedImages": 9,
+      "packedImages": 17,
       "posesChecked": [
         1,
         25,
@@ -70,7 +69,6 @@
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
         "Eyes",
         "Hair",
         "Hands.L",
@@ -83,9 +81,9 @@
     {
       "id": "slim-tall",
       "sourceVertices": 19158,
-      "sourceShapeKeys": 10,
+      "sourceShapeKeys": 83,
       "bones": 137,
-      "packedImages": 9,
+      "packedImages": 15,
       "posesChecked": [
         1,
         25,
@@ -96,7 +94,6 @@
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
         "Eyes",
         "Hair",
         "Hands.L",
@@ -109,9 +106,9 @@
     {
       "id": "child",
       "sourceVertices": 19158,
-      "sourceShapeKeys": 9,
+      "sourceShapeKeys": 73,
       "bones": 137,
-      "packedImages": 9,
+      "packedImages": 15,
       "posesChecked": [
         1,
         25,
@@ -122,7 +119,7 @@
         "Clothes.Bottom",
         "Clothes.Top",
         "Eyebrows",
-        "Eyelashes",
+        "Eyelashes.Fine",
         "Eyes",
         "Hair",
         "Hands.L",

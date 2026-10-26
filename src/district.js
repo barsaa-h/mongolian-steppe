@@ -15,7 +15,10 @@ import {
   buildGer,
   buildGrassTuft,
   buildHorse,
+  buildLeafCarpet,
+  buildLeafScatter,
   buildOuthouse,
+  buildPaperScrap,
   buildPerson,
   buildPowerPole,
   buildRock,
@@ -24,16 +27,21 @@ import {
   buildSlide,
   buildSwingSet,
   buildSandbox,
+  buildTumblingLeaf,
   buildTrashCan,
   buildTree,
+  buildWeedTuft,
   buildWoodpile,
   contactShadow,
   dirtMaterial,
   groundPlane,
+  groundWearMaterial,
   mulberry,
   plasterMaterial,
   signMaterial,
   solid,
+  terraceWearMaterial,
+  trackWearMaterial,
 } from "./parts.js";
 import {
   buildApartment,
@@ -160,6 +168,21 @@ function terrace(scene, z0, z1, y) {
   }
   scene.add(groundPlane(width, depth, dirtMaterial(18, 6), 0, z, y + 0.03));
   scene.add(groundPlane(9, depth - 0.4, dirtMaterial(2, 8), 0, z, y + 0.055));
+  // Large faint wear blotches so the terrace dirt does not read as one flat sheet.
+  const rand = mulberry(Math.round(z * 17 + y * 31) + 101);
+  const patches = 4 + ((rand() * 3) | 0);
+  for (let i = 0; i < patches; i++) {
+    const patch = groundPlane(
+      7 + rand() * 10,
+      4 + rand() * 5,
+      terraceWearMaterial(),
+      (rand() - 0.5) * (width - 26),
+      z + (rand() - 0.5) * (depth - 6),
+      y + 0.04 + i * 0.0015
+    );
+    patch.rotation.z = rand() * Math.PI;
+    scene.add(patch);
+  }
 }
 
 function terraceBanks(scene) {
@@ -276,7 +299,7 @@ function placeKhashaa(scene, bags, options) {
   ger.position.set(gerX, 0.02, gerZ);
   ger.rotation.y = rotY;
   plot.add(ger);
-  const gerShadow = contactShadow(5.4, 5.4, 0.32);
+  const gerShadow = contactShadow(5.4, 5.4, 0.22);
   gerShadow.position.set(gerX, 0.05, gerZ);
   plot.add(gerShadow);
 
@@ -377,9 +400,10 @@ function placeKhashaa(scene, bags, options) {
   }
 
   if (car) {
-    const parked = buildCar(seed % 2 ? 0x8a3a2e : 0x3a4a6a, seed % 3 === 0 ? "van" : "sedan");
-    parked.position.set(4.6, 0, gateNorth ? -4.4 : 4.4);
-    parked.rotation.y = gateNorth ? 0.15 : Math.PI - 0.15;
+    const carRand = mulberry(seed * 41 + 7);
+    const parked = buildCar(seed % 2 ? 0x8a3a2e : 0x3a4a6a, seed % 3 === 0 ? "van" : "sedan", seed % 3);
+    parked.position.set(4.6, -0.015, gateNorth ? -4.4 : 4.4);
+    parked.rotation.y = (gateNorth ? 0.15 : Math.PI - 0.15) + (carRand() - 0.5) * 0.07;
     plot.add(parked);
   }
 
@@ -398,11 +422,41 @@ function placeKhashaa(scene, bags, options) {
     planted.position.set(-5.4, 0, back * 2.4);
     planted.scale.setScalar(0.72);
     plot.add(planted);
+    const carpet = buildLeafCarpet(1.9, seed + 5);
+    carpet.position.set(-5.4, 0.048, back * 2.4);
+    plot.add(carpet);
   }
 
   const bin = buildTrashCan();
   bin.position.set(5.6, 0, -back * 5.2);
   plot.add(bin);
+
+  // Ground life: a worn path from the gate to the door, a trampled patch inside
+  // the gate, weeds at the fence line, and a leaf drift on the lee side.
+  const yardRand = mulberry(seed * 71 + 5);
+  plot.add(groundPlane(1.15, 4.6, groundWearMaterial(), gerX * 0.5, -back * 4.3, 0.048));
+  plot.add(groundPlane(2.8, 1.9, groundWearMaterial(), 0, -back * 5.7, 0.052));
+  if (car) {
+    for (const wx of [-0.72, 0.72]) {
+      plot.add(groundPlane(0.18, 3.2, trackWearMaterial(), 4.6 + wx, -back * 5.4, 0.05));
+    }
+  }
+  const weeds = 3 + ((yardRand() * 4) | 0);
+  for (let i = 0; i < weeds; i++) {
+    const weed = buildWeedTuft(seed * 9 + i);
+    const side = yardRand() < 0.5 ? -1 : 1;
+    weed.position.set(side * (size / 2 - 0.5 - yardRand() * 0.7), 0.01, (yardRand() - 0.5) * (size - 2));
+    weed.scale.setScalar(0.7 + yardRand() * 0.5);
+    plot.add(weed);
+  }
+  const drift = buildLeafScatter(8 + ((yardRand() * 6) | 0), 3.4, seed);
+  drift.position.set(-2 + yardRand() * 4, 0.05, back * (3 + yardRand() * 2.5));
+  plot.add(drift);
+  if (yardRand() < 0.4) {
+    const scrap = buildPaperScrap((yardRand() * 2) | 0, seed * 13 + 7);
+    scrap.position.set(yardRand() * 3 - 1.5, 0.05, -back * 6.1);
+    plot.add(scrap);
+  }
 }
 
 function standing(scene, options, x, y, z, rotY) {
@@ -516,14 +570,14 @@ export function placeTown(scene) {
     addBox(scene, 0.08, 0.02, 8, solid(0xd8d4c8, { transparent: true, opacity: 0.35 }), x, 0.06, -13.5);
   }
   const ambulance = buildCar(0xf4f4f0, "van");
-  ambulance.position.set(-86, 0, -12.5);
+  ambulance.position.set(-86, -0.015, -12.5);
   ambulance.rotation.y = 0.08;
   scene.add(ambulance);
-  addBox(ambulance, 0.7, 0.08, 0.08, solid(0xc43838), 0, 2.35, 0);
-  addBox(ambulance, 0.08, 0.7, 0.08, solid(0xc43838), 0, 2.35, 0);
-  for (const [x, rot, color] of [[-70, 0.04, 0x8a3a2e], [-62, -0.08, 0x3a4a62], [-74, 0.2, 0xc8c4b4]]) {
-    const car = buildCar(color, "sedan");
-    car.position.set(x, 0, -15.2);
+  addBox(ambulance, 0.7, 0.08, 0.08, solid(0xc43838), 0, 2.2, 0);
+  addBox(ambulance, 0.08, 0.7, 0.08, solid(0xc43838), 0, 2.2, 0);
+  for (const [i, [x, rot, color]] of [[-70, 0.04, 0x8a3a2e], [-62, -0.08, 0x3a4a62], [-74, 0.2, 0xc8c4b4]].entries()) {
+    const car = buildCar(color, "sedan", i);
+    car.position.set(x, -0.015, -15.2);
     car.rotation.y = rot;
     scene.add(car);
   }
@@ -701,14 +755,17 @@ export function placeTown(scene) {
     [-96, 36], [96, 36], [-96, 70], [96, 78],
   ];
   treeSpots.forEach(([x, z], i) => {
-    const tree = buildTree("autumn", i + 3);
+    const tree = buildTree(i % 3 === 2 ? "poplar" : "autumn", i + 3);
     const y = townHeight(x, z);
     tree.position.set(x, y, z);
     tree.scale.setScalar(0.85 + (i % 4) * 0.06);
     scene.add(tree);
-    const shadow = contactShadow(4.5, 4.5, 0.25);
-    shadow.position.set(x, y + 0.05, z);
-    scene.add(shadow);
+    const carpet = buildLeafCarpet(2.2 + (i % 3) * 0.4, i + 3);
+    carpet.position.set(x, y + 0.048, z);
+    scene.add(carpet);
+    const drift = buildLeafScatter(10 + (i % 3) * 4, 2.8, i + 3);
+    drift.position.set(x, y + 0.05, z);
+    scene.add(drift);
   });
 
   const roadPoles = [];
@@ -847,8 +904,55 @@ export function placeTown(scene) {
   crate.position.set(98.5, 0, 9.4);
   scene.add(crate);
 
+  // Litter and leaf drift where people actually gather and dump things.
+  const litterRand = mulberry(4402);
+  const litterSpots = [
+    [27, -7.2, 3], [29.5, -9.8, 2],
+    [-9, 7.0, 2], [-6.8, 9.6, 2],
+    [-23.2, -8.0, 2], [-25, -10.4, 1],
+    [97.5, 7.4, 3], [101, 9.6, 2], [104, 7.2, 2],
+    [91, 10.6, 4], [93.5, 7.8, 2],
+    [-7.4, 10.2, 2], [19.5, 39.4, 1],
+    [10.4, 46.8, 2], [15.8, 39.2, 1],
+  ];
+  for (const [lx, lz, n] of litterSpots) {
+    const ly = townHeight(lx, lz);
+    for (let k = 0; k < n; k++) {
+      const paper = buildPaperScrap((litterRand() * 2) | 0, (lx * 7 + lz * 13 + k * 3) | 0);
+      paper.position.set(lx + (litterRand() - 0.5) * 2.6, ly + 0.05 + litterRand() * 0.012, lz + (litterRand() - 0.5) * 2.2);
+      scene.add(paper);
+    }
+    const drift = buildLeafScatter(4 + ((litterRand() * 5) | 0), 1.8, (lx * 3 + lz) | 0);
+    drift.position.set(lx, ly + 0.05, lz);
+    scene.add(drift);
+  }
+  for (let i = 0; i < 26; i++) {
+    const x = -150 + litterRand() * 300;
+    const z = litterRand() < 0.5 ? -9.1 + litterRand() * 0.8 : 7.4 + litterRand() * 0.8;
+    const weed = buildWeedTuft(i + 500);
+    weed.position.set(x, 0.02, z);
+    weed.scale.setScalar(0.6 + litterRand() * 0.6);
+    scene.add(weed);
+  }
+
+  const tumbleLeaves = [];
+  for (let i = 0; i < 8; i++) {
+    const leaf = buildTumblingLeaf(i + 900);
+    leaf.userData.dynamic = true;
+    scene.add(leaf);
+    tumbleLeaves.push({
+      mesh: leaf,
+      speed: 0.016 + litterRand() * 0.02,
+      phase: litterRand(),
+      z: -3.5 + litterRand() * 7,
+      baseY: 0.35 + litterRand() * 0.25,
+      hop: 0.3 + litterRand() * 0.35,
+    });
+  }
+
   return {
     ...bags,
+    tumbleLeaves,
     lampPoolMaterial,
     storeShopper,
     standpipePerson,
