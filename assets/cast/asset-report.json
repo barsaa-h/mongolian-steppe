@@ -1,0 +1,735 @@
+{
+  "builder": "scripts/build-cast.py",
+  "blender": "5.2.2 LTS",
+  "credit": "PSX Casual Male Character and PSX Female Secretary Character by Vinrax; credit required.",
+  "limits": [
+    "Roster-authored low-poly geometry edits; no scanned likenesses.",
+    "Quaternius download unavailable due to official Google Drive quota.",
+    "Only roster-appropriate simple costume pieces; not every staging prop is modeled."
+  ],
+  "assets": [
+    {
+      "id": "ganaa",
+      "glbBytes": 741700,
+      "sha256": "2f779e2b62c68135a9f9610627bb13f57a78e63ff267fa713610c9328d795c0e",
+      "nativeSource": "ganaa.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough",
+        "hour-five"
+      ],
+      "height": 1.53,
+      "source": "Vinrax casual male",
+      "performance": {
+        "wheelContactMaxError": {
+          "left": 1.9371509552001953e-07,
+          "right": 2.457562461863554e-07
+        },
+        "slapContactError": 1.1250129990683123e-07,
+        "duration": 30,
+        "fps": 24
+      }
+    },
+    {
+      "id": "yard-guard",
+      "glbBytes": 547952,
+      "sha256": "b854c26a76c7d9cae7bcf701061a50e48514d25cee93e370b2b155e0c0cde587",
+      "nativeSource": "yard-guard.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.49,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "irina",
+      "glbBytes": 576504,
+      "sha256": "0294f359fd7ee065b16b067662739b3bed92a01f3cbf0604d7ad5df0886242bd",
+      "nativeSource": "irina.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.45,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "dasha",
+      "glbBytes": 553088,
+      "sha256": "6a15517f34256be1ede90bf96254edbe131fd780c8fb6b5ad4ba29837c71c999",
+      "nativeSource": "dasha.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.46,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "hurel",
+      "glbBytes": 513856,
+      "sha256": "cd58d82cf2a9c31f99a5a999f150ba53a5ae3c2f3374d7e1f480d11f5bc3ae8e",
+      "nativeSource": "hurel.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.46,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "tsetsegmaa",
+      "glbBytes": 639480,
+      "sha256": "c79d7fc2ad98ff0a80269f9216b9cb78154a9112443093366037bdf08e393360",
+      "nativeSource": "tsetsegmaa.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.44,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "dulmaa",
+      "glbBytes": 555208,
+      "sha256": "55004c46c4a3ec06ca93a3cf740b64d8e1e0b9a31ef5267f1a9c3a1f88d5ced1",
+      "nativeSource": "dulmaa.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.36,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "sukhee",
+      "glbBytes": 525624,
+      "sha256": "f11709dbc07bb44cc6cff500a427303a4fd734925cad6d5fee944c697c303dff",
+      "nativeSource": "sukhee.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.5,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "altan",
+      "glbBytes": 560348,
+      "sha256": "a6893cae31dba4861714d28ad3828ea500d4cb2056f533a970c7fd6b8f34f45e",
+      "nativeSource": "altan.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 0.76,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "oyun",
+      "glbBytes": 543560,
+      "sha256": "4ca20a4f7cc2688e521dc2af94b63e6e89ace1e42a19a7a113a5ba952a505e3e",
+      "nativeSource": "oyun.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.46,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "bolor",
+      "glbBytes": 528764,
+      "sha256": "9cade6ff8d2cebac74a96368dab2414729aa3fdcdeee9f2ffaa556a4c3421536",
+      "nativeSource": "bolor.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.48,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "narantsetseg",
+      "glbBytes": 644924,
+      "sha256": "078481d96199292f88ff121cb9f108d53d7d8f8ec786ca1fcbca6280c83ccbac",
+      "nativeSource": "narantsetseg.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.44,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "dagva",
+      "glbBytes": 513856,
+      "sha256": "8ec871f2510db97edc4fa641510ba6dabfb4ba86608e53736c8c548e0f650101",
+      "nativeSource": "dagva.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.51,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "tsolmon",
+      "glbBytes": 540940,
+      "sha256": "90557d2480f6ad2bc0b230453d579c2061a84916dba346fe0e86d5db04e73dda",
+      "nativeSource": "tsolmon.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.52,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "myagmar",
+      "glbBytes": 644204,
+      "sha256": "8f4bbacb4aa499f81ada3dc37d2ccd8d5bdb1b4c9b0dd8912f88615fab6f5a28",
+      "nativeSource": "myagmar.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.41,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "naran",
+      "glbBytes": 61788,
+      "sha256": "8e19af451fede8ee3bb4f3410437f4c9b7ca394a2a1f2a019d709c3bf77ea0e2",
+      "nativeSource": "naran.blend",
+      "animations": [
+        "idle"
+      ],
+      "height": 0.44,
+      "source": "original swaddled infant",
+      "performance": null
+    },
+    {
+      "id": "myagmar-newborn",
+      "glbBytes": 61824,
+      "sha256": "ae6179ad78f502c4cbe14b46b2ed56dc9b21b37fe8037ca1b31f2ba388a7fa78",
+      "nativeSource": "myagmar-newborn.blend",
+      "animations": [
+        "idle"
+      ],
+      "height": 0.43,
+      "source": "original swaddled infant",
+      "performance": null
+    },
+    {
+      "id": "lkhagva",
+      "glbBytes": 527996,
+      "sha256": "dcfc6b2a548adb4ee55ef24fe57f2ee5566f0cf7a2dc85f434d541453c5b82aa",
+      "nativeSource": "lkhagva.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.49,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "enkhee",
+      "glbBytes": 514000,
+      "sha256": "7123e4dd3eeebb821ef363c0c8887f61729385874e084491056fcf67c5d80c65",
+      "nativeSource": "enkhee.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.61,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "sarantuya",
+      "glbBytes": 518980,
+      "sha256": "1e109b1841add90ae6919de728afaa3ce2640ddf99345292be8e550829fc01c4",
+      "nativeSource": "sarantuya.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.47,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "dashnyam",
+      "glbBytes": 514012,
+      "sha256": "17243ae72cff722c57e8bab28d822c04dcbee80a187f5d6582ea09e8cd8714d1",
+      "nativeSource": "dashnyam.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.47,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "chinbat",
+      "glbBytes": 516620,
+      "sha256": "c0438624f6710a5f9ea804ccbb15542fb8897985f899b1c53d57d4c6b52ec6dc",
+      "nativeSource": "chinbat.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.54,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "lodoi",
+      "glbBytes": 550844,
+      "sha256": "949014c616e42fd26cb8fba2e5235148de358fef6cd6c1c9361493a839a50f5f",
+      "nativeSource": "lodoi.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.5,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "batu",
+      "glbBytes": 511212,
+      "sha256": "07c536d4659e13c8a94032507842014253202ee718e1f81e2db892f611b47909",
+      "nativeSource": "batu.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.64,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "uyanga",
+      "glbBytes": 558780,
+      "sha256": "0deb346371c36a8923cf67f48be8e0d44cd785d90aa45d6b4184db8de0c496de",
+      "nativeSource": "uyanga.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.43,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "banquet-waiter",
+      "glbBytes": 525412,
+      "sha256": "93b7604721018b5bf5a702cf91f6cdeeb26b3f5d1aca8b1de884b7e17dc87eb5",
+      "nativeSource": "banquet-waiter.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.5,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "citizen-1",
+      "glbBytes": 543692,
+      "sha256": "e54d10643eac7156872cd8dd9fa6ed81164b2cc3321c124cf0081c326f7b81b0",
+      "nativeSource": "citizen-1.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.51,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "citizen-2",
+      "glbBytes": 658928,
+      "sha256": "9baa91bea840d512c3b6d35d2d89050c57ce0af7d20357bcf847262dadb79011",
+      "nativeSource": "citizen-2.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.39,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "citizen-3",
+      "glbBytes": 559396,
+      "sha256": "52430ca33596f4c977d40a94987d14d2cb32efac12ef0b988eefd84e2c49082b",
+      "nativeSource": "citizen-3.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.57,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "helipad-parent",
+      "glbBytes": 649160,
+      "sha256": "1175bdd24d77f7d344eec2db705163d2a99ed4f5c0117dd94850c62c0d2bdc60",
+      "nativeSource": "helipad-parent.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.42,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "anu",
+      "glbBytes": 568752,
+      "sha256": "4e04856f6883ff2ae7175780f3aeb0e8355bd4e50abd14a6da81610e1985f8fc",
+      "nativeSource": "anu.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.36,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "nomin",
+      "glbBytes": 637484,
+      "sha256": "bcc3aca35853d66cce0e73b63e496b1d5308b45d11dc048208e00c5de34bde7d",
+      "nativeSource": "nomin.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.35,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "bat-erdene",
+      "glbBytes": 537952,
+      "sha256": "9fcf7f812db1dd1af020f0e94569f32453f6e8fb48da2e16443066258acc6832",
+      "nativeSource": "bat-erdene.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.59,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "gantsetseg",
+      "glbBytes": 531580,
+      "sha256": "20ff6ee6971d5907037f66dd7c5fc09572d44f147ae411c14067269d4cebe18a",
+      "nativeSource": "gantsetseg.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.4,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "baasaa",
+      "glbBytes": 643520,
+      "sha256": "7c1d56448fb11ff3c93e1b50fe2a653a8e4f25552bcaf6159c3c3c3e466d69fe",
+      "nativeSource": "baasaa.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.45,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "saruul",
+      "glbBytes": 640892,
+      "sha256": "3e573f9f4345878de8cd5606eec0f1dfb7931e3fcf37ef1d9c3847b082788dae",
+      "nativeSource": "saruul.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.37,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "bayar",
+      "glbBytes": 560660,
+      "sha256": "8905695eca82eb5c5d3c316b16984ca5c7d6fd2ef6c5915f46225a79784d2894",
+      "nativeSource": "bayar.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.55,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "cordon-mother-meat",
+      "glbBytes": 659884,
+      "sha256": "20c44bc9a34a859d9500c64b5fd932852e2c4e380f27cd05e5948c2441b597b9",
+      "nativeSource": "cordon-mother-meat.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.42,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "cordon-mother-smoke",
+      "glbBytes": 650728,
+      "sha256": "dda3546cd1178826bf7baca21d84a705761952d3d87aa07d8905015f3638a358",
+      "nativeSource": "cordon-mother-smoke.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.4,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "cordon-bitten-man",
+      "glbBytes": 516384,
+      "sha256": "1fbc8056d2a25ac549555eebf70313cb61b65602b854fce5fcb1d3ceb4ed6b8d",
+      "nativeSource": "cordon-bitten-man.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.52,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "cordon-father",
+      "glbBytes": 518092,
+      "sha256": "30fc4c4c68457c97e998918dfa14ddba9e6826c334e98a3863c505b89b42633e",
+      "nativeSource": "cordon-father.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.56,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "cordon-woman",
+      "glbBytes": 648424,
+      "sha256": "02dc0ef021a448d1abcf10481064c3223643b12baac920fa475e50fa5d81c9ea",
+      "nativeSource": "cordon-woman.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.46,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "narantuya",
+      "glbBytes": 676428,
+      "sha256": "ecdef7cdaddb3da324b3b25572c589855cad58fca2f1cde5b8b0eb622dad441a",
+      "nativeSource": "narantuya.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.49,
+      "source": "Vinrax female secretary",
+      "performance": null
+    },
+    {
+      "id": "munkh",
+      "glbBytes": 528140,
+      "sha256": "1f065a5bfb00b2d1bdbab2c73ab298b0ac158e8afe697ec73b27493b7b2ac984",
+      "nativeSource": "munkh.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.31,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "temuujin",
+      "glbBytes": 522548,
+      "sha256": "9e0e54c1849d6ba7af9e401ef615093acf0961cb75f987b9da749482f339a945",
+      "nativeSource": "temuujin.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.4,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "erdene",
+      "glbBytes": 565132,
+      "sha256": "b7a441cdcee2f809b095c311f4498b9a59a0e337ca7d165edbe7c04f4036692f",
+      "nativeSource": "erdene.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.48,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "jargal",
+      "glbBytes": 561100,
+      "sha256": "eac0f5305112c4242b819d40649264d53503e2b8264767590efb91a1cfec63f5",
+      "nativeSource": "jargal.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.51,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "cordon-coughing-boy",
+      "glbBytes": 544296,
+      "sha256": "bd3cfc80e843044ab529108700d973f77566436ebac1966ab8a72d3c6d6e2829",
+      "nativeSource": "cordon-coughing-boy.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.02,
+      "source": "Vinrax casual male",
+      "performance": null
+    }
+  ]
+}

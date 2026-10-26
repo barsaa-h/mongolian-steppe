@@ -1,0 +1,378 @@
+{
+  "source": "/home/barsaa/mongolian-steppe/artifacts/shearling-field-guy/field-guy.blend",
+  "objects": [
+    {
+      "name": "FG | Hand R",
+      "vertices": 130,
+      "triangles": 212,
+      "components": 10,
+      "materials": [
+        "FG | Warm tan skin",
+        "FG | Soft skin shadow"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Hand L",
+      "vertices": 130,
+      "triangles": 212,
+      "components": 10,
+      "materials": [
+        "FG | Warm tan skin",
+        "FG | Soft skin shadow"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Head and face",
+      "vertices": 803,
+      "triangles": 1443,
+      "components": 29,
+      "materials": [
+        "FG | Face paint 128px",
+        "FG | Soft skin shadow",
+        "FG | Muted eye whites",
+        "FG | Dark brown iris",
+        "FG | Pupils",
+        "FG | Quiet eye highlight",
+        "FG | Warm tan skin",
+        "FG | Ear warmth",
+        "FG | Nostrils and mouth",
+        "FG | Closed lips",
+        "FG | Black hair"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Neck",
+      "vertices": 42,
+      "triangles": 80,
+      "components": 1,
+      "materials": [
+        "FG | Warm tan skin"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Charcoal shirt",
+      "vertices": 80,
+      "triangles": 124,
+      "components": 2,
+      "materials": [
+        "FG | Charcoal underlayer"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Field jacket",
+      "vertices": 1516,
+      "triangles": 2624,
+      "components": 84,
+      "materials": [
+        "FG | Olive field canvas",
+        "FG | Pocket and sleeve planes",
+        "FG | Olive seam shade",
+        "FG | Cream shearling",
+        "FG | Aged zipper and eyelets"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Shearling cuff R",
+      "vertices": 404,
+      "triangles": 688,
+      "components": 23,
+      "materials": [
+        "FG | Cream shearling"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Shearling cuff L",
+      "vertices": 404,
+      "triangles": 688,
+      "components": 23,
+      "materials": [
+        "FG | Cream shearling"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Shearling collar",
+      "vertices": 1213,
+      "triangles": 2056,
+      "components": 79,
+      "materials": [
+        "FG | Cream shearling"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Taupe trousers",
+      "vertices": 891,
+      "triangles": 1698,
+      "components": 13,
+      "materials": [
+        "FG | Taupe trousers",
+        "FG | Pressed creases",
+        "FG | Trouser seam shade"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Work boot R",
+      "vertices": 504,
+      "triangles": 828,
+      "components": 40,
+      "materials": [
+        "FG | Dark lug soles",
+        "FG | Worn brown leather",
+        "FG | Boot seams and counter",
+        "FG | Dark laces",
+        "FG | Aged zipper and eyelets",
+        "FG | Leather scuffs"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Work boot L",
+      "vertices": 504,
+      "triangles": 828,
+      "components": 40,
+      "materials": [
+        "FG | Dark lug soles",
+        "FG | Worn brown leather",
+        "FG | Boot seams and counter",
+        "FG | Dark laces",
+        "FG | Aged zipper and eyelets",
+        "FG | Leather scuffs"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    },
+    {
+      "name": "FG | Hair",
+      "vertices": 156,
+      "triangles": 262,
+      "components": 7,
+      "materials": [
+        "FG | Black hair",
+        "FG | Hair planes"
+      ],
+      "shape_keys": [],
+      "modifiers": []
+    }
+  ],
+  "total_triangles": 11743,
+  "character_armatures": [],
+  "all_armatures": [
+    {
+      "name": "basemesh_male_skeleton",
+      "bones": 59
+    }
+  ],
+  "actions": [],
+  "textures": [
+    {
+      "name": "CG | Charcoal denim 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Denim folded edges 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Ecru jersey 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Espresso hair 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Hair planes 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Hand painted face 128px",
+      "size": [
+        128,
+        128
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Olive pocket and cuffs 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Olive seams 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Olive twill 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Ribbed collar 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Sand suede 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Skin 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Sneaker panels 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "CG | Warm rubber soles 64px",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "charcoal.png",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "color_grid",
+      "size": [
+        1024,
+        1024
+      ],
+      "packed": false
+    },
+    {
+      "name": "face.png",
+      "size": [
+        128,
+        128
+      ],
+      "packed": true
+    },
+    {
+      "name": "FG | Final Pixel Turnaround \u00b7 1168x784",
+      "size": [
+        1168,
+        784
+      ],
+      "packed": true
+    },
+    {
+      "name": "fleece.png",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "leather.png",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "olive.png",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "olive_light.png",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    },
+    {
+      "name": "taupe.png",
+      "size": [
+        64,
+        64
+      ],
+      "packed": true
+    }
+  ],
+  "scenes": [
+    "FIELD GUY | Model",
+    "FIELD GUY | Pixel Turnaround",
+    "PSX Casual Guy",
+    "Scene"
+  ]
+}

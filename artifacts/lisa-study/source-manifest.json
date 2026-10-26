@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "name": "LISA.gltf",
+      "bytes": 1606550,
+      "sha256": "cb1a1ff5cb88343fb060183d70434139e645bdde475588bc399bd725320c1f4c"
+    },
+    {
+      "name": "Misc-Game-Research-SHPS2-Blender2.9-20220215.zip",
+      "bytes": 5270383,
+      "sha256": "5e2a6fcf00bef99e4900e016be5166fbffcbc0d5d82f335ec9d3d570924ba5a7"
+    },
+    {
+      "name": "Misc-Game-Research-SHPS2-Blender2.9-20220215.tar.gz",
+      "bytes": 5250495,
+      "sha256": "3af8b96be05e26038a445d02fee7e4a610d2fc0336af42ea91d9aeb34e91713b"
+    },
+    {
+      "name": "SHPS2-Blender2.9-20220215.zip",
+      "bytes": 2844206,
+      "sha256": "8cb427cb00ac61725f813c06ca04c0e758dd4a3b5e1caf8d1e3dd8bdba450701"
+    }
+  ],
+  "localReferences": [
+    "https://silenthillmuseum.org/",
+    "https://github.com/dreamingmoths/silent-hill-museum",
+    "https://github.com/Murugo/Misc-Game-Research"
+  ]
+}

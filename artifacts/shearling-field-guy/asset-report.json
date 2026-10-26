@@ -1,0 +1,21 @@
+{
+  "triangles": 11743,
+  "editable_mesh_parts": 13,
+  "height_m": 1.799,
+  "head_to_height_ratio": 6.68,
+  "native_canvas": [
+    292,
+    196
+  ],
+  "delivery_canvas": [
+    1168,
+    784
+  ],
+  "views": [
+    "Front",
+    "Left-facing profile",
+    "Back"
+  ],
+  "pose": "Relaxed A-pose; unrigged",
+  "source_scenes_preserved": true
+}

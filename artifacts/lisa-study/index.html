@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Night Shift · LISA character study</title>
+  <style>
+    :root{color-scheme:dark;font-family:Arial,sans-serif;background:#101615;color:#dddcd1}
+    *{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button,select{background:#202a27;color:inherit;border:1px solid #47564f;border-radius:3px;padding:9px 12px}button{cursor:pointer}button:hover,button[aria-pressed=true]{background:#3d5147}button:focus-visible,select:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #e6c28b;outline-offset:3px}a{color:#ccdab7}
+    header{padding:22px 30px 18px;display:flex;justify-content:space-between;gap:24px;align-items:end;border-bottom:1px solid #35423b}h1{font:38px Georgia,serif;letter-spacing:.03em;margin:5px 0 0;font-weight:normal}.eyebrow{font-size:10px;letter-spacing:.24em;color:#b1bca8;text-transform:uppercase}.intro{max-width:420px;font-size:12px;line-height:1.6;color:#b2b9ae;margin:0}
+    main{display:grid;grid-template-columns:minmax(0,1fr) 280px;min-height:calc(100dvh - 111px)}.stage{position:relative;min-height:640px;background:radial-gradient(ellipse at 50% 40%,#25312b,#111a17 75%);overflow:hidden}canvas{width:100%;height:100%;display:block;position:absolute;touch-action:none}.labels{position:absolute;left:0;right:0;top:24px;display:flex;pointer-events:none}.labels div{width:50%;text-align:center}.labels small{display:block;margin-top:7px;color:#aab4a5;font-size:11px}.labels strong{font:22px Georgia,serif;font-weight:normal}.stage:not(.compare) .source-label{display:none}.stage:not(.compare) .study-label{width:100%}.stage.compare:after{content:"";position:absolute;top:18px;bottom:42px;left:50%;border-left:1px solid #52604755;pointer-events:none}.hint{position:absolute;bottom:13px;width:100%;text-align:center;font-size:11px;color:#a4afa2;pointer-events:none}
+    aside{padding:24px 20px;border-left:1px solid #35423b}fieldset{border:0;padding:0;margin:0 0 25px}legend{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:#acb7a5;margin-bottom:11px}.row{display:flex;gap:7px;flex-wrap:wrap}select{width:100%;margin-bottom:10px}label{font-size:12px;display:block;margin:13px 0 9px}input[type=range]{width:100%;accent-color:#b3c797}input[type=checkbox]{accent-color:#b3c797}output{font-size:11px;color:#b6c4ad;float:right}.notes{font-size:11px;line-height:1.7;color:#a4afa2;border-top:1px solid #35423b;padding-top:15px}.downloads{font-size:12px;line-height:2}.status{font-size:12px;line-height:1.6;color:#c5d4b9;min-height:38px}.error{color:#ffc3b3}.retry{margin:8px 0}footer{padding:15px 30px;border-top:1px solid #35423b;font-size:11px;color:#9da99a;line-height:1.6}
+    @media(max-width:760px){header{padding:18px;display:block}.intro{margin-top:12px}main{grid-template-columns:1fr}.stage{height:66dvh;min-height:500px}aside{border:0;border-top:1px solid #35423b;display:grid;grid-template-columns:1fr 1fr;gap:16px}fieldset{margin:0}.notes,.downloads,.status{grid-column:1/-1}.labels strong{font-size:17px}.labels small{font-size:10px}}
+  </style>
+  <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <header><div><div class="eyebrow">Character archive / Study 01</div><h1>Night Shift</h1></div><p class="intro">An editable character study built from the supplied LISA model. Inspect the source and the new painted variant under matching light, camera, and animation time.</p></header>
+  <main>
+    <section class="stage compare" aria-label="Interactive character comparison">
+      <canvas id="viewer" aria-label="LISA source and Night Shift 3D models. Drag to orbit, scroll to zoom."></canvas>
+      <div class="labels"><div class="source-label"><strong>LISA / source</strong><small>816 triangles · original atlas</small></div><div class="study-label"><strong>Night Shift / study</strong><small>4,896 triangles · repainted atlas</small></div></div>
+      <div class="hint">Drag to orbit · Scroll to zoom · Matching cameras in both views</div>
+    </section>
+    <aside>
+      <div id="status" class="status" role="status">Loading source and study…</div>
+      <fieldset><legend>Inspect</legend><div class="row"><button id="compare" aria-pressed="true">Compare</button><button id="solo" aria-pressed="false">Study only</button></div><div class="row" style="margin-top:8px"><button id="body" aria-pressed="true">Full body</button><button id="face" aria-pressed="false">Face</button><button id="back">Back</button></div><label><input id="turntable" type="checkbox"> Turntable</label></fieldset>
+      <fieldset><legend>Source performance</legend><label for="clip">Animation</label><select id="clip" disabled><option value="-1">Rest pose</option></select><button id="play" aria-pressed="false" disabled>Play</button><label for="time">Time <output id="time-label">0.00 s</output></label><input id="time" type="range" min="0" max="1" step="0.01" value="0" disabled></fieldset>
+      <fieldset><legend>Presentation</legend><label for="lighting">Lighting</label><select id="lighting"><option value="studio">Neutral studio</option><option value="corridor">Cold corridor</option></select><label><input id="pixels" type="checkbox"> Low resolution preview</label></fieldset>
+      <div class="downloads"><a href="Night-Shift.blend" download>Editable Blender file ↗</a><br><a href="night-shift.glb" download>Skinned GLB ↗</a><br><a href="README.md">Research &amp; provenance ↗</a></div>
+      <div class="notes">21 source joints · 18 source clips.<br>Clip names are numbered because their actions have not been semantically identified.<br><br>This is a derivative art study based on a Silent Hill 1 asset. It explores the painted rendering of early PS2 characters; it is not a pixel-exact SH2 reproduction.</div>
+    </aside>
+  </main>
+  <footer>Source game art: Team Silent / Konami. LISA.gltf supplied by the user. Research: <a href="https://silenthillmuseum.org/">Silent Hill Museum</a> and <a href="https://github.com/Murugo/Misc-Game-Research">Murugo’s import tools</a>. Local non-commercial reference study.</footer>
+  <script type="module" src="./viewer.js"></script>
+</body>
+</html>

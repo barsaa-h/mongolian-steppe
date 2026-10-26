@@ -1,0 +1,15 @@
+{
+  "driverOrigin": [
+    0.65,
+    1.7,
+    2.38
+  ],
+  "wheelCenter": [
+    0.65,
+    2.2,
+    3.04
+  ],
+  "wheelRadius": 0.24,
+  "wheelTilt": -1.05,
+  "gripX": 0.19
+}
