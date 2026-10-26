@@ -114,6 +114,12 @@ export function inTown(x, z) {
   return Math.abs(x) < 168 && z > -112 && z < 122;
 }
 
+/** Seat a root object on the blended town/terrain surface. */
+export function settleOnSurface(object, x, z, yOffset = 0) {
+  object.position.set(x, surfaceHeight(x, z) + yOffset, z);
+  return object;
+}
+
 function addTri(list, a, b, c) {
   list.push(...a, ...b, ...c);
 }
@@ -476,6 +482,23 @@ export function placeTown(scene) {
   const lineMat = solid(0xb8b09a, { transparent: true, opacity: 0.4 });
   for (let x = -160; x <= 160; x += 6) addBox(scene, 2.4, 0.02, 0.14, lineMat, x, 0.04, 0);
 
+  // Worn dirt shoulders keep the asphalt from reading as a sterile CAD road.
+  const shoulder = dirtMaterial(48, 2);
+  for (const z of [-6.35, 6.0]) {
+    const strip = groundPlane(340, 1.1, shoulder, 0, z, 0.018);
+    strip.name = "avenue-shoulder";
+    scene.add(strip);
+  }
+  // Local frost pools in the shade of the north walk and school approach.
+  for (const [x, z, w, d] of [
+    [-42, -8.05, 5.5, 0.7], [8, -8.05, 4.2, 0.65], [52, -8.05, 4.8, 0.7],
+    [66, -30.6, 6.5, 1.1], [62, -32.2, 3.2, 0.55],
+  ]) {
+    const frost = groundPlane(w, d, solid(0xc2c4b4, { transparent: true, opacity: 0.34 }), x, z, 0.055);
+    frost.name = "civic-frost";
+    scene.add(frost);
+  }
+
   for (let i = 0; i < SOUTH_ROWS.length; i++) {
     const row = SOUTH_ROWS[i];
     terrace(scene, row.z0, row.z1, row.y);
@@ -500,12 +523,12 @@ export function placeTown(scene) {
 
   const hospital = buildHospital();
   hospital.name = "hospital";
-  hospital.position.set(-78, 0, -26);
+  settleOnSurface(hospital, -78, -26);
   scene.add(hospital);
   const boiler = hospital.userData.boilerSmoke;
   bags.smokeSources.push({
     x: hospital.position.x + boiler.x,
-    y: boiler.y,
+    y: hospital.position.y + boiler.y,
     z: hospital.position.z + boiler.z,
     rise: 6,
     scale: 0.7,
@@ -532,14 +555,14 @@ export function placeTown(scene) {
     width: 20, depth: 11, floors: 5, bodyColor: "#cbc1a6", bandColor: 0x81939a, number: "12",
   });
   apartmentA.name = "apartment-12";
-  apartmentA.position.set(-36, 0, -23);
+  settleOnSurface(apartmentA, -36, -23);
   scene.add(apartmentA);
 
   const apartmentB = buildApartment({
     width: 20, depth: 11, floors: 5, bodyColor: "#c9b6a4", bandColor: 0x8b8a72, number: "24", glazed: true,
   });
   apartmentB.name = "apartment-24";
-  apartmentB.position.set(-10, 0, -23);
+  settleOnSurface(apartmentB, -10, -23);
   scene.add(apartmentB);
 
   for (const [x, z, floors, number] of [
@@ -548,13 +571,13 @@ export function placeTown(scene) {
   ]) {
     const block = buildApartment({ width: 23, depth: 10, floors,
       bodyColor: "#a7a9a6", bandColor: 0x737f8c, number });
-    block.position.set(x, 0, z);
+    settleOnSurface(block, x, z);
     scene.add(block);
   }
 
   const governor = buildGovernorHall();
   governor.name = "governor";
-  governor.position.set(16, 0, -28);
+  settleOnSurface(governor, 16, -28);
   scene.add(governor);
   scene.add(groundPlane(4.4, 5.5, walk, 16, -17.2, 0.045));
   scene.add(groundPlane(26, 8, plasterMaterial("#c2bba8"), 18, -11.2, 0.04));
@@ -565,21 +588,21 @@ export function placeTown(scene) {
 
   const school = buildSchool();
   school.name = "school";
-  school.position.set(66, 0, -36);
+  settleOnSurface(school, 66, -36);
   scene.add(school);
   const gym = buildSchoolGym();
   gym.name = "school-gym";
-  gym.position.set(58, 0, -50);
+  settleOnSurface(gym, 58, -50);
   scene.add(gym);
 
   const helipad = buildHelipad();
   helipad.name = "helipad";
-  helipad.position.set(16, 0, -50);
+  settleOnSurface(helipad, 16, -50);
   scene.add(helipad);
 
   const store = buildStore();
   store.name = "store";
-  store.position.set(112, 0, -18);
+  settleOnSurface(store, 112, -18);
   scene.add(store);
   addGlow(116.2, 3.05, -13.2, 4.4);
   addPool(114, 0.05, -12);
@@ -591,12 +614,12 @@ export function placeTown(scene) {
 
   const plant = buildHeatingPlant();
   plant.name = "heating-plant";
-  plant.position.set(148, 0, -30);
+  settleOnSurface(plant, 148, -30);
   scene.add(plant);
   for (const chimney of plant.userData.chimneys) {
     bags.smokeSources.push({
       x: plant.position.x + chimney.x,
-      y: chimney.y,
+      y: plant.position.y + chimney.y,
       z: plant.position.z + chimney.z,
       rise: chimney.y > 30 ? 16 : 12,
       scale: chimney.y > 30 ? 2.4 : 1.7,
@@ -606,22 +629,22 @@ export function placeTown(scene) {
 
   const tower = buildWaterTower();
   tower.name = "water-tower";
-  tower.position.set(-118, 0, -42);
+  settleOnSurface(tower, -118, -42);
   scene.add(tower);
 
   const pipes = buildPipeRun(210, 1.85);
-  pipes.position.set(20, 0, -63);
+  settleOnSurface(pipes, 20, -63);
   scene.add(pipes);
 
   const arch = buildArch();
   arch.name = "arch";
-  arch.position.set(-108, 0, 0);
+  settleOnSurface(arch, -108, 0);
   arch.rotation.y = Math.PI / 2;
   scene.add(arch);
 
   const cordon = buildCordon();
   cordon.name = "cordon";
-  cordon.position.set(-136, 0, -8);
+  settleOnSurface(cordon, -136, -8);
   scene.add(cordon);
 
   const busSquare = buildBusStop();

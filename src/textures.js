@@ -62,19 +62,20 @@ function speckle(ctx, w, h, colors, count, minR, maxR) {
 
 export function steppeTexture() {
   return cached("steppe", () => canvasTexture(256, 256, (ctx, w, h) => {
-    ctx.fillStyle = "#82884f";
+    // Late-autumn Naran: dry tawny steppe with olive remnants, not lush summer green.
+    ctx.fillStyle = "#9a9162";
     ctx.fillRect(0, 0, w, h);
     for (let i = 0; i < 70; i++) {
-      ctx.fillStyle = ["rgba(148,142,88,0.35)", "rgba(110,118,64,0.3)", "rgba(163,152,96,0.28)"][(Math.random() * 3) | 0];
+      ctx.fillStyle = ["rgba(168,150,96,0.35)", "rgba(120,118,70,0.28)", "rgba(180,162,110,0.26)"][(Math.random() * 3) | 0];
       const x = Math.random() * w;
       const y = Math.random() * h;
       ctx.beginPath();
       ctx.ellipse(x, y, 8 + Math.random() * 26, 4 + Math.random() * 14, Math.random() * 3, 0, Math.PI * 2);
       ctx.fill();
     }
-    speckle(ctx, w, h, ["#6e7642", "#939a5c", "#a3a06a", "#5f6a3c", "#b0a874"], 5200, 1, 3);
+    speckle(ctx, w, h, ["#7a7450", "#a89a68", "#8e8658", "#6a6844", "#b8a878", "#c4b490"], 5200, 1, 3);
     for (let i = 0; i < 160; i++) {
-      ctx.fillStyle = Math.random() < 0.5 ? "#c8bc7e" : "#d6cfa0";
+      ctx.fillStyle = Math.random() < 0.5 ? "#d0c090" : "#e0d4a8";
       ctx.fillRect(Math.random() * w, Math.random() * h, 1, 2);
     }
   }));

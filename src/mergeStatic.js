@@ -62,7 +62,7 @@ export function mergeStatic(scene) {
     }
 
     const mesh = new THREE.Mesh(merged, material);
-    mesh.frustumCulled = false;
+    mesh.frustumCulled = true;
     mesh.name = `static-batch-${batches}`;
     scene.add(mesh);
     batches += 1;

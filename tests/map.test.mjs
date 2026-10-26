@@ -3,7 +3,9 @@ import { test } from "node:test";
 import * as THREE from "three";
 import { buildKamaz } from "../src/winter.js";
 import { createPipeline } from "../src/psx.js";
-import { placeTown } from "../src/district.js";
+import { placeTown, surfaceHeight } from "../src/district.js";
+import { MAP_VIEWS } from "../src/mapViews.js";
+import { terrainHeight } from "../src/terrain.js";
 import { buildWorld, worldState } from "../src/world.js";
 
 // Canvas drawing is exercised in the browser; these checks inspect placement and render settings.
@@ -84,4 +86,46 @@ test("the KamAZ cab has interior space above the seat rather than a solid body b
   const ray=new THREE.Raycaster(new THREE.Vector3(.65,2.7,2.55),new THREE.Vector3(0,-1,0));
   const hit=ray.intersectObject(truck,true)[0];
   assert.ok(hit && Math.abs(hit.point.y-1.93)<.001,`seat hit at ${hit?.point.y}`);
+});
+
+test("civic buildings sit on the graded pad instead of floating or sinking", () => {
+  const scene = new THREE.Scene();
+  placeTown(scene);
+  for (const name of ["heating-plant", "store", "apartment-12", "apartment-24", "hospital", "school", "water-tower"]) {
+    const object = scene.getObjectByName(name);
+    assert.ok(object, name);
+    const gap = Math.abs(object.position.y - surfaceHeight(object.position.x, object.position.z));
+    assert.ok(gap < 0.05, `${name} gap ${gap}`);
+  }
+  assert.equal(scene.children.filter(object => object.name === "avenue-shoulder").length, 2);
+  assert.ok(scene.children.filter(object => object.name === "civic-frost").length >= 4);
+});
+
+test("map views keep a valley approach and a town-readable overview", () => {
+  assert.equal(MAP_VIEWS["1"].name, "OVERVIEW");
+  assert.equal(MAP_VIEWS["7"].name, "VALLEY");
+  assert.ok(MAP_VIEWS["1"].target[0] > 0, "overview looks across the civic strip");
+  assert.ok(MAP_VIEWS["7"].target[0] < -150, "valley sits on the approach road");
+  assert.ok(MAP_VIEWS["7"].pitch < MAP_VIEWS["1"].pitch);
+});
+
+test("the civic pad flattens heating plant and eastern apartments", () => {
+  for (const [x, z] of [[148, -30], [98, -51], [120, -76], [112, -18]]) {
+    assert.ok(Math.abs(terrainHeight(x, z)) < 0.35, `terrain at ${x},${z}`);
+  }
+});
+
+test("merged static batches keep frustum culling for overview performance", () => {
+  const world = buildWorld();
+  let batches = 0;
+  let culled = 0;
+  world.scene.traverse(object => {
+    if (object.name?.startsWith("static-batch-")) {
+      batches += 1;
+      if (object.frustumCulled) culled += 1;
+    }
+  });
+  assert.ok(batches > 0);
+  assert.equal(culled, batches);
+  assert.equal(world.scene.userData.mergedBatches, batches);
 });

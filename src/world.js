@@ -50,7 +50,7 @@ export function worldState(t) {
     .lerp(new THREE.Color("#b7cbe0"), day)
     .lerp(new THREE.Color("#7a6a7a"), dusk * 0.4);
   const hemiGround = new THREE.Color("#20222a")
-    .lerp(new THREE.Color("#8a8456"), day);
+    .lerp(new THREE.Color("#9a8c5e"), day);
 
   const fogColor = new THREE.Color("#1a2233")
     .lerp(new THREE.Color("#bcc8c6"), day)
@@ -82,7 +82,7 @@ export function worldState(t) {
 
 export function buildWorld() {
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xbcc8c6, 105, 600);
+  scene.fog = new THREE.Fog(0xbcc8c6, 125, 720);
 
   const skyUniforms = {
     topColor: { value: new THREE.Color("#5a8ec6") },
