@@ -10,3 +10,4 @@ output/
 
 .superpowers/
 *.blend1
+__pycache__/
