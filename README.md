@@ -115,7 +115,7 @@ loaded separately, so this project needs a web server rather than `file://`.
 - Drag to orbit; scroll to zoom.
 - Enter steps into the herder. WASD runs, Shift sprints, F toggles flying, Space rises, Ctrl descends. Esc returns to the map.
 - A toggles automatic orbit while you are on the map.
-- 1–8 select camera views: overview, square, school, khoroolol, hospital, heating plant, cordon, yards.
+- 1–8 select camera views: overview, square, school, khoroolol, hospital, heating plant, valley, yards.
 - `[` and `]` scrub the day cycle; Space starts or pauses it while you are on the map.
 
 `.editorconfig` supplies consistent indentation and line endings for editors

@@ -45,4 +45,4 @@ Generation prompt:
 > dawn horizon. Quiet, lonely atmosphere; no violence, crowds or UI.
 
 The current map starts on a paused autumn daytime overview. Space runs the day
-cycle, A enables orbit, and 1 restores the overview.
+cycle, A enables orbit, 1 restores the overview, and 7 frames the valley approach.

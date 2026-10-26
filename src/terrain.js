@@ -8,7 +8,13 @@ export function terrainHeight(x, z) {
     * MathUtils.smoothstep(z, -12, 68) * 13;
   const avenue = (1 - MathUtils.smoothstep(Math.abs(z), 6, 15))
     * (1 - MathUtils.smoothstep(Math.abs(x), 170, 190));
-  return (rolling * edge + approach) * (1 - avenue);
+  // Grade a civic pad under the Soviet strip, school, store and heating plant so
+  // panel blocks stop floating or sinking into the rolling steppe.
+  const civicX = 1 - MathUtils.smoothstep(Math.abs(x - 15), 145, 175);
+  const civicZ = 1 - MathUtils.smoothstep(Math.abs(z + 28), 52, 72);
+  const civic = civicX * civicZ;
+  const flatten = Math.max(avenue, civic * 0.98);
+  return (rolling * edge + approach) * (1 - flatten);
 }
 
 export function groundGeometry() {

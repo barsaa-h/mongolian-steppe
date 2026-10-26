@@ -4,6 +4,7 @@ import { surfaceHeight, townHeight } from "./district.js";
 import { loadMongolianMan } from "./character.js";
 import { exploreStep, flatBasis } from "./explore.js";
 import { createPipeline } from "./psx.js";
+import { MAP_VIEWS } from "./mapViews.js";
 
 const TAU = Math.PI * 2;
 
@@ -19,15 +20,15 @@ const { scene, apply } = buildWorld();
 const pipeline = createPipeline(renderer, scene, camera);
 
 const view = {
-  yaw: 0.82,
-  pitch: 0.46,
-  zoom: 1.28,
-  targetYaw: 0.82,
-  targetPitch: 0.46,
-  targetZoom: 1.28,
+  yaw: 0.92,
+  pitch: 0.4,
+  zoom: 1.15,
+  targetYaw: 0.92,
+  targetPitch: 0.4,
+  targetZoom: 1.15,
   auto: false,
-  target: new THREE.Vector3(-8, 0, -16),
-  desiredTarget: new THREE.Vector3(-8, 0, -16),
+  target: new THREE.Vector3(18, 4, -6),
+  desiredTarget: new THREE.Vector3(18, 4, -6),
   dragging: false,
   lastX: 0,
   lastY: 0,
@@ -39,16 +40,7 @@ const timeline = {
   speed: 1 / 300,
 };
 
-const presets = {
-  "1": { name: "OVERVIEW", target: [-8, 0, -16], yaw: 0.82, pitch: 0.46, zoom: 1.28 },
-  "2": { name: "SQUARE", target: [16, 5, -14], yaw: 0.35, pitch: 0.22, zoom: 0.46 },
-  "3": { name: "SCHOOL", target: [64, 6, -28], yaw: -0.35, pitch: 0.2, zoom: 0.5 },
-  "4": { name: "KHOROOL", target: [2, 5, 52], yaw: 0.2, pitch: 0.34, zoom: 0.58 },
-  "5": { name: "HOSPITAL", target: [-76, 6, -16], yaw: 0.65, pitch: 0.22, zoom: 0.48 },
-  "6": { name: "HEATING", target: [146, 10, -24], yaw: -0.9, pitch: 0.24, zoom: 0.55 },
-  "7": { name: "CORDON", target: [-128, 4, 0], yaw: 1.05, pitch: 0.2, zoom: 0.42 },
-  "8": { name: "YARDS", target: [32, 4, 66], yaw: 0.55, pitch: 0.32, zoom: 0.38 },
-};
+const presets = MAP_VIEWS;
 
 const viewName = document.getElementById("viewName");
 const hudMap = document.getElementById("hudMap");
@@ -119,7 +111,7 @@ function leaveCharacter() {
   }
   setPreset("1");
   view.auto = false;
-  showMode("VALLEY");
+  showMode("OVERVIEW");
 }
 
 async function loadCharacter() {
