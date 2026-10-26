@@ -1,0 +1,244 @@
+{
+  "name": "Ирина Ковалева",
+  "bodyHeightM": 1.6500000000000001,
+  "sourceBodyVertices": 19158,
+  "headHeightFraction": 0.0957622757820167,
+  "waistWidthM": 0.36512001621752427,
+  "sourceShapeKeys": 38,
+  "rigBones": 137,
+  "fingerBones": 30,
+  "garmentCorrections": {
+    "Clothes.Outfit": 36,
+    "Shoes": 38
+  },
+  "fullBodyRetained": true,
+  "renderBodyUsesClothingMasks": true,
+  "meshes": [
+    {
+      "name": "Eyebrows",
+      "role": "Eyebrows",
+      "vertices": 124,
+      "triangles": 192
+    },
+    {
+      "name": "Eyes",
+      "role": "Eyes",
+      "vertices": 1064,
+      "triangles": 2040
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 1193,
+      "triangles": 1468
+    },
+    {
+      "name": "Shoes",
+      "role": "Shoes",
+      "vertices": 1594,
+      "triangles": 3064
+    },
+    {
+      "name": "Teeth",
+      "role": "Teeth",
+      "vertices": 3868,
+      "triangles": 7120
+    },
+    {
+      "name": "Tongue",
+      "role": "Tongue",
+      "vertices": 226,
+      "triangles": 448
+    },
+    {
+      "name": "Clothes.Top",
+      "role": "Clothes.Top",
+      "vertices": 2309,
+      "triangles": 4284
+    },
+    {
+      "name": "Clothes.Bottom",
+      "role": "Clothes.Bottom",
+      "vertices": 886,
+      "triangles": 1712
+    },
+    {
+      "name": "Hands.L",
+      "role": "Hands.L",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Hands.R",
+      "role": "Hands.R",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Body.Skin",
+      "role": "Body",
+      "vertices": 4820,
+      "triangles": 9428
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.1",
+      "role": "Details.Wrinkle.Forehead.1",
+      "vertices": 50,
+      "triangles": 48
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.2",
+      "role": "Details.Wrinkle.Forehead.2",
+      "vertices": 50,
+      "triangles": 48
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.3",
+      "role": "Details.Wrinkle.Forehead.3",
+      "vertices": 50,
+      "triangles": 48
+    },
+    {
+      "name": "Details.Wrinkle.Eye.-1.0",
+      "role": "Details.Wrinkle.Eye.-1.0",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Wrinkle.Eye.1.0",
+      "role": "Details.Wrinkle.Eye.1.0",
+      "vertices": 24,
+      "triangles": 22
+    }
+  ],
+  "packedTextures": [
+    {
+      "name": "Clothes.Bottom | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Top | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eyebrow001.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "eyelashes01.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "Eyes | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "grey_eye.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Hair | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "irina | Skin detail normal",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "long01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "male_casualsuit05_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "middleage_lightskinned_female_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "shoes02_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Skin layer bake | Cast albedo",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "teeth.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "tongue01_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "id": "irina",
+  "episode": 1,
+  "scriptAge": 54,
+  "skinSource": "middleage_caucasian_female",
+  "skinDetailCount": 0,
+  "wrinkleParts": 5,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "coat",
+  "casting": "Russian casting",
+  "dnaHash": "df147e4ec020dc8f8bae343143744ec2aaf2503435b6a74ac4b5363ea53447a2",
+  "baseStage": "adult",
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "sourceIndexMap": true
+}
