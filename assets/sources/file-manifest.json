@@ -1,0 +1,42 @@
+[
+  {
+    "path": "assets/sources/vinrax-female/female_secretary.fbx",
+    "bytes": 101164,
+    "sha256": "26d594de145e545f79a4732ae5ceaa05ac27199149a4323ada8de6f44da69292"
+  },
+  {
+    "path": "assets/sources/vinrax-female/female_secretary.zip",
+    "bytes": 129560,
+    "sha256": "9f556b1009283d62d83cc67e5240802b525363ff61dc2c014b2f277d147fcc21"
+  },
+  {
+    "path": "assets/sources/vinrax-female/secretary_tex.png",
+    "bytes": 83257,
+    "sha256": "66de3f99dbd135169062a296a5b2a571b0df89099d3411d54fea1af73fb4f809"
+  },
+  {
+    "path": "assets/sources/vadacross-psx-character/BaseSkin.png",
+    "bytes": 505398,
+    "sha256": "058feca05b0903e25fb35f80ad3fa8de0bb8f2dfbaadece638f6ec5cd1dd73a8"
+  },
+  {
+    "path": "assets/sources/vadacross-psx-character/PSX Character.fbx",
+    "bytes": 2957564,
+    "sha256": "0b7588fcce6f617ec18c352ab0d2238d8950479148811830ca9b9f35180a6582"
+  },
+  {
+    "path": "assets/sources/vadacross-psx-character/PSX Characters Blender File.blend",
+    "bytes": 402129,
+    "sha256": "b8a18e85cbd30f3db32377b23899660c52b5e0471cf901b7a81d7448b6a14624"
+  },
+  {
+    "path": "assets/sources/opengameart-human-basemeshes/Human Basemeshes.blend",
+    "bytes": 1052164,
+    "sha256": "4cd0e968c3b4fe388489b3800dfdc9c42696050c98a13de7b2e203ec12d4ccd0"
+  },
+  {
+    "path": "assets/sources/opengameart-human-basemeshes/Human Basemeshes.zip",
+    "bytes": 225272,
+    "sha256": "b873af7825484ad2a58da186650045f55883589109a2ba9f2c440c7a7fa96fb7"
+  }
+]

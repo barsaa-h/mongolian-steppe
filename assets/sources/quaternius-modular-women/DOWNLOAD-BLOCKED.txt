@@ -1,0 +1,6 @@
+Checked 2026-10-24 UTC. Official Google Drive delivery returned HTTP 200 HTML with title "Google Drive - Quota exceeded" and message:
+
+Sorry, you can't view or download this file at this time.
+Too many users have viewed or downloaded this file recently. Please try accessing the file again later. If the file you are trying to access is particularly large or is shared with many people, it may take up to 24 hours to be able to view or download the file.
+
+Affected tested files: All together.blend, Humanoid Rig.blend, Adventurer.blend, Casual.blend, humanoid Adventurer.blend, Animations.fbx, License.txt, How To Use.txt. Standard official drive.google.com/uc download links and drive.usercontent.google.com/download links behaved the same. No login, payment, quota bypass, or third-party repack was used. Retry official links after the quota clears. No HTML error page was saved with a model extension.

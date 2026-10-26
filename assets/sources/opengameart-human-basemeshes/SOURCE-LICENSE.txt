@@ -1,0 +1,6 @@
+Human Basemeshes
+Author: pistachio
+Official source: https://opengameart.org/content/human-basemeshes
+Retrieved/checked: 2026-10-24 UTC
+
+CC0 1.0 Universal (public domain dedication): https://creativecommons.org/publicdomain/zero/1.0/ . Credit optional: Human Basemeshes by pistachio. Original archive contains only Human Basemeshes.blend; no bundled license file.

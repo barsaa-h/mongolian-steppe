@@ -1,0 +1,4 @@
+MakeHuman core system assets. CC0 1.0.
+Official pack page: https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html
+Core graphical assets only; selected folders downloaded with verified ZIP decompression and CRC checks.
+The complete source ZIP was not required. Per-file hashes and exact source URL are in file-manifest.json.

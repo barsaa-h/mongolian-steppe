@@ -1,0 +1,6 @@
+PSX Rigged Character
+Author: VadaCross
+Official source: https://vadacross.itch.io/psx-rigged-character
+Retrieved/checked: 2026-10-24 UTC
+
+Custom permission: free use in personal and commercial projects; attribution optional and appreciated. Original Blender, FBX, and base PNG supplied by the author. The page says no animations included; internal sample actions present in the files are not relied on as production animations.

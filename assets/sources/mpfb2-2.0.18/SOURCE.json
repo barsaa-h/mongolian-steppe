@@ -1,0 +1,9 @@
+{
+  "project": "MPFB",
+  "version": "2.0.18",
+  "source": "https://github.com/makehumancommunity/mpfb2/tree/v2.0.18",
+  "archiveSHA256": "ada7c4ff11e79cf6ed9b441bccabc52c9359f2848b988f66e89c14c30b21fed7",
+  "assetLicense": "CC0 1.0",
+  "codeLicense": "GPL-3.0-or-later",
+  "use": "Background Blender authoring; not bundled into Three.js runtime"
+}

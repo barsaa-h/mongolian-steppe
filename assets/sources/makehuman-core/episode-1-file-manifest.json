@@ -1,0 +1,542 @@
+{
+  "url": "https://files.makehumancommunity.org/asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip",
+  "archiveBytes": 280737770,
+  "license": "CC0-1.0",
+  "files": [
+    {
+      "path": "skins/middleage_asian_male/middleage_asian_male.thumb",
+      "bytes": 80426,
+      "sha256": "1797e3bb9c3d2bf0921eaa5052b9b135ff97607d9801046d04895d95dff8172f"
+    },
+    {
+      "path": "skins/middleage_asian_male/middleage_asian_male.mhmat",
+      "bytes": 1463,
+      "sha256": "341a041eeb9c4bb51133fafb4d61e859a36dbd142c75c7cef4531606143c4e22"
+    },
+    {
+      "path": "skins/middleage_asian_male/middleage_lightskinned_male_diffuse2.png",
+      "bytes": 3730636,
+      "sha256": "e897c4cc1b6ad5d10a7d2b2be92402feda4e772e6582dfaf0a1e8fc4621d8097"
+    },
+    {
+      "path": "skins/middleage_asian_female/middleage_asian_female.mhmat",
+      "bytes": 1468,
+      "sha256": "d002c338239d2aeeeec037e21f9dd22cd484ba8a955aee22aa0fe279ad6a3960"
+    },
+    {
+      "path": "skins/middleage_asian_female/middleage_asian_female.thumb",
+      "bytes": 80500,
+      "sha256": "2e043a42391e4266b7fe1904d7b2175351e737a1efa0f4e45d6b14b48a39c55a"
+    },
+    {
+      "path": "skins/middleage_asian_female/middleage_lightskinned_female_diffuse2.png",
+      "bytes": 3810424,
+      "sha256": "39c505ca224387bef0b20cd2bf513c3997c27c7e7434447228c9991b87cb8d01"
+    },
+    {
+      "path": "skins/young_caucasian_male/young_lightskinned_male_diffuse.png",
+      "bytes": 3693828,
+      "sha256": "862a26e335e958b70534cb5f0d7c47ef30ab148a56c42b3e9da969cf76f12963"
+    },
+    {
+      "path": "skins/young_caucasian_male/young_caucasian_male.thumb",
+      "bytes": 79031,
+      "sha256": "9ea46d1b5c4230bcff248b1262eaf4f5b4b14bbffd8fc09d2c20c6058f02e12d"
+    },
+    {
+      "path": "skins/young_caucasian_male/young_caucasian_male.mhmat",
+      "bytes": 1462,
+      "sha256": "6eda60b07ff2afbde078a2535ef3913593d84e9de92b2eb76c30f396a181fe2e"
+    },
+    {
+      "path": "skins/old_asian_male/old_lightskinned_male_diffuse2.png",
+      "bytes": 4485072,
+      "sha256": "8b3232676c5b271b4f44ead68845155d93f15de641b6819561781e16701a6c59"
+    },
+    {
+      "path": "skins/old_asian_male/old_asian_male.mhmat",
+      "bytes": 1442,
+      "sha256": "2a65f6268555f9cbe0b8824aa2113a60aa706993d45e6ed6d84ac05ab1d54066"
+    },
+    {
+      "path": "skins/old_asian_male/old_asian_male.thumb",
+      "bytes": 80465,
+      "sha256": "1a43f5f23ff90c0f8480b605dd911e1c56387e2a7fae71c66762984c2331505d"
+    },
+    {
+      "path": "skins/old_asian_female/old_asian_female.thumb",
+      "bytes": 81888,
+      "sha256": "91937cb62efcfa10886912acfdc225496a5907a66393202fa5dd5f6d7d359344"
+    },
+    {
+      "path": "skins/old_asian_female/old_asian_female.mhmat",
+      "bytes": 1450,
+      "sha256": "e38e458d8cb8bed61237776c61b8039aee293387e3d82fda19017a3784a660c3"
+    },
+    {
+      "path": "skins/old_asian_female/old_lightskinned_female_diffuse2.png",
+      "bytes": 4766265,
+      "sha256": "e0c6317c2354ee54c16ad5f871293121e4eee697d16423536bb1db3641d56bc9"
+    },
+    {
+      "path": "skins/middleage_caucasian_female/middleage_caucasian_female.mhmat",
+      "bytes": 1475,
+      "sha256": "c01a42ea64ca4207558f5af8eb0991794934e3aaadebba1613c0a6e90d2afa29"
+    },
+    {
+      "path": "skins/middleage_caucasian_female/middleage_caucasian_female.thumb",
+      "bytes": 78480,
+      "sha256": "58ee13e6f9d363ffb29ddf7c1c0dc8d1f74a33f551e8bf2700c9bfa931205616"
+    },
+    {
+      "path": "skins/middleage_caucasian_female/middleage_lightskinned_female_diffuse.png",
+      "bytes": 4363877,
+      "sha256": "bcb9c2c8ace23880bc4407602a249abbcf4608b6ba0894e423b031913012a363"
+    },
+    {
+      "path": "clothes/male_casualsuit04/male_casualsuit04_normal.png",
+      "bytes": 6112410,
+      "sha256": "006c0c0dfecaeda1a749f737ac15bfc228ebb76dbbcbf9871993e267a545ca69"
+    },
+    {
+      "path": "clothes/male_casualsuit04/male_casualsuit04.thumb",
+      "bytes": 32838,
+      "sha256": "1424bac2dc95c2d6906bc0435b8de77ce71c25a35c97eece9c6c589944a2c683"
+    },
+    {
+      "path": "clothes/male_casualsuit04/male_casualsuit04.obj",
+      "bytes": 133848,
+      "sha256": "9a56b7b1cb27589233dc048e8ccf1fd93d03f3a5c01a668f0e8a189ebdea7a34"
+    },
+    {
+      "path": "clothes/male_casualsuit04/male_casualsuit04_diffuse.png",
+      "bytes": 2742499,
+      "sha256": "eb33337f43b006159773ab2fdff1293f51f72c3d0d24c132c2272b4deff9bcbe"
+    },
+    {
+      "path": "clothes/male_casualsuit04/male_casualsuit04.mhclo",
+      "bytes": 116682,
+      "sha256": "8c1a2d3272cd51ba03f0840d593eddc6325d3d2c4c8529f8203d2c2cad3d0cef"
+    },
+    {
+      "path": "clothes/male_casualsuit04/male_casualsuit04_ao.png",
+      "bytes": 1755179,
+      "sha256": "0776e137bc8f37647c949b12384067d311df5fc7504d15af736e0647713c2754"
+    },
+    {
+      "path": "clothes/male_casualsuit04/male_casualsuit04.mhmat",
+      "bytes": 1396,
+      "sha256": "0408dea995c10e078ab79a3b68fa3092bdf18d3241b74fa35d48fe5397b42430"
+    },
+    {
+      "path": "clothes/male_casualsuit05/male_casualsuit05.mhclo",
+      "bytes": 217422,
+      "sha256": "df41c9fba3da054e35b964706ad2f8d189e65cc00a45f4a34f65235946f647f0"
+    },
+    {
+      "path": "clothes/male_casualsuit05/male_casualsuit05.thumb",
+      "bytes": 39378,
+      "sha256": "ad39df902cbf63ce390e00bf3ceec495a6f94c3827875f57f669746cccf51ffb"
+    },
+    {
+      "path": "clothes/male_casualsuit05/male_casualsuit05.mhmat",
+      "bytes": 1396,
+      "sha256": "e29fdf895bfc03ebf49f1fcb784cd41cfd8cf95beba4a0a54bc95c084b9b9528"
+    },
+    {
+      "path": "clothes/male_casualsuit05/male_casualsuit05_ao.png",
+      "bytes": 1724222,
+      "sha256": "cf22b778ce3d2c92cf0c5e7eef2bcc2a0d9812e578d4c08a4bb428eb33eacc66"
+    },
+    {
+      "path": "clothes/male_casualsuit05/male_casualsuit05.obj",
+      "bytes": 261223,
+      "sha256": "6069dd8b828591c16f74678c235387954775b815b5b77640d24fb7c9541b85c2"
+    },
+    {
+      "path": "clothes/male_casualsuit05/male_casualsuit05_normal.png",
+      "bytes": 9295328,
+      "sha256": "aec19a8fa1988aa178e7ead9f9c0b290fc441ed62ce47d5c4dd611a0037a796c"
+    },
+    {
+      "path": "clothes/male_casualsuit05/male_casualsuit05_diffuse.png",
+      "bytes": 3345738,
+      "sha256": "d4345efe9332c23e9302f5a3bca8c895004be841b5ebea593c96189870e3852a"
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01.obj",
+      "bytes": 302272,
+      "sha256": "d8ef4bf71aa6bd386958921c17e0eed263ef63abc8b50a2c8be6d482f6e1d3f7"
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01.thumb",
+      "bytes": 33917,
+      "sha256": "fad50094363c841033ae160982bd5570f40140b6381a5a69562a9cbdf0898e7a"
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01_diffuse.png",
+      "bytes": 3230491,
+      "sha256": "4b59b50f7a8a0325c33e86e29f160f59b2385a6f413fccc88287a1c951c39901"
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01_normal.png",
+      "bytes": 7345267,
+      "sha256": "53f51fd31ec6760c26d377b250bfcdde84be46953f4c72821892b76d13055073"
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01.mhmat",
+      "bytes": 1389,
+      "sha256": "9af03afa0f8cf2d24b4fceb0bd0e3c400ae0975b402e0ea491a33fa32c3b560b"
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01.mhclo",
+      "bytes": 254911,
+      "sha256": "77561689f0e9eb13537f67e0582ce4e8b93fc7291ea87f57fd86b38b9114d4e1"
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01_ao.png",
+      "bytes": 1205288,
+      "sha256": "1ed5f23c5efab316b98a295e1be7905009e61603657577eb922b4d1c99c46810"
+    },
+    {
+      "path": "clothes/male_casualsuit03/male_casualsuit03.obj",
+      "bytes": 200956,
+      "sha256": "c55e02caa1f04126606eee5ac704637e9d3461bd527f26ade65e01973dc7aabb"
+    },
+    {
+      "path": "clothes/male_casualsuit03/male_casualsuit03_normal.png",
+      "bytes": 9610278,
+      "sha256": "412c4610d3b2ea1cb04aa3c0715e747a7c9f61d865133b7d69f70eaa738cf99b"
+    },
+    {
+      "path": "clothes/male_casualsuit03/male_casualsuit03_ao.png",
+      "bytes": 2214964,
+      "sha256": "b29aebd42545b874599be527c4ec8f89b851ba76613347b0475fac5188de7aea"
+    },
+    {
+      "path": "clothes/male_casualsuit03/male_casualsuit03_diffuse.png",
+      "bytes": 3439064,
+      "sha256": "d9079ed2e52d23e1ccce53ddc3d4397e48883729f9324c97c2737f4f79af5153"
+    },
+    {
+      "path": "clothes/male_casualsuit03/male_casualsuit03.mhclo",
+      "bytes": 170546,
+      "sha256": "ce796e4cc6ac312e0426d793ccc874d0d94c085e1c06764fe096ec8d59ae94c5"
+    },
+    {
+      "path": "clothes/male_casualsuit03/male_casualsuit03.thumb",
+      "bytes": 40578,
+      "sha256": "ea180cea474eeba10ed73b13920adee4e87ea12c84f96a7d58b02caef90caf72"
+    },
+    {
+      "path": "clothes/male_casualsuit03/male_casualsuit03.mhmat",
+      "bytes": 1396,
+      "sha256": "5fbf673d1db072aecb850ced389201ae729794deee851c0668e810e6ad082e5b"
+    },
+    {
+      "path": "clothes/male_casualsuit06/male_casualsuit06.thumb",
+      "bytes": 31691,
+      "sha256": "df34cd082fd23e39f25f78d64fb49c27ad5ed054077b4ea3b101c7a59a93e459"
+    },
+    {
+      "path": "clothes/male_casualsuit06/male_casualsuit06.obj",
+      "bytes": 300507,
+      "sha256": "9a86386435d7557a520320b8db4cd0ffe4755040044d1925c2b5730b864a603e"
+    },
+    {
+      "path": "clothes/male_casualsuit06/male_casualsuit06.mhmat",
+      "bytes": 1396,
+      "sha256": "2210d331d0e319147280363e281a4e98d24b71e678dac243d1250f5d27e9169f"
+    },
+    {
+      "path": "clothes/male_casualsuit06/male_casualsuit06_ao.png",
+      "bytes": 1663549,
+      "sha256": "dc27b02602060a8df4c1117f55bde7dea952342d847003afe2c6e12145301147"
+    },
+    {
+      "path": "clothes/male_casualsuit06/male_casualsuit06.mhclo",
+      "bytes": 252642,
+      "sha256": "9cebda22a0fa57fc556a1a77723f59b176724dc7e987c01214283677444ddcc5"
+    },
+    {
+      "path": "clothes/male_casualsuit06/male_casualsuit06_normal.png",
+      "bytes": 2235477,
+      "sha256": "ccdbf48a86eb922f5ccf38a7d3dc9de8828a6460c687eb84dacf8315d079a343"
+    },
+    {
+      "path": "clothes/male_casualsuit06/male_casualsuit06_diffuse.png",
+      "bytes": 1923464,
+      "sha256": "e9a581e0d4eb64c7a031886f2faf109a4703a3046a5fcc97ea9ce9112e99a344"
+    },
+    {
+      "path": "clothes/female_sportsuit01/female_sportsuit01_ao.png",
+      "bytes": 1692805,
+      "sha256": "6faffbb99e3d20faeaf87cdddece43fee7d6b7262de3e55817545809f0368524"
+    },
+    {
+      "path": "clothes/female_sportsuit01/female_sportsuit01.mhclo",
+      "bytes": 124049,
+      "sha256": "6df057d3116db93afbbbb6d692f92cce84aa16db699f47dd14e825d07c6fd42f"
+    },
+    {
+      "path": "clothes/female_sportsuit01/female_sportsuit01.thumb",
+      "bytes": 25816,
+      "sha256": "79169157b274530aae1fa0a6bc61c5a60bc92a96ba9070df062923f3857e3d12"
+    },
+    {
+      "path": "clothes/female_sportsuit01/female_sportsuit01.mhmat",
+      "bytes": 1400,
+      "sha256": "1153d5ad8a074f0f02c7102375d6d3ae0b82302b6f3909b5b64609a2d5cfdd6b"
+    },
+    {
+      "path": "clothes/female_sportsuit01/female_sportsuit01_normal.png",
+      "bytes": 250945,
+      "sha256": "2bc78509fc4e74b2346dbb54f7f627644125a41573ee458d624246e337f1d28f"
+    },
+    {
+      "path": "clothes/female_sportsuit01/female_sportsuit01_diffuse.png",
+      "bytes": 1396429,
+      "sha256": "00910e3e85b3dcf48d1aa827b4c075cdc77689989423ff4f75bc67f2e86cc588"
+    },
+    {
+      "path": "clothes/female_sportsuit01/female_sportsuit01.obj",
+      "bytes": 142064,
+      "sha256": "fd529bb8dd6a994c1e9a3fb2fd8b236f52c0cc7cebb1f6fd9328953d9df6d6ff"
+    },
+    {
+      "path": "clothes/male_elegantsuit01/male_elegantsuit01.mhclo",
+      "bytes": 515810,
+      "sha256": "6e725b0adac1a07173a14e15207d0b0125d5510455ef6dee756b5fa1c51cccef"
+    },
+    {
+      "path": "clothes/male_elegantsuit01/male_elegantsuit01.thumb",
+      "bytes": 36659,
+      "sha256": "8e3d5053b45c8bf55a8d452ce944ef7128c41bf4318e3f4de6752f25aaf972a3"
+    },
+    {
+      "path": "clothes/male_elegantsuit01/male_elegantsuit01.mhmat",
+      "bytes": 1293,
+      "sha256": "787bc0744174301c9ac0e33da4669bf37df9ac572ce950989f1bc6e71e938adf"
+    },
+    {
+      "path": "clothes/male_elegantsuit01/male_elegantsuit01_diffuse.png",
+      "bytes": 1945326,
+      "sha256": "eba3c9b662a35f145f28c8932fe96c01db258080daf1a1c09807def5497e3420"
+    },
+    {
+      "path": "clothes/male_elegantsuit01/male_elegantsuit01.obj",
+      "bytes": 633330,
+      "sha256": "3f6dfc8c10de6160b1e23aad6b4b201b7651914bf3ea5bc8a8aba03e0c0298ea"
+    },
+    {
+      "path": "clothes/female_elegantsuit01/female_elegantsuit01_ao.png",
+      "bytes": 1350953,
+      "sha256": "0f89546c63ab16e2c1ba0556da7e07264b98b58e6200b043491f92f796b87673"
+    },
+    {
+      "path": "clothes/female_elegantsuit01/female_elegantsuit01.mhmat",
+      "bytes": 1408,
+      "sha256": "a0b1708efbff3c4ad96f8e7d8cc27fb1652719549455ce94b89bcf6294cfbed0"
+    },
+    {
+      "path": "clothes/female_elegantsuit01/female_elegantsuit01_diffuse.png",
+      "bytes": 1996561,
+      "sha256": "ebe6f2afcbaadbe56d5cee6e00bab45e97ce482f0be0e34491d16ca5f98b38ac"
+    },
+    {
+      "path": "clothes/female_elegantsuit01/female_elegantsuit01.obj",
+      "bytes": 174924,
+      "sha256": "3b46cef6d63968954dc00c39ede649d76c05e5d36fe9f9c677349c88fd424de9"
+    },
+    {
+      "path": "clothes/female_elegantsuit01/female_elegantsuit01_normal.png",
+      "bytes": 1549042,
+      "sha256": "ae3650bce6678cd67d025ab70e68b22683176aeaabc06d8e5b2129af99c762e9"
+    },
+    {
+      "path": "clothes/female_elegantsuit01/female_elegantsuit01.thumb",
+      "bytes": 50008,
+      "sha256": "ea5a3491d544888a7187ace16da98f093b498a19220b19a8c317f78fbf2697c6"
+    },
+    {
+      "path": "clothes/female_elegantsuit01/female_elegantsuit01.mhclo",
+      "bytes": 151008,
+      "sha256": "8ed657dbc49466e6a485993cfdcfd7b6ac30a0f44408dfd38de7a649477d8928"
+    },
+    {
+      "path": "hair/bob02/bob02.mhclo",
+      "bytes": 112326,
+      "sha256": "a48dcf87c6a618f9c6e90fcb00eed07cd59ab024d8d994606fa1b070da515b96"
+    },
+    {
+      "path": "hair/bob02/bob02_diffuse.png",
+      "bytes": 3373723,
+      "sha256": "38c88e6f71631356591f09b1f17a1bb5a99c3bb095b1a29003f1dc3d3e839b0d"
+    },
+    {
+      "path": "hair/bob02/bob02.thumb",
+      "bytes": 54657,
+      "sha256": "88bb4a58e5dc55ebb6809bcf99968f8967ba2424b119c10df83ce1afb34bf4e3"
+    },
+    {
+      "path": "hair/bob02/bob02.obj",
+      "bytes": 109498,
+      "sha256": "30d44038836d786364eb4134a9259cf93ca0c707f883861b0135ebfb149caa08"
+    },
+    {
+      "path": "hair/bob02/bob02.mhmat",
+      "bytes": 1319,
+      "sha256": "32c1712308159f4f5b3775a633352070245bf1ea8b6f837ab4f4ba82b5e9fccd"
+    },
+    {
+      "path": "hair/short01/short01.thumb",
+      "bytes": 35055,
+      "sha256": "7e942d29322841a07a8a3feaf438fb9efb6b54f5b733909cecc51e79dcaca995"
+    },
+    {
+      "path": "hair/short01/short01.mhclo",
+      "bytes": 201588,
+      "sha256": "ae1ffaa98da5753b803b3a173bede4895d2215e6bb94763f3765a71f0e984f35"
+    },
+    {
+      "path": "hair/short01/short01.mhmat",
+      "bytes": 1314,
+      "sha256": "01e2e12ce3f3d3c859225456660acadcdd27d4f4b4d888bcbd6f11998cadd975"
+    },
+    {
+      "path": "hair/short01/short01.obj",
+      "bytes": 194450,
+      "sha256": "d998d8416f9b5d5591f1d756f4d292288d000a6951bc0f4d2e8e72727bbc44fa"
+    },
+    {
+      "path": "hair/short01/short01_diffuse.png",
+      "bytes": 2354146,
+      "sha256": "f34a0957184e3d1e911ed59245f874f8d4843f61ee44ff49f43edb4be0196949"
+    },
+    {
+      "path": "hair/short03/short03.thumb",
+      "bytes": 39414,
+      "sha256": "aba276c3ddbcb6b2c5dc29eef595bd2e447bfd8ff530731454319ce301b1b782"
+    },
+    {
+      "path": "hair/short03/short03_diffuse.png",
+      "bytes": 2392930,
+      "sha256": "fe6ed0bb14498a48a2e8fc07e80e2a6f62c8b67686fcd0a7a570d345faec97da"
+    },
+    {
+      "path": "hair/short03/short03.obj",
+      "bytes": 74766,
+      "sha256": "4a9fc385718f2c46fb328ab99d33e3a946cecdb717987c8b324cf2466b59bd9c"
+    },
+    {
+      "path": "hair/short03/short03.mhclo",
+      "bytes": 69048,
+      "sha256": "d80bbb8fd9b06721c481756fb3e1d6dce04fcfc9ca8a379edd4ea3c0d81ed17f"
+    },
+    {
+      "path": "hair/short03/short03.mhmat",
+      "bytes": 1309,
+      "sha256": "8dcf42b677301ab6a66f96ff41751ecf88fba6c6cd7c564e6953f9c78e40a8fd"
+    },
+    {
+      "path": "hair/ponytail01/ponytail01.obj",
+      "bytes": 264384,
+      "sha256": "d9f5fe96fbedbc8006220d87aad0e4a33d15286eb6b21f5929661cdc490ebf5a"
+    },
+    {
+      "path": "hair/ponytail01/ponytail01_diffuse.png",
+      "bytes": 3910782,
+      "sha256": "dcb364300cac06ce8bef91b2f7c0970baf310898bbdd06b0c6b884ee9306eb97"
+    },
+    {
+      "path": "hair/ponytail01/ponytail01.mhclo",
+      "bytes": 252080,
+      "sha256": "97fc50b12bcb3b1c7b33edddd8d427a2604ffb06fe79b31132bf47f82d7afbac"
+    },
+    {
+      "path": "hair/ponytail01/ponytail01.thumb",
+      "bytes": 47981,
+      "sha256": "1dd14d9ce1c7bb7368f49757e3299a961190ea374c8dc140ff964b5f437d3383"
+    },
+    {
+      "path": "hair/ponytail01/ponytail01.mhmat",
+      "bytes": 1305,
+      "sha256": "b145f5a7c9606859ad523f5113482a1cf989cf0e26dccc2ea95c377cb1c2557f"
+    },
+    {
+      "path": "hair/braid01/braid01.obj",
+      "bytes": 302165,
+      "sha256": "ad0b449c80244452bc8d437f5d59c25ec2ac17b2eb35e1ae2d9531fc00b73b0a"
+    },
+    {
+      "path": "hair/braid01/braid01.mhclo",
+      "bytes": 305086,
+      "sha256": "e350614dab32230c47d67e7747079b89859d36e62a890ca47890f068eca4f7a9"
+    },
+    {
+      "path": "hair/braid01/braid01.thumb",
+      "bytes": 28768,
+      "sha256": "b0fc877ff3c45aa0055ea89fde0fc1fc83c228ac22a27c28aeb8816b9b252e64"
+    },
+    {
+      "path": "hair/braid01/braid01.mhmat",
+      "bytes": 1299,
+      "sha256": "c8fdc8452c94715e9bf8fc194c82dc1e53124475b0665058d31b142bf0f3f762"
+    },
+    {
+      "path": "hair/braid01/braid01_diffuse.png",
+      "bytes": 2615248,
+      "sha256": "24c0d2a639f04704734c3e38af97d110777c1b203e5a10c66a5c89563643a018"
+    },
+    {
+      "path": "hair/long01/long01_diffuse.png",
+      "bytes": 2915253,
+      "sha256": "e8dc25d90f8f62467e8630420e1240a400d070054fb7c3f1d3f7bf3e457d6c2c"
+    },
+    {
+      "path": "hair/long01/long01.mhmat",
+      "bytes": 1297,
+      "sha256": "74ec88267e679d316f8037a074511ffc887b27e198ea381d0ae4a3f180f96760"
+    },
+    {
+      "path": "hair/long01/long01.obj",
+      "bytes": 215324,
+      "sha256": "7f1d6dadbdf9e96435251955d6657e77ea5433c9bc7c85a5c5f5e4eae0cb9a8c"
+    },
+    {
+      "path": "hair/long01/long01.mhclo",
+      "bytes": 220891,
+      "sha256": "94ecbebfd834da2cbee2ce90b730972590eb22a252ecd9592038ea736e063646"
+    },
+    {
+      "path": "hair/long01/long01.thumb",
+      "bytes": 35530,
+      "sha256": "4cb13248134980fc69fdbe298e2bdde58864aec764243cb3c50cb0da7dc0ed98"
+    },
+    {
+      "path": "hair/short04/short04.mhmat",
+      "bytes": 1316,
+      "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97"
+    },
+    {
+      "path": "hair/short04/short04.obj",
+      "bytes": 55152,
+      "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de"
+    },
+    {
+      "path": "hair/short04/short04.mhclo",
+      "bytes": 59195,
+      "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157"
+    },
+    {
+      "path": "hair/short04/short04_diffuse.png",
+      "bytes": 2308132,
+      "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e"
+    },
+    {
+      "path": "hair/short04/short04.thumb",
+      "bytes": 41792,
+      "sha256": "a7db8f3db6e2a53194993de73b875d000f928b66a8ac4d6efab51bfd8e6664fd"
+    }
+  ]
+}
