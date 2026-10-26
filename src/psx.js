@@ -34,7 +34,7 @@ const POST_FRAG = /* glsl */ `
     vec3 color = linearToSRGB(texture2D(tDiffuse, vUv).rgb);
     float d = bayer4(gl_FragCoord.xy) - 0.5;
     // PS1: 15-bit color (5 bits per channel) with ordered dithering
-    color = floor(color * 31.0 + d + 0.5) / 31.0;
+    color = floor(color * 31.0 + d * 0.35 + 0.5) / 31.0;
     // faint vignette, like a CRT
     float v = smoothstep(1.35, 0.45, length(vUv - 0.5) * 1.6);
     color *= mix(0.82, 1.0, v);

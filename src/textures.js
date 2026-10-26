@@ -80,6 +80,27 @@ export function steppeTexture() {
   }));
 }
 
+export function mountainTexture() {
+  return cached("mountain", () => canvasTexture(64, 64, (ctx, w, h) => {
+    const rand = mulberry(7301);
+    ctx.fillStyle = "#a1a394";
+    ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 220; i++) {
+      ctx.fillStyle = i % 3 ? "#8c9284" : "#b8bbae";
+      ctx.fillRect(rand() * w, rand() * h, 1 + rand() * 3, 1 + rand() * 2);
+    }
+    for (let i = 0; i < 12; i++) {
+      let x = rand() * w, y = rand() * h;
+      ctx.fillStyle = "#747c72";
+      for (let step = 0; step < 7; step++) {
+        ctx.fillRect(x, y, 1 + rand() * 2, 2);
+        x += rand() * 3 - 1;
+        y += 2;
+      }
+    }
+  }));
+}
+
 export function dirtTexture() {
   return cached("dirt", () => canvasTexture(128, 128, (ctx, w, h) => {
     ctx.fillStyle = "#b29a74";
@@ -214,9 +235,15 @@ export function woodTexture() {
 }
 
 export function fenceTexture(tone = "warm") {
-  const palette = tone === "grey"
-    ? ["#7c7a72", "#8a8880", "#6e6c65", "#94928a"]
-    : ["#8a6a44", "#9a7a50", "#7a5a38", "#a88a60"];
+  const palettes = {
+    grey: ["#7c7a72", "#8a8880", "#6e6c65", "#94928a"],
+    blue: ["#3e6e98", "#4d82ae", "#2f587c", "#5a90bc"],
+    green: ["#2f6a46", "#3d7c54", "#245438", "#4c8c62"],
+    red: ["#8a3c34", "#9a4c42", "#6e2e28", "#a85a4c"],
+    white: ["#e6e2d6", "#d8d4c8", "#f2eee4", "#c8c4b6"],
+    warm: ["#8a6a44", "#9a7a50", "#7a5a38", "#a88a60"],
+  };
+  const palette = palettes[tone] || palettes.warm;
   return cached(`fence:${tone}`, () => canvasTexture(128, 64, (ctx, w, h) => {
     ctx.fillStyle = palette[0];
     ctx.fillRect(0, 0, w, h);
@@ -228,6 +255,12 @@ export function fenceTexture(tone = "warm") {
       ctx.fillRect(x + plank - 1, 0, 1, h);
       ctx.fillStyle = "rgba(255,240,210,0.08)";
       ctx.fillRect(x, 0, 1, h);
+    }
+    const wear = mulberry(tone.length * 131 + tone.charCodeAt(0));
+    for (let x = 0; x < w; x += plank) {
+      ctx.fillStyle = "#9c8b70";
+      ctx.fillRect(x + 2, h - 5 - wear() * 15, 2 + wear() * 6, 16);
+      ctx.fillRect(x + 4, 5 + wear() * 30, 2, 3 + wear() * 7);
     }
     ctx.fillStyle = "rgba(48,34,20,0.25)";
     ctx.fillRect(0, 10, w, 2);

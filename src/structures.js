@@ -132,6 +132,13 @@ export function buildApartment(options = {}) {
           group.add(cloth);
         }
       }
+      if ((f + b) % 3 === 0) {
+        const storage = buildCrate();
+        storage.name = "balcony-storage";
+        storage.scale.setScalar(0.52);
+        storage.position.set(x - 0.55, y + 0.16, front + 0.55);
+        group.add(storage);
+      }
       addBox(group, 0.06, 1.7, 0.06, metal, x - 1.12, railY + 0.5, front + 0.7);
       addBox(group, 0.06, 1.7, 0.06, metal, x - 1.12, railY + 0.5, front + 1.2);
     }
@@ -154,6 +161,11 @@ export function buildApartment(options = {}) {
   addBox(group, 3.4, 0.24, 0.9, solid(0x9a9484), 0, 0.12, front + 0.45);
   addBox(group, 3.2, 0.18, 0.7, solid(0xa8a292), 0, 0.34, front + 0.35);
   addBox(group, 3.2, 0.16, 1.1, concrete, 0, 0.3, front + 2.0);
+  const entranceLight = addBox(group, 0.4, 0.22, 0.18, lampMaterial(), 0, 2.7, front + 0.2);
+  entranceLight.name = "entrance-light";
+  const meter = addBox(group, 0.5, 0.7, 0.18, solid(0x727468), -2.1, 1.4, front + 0.12);
+  meter.name = "utility-meter";
+  addBox(group, 0.035, 2.4, 0.04, metal, -2.1, 2.95, front + 0.13);
 
   addSignPlane(group, number, {
     width: 64, height: 64, bg: "#2b4a7a", fg: "#e8dcc0", accent: "#e8dcc0", border: false,
@@ -276,7 +288,7 @@ export function buildSchool() {
   for (let i = 0; i < 3; i++) {
     addBox(group, 5.6 - i * 0.4, 0.18, 0.7 + i * 0.35, solid(0xa8a08c), 0, 0.18 + i * 0.18, front + 2.0 + i * 0.3);
   }
-  addSignPlane(group, "4-Р СУРГУУЛЬ", {
+  addSignPlane(group, "2-Р СУРГУУЛЬ", {
     width: 512, height: 96, bg: "#d8cdb0", fg: "#2b4a7a", accent: "#8c2f24", sub: "БҮРЭН ДУНД СУРГУУЛЬ",
   }, 8.6, 1.5, 0, 6.1, front + 0.05);
 
@@ -752,7 +764,8 @@ export function buildUtilityBox() {
   return group;
 }
 
-export function buildSelfBuiltHouse() {
+export function buildSelfBuiltHouse(options = {}) {
+  const { roof = "#8c4a34" } = options;
   const group = new THREE.Group();
   const width = 8;
   const depth = 6.5;
@@ -778,7 +791,7 @@ export function buildSelfBuiltHouse() {
     group.add(gable);
   }
   for (const side of [-1, 1]) {
-    const slope = box(width + 1.0, 0.14, 3.9, corrugatedMaterial("#8c4a34"));
+    const slope = box(width + 1.0, 0.14, 3.9, corrugatedMaterial(roof));
     slope.position.set(0, height + 0.86, side * 1.45);
     slope.rotation.x = side * 0.42;
     group.add(slope);
@@ -807,5 +820,421 @@ export function buildSelfBuiltHouse() {
   group.add(dish);
 
   group.add(buildingShadow(width + 3.5, depth + 3.5));
+  return group;
+}
+
+function crossMark(parent, x, y, z, rotY = 0, scale = 1) {
+  const mark = new THREE.Group();
+  const red = solid(0xc43838);
+  addBox(mark, 0.28 * scale, 1.15 * scale, 0.06, red, 0, 0, 0);
+  addBox(mark, 0.78 * scale, 0.28 * scale, 0.06, red, 0, 0, 0);
+  mark.position.set(x, y, z);
+  mark.rotation.y = rotY;
+  parent.add(mark);
+  return mark;
+}
+
+export function buildHospital() {
+  const group = new THREE.Group();
+  const width = 22;
+  const depth = 12;
+  const floors = 4;
+  const floorH = 3.05;
+  const height = floors * floorH;
+  const front = depth / 2;
+  const wall = plasterMaterial("#d2c4a4");
+  const trim = solid(0x3e5a72);
+  const concrete = solid(0xb4ac98);
+  const dark = solid(0x3e3832);
+
+  addBox(group, width + 0.3, 0.55, depth + 0.3, solid(0x8a8070), 0, 0.28, 0);
+  addBox(group, width, height, depth, wall, 0, height / 2, 0);
+  addBox(group, width + 0.14, 0.28, depth + 0.14, trim, 0, height - 0.18, 0);
+  addBox(group, width + 0.1, 0.22, depth + 0.1, trim, 0, 0.7, 0);
+
+  const bayX = [-8.2, -4.8, -1.6, 1.6, 4.8, 8.2];
+  for (let b = 0; b < bayX.length; b++) {
+    for (let f = 0; f < floors; f++) {
+      if (f === 0 && (b === 2 || b === 3)) continue;
+      addWindow(group, 1.35, 1.6, bayX[b], f * floorH + 1.75, front + 0.03, 0, b + f);
+    }
+  }
+  for (let f = 0; f < floors; f++) {
+    for (const x of [-width / 2 - 0.03, width / 2 + 0.03]) {
+      addWindow(group, 1.15, 1.45, x, f * floorH + 1.75, -2.2, x < 0 ? -Math.PI / 2 : Math.PI / 2, f + 1);
+      addWindow(group, 1.15, 1.45, x, f * floorH + 1.75, 2.2, x < 0 ? -Math.PI / 2 : Math.PI / 2, f + 3);
+    }
+  }
+
+  addBox(group, 5.2, 0.22, 2.4, concrete, 0, 3.15, front + 1.15);
+  addBox(group, 0.18, 3.05, 0.18, concrete, -2.15, 1.55, front + 2.1);
+  addBox(group, 0.18, 3.05, 0.18, concrete, 2.15, 1.55, front + 2.1);
+  addBox(group, 1.7, 2.4, 0.12, dark, 0, 1.2, front + 0.08);
+  addBox(group, 4.4, 0.12, 1.5, concrete, 0, 0.08, front + 1.3);
+  addBox(group, 3.6, 0.12, 1.2, concrete, 0, 0.2, front + 0.7);
+  crossMark(group, -6.4, 8.4, front + 0.08, 0, 1.35);
+  addSignPlane(group, "ЭМНЭЛЭГ", {
+    width: 512, height: 96, bg: "#d8cdb0", fg: "#8c2f24", accent: "#2b4a7a", sub: "НАРАН СУМ",
+  }, 8.2, 1.45, 0, 10.15, front + 0.06);
+
+  const parapet = solid(0x3e5a72);
+  addBox(group, width + 0.08, 0.45, 0.18, parapet, 0, height + 0.22, front);
+  addBox(group, width + 0.08, 0.45, 0.18, parapet, 0, height + 0.22, -front);
+  const roof = new THREE.Mesh(new THREE.PlaneGeometry(width - 0.5, depth - 0.5), solid(0x6a6860));
+  roof.rotation.x = -Math.PI / 2;
+  roof.position.y = height + 0.02;
+  group.add(roof);
+  addBox(group, 3.2, 1.3, 2.4, solid(0xa09888), -4, height + 0.68, -1.5);
+
+  const wingW = 14;
+  const wingD = 10;
+  const wingFloors = 2;
+  const wingH = wingFloors * floorH;
+  const wingX = width / 2 + wingW / 2 - 0.4;
+  addBox(group, wingW, wingH, wingD, plasterMaterial("#cabb9a"), wingX, wingH / 2, -0.4);
+  addBox(group, wingW + 0.12, 0.24, wingD + 0.12, trim, wingX, wingH - 0.14, -0.4);
+  const wingFront = -0.4 + wingD / 2;
+  for (const x of [-4.2, -1.4, 1.4, 4.2]) {
+    for (let f = 0; f < wingFloors; f++) {
+      if (f === 0 && x === -1.4) continue;
+      addWindow(group, 1.2, 1.5, wingX + x, f * floorH + 1.7, wingFront + 0.03, 0, f + 2);
+    }
+  }
+  addBox(group, 1.4, 2.2, 0.1, dark, wingX - 1.4, 1.15, wingFront + 0.06);
+  addSignPlane(group, "НЯРАЙН ТАСАГ", {
+    width: 512, height: 80, bg: "#d8cdb0", fg: "#2b4a7a", accent: "#8c2f24",
+  }, 6.4, 0.9, wingX + 1.5, 5.15, wingFront + 0.06);
+  crossMark(group, wingX + 5.4, 4.3, wingFront + 0.08, 0, 0.85);
+
+  const laundryX = -width / 2 - 3.6;
+  addBox(group, 7.2, 3.1, 5.4, brickMaterial(), laundryX, 1.55, -0.6);
+  const shedRoof = box(7.8, 0.14, 5.9, corrugatedMaterial("#6a7070"));
+  shedRoof.position.set(laundryX, 3.25, -0.6);
+  shedRoof.rotation.x = -0.08;
+  group.add(shedRoof);
+  addBox(group, 1.3, 2.15, 0.1, dark, laundryX - 1.2, 1.1, 2.15);
+  addBox(group, 1.15, 0.7, 0.08, solid(0x8a8a82), laundryX + 1.6, 0.55, 2.18);
+  addBox(group, 1.35, 0.08, 0.12, solid(0x5a5a54), laundryX + 1.6, 0.95, 2.22);
+  addWindow(group, 1.05, 0.9, laundryX + 1.5, 2.15, 2.16, 0, 4);
+  addCylinder(group, 0.42, 0.5, 7.2, solid(0x6a6258), laundryX - 1.4, 6.4, -1.6, 8);
+  addCylinder(group, 0.55, 0.55, 0.2, solid(0x4a4844), laundryX - 1.4, 10.05, -1.6, 8);
+
+  group.userData.boilerSmoke = { x: laundryX - 1.4, y: 10.3, z: -1.6 };
+  group.add(buildingShadow(width + wingW + 8, depth + 6));
+  return group;
+}
+
+export function buildGovernorHall() {
+  const group = new THREE.Group();
+  const width = 20;
+  const depth = 11;
+  const floors = 3;
+  const floorH = 3.5;
+  const height = floors * floorH;
+  const front = depth / 2;
+  const wall = plasterMaterial("#e0d4b8");
+  const base = solid(0x6a5a48);
+  const trim = solid(0x8c2f24);
+  const concrete = solid(0xc8c0ac);
+  const dark = solid(0x3a342e);
+
+  addBox(group, width + 0.4, 1.15, depth + 0.4, base, 0, 0.58, 0);
+  addBox(group, width, height - 0.7, depth, wall, 0, 1.15 + (height - 0.7) / 2, 0);
+  addBox(group, width + 0.16, 0.35, depth + 0.16, trim, 0, height - 0.2, 0);
+  addBox(group, width + 0.08, 0.16, depth + 0.08, concrete, 0, 1.2, 0);
+
+  const bayX = [-7.2, -3.6, 3.6, 7.2];
+  for (const x of bayX) {
+    for (let f = 0; f < floors; f++) {
+      addWindow(group, 1.45, 1.85, x, f * floorH + 2.15, front + 0.04, 0, f + 1);
+    }
+  }
+  for (let f = 0; f < floors; f++) {
+    addWindow(group, 1.2, 1.6, 0, f * floorH + 2.15, -front - 0.04, Math.PI, f + 2);
+    addWindow(group, 1.2, 1.6, -4.5, f * floorH + 2.15, -front - 0.04, Math.PI, f);
+    addWindow(group, 1.2, 1.6, 4.5, f * floorH + 2.15, -front - 0.04, Math.PI, f + 3);
+  }
+
+  for (let step = 0; step < 4; step++) {
+    addBox(group, 6.2 - step * 0.15, 0.16, 1.15, concrete, 0, 0.1 + step * 0.16, front + 2.6 + step * 0.45);
+  }
+  for (const x of [-2.3, 2.3]) {
+    addCylinder(group, 0.28, 0.32, 3.55, concrete, x, 2.15, front + 1.7, 10);
+  }
+  addBox(group, 6.4, 0.28, 2.2, concrete, 0, 4.05, front + 1.55);
+  addBox(group, 2.2, 2.5, 0.12, dark, 0, 1.7, front + 0.08);
+
+  const balconyY = floorH + 1.15;
+  addBox(group, 6.6, 0.16, 1.7, concrete, 0, balconyY, front + 0.85);
+  addBox(group, 6.6, 0.08, 0.08, solid(0x4a4038), 0, balconyY + 0.95, front + 1.65);
+  for (let i = 0; i < 8; i++) {
+    addBox(group, 0.06, 0.9, 0.06, solid(0x4a4038), -2.9 + i * 0.83, balconyY + 0.5, front + 1.65);
+  }
+  addBox(group, 1.5, 2.15, 0.08, solid(0x6a8a96), 0, balconyY + 1.35, front + 0.08);
+
+  addSignPlane(group, "ЗАСАГ ДАРГА", {
+    width: 512, height: 96, bg: "#d8cdb0", fg: "#8c2f24", accent: "#2b4a7a", sub: "НАРАН СУМ",
+  }, 9.4, 1.35, 0, height - 1.15, front + 0.08);
+
+  const wingW = 12;
+  const wingD = 9;
+  const wingH = 5.6;
+  const wingX = width / 2 + wingW / 2 - 0.5;
+  addBox(group, wingW, wingH, wingD, plasterMaterial("#d8c8a8"), wingX, wingH / 2, -0.5);
+  addBox(group, wingW + 0.1, 0.28, wingD + 0.1, trim, wingX, wingH - 0.16, -0.5);
+  const wingFront = -0.5 + wingD / 2;
+  for (const x of [-3.6, 0, 3.6]) {
+    addWindow(group, 1.7, 2.3, wingX + x, 2.5, wingFront + 0.04, 0, 2);
+  }
+  addSignPlane(group, "ХУРЛЫН ЗААЛ", {
+    width: 384, height: 72, bg: "#2b4a7a", fg: "#e8dcc0", accent: "#d8a44a",
+  }, 5.6, 0.85, wingX, 4.55, wingFront + 0.06);
+
+  addBox(group, width + 0.1, 0.4, 0.16, trim, 0, height + 0.2, front);
+  const roof = new THREE.Mesh(new THREE.PlaneGeometry(width - 0.4, depth - 0.4), solid(0x5c5852));
+  roof.rotation.x = -Math.PI / 2;
+  roof.position.y = height + 0.02;
+  group.add(roof);
+
+  const flagL = buildFlagPole();
+  flagL.group.position.set(-4.6, 0, front + 4.4);
+  flagL.group.scale.setScalar(0.72);
+  group.add(flagL.group);
+  const flagR = buildFlagPole();
+  flagR.group.position.set(4.6, 0, front + 4.4);
+  flagR.group.scale.setScalar(0.72);
+  group.add(flagR.group);
+
+  group.add(buildingShadow(width + wingW + 4, depth + 8));
+  return group;
+}
+
+export function buildHeatingPlant() {
+  const group = new THREE.Group();
+  const width = 24;
+  const depth = 15;
+  const height = 8;
+  const front = depth / 2;
+  const brick = brickMaterial();
+  const metal = solid(0x5a5854);
+  const concrete = solid(0xb0a894);
+
+  addBox(group, width + 0.4, 0.7, depth + 0.4, solid(0x7a7468), 0, 0.35, 0);
+  addBox(group, width, height, depth, brick, 0, height / 2, 0);
+  const angle = 0.28;
+  for (const side of [-1, 1]) {
+    const slope = box(width + 1.2, 0.16, depth / 2 + 0.8, corrugatedMaterial("#5c5854"));
+    slope.position.set(0, height + 1.15, side * 3.6);
+    slope.rotation.x = side * angle;
+    group.add(slope);
+  }
+  addBox(group, width + 1.4, 0.22, 0.28, metal, 0, height + 2.15, 0);
+
+  addBox(group, 3.2, 3.4, 0.16, solid(0x3a342e), -6, 1.75, front + 0.08);
+  addBox(group, 3.2, 3.4, 0.16, solid(0x3a342e), 2, 1.75, front + 0.08);
+  for (const x of [-8.5, -2.5, 6.5]) {
+    addWindow(group, 1.6, 1.15, x, 5.6, front + 0.05, 0, 3);
+  }
+  addSignPlane(group, "ДУЛААНЫ СТАНЦ", {
+    width: 512, height: 96, bg: "#d8cdb0", fg: "#8c2f24", accent: "#2b4a7a", sub: "НАРАН",
+  }, 10.5, 1.5, 0, 7.15, front + 0.08);
+
+  const chimneys = [
+    { x: -4.2, z: -2.4, h: 26 },
+    { x: 5.5, z: -1.2, h: 32 },
+  ];
+  for (const chimney of chimneys) {
+    const mat = solid(chimney.h > 30 ? 0x8c6850 : 0x7a5c48);
+    addCylinder(group, 1.55, 1.85, chimney.h, mat, chimney.x, chimney.h / 2 + 0.4, chimney.z, 10);
+    for (let y = 6; y < chimney.h; y += 5.5) {
+      addCylinder(group, 1.7, 1.7, 0.22, solid(0x5a4034), chimney.x, y, chimney.z, 10);
+    }
+    addCylinder(group, 1.95, 1.95, 0.45, solid(0x4a4038), chimney.x, chimney.h + 0.55, chimney.z, 10);
+  }
+  group.userData.chimneys = chimneys.map((chimney) => ({
+    x: chimney.x,
+    y: chimney.h + 0.9,
+    z: chimney.z,
+  }));
+
+  for (let i = 0; i < 5; i++) {
+    const pile = new THREE.Mesh(
+      new THREE.ConeGeometry(2.1 - i * 0.18, 1.3 + (i % 3) * 0.35, 7),
+      solid(i % 2 ? 0x2e2c2a : 0x3a3632)
+    );
+    pile.position.set(-width / 2 - 3.2 - (i % 2) * 1.4, 0.7, -4 + i * 1.8);
+    group.add(pile);
+  }
+  addBox(group, 8, 2.4, 4.2, solid(0x6a6258), width / 2 + 3.2, 1.3, 2);
+  const hopper = box(8.4, 0.16, 4.6, corrugatedMaterial("#4a4a46"));
+  hopper.position.set(width / 2 + 3.2, 2.7, 2);
+  hopper.rotation.x = -0.15;
+  group.add(hopper);
+
+  const rail = solid(0x8a8474);
+  addBox(group, 0.1, 1.3, depth + 14, rail, -width / 2 - 7.2, 0.65, 0);
+  addBox(group, width + 16, 0.1, 0.1, rail, 2, 1.25, front + 6);
+  group.add(buildingShadow(width + 16, depth + 12));
+  return group;
+}
+
+export function buildSchoolGym() {
+  const group = new THREE.Group();
+  const width = 16;
+  const depth = 10;
+  const height = 5.4;
+  const front = depth / 2;
+  const brick = brickMaterial();
+  addBox(group, width, height, depth, brick, 0, height / 2, 0);
+  addBox(group, width + 0.2, 0.35, depth + 0.2, solid(0x7a7468), 0, 0.18, 0);
+  for (const side of [-1, 1]) {
+    const slope = box(width + 0.6, 0.14, 5.6, corrugatedMaterial("#6a6862"));
+    slope.position.set(0, height + 0.7, side * 2.2);
+    slope.rotation.x = side * 0.22;
+    group.add(slope);
+  }
+  for (const x of [-5, -1.6, 1.8, 5.2]) {
+    addWindow(group, 1.5, 0.7, x, 4.15, front + 0.04, 0, 2);
+  }
+  addBox(group, 1.8, 2.4, 0.12, solid(0x3a342e), 0, 1.25, front + 0.06);
+  addSignPlane(group, "БИЕИЙН ТАМИР", {
+    width: 384, height: 72, bg: "#d8cdb0", fg: "#2b4a7a", accent: "#8c2f24",
+  }, 5.8, 0.85, -4.2, 3.3, front + 0.06);
+
+  const chute = new THREE.Group();
+  const metal = corrugatedMaterial("#5a5a56");
+  const bed = box(1.5, 0.12, 4.2, metal);
+  bed.position.set(0, 1.15, 0);
+  bed.rotation.x = 0.42;
+  chute.add(bed);
+  addBox(chute, 0.1, 0.45, 4.0, solid(0x4a4a46), -0.7, 1.25, 0.2);
+  addBox(chute, 0.1, 0.45, 4.0, solid(0x4a4a46), 0.7, 1.25, 0.2);
+  chute.position.set(width / 2 + 1.7, 0, 1.2);
+  chute.rotation.y = Math.PI / 2;
+  group.add(chute);
+  addBox(group, 1.3, 0.9, 1.1, solid(0x2a2a28), width / 2 + 0.15, 0.7, 1.2);
+
+  group.add(buildingShadow(width + 4, depth + 3));
+  return group;
+}
+
+export function buildCordon() {
+  const group = new THREE.Group();
+  const booth = plasterMaterial("#c8b898");
+  addBox(group, 3.4, 2.7, 3.2, booth, 0, 1.35, 0);
+  addBox(group, 3.8, 0.16, 3.6, corrugatedMaterial("#8c3a2c"), 0, 2.85, 0);
+  addWindow(group, 1.15, 0.95, 0, 1.7, 1.62, 0, 1);
+  addBox(group, 0.9, 2.0, 0.08, solid(0x4a4038), 1.15, 1.0, 1.64);
+  addSignPlane(group, "ХОРИГ", {
+    width: 256, height: 96, bg: "#8c2f24", fg: "#f0e6d0", accent: "#f0e6d0", sub: "ЗОГС",
+  }, 2.6, 0.85, 0, 2.25, 1.7);
+
+  const armPivot = new THREE.Group();
+  armPivot.position.set(2.3, 0, 4.2);
+  addBox(armPivot, 0.28, 1.7, 0.28, solid(0xf0e6d0), 0, 0.85, 0);
+  const stripe = solid(0xc43838);
+  const cream = solid(0xf0e6d0);
+  for (let i = 0; i < 8; i++) {
+    addBox(armPivot, 0.14, 0.16, 0.9, i % 2 ? stripe : cream, 0, 1.85, 0.7 + i * 0.9);
+  }
+  group.add(armPivot);
+
+  const bag = solid(0x6a6840);
+  for (let i = 0; i < 7; i++) {
+    addBox(group, 0.85, 0.38, 0.45, bag, -1.2 - i * 0.9, 0.22, 5.6);
+    if (i % 2 === 0) addBox(group, 0.8, 0.32, 0.42, solid(0x5a5838), -1.5 - i * 0.9, 0.58, 5.75);
+  }
+  for (let i = 0; i < 4; i++) {
+    addBox(group, 0.85, 0.38, 0.45, bag, 6.2 + i * 0.9, 0.22, 5.4);
+  }
+  addBox(group, 1.4, 0.9, 0.7, solid(0xc8b898), 4.6, 0.5, 4.4);
+  addBox(group, 0.7, 0.55, 0.55, solid(0xd8d0c0), 5.3, 0.35, 4.7);
+
+  const flag = buildFlagPole();
+  flag.group.position.set(-2.4, 0, -2.2);
+  flag.group.scale.setScalar(0.55);
+  group.add(flag.group);
+  group.add(buildingShadow(16, 10));
+  return group;
+}
+
+export function buildHelipad() {
+  const group = new THREE.Group();
+  const pad = new THREE.Mesh(
+    new THREE.CircleGeometry(7.2, 20),
+    plasterMaterial("#b7b2a6")
+  );
+  pad.rotation.x = -Math.PI / 2;
+  pad.position.y = 0.04;
+  group.add(pad);
+  const ring = new THREE.Mesh(
+    new THREE.RingGeometry(6.3, 6.7, 24),
+    solid(0xd8d2c4)
+  );
+  ring.rotation.x = -Math.PI / 2;
+  ring.position.y = 0.06;
+  group.add(ring);
+  addBox(group, 0.55, 0.04, 3.2, solid(0xe8e2d4), -0.7, 0.07, 0);
+  addBox(group, 0.55, 0.04, 3.2, solid(0xe8e2d4), 0.7, 0.07, 0);
+  addBox(group, 2.0, 0.04, 0.55, solid(0xe8e2d4), 0, 0.07, 0);
+  for (const [x, z] of [[-6.2, -6.2], [6.2, -6.2], [-6.2, 6.2], [6.2, 6.2]]) {
+    addBox(group, 0.28, 0.45, 0.28, solid(0x3a3a38), x, 0.28, z);
+    const lamp = box(0.22, 0.12, 0.22, lampMaterial());
+    lamp.position.set(x, 0.55, z);
+    group.add(lamp);
+  }
+  addCylinder(group, 0.06, 0.06, 3.2, solid(0xc8c4b8), 8.2, 1.6, 0, 5);
+  const sock = new THREE.Mesh(new THREE.ConeGeometry(0.28, 1.3, 6), solid(0xe07a28));
+  sock.rotation.z = Math.PI / 2;
+  sock.position.set(9.1, 3.05, 0);
+  group.add(sock);
+  return group;
+}
+
+export function buildWaterKiosk() {
+  const group = new THREE.Group();
+  const concrete = solid(0xb0a894);
+  addBox(group, 3.2, 0.22, 2.2, concrete, 0, 0.11, 0);
+  for (const [x, z] of [[-0.7, -0.45], [0.7, -0.45], [-0.7, 0.45], [0.7, 0.45]]) {
+    addBox(group, 0.12, 1.7, 0.12, solid(0x5a5a54), x, 1.05, z);
+  }
+  addBox(group, 2.2, 0.12, 1.5, concrete, 0, 1.85, 0);
+  addCylinder(group, 0.85, 0.85, 1.15, solid(0x2f6ea5), 0, 2.55, 0, 12);
+  addCylinder(group, 0.88, 0.88, 0.1, solid(0x1d4e78), 0, 3.15, 0, 12);
+  addCylinder(group, 0.06, 0.06, 0.7, solid(0x9a9a92), 0.2, 1.45, 0.7, 5);
+  addBox(group, 0.16, 0.1, 0.1, solid(0xc8c8c0), 0.5, 1.38, 0.7);
+  addSignPlane(group, "УС", {
+    width: 128, height: 64, bg: "#2f6ea5", fg: "#f4f7fb", accent: "#f4f7fb",
+  }, 1.15, 0.55, 0, 1.55, 0.82);
+  const puddle = new THREE.Mesh(
+    new THREE.CircleGeometry(0.55, 8),
+    solid(0x5a6a6a, { transparent: true, opacity: 0.45 })
+  );
+  puddle.rotation.x = -Math.PI / 2;
+  puddle.position.set(0.55, 0.23, 0.85);
+  group.add(puddle);
+  return group;
+}
+
+export function buildMarketStall() {
+  const group = new THREE.Group();
+  const wood = woodMaterial();
+  addBox(group, 2.4, 0.1, 1.3, wood, 0, 0.95, 0);
+  for (const x of [-1.05, 1.05]) {
+    addBox(group, 0.1, 0.95, 0.1, wood, x, 0.48, -0.5);
+    addBox(group, 0.1, 0.95, 0.1, wood, x, 0.48, 0.5);
+    addBox(group, 0.08, 1.7, 0.08, wood, x, 1.7, -0.55);
+  }
+  addBox(group, 2.5, 0.08, 0.08, wood, 0, 2.5, -0.55);
+  for (let i = 0; i < 6; i++) {
+    const stripe = box(0.4, 0.05, 1.35, solid(i % 2 ? 0xd8cdb0 : 0x9a3a2c));
+    stripe.position.set(-1.05 + i * 0.42, 2.25, 0.05);
+    stripe.rotation.x = -0.35;
+    group.add(stripe);
+  }
+  const crate = buildCrate();
+  crate.position.set(0.7, 1.05, 0);
+  crate.scale.setScalar(0.55);
+  group.add(crate);
   return group;
 }

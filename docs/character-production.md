@@ -1,9 +1,39 @@
-# Character base and wardrobe
+# Character production
 
-The current deliverable is one refined male base character and 320 interchangeable
-outfit combinations. These are ten reusable garment silhouettes × eight palettes ×
-four headwear choices. They are not 320 separately modeled garments or 120 distinct
-character identities.
+The cast studio includes 48 on-screen actors from the Episodes 1–5 dialogue master,
+plus two documented voice roles. Each visible actor has an editable `.blend` and
+an embedded-texture GLB under `assets/cast/`. The roster, aliases and authored
+appearance fields are documented in [cast.md](cast.md); source credits are in
+[asset-sources.md](asset-sources.md).
+
+```js
+import { loadCharacter } from "./character.js";
+const actor = await loadCharacter({ id: "ganaa", detail: "hero" });
+scene.add(actor.group);
+actor.setMotion("hour-five");
+actor.setTime(22.15); // absolute seconds; deterministic scrubbing
+actor.setExpression("fear"); // neutral returns to the authored expression
+// For continuous preview instead: actor.update(deltaSeconds).
+actor.dispose();
+```
+
+Cast actors expose `motions`, `profile`, `group`, `setMotion`, `setTime`,
+`setExpression`, `update`, `getOutfit`, `dispose` and `info`. Expressions are
+neutral, fear, hunger and resolve. Adults/teenagers have idle, walk, wave and
+cough previews; infants have idle. Ganaa additionally has `hour-five`.
+No speech audio or phoneme-level lip sync is provided. The performance has
+manually timed mouth movement, gaze, holds and body action.
+
+Cast geometry shares two edited Vinrax base topologies. Faces, body proportions,
+hair and role-specific clothes are authored from roster fields; these are not
+scanned likenesses. Hero/crowd currently use the same exported cast asset.
+The full cast has designs and preview rigs; only Ganaa has finished scene blocking.
+
+## Legacy wardrobe
+
+The legacy male base retains ten garment shapes × eight palettes × four headwear
+choices. These 320 combinations belong to one character identity. They are not
+48 interchangeable wardrobes and do not auto-fit the new female or child models.
 
 Run `npm run start:character`, then open `http://localhost:5174/character.html`.
 The town still uses `npm start` on port 5173.
@@ -117,7 +147,6 @@ FBX garment binding/deformation, then compiles the town and studio.
 
 This base supports outfit exploration and body-motion blocking. Distinct lead
 characters still need authored faces, body proportions, hair, and expressions.
-Dialogue needs a facial rig and visemes. The source asset has no included license
-record in this folder; retain its provenance and establish release permissions
-before distributing the underlying model. Garment fit in extreme poses and the
+Dialogue needs a facial rig and visemes. The original Vinrax asset permits project use with credit; see the recorded
+source terms in asset-sources.md. Garment fit in extreme poses and the
 entire future cast remain production QA work.

@@ -53,6 +53,8 @@
       letter-spacing: 2px;
       opacity: 0.7;
     }
+    #watchFilm { position: fixed; top: 65px; right: 16px; padding: 9px 12px; border: 1px solid #a69b86; color: #e8dcc5; background: #111720cc; text-decoration: none; font-size: 12px; letter-spacing: 1px; }
+    #watchFilm:focus-visible { outline: 2px solid #e7ba74; outline-offset: 3px; }
     #bar {
       position: fixed;
       left: 12px;
@@ -73,11 +75,18 @@
   <canvas id="game"></canvas>
   <div id="title">
     <h1>НАРАН ХОРООЛОЛ</h1>
-    <small>SMALL TOWN // МОНГОЛ '98 &nbsp;·&nbsp; <span id="viewName">OVERVIEW</span></small>
+    <small>AUTUMN 1998 // МОНГОЛ &nbsp;·&nbsp; <span id="viewName">OVERVIEW</span></small>
   </div>
+  <a id="watchFilm" href="film.html">▶ ХАНИАД · 30s FILM</a>
   <div id="hud">
-    DRAG: ORBIT &nbsp; WHEEL: ZOOM &nbsp; A: AUTO-ORBIT<br />
-    1-5: VIEWS &nbsp; &larr; &rarr;: SCRUB DAY &nbsp; SPACE: PAUSE
+    <div id="hudMap">
+      ENTER: BECOME THE HERDER &nbsp; DRAG: ORBIT &nbsp; WHEEL: ZOOM<br />
+      1-8: VIEWS &nbsp; A: AUTO-ORBIT &nbsp; [ ]: DAY &nbsp; SPACE: DAY CYCLE
+    </div>
+    <div id="hudPlay" hidden>
+      WASD: RUN &nbsp; SHIFT: SPRINT &nbsp; F: FLY &nbsp; SPACE / CTRL: RISE / FALL<br />
+      DRAG: LOOK &nbsp; WHEEL: DISTANCE &nbsp; ESC: BACK TO THE MAP
+    </div>
   </div>
   <div id="bar"><div id="barFill"></div></div>
   <script src="dist/bundle.js"></script>

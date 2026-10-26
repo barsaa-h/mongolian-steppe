@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ХАНИАД — Тав дахь цаг</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; overflow: hidden; background: #050609; color: #eee9de; font-family: Arial, sans-serif; }
+    #film { display: block; width: 100vw; height: 100vh; image-rendering: pixelated; }
+    .bar { position: fixed; left: 0; right: 0; height: 12.8vh; background: #050609; pointer-events: none; z-index: 3; }
+    .top { top: 0; } .bottom { bottom: 0; }
+    #shade { position: fixed; inset: 0; background: #050609; pointer-events: none; z-index: 2; }
+    #location { position: fixed; top: 19%; left: 7%; z-index: 4; text-shadow: 0 2px 8px #000; pointer-events: none; }
+    #location strong { display: block; font-size: clamp(22px, 3vw, 44px); font-weight: 400; letter-spacing: 0.15em; }
+    #location small { display: block; margin-top: 12px; font-size: clamp(10px, 1.2vw, 16px); letter-spacing: 0.2em; color: #d1c4ae; }
+    #captions { position: fixed; z-index: 5; bottom: 15.5%; left: 10%; right: 10%; text-align: center; pointer-events: none; }
+    #speaker { margin-bottom: 6px; font-size: clamp(10px, 1.1vw, 15px); letter-spacing: 0.16em; color: #d5c7a6; text-shadow: 0 1px 3px #000; }
+    #subtitle { max-width: 1000px; margin: 0 auto; font-size: clamp(17px, 2.15vw, 29px); line-height: 1.35; font-weight: 500; color: #faf7ee; text-shadow: -1px -1px 2px #000, 1px 1px 2px #000, 0 2px 6px #000; }
+    #endTitle { position: fixed; z-index: 4; inset: 0; display: grid; align-content: center; text-align: center; pointer-events: none; opacity: 0; }
+    #endTitle h1 { margin: 0; font-size: clamp(38px, 7vw, 96px); font-weight: 400; letter-spacing: 0.22em; padding-left: 0.22em; }
+    #endTitle p { color: #9a9a95; font-size: 12px; letter-spacing: 0.35em; }
+    #controls { position: fixed; z-index: 6; bottom: 3.7vh; left: 5%; right: 5%; display: flex; align-items: center; gap: 15px; font-size: 12px; }
+    button, a { background: transparent; color: inherit; font: inherit; border: 1px solid #77756b; border-radius: 3px; padding: 8px 13px; text-decoration: none; cursor: pointer; white-space: nowrap; }
+    button:hover, a:hover { border-color: #eee9de; background: #ffffff10; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid #e7ba74; outline-offset: 4px; }
+    input { flex: 1; min-width: 30px; accent-color: #d8bd8b; cursor: pointer; }
+    #clock { font-variant-numeric: tabular-nums; color: #b5b4aa; }
+    #status { position: fixed; z-index: 7; inset: 0; display: grid; place-content: center; text-align: center; background: #050609; letter-spacing: 0.08em; }
+    #status[hidden] { display: none; }
+    body.render #controls { display: none; }
+    @media (max-width: 600px) { #controls { gap: 8px; left: 3%; right: 3%; font-size: 10px; } button, a { padding: 7px; } #captions { left: 5%; right: 5%; } }
+  </style>
+</head>
+<body>
+  <canvas id="film" aria-label="Ханиад: Тав дахь цаг, 30 секундийн анимейшн"></canvas>
+  <div class="bar top"></div><div class="bar bottom"></div>
+  <div id="shade"></div>
+  <div id="location"><strong>НАРАН</strong><small>1998 ОН · ТАВ ДАХЬ ЦАГ</small></div>
+  <div id="captions" aria-live="off"><div id="speaker"></div><div id="subtitle"></div></div>
+  <div id="endTitle"><h1>ХАНИАД</h1><p>THE COUGH</p></div>
+  <nav id="controls" aria-label="Playback controls">
+    <button id="play" disabled aria-label="Play film">▶ Play</button>
+    <button id="replay" disabled aria-label="Replay film">↻ Replay</button>
+    <input id="scrub" type="range" min="0" max="30" step="0.01" value="0" aria-label="Film time in seconds" />
+    <span id="clock">00:00 / 00:30</span>
+    <a href="index.html">Map</a>
+  </nav>
+  <div id="status" role="status">ХАНИАД<br /><small>Loading Naran…</small></div>
+  <script src="dist/film.js"></script>
+</body>
+</html>

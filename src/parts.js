@@ -198,6 +198,7 @@ export function asphaltMaterial(rx = 10, ry = 3) {
   if (!matCache.has(key)) {
     matCache.set(key, mat({ map: cloneRepeat(asphaltTexture(), rx, ry) }));
   }
+  matCache.get(key).userData.noSnow = true;
   return matCache.get(key);
 }
 
@@ -283,7 +284,15 @@ export function buildFenceRun(length, tone = "warm") {
   const panel = box(length, 1.5, 0.08, material);
   panel.position.y = 0.78;
   group.add(panel);
-  const postMat = solid(tone === "grey" ? 0x6c6a62 : 0x6a4c30);
+  const postColors = {
+    grey: 0x6c6a62,
+    blue: 0x243e58,
+    green: 0x1e3c2c,
+    red: 0x5a2824,
+    white: 0x8a8680,
+    warm: 0x6a4c30,
+  };
+  const postMat = solid(postColors[tone] || postColors.warm);
   const count = Math.max(2, Math.round(length / 2.4) + 1);
   for (let i = 0; i < count; i++) {
     const x = -length / 2 + (length / (count - 1)) * i;
@@ -905,15 +914,25 @@ export function buildTree(kind = "poplar", seed = 0) {
   const group = new THREE.Group();
   const trunkMat = woodMaterial();
   const greens = [0x5f7246, 0x6d7c4a, 0x556a40, 0x7a8450, 0x66784a];
-  const golds = [0x8f8a45, 0x9a8f4a, 0x7c7a42];
+  const golds = [0xa39953, 0xb0a25b, 0x8f8846, 0xb5a86b, 0x897542];
 
-  if (kind === "poplar") {
+  if (kind === "winter") {
+    const height = 6 + rand() * 3;
+    addCylinder(group, 0.06, 0.22, height, trunkMat, 0, height / 2, 0, 5);
+    for (let i = 0; i < 9; i++) {
+      const branch = cylinder(0.025, 0.07, 1.8 + rand() * 1.3, trunkMat, 4);
+      const angle = i * 2.4;
+      branch.position.set(Math.sin(angle) * 0.48, height * (0.38 + i * 0.06), Math.cos(angle) * 0.48);
+      branch.rotation.set(Math.cos(angle) * 0.5, 0, Math.sin(angle) * 0.5);
+      group.add(branch);
+    }
+  } else if (kind === "poplar" || kind === "autumn") {
     const height = 6.5 + rand() * 3;
     addCylinder(group, 0.12, 0.22, height, trunkMat, 0, height / 2, 0, 5);
     const crowns = 3 + ((rand() * 2) | 0);
     for (let i = 0; i < crowns; i++) {
       const p = i / (crowns - 1);
-      const palette = rand() < 0.18 ? golds : greens;
+      const palette = rand() < (kind === "autumn" ? 0.68 : 0.18) ? golds : greens;
       const crown = new THREE.Mesh(
         new THREE.IcosahedronGeometry(1.0 + rand() * 0.35, 0),
         solid(palette[(rand() * palette.length) | 0])
@@ -968,7 +987,7 @@ export function buildRock(seed = 0) {
 export function buildGrassTuft(seed = 0) {
   const rand = mulberry(seed * 31 + 11);
   const group = new THREE.Group();
-  const green = solid(rand() < 0.25 ? 0x9a9a5a : 0x6f7c42);
+  const green = solid(rand() < 0.25 ? 0xa29b6b : 0x7e804e);
   for (let i = 0; i < 3; i++) {
     const blade = new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.35 + rand() * 0.25, 3), green);
     blade.position.set((rand() - 0.5) * 0.3, 0.2, (rand() - 0.5) * 0.3);

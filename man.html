@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Study — Three.js</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      overflow: hidden;
+      color: #eee9de;
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(ellipse at 50% 45%, #292b2d 0%, #171a1d 43%, #0c0f13 100%);
+    }
+    #viewer { display: block; width: 100vw; height: 100dvh; touch-action: none; }
+    .title, .help { position: fixed; pointer-events: none; text-shadow: 0 2px 12px #0009; }
+    .title { top: clamp(22px, 4vh, 48px); left: clamp(22px, 5vw, 68px); }
+    .eyebrow { color: #c7aa76; font-size: 10px; font-weight: 650; letter-spacing: .2em; }
+    h1 { margin: 12px 0 5px; font-size: clamp(24px, 3vw, 38px); font-weight: 450; letter-spacing: .04em; }
+    .title p { margin: 0; color: #aeb1b2; font-size: 12px; letter-spacing: .04em; }
+    .help { bottom: clamp(20px, 4vh, 38px); left: clamp(22px, 5vw, 68px); color: #b3b5b5; font-size: 11px; line-height: 1.7; }
+    #status { position: fixed; right: clamp(22px, 5vw, 68px); bottom: clamp(20px, 4vh, 38px); color: #c7aa76; font-size: 11px; }
+    @media (max-width: 600px) {
+      .title p { max-width: 240px; }
+      #status { bottom: 62px; left: clamp(22px, 5vw, 68px); right: auto; }
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/node_modules/three/build/three.module.js",
+        "three/examples/jsm/": "/node_modules/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="viewer" aria-label="Interactive Three.js preview of the Mongolian winter character" tabindex="0"></canvas>
+  <header class="title">
+    <div class="eyebrow">CHARACTER STUDY · THREE.JS</div>
+    <h1>1990s Mongolia</h1>
+    <p>Winter jacket reference · orbit to inspect the model</p>
+  </header>
+  <div class="help">Drag to rotate · scroll to zoom</div>
+  <div id="status" role="status" aria-live="polite">Loading model…</div>
+  <script>
+    if (location.protocol === "file:") {
+      document.getElementById("status").textContent =
+        "Run npm start, then open http://127.0.0.1:5173/man.html";
+    } else {
+      import("/src/man.js");
+    }
+  </script>
+</body>
+</html>

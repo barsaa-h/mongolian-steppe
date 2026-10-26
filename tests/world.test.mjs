@@ -1,12 +1,25 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { worldState } from "../src/world.js";
+import { townHeight } from "../src/district.js";
 
 test("the day cycle reaches daylight and night", () => {
   assert.equal(worldState(0.5).day, 1);
   assert.equal(worldState(0.5).night, 0);
   assert.equal(worldState(0).day, 0);
   assert.equal(worldState(0).night, 1);
+});
+
+test("the ger district steps up the hill and the road stays flat", () => {
+  assert.equal(townHeight(0, 0), 0);
+  assert.equal(townHeight(0, 20), 0);
+  assert.equal(townHeight(0, 43), 1.25);
+  assert.ok(townHeight(0, 66) > townHeight(0, 43));
+  assert.ok(townHeight(0, 89) > townHeight(0, 66));
+  const ramp = townHeight(0, 31.5);
+  assert.ok(ramp > 0 && ramp < 1.25);
+  assert.equal(townHeight(0, -84), 1.55);
+  assert.equal(townHeight(180, 43), 0);
 });
 
 test("lighting stays valid and repeats after one day", () => {

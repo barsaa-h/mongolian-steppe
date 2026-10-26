@@ -78,6 +78,79 @@ test("animation changes real bones, stays independent, and returns to the rest p
   assert.throws(() => animation.update(-1), /nonnegative/);
 });
 
+test("animation is continuous frame to frame and deterministic (no flicker)", () => {
+  const makeRig = () => {
+    const root = new THREE.Group();
+    const names = [...GARMENT_BONES, "spine", "head", "chest", "neck",
+      "thigh_left", "thigh_right", "shinL", "shinR",
+      "foot_left", "foot_right", "upper_arm_left", "upper_arm_right",
+      "forearm_left", "forearm_right", "hand_left", "hand_right"];
+    for (const name of names) {
+      const bone = new THREE.Bone();
+      bone.name = name;
+      root.add(bone);
+    }
+    return root;
+  };
+  const snapshot = (rig) => {
+    const poses = [];
+    rig.traverse((bone) => {
+      if (!bone.isBone) return;
+      poses.push([bone.name, bone.quaternion.x, bone.quaternion.y, bone.quaternion.z, bone.quaternion.w]);
+    });
+    return poses;
+  };
+  for (const motion of ["idle", "walk", "wave"]) {
+    const rig = makeRig();
+    const animation = createCharacterAnimator(rig);
+    animation.setMotion(motion);
+    let previous = snapshot(rig);
+    for (let frame = 1; frame <= 601; frame++) {
+      animation.update(1 / 60);
+      const current = snapshot(rig);
+      let maxStep = 0;
+      for (let i = 0; i < current.length; i++) {
+        assert.ok(current[i].slice(1).every(Number.isFinite), `non-finite pose on frame ${frame} of ${motion}`);
+        assert.equal(current[i][0], previous[i][0]);
+        maxStep = Math.max(maxStep, new THREE.Quaternion(
+          current[i][1] - previous[i][1], current[i][2] - previous[i][2],
+          current[i][3] - previous[i][3], current[i][4] - previous[i][4]).length());
+      }
+      if (frame === 1) {
+        assert.ok(maxStep < 2.2, `${motion} onset must stay within an authored pose offset, not a teleport (${maxStep.toFixed(3)} rad)`);
+      } else {
+        assert.ok(maxStep < 0.085, `${motion} jumps ${maxStep.toFixed(3)} rad between frames ${frame - 1} and ${frame}`);
+      }
+      previous = current;
+    }
+  }
+  const first = makeRig();
+  const second = makeRig();
+  for (const rig of [first, second]) {
+    const animation = createCharacterAnimator(rig);
+    animation.setMotion("walk");
+    for (let i = 0; i < 240; i++) animation.update(1 / 60);
+  }
+  const left = snapshot(first).map((pose) => pose.slice(1).join());
+  const right = snapshot(second).map((pose) => pose.slice(1).join());
+  assert.deepEqual(left, right, "identical frame sequences must produce identical poses");
+  animationSnapBoundCheck(makeRig);
+});
+
+function animationSnapBoundCheck(makeRig) {
+  const rig = makeRig();
+  const animation = createCharacterAnimator(rig);
+  animation.setMotion("walk");
+  for (let i = 0; i < 180; i++) animation.update(1 / 60);
+  const before = new THREE.Vector3().setFromEuler(
+    new THREE.Euler().setFromQuaternion(rig.getObjectByName("thigh_left").quaternion));
+  animation.setMotion("idle");
+  animation.update(1 / 60);
+  const after = new THREE.Vector3().setFromEuler(
+    new THREE.Euler().setFromQuaternion(rig.getObjectByName("thigh_left").quaternion));
+  assert.ok(before.distanceTo(after) < 0.6, "motion switches must stay within a blendable jump, not a full teleport");
+}
+
 test("the real FBX rig keeps garments in place at rest and deforms them during a wave", async () => {
   const manager = new THREE.LoadingManager();
   const textureLoader = new THREE.TextureLoader(manager);

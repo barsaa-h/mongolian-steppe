@@ -4,14 +4,15 @@
   "description": "A PSX-style Mongolian town built with Three.js.",
   "private": true,
   "scripts": {
-    "build": "npm run build:game && npm run build:character",
+    "build": "npm run build:game && npm run build:character && npm run build:film",
     "build:game": "esbuild src/main.js --bundle --format=iife --target=es2020 --minify --outfile=dist/bundle.js",
     "build:character": "esbuild src/characterOnly.js --bundle --format=iife --target=es2020 --minify --outfile=dist/character.js",
-    "start": "esbuild src/main.js --bundle --format=iife --target=es2020 --sourcemap --outfile=dist/bundle.js --watch=forever --servedir=. --serve=127.0.0.1:5173 --footer:js=\"new EventSource('/esbuild').addEventListener('change', () => location.reload());\"",
+    "start": "esbuild bundle=src/main.js film=src/film.js character=src/characterOnly.js --bundle --format=iife --target=es2020 --sourcemap --outdir=dist --watch=forever --servedir=. --serve=127.0.0.1:5173 --footer:js=\"new EventSource('/esbuild').addEventListener('change', () => location.reload());\"",
     "start:character": "esbuild src/characterOnly.js --bundle --format=iife --target=es2020 --sourcemap --outfile=dist/character.js --watch=forever --servedir=. --serve=127.0.0.1:5174 --footer:js=\"new EventSource('/esbuild').addEventListener('change', () => location.reload());\"",
     "dev": "npm start",
     "test": "node --test tests/*.test.mjs",
-    "check": "npm test && npm run build"
+    "check": "npm test && npm run build",
+    "build:film": "esbuild src/film.js --bundle --format=iife --target=es2020 --minify --outfile=dist/film.js"
   },
   "keywords": [],
   "type": "module",

@@ -1,4 +1,6 @@
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { getCastMember } from "./cast.js";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { clone } from "three/examples/jsm/utils/SkeletonUtils.js";
 import { buildGarmentGeometry, GARMENT_BONES } from "./characterGarments.js";
@@ -224,5 +226,115 @@ export async function loadMongolianMan({ position = new THREE.Vector3(), rotatio
       for (const instance of skeletons) instance.dispose();
     },
     info: { textureWidth: skin.material.map.image.width, rigBones: garmentBones.length },
+  };
+}
+
+const castModels = new Map();
+const EXPRESSIONS = ["neutral", "fear", "hunger", "resolve"];
+
+export async function loadCharacter({ id = "ganaa", detail = "hero", position = new THREE.Vector3(), rotationY = 0 } = {}) {
+  const profile = getCastMember(id);
+  if (profile.kind === "voice") throw new Error(`${profile.name} is a voice role and has no model`);
+  if (!["hero", "crowd"].includes(detail)) throw new Error(`Unknown character detail: ${detail}`);
+  if (!castModels.has(profile.id)) {
+    const promise = new GLTFLoader().loadAsync(`assets/cast/${profile.id}.glb`)
+      .catch(error => { castModels.delete(profile.id); throw error; });
+    castModels.set(profile.id, promise);
+  }
+  const source = await castModels.get(profile.id);
+  const group = clone(source.scene);
+  group.name = `cast-${profile.id}`;
+  group.position.copy(position);
+  group.rotation.y = rotationY;
+  const ownedMaterials = new Set();
+  const skeletons = new Set();
+  const faces = [];
+  let textureWidth = 0;
+  group.traverse(object => {
+    if (!object.isMesh) return;
+    const copy = material => {
+      const next = material.clone();
+      ownedMaterials.add(next);
+      if (next.map) {
+        next.map.colorSpace = THREE.SRGBColorSpace;
+        textureWidth = Math.max(textureWidth, next.map.image?.width || 0);
+      }
+      return next;
+    };
+    object.material = Array.isArray(object.material) ? object.material.map(copy) : copy(object.material);
+    object.castShadow = object.receiveShadow = true;
+    object.frustumCulled = false;
+    if (object.skeleton) skeletons.add(object.skeleton);
+    if (object.morphTargetDictionary) faces.push(object);
+  });
+  const mixer = new THREE.AnimationMixer(group);
+  const clips = new Map(source.animations.map(clip => [clip.name, clip]));
+  let motion = "idle", expression = "neutral", time = 0, action;
+  const manualExpressions = [];
+  function restoreExpressions() {
+    for (const { mesh, index, value } of manualExpressions) mesh.morphTargetInfluences[index] = value;
+    manualExpressions.length = 0;
+  }
+
+  function applyExpression() {
+    if (expression === "neutral") return;
+    for (const mesh of faces) {
+      const index = mesh.morphTargetDictionary[expression];
+      if (index !== undefined) {
+        manualExpressions.push({ mesh, index, value: mesh.morphTargetInfluences[index] });
+        mesh.morphTargetInfluences[index] = 1;
+      }
+    }
+  }
+  function setTime(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0) throw new Error("Animation time must be finite and nonnegative");
+    time = seconds;
+    // Restore the prior clip value; Three skips writing unchanged cached properties.
+    restoreExpressions();
+    if (action) {
+      action.enabled = true;
+      action.paused = false;
+      const duration = action.getClip().duration;
+      const sample = motion === "hour-five" ? Math.min(seconds, Math.max(0, duration - 1e-5)) : seconds % duration;
+      mixer.setTime(sample);
+    }
+    applyExpression();
+    group.updateMatrixWorld(true);
+  }
+  function setMotion(name) {
+    if (name !== "rest" && !clips.has(name)) throw new Error(`Motion ${name} is unavailable for ${profile.name}`);
+    restoreExpressions();
+    mixer.stopAllAction();
+    motion = name;
+    action = name === "rest" ? undefined : mixer.clipAction(clips.get(name)).reset().play();
+    if (action) {
+      action.setLoop(name === "hour-five" ? THREE.LoopOnce : THREE.LoopRepeat, Infinity);
+      action.clampWhenFinished = true;
+    }
+    setTime(0);
+  }
+  setMotion("idle");
+  return {
+    group, profile, detail,
+    motions: ["rest", ...clips.keys()],
+    setMotion, setTime,
+    setExpression(name) {
+      if (!EXPRESSIONS.includes(name)) throw new Error(`Unknown expression: ${name}`);
+      expression = name;
+      setTime(time);
+    },
+    update(dt) {
+      if (!Number.isFinite(dt) || dt < 0) throw new Error("Animation delta must be finite and nonnegative");
+      setTime(time + Math.min(dt, 0.1));
+    },
+    getOutfit: () => ({ id: profile.outfit }),
+    dispose() {
+      mixer.stopAllAction();
+      mixer.uncacheRoot(group);
+      group.removeFromParent();
+      for (const material of ownedMaterials) material.dispose();
+      for (const skeleton of skeletons) skeleton.dispose();
+    },
+    info: { textureWidth, rigBones: [...skeletons].reduce((count, skeleton) => count + skeleton.bones.length, 0) },
   };
 }
