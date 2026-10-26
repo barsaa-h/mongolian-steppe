@@ -1,7 +1,8 @@
 import * as THREE from "three";
 import cabLayout from "../assets/cast/cab.json" with { type: "json" };
 import {
-  addBox, asphaltMaterial, buildGrassTuft, buildPowerPole, buildRock, cylinder, mulberry,
+  addBox, asphaltMaterial, buildBarrel, buildCar, buildGrassTuft, buildPowerPole, buildRock,
+  buildSheep, buildTireStack, buildTree, cylinder, mulberry,
   plasterMaterial, signMaterial, solid,
 } from "./parts.js";
 import { terrainHeight } from "./terrain.js";
@@ -140,7 +141,7 @@ export function placeWinterLandscape(scene) {
   }
   scene.add(sign);
 
-  for (let i = 0; i < 45; i++) {
+  for (let i = 0; i < 60; i++) {
     const u = rand() * 0.87;
     const [x, , z] = edge(u, i % 2 ? -1 : 1, 7 + rand() * 12);
     const rock = buildRock(i + 180);
@@ -149,12 +150,58 @@ export function placeWinterLandscape(scene) {
     scene.add(rock);
   }
 
-  for (let i = 0; i < 140; i++) {
+  for (let i = 0; i < 220; i++) {
     const [x, , z] = edge(rand() * 0.9, i % 2 ? -1 : 1, 6 + rand() * 16);
     const grass = buildGrassTuft(i + 300);
     grass.position.set(x, terrainHeight(x, z), z);
     grass.scale.setScalar(1 + rand() * 1.5);
     scene.add(grass);
+  }
+
+  // Sparse autumn poplars / bushes along the valley shoulders.
+  for (let i = 0; i < 28; i++) {
+    const u = 0.05 + rand() * 0.8;
+    const side = i % 2 ? -1 : 1;
+    const [x, , z] = edge(u, side, 10 + rand() * 14);
+    const kind = i % 5 === 0 ? "bush" : "autumn";
+    const tree = buildTree(kind, i + 400);
+    tree.position.set(x, terrainHeight(x, z), z);
+    tree.rotation.y = rand() * Math.PI * 2;
+    tree.scale.setScalar(0.7 + rand() * 0.9);
+    scene.add(tree);
+  }
+
+  // Herd near the Naran sign / approach mid-curve.
+  for (let i = 0; i < 9; i++) {
+    const u = 0.48 + (rand() - 0.5) * 0.08;
+    const [x, , z] = edge(u, i % 2 ? -1 : 1, 8 + rand() * 6);
+    const sheep = buildSheep(500 + i);
+    sheep.position.set(x, terrainHeight(x, z), z);
+    sheep.rotation.y = rand() * Math.PI * 2;
+    scene.add(sheep);
+  }
+
+  // Broken-down / parked vehicles on the shoulder — lived-in approach clutter.
+  for (const [u, side, color, kind, seed] of [
+    [0.22, -1, 0x8a3a2e, "sedan", 61],
+    [0.61, 1, 0x6a6840, "uaz", 62],
+    [0.74, -1, 0x4a5a4a, "van", 63],
+  ]) {
+    const [x, , z] = edge(u, side, 7.2);
+    const car = buildCar(color, kind, seed);
+    car.position.set(x, terrainHeight(x, z), z);
+    const t = curve.getTangentAt(u);
+    car.rotation.y = Math.atan2(t.x, t.z) + (side > 0 ? 0.15 : Math.PI - 0.12);
+    scene.add(car);
+  }
+  for (const [u, side, seed] of [[0.35, 1, 71], [0.68, -1, 72]]) {
+    const [x, , z] = edge(u, side, 8.4);
+    const tires = buildTireStack(3, seed);
+    tires.position.set(x, terrainHeight(x, z), z);
+    scene.add(tires);
+    const barrel = buildBarrel(seed % 2 ? 0x6a5a48 : 0x4a6a8a);
+    barrel.position.set(x + 1.2, terrainHeight(x + 1.2, z), z);
+    scene.add(barrel);
   }
 
   const truck = buildKamaz();
@@ -302,6 +349,16 @@ export function buildKamaz() {
     addBox(truck, 0.5, 0.3, 0.07, new THREE.MeshBasicMaterial({ color: 0xffd8a0 }), side * 1.05, 1.7, 3.6);
   }
   addBox(truck, 2.8, 0.045, 2.2, cab, 0, 3.82, 2.4);
+  // Weathered body cues so the KamAZ reads as a working 90s truck, not a toy.
+  const rust = solid(0x8a5a3c);
+  addBox(truck, 0.7, 0.12, 0.4, rust, 1.1, 1.55, 3.2);
+  addBox(truck, 0.55, 0.1, 0.35, rust, -1.0, 1.5, -2.4);
+  addBox(truck, 0.45, 0.08, 0.3, rust, 0.8, 2.0, -0.4);
+  const spare = cylinder(0.55, 0.55, 0.28, solid(0x24282d), 10);
+  spare.rotation.z = Math.PI / 2;
+  spare.position.set(-1.55, 1.9, -1.6);
+  truck.add(spare);
+  addBox(truck, 0.08, 0.55, 0.08, chassis, -1.55, 1.9, -1.05);
   truck.traverse(object => {
     if (object.isMesh && !object.material.transparent) object.castShadow = object.receiveShadow = true;
   });

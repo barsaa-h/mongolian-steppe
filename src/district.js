@@ -25,7 +25,9 @@ import {
   buildSwingSet,
   buildSandbox,
   buildTrashCan,
+  buildTireStack,
   buildTree,
+  buildGasCylinder,
   buildWoodpile,
   contactShadow,
   dirtMaterial,
@@ -355,6 +357,8 @@ function placeKhashaa(scene, bags, options) {
   for (const cloth of laundry.cloths) cloth.userData.dynamic = true;
   bags.clothGroups.push({ cloths: laundry.cloths, phase: seed * 0.7 });
 
+  const yardRand = mulberry(seed * 91 + 13);
+
   if (sheep) {
     const pen = new THREE.Group();
     pen.position.set(3.2, 0, back * 3.4);
@@ -369,13 +373,13 @@ function placeKhashaa(scene, bags, options) {
       for (const sz of [-1.6, 1.6]) addBox(pen, 0.12, 1.05, 0.12, rail, sx, 0.52, sz);
     }
     plot.add(pen);
-    const rand = mulberry(seed * 19 + 3);
-    for (let i = 0; i < 3; i++) {
-      const animal = buildSheep();
-      const ax = x + 3.2 + (i - 1) * 0.9;
-      const az = z + back * 3.4 + (i % 2) * 0.7;
+    const flock = 4 + ((yardRand() * 2) | 0);
+    for (let i = 0; i < flock; i++) {
+      const animal = buildSheep(seed * 10 + i);
+      const ax = x + 3.2 + (i % 3 - 1) * 0.85 + (yardRand() - 0.5) * 0.35;
+      const az = z + back * 3.4 + ((i / 3) | 0) * 0.75 + (yardRand() - 0.5) * 0.3;
       animal.position.set(ax, y, az);
-      animal.rotation.y = rand() * Math.PI * 2;
+      animal.rotation.y = yardRand() * Math.PI * 2;
       animal.userData.dynamic = true;
       scene.add(animal);
       bags.sheepList.push({ group: animal, anchorX: ax, anchorZ: az, groundY: y, phase: i * 1.7 + seed });
@@ -383,17 +387,20 @@ function placeKhashaa(scene, bags, options) {
   }
 
   if (car) {
-    const parked = buildCar(seed % 2 ? 0x8a3a2e : 0x3a4a6a, seed % 3 === 0 ? "van" : "sedan");
+    const palette = [0x8a3a2e, 0x3a4a6a, 0x6a6840, 0x8a7a5a, 0x4a5a4a, 0xb0a090];
+    const kinds = ["sedan", "sedan", "van", "uaz"];
+    const parked = buildCar(palette[seed % palette.length], kinds[seed % kinds.length], seed);
     parked.position.set(4.6, 0, gateNorth ? -4.4 : 4.4);
-    parked.rotation.y = gateNorth ? 0.15 : Math.PI - 0.15;
+    parked.rotation.y = gateNorth ? 0.15 + (yardRand() - 0.5) * 0.2 : Math.PI - 0.15 + (yardRand() - 0.5) * 0.2;
     plot.add(parked);
   }
 
   if (dog) {
-    const animal = buildDog();
+    const animal = buildDog(seed);
     const ax = x + (gateNorth ? 4.2 : -4.2);
     const az = z + (gateNorth ? -3.6 : 3.6);
     animal.position.set(ax, y, az);
+    animal.rotation.y = yardRand() * Math.PI * 2;
     animal.userData.dynamic = true;
     scene.add(animal);
     bags.dogs.push({ group: animal, anchorX: ax, anchorZ: az, groundY: y, phase: seed * 1.1 });
@@ -402,8 +409,38 @@ function placeKhashaa(scene, bags, options) {
   if (tree) {
     const planted = buildTree("autumn", seed + 5);
     planted.position.set(-5.4, 0, back * 2.4);
-    planted.scale.setScalar(0.72);
+    planted.scale.setScalar(0.68 + yardRand() * 0.22);
+    planted.rotation.y = yardRand() * Math.PI;
     plot.add(planted);
+    if (seed % 3 === 0) {
+      const bush = buildTree("bush", seed + 40);
+      bush.position.set(5.0, 0, back * 1.2);
+      bush.scale.setScalar(0.85 + yardRand() * 0.3);
+      plot.add(bush);
+    }
+  }
+
+  // Lived-in yard clutter: tires, spare barrels, gas bottles, crates.
+  if (seed % 2 === 0) {
+    const tires = buildTireStack(2 + (seed % 3), seed);
+    tires.position.set(-5.5, 0, -back * 3.2);
+    plot.add(tires);
+  }
+  if (seed % 3 === 1) {
+    const spare = buildBarrel(seed % 2 ? 0x6a5a48 : 0x4a6a5a);
+    spare.position.set(5.4, 0, back * 1.6);
+    plot.add(spare);
+  }
+  if (seed % 4 === 2) {
+    const gas = buildGasCylinder();
+    gas.position.set(-4.8, 0, back * 0.6);
+    plot.add(gas);
+  }
+  if (seed % 5 === 3) {
+    const crate = buildCrate();
+    crate.position.set(4.9, 0, -back * 2.2);
+    crate.rotation.y = yardRand() * 0.8;
+    plot.add(crate);
   }
 
   const bin = buildTrashCan();
@@ -538,14 +575,20 @@ export function placeTown(scene) {
   for (const x of [-88, -80, -72, -66]) {
     addBox(scene, 0.08, 0.02, 8, solid(0xd8d4c8, { transparent: true, opacity: 0.35 }), x, 0.06, -13.5);
   }
-  const ambulance = buildCar(0xf4f4f0, "van");
+  const ambulance = buildCar(0xf4f4f0, "van", 11);
   ambulance.position.set(-86, 0, -12.5);
   ambulance.rotation.y = 0.08;
   scene.add(ambulance);
   addBox(ambulance, 0.7, 0.08, 0.08, solid(0xc43838), 0, 2.35, 0);
   addBox(ambulance, 0.08, 0.7, 0.08, solid(0xc43838), 0, 2.35, 0);
-  for (const [x, rot, color] of [[-70, 0.04, 0x8a3a2e], [-62, -0.08, 0x3a4a62], [-74, 0.2, 0xc8c4b4]]) {
-    const car = buildCar(color, "sedan");
+  for (const [x, rot, color, kind, seed] of [
+    [-70, 0.04, 0x8a3a2e, "sedan", 21],
+    [-62, -0.08, 0x3a4a62, "sedan", 22],
+    [-74, 0.2, 0xc8c4b4, "sedan", 23],
+    [-54, -0.12, 0x6a6840, "uaz", 24],
+    [-48, 0.15, 0x4a5a4a, "van", 25],
+  ]) {
+    const car = buildCar(color, kind, seed);
     car.position.set(x, 0, -15.2);
     car.rotation.y = rot;
     scene.add(car);
@@ -691,10 +734,10 @@ export function placeTown(scene) {
       tone: TONES[seed % TONES.length],
       roof: ROOFS[seed % ROOFS.length],
       house,
-      sheep: !house && seed % 11 === 0,
-      car: seed % 5 === 0,
-      dog: seed % 6 === 0,
-      tree: seed % 4 === 1,
+      sheep: !house && seed % 5 === 0,
+      car: seed % 3 === 0,
+      dog: seed % 4 === 0,
+      tree: seed % 2 === 1,
     });
   }
 
@@ -719,17 +762,26 @@ export function placeTown(scene) {
   scene.add(playWater);
 
   const treeSpots = [
-    [-96, -8.2], [-60, -8.2], [4, -8.2], [42, -8.2], [88, -8.2], [128, -8.2],
-    [-96, 6.4], [-54, 6.4], [8, 6.4], [36, 6.4], [78, 6.4],
-    [-96, 36], [96, 36], [-96, 70], [96, 78],
+    [-96, -8.2], [-78, -8.2], [-60, -8.2], [-28, -8.2], [4, -8.2], [22, -8.2],
+    [42, -8.2], [66, -8.2], [88, -8.2], [110, -8.2], [128, -8.2], [146, -8.2],
+    [-96, 6.4], [-74, 6.4], [-54, 6.4], [-22, 6.4], [8, 6.4], [24, 6.4],
+    [36, 6.4], [58, 6.4], [78, 6.4], [104, 6.4], [130, 6.4],
+    [-96, 36], [-48, 36], [12, 36], [48, 36], [96, 36], [128, 36],
+    [-96, 54], [36, 54], [96, 54],
+    [-96, 70], [12, 70], [96, 78], [128, 70],
+    // school / square edges
+    [52, -28], [74, -28], [58, -42], [78, -42], [48, -18], [28, -18],
+    [8, -18], [-4, -18], [34, -4], [-18, -4],
   ];
   treeSpots.forEach(([x, z], i) => {
-    const tree = buildTree("autumn", i + 3);
+    const kind = i % 7 === 0 ? "poplar" : i % 5 === 0 ? "bush" : "autumn";
+    const tree = buildTree(kind, i + 3);
     const y = townHeight(x, z);
     tree.position.set(x, y, z);
-    tree.scale.setScalar(0.85 + (i % 4) * 0.06);
+    tree.rotation.y = (i * 0.73) % (Math.PI * 2);
+    tree.scale.setScalar(0.72 + (i % 5) * 0.08 + (i % 3) * 0.03);
     scene.add(tree);
-    const shadow = contactShadow(4.5, 4.5, 0.25);
+    const shadow = contactShadow(kind === "bush" ? 2.4 : 4.5, kind === "bush" ? 2.4 : 4.5, 0.25);
     shadow.position.set(x, y + 0.05, z);
     scene.add(shadow);
   });
@@ -790,8 +842,11 @@ export function placeTown(scene) {
   addWires(avenueWest, 0.45);
   addWires(avenueEast, 0.45);
 
-  for (const [x, z, rot] of [[-48, 94, 0.4], [-42, 97, 1.1], [-54, 96, -0.4], [70, 95, 0.8]]) {
-    const horse = buildHorse();
+  for (const [x, z, rot, seed] of [
+    [-48, 94, 0.4, 1], [-42, 97, 1.1, 2], [-54, 96, -0.4, 3], [70, 95, 0.8, 4],
+    [-36, 102, 2.1, 5], [58, 100, -1.2, 6], [-62, 88, 0.6, 7],
+  ]) {
+    const horse = buildHorse(seed);
     const y = townHeight(x, z);
     horse.position.set(x, y, z);
     horse.rotation.y = rot;
@@ -800,8 +855,54 @@ export function placeTown(scene) {
     bags.horses.push({ group: horse, baseYaw: rot, phase: x * 0.1 });
   }
 
+  // Loose sheep near the southern pasture edge (outside pens).
+  for (const [x, z, seed] of [
+    [-52, 90, 101], [-46, 92, 102], [-40, 91, 103], [-50, 98, 104],
+    [64, 92, 105], [72, 98, 106], [68, 90, 107],
+  ]) {
+    const sheep = buildSheep(seed);
+    const y = townHeight(x, z);
+    sheep.position.set(x, y, z);
+    sheep.rotation.y = seed * 0.7;
+    sheep.userData.dynamic = true;
+    scene.add(sheep);
+    bags.sheepList.push({ group: sheep, anchorX: x, anchorZ: z, groundY: y, phase: seed * 0.3 });
+  }
+
+  // Street / civic parked cars along avenue shoulders and square.
+  for (const [x, z, rot, color, kind, seed] of [
+    [-38, 7.8, Math.PI * 0.02, 0x8a3a2e, "sedan", 31],
+    [-18, 7.6, -0.1, 0x3a4a6a, "uaz", 32],
+    [12, 7.9, 0.08, 0x6a6840, "sedan", 33],
+    [44, 7.7, -0.05, 0xb0a090, "van", 34],
+    [92, 7.8, 0.12, 0x4a5a4a, "sedan", 35],
+    [118, 7.6, -0.18, 0x8a7a5a, "uaz", 36],
+    [24, -7.4, Math.PI + 0.1, 0x3a4a62, "sedan", 37],
+    [56, -7.6, Math.PI - 0.08, 0x8a3a2e, "van", 38],
+    [-8, -7.5, Math.PI + 0.05, 0x6a6840, "sedan", 39],
+    [102, -7.7, Math.PI - 0.14, 0x4a5a4a, "uaz", 40],
+  ]) {
+    const car = buildCar(color, kind, seed);
+    car.position.set(x, 0, z);
+    car.rotation.y = rot;
+    scene.add(car);
+  }
+
+  // Street clutter: dumpsters already elsewhere; add tire stacks + barrels near stalls / kiosk.
+  for (const [x, z, seed] of [[94, 9.6, 51], [108, 9.4, 52], [-26, -8.4, 53], [146, -26, 54]]) {
+    const tires = buildTireStack(2 + (seed % 3), seed);
+    tires.position.set(x, 0, z);
+    tires.rotation.y = seed * 0.4;
+    scene.add(tires);
+  }
+  for (const [x, z, color] of [[100, 9.2, 0x4a6a5a], [106, 9.5, 0x6a5a48], [-22, -8.2, 0x4a6a8a]]) {
+    const barrel = buildBarrel(color);
+    barrel.position.set(x, 0, z);
+    scene.add(barrel);
+  }
+
   const outside = mulberry(1201);
-  for (let i = 0; i < 18; i++) {
+  for (let i = 0; i < 42; i++) {
     let x = 0;
     let z = 0;
     for (let n = 0; n < 8; n++) {
@@ -812,13 +913,14 @@ export function placeTown(scene) {
       if (!inTown(x, z)) break;
     }
     if (inTown(x, z)) continue;
-    const tree = buildTree("autumn", i + 30);
+    const kind = i % 6 === 0 ? "bush" : i % 4 === 0 ? "poplar" : "autumn";
+    const tree = buildTree(kind, i + 30);
     tree.position.set(x, terrainHeight(x, z), z);
     tree.rotation.y = outside() * Math.PI;
-    tree.scale.setScalar(0.8 + outside() * 0.7);
+    tree.scale.setScalar(0.75 + outside() * 0.85);
     scene.add(tree);
   }
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i < 36; i++) {
     const angle = outside() * Math.PI * 2;
     const dist = 150 + outside() * 40;
     const x = Math.sin(angle) * dist;
@@ -827,9 +929,9 @@ export function placeTown(scene) {
     rock.position.set(x, terrainHeight(x, z), z);
     scene.add(rock);
   }
-  for (let i = 0; i < 70; i++) {
+  for (let i = 0; i < 140; i++) {
     const angle = outside() * Math.PI * 2;
-    const dist = 130 + outside() * 55;
+    const dist = 110 + outside() * 70;
     const x = Math.sin(angle) * dist;
     const z = Math.cos(angle) * dist;
     const tuft = buildGrassTuft(i + 80);

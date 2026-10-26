@@ -115,6 +115,25 @@ test("the civic pad flattens heating plant and eastern apartments", () => {
   }
 });
 
+test("district density keeps readable flocks, parked cars, and autumn trees", () => {
+  const scene = new THREE.Scene();
+  const bags = placeTown(scene);
+  assert.ok(bags.sheepList.length >= 30, `sheep ${bags.sheepList.length}`);
+  assert.ok(bags.dogs.length >= 10, `dogs ${bags.dogs.length}`);
+  assert.ok(bags.horses.length >= 6, `horses ${bags.horses.length}`);
+  let cars = 0;
+  let trees = 0;
+  let tires = 0;
+  scene.traverse(object => {
+    if (object.userData?.propKind === "car") cars++;
+    if (object.userData?.propKind === "tree") trees++;
+    if (object.userData?.propKind === "tires") tires++;
+  });
+  assert.ok(cars >= 20, `cars ${cars}`);
+  assert.ok(trees >= 70, `trees ${trees}`);
+  assert.ok(tires >= 8, `tire stacks ${tires}`);
+});
+
 test("merged static batches keep frustum culling for overview performance", () => {
   const world = buildWorld();
   let batches = 0;
