@@ -1,0 +1,32 @@
+{
+  "master": "PS2_Character_Master.blend",
+  "master_sha256": "59e502fbbde1e794ad7046d2a1266488a6b4fdebf23e5f3770eb86b81bc6365e",
+  "movies": {
+    "dialogue": {
+      "path": "Animation_Tests/Dialogue_Silent_720p.mp4",
+      "frames": 48,
+      "fps": 12,
+      "source_fps": 24,
+      "duration_seconds": 4,
+      "resolution": [
+        1280,
+        720
+      ],
+      "audio": false
+    },
+    "body": {
+      "path": "Animation_Tests/Full_Body_720p.mp4",
+      "frames": 48,
+      "fps": 12,
+      "source_fps": 24,
+      "duration_seconds": 4,
+      "resolution": [
+        1280,
+        720
+      ],
+      "audio": false
+    }
+  },
+  "preview_validation": "Decoded every source PNG; ffprobe confirmed both H.264 files, 48 frames, 4 seconds and 1280x720.",
+  "visual_acceptance": "See Delivery_Acceptance.md for human-visible frame review and remaining artistic limitations."
+}

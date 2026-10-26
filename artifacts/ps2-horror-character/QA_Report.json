@@ -1,0 +1,1610 @@
+{
+  "source": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/PS2_Character_Master.blend",
+  "source_sha256": "59e502fbbde1e794ad7046d2a1266488a6b4fdebf23e5f3770eb86b81bc6365e",
+  "checked_utc": "2026-10-25T15:19:31.894052+00:00",
+  "scene": "PS2 | Character Master",
+  "checks": [
+    {
+      "name": "20 expected face controls",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        "AA",
+        "Blink_L",
+        "Blink_R",
+        "BrowDown",
+        "BrowInnerUp",
+        "BrowOuterUp",
+        "BrowTilt",
+        "EE",
+        "EyeWide",
+        "Frown",
+        "GazePitch",
+        "GazeYaw",
+        "JawOpen",
+        "LipPress",
+        "LipRound",
+        "LipStretch",
+        "MBP",
+        "OH",
+        "Smile_L",
+        "Smile_R"
+      ]
+    },
+    {
+      "name": "23 head blocks including basis and four correctives",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "count": 23,
+        "names": [
+          "Basis",
+          "Blink_L",
+          "Blink_R",
+          "EyeWide",
+          "BrowInnerUp",
+          "BrowOuterUp",
+          "BrowDown",
+          "BrowTilt",
+          "JawOpen",
+          "Smile_L",
+          "Smile_R",
+          "Frown",
+          "LipPress",
+          "LipRound",
+          "LipStretch",
+          "AA",
+          "EE",
+          "OH",
+          "MBP",
+          "Corrective_BlinkWide_L",
+          "Corrective_OpenSmile_L",
+          "Corrective_BlinkWide_R",
+          "Corrective_OpenSmile_R"
+        ],
+        "vertices": 1016
+      }
+    },
+    {
+      "name": "89-bone character rig",
+      "passed": true,
+      "severity": "error",
+      "details": 89
+    },
+    {
+      "name": "no character Subdivision modifiers",
+      "passed": true,
+      "severity": "error",
+      "details": []
+    },
+    {
+      "name": "suggested 6000\u201312000 triangle budget",
+      "passed": false,
+      "severity": "advisory",
+      "details": 12676
+    },
+    {
+      "name": "active character diffuse images are 512 px and loaded",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "Head_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Head_Diffuse.png",
+          "has_data": true
+        },
+        "Jacket_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Jacket_Diffuse.png",
+          "has_data": true
+        },
+        "Fleece_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/Fleece_Diffuse.png",
+          "has_data": true
+        },
+        "Trousers_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Trousers_Diffuse.png",
+          "has_data": true
+        },
+        "Boots_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Boots_Diffuse.png",
+          "has_data": true
+        },
+        "Hair_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Hair_Diffuse.png",
+          "has_data": true
+        },
+        "Zombie_Head_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/Zombie_Head_Diffuse.png",
+          "has_data": true
+        },
+        "BruiseDecalRGBA.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/BruiseDecalRGBA.png",
+          "has_data": true
+        },
+        "BloodDecalRGBA.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/BloodDecalRGBA.png",
+          "has_data": true
+        },
+        "DirtDecalRGBA.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/DirtDecalRGBA.png",
+          "has_data": true
+        }
+      }
+    },
+    {
+      "name": "character images packed with valid paths",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "Head_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Head_Diffuse.png",
+          "has_data": true
+        },
+        "Jacket_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Jacket_Diffuse.png",
+          "has_data": true
+        },
+        "Fleece_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/Fleece_Diffuse.png",
+          "has_data": true
+        },
+        "Trousers_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Trousers_Diffuse.png",
+          "has_data": true
+        },
+        "Boots_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Boots_Diffuse.png",
+          "has_data": true
+        },
+        "Hair_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "//Textures/Hair_Diffuse.png",
+          "has_data": true
+        },
+        "Zombie_Head_Diffuse.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/Zombie_Head_Diffuse.png",
+          "has_data": true
+        },
+        "BruiseDecalRGBA.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/BruiseDecalRGBA.png",
+          "has_data": true
+        },
+        "BloodDecalRGBA.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/BloodDecalRGBA.png",
+          "has_data": true
+        },
+        "DirtDecalRGBA.png": {
+          "size": [
+            512,
+            512
+          ],
+          "packed": true,
+          "path": "/home/barsaa/mongolian-steppe/artifacts/ps2-horror-character/Textures/DirtDecalRGBA.png",
+          "has_data": true
+        }
+      }
+    },
+    {
+      "name": "every visible character mesh follows the rig",
+      "passed": true,
+      "severity": "error",
+      "details": []
+    },
+    {
+      "name": "deform weights normalized within 0.0001",
+      "passed": true,
+      "severity": "error",
+      "details": []
+    },
+    {
+      "name": "neutral coordinates finite and human-sized",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "min": [
+          -0.4009999930858612,
+          -0.21439233422279358,
+          0.0139999995008111
+        ],
+        "max": [
+          0.4009999930858612,
+          0.155799999833107,
+          1.8074020147323608
+        ]
+      }
+    },
+    {
+      "name": "20 facial controls produce finite bounded motion",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        {
+          "control": "Blink_L",
+          "value": 1.0,
+          "max_displacement_m": 0.006145421796864228,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "Blink_R",
+          "value": 1.0,
+          "max_displacement_m": 0.006145421796864228,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "EyeWide",
+          "value": 1.0,
+          "max_displacement_m": 0.007511652666871893,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "BrowInnerUp",
+          "value": 1.0,
+          "max_displacement_m": 0.007050407370610718,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "BrowOuterUp",
+          "value": 1.0,
+          "max_displacement_m": 0.00601873645218815,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "BrowDown",
+          "value": 1.0,
+          "max_displacement_m": 0.006566858960050418,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "BrowTilt",
+          "value": 1.0,
+          "max_displacement_m": 0.004037186965161456,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "JawOpen",
+          "value": 1.0,
+          "max_displacement_m": 0.028507546073219876,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "Smile_L",
+          "value": 1.0,
+          "max_displacement_m": 0.009181271658928458,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "Smile_R",
+          "value": 1.0,
+          "max_displacement_m": 0.009181271658928458,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "Frown",
+          "value": 1.0,
+          "max_displacement_m": 0.0065591098316229455,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "LipPress",
+          "value": 1.0,
+          "max_displacement_m": 0.004459804408970529,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "LipRound",
+          "value": 1.0,
+          "max_displacement_m": 0.005648365575655978,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "LipStretch",
+          "value": 1.0,
+          "max_displacement_m": 0.0046643068734532,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "GazeYaw",
+          "value": 1.0,
+          "max_displacement_m": 0.005161675700738765,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "GazePitch",
+          "value": 1.0,
+          "max_displacement_m": 0.004611731765005716,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "AA",
+          "value": 1.0,
+          "max_displacement_m": 0.012744555877842987,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "EE",
+          "value": 1.0,
+          "max_displacement_m": 0.005498759661572626,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "OH",
+          "value": 1.0,
+          "max_displacement_m": 0.01572395012891217,
+          "finite": true,
+          "responds": true
+        },
+        {
+          "control": "MBP",
+          "value": 1.0,
+          "max_displacement_m": 0.004459804408970529,
+          "finite": true,
+          "responds": true
+        }
+      ]
+    },
+    {
+      "name": "signed facial controls remain bounded",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        {
+          "control": "EyeWide",
+          "value": -1.0,
+          "finite": true,
+          "max_displacement_m": 0.007511650003158876
+        },
+        {
+          "control": "BrowTilt",
+          "value": -1.0,
+          "finite": true,
+          "max_displacement_m": 0.004037186965161456
+        },
+        {
+          "control": "GazeYaw",
+          "value": -1.0,
+          "finite": true,
+          "max_displacement_m": 0.005161675708530387
+        },
+        {
+          "control": "GazePitch",
+          "value": -1.0,
+          "finite": true,
+          "max_displacement_m": 0.004611731765005716
+        }
+      ]
+    },
+    {
+      "name": "10 emotion presets remain finite below 0.05 m",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        {
+          "pose": "Neutral",
+          "finite": true,
+          "max_displacement_m": 0.0
+        },
+        {
+          "pose": "Sadness",
+          "finite": true,
+          "max_displacement_m": 0.003706592691519687
+        },
+        {
+          "pose": "Fear",
+          "finite": true,
+          "max_displacement_m": 0.006036897315142034
+        },
+        {
+          "pose": "Anger",
+          "finite": true,
+          "max_displacement_m": 0.005207888203360471
+        },
+        {
+          "pose": "Shock",
+          "finite": true,
+          "max_displacement_m": 0.015427613867026827
+        },
+        {
+          "pose": "Grief",
+          "finite": true,
+          "max_displacement_m": 0.007745123547473769
+        },
+        {
+          "pose": "Pain",
+          "finite": true,
+          "max_displacement_m": 0.005862550300062129
+        },
+        {
+          "pose": "Subtle Smile",
+          "finite": true,
+          "max_displacement_m": 0.003121643668825949
+        },
+        {
+          "pose": "Exhaustion",
+          "finite": true,
+          "max_displacement_m": 0.004416572945945051
+        },
+        {
+          "pose": "Vacant Zombie",
+          "finite": true,
+          "max_displacement_m": 0.007378423564404348
+        }
+      ]
+    },
+    {
+      "name": "BlinkWide correctives have ZERO displacement outside eyelids",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        {
+          "side": "L",
+          "nonzero_vertices": 91,
+          "outside_eyelid_vertices": 0,
+          "outside_eye_box": 0,
+          "nonzero_basis_bounds": {
+            "min": [
+              0.011646301485598087,
+              -0.07224809378385544,
+              1.67050302028656
+            ],
+            "max": [
+              0.05720878764986992,
+              -0.04822668060660362,
+              1.6999893188476562
+            ]
+          },
+          "wide_cancellation_error_m": 7.450580596923828e-09
+        },
+        {
+          "side": "R",
+          "nonzero_vertices": 91,
+          "outside_eyelid_vertices": 0,
+          "outside_eye_box": 0,
+          "nonzero_basis_bounds": {
+            "min": [
+              -0.05720878764986992,
+              -0.07224809378385544,
+              1.67050302028656
+            ],
+            "max": [
+              -0.011646301485598087,
+              -0.04822668060660362,
+              1.6999893188476562
+            ]
+          },
+          "wide_cancellation_error_m": 7.450580596923828e-09
+        }
+      ]
+    },
+    {
+      "name": "full blink plus EyeWide 0.75 equals full blink within 0.000001 m",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "max_difference_m": 1.1944189326376765e-07
+      }
+    },
+    {
+      "name": "reset returns geometry to neutral",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "max_difference_m": 0.0
+      }
+    },
+    {
+      "name": "11 body blocking presets remain finite and bounded",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        {
+          "pose": "walking",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.3468838036060333,
+              -0.35983750224113464,
+              0.0022002607583999634
+            ],
+            "max": [
+              0.42924001812934875,
+              0.4244086742401123,
+              1.8074020147323608
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "reach",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.285074383020401,
+              -0.616829514503479,
+              0.0139999995008111
+            ],
+            "max": [
+              0.287798672914505,
+              0.155799999833107,
+              1.8074020147323608
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "crouch",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.4009999930858612,
+              -0.4198872745037079,
+              -0.11377288401126862
+            ],
+            "max": [
+              0.4009999930858612,
+              0.13892100751399994,
+              1.413526177406311
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "kneel",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.4009999930858612,
+              -0.6954479217529297,
+              -0.13350118696689606
+            ],
+            "max": [
+              0.4009999930858612,
+              0.3937600255012512,
+              1.413526177406311
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "sit",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.4009999930858612,
+              -0.46238547563552856,
+              -0.13060061633586884
+            ],
+            "max": [
+              0.4009999930858612,
+              0.13892100751399994,
+              1.4035261869430542
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "crawl",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.28536462783813477,
+              -0.5998516082763672,
+              -0.20060527324676514
+            ],
+            "max": [
+              0.2878485918045044,
+              0.13850094377994537,
+              1.1629151105880737
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "fall",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.16586150228977203,
+              -1.3601431846618652,
+              -0.6097644567489624
+            ],
+            "max": [
+              0.6851766109466553,
+              0.19727686047554016,
+              0.7765653133392334
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "limp",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.4467036724090576,
+              -0.18028025329113007,
+              -0.010535769164562225
+            ],
+            "max": [
+              0.4596675932407379,
+              0.234527125954628,
+              1.8056776523590088
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "tool_grip",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.3487476408481598,
+              -0.4442458152770996,
+              0.0139999995008111
+            ],
+            "max": [
+              0.348755419254303,
+              0.155799999833107,
+              1.8074020147323608
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "fear",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.334017276763916,
+              -0.5551141500473022,
+              0.008877131156623363
+            ],
+            "max": [
+              0.33472558856010437,
+              0.1389564424753189,
+              1.7930210828781128
+            ]
+          },
+          "bounded": true
+        },
+        {
+          "pose": "exhaustion",
+          "finite": true,
+          "bounds": {
+            "min": [
+              -0.3690226972103119,
+              -0.3714628219604492,
+              0.0067232875153422356
+            ],
+            "max": [
+              0.3690226972103119,
+              0.1388559490442276,
+              1.7667988538742065
+            ]
+          },
+          "bounded": true
+        }
+      ]
+    },
+    {
+      "name": "20 expected Action assets have finite keyed channels",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "PS2_Breathing_Shiver": {
+          "asset": true,
+          "channels": 364,
+          "keyframes": 13832,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            73.0
+          ]
+        },
+        "PS2_Combat": {
+          "asset": true,
+          "channels": 364,
+          "keyframes": 9464,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            49.0
+          ]
+        },
+        "PS2_Crawl": {
+          "asset": true,
+          "channels": 364,
+          "keyframes": 17836,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            49.0
+          ]
+        },
+        "PS2_Dialogue_Body": {
+          "asset": true,
+          "channels": 436,
+          "keyframes": 13952,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            94.0
+          ]
+        },
+        "PS2_Dialogue_Face": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 390,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            96.0
+          ]
+        },
+        "PS2_Face_Anger": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Exhaustion": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Fear": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Grief": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Neutral": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Pain": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Sadness": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Shock": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Subtle_Smile": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Face_Vacant_Zombie": {
+          "asset": true,
+          "channels": 20,
+          "keyframes": 20,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "PS2_Fall": {
+          "asset": true,
+          "channels": 364,
+          "keyframes": 17836,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            49.0
+          ]
+        },
+        "PS2_FullBody_Test": {
+          "asset": true,
+          "channels": 364,
+          "keyframes": 18928,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            96.0
+          ]
+        },
+        "PS2_RunLoop": {
+          "asset": true,
+          "channels": 364,
+          "keyframes": 6188,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            33.0
+          ]
+        },
+        "PS2_WalkLoop": {
+          "asset": true,
+          "channels": 364,
+          "keyframes": 9464,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            49.0
+          ]
+        },
+        "PS2_Zombie": {
+          "asset": true,
+          "channels": 364,
+          "keyframes": 13832,
+          "finite": true,
+          "invalid_paths": [],
+          "expected_paths_keyed": true,
+          "range": [
+            1.0,
+            73.0
+          ]
+        }
+      }
+    },
+    {
+      "name": "master and four lighting scenes have 720p cameras at 24fps",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        {
+          "scene": "PS2 | Character Master",
+          "camera": "PS2 | Full body 720p",
+          "camera_in_scene": true,
+          "resolution": [
+            1280,
+            720,
+            100
+          ],
+          "fps": 24.0
+        },
+        {
+          "scene": "PS2 | Light \u00b7 Cold Exterior",
+          "camera": "PS2 | Horror portrait",
+          "camera_in_scene": true,
+          "resolution": [
+            1280,
+            720,
+            100
+          ],
+          "fps": 24.0
+        },
+        {
+          "scene": "PS2 | Light \u00b7 Overhead Interior",
+          "camera": "PS2 | Horror portrait",
+          "camera_in_scene": true,
+          "resolution": [
+            1280,
+            720,
+            100
+          ],
+          "fps": 24.0
+        },
+        {
+          "scene": "PS2 | Light \u00b7 Dark Side",
+          "camera": "PS2 | Horror portrait",
+          "camera_in_scene": true,
+          "resolution": [
+            1280,
+            720,
+            100
+          ],
+          "fps": 24.0
+        },
+        {
+          "scene": "PS2 | Light \u00b7 Restrained Warm",
+          "camera": "PS2 | Horror portrait",
+          "camera_in_scene": true,
+          "resolution": [
+            1280,
+            720,
+            100
+          ],
+          "fps": 24.0
+        }
+      ]
+    },
+    {
+      "name": "all seven horror controls saved at zero",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "Zombie": 0.0,
+        "FaceBruise": 0.0,
+        "FaceBlood": 0.0,
+        "BodyDirt": 0.0,
+        "TornSleeve": 0.0,
+        "DetachWristL": 0.0,
+        "WristSeparation": 0.0
+      }
+    },
+    {
+      "name": "enabled horror variants finite with working wrist separation",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "finite": true,
+        "detached_location": [
+          0.18000000715255737,
+          0.0,
+          -0.10000000149011612
+        ]
+      }
+    },
+    {
+      "name": "horror visibility swaps work in render and viewport",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        {
+          "switch": "Zombie",
+          "baseline": true,
+          "enabled": true
+        },
+        {
+          "switch": "FaceBruise",
+          "baseline": true,
+          "enabled": true
+        },
+        {
+          "switch": "FaceBlood",
+          "baseline": true,
+          "enabled": true
+        },
+        {
+          "switch": "BodyDirt",
+          "baseline": true,
+          "enabled": true
+        },
+        {
+          "switch": "TornSleeve",
+          "baseline": true,
+          "enabled": true
+        },
+        {
+          "switch": "DetachWristL",
+          "baseline": true,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "saved dialogue and full-body clips evaluate finite with motion",
+      "passed": true,
+      "severity": "error",
+      "details": [
+        {
+          "clip": "Dialogue",
+          "frame": 1,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.0,
+          "bounds": {
+            "min": [
+              -0.40459445118904114,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40459445118904114,
+              0.15052089095115662,
+              1.782486915588379
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 12,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.012969480410593115,
+          "bounds": {
+            "min": [
+              -0.40492668747901917,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40492668747901917,
+              0.14793244004249573,
+              1.78241765499115
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 24,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.020006175252135803,
+          "bounds": {
+            "min": [
+              -0.40509486198425293,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40509486198425293,
+              0.1465986967086792,
+              1.782233715057373
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 25,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.020099591578990498,
+          "bounds": {
+            "min": [
+              -0.4050959646701813,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.4050959646701813,
+              0.1465902179479599,
+              1.782226800918579
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 26,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.020111499111121922,
+          "bounds": {
+            "min": [
+              -0.40509483218193054,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40509483218193054,
+              0.1465986967086792,
+              1.7822216749191284
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 48,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.006441410007593501,
+          "bounds": {
+            "min": [
+              -0.40462759137153625,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40462759137153625,
+              0.1502651572227478,
+              1.782286524772644
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 64,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.016154232594878675,
+          "bounds": {
+            "min": [
+              -0.40416786074638367,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40416786074638367,
+              0.15375548601150513,
+              1.7819297313690186
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 68,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.018254928533894356,
+          "bounds": {
+            "min": [
+              -0.40410786867141724,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40410786867141724,
+              0.15420220792293549,
+              1.7818459272384644
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 80,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.017978931472715225,
+          "bounds": {
+            "min": [
+              -0.40413397550582886,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40413397550582886,
+              0.1540081650018692,
+              1.7818903923034668
+            ]
+          }
+        },
+        {
+          "clip": "Dialogue",
+          "frame": 96,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.006908481456442735,
+          "bounds": {
+            "min": [
+              -0.40449509024620056,
+              -0.2143917679786682,
+              0.01399273332208395
+            ],
+            "max": [
+              0.40449509024620056,
+              0.15128262341022491,
+              1.7823729515075684
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 1,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.0,
+          "bounds": {
+            "min": [
+              -0.40748533606529236,
+              -0.2943931221961975,
+              0.013974450528621674
+            ],
+            "max": [
+              0.40748533606529236,
+              0.17686530947685242,
+              1.7774806022644043
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 12,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.18423056902121496,
+          "bounds": {
+            "min": [
+              -0.374617338180542,
+              -0.31082242727279663,
+              0.013994351029396057
+            ],
+            "max": [
+              0.432465136051178,
+              0.07407689839601517,
+              1.7850852012634277
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 24,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.3240719164044763,
+          "bounds": {
+            "min": [
+              -0.4054948389530182,
+              -0.4539642930030823,
+              0.013994704931974411
+            ],
+            "max": [
+              0.40943974256515503,
+              0.0168653205037117,
+              1.7775064706802368
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 25,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.32437233596755455,
+          "bounds": {
+            "min": [
+              -0.40943974256515503,
+              -0.45439261198043823,
+              0.013994763605296612
+            ],
+            "max": [
+              0.4054948389530182,
+              0.01643718034029007,
+              1.7775249481201172
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 26,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.32417598474800546,
+          "bounds": {
+            "min": [
+              -0.41315507888793945,
+              -0.4543924331665039,
+              0.013994451612234116
+            ],
+            "max": [
+              0.4014986455440521,
+              0.011608019471168518,
+              1.777954339981079
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 48,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.3200001472979504,
+          "bounds": {
+            "min": [
+              -0.40748536586761475,
+              -0.6143931746482849,
+              0.013974450528621674
+            ],
+            "max": [
+              0.40748536586761475,
+              -0.14313466846942902,
+              1.7774806022644043
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 64,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.9045203490991627,
+          "bounds": {
+            "min": [
+              -0.2963835299015045,
+              -0.9025338292121887,
+              0.013974450528621674
+            ],
+            "max": [
+              0.32515576481819153,
+              -0.14313466846942902,
+              1.7770763635635376
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 68,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.9691936223193477,
+          "bounds": {
+            "min": [
+              -0.290812611579895,
+              -0.9239599108695984,
+              0.013974450528621674
+            ],
+            "max": [
+              0.3202630281448364,
+              -0.14313466846942902,
+              1.7771048545837402
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 80,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.9368885589493869,
+          "bounds": {
+            "min": [
+              -0.2906477153301239,
+              -0.8818783760070801,
+              0.013974450528621674
+            ],
+            "max": [
+              0.3202955424785614,
+              -0.14313466846942902,
+              1.7772644758224487
+            ]
+          }
+        },
+        {
+          "clip": "FullBody_Test",
+          "frame": 96,
+          "finite": true,
+          "bounded": true,
+          "motion_from_frame_1_m": 0.9519857531729207,
+          "bounds": {
+            "min": [
+              -0.29156360030174255,
+              -0.8901708126068115,
+              0.013974450528621674
+            ],
+            "max": [
+              0.3201252818107605,
+              -0.14313466846942902,
+              1.777103304862976
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "drivers valid with resolvable targets",
+      "passed": true,
+      "severity": "error",
+      "details": {
+        "count": 197,
+        "issues": []
+      }
+    },
+    {
+      "name": "source .blend unchanged",
+      "passed": true,
+      "severity": "error",
+      "details": "59e502fbbde1e794ad7046d2a1266488a6b4fdebf23e5f3770eb86b81bc6365e"
+    }
+  ],
+  "character": {
+    "mesh_objects": 65,
+    "triangles": 12676,
+    "vertices": 7112
+  },
+  "passed": true,
+  "pending_delivery_work": [
+    "Saved dialogue and full-body clips were sampled numerically. Rendered-frame review is recorded separately in Delivery_Acceptance.md; encoded-video checks are in Delivery_Manifest.json.",
+    "Horror controls and swaps were tested numerically; rendered horror review is recorded in Delivery_Acceptance.md. No engine export is claimed.",
+    "Bounded meshes do not prove every combined pose is collision-free. Extreme underarm deformation and shot-specific contacts still need animator polish.",
+    "The raw body_rig.set_pose helper presets are not ground-corrected: crouch, kneel, sit, crawl and fall extend below Z=0. These helpers are separate from the saved Action assets; sampled FullBody_Test geometry stays above Z=0."
+  ],
+  "visual_review": {
+    "reviewed": [
+      "Expressions/Neutral_720p.png",
+      "Comparisons/After_ThreeQuarter.png",
+      "Comparisons/Hair_Coverage_QA.png",
+      "Expressions/Shock_Clearance_QA.png"
+    ],
+    "preview_mtimes_utc": {
+      "Expressions/Neutral_720p.png": "2026-10-25T15:06:00.593427+00:00",
+      "Comparisons/After_ThreeQuarter.png": "2026-10-25T14:41:44.137969+00:00",
+      "Comparisons/Hair_Coverage_QA.png": "2026-10-25T14:38:55.820281+00:00",
+      "Expressions/Shock_Clearance_QA.png": "2026-10-25T14:48:29.889110+00:00"
+    },
+    "notes": [
+      "The previews show a recognizable ordinary man in the green jacket, white collar, trousers and boots, with a restrained low-poly silhouette and diffuse shading.",
+      "The rebuilt face has distinct nose, lips, eyelids and small human-proportioned eyes; it avoids photorealistic pores and modern glossy PBR skin.",
+      "In the reviewed previews the neutral face reads somewhat mannequin-like: broad smooth cheek planes, straight dark brows, sparse painted facial variation and clean symmetry reduce the psychological-horror characterfulness.",
+      "The hair has directional angular clumps, but its crown mass remains quite chunky; the large flat white collar also pulls attention from the face.",
+      "Hair_Coverage_QA.png confirms the formerly visible light scalp gap near the right crown is closed in the tested three-quarter view.",
+      "Shock_Clearance_QA.png shows a smooth chin-to-neck boundary during the tested open-jaw shock pose, with no earlier scalloped intersection visible. This frame does not establish every possible combined pose is collision-free.",
+      "These current stills establish a suitable retro direction, not a full artistic match to the brief. Rendered animation acceptance is separate."
+    ]
+  }
+}

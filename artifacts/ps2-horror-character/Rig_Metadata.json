@@ -1,0 +1,278 @@
+{
+  "controls": {
+    "switches": [
+      "arm_IK_FK.L",
+      "leg_IK_FK.L",
+      "arm_IK_FK.R",
+      "leg_IK_FK.R"
+    ],
+    "switch_convention": "0 = FK, 1 = IK; match controls before animating a switch",
+    "root": "root",
+    "body": [
+      "pelvis",
+      "spine",
+      "chest",
+      "neck",
+      "head"
+    ],
+    "ik": [
+      "hand_IK.L",
+      "arm_pole.L",
+      "foot_IK.L",
+      "leg_pole.L",
+      "hand_IK.R",
+      "arm_pole.R",
+      "foot_IK.R",
+      "leg_pole.R"
+    ],
+    "fk": [
+      "FK_upper_arm.L",
+      "FK_forearm.L",
+      "FK_hand.L",
+      "FK_upper_arm.R",
+      "FK_forearm.R",
+      "FK_hand.R",
+      "FK_thigh.L",
+      "FK_shin.L",
+      "FK_foot.L",
+      "FK_thigh.R",
+      "FK_shin.R",
+      "FK_foot.R"
+    ],
+    "fingers": [
+      "index.01.L",
+      "index.02.L",
+      "index.03.L",
+      "middle.01.L",
+      "middle.02.L",
+      "middle.03.L",
+      "ring.01.L",
+      "ring.02.L",
+      "ring.03.L",
+      "pinky.01.L",
+      "pinky.02.L",
+      "pinky.03.L",
+      "thumb.01.L",
+      "thumb.02.L",
+      "thumb.03.L",
+      "index.01.R",
+      "index.02.R",
+      "index.03.R",
+      "middle.01.R",
+      "middle.02.R",
+      "middle.03.R",
+      "ring.01.R",
+      "ring.02.R",
+      "ring.03.R",
+      "pinky.01.R",
+      "pinky.02.R",
+      "pinky.03.R",
+      "thumb.01.R",
+      "thumb.02.R",
+      "thumb.03.R"
+    ],
+    "control_shape": "Rig_Control_Shape"
+  },
+  "correctives": {
+    "shape_keys": [
+      {
+        "object": "Hand.L",
+        "key": "Wrist_volume.L",
+        "bone": "hand.L",
+        "affected_vertices": 56,
+        "maximum_displacement_m": 0.003
+      },
+      {
+        "object": "PS2 | jacket",
+        "key": "Shoulder_volume.L",
+        "bone": "upper_arm.L",
+        "affected_vertices": 86,
+        "maximum_displacement_m": 0.009
+      },
+      {
+        "object": "PS2 | jacket",
+        "key": "Elbow_volume.L",
+        "bone": "forearm.L",
+        "affected_vertices": 75,
+        "maximum_displacement_m": 0.007
+      },
+      {
+        "object": "PS2 | trousers",
+        "key": "Hip_volume.L",
+        "bone": "thigh.L",
+        "affected_vertices": 126,
+        "maximum_displacement_m": 0.008
+      },
+      {
+        "object": "PS2 | trousers",
+        "key": "Knee_volume.L",
+        "bone": "shin.L",
+        "affected_vertices": 45,
+        "maximum_displacement_m": 0.007
+      },
+      {
+        "object": "PS2 | cuff_L",
+        "key": "Cuff_volume.L",
+        "bone": "hand.L",
+        "affected_vertices": 36,
+        "maximum_displacement_m": 0.004
+      },
+      {
+        "object": "Hand.R",
+        "key": "Wrist_volume.R",
+        "bone": "hand.R",
+        "affected_vertices": 56,
+        "maximum_displacement_m": 0.003
+      },
+      {
+        "object": "PS2 | jacket",
+        "key": "Shoulder_volume.R",
+        "bone": "upper_arm.R",
+        "affected_vertices": 80,
+        "maximum_displacement_m": 0.009
+      },
+      {
+        "object": "PS2 | jacket",
+        "key": "Elbow_volume.R",
+        "bone": "forearm.R",
+        "affected_vertices": 78,
+        "maximum_displacement_m": 0.007
+      },
+      {
+        "object": "PS2 | trousers",
+        "key": "Hip_volume.R",
+        "bone": "thigh.R",
+        "affected_vertices": 125,
+        "maximum_displacement_m": 0.008
+      },
+      {
+        "object": "PS2 | trousers",
+        "key": "Knee_volume.R",
+        "bone": "shin.R",
+        "affected_vertices": 49,
+        "maximum_displacement_m": 0.007
+      },
+      {
+        "object": "PS2 | cuff_R",
+        "key": "Cuff_volume.R",
+        "bone": "hand.R",
+        "affected_vertices": 36,
+        "maximum_displacement_m": 0.004
+      },
+      {
+        "object": "PS2 | neck",
+        "key": "Neck_volume",
+        "bone": "neck",
+        "affected_vertices": 42,
+        "maximum_displacement_m": 0.004
+      },
+      {
+        "object": "PS2 | collar",
+        "key": "Neck_volume",
+        "bone": "neck",
+        "affected_vertices": 93,
+        "maximum_displacement_m": 0.004
+      }
+    ],
+    "method": "Pose-driven local volume recovery",
+    "limits": [
+      "Analytical clothing weights require shot-specific polishing for extreme folds.",
+      "Correctives recover joint volume; they do not simulate cloth or collisions.",
+      "IK/FK switching requires control matching; no snap operator is installed.",
+      "Low-poly hand joint loops support acting poses; extreme close-ups retain the intended angular silhouette."
+    ]
+  },
+  "facial_controls": [
+    "Blink_L",
+    "Blink_R",
+    "EyeWide",
+    "BrowInnerUp",
+    "BrowOuterUp",
+    "BrowDown",
+    "BrowTilt",
+    "JawOpen",
+    "Smile_L",
+    "Smile_R",
+    "Frown",
+    "LipPress",
+    "LipRound",
+    "LipStretch",
+    "GazeYaw",
+    "GazePitch",
+    "AA",
+    "EE",
+    "OH",
+    "MBP"
+  ],
+  "emotions": {
+    "Neutral": {},
+    "Sadness": {
+      "BrowInnerUp": 0.48,
+      "EyeWide": -0.18,
+      "Frown": 0.34,
+      "LipPress": 0.15,
+      "BrowTilt": 0.08,
+      "GazePitch": -0.12
+    },
+    "Fear": {
+      "EyeWide": 0.38,
+      "BrowInnerUp": 0.4,
+      "BrowOuterUp": 0.18,
+      "JawOpen": 0.18,
+      "LipStretch": 0.12
+    },
+    "Anger": {
+      "BrowDown": 0.72,
+      "EyeWide": -0.18,
+      "LipPress": 0.42,
+      "BrowTilt": -0.12,
+      "JawOpen": 0.04
+    },
+    "Shock": {
+      "EyeWide": 0.5,
+      "BrowInnerUp": 0.5,
+      "BrowOuterUp": 0.34,
+      "JawOpen": 0.46,
+      "LipRound": 0.1
+    },
+    "Grief": {
+      "BrowInnerUp": 0.78,
+      "EyeWide": -0.32,
+      "Frown": 0.68,
+      "JawOpen": 0.18,
+      "BrowTilt": 0.18,
+      "LipPress": 0.1
+    },
+    "Pain": {
+      "Blink_L": 0.55,
+      "Blink_R": 0.72,
+      "BrowDown": 0.65,
+      "LipPress": 0.48,
+      "Frown": 0.2,
+      "BrowTilt": -0.14
+    },
+    "Subtle Smile": {
+      "Smile_L": 0.34,
+      "Smile_R": 0.28,
+      "EyeWide": -0.1,
+      "BrowOuterUp": 0.06
+    },
+    "Exhaustion": {
+      "EyeWide": -0.52,
+      "Blink_L": 0.1,
+      "JawOpen": 0.06,
+      "Frown": 0.12,
+      "GazePitch": -0.25,
+      "BrowTilt": 0.07
+    },
+    "Vacant Zombie": {
+      "EyeWide": -0.16,
+      "Blink_L": 0.18,
+      "JawOpen": 0.22,
+      "Frown": 0.12,
+      "BrowTilt": -0.32,
+      "GazeYaw": 0.22,
+      "GazePitch": -0.08
+    }
+  }
+}
