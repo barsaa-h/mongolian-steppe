@@ -2,9 +2,9 @@
   "name": "Ганаа",
   "bodyHeightM": 1.7,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.08509144682587283,
-  "waistWidthM": 0.3638293162810019,
-  "sourceShapeKeys": 41,
+  "headHeightFraction": 0.07948771648103575,
+  "waistWidthM": 0.3655651201521174,
+  "sourceShapeKeys": 81,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
@@ -81,6 +81,36 @@
       "triangles": 9428
     },
     {
+      "name": "Story.ForearmBandage",
+      "role": "Story.ForearmBandage",
+      "vertices": 144,
+      "triangles": 240
+    },
+    {
+      "name": "Details.Wrinkle.Eye.1.0",
+      "role": "Details.Wrinkle.Eye.1.0",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Wrinkle.Eye.1.1",
+      "role": "Details.Wrinkle.Eye.1.1",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.Wrinkle.Eye.-1.0",
+      "role": "Details.Wrinkle.Eye.-1.0",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Wrinkle.Eye.-1.1",
+      "role": "Details.Wrinkle.Eye.-1.1",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
       "name": "Details.Wrinkle.Forehead.1",
       "role": "Details.Wrinkle.Forehead.1",
       "vertices": 50,
@@ -97,44 +127,28 @@
       "role": "Details.Wrinkle.Forehead.3",
       "vertices": 50,
       "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.0",
-      "role": "Details.Wrinkle.Eye.-1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.1",
-      "role": "Details.Wrinkle.Eye.-1.1",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.0",
-      "role": "Details.Wrinkle.Eye.1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.1",
-      "role": "Details.Wrinkle.Eye.1.1",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Story.ForearmBandage",
-      "role": "Story.ForearmBandage",
-      "vertices": 144,
-      "triangles": 240
     }
   ],
   "packedTextures": [
     {
-      "name": "brown_eye.png",
+      "name": "beard-region-mask.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "brown.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -152,31 +166,10 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
         512
-      ]
-    },
-    {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
-      ]
-    },
-    {
-      "name": "ganaa | Skin detail normal",
-      "size": [
-        2048,
-        2048
       ]
     },
     {
@@ -187,6 +180,13 @@
       ]
     },
     {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
       "name": "male_casualsuit05_diffuse.png",
       "size": [
         2048,
@@ -194,10 +194,31 @@
       ]
     },
     {
-      "name": "middleage_lightskinned_male_diffuse2.png",
+      "name": "middleage_asian_male_albedo.png",
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "middleage_asian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "middleage_asian_male_roughness.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
       ]
     },
     {
@@ -222,6 +243,13 @@
       ]
     },
     {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -236,6 +264,17 @@
       ]
     }
   ],
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "controlMorphs": 0,
+  "talkCheck": false,
   "id": "ganaa",
   "episode": 1,
   "scriptAge": 46,
@@ -249,16 +288,7 @@
   ],
   "wardrobe": "jacket",
   "casting": "Mongolian",
-  "dnaHash": "50abff2c6e956e1ab2f0bcbf8798e0f3467865c0d351368b199ada111d13673b",
+  "dnaHash": "21a987f5ee44073d8114bc5bd3e3493eca26000bf61b5a7517e996a0be15a9e6",
   "baseStage": "adult",
-  "expressions": [
-    "smile",
-    "frown",
-    "blink",
-    "viseme_A",
-    "viseme_E",
-    "viseme_O",
-    "viseme_M"
-  ],
   "sourceIndexMap": true
 }

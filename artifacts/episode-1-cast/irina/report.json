@@ -1,14 +1,14 @@
 {
   "name": "Ирина Ковалева",
-  "bodyHeightM": 1.6500000000000001,
+  "bodyHeightM": 1.65,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.0957622757820167,
-  "waistWidthM": 0.36512001621752427,
-  "sourceShapeKeys": 38,
+  "headHeightFraction": 0.10014512219923495,
+  "waistWidthM": 0.35293120572323594,
+  "sourceShapeKeys": 65,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 36,
+    "Clothes.Outfit": 38,
     "Shoes": 38
   },
   "fullBodyRetained": true,
@@ -29,8 +29,8 @@
     {
       "name": "Hair",
       "role": "Hair",
-      "vertices": 1193,
-      "triangles": 1468
+      "vertices": 1213,
+      "triangles": 1500
     },
     {
       "name": "Shoes",
@@ -79,39 +79,16 @@
       "role": "Body",
       "vertices": 4820,
       "triangles": 9428
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.1",
-      "role": "Details.Wrinkle.Forehead.1",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.2",
-      "role": "Details.Wrinkle.Forehead.2",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.3",
-      "role": "Details.Wrinkle.Forehead.3",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.0",
-      "role": "Details.Wrinkle.Eye.-1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.0",
-      "role": "Details.Wrinkle.Eye.1.0",
-      "vertices": 24,
-      "triangles": 22
     }
   ],
   "packedTextures": [
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
     {
       "name": "Clothes.Bottom | Cast albedo",
       "size": [
@@ -127,13 +104,6 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
@@ -141,14 +111,7 @@
       ]
     },
     {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
-      ]
-    },
-    {
-      "name": "grey_eye.png",
+      "name": "grey.png",
       "size": [
         1024,
         1024
@@ -162,7 +125,7 @@
       ]
     },
     {
-      "name": "irina | Skin detail normal",
+      "name": "head_mask.png",
       "size": [
         2048,
         2048
@@ -183,10 +146,31 @@
       ]
     },
     {
-      "name": "middleage_lightskinned_female_diffuse.png",
+      "name": "middleage_caucasian_female_albedo.png",
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "middleage_caucasian_female_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "middleage_caucasian_female_roughness.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
       ]
     },
     {
@@ -204,6 +188,13 @@
       ]
     },
     {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -218,19 +209,6 @@
       ]
     }
   ],
-  "id": "irina",
-  "episode": 1,
-  "scriptAge": 54,
-  "skinSource": "middleage_caucasian_female",
-  "skinDetailCount": 0,
-  "wrinkleParts": 5,
-  "storyStates": [
-    "normal"
-  ],
-  "wardrobe": "coat",
-  "casting": "Russian casting",
-  "dnaHash": "df147e4ec020dc8f8bae343143744ec2aaf2503435b6a74ac4b5363ea53447a2",
-  "baseStage": "adult",
   "expressions": [
     "smile",
     "frown",
@@ -240,5 +218,20 @@
     "viseme_O",
     "viseme_M"
   ],
+  "controlMorphs": 0,
+  "talkCheck": false,
+  "id": "irina",
+  "episode": 1,
+  "scriptAge": 54,
+  "skinSource": "middleage_caucasian_female",
+  "skinDetailCount": 0,
+  "wrinkleParts": 0,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "coat",
+  "casting": "Russian casting",
+  "dnaHash": "df147e4ec020dc8f8bae343143744ec2aaf2503435b6a74ac4b5363ea53447a2",
+  "baseStage": "adult",
   "sourceIndexMap": true
 }

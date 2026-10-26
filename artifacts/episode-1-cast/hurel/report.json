@@ -2,13 +2,13 @@
   "name": "Хүрэл",
   "bodyHeightM": 1.6500000000000001,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.08433196564431758,
-  "waistWidthM": 0.37743695569166474,
-  "sourceShapeKeys": 37,
+  "headHeightFraction": 0.07572594713963413,
+  "waistWidthM": 0.37998732005422964,
+  "sourceShapeKeys": 63,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 217,
+    "Clothes.Outfit": 215,
     "Shoes": 0
   },
   "fullBodyRetained": true,
@@ -81,54 +81,6 @@
       "triangles": 9112
     },
     {
-      "name": "Details.Wrinkle.Forehead.1",
-      "role": "Details.Wrinkle.Forehead.1",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.2",
-      "role": "Details.Wrinkle.Forehead.2",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.0",
-      "role": "Details.Wrinkle.Eye.-1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.1",
-      "role": "Details.Wrinkle.Eye.-1.1",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.2",
-      "role": "Details.Wrinkle.Eye.-1.2",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.0",
-      "role": "Details.Wrinkle.Eye.1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.1",
-      "role": "Details.Wrinkle.Eye.1.1",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.2",
-      "role": "Details.Wrinkle.Eye.1.2",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
       "name": "Clothes.Apron",
       "role": "Clothes.Apron",
       "vertices": 90,
@@ -149,10 +101,17 @@
   ],
   "packedTextures": [
     {
-      "name": "brown_eye.png",
+      "name": "brown.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -170,24 +129,10 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
         512
-      ]
-    },
-    {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
       ]
     },
     {
@@ -198,7 +143,7 @@
       ]
     },
     {
-      "name": "hurel | Skin detail normal",
+      "name": "head_mask.png",
       "size": [
         2048,
         2048
@@ -212,7 +157,28 @@
       ]
     },
     {
-      "name": "old_lightskinned_male_diffuse2.png",
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "old_asian_male_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "old_asian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "old_asian_male_roughness.png",
       "size": [
         2048,
         2048
@@ -240,6 +206,13 @@
       ]
     },
     {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -254,19 +227,6 @@
       ]
     }
   ],
-  "id": "hurel",
-  "episode": 1,
-  "scriptAge": null,
-  "skinSource": "old_asian_male",
-  "skinDetailCount": 0,
-  "wrinkleParts": 8,
-  "storyStates": [
-    "normal"
-  ],
-  "wardrobe": "apron",
-  "casting": "Mongolian",
-  "dnaHash": "dd99531b84152224fffa65652539cd1e55de6431b78dacb90a8735f460469806",
-  "baseStage": "adult",
   "expressions": [
     "smile",
     "frown",
@@ -276,5 +236,20 @@
     "viseme_O",
     "viseme_M"
   ],
+  "controlMorphs": 0,
+  "talkCheck": false,
+  "id": "hurel",
+  "episode": 1,
+  "scriptAge": null,
+  "skinSource": "old_asian_male",
+  "skinDetailCount": 0,
+  "wrinkleParts": 0,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "apron",
+  "casting": "Mongolian",
+  "dnaHash": "dd99531b84152224fffa65652539cd1e55de6431b78dacb90a8735f460469806",
+  "baseStage": "adult",
   "sourceIndexMap": true
 }

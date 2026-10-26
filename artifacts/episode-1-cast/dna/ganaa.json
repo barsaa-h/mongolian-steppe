@@ -21,11 +21,11 @@
     "head_width": 0.28,
     "head_depth": 0,
     "skull_depth": 0,
-    "forehead_slope": 0,
+    "forehead_slope": 0.12,
     "forehead_height": 0,
     "temple_width": 0,
     "head_round": 0,
-    "head_square": 0.85,
+    "head_square": 0.7,
     "head_oval": 0,
     "head_diamond": 0,
     "head_rectangular": 0,
@@ -36,19 +36,19 @@
     "eye_spacing": 0,
     "eye_tilt": 0.06,
     "eye_depth": 0,
-    "upper_lid_fold": 0.64,
-    "eye_opening": -0.12,
-    "inner_lid_fold": 0.468,
+    "upper_lid_fold": 0.3,
+    "eye_opening": 0.16,
+    "inner_lid_fold": 0.34,
     "lower_lid_height": 0,
-    "brow_height": -0.24,
+    "brow_height": -0.04,
     "brow_angle": 0,
     "brow_depth": 0,
     "nose_bridge_width": 0.3,
     "nose_tip_width": 0.25,
     "nose_tip_angle": 0,
     "nose_width": 0.4,
-    "nose_length": 0,
-    "nose_projection": -0.32,
+    "nose_length": 0.12,
+    "nose_projection": -0.22,
     "nose_curve": 0,
     "nostril_width": 0,
     "nostril_angle": 0,
@@ -56,13 +56,13 @@
     "mouth_width": 0.38,
     "upper_lip_fullness": -0.28,
     "lower_lip_fullness": -0.12,
-    "mouth_corner_tilt": 0,
+    "mouth_corner_tilt": -0.08,
     "philtrum_length": 0,
     "cupids_bow": 0,
     "mouth_depth": 0,
     "upper_lip_height": 0,
     "lower_lip_height": 0,
-    "jaw_width": 0,
+    "jaw_width": 0.12,
     "chin_width": 0.58,
     "chin_length": -0.18,
     "chin_projection": 0.22,
@@ -70,7 +70,7 @@
     "chin_cleft": 0,
     "cheek_height": 0,
     "cheekbone_prominence": 0.58,
-    "cheek_fullness": 0.16,
+    "cheek_fullness": 0.1,
     "cheek_hollow": 0,
     "ear_size": 0,
     "ear_angle": 0,
@@ -84,12 +84,12 @@
     "eye_tilt": 0.0,
     "eye_depth": 0,
     "upper_lid_fold": -0.058,
-    "eye_opening": 0.011,
+    "eye_opening": 0.025,
     "inner_lid_fold": -0.042,
     "lower_lid_height": 0,
     "cheek_height": 0,
     "cheekbone_prominence": 0.0,
-    "cheek_fullness": 0.0,
+    "cheek_fullness": 0.04,
     "cheek_hollow": 0,
     "ear_size": 0,
     "ear_angle": 0,
@@ -98,12 +98,12 @@
   "age": {
     "years": 46,
     "features": {
-      "head_age": 0,
-      "eye_bags_left": 0.2,
-      "eye_bags_right": 0.182,
+      "head_age": 0.38,
+      "eye_bags_left": 0.25,
+      "eye_bags_right": 0.23,
       "sagging": 0,
       "lip_thinning": 0,
-      "brow_droop": 0
+      "brow_droop": 0.04
     }
   },
   "body": {
@@ -122,34 +122,35 @@
   },
   "skin": {
     "asset": "middleage_asian_male",
-    "tone": 1,
-    "ruddiness": 0,
-    "freckles": 0,
+    "tone": 0.97,
+    "ruddiness": 0.15,
+    "freckles": 6,
     "pimples": 0,
     "look": "weathered",
-    "detail": 0.06
+    "detail": 0.2,
+    "undertone": -0.06
   },
   "hair": {
     "asset": "short04",
     "style": "receding",
     "color": "#29231f",
-    "greying": 0,
+    "greying": 0.08,
     "length": 1,
     "volume": 1
   },
   "brows": {
-    "thickness": 1,
-    "color": "#30251f",
+    "thickness": 1.12,
+    "color": "#54483f",
     "greying": 0
   },
   "eyes": {
     "color": "brown",
-    "iris_scale": 1,
+    "iris_scale": 0.92,
     "sclera_tint": "#f0eadf"
   },
   "facial_hair": {
     "style": "stubble",
-    "coverage": 0.16,
+    "coverage": 0.23,
     "greying": 0.2
   },
   "clothing": {
@@ -165,11 +166,11 @@
     "low wide bridge",
     "narrow straight hooded lids"
   ],
-  "face_design": "Broad square jaw, low wide bridge, narrow straight hooded lids, thin wide mouth",
+  "face_design": "Production revision of ganaa-eye-final: lids opened for readable irises, hooded character retained, lighter eye bags, cooler skin",
   "states": [
     "healthy",
     "hour-five",
     "turning"
   ],
-  "review": "draft"
+  "review": "approved"
 }

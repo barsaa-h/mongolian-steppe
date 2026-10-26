@@ -1,15 +1,15 @@
 {
   "name": "Алтан",
-  "bodyHeightM": 0.95,
+  "bodyHeightM": 0.9500000000000001,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.13146882872264096,
-  "waistWidthM": 0.45595847849749427,
-  "sourceShapeKeys": 30,
+  "headHeightFraction": 0.12865400705486263,
+  "waistWidthM": 0.20093705951123142,
+  "sourceShapeKeys": 51,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 264,
-    "Shoes": 56
+    "Clothes.Outfit": 265,
+    "Shoes": 54
   },
   "fullBodyRetained": true,
   "renderBodyUsesClothingMasks": true,
@@ -89,17 +89,17 @@
   ],
   "packedTextures": [
     {
-      "name": "altan | Skin detail normal",
-      "size": [
-        2048,
-        2048
-      ]
-    },
-    {
-      "name": "brown_eye.png",
+      "name": "brown.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -110,24 +110,10 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
         512
-      ]
-    },
-    {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
       ]
     },
     {
@@ -146,6 +132,20 @@
     },
     {
       "name": "Hair | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "normal.png",
       "size": [
         1024,
         1024
@@ -173,6 +173,13 @@
       ]
     },
     {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -187,13 +194,38 @@
       ]
     },
     {
-      "name": "young_lightskinned_female_diffuse3.png",
+      "name": "young_asian_female_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_female_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_female_roughness.png",
       "size": [
         2048,
         2048
       ]
     }
   ],
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "controlMorphs": 0,
+  "talkCheck": false,
   "id": "altan",
   "episode": 1,
   "scriptAge": 3,
@@ -207,14 +239,5 @@
   "casting": "Mongolian",
   "dnaHash": "449ba41facecfac350d56ed8cfbfa80ea2249fc663df27cdf2eea92e0d0747ee",
   "baseStage": "child",
-  "expressions": [
-    "smile",
-    "frown",
-    "blink",
-    "viseme_A",
-    "viseme_E",
-    "viseme_O",
-    "viseme_M"
-  ],
   "sourceIndexMap": true
 }

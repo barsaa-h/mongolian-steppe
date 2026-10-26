@@ -1,14 +1,14 @@
 {
   "name": "Сүхээ",
-  "bodyHeightM": 1.68,
+  "bodyHeightM": 1.6799999999999997,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.0964744163809545,
-  "waistWidthM": 0.36678636543845555,
-  "sourceShapeKeys": 37,
+  "headHeightFraction": 0.10070399330232925,
+  "waistWidthM": 0.36572932744035874,
+  "sourceShapeKeys": 63,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 40,
+    "Clothes.Outfit": 51,
     "Shoes": 22
   },
   "fullBodyRetained": true,
@@ -83,10 +83,17 @@
   ],
   "packedTextures": [
     {
-      "name": "brown_eye.png",
+      "name": "brown.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -104,24 +111,10 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
         512
-      ]
-    },
-    {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
       ]
     },
     {
@@ -132,6 +125,13 @@
       ]
     },
     {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
       "name": "male_casualsuit03_diffuse.png",
       "size": [
         2048,
@@ -139,10 +139,31 @@
       ]
     },
     {
-      "name": "middleage_lightskinned_male_diffuse2.png",
+      "name": "middleage_asian_male_albedo.png",
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "middleage_asian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "middleage_asian_male_roughness.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
       ]
     },
     {
@@ -167,10 +188,10 @@
       ]
     },
     {
-      "name": "sukhee | Skin detail normal",
+      "name": "straight.png",
       "size": [
-        2048,
-        2048
+        512,
+        512
       ]
     },
     {
@@ -188,6 +209,17 @@
       ]
     }
   ],
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "controlMorphs": 0,
+  "talkCheck": false,
   "id": "sukhee",
   "episode": 1,
   "scriptAge": null,
@@ -201,14 +233,5 @@
   "casting": "Mongolian",
   "dnaHash": "7d4fdddba7a085a685a3a8b7dac60e067d4fee1c13d2eeb7a1c5c1917b974d5b",
   "baseStage": "adult",
-  "expressions": [
-    "smile",
-    "frown",
-    "blink",
-    "viseme_A",
-    "viseme_E",
-    "viseme_O",
-    "viseme_M"
-  ],
   "sourceIndexMap": true
 }

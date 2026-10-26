@@ -1,14 +1,14 @@
 {
   "name": "Ахмад эрэгтэй зочин",
-  "bodyHeightM": 1.64,
+  "bodyHeightM": 1.6399999999999997,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.10397844022374618,
-  "waistWidthM": 0.344823693769593,
-  "sourceShapeKeys": 42,
+  "headHeightFraction": 0.11381039809511063,
+  "waistWidthM": 0.33636414615342114,
+  "sourceShapeKeys": 73,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 98,
+    "Clothes.Outfit": 100,
     "Shoes": 32
   },
   "fullBodyRetained": true,
@@ -79,56 +79,21 @@
       "role": "Body",
       "vertices": 4652,
       "triangles": 9092
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.1",
-      "role": "Details.Wrinkle.Forehead.1",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.2",
-      "role": "Details.Wrinkle.Forehead.2",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.3",
-      "role": "Details.Wrinkle.Forehead.3",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.0",
-      "role": "Details.Wrinkle.Eye.-1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.1",
-      "role": "Details.Wrinkle.Eye.-1.1",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.0",
-      "role": "Details.Wrinkle.Eye.1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.1",
-      "role": "Details.Wrinkle.Eye.1.1",
-      "vertices": 24,
-      "triangles": 22
     }
   ],
   "packedTextures": [
     {
-      "name": "brown_eye.png",
+      "name": "brown.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -146,24 +111,10 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
         512
-      ]
-    },
-    {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
       ]
     },
     {
@@ -174,6 +125,13 @@
       ]
     },
     {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
       "name": "male_elegantsuit01_diffuse.png",
       "size": [
         2048,
@@ -181,14 +139,28 @@
       ]
     },
     {
-      "name": "old_lightskinned_male_diffuse2.png",
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "old_asian_male_albedo.png",
       "size": [
         2048,
         2048
       ]
     },
     {
-      "name": "party-older-man | Skin detail normal",
+      "name": "old_asian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "old_asian_male_roughness.png",
       "size": [
         2048,
         2048
@@ -216,6 +188,13 @@
       ]
     },
     {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -230,19 +209,6 @@
       ]
     }
   ],
-  "id": "party-older-man",
-  "episode": 1,
-  "scriptAge": null,
-  "skinSource": "old_asian_male",
-  "skinDetailCount": 0,
-  "wrinkleParts": 7,
-  "storyStates": [
-    "normal"
-  ],
-  "wardrobe": "guest",
-  "casting": "Mongolian",
-  "dnaHash": "750fbf20f1976966473af65ad434576bc62324edac527ae5f181106f55265400",
-  "baseStage": "elder",
   "expressions": [
     "smile",
     "frown",
@@ -252,5 +218,20 @@
     "viseme_O",
     "viseme_M"
   ],
+  "controlMorphs": 0,
+  "talkCheck": false,
+  "id": "party-older-man",
+  "episode": 1,
+  "scriptAge": null,
+  "skinSource": "old_asian_male",
+  "skinDetailCount": 0,
+  "wrinkleParts": 0,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "guest",
+  "casting": "Mongolian",
+  "dnaHash": "750fbf20f1976966473af65ad434576bc62324edac527ae5f181106f55265400",
+  "baseStage": "elder",
   "sourceIndexMap": true
 }

@@ -144,7 +144,8 @@ def finish_eyes(look, rig, collection):
         tree.links.new(normal_tex.outputs['Color'], normal.inputs['Color'])
         tree.links.new(normal.outputs['Normal'], shader.inputs['Normal'])
     # Coat is what turns the low-poly highlight into a hard polygon. Wetness stays in roughness and the baked catchlight.
-    shader.inputs['Roughness'].default_value = .48 - .2 * settings['wetness']
+    # Softer speculars: a tight gloss on the faceted low-poly eye reads as angular highlights in the GLB.
+    shader.inputs['Roughness'].default_value = .38 - .1 * settings['wetness']
     shader.inputs['Specular IOR Level'].default_value = .34
     shader.inputs['Coat Weight'].default_value = 0
     stock = bpy.data.objects.get('Eyelashes')

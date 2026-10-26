@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "generatedAt": "2026-10-26T18:51:01.982Z",
+  "generatedAt": "2026-10-26T23:18:29.216Z",
   "results": [
     {
       "id": "ganaa",
@@ -10,83 +10,78 @@
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.0001361212918951888
+          "maxDelta": 0.00013609716718572778
         },
         {
           "hand": "HandsR",
           "matched": 27,
-          "maxDelta": 0.0001361212918951888
+          "maxDelta": 0.00013609716718572778
         }
       ],
-      "motion": 0.2584709288393711,
+      "motion": 0.2597041188534926,
       "expressionMotion": {
-        "smile": 0.008352279975998344,
-        "frown": 0.0037326311986512176,
-        "blink": 0.010008525111502888,
-        "viseme_A": 0.024782813210959365,
-        "viseme_E": 0.0068788522382448,
-        "viseme_O": 0.012616994362446324,
-        "viseme_M": 0.005138628977425896
+        "smile": 0.00880078992499645,
+        "frown": 0.003933107554236874,
+        "blink": 0.003047375857942796,
+        "viseme_A": 0.026113785330041717,
+        "viseme_E": 0.007248345039761105,
+        "viseme_O": 0.013294412082408636,
+        "viseme_M": 0.005414601003577432
       },
       "facialPartMotion": {
-        "BodySkin": 0.024782813210959365,
+        "BodySkin": 0.026113785330041717,
         "DetailsWrinkleEye10": 0,
-        "DetailsWrinkleEye11": 0,
+        "DetailsWrinkleEye11": 0.0007268951828805503,
         "DetailsWrinkleEye-10": 0,
-        "DetailsWrinkleEye-11": 0,
+        "DetailsWrinkleEye-11": 0.0007268900001448768,
         "DetailsWrinkleForehead1": 0,
         "DetailsWrinkleForehead2": 0,
         "DetailsWrinkleForehead3": 0,
-        "Eyebrows": 0.0015072238764280408,
-        "Teeth": 0.020286068144662127,
-        "Tongue": 0.003287382133477744
+        "Eyebrows": 0.0015882396844882172,
+        "Teeth": 0.02137540008951752,
+        "Tongue": 0.0034639612278388127
       },
       "height": 1.7,
-      "headFraction": 0.08509144682587283,
+      "headFraction": 0.07948771648103575,
       "blemishes": 0,
       "wrinkleParts": 7
     },
     {
       "id": "irina",
-      "meshes": 16,
+      "meshes": 11,
       "bones": 137,
       "wrists": [
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.00014132795470578075
+          "maxDelta": 0.000141330757574102
         },
         {
           "hand": "HandsR",
           "matched": 27,
-          "maxDelta": 0.00014132795470578075
+          "maxDelta": 0.000141330757574102
         }
       ],
-      "motion": 0.24222919941121357,
+      "motion": 0.2415675101397261,
       "expressionMotion": {
-        "smile": 0.007530260818652924,
-        "frown": 0.0033653134013822343,
-        "blink": 0.009023386229669765,
-        "viseme_A": 0.022343764639398467,
-        "viseme_E": 0.00620191879780813,
-        "viseme_O": 0.011375138872528287,
-        "viseme_M": 0.004632892144943603
+        "smile": 0.007133191683147802,
+        "frown": 0.003187930764523669,
+        "blink": 0.004611950827594039,
+        "viseme_A": 0.02116554555811034,
+        "viseme_E": 0.0058747943562306205,
+        "viseme_O": 0.010775323510640509,
+        "viseme_M": 0.004388572432662681
       },
       "facialPartMotion": {
-        "BodySkin": 0.022343764639398467,
-        "DetailsWrinkleEye10": 0,
-        "DetailsWrinkleEye-10": 0,
-        "DetailsWrinkleForehead1": 0,
-        "DetailsWrinkleForehead2": 0,
-        "DetailsWrinkleForehead3": 0,
-        "Eyebrows": 0.0013589735643657697,
-        "Teeth": 0.018289494584155113,
-        "Tongue": 0.0029639075812507186
+        "BodySkin": 0.02116554555811034,
+        "Eyebrows": 0.0012873370237440037,
+        "Teeth": 0.01732500930769734,
+        "Tongue": 0.002807568737282358
       },
-      "height": 1.6500000000000001,
-      "headFraction": 0.0957622757820167,
+      "height": 1.65,
+      "headFraction": 0.10014512219923495,
       "blemishes": 0,
-      "wrinkleParts": 5
+      "wrinkleParts": 0
     },
     {
       "id": "dasha",
@@ -96,83 +91,75 @@
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.00009999648428767434
+          "maxDelta": 0.0000999962571379911
         },
         {
           "hand": "HandsR",
           "matched": 27,
-          "maxDelta": 0.00013722400298586332
+          "maxDelta": 0.00013722383793774614
         }
       ],
-      "motion": 0.24141572781838855,
+      "motion": 0.24141571363309644,
       "expressionMotion": {
-        "smile": 0.00781347410314454,
-        "frown": 0.0034919448056766928,
-        "blink": 0.009362905309577315,
-        "viseme_A": 0.023184179725858064,
-        "viseme_E": 0.006435201708892422,
-        "viseme_O": 0.011802933560074813,
-        "viseme_M": 0.00480711645190307
+        "smile": 0.007760760623166274,
+        "frown": 0.0034683713754431037,
+        "blink": 0.004987921643457228,
+        "viseme_A": 0.023027860308040576,
+        "viseme_E": 0.006391716622421421,
+        "viseme_O": 0.011723530100781905,
+        "viseme_M": 0.004774751785730892
       },
       "facialPartMotion": {
-        "BodySkin": 0.023184179725858064,
-        "DetailsBlemish01": 0.0010050411154193149,
+        "BodySkin": 0.023027860308040576,
+        "DetailsBlemish01": 0.001988858111250374,
         "DetailsBlemish02": 0,
         "DetailsBlemish03": 0,
         "DetailsBlemish04": 0,
-        "Eyebrows": 0.0014099910616597678,
-        "Teeth": 0.0189775153989438,
-        "Tongue": 0.0030753739143745155
+        "Eyebrows": 0.0014005506645780536,
+        "Teeth": 0.018849395883958713,
+        "Tongue": 0.003054664445066155
       },
-      "height": 1.6600000000000001,
-      "headFraction": 0.08555059799820877,
+      "height": 1.66,
+      "headFraction": 0.08555066679545456,
       "blemishes": 4,
       "wrinkleParts": 0
     },
     {
       "id": "hurel",
-      "meshes": 22,
+      "meshes": 14,
       "bones": 137,
       "wrists": [
         {
           "hand": "HandsL",
           "matched": 23,
-          "maxDelta": 0.00014122701439847054
+          "maxDelta": 0.00014123198263073748
         },
         {
           "hand": "HandsR",
           "matched": 23,
-          "maxDelta": 0.00014122701439847054
+          "maxDelta": 0.00014123198263073748
         }
       ],
-      "motion": 0.24559678713443578,
+      "motion": 0.24725624193049078,
       "expressionMotion": {
-        "smile": 0.0078274796567516,
-        "frown": 0.0034981433516862734,
-        "blink": 0.009379531714168905,
-        "viseme_A": 0.02322563718415802,
-        "viseme_E": 0.0064466709757156826,
-        "viseme_O": 0.011824085987760018,
-        "viseme_M": 0.004815700242846011
+        "smile": 0.007827409603740182,
+        "frown": 0.0034981900653634347,
+        "blink": 0.0026035394864116087,
+        "viseme_A": 0.02322562728375483,
+        "viseme_E": 0.006446680503316595,
+        "viseme_O": 0.011824144677644985,
+        "viseme_M": 0.0048157237348798385
       },
       "facialPartMotion": {
-        "BodySkin": 0.02322563718415802,
-        "DetailsWrinkleEye10": 0,
-        "DetailsWrinkleEye11": 0,
-        "DetailsWrinkleEye12": 0,
-        "DetailsWrinkleEye-10": 0,
-        "DetailsWrinkleEye-11": 0,
-        "DetailsWrinkleEye-12": 0,
-        "DetailsWrinkleForehead1": 0,
-        "DetailsWrinkleForehead2": 0,
-        "Eyebrows": 0.001412394755078052,
-        "Teeth": 0.019011388583093324,
-        "Tongue": 0.003080911361001021
+        "BodySkin": 0.02322562728375483,
+        "Eyebrows": 0.001412446261210005,
+        "Teeth": 0.019011402026365868,
+        "Tongue": 0.0030809139362840575
       },
       "height": 1.6500000000000001,
-      "headFraction": 0.08433196564431758,
+      "headFraction": 0.07572594713963413,
       "blemishes": 0,
-      "wrinkleParts": 8
+      "wrinkleParts": 0
     },
     {
       "id": "tsetsegmaa",
@@ -190,25 +177,25 @@
           "maxDelta": 0.000139410935144502
         }
       ],
-      "motion": 0.23300527600699378,
+      "motion": 0.23300507091716416,
       "expressionMotion": {
-        "smile": 0.007926623207306296,
-        "frown": 0.0035425445450720638,
-        "blink": 0.009498561506224898,
-        "viseme_A": 0.023520213455775565,
-        "viseme_E": 0.006528440590172955,
-        "viseme_O": 0.011973999577826385,
-        "viseme_M": 0.004876873595912296
+        "smile": 0.008276985377652951,
+        "frown": 0.003699078244428337,
+        "blink": 0.0029824316533270017,
+        "viseme_A": 0.024559868874627647,
+        "viseme_E": 0.006817048948607771,
+        "viseme_O": 0.01250326460374266,
+        "viseme_M": 0.005092399129729592
       },
       "facialPartMotion": {
-        "BodySkin": 0.023520213455775565,
+        "BodySkin": 0.024559868874627647,
         "DetailsBlemish01": 0,
-        "Eyebrows": 0.0014304648599030904,
-        "Teeth": 0.019252454212555007,
-        "Tongue": 0.00311983084442615
+        "Eyebrows": 0.0014936226126842256,
+        "Teeth": 0.020103548069932954,
+        "Tongue": 0.003257853783636728
       },
       "height": 1.6000000000000003,
-      "headFraction": 0.08774466633716219,
+      "headFraction": 0.08774473907759248,
       "blemishes": 1,
       "wrinkleParts": 0
     },
@@ -220,40 +207,40 @@
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.0001405517114329598
+          "maxDelta": 0.0001405321109782266
         },
         {
           "hand": "HandsR",
           "matched": 27,
-          "maxDelta": 0.00014059171909554656
+          "maxDelta": 0.0001405639805194065
         }
       ],
-      "motion": 0.22421971766077325,
+      "motion": 0.22550031774804702,
       "expressionMotion": {
-        "smile": 0.007954159603868579,
-        "frown": 0.003554842408016767,
-        "blink": 0.009531531616315692,
-        "viseme_A": 0.02360165363290686,
-        "viseme_E": 0.006550974620178774,
-        "viseme_O": 0.012015490989066025,
-        "viseme_M": 0.004893740246771385
+        "smile": 0.008385732471737418,
+        "frown": 0.003747713104327338,
+        "blink": 0.0029735400003771265,
+        "viseme_A": 0.02488250587675851,
+        "viseme_E": 0.006906532999423179,
+        "viseme_O": 0.012667619659582902,
+        "viseme_M": 0.0051592895282189955
       },
       "facialPartMotion": {
-        "BodySkin": 0.02360165363290686,
+        "BodySkin": 0.02488250587675851,
         "DetailsWrinkleEye10": 0,
-        "DetailsWrinkleEye11": 0,
-        "DetailsWrinkleEye12": 0,
+        "DetailsWrinkleEye11": 0.0023761205898803783,
+        "DetailsWrinkleEye12": 0.007160504212731701,
         "DetailsWrinkleEye-10": 0,
-        "DetailsWrinkleEye-11": 0,
-        "DetailsWrinkleEye-12": 0,
+        "DetailsWrinkleEye-11": 0.0023761136709191588,
+        "DetailsWrinkleEye-12": 0.007160504212731606,
         "DetailsWrinkleForehead1": 0,
         "DetailsWrinkleForehead2": 0,
-        "Eyebrows": 0.001435476096748152,
-        "Teeth": 0.019319146531353505,
-        "Tongue": 0.003130644484576114
+        "Eyebrows": 0.001513424063531683,
+        "Teeth": 0.020367504178208,
+        "Tongue": 0.0033006010261317424
       },
-      "height": 1.5400000000000003,
-      "headFraction": 0.08370385808920769,
+      "height": 1.54,
+      "headFraction": 0.07675451263959854,
       "blemishes": 0,
       "wrinkleParts": 8
     },
@@ -265,32 +252,32 @@
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.00016943989503802608
+          "maxDelta": 0.000169484138333819
         },
         {
           "hand": "HandsR",
           "matched": 27,
-          "maxDelta": 0.00016943989503802608
+          "maxDelta": 0.000169484138333819
         }
       ],
-      "motion": 0.2505057484704172,
+      "motion": 0.2497838623373046,
       "expressionMotion": {
-        "smile": 0.007711877891924681,
-        "frown": 0.00344649335465722,
-        "blink": 0.009241255972502409,
-        "viseme_A": 0.022883177102825822,
-        "viseme_E": 0.006351572620187669,
-        "viseme_O": 0.011649831321995116,
-        "viseme_M": 0.004744742241815245
+        "smile": 0.007552648177751164,
+        "frown": 0.0033754508865021723,
+        "blink": 0.0026243700168888423,
+        "viseme_A": 0.022410502138192637,
+        "viseme_E": 0.006220428243338476,
+        "viseme_O": 0.011409166432583549,
+        "viseme_M": 0.00464667390277045
       },
       "facialPartMotion": {
-        "BodySkin": 0.022883177102825822,
-        "Eyebrows": 0.0013916826683983924,
-        "Teeth": 0.018730826234312725,
-        "Tongue": 0.0030353430523745555
+        "BodySkin": 0.022410502138192637,
+        "Eyebrows": 0.0013629764993344088,
+        "Teeth": 0.018344131442363586,
+        "Tongue": 0.0029727114540499537
       },
-      "height": 1.68,
-      "headFraction": 0.0964744163809545,
+      "height": 1.6799999999999997,
+      "headFraction": 0.10070399330232925,
       "blemishes": 0,
       "wrinkleParts": 0
     },
@@ -302,78 +289,71 @@
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.00014105530881618935
+          "maxDelta": 0.00014105517265068263
         },
         {
           "hand": "HandsR",
           "matched": 27,
-          "maxDelta": 0.00014105530881618935
+          "maxDelta": 0.00014105517265068263
         }
       ],
-      "motion": 0.14876180506336864,
+      "motion": 0.14924397823430813,
       "expressionMotion": {
-        "smile": 0.005968409980074293,
-        "frown": 0.002667303803653639,
-        "blink": 0.007151945466259915,
-        "viseme_A": 0.01770963352704847,
-        "viseme_E": 0.004915636020287888,
-        "viseme_O": 0.009015915598754313,
-        "viseme_M": 0.003672023915243697
+        "smile": 0.006223235355385078,
+        "frown": 0.0027812021279288754,
+        "blink": 0.0022300940627227976,
+        "viseme_A": 0.01846572208907742,
+        "viseme_E": 0.005125459096552266,
+        "viseme_O": 0.009400869805590947,
+        "viseme_M": 0.0038288074208649068
       },
       "facialPartMotion": {
-        "BodySkin": 0.01770963352704847,
-        "Eyebrows": 0.0010770299908017637,
-        "Teeth": 0.014496181607507059,
-        "Tongue": 0.0023491889931045026
+        "BodySkin": 0.01846572208907742,
+        "Eyebrows": 0.001123038781989119,
+        "Teeth": 0.01511503961129795,
+        "Tongue": 0.0024494399305466244
       },
-      "height": 0.95,
-      "headFraction": 0.13146882872264096,
+      "height": 0.9500000000000001,
+      "headFraction": 0.12865400705486263,
       "blemishes": 0,
       "wrinkleParts": 0
     },
     {
       "id": "yard-guard",
-      "meshes": 19,
+      "meshes": 12,
       "bones": 137,
       "wrists": [
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.00014120999530592155
+          "maxDelta": 0.00014123183484407193
         },
         {
           "hand": "HandsR",
           "matched": 27,
-          "maxDelta": 0.00016224696342402267
+          "maxDelta": 0.0001622484195646769
         }
       ],
-      "motion": 0.25646202483677244,
+      "motion": 0.25712669950562966,
       "expressionMotion": {
-        "smile": 0.008145896526229497,
-        "frown": 0.003640527883507976,
-        "blink": 0.009761393985774674,
-        "viseme_A": 0.02417073542229613,
-        "viseme_E": 0.006708996464934734,
-        "viseme_O": 0.012305243860919843,
-        "viseme_M": 0.0050117282601174285
+        "smile": 0.00846436510463278,
+        "frown": 0.0037829073479440658,
+        "blink": 0.002722715875035841,
+        "viseme_A": 0.025115950447288534,
+        "viseme_E": 0.006971285278863138,
+        "viseme_O": 0.012786371594856252,
+        "viseme_M": 0.0052076795577594825
       },
       "facialPartMotion": {
-        "BodySkin": 0.02417073542229613,
-        "DetailsWrinkleEye10": 0,
-        "DetailsWrinkleEye11": 0,
-        "DetailsWrinkleEye-10": 0,
-        "DetailsWrinkleEye-11": 0,
-        "DetailsWrinkleForehead1": 0,
-        "DetailsWrinkleForehead2": 0,
-        "DetailsWrinkleForehead3": 0,
-        "Eyebrows": 0.001470027967829869,
-        "Teeth": 0.019784967218954234,
-        "Tongue": 0.0032062336165595276
+        "BodySkin": 0.025115950447288534,
+        "Eyebrows": 0.0015275100311818457,
+        "Teeth": 0.020558656476874625,
+        "Tongue": 0.0033315982064989944
       },
-      "height": 1.7200000000000002,
-      "headFraction": 0.09139074685273721,
+      "height": 1.72,
+      "headFraction": 0.08903627577223956,
       "blemishes": 0,
-      "wrinkleParts": 7
+      "wrinkleParts": 0
     },
     {
       "id": "yard-runner",
@@ -383,7 +363,7 @@
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.0001729162370205363
+          "maxDelta": 0.00017291012344415398
         },
         {
           "hand": "HandsR",
@@ -391,24 +371,24 @@
           "maxDelta": 0.00017131310887988534
         }
       ],
-      "motion": 0.2742863015656769,
+      "motion": 0.27330219805706457,
       "expressionMotion": {
-        "smile": 0.008002741116180762,
-        "frown": 0.0035764430805203568,
-        "blink": 0.00958984465683244,
-        "viseme_A": 0.023745960675110405,
-        "viseme_E": 0.006590998050013042,
-        "viseme_O": 0.012089054759476824,
-        "viseme_M": 0.004923601593182829
+        "smile": 0.008002736930075728,
+        "frown": 0.0035765091245823113,
+        "blink": 0.002842654177137055,
+        "viseme_A": 0.023745908537205505,
+        "viseme_E": 0.006591084132397606,
+        "viseme_O": 0.012088978924181397,
+        "viseme_M": 0.00492361624924591
       },
       "facialPartMotion": {
-        "BodySkin": 0.023745960675110405,
-        "Eyebrows": 0.0014440562765329623,
-        "Teeth": 0.01943722538754259,
-        "Tongue": 0.0031498266248402955
+        "BodySkin": 0.023745908537205505,
+        "Eyebrows": 0.0014440351684540701,
+        "Teeth": 0.01943722546423351,
+        "Tongue": 0.0031498702280485617
       },
-      "height": 1.7800000000000002,
-      "headFraction": 0.09905739661031347,
+      "height": 1.78,
+      "headFraction": 0.10464355769944343,
       "blemishes": 0,
       "wrinkleParts": 0
     },
@@ -420,39 +400,39 @@
         {
           "hand": "HandsL",
           "matched": 23,
-          "maxDelta": 0.0001411851628787416
+          "maxDelta": 0.00014117934748259046
         },
         {
           "hand": "HandsR",
           "matched": 23,
-          "maxDelta": 0.00014121370936637866
+          "maxDelta": 0.00014119175379413674
         }
       ],
-      "motion": 0.26895951193554785,
+      "motion": 0.2684852122306402,
       "expressionMotion": {
-        "smile": 0.008073035714212792,
-        "frown": 0.0036078850603780345,
-        "blink": 0.009673945802780139,
-        "viseme_A": 0.02395448407487,
-        "viseme_E": 0.0066489478846774005,
-        "viseme_O": 0.012195277701659634,
-        "viseme_M": 0.0049668123148155245
+        "smile": 0.008275207962444473,
+        "frown": 0.003698136187946144,
+        "blink": 0.002963038663053721,
+        "viseme_A": 0.024554222693084892,
+        "viseme_E": 0.0068154384125021445,
+        "viseme_O": 0.012500468032674818,
+        "viseme_M": 0.005091184650900939
       },
       "facialPartMotion": {
-        "BodySkin": 0.02395448407487,
+        "BodySkin": 0.024554222693084892,
         "DetailsBlemish01": 0,
         "DetailsBlemish02": 0,
-        "DetailsBlemish03": 0.0007549924488019757,
+        "DetailsBlemish03": 0.0007739020481386859,
         "DetailsBlemish04": 0,
-        "DetailsBlemish05": 0.003992201430123646,
-        "DetailsBlemish06": 0.0038171885454329293,
-        "DetailsBlemish07": 0.0010425347432396256,
-        "Eyebrows": 0.0014568557247213432,
-        "Teeth": 0.019608027647988874,
-        "Tongue": 0.0031776818131038858
+        "DetailsBlemish05": 0.004092125247163968,
+        "DetailsBlemish06": 0.0005486284216756127,
+        "DetailsBlemish07": 0.0010686234861677487,
+        "Eyebrows": 0.0014933424927046982,
+        "Teeth": 0.02009874077581012,
+        "Tongue": 0.003257052126195906
       },
       "height": 1.73,
-      "headFraction": 0.0964017342686443,
+      "headFraction": 0.09883419705174142,
       "blemishes": 7,
       "wrinkleParts": 0
     },
@@ -464,43 +444,43 @@
         {
           "hand": "HandsL",
           "matched": 27,
-          "maxDelta": 0.00013499577104588312
+          "maxDelta": 0.00013500111991529155
         },
         {
           "hand": "HandsR",
           "matched": 27,
-          "maxDelta": 0.00013499577104588312
+          "maxDelta": 0.00013500111991529155
         }
       ],
-      "motion": 0.23778447980291811,
+      "motion": 0.23907126359119024,
       "expressionMotion": {
-        "smile": 0.007515109219440752,
-        "frown": 0.0033585214974594393,
-        "blink": 0.00900525016440888,
-        "viseme_A": 0.022298788949442483,
-        "viseme_E": 0.006189358749710506,
-        "viseme_O": 0.01135229997178667,
-        "viseme_M": 0.004623604033185866
+        "smile": 0.007515114675314992,
+        "frown": 0.0033585247606797873,
+        "blink": 0.0027506378517669614,
+        "viseme_A": 0.022298740074822052,
+        "viseme_E": 0.006189360413702658,
+        "viseme_O": 0.011352264244057194,
+        "viseme_M": 0.004623542966041764
       },
       "facialPartMotion": {
-        "BodySkin": 0.022298788949442483,
-        "DetailsBlemish01": 0.0002701172950511723,
-        "DetailsBlemish02": 0.0007028000814199432,
+        "BodySkin": 0.022298740074822052,
+        "DetailsBlemish01": 0.0002701770862880447,
+        "DetailsBlemish02": 0.00046265491612632503,
         "DetailsBlemish03": 0,
         "DetailsBlemish04": 0,
-        "DetailsBlemish05": 0.000057383738868821896,
-        "Eyebrows": 0.0013562001755725312,
-        "Teeth": 0.018252577475811455,
-        "Tongue": 0.0029578583513714817
+        "DetailsBlemish05": 0.0008759312255990954,
+        "Eyebrows": 0.0013561670644129302,
+        "Teeth": 0.01825260785962663,
+        "Tongue": 0.0029579048870959647
       },
-      "height": 1.6200000000000003,
-      "headFraction": 0.08247383233114645,
+      "height": 1.62,
+      "headFraction": 0.07613644878146615,
       "blemishes": 5,
       "wrinkleParts": 0
     },
     {
       "id": "party-older-man",
-      "meshes": 18,
+      "meshes": 11,
       "bones": 137,
       "wrists": [
         {
@@ -514,33 +494,26 @@
           "maxDelta": 0.00009865655962481522
         }
       ],
-      "motion": 0.23440337493679503,
+      "motion": 0.23235860221369692,
       "expressionMotion": {
-        "smile": 0.007435192733132349,
-        "frown": 0.0033228081339802956,
-        "blink": 0.008909558765810087,
-        "viseme_A": 0.022061667904318346,
-        "viseme_E": 0.006123561351716187,
-        "viseme_O": 0.011231657908317911,
-        "viseme_M": 0.004574277753664677
+        "smile": 0.007165493505917721,
+        "frown": 0.003202395941829364,
+        "blink": 0.0026055840087810637,
+        "viseme_A": 0.021261816334188603,
+        "viseme_E": 0.005901573325619063,
+        "viseme_O": 0.01082443464763691,
+        "viseme_M": 0.0044085681005310105
       },
       "facialPartMotion": {
-        "BodySkin": 0.022061667904318346,
-        "DetailsWrinkleEye10": 0,
-        "DetailsWrinkleEye11": 0,
-        "DetailsWrinkleEye-10": 0,
-        "DetailsWrinkleEye-11": 0,
-        "DetailsWrinkleForehead1": 0,
-        "DetailsWrinkleForehead2": 0,
-        "DetailsWrinkleForehead3": 0,
-        "Eyebrows": 0.0013416929011493698,
-        "Teeth": 0.018058700419823204,
-        "Tongue": 0.0029264353457590336
+        "BodySkin": 0.021261816334188603,
+        "Eyebrows": 0.0012930633558549314,
+        "Teeth": 0.017403810579530693,
+        "Tongue": 0.0028203729603752383
       },
-      "height": 1.64,
-      "headFraction": 0.10397844022374618,
+      "height": 1.6399999999999997,
+      "headFraction": 0.11381039809511063,
       "blemishes": 0,
-      "wrinkleParts": 7
+      "wrinkleParts": 0
     }
   ],
   "errors": []

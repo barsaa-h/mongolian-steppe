@@ -37,6 +37,11 @@ function wallMaterial(variant = 0) {
   }));
 }
 
+// Hand-built walls (corridor spines with door gaps) reuse the room material.
+export function interiorWallMaterial(variant = 0) {
+  return wallMaterial(variant);
+}
+
 export function floorMaterial(kind = "linoleum") {
   return cached(`floor:${kind}`, () => {
     let texture;
@@ -279,6 +284,98 @@ export function buildChalkboard({ w = 2.4 } = {}) {
   addBox(group, w * 0.55, 0.03, 0.02, solid(0xd8d4c4), 0, 1.35, 0.055);
   addBox(group, w, 0.06, 0.08, woodMaterial(), 0, 0.96, 0.06);
   return group;
+}
+
+// Plastic newborn cot with a faintly glowing blanket; the nursery beat counts
+// these through the glass.
+export function buildNurseryCot({ glow = true } = {}) {
+  const group = new THREE.Group();
+  const plastic = solid(0xb8c4c2);
+  addBox(group, 0.34, 0.05, 0.34, plastic, 0, 0.06, 0);
+  addCylinder(group, 0.025, 0.035, 0.8, plastic, -0.13, 0.45, -0.13, 5);
+  addCylinder(group, 0.025, 0.035, 0.8, plastic, 0.13, 0.45, -0.13, 5);
+  addCylinder(group, 0.025, 0.035, 0.8, plastic, -0.13, 0.45, 0.13, 5);
+  addCylinder(group, 0.025, 0.035, 0.8, plastic, 0.13, 0.45, 0.13, 5);
+  addBox(group, 0.56, 0.28, 0.3, plastic, 0, 0.9, 0);
+  addBox(group, 0.5, 0.2, 0.26, solid(0xe8e4d4), 0, 0.92, 0);
+  const blanket = box(0.5, 0.06, 0.24, glow
+    ? mat({ color: 0xd8d0c0, emissive: 0x9a8258, emissiveIntensity: 0.9 })
+    : solid(0xd8d0c0));
+  blanket.position.set(0, 1.04, 0.02);
+  group.add(blanket);
+  return group;
+}
+
+// Nurses' counter facing the corridor, with the one phone the ward has.
+export function buildNursesStation({ w = 2.2 } = {}) {
+  const group = new THREE.Group();
+  addBox(group, w, 1.05, 0.55, woodMaterial(), 0, 0.525, 0);
+  addBox(group, w + 0.1, 0.06, 0.65, solid(0x8a9290), 0, 1.08, 0);
+  addBox(group, w, 0.5, 0.5, woodMaterial(), 0, 1.35, -0.35);
+  addBox(group, 0.22, 0.09, 0.16, solid(0x2c2e30), -w / 2 + 0.4, 1.15, 0.05);
+  addBox(group, 0.22, 0.045, 0.05, solid(0x222426), -w / 2 + 0.4, 1.23, 0.05);
+  const paper = addBox(group, 0.2, 0.005, 0.28, solid(0xd8d0b8), w / 2 - 0.35, 1.115, 0.05);
+  paper.rotation.y = 0.3;
+  return group;
+}
+
+// Hot boiler pipe run with brackets and a valve; burned-out infected face it.
+export function buildBoilerPipe({ length = 4, y = 1.4 } = {}) {
+  const group = new THREE.Group();
+  const pipe = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, length, 8),
+    mat({ color: 0x6a5648, emissive: 0x2c1408, emissiveIntensity: 0.55 }));
+  pipe.rotation.x = Math.PI / 2;
+  pipe.position.set(0, y, 0);
+  group.add(pipe);
+  for (let i = 0; i <= length; i += 1.2) {
+    addBox(group, 0.16, 0.2, 0.08, solid(0x4a4238), 0.12, y, -length / 2 + i);
+  }
+  const valve = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.022, 5, 10), solid(0x7c3226));
+  valve.position.set(0.14, y, -length / 2 + 0.5);
+  group.add(valve);
+  return group;
+}
+
+export function buildVentGrille() {
+  const group = new THREE.Group();
+  addBox(group, 0.55, 0.45, 0.06, solid(0x5a5854), 0, 0, 0);
+  for (let i = 0; i < 5; i++) {
+    addBox(group, 0.45, 0.035, 0.02, solid(0x3c3a36), 0, -0.16 + i * 0.08, 0.035);
+  }
+  return group;
+}
+
+// The service hatch Oyun escapes through: frame, open leaf, cross bar.
+export function buildLaundryHatch({ width = 0.85, height = 1.0 } = {}) {
+  const group = new THREE.Group();
+  const frame = solid(0x6a7072);
+  addBox(group, 0.09, height + 0.14, 0.1, frame, -width / 2 - 0.045, height / 2, 0);
+  addBox(group, 0.09, height + 0.14, 0.1, frame, width / 2 + 0.045, height / 2, 0);
+  addBox(group, width + 0.18, 0.09, 0.1, frame, 0, height + 0.07, 0);
+  addBox(group, width + 0.18, 0.09, 0.1, frame, 0, 0.045, 0);
+  const leaf = addBox(group, width, height, 0.05, solid(0x9aa09e), -width / 2 - 0.02, height / 2, -0.16);
+  leaf.rotation.y = -1.15;
+  leaf.position.x = -width / 2;
+  addBox(group, width * 0.9, 0.05, 0.05, solid(0x5a6062), 0, height / 2, 0.06);
+  return group;
+}
+
+export function buildWaitingBench() {
+  const group = new THREE.Group();
+  const slat = solid(0x7c6a4e);
+  for (const z of [-0.18, 0, 0.18]) addBox(group, 1.5, 0.05, 0.16, slat, 0, 0.45, z);
+  addBox(group, 1.5, 0.4, 0.05, slat, 0, 0.72, -0.26);
+  for (const x of [-0.62, 0.62]) {
+    addBox(group, 0.06, 0.45, 0.5, solid(0x3a3a38), x, 0.22, 0);
+  }
+  return group;
+}
+
+function addCylinder(parent, rt, rb, h, material, x, y, z, seg = 8) {
+  const mesh = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, seg), material);
+  mesh.position.set(x, y, z);
+  parent.add(mesh);
+  return mesh;
 }
 
 // Cheap readable base lighting for any interior stage; tube emissives sit on top.

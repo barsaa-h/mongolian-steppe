@@ -137,6 +137,56 @@ def add_skin_details(profile,parts,height):
     return count
 
 
+def add_age_wrinkles(dna,parts,height):
+    """Thin skin-hugging age creases, recovered from the reviewed ganaa (7) and dulmaa (8) builds."""
+    features=dna['age']['features'];years=dna['age']['years']
+    if features['head_age']<.38:return 0
+    skin=bpy.data.objects['Body.Skin']
+    world,faces=world_surface(skin)
+    tree=BVHTree.FromPolygons(world,faces)
+    creases=material('Skin | soft age creases','#a08267',roughness=.95)
+    creases.surface_render_method='DITHERED'
+    creases.node_tree.nodes.get('Principled BSDF').inputs['Alpha'].default_value=.12
+    rig=parts.rig
+    eye_l=rig.matrix_world@rig.data.bones['eye.L'].head_local
+    eye_r=rig.matrix_world@rig.data.bones['eye.R'].head_local
+    span=(eye_l-eye_r).length
+    count=0
+    def ribbon(name,points):
+        nonlocal count
+        if len(points)<4:return
+        rows=[points,[point+Vector((0,-.0002,.0004)) for point in points]]
+        vertices=[vertex for row in rows for vertex in row]
+        quad_faces=[(index,index+1,index+len(points)+1,index+len(points)) for index in range(len(points)-1)]
+        parts.mesh(name,vertices,quad_faces,creases)
+        count+=1
+    per_side=2+(1 if features['head_age']>=.45 else 0)
+    for eye in [eye_l,eye_r]:
+        outward=1 if eye.x>=0 else -1
+        for index in range(per_side):
+            points=[]
+            for column in range(12):
+                t=column/11
+                x=eye.x+outward*span*(.4+.55*t)
+                z=eye.z-span*(.15+.3*index+.25*t)
+                hit,normal,_,_=tree.ray_cast(Vector((x,-height,z)),Vector((0,1,0)),height*2)
+                if hit is None:continue
+                points.append(hit+normal*.0002)
+            ribbon(f'Details.Wrinkle.Eye.{outward}.{index}',points)
+    forehead=3-(1 if years>=60 else 0)
+    mid=(eye_l+eye_r)*.5
+    for index in range(forehead):
+        points=[]
+        for column in range(25):
+            t=column/24
+            x=(t-.5)*span*1.8
+            z=mid.z+span*(.6+.24*index)
+            hit,normal,_,_=tree.ray_cast(Vector((x,-height,z)),Vector((0,1,0)),height*2)
+            if hit is None:continue
+            points.append(hit+normal*.0004)
+        ribbon(f'Details.Wrinkle.Forehead.{index+1}',points)
+    return count
+
 def skirt(parts,height,mat,*,deel=False):
     n=48; vertices=[];faces=[]
     waist=height*.53
@@ -261,7 +311,6 @@ def build(id,dna_path=None,destination=None):
     rig=bpy.data.objects['Character.Rig'];collection=next(c for c in bpy.data.collections if c.name.startswith('CHARACTER'))
     bpy.context.view_layer.update()
     parts=Parts(rig,collection);height=profile['base']['height_m']
-    refine_eyes(profile,dna)
     recolor(bpy.data.objects['Clothes.Top'],profile['topColor'],plain=id in ['dulmaa','altan'])
     recolor(bpy.data.objects['Clothes.Bottom'],profile['bottomColor'])
     recolor(bpy.data.objects['Hair'],grey_color(profile['hairColor'],dna['hair']['greying']))
@@ -275,6 +324,7 @@ def build(id,dna_path=None,destination=None):
         bmesh.ops.delete(bm,geom=[v for v in bm.verts if v.co.z<z],context='VERTS');bm.to_mesh(hair.data);bm.free()
     detail_count=add_skin_details(profile,parts,height)
     dress_details(profile,parts,height)
+    wrinkle_count=add_age_wrinkles(dna,parts,height)
     if profile['wardrobe'] in ['deel','toddler-dress']:
         bpy.data.objects.remove(bpy.data.objects['Clothes.Bottom'],do_unlink=True)
     if profile['wardrobe']=='deel':
@@ -320,7 +370,7 @@ def build(id,dna_path=None,destination=None):
     bpy.context.view_layer.objects.active=rig
     bpy.ops.export_scene.gltf(filepath=str(output/'character.glb'),use_selection=True,export_format='GLB',export_animations=True,export_animation_mode='ACTIONS',export_force_sampling=True,export_frame_range=False,export_extras=True,export_apply=True,export_morph=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(output/'Character-Master.blend'))
-    report.update(name=profile['name'],id=id,episode=1,scriptAge=profile['scriptAge'],skinSource=profile['base']['skin'],skinDetailCount=detail_count,wrinkleParts=sum(o.name.startswith('Details.Wrinkle') for o in meshes),storyStates=profile['states'],wardrobe=profile['wardrobe'],casting=profile['casting'])
+    report.update(name=profile['name'],id=id,episode=1,scriptAge=profile['scriptAge'],skinSource=profile['base']['skin'],skinDetailCount=detail_count,wrinkleParts=wrinkle_count,storyStates=profile['states'],wardrobe=profile['wardrobe'],casting=profile['casting'])
     report['meshes']=[{'name':o.name,'role':o.get('role'),'vertices':len(o.data.vertices),'triangles':sum(len(p.vertices)-2 for p in o.data.polygons)} for o in meshes]
     report['packedTextures']=[{'name':i.name,'size':list(i.size)} for i in bpy.data.images if i.packed_file and i.users]
     report.update(dnaHash=profile['dnaHash'],baseStage=dna['base'],expressions=expressions,sourceIndexMap=True)
@@ -330,24 +380,6 @@ def build(id,dna_path=None,destination=None):
     assert detail_count==profile['pimples']
     assert report['fullBodyRetained'] and report['fingerBones']==30
     print('EPISODE_ACTOR_OK',id,detail_count,flush=True)
-
-
-def refine_eyes(profile,dna):
-    eyes=bpy.data.objects['Eyes']
-    for polygon in eyes.data.polygons:polygon.use_smooth=True
-    mat=eyes.data.materials[0]
-    shader=mat.node_tree.nodes.get('Principled BSDF')
-    shader.inputs['Roughness'].default_value=.27
-    shader.inputs['Specular IOR Level'].default_value=.45
-    shader.inputs['Coat Weight'].default_value=.16
-    texture=next(n for n in mat.node_tree.nodes if n.type=='TEX_IMAGE')
-    path=master.ASSETS/'eyes/materials'/(dna['eyes']['color']+'_eye.png')
-    texture.image=bpy.data.images.load(str(path),check_existing=True);texture.image.pack()
-    mat.node_tree.links.new(texture.outputs['Color'],shader.inputs['Base Color'])
-    # Stock long lash cards read as mascara spikes; keep them only in the editable source.
-    lashes=bpy.data.objects.get('Eyelashes')
-    if lashes:bpy.data.objects.remove(lashes,do_unlink=True)
-    eyes['eye_finish']='Smooth fitted high-poly eyes, neutral iris, moist surface'
 
 
 def bake_material(obj,size=1024):

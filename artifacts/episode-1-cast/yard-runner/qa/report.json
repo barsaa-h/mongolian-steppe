@@ -7,28 +7,28 @@
   ],
   "expressions": {
     "smile": {
-      "maxMotionM": 0.008740138426101662
+      "maxMotionM": 0.008708792117152914
     },
     "frown": {
-      "maxMotionM": 0.003906096515938069
+      "maxMotionM": 0.0038921785551482785
     },
     "blink": {
-      "maxMotionM": 0.010473824656783412
+      "maxMotionM": 0.0030935363015713487
     },
     "viseme_A": {
-      "maxMotionM": 0.02593423881726127
+      "maxMotionM": 0.025841119737094607
     },
     "viseme_E": {
-      "maxMotionM": 0.007198397550686341
+      "maxMotionM": 0.0071728452749830396
     },
     "viseme_O": {
-      "maxMotionM": 0.013202955158330393
+      "maxMotionM": 0.013155853615726075
     },
     "viseme_M": {
-      "maxMotionM": 0.0053773299748111165
+      "maxMotionM": 0.005358028066386835
     }
   },
-  "neutralRecoveryM": 3.956557517270538e-07,
+  "neutralRecoveryM": 4.102935913026818e-07,
   "identicalMaterials": true,
   "hairAndClothesHidden": true,
   "animationClip": "Talk_Check",

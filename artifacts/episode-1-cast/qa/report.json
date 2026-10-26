@@ -11,28 +11,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008840887351152864
+          "maxMotionM": 0.009360186315471414
         },
         "frown": {
-          "maxMotionM": 0.003951042649622814
+          "maxMotionM": 0.004183074875863523
         },
         "blink": {
-          "maxMotionM": 0.010593970071047443
+          "maxMotionM": 0.003241064496038568
         },
         "viseme_A": {
-          "maxMotionM": 0.026232793577200667
+          "maxMotionM": 0.027773468769952826
         },
         "viseme_E": {
-          "maxMotionM": 0.007281553166258797
+          "maxMotionM": 0.007708987082152979
         },
         "viseme_O": {
-          "maxMotionM": 0.013355200708274699
+          "maxMotionM": 0.014139357634713134
         },
         "viseme_M": {
-          "maxMotionM": 0.005439216412753914
+          "maxMotionM": 0.00575877316763928
         }
       },
-      "neutralRecoveryM": 3.8685842444204014e-07,
+      "neutralRecoveryM": 1.4263340908371447e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -48,28 +48,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.007738062538391879
+          "maxMotionM": 0.007309987566571482
         },
         "frown": {
-          "maxMotionM": 0.0034581629418892795
+          "maxMotionM": 0.0032667722385215456
         },
         "blink": {
-          "maxMotionM": 0.009272299577927565
+          "maxMotionM": 0.004726224754792594
         },
         "viseme_A": {
-          "maxMotionM": 0.0229601484605039
+          "maxMotionM": 0.02169000108295223
         },
         "viseme_E": {
-          "maxMotionM": 0.006372957608293816
+          "maxMotionM": 0.0060202937157938985
         },
         "viseme_O": {
-          "maxMotionM": 0.011688943517310505
+          "maxMotionM": 0.011042178328813015
         },
         "viseme_M": {
-          "maxMotionM": 0.004760785229723459
+          "maxMotionM": 0.0044974298119687395
         }
       },
-      "neutralRecoveryM": 1.4704724638861128e-07,
+      "neutralRecoveryM": 3.779422255156817e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -85,28 +85,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008185601899362033
+          "maxMotionM": 0.008130388488740243
         },
         "frown": {
-          "maxMotionM": 0.0036582681651737975
+          "maxMotionM": 0.0036336812958660553
         },
         "blink": {
-          "maxMotionM": 0.009809021919111153
+          "maxMotionM": 0.005225717496975916
         },
         "viseme_A": {
-          "maxMotionM": 0.024288597962977363
+          "maxMotionM": 0.0241247314323022
         },
         "viseme_E": {
-          "maxMotionM": 0.006741712859280749
+          "maxMotionM": 0.006696388417131166
         },
         "viseme_O": {
-          "maxMotionM": 0.012365254124827271
+          "maxMotionM": 0.012282011890425684
         },
         "viseme_M": {
-          "maxMotionM": 0.0050361517875788095
+          "maxMotionM": 0.00500212889884538
         }
       },
-      "neutralRecoveryM": 2.498057856219104e-07,
+      "neutralRecoveryM": 1.5848194373214143e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -122,28 +122,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008059695896089568
+          "maxMotionM": 0.0081140586889238
         },
         "frown": {
-          "maxMotionM": 0.0036019569280527305
+          "maxMotionM": 0.003626410459960465
         },
         "blink": {
-          "maxMotionM": 0.009658165792249545
+          "maxMotionM": 0.0026989027246395146
         },
         "viseme_A": {
-          "maxMotionM": 0.023914772791573523
+          "maxMotionM": 0.024076375861053722
         },
         "viseme_E": {
-          "maxMotionM": 0.0066379111405077
+          "maxMotionM": 0.006683010932654481
         },
         "viseme_O": {
-          "maxMotionM": 0.012174863852757857
+          "maxMotionM": 0.012257382198914766
         },
         "viseme_M": {
-          "maxMotionM": 0.004958611017135063
+          "maxMotionM": 0.004992025265039603
         }
       },
-      "neutralRecoveryM": 2.601869766005301e-07,
+      "neutralRecoveryM": 1.4593123652481332e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -159,28 +159,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008483188974195399
+          "maxMotionM": 0.008858298832025087
         },
         "frown": {
-          "maxMotionM": 0.003791197743923598
+          "maxMotionM": 0.003958765155176519
         },
         "blink": {
-          "maxMotionM": 0.01016548012522562
+          "maxMotionM": 0.0031918371112394884
         },
         "viseme_A": {
-          "maxMotionM": 0.025171625081615964
+          "maxMotionM": 0.026284200192261277
         },
         "viseme_E": {
-          "maxMotionM": 0.0069869723904335485
+          "maxMotionM": 0.007295828862069843
         },
         "viseme_O": {
-          "maxMotionM": 0.012814906799692662
+          "maxMotionM": 0.013381331006534668
         },
         "viseme_M": {
-          "maxMotionM": 0.005219259790334847
+          "maxMotionM": 0.005450060982433344
         }
       },
-      "neutralRecoveryM": 1.4672410683036927e-07,
+      "neutralRecoveryM": 2.6105660665012913e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -196,28 +196,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008262408033539646
+          "maxMotionM": 0.008760518608564787
         },
         "frown": {
-          "maxMotionM": 0.00369266580621755
+          "maxMotionM": 0.003915284337135691
         },
         "blink": {
-          "maxMotionM": 0.009900875441558158
+          "maxMotionM": 0.003106472087467341
         },
         "viseme_A": {
-          "maxMotionM": 0.02451636970124617
+          "maxMotionM": 0.025994385127546066
         },
         "viseme_E": {
-          "maxMotionM": 0.00680480718024109
+          "maxMotionM": 0.007215215840887291
         },
         "viseme_O": {
-          "maxMotionM": 0.012481071063499683
+          "maxMotionM": 0.01323373659374325
         },
         "viseme_M": {
-          "maxMotionM": 0.0050833180995880755
+          "maxMotionM": 0.005389812260341858
         }
       },
-      "neutralRecoveryM": 2.5208428313891207e-07,
+      "neutralRecoveryM": 1.5610783272220749e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -233,28 +233,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008001357838508005
+          "maxMotionM": 0.007813549811943694
         },
         "frown": {
-          "maxMotionM": 0.003575870450400755
+          "maxMotionM": 0.0034920755581141685
         },
         "blink": {
-          "maxMotionM": 0.009588038251961747
+          "maxMotionM": 0.0027150115036535818
         },
         "viseme_A": {
-          "maxMotionM": 0.02374204443052397
+          "maxMotionM": 0.023184615747684604
         },
         "viseme_E": {
-          "maxMotionM": 0.006590147279172085
+          "maxMotionM": 0.006435281308479757
         },
         "viseme_O": {
-          "maxMotionM": 0.012087110727349287
+          "maxMotionM": 0.01180330045512608
         },
         "viseme_M": {
-          "maxMotionM": 0.004922778356331549
+          "maxMotionM": 0.0048072150631009
         }
       },
-      "neutralRecoveryM": 3.741828612508641e-07,
+      "neutralRecoveryM": 1.4757491646032313e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -270,28 +270,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.007381771716269639
+          "maxMotionM": 0.007721897821058397
         },
         "frown": {
-          "maxMotionM": 0.003299141940533661
+          "maxMotionM": 0.003451168509730906
         },
         "blink": {
-          "maxMotionM": 0.008845844604427796
+          "maxMotionM": 0.002767177141866556
         },
         "viseme_A": {
-          "maxMotionM": 0.021903783465048128
+          "maxMotionM": 0.02291295346739853
         },
         "viseme_E": {
-          "maxMotionM": 0.006079797072559755
+          "maxMotionM": 0.006360024915626928
         },
         "viseme_O": {
-          "maxMotionM": 0.01115112494788583
+          "maxMotionM": 0.011665087692374496
         },
         "viseme_M": {
-          "maxMotionM": 0.004541533258448744
+          "maxMotionM": 0.004750846733390359
         }
       },
-      "neutralRecoveryM": 1.5213562328797393e-07,
+      "neutralRecoveryM": 1.5798752084300309e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -307,28 +307,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008698901306741558
+          "maxMotionM": 0.009062564040435631
         },
         "frown": {
-          "maxMotionM": 0.0038876767877575025
+          "maxMotionM": 0.004050170579973447
         },
         "blink": {
-          "maxMotionM": 0.010424215575993951
+          "maxMotionM": 0.0029152227104594784
         },
         "viseme_A": {
-          "maxMotionM": 0.02581168536021259
+          "maxMotionM": 0.026890441403051978
         },
         "viseme_E": {
-          "maxMotionM": 0.0071646343474331825
+          "maxMotionM": 0.007463849089731332
         },
         "viseme_O": {
-          "maxMotionM": 0.013140793491023298
+          "maxMotionM": 0.013689791898643179
         },
         "viseme_M": {
-          "maxMotionM": 0.005351916298430289
+          "maxMotionM": 0.005575727671715978
         }
       },
-      "neutralRecoveryM": 2.7238167902760963e-07,
+      "neutralRecoveryM": 2.573732356798343e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -344,28 +344,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008740138426101662
+          "maxMotionM": 0.008708792117152914
         },
         "frown": {
-          "maxMotionM": 0.003906096515938069
+          "maxMotionM": 0.0038921785551482785
         },
         "blink": {
-          "maxMotionM": 0.010473824656783412
+          "maxMotionM": 0.0030935363015713487
         },
         "viseme_A": {
-          "maxMotionM": 0.02593423881726127
+          "maxMotionM": 0.025841119737094607
         },
         "viseme_E": {
-          "maxMotionM": 0.007198397550686341
+          "maxMotionM": 0.0071728452749830396
         },
         "viseme_O": {
-          "maxMotionM": 0.013202955158330393
+          "maxMotionM": 0.013155853615726075
         },
         "viseme_M": {
-          "maxMotionM": 0.0053773299748111165
+          "maxMotionM": 0.005358028066386835
         }
       },
-      "neutralRecoveryM": 3.956557517270538e-07,
+      "neutralRecoveryM": 4.102935913026818e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -381,28 +381,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.00889821566773172
+          "maxMotionM": 0.009105015113072415
         },
         "frown": {
-          "maxMotionM": 0.003976714861936124
+          "maxMotionM": 0.00406905325768757
         },
         "blink": {
-          "maxMotionM": 0.010662948508424887
+          "maxMotionM": 0.003260212097455425
         },
         "viseme_A": {
-          "maxMotionM": 0.026403202744016915
+          "maxMotionM": 0.027016389219781525
         },
         "viseme_E": {
-          "maxMotionM": 0.007328671899308844
+          "maxMotionM": 0.007498838460681856
         },
         "viseme_O": {
-          "maxMotionM": 0.013441797258313827
+          "maxMotionM": 0.013753826349517809
         },
         "viseme_M": {
-          "maxMotionM": 0.005474540552230273
+          "maxMotionM": 0.005601742415519197
         }
       },
-      "neutralRecoveryM": 2.719026656261376e-07,
+      "neutralRecoveryM": 2.8023236480144824e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -418,28 +418,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.008391338972647492
+          "maxMotionM": 0.00843685394126054
         },
         "frown": {
-          "maxMotionM": 0.0037501375345087864
+          "maxMotionM": 0.0037705563580877153
         },
         "blink": {
-          "maxMotionM": 0.010055319472052801
+          "maxMotionM": 0.0030879755503323844
         },
         "viseme_A": {
-          "maxMotionM": 0.024898936617931158
+          "maxMotionM": 0.025033758692321738
         },
         "viseme_E": {
-          "maxMotionM": 0.006911254428239646
+          "maxMotionM": 0.0069486383690083395
         },
         "viseme_O": {
-          "maxMotionM": 0.012676001412332978
+          "maxMotionM": 0.012744726951384115
         },
         "viseme_M": {
-          "maxMotionM": 0.005162695864019268
+          "maxMotionM": 0.005190617938991489
         }
       },
-      "neutralRecoveryM": 2.683233239806343e-07,
+      "neutralRecoveryM": 1.5332149321073554e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
@@ -455,28 +455,28 @@
       ],
       "expressions": {
         "smile": {
-          "maxMotionM": 0.007514234311809905
+          "maxMotionM": 0.007178572012104947
         },
         "frown": {
-          "maxMotionM": 0.003358155850922077
+          "maxMotionM": 0.0032080523008085455
         },
         "blink": {
-          "maxMotionM": 0.009004055689041965
+          "maxMotionM": 0.0026102058185794
         },
         "viseme_A": {
-          "maxMotionM": 0.022296060776574273
+          "maxMotionM": 0.021300266534677693
         },
         "viseme_E": {
-          "maxMotionM": 0.00618849808248851
+          "maxMotionM": 0.005912260325672185
         },
         "viseme_O": {
-          "maxMotionM": 0.011350761419885159
+          "maxMotionM": 0.010843874611064253
         },
         "viseme_M": {
-          "maxMotionM": 0.004623046059328662
+          "maxMotionM": 0.004416556498754778
         }
       },
-      "neutralRecoveryM": 2.4793840098155676e-07,
+      "neutralRecoveryM": 3.595933360177822e-07,
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",

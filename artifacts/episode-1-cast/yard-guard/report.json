@@ -1,10 +1,10 @@
 {
   "name": "Төмөр замын харуул",
-  "bodyHeightM": 1.7200000000000002,
+  "bodyHeightM": 1.72,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.09139074685273721,
-  "waistWidthM": 0.3530304058423768,
-  "sourceShapeKeys": 36,
+  "headHeightFraction": 0.08903627577223956,
+  "waistWidthM": 0.35394521039473315,
+  "sourceShapeKeys": 65,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
@@ -81,48 +81,6 @@
       "triangles": 9428
     },
     {
-      "name": "Details.Wrinkle.Forehead.1",
-      "role": "Details.Wrinkle.Forehead.1",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.2",
-      "role": "Details.Wrinkle.Forehead.2",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Forehead.3",
-      "role": "Details.Wrinkle.Forehead.3",
-      "vertices": 50,
-      "triangles": 48
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.0",
-      "role": "Details.Wrinkle.Eye.-1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.-1.1",
-      "role": "Details.Wrinkle.Eye.-1.1",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.0",
-      "role": "Details.Wrinkle.Eye.1.0",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
-      "name": "Details.Wrinkle.Eye.1.1",
-      "role": "Details.Wrinkle.Eye.1.1",
-      "vertices": 24,
-      "triangles": 22
-    },
-    {
       "name": "Clothes.GuardCap",
       "role": "Clothes.GuardCap",
       "vertices": 312,
@@ -131,10 +89,17 @@
   ],
   "packedTextures": [
     {
-      "name": "brown_eye.png",
+      "name": "brown.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -152,24 +117,10 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
         512
-      ]
-    },
-    {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
       ]
     },
     {
@@ -180,6 +131,13 @@
       ]
     },
     {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
       "name": "male_casualsuit05_diffuse.png",
       "size": [
         2048,
@@ -187,7 +145,28 @@
       ]
     },
     {
-      "name": "old_lightskinned_male_diffuse2.png",
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "old_asian_male_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "old_asian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "old_asian_male_roughness.png",
       "size": [
         2048,
         2048
@@ -215,6 +194,13 @@
       ]
     },
     {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -227,28 +213,8 @@
         1024,
         1024
       ]
-    },
-    {
-      "name": "yard-guard | Skin detail normal",
-      "size": [
-        2048,
-        2048
-      ]
     }
   ],
-  "id": "yard-guard",
-  "episode": 1,
-  "scriptAge": null,
-  "skinSource": "old_asian_male",
-  "skinDetailCount": 0,
-  "wrinkleParts": 7,
-  "storyStates": [
-    "normal"
-  ],
-  "wardrobe": "uniform",
-  "casting": "Unspecified; Buryat casting",
-  "dnaHash": "7d4191c6119d22014d0808d6f4d4e048b8d3b9ed926dbcab7996cc414ffa1bfa",
-  "baseStage": "adult",
   "expressions": [
     "smile",
     "frown",
@@ -258,5 +224,20 @@
     "viseme_O",
     "viseme_M"
   ],
+  "controlMorphs": 0,
+  "talkCheck": false,
+  "id": "yard-guard",
+  "episode": 1,
+  "scriptAge": null,
+  "skinSource": "old_asian_male",
+  "skinDetailCount": 0,
+  "wrinkleParts": 0,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "uniform",
+  "casting": "Unspecified; Buryat casting",
+  "dnaHash": "7d4191c6119d22014d0808d6f4d4e048b8d3b9ed926dbcab7996cc414ffa1bfa",
+  "baseStage": "adult",
   "sourceIndexMap": true
 }

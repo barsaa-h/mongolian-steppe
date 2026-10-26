@@ -13,7 +13,7 @@ const context = new Proxy({}, {
 });
 globalThis.document = { createElement: () => ({ getContext: () => context }) };
 
-const { buildRoom, buildTubeLight, tubeLightMaterials, updateTubeLights, buildDoor, buildHospitalBed, buildDesk, buildChair, buildCabinet, buildLocker, buildIVStand, buildChalkboard, buildStairs } = await import("../src/interior.js");
+const { buildRoom, buildTubeLight, tubeLightMaterials, updateTubeLights, buildDoor, buildHospitalBed, buildDesk, buildChair, buildCabinet, buildLocker, buildIVStand, buildChalkboard, buildStairs, buildNurseryCot, buildNursesStation, buildBoilerPipe, buildVentGrille, buildLaundryHatch, buildWaitingBench } = await import("../src/interior.js");
 
 function finiteTree(group) {
   let meshes = 0;
@@ -112,4 +112,44 @@ test("an open door leaf actually rotates open", () => {
   };
   assert.equal(Math.abs(leafAngle(shut)), 0);
   assert.ok(Math.abs(Math.abs(leafAngle(wide)) - Math.PI / 2) < 1e-6);
+});
+
+test("episode-two props build finite, grounded pieces", () => {
+  for (const [name, piece] of [
+    ["nursery cot", buildNurseryCot()],
+    ["nurses' station", buildNursesStation()],
+    ["boiler pipe", buildBoilerPipe({ length: 4 })],
+    ["laundry hatch", buildLaundryHatch()],
+    ["waiting bench", buildWaitingBench()],
+  ]) {
+    const box = new THREE.Box3().setFromObject(piece);
+    assert.ok(box.min.y > -0.2, `${name} sits on the floor`);
+    assert.ok(finiteTree(piece) > 0, `${name} has geometry`);
+  }
+  const vent = buildVentGrille();
+  const ventBox = new THREE.Box3().setFromObject(vent);
+  assert.ok(Math.abs(ventBox.max.y - ventBox.min.y - 0.45) < 0.05, "vent is a wall plate centred on its origin");
+});
+
+test("a nursery cot glows softly through the night glass", () => {
+  const lit = material => material.emissive && material.emissive.getHex() !== 0 && material.emissiveIntensity > 0;
+  const cot = buildNurseryCot();
+  let emissive = 0;
+  cot.traverse(object => {
+    if (object.isMesh && lit(object.material)) emissive += 1;
+  });
+  assert.ok(emissive >= 1, "the blanket carries a faint emissive");
+  const dark = buildNurseryCot({ glow: false });
+  let darkGlow = 0;
+  dark.traverse(object => {
+    if (object.isMesh && lit(object.material)) darkGlow += 1;
+  });
+  assert.equal(darkGlow, 0);
+});
+
+test("the laundry hatch is a small service door, not a person-sized one", () => {
+  const hatch = buildLaundryHatch();
+  const box = new THREE.Box3().setFromObject(hatch);
+  assert.ok(box.max.y <= 1.25, `hatch top at ${box.max.y.toFixed(2)}`);
+  assert.ok(box.max.x - box.min.x < 1.3, "narrower than a doorway");
 });

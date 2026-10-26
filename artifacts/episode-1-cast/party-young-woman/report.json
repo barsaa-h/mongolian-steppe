@@ -1,15 +1,15 @@
 {
   "name": "Залуу эмэгтэй зочин",
-  "bodyHeightM": 1.6200000000000003,
+  "bodyHeightM": 1.62,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.08247383233114645,
-  "waistWidthM": 0.3608048745079568,
-  "sourceShapeKeys": 35,
+  "headHeightFraction": 0.07613644878146615,
+  "waistWidthM": 0.3627573781221819,
+  "sourceShapeKeys": 61,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 175,
-    "Shoes": 17
+    "Clothes.Outfit": 172,
+    "Shoes": 15
   },
   "fullBodyRetained": true,
   "renderBodyUsesClothingMasks": true,
@@ -113,10 +113,17 @@
   ],
   "packedTextures": [
     {
-      "name": "brown_eye.png",
+      "name": "brown.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -134,24 +141,10 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
         512
-      ]
-    },
-    {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
       ]
     },
     {
@@ -169,10 +162,17 @@
       ]
     },
     {
-      "name": "party-young-woman | Skin detail normal",
+      "name": "head_mask.png",
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
       ]
     },
     {
@@ -197,6 +197,13 @@
       ]
     },
     {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -211,13 +218,38 @@
       ]
     },
     {
-      "name": "young_lightskinned_female_diffuse3.png",
+      "name": "young_asian_female_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_female_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_female_roughness.png",
       "size": [
         2048,
         2048
       ]
     }
   ],
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "controlMorphs": 0,
+  "talkCheck": false,
   "id": "party-young-woman",
   "episode": 1,
   "scriptAge": null,
@@ -231,14 +263,5 @@
   "casting": "Mongolian",
   "dnaHash": "311c7434737ba2f0d009b6dc0dc2d41cce950e079c3fd947b139725f76a8c53d",
   "baseStage": "adult",
-  "expressions": [
-    "smile",
-    "frown",
-    "blink",
-    "viseme_A",
-    "viseme_E",
-    "viseme_O",
-    "viseme_M"
-  ],
   "sourceIndexMap": true
 }

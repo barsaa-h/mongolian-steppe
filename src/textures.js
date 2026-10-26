@@ -977,6 +977,26 @@ export function ceilingTexture() {
   }));
 }
 
+// Dzud snow: blue-shadowed white with wind scours and buried grass tips.
+export function snowTexture() {
+  return cached("snow", () => canvasTexture(128, 128, (ctx, w, h) => {
+    ctx.fillStyle = "#dfe4e8";
+    ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 60; i++) {
+      ctx.fillStyle = "rgba(168,184,200,0.28)";
+      ctx.beginPath();
+      ctx.ellipse(Math.random() * w, Math.random() * h, 6 + Math.random() * 16, 2 + Math.random() * 5,
+        Math.random() * Math.PI, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    speckle(ctx, w, h, ["rgba(150,168,188,0.3)", "rgba(244,248,252,0.4)"], 900, 1, 3);
+    for (let i = 0; i < 26; i++) {
+      ctx.fillStyle = "rgba(158,150,110,0.4)";
+      ctx.fillRect(Math.random() * w, Math.random() * h, 1, 2 + Math.random() * 3);
+    }
+  }));
+}
+
 export function posterTexture(kind = 0) {
   return cached(`poster:${kind}`, () => canvasTexture(64, 96, (ctx, w, h) => {
     ctx.fillStyle = kind === 0 ? "#d8cdb2" : "#c8b8a0";

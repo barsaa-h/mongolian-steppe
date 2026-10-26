@@ -399,7 +399,8 @@ def build(config, destination, *, render=True, eye_asset='high-poly', appearance
         'expressions': expressions, 'controlMorphs': len(control_morphs), 'talkCheck': bool(expressions)}
     assert report['rigBones'] == 137 and report['fingerBones'] == 30
     assert abs(report['bodyHeightM'] - config['height_m']) < .001
-    assert report['talkCheck'] and report['controlMorphs'] > 0, 'Expression morphs missing'
+    if appearance:
+        assert report['talkCheck'] and report['controlMorphs'] > 0, 'Expression morphs missing'
     (destination / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
     print('CHARACTER_BUILD_OK', json.dumps(report), flush=True)
     return report

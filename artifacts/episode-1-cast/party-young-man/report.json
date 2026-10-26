@@ -2,13 +2,13 @@
   "name": "Залуу эрэгтэй зочин",
   "bodyHeightM": 1.73,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.0964017342686443,
-  "waistWidthM": 0.3294129322936049,
-  "sourceShapeKeys": 38,
+  "headHeightFraction": 0.09883419705174142,
+  "waistWidthM": 0.3288321867918195,
+  "sourceShapeKeys": 65,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 265,
+    "Clothes.Outfit": 267,
     "Shoes": 0
   },
   "fullBodyRetained": true,
@@ -53,14 +53,14 @@
     {
       "name": "Clothes.Top",
       "role": "Clothes.Top",
-      "vertices": 4002,
-      "triangles": 7818
+      "vertices": 4003,
+      "triangles": 7820
     },
     {
       "name": "Clothes.Bottom",
       "role": "Clothes.Bottom",
-      "vertices": 4514,
-      "triangles": 8854
+      "vertices": 4513,
+      "triangles": 8852
     },
     {
       "name": "Hands.L",
@@ -125,10 +125,17 @@
   ],
   "packedTextures": [
     {
-      "name": "brown_eye.png",
+      "name": "brown.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -146,24 +153,10 @@
       ]
     },
     {
-      "name": "eyebrow001.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "eyelashes01.png",
       "size": [
         512,
         512
-      ]
-    },
-    {
-      "name": "Eyes | Cast albedo",
-      "size": [
-        1024,
-        1024
       ]
     },
     {
@@ -174,6 +167,13 @@
       ]
     },
     {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
       "name": "male_casualsuit01_diffuse.png",
       "size": [
         2048,
@@ -181,10 +181,10 @@
       ]
     },
     {
-      "name": "party-young-man | Skin detail normal",
+      "name": "normal.png",
       "size": [
-        2048,
-        2048
+        1024,
+        1024
       ]
     },
     {
@@ -209,6 +209,13 @@
       ]
     },
     {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -223,13 +230,38 @@
       ]
     },
     {
-      "name": "young_lightskinned_male_diffuse3.png",
+      "name": "young_asian_male_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_male_roughness.png",
       "size": [
         2048,
         2048
       ]
     }
   ],
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "controlMorphs": 0,
+  "talkCheck": false,
   "id": "party-young-man",
   "episode": 1,
   "scriptAge": null,
@@ -243,14 +275,5 @@
   "casting": "Mongolian",
   "dnaHash": "445a2ef7a26122e355302bc0ae1fa9d2d845b0fa6970f9a1d803283877e8c1f8",
   "baseStage": "adult",
-  "expressions": [
-    "smile",
-    "frown",
-    "blink",
-    "viseme_A",
-    "viseme_E",
-    "viseme_O",
-    "viseme_M"
-  ],
   "sourceIndexMap": true
 }
