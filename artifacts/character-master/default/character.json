@@ -5,7 +5,7 @@
     "gender": 0.0,
     "age": 0.5,
     "weight": 0.48,
-    "muscle": 0.35,
+    "muscle": 0.28,
     "proportions": 0.5,
     "height": 0.5,
     "race": {
@@ -15,8 +15,8 @@
     }
   },
   "skin": "young_asian_female",
-  "hair": "short02",
-  "outfit": "male_casualsuit01",
+  "hair": "ponytail01",
+  "outfit": "female_casualsuit01",
   "shoes": "shoes02",
   "targets": {}
 }

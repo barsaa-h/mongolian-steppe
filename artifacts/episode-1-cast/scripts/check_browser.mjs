@@ -3,7 +3,7 @@ import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || '/home/barsaa/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs');
 const output = fileURLToPath(new URL('../', import.meta.url));
-const browser = await chromium.launch({ headless: true, args: ['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'] });
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_EXECUTABLE_PATH, headless: true, args: ['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'] });
 try {
   const page = await browser.newPage({ viewport: { width: 1400, height: 1000 } });
   const errors=[];
@@ -39,23 +39,47 @@ try {
       const eyeMaterial=Array.isArray(eyes.material)?eyes.material[0]:eyes.material;
       if(eyeMaterial.roughness>.4)throw Error('Eye surface is too rough');
       if(!body.material.normalMap?.image?.width)throw Error('Missing portable skin detail normal map');
-      const baseline=body.geometry.attributes.position.array.slice();
+      const facialMeshes=meshes.filter(mesh=>mesh.morphTargetDictionary);
       const point=body.position.clone();
+      master.setExpression('neutral');
+      // Compare evaluated positions in the same skinned space, not raw bind coordinates.
+      const baselines=new Map(facialMeshes.map(mesh=>{
+        const baseline=new Float64Array(mesh.geometry.attributes.position.count*3);
+        for(let i=0;i<mesh.geometry.attributes.position.count;i++)mesh.getVertexPosition(i,point).toArray(baseline,i*3);
+        return [mesh,baseline];
+      }));
+      const facialPartMotion=Object.fromEntries(facialMeshes.map(mesh=>[mesh.name,0]));
       const expressionMotion={};
       for(const name of ['smile','frown','blink','viseme_A','viseme_E','viseme_O','viseme_M']){
         master.setExpression(name);let movement=0;
-        for(let i=0;i<body.geometry.attributes.position.count;i++){
-          body.getVertexPosition(i,point);
-          movement=Math.max(movement,Math.hypot(point.x-baseline[i*3],point.y-baseline[i*3+1],point.z-baseline[i*3+2]));
-          if(![point.x,point.y,point.z].every(Number.isFinite))throw Error('Broken expression '+name);
+        for(const mesh of facialMeshes){
+          const baseline=baselines.get(mesh);let partMotion=0;
+          for(let i=0;i<mesh.geometry.attributes.position.count;i++){
+            mesh.getVertexPosition(i,point);
+            partMotion=Math.max(partMotion,Math.hypot(point.x-baseline[i*3],point.y-baseline[i*3+1],point.z-baseline[i*3+2]));
+            if(![point.x,point.y,point.z].every(Number.isFinite))throw Error('Broken expression '+name+' / '+mesh.name);
+          }
+          facialPartMotion[mesh.name]=Math.max(facialPartMotion[mesh.name],partMotion);
+          if(mesh===body)movement=partMotion;
         }
         if(movement<1e-6)throw Error('Expression did not move: '+name);
         expressionMotion[name]=movement;
       }
+      for(const role of ['Body','Eyebrows','Teeth','Tongue']){
+        const mesh=facialMeshes.find(mesh=>mesh.userData.role===role);
+        if(!mesh||facialPartMotion[mesh.name]<1e-6)throw Error('Stationary facial attachment '+role);
+      }
       master.setExpression('neutral');
-      if(body.morphTargetInfluences.some(value=>Math.abs(value)>1e-8))throw Error('Neutral morph drift');
+      for(const mesh of facialMeshes){
+        if(mesh.morphTargetInfluences.some(value=>Math.abs(value)>1e-8))throw Error('Neutral morph drift '+mesh.name);
+        const baseline=baselines.get(mesh);
+        for(let i=0;i<mesh.geometry.attributes.position.count;i++){
+          mesh.getVertexPosition(i,point);
+          if(Math.hypot(point.x-baseline[i*3],point.y-baseline[i*3+1],point.z-baseline[i*3+2])>1e-6)throw Error('Neutral geometry drift '+mesh.name);
+        }
+      }
       master.setPerformance(true);master.setTime(.7);
-      if(!body.morphTargetInfluences.some(value=>value>.05))throw Error('Talk_Check has no moving morphs');
+      for(const mesh of facialMeshes)if(!mesh.morphTargetInfluences.some(value=>value>.05))throw Error('Talk_Check has no moving morphs '+mesh.name);
       master.setPerformance(false);
       const key=(a,i)=>[a.getX(i),a.getY(i),a.getZ(i)].map(v=>Math.round(v*1e5)).join(',');
       const positions=body.geometry.attributes.position,normals=body.geometry.attributes.normal,lookup=new Map();
@@ -75,7 +99,7 @@ try {
       master.setTest(true);master.setTime(0);const rest=sample();master.setTime(1);const bent=sample();master.setTest(false);
       const motion=Math.max(...rest.map((v,i)=>Math.abs(v-bent[i])));if(motion<.01)throw Error('Animation not deforming');
       const report=await fetch(`./${id}/report.json`).then(r=>r.json());
-      return {id,meshes:meshes.length,bones:boneCount,wrists,motion,expressionMotion,height:report.bodyHeightM,headFraction:report.headHeightFraction,blemishes:report.skinDetailCount,wrinkleParts:report.wrinkleParts};
+      return {id,meshes:meshes.length,bones:boneCount,wrists,motion,expressionMotion,facialPartMotion,height:report.bodyHeightM,headFraction:report.headHeightFraction,blemishes:report.skinDetailCount,wrinkleParts:report.wrinkleParts};
     },profile.id);
     assert.equal(await page.locator('#name').textContent(),profile.name);
     assert.match(await page.locator('#recipe').getAttribute('href'),new RegExp(`dna/${profile.id}\\.json$`));

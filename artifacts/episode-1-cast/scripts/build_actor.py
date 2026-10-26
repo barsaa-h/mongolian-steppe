@@ -134,32 +134,6 @@ def add_skin_details(profile,parts,height):
         obj=parts.mesh(f'Details.Blemish.{i+1:02}',vertices,[(0,1+j,1+(j+1)%12) for j in range(12)],red if i%3 else mark)
         obj['detail_type']='small pimple' if i%3 else 'healed blemish'
         count+=1
-    if profile['skinLook'] in ['weathered','tired','elder']:
-        crease=material('Skin | soft age creases','#9b7c65')
-        shader=crease.node_tree.nodes.get('Principled BSDF')
-        shader.inputs['Alpha'].default_value=.12
-        crease.surface_render_method='DITHERED'
-        lines=5 if profile['skinLook']=='elder' else 3
-        for row in range(lines):
-            vertices=[]
-            for i in range(25):
-                x=height*(-.035+.07*i/24)
-                z=mid.z+height*(.031+.009*row+.0018*math.sin(math.pi*i/24)+.0002*math.sin(i*.8+row))
-                for dz in [-height*.00020,height*.00020]:
-                    location,normal,_,_=tree.ray_cast(Vector((x,-height,z+dz)),Vector((0,1,0)),height*2)
-                    if location is not None:vertices.append(location+normal*height*.00008)
-            if len(vertices)==50:
-                parts.mesh(f'Details.Wrinkle.Forehead.{row+1}',vertices,[(i,i+1,i+3,i+2) for i in range(0,48,2)],crease)
-        for side in [-1,1]:
-            for row in range(3):
-                vertices=[]
-                for i in range(12):
-                    t=i/11;x=side*height*(.032+.016*t)
-                    z=mid.z+height*(.002+(row-1)*.008*t)
-                    for dz in [-height*.00016,height*.00016]:
-                        location,normal,_,_=tree.ray_cast(Vector((x,-height,z+dz)),Vector((0,1,0)),height*2)
-                        if location is not None:vertices.append(location+normal*height*.00008)
-                if len(vertices)==24:parts.mesh(f'Details.Wrinkle.Eye.{side}.{row}',vertices,[(i,i+1,i+3,i+2) for i in range(0,22,2)],crease)
     return count
 
 
@@ -283,7 +257,7 @@ def build(id,dna_path=None,destination=None):
     profile=compile_dna(dna)
     output=Path(destination or ROOT/id).resolve()
     if dna_path is None:(ROOT/'recipes'/f'{id}.json').write_text(json.dumps(profile,ensure_ascii=False,indent=2)+'\n')
-    report=master.build(profile['base'],output,render=False,eye_asset='high-poly')
+    report=master.build(profile['base'],output,render=False,eye_asset='high-poly',appearance=False)
     rig=bpy.data.objects['Character.Rig'];collection=next(c for c in bpy.data.collections if c.name.startswith('CHARACTER'))
     bpy.context.view_layer.update()
     parts=Parts(rig,collection);height=profile['base']['height_m']
@@ -328,7 +302,7 @@ def build(id,dna_path=None,destination=None):
     # Bake native fabric nodes so the GLB uses the same portable diffuse appearance.
     meshes=[o for o in collection.objects if o.type=='MESH']
     for obj in meshes:
-        if obj.name in {'Clothes.Top','Clothes.Bottom','Hair','Eyes'}:
+        if obj.name in {'Clothes.Top','Clothes.Bottom','Hair'}:
             bake_material(obj)
     expressions=add_expressions(dna,collection,rig)
     bpy.data.texts.new('DNA.json').write(json.dumps(dna,ensure_ascii=False,indent=2))
@@ -369,14 +343,10 @@ def refine_eyes(profile,dna):
     texture=next(n for n in mat.node_tree.nodes if n.type=='TEX_IMAGE')
     path=master.ASSETS/'eyes/materials'/(dna['eyes']['color']+'_eye.png')
     texture.image=bpy.data.images.load(str(path),check_existing=True);texture.image.pack()
-    adjust=mat.node_tree.nodes.new('ShaderNodeHueSaturation')
-    adjust.inputs['Saturation'].default_value=.6
-    adjust.inputs['Value'].default_value=.75 if profile['id'] in {'irina','dasha'} else .9
-    mat.node_tree.links.new(texture.outputs['Color'],adjust.inputs['Color'])
-    mat.node_tree.links.new(adjust.outputs['Color'],shader.inputs['Base Color'])
+    mat.node_tree.links.new(texture.outputs['Color'],shader.inputs['Base Color'])
     # Stock long lash cards read as mascara spikes; keep them only in the editable source.
-    lashes=bpy.data.objects['Eyelashes']
-    bpy.data.objects.remove(lashes,do_unlink=True)
+    lashes=bpy.data.objects.get('Eyelashes')
+    if lashes:bpy.data.objects.remove(lashes,do_unlink=True)
     eyes['eye_finish']='Smooth fitted high-poly eyes, neutral iris, moist surface'
 
 

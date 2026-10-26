@@ -114,17 +114,21 @@ Keep that terminal running, then open
 the preview cannot load. This command serves the repository on localhost only.
 The inspector
 provides five generated examples, neck/face and hand views, a bend test and a
-wireframe view. It has no character customization sliders.
+wireframe view. The female and male examples also expose DNA sliders. Face
+morphs update in the view. Texture, hair and clothes changes download as DNA
+and are applied by rebuilding.
 
 ```sh
 python3 artifacts/character-master/scripts/test_config.py
 node --check artifacts/character-master/viewer.js
-node artifacts/character-master/scripts/check_browser.mjs
+CHROMIUM_EXECUTABLE_PATH=/opt/brave.com/brave/brave \
+  node artifacts/character-master/scripts/check_browser.mjs
 ```
 
 The browser check requires Playwright (the bundled Codex runtime is supported)
 and the repository server at `http://127.0.0.1:5180`. It checks the actual GLBs,
 weights, moving skinned vertices, separate meshes and proportion differences.
+Omit `CHROMIUM_EXECUTABLE_PATH` to use Playwright's installed Chromium.
 `browser-report.json` and `native-report.json` record verification results.
 
 ## Sources and limits

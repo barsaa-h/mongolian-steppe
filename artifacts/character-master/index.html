@@ -11,11 +11,18 @@
 <body>
   <header><div><div class="eyebrow">Agent source / Modular character</div><h1>Character Master</h1></div><p class="intro">A complete anatomical source with separate clothes, hands and accessories. These are generated examples; your agent customizes the JSON recipe and regenerates the Blender source and GLB.</p></header>
   <main>
-    <section class="stage" aria-label="Character inspection"><canvas id="viewer" aria-label="Interactive 3D character. Drag to orbit and scroll to zoom."></canvas><div class="caption"><strong id="name">Default</strong><span id="facts">Loading character…</span></div><div class="hint">Drag to orbit · Scroll to zoom · Read-only inspection</div></section>
+    <section class="stage" aria-label="Character inspection"><canvas id="viewer" aria-label="Interactive 3D character. Drag to orbit and scroll to zoom."></canvas><div class="caption"><strong id="name">Default</strong><span id="facts">Loading character…</span></div><div class="hint">Drag to orbit · Scroll to zoom · Sliders edit the female and male zeros</div></section>
     <aside>
       <div id="status" class="status" role="status">Loading the character master…</div>
       <label for="preset">Generated examples</label><select id="preset"><option value="default">Default · 1.70 m</option><option value="male">Male · 1.70 m</option><option value="heavy">Heavy · 1.70 m</option><option value="slim-tall">Slim / tall · 1.90 m</option><option value="child">Child proportions · 1.30 m</option></select>
       <h2>Inspect geometry</h2><div class="row"><button id="full" aria-pressed="true">Full body</button><button id="face" aria-pressed="false">Neck / face</button><button id="hand" aria-pressed="false">Hand</button></div><div class="row" style="margin-top:8px"><button id="pose" aria-pressed="false">Bend test</button><button id="rotate" aria-pressed="false">Turntable</button><button id="wire" aria-pressed="false">Wireframe</button></div>
+      <h2>Customize</h2>
+      <details id="customize">
+        <summary>Eyes, brows, skin and face</summary>
+        <p class="notes" id="customize-note">Loads the female or male zero. Face sliders move when this GLB has FACE morphs. Download the DNA and rebuild for a new texture.</p>
+        <div id="sliders"></div>
+        <a id="dna-download" href="#" download="character-dna.json">Download DNA</a>
+      </details>
       <h2>Separate objects</h2><ul id="parts" class="parts"></ul>
       <h2>Agent files</h2><div class="downloads"><a id="blend" href="default/Character-Master.blend" download>Editable Blender master ↗</a><br><a id="glb" href="default/character.glb" download>Skinned GLB ↗</a><br><a id="recipe" href="presets/default.json">Character recipe ↗</a><br><a href="README.md">Agent build instructions ↗</a><br><a href="target-inventory.json">808 modeling targets ↗</a></div>
       <div class="notes">The hidden AUTHORING collection keeps the complete body and editable targets. Visible modules and GLBs use the outfit’s coverage masks to prevent skin poking through clothes. Rebuild after changing proportions or garments.<br><br>The bend clip is a deformation check, not a finished performance animation.</div>

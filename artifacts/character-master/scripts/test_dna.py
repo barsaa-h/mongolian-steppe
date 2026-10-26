@@ -54,6 +54,20 @@ class DnaTests(unittest.TestCase):
         for look in ['weathered','tired','elder']:
             changed=copy.deepcopy(child);changed['skin']['look']=look
             with self.subTest(look=look),self.assertRaises(ValueError):compile_dna(changed)
+    def test_optional_appearance_fields_do_not_change_existing_targets(self):
+        original=json.loads((ROOT/'artifacts/episode-1-cast/dna/ganaa.json').read_text())
+        self.assertNotIn('pupil_size', original['eyes'])
+        before=compile_dna(original)['base']['targets']
+        changed=copy.deepcopy(original)
+        changed['eyes']['pupil_size']=1
+        changed['brows']['style']='straight'
+        changed['skin']['pores']=.4
+        self.assertEqual(compile_dna(changed)['base']['targets'], before)
+        for base in ['adult-female','adult-male']:
+            dna=json.loads((ROOT/'artifacts/character-master/dna/bases'/f'{base}.json').read_text())
+            self.assertTrue(all(value==0 for value in dna['face'].values()))
+            self.assertEqual(dna['sex'], 'female' if 'female' in base else 'male')
+            compile_dna(dna)
     def test_migration_preserves_stated_age_decade_without_inventing_exact_canon_age(self):
         for id in ['hurel','yard-guard']:
             profile=json.loads((ROOT/'artifacts/episode-1-cast/recipes'/(id+'.json')).read_text())

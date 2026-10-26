@@ -3,7 +3,7 @@ import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || '/home/barsaa/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs');
 const output = fileURLToPath(new URL('../', import.meta.url));
-const browser = await chromium.launch({ headless: true, args: ['--no-sandbox', '--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_EXECUTABLE_PATH, headless: true, args: ['--no-sandbox', '--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
 try {
   const page = await browser.newPage({ viewport: { width: 1400, height: 1050 } });
   const errors = [];

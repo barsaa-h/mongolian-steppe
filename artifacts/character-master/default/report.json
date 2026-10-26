@@ -2,13 +2,13 @@
   "name": "Default",
   "bodyHeightM": 1.7,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.08732693376314583,
-  "waistWidthM": 0.3786948784479454,
+  "headHeightFraction": 0.0873304477505854,
+  "waistWidthM": 0.3842918837398082,
   "sourceShapeKeys": 6,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 234,
+    "Clothes.Outfit": 127,
     "Shoes": 0
   },
   "fullBodyRetained": true,
@@ -21,28 +21,22 @@
       "triangles": 192
     },
     {
-      "name": "Eyelashes",
-      "role": "Eyelashes",
-      "vertices": 250,
-      "triangles": 368
-    },
-    {
       "name": "Eyes",
       "role": "Eyes",
-      "vertices": 96,
-      "triangles": 172
+      "vertices": 1064,
+      "triangles": 2040
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 3718,
+      "triangles": 5352
     },
     {
       "name": "Shoes",
       "role": "Shoes",
       "vertices": 1594,
       "triangles": 3064
-    },
-    {
-      "name": "Hair",
-      "role": "Hair",
-      "vertices": 1755,
-      "triangles": 3344
     },
     {
       "name": "Teeth",
@@ -59,14 +53,14 @@
     {
       "name": "Clothes.Top",
       "role": "Clothes.Top",
-      "vertices": 4132,
-      "triangles": 8072
+      "vertices": 1311,
+      "triangles": 2524
     },
     {
       "name": "Clothes.Bottom",
       "role": "Clothes.Bottom",
-      "vertices": 4390,
-      "triangles": 8600
+      "vertices": 886,
+      "triangles": 1712
     },
     {
       "name": "Hands.L",
@@ -83,16 +77,30 @@
     {
       "name": "Body.Skin",
       "role": "Body",
-      "vertices": 4620,
-      "triangles": 9112
+      "vertices": 5378,
+      "triangles": 10624
     }
   ],
   "packedTextures": [
+    {
+      "name": "brown.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
     {
       "name": "brown_eye.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -110,7 +118,28 @@
       ]
     },
     {
-      "name": "male_casualsuit01_diffuse.png",
+      "name": "female_casualsuit01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "ponytail01_diffuse.png",
       "size": [
         2048,
         2048
@@ -124,10 +153,17 @@
       ]
     },
     {
-      "name": "short02_diffuse.png",
+      "name": "Skin layer bake | Skin albedo",
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "soft.png",
+      "size": [
+        512,
+        512
       ]
     },
     {
@@ -142,6 +178,27 @@
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "young_asian_female_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_female_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_female_roughness.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {

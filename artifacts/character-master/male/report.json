@@ -1,14 +1,14 @@
 {
   "name": "Male",
-  "bodyHeightM": 1.7,
+  "bodyHeightM": 1.6999999999999997,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.09336266578384302,
-  "waistWidthM": 0.3313299074450999,
-  "sourceShapeKeys": 6,
+  "headHeightFraction": 0.09336259912122981,
+  "waistWidthM": 0.32726296052119275,
+  "sourceShapeKeys": 5,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 258,
+    "Clothes.Outfit": 271,
     "Shoes": 0
   },
   "fullBodyRetained": true,
@@ -21,16 +21,10 @@
       "triangles": 192
     },
     {
-      "name": "Eyelashes",
-      "role": "Eyelashes",
-      "vertices": 250,
-      "triangles": 368
-    },
-    {
       "name": "Eyes",
       "role": "Eyes",
-      "vertices": 96,
-      "triangles": 172
+      "vertices": 1064,
+      "triangles": 2040
     },
     {
       "name": "Shoes",
@@ -41,8 +35,8 @@
     {
       "name": "Hair",
       "role": "Hair",
-      "vertices": 1755,
-      "triangles": 3344
+      "vertices": 2984,
+      "triangles": 3678
     },
     {
       "name": "Teeth",
@@ -59,14 +53,14 @@
     {
       "name": "Clothes.Top",
       "role": "Clothes.Top",
-      "vertices": 4007,
-      "triangles": 7828
+      "vertices": 4009,
+      "triangles": 7832
     },
     {
       "name": "Clothes.Bottom",
       "role": "Clothes.Bottom",
-      "vertices": 4509,
-      "triangles": 8844
+      "vertices": 4507,
+      "triangles": 8840
     },
     {
       "name": "Hands.L",
@@ -89,10 +83,24 @@
   ],
   "packedTextures": [
     {
+      "name": "brown.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
       "name": "brown_eye.png",
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {
@@ -110,10 +118,24 @@
       ]
     },
     {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
       "name": "male_casualsuit01_diffuse.png",
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
       ]
     },
     {
@@ -124,10 +146,24 @@
       ]
     },
     {
-      "name": "short02_diffuse.png",
+      "name": "short01_diffuse.png",
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "Skin layer bake | Skin albedo",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "straight.png",
+      "size": [
+        512,
+        512
       ]
     },
     {
@@ -142,6 +178,27 @@
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "young_asian_male_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_male_roughness.png",
+      "size": [
+        2048,
+        2048
       ]
     },
     {

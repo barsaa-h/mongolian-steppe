@@ -157,6 +157,7 @@ async function select(id) {
     loaded = true;
     frame();
     ui.status.textContent = 'Ready. Inspect the neck, hands and separate clothing objects.';
+    loadDraft(id).catch(error => { ui.status.textContent = `Character ready. DNA sliders did not load: ${error.message}`; });
     document.dispatchEvent(new CustomEvent('character-loaded', { detail: { id, report } }));
   } catch (error) {
     if (request !== loading) return;
@@ -185,6 +186,108 @@ renderer.setAnimationLoop(now => {
   controls.update();
   renderer.render(scene, camera);
 });
-window.__master = { scene, select, frame, setTime, setTest, setExpression, setPerformance, getActor: () => actor, getState: () => ({ loaded, preset, testing, localTime }) };
+const dnaFiles = { default: './dna/bases/adult-female.json', male: './dna/bases/adult-male.json' };
+let draft = null;
+const sliderBox = document.getElementById('sliders');
+const dnaLink = document.getElementById('dna-download');
+const customizeNote = document.getElementById('customize-note');
+
+function addSlider(parent, label, value, min, max, step, commit) {
+  const row = document.createElement('label');
+  row.textContent = label;
+  const input = document.createElement('input');
+  input.type = 'range';
+  input.min = String(min);
+  input.max = String(max);
+  input.step = String(step);
+  input.value = String(value);
+  input.style.width = '100%';
+  input.addEventListener('input', () => commit(Number(input.value)));
+  row.append(input);
+  parent.append(row);
+}
+function applyDraft() {
+  if (!draft || !actor) return;
+  actor.traverse(object => {
+    const dictionary = object.morphTargetDictionary;
+    if (dictionary && draft.face) {
+      for (const [name, value] of Object.entries(draft.face)) {
+        const positive = dictionary[`FACE.${name}.pos`];
+        const negative = dictionary[`FACE.${name}.neg`];
+        if (positive !== undefined) object.morphTargetInfluences[positive] = Math.max(0, value);
+        if (negative !== undefined) object.morphTargetInfluences[negative] = Math.max(0, -value);
+      }
+    }
+    if (!object.isMesh) return;
+    const role = object.userData.role;
+    const materials = Array.isArray(object.material) ? object.material : [object.material];
+    for (const material of materials) {
+      if (!material?.color) continue;
+      if (role === 'Body' || role === 'Hands.L' || role === 'Hands.R') material.color.setScalar(draft.skin?.tone || 1);
+      if (role === 'Eyebrows' && draft.brows?.color) material.color.set(draft.brows.color);
+    }
+  });
+  if (dnaLink && draft) {
+    const blob = new Blob([JSON.stringify(draft, null, 2) + '\n'], { type: 'application/json' });
+    if (dnaLink.href.startsWith('blob:')) URL.revokeObjectURL(dnaLink.href);
+    dnaLink.href = URL.createObjectURL(blob);
+    dnaLink.download = `${draft.id || preset}.json`;
+  }
+}
+function buildSliders(dna) {
+  if (!sliderBox) return;
+  sliderBox.replaceChildren();
+  const groups = [
+    ['Eyes', dna.eyes, { iris_scale: [.7, 1.3], pupil_size: [.6, 1.4], limbal_darkness: [0, 1], veins: [0, 1], catchlight: [0, 1], wetness: [0, 1], lash_density: [0, 1] }],
+    ['Brows', dna.brows, { thickness: [.3, 1.5], head_thickness: [.4, 1.6], tail_thickness: [.2, 1.4], arch: [-1, 1], tail_length: [.7, 1.3], density: [0, 1], thickness_asymmetry: [-.25, .25] }],
+    ['Skin', dna.skin, { tone: [.7, 1.3], undertone: [-1, 1], ruddiness: [0, 1], pores: [0, 1], oiliness: [0, 1], age_lines: [0, 1], detail: [0, .3] }],
+    ['Body', dna.body, { height_m: [.65, 2.3], weight: [0, 1], muscle: [0, 1], proportions: [0, 1], shoulders: [-1, 1], chest: [-1, 1], belly: [-1, 1], hips: [-1, 1] }],
+  ];
+  for (const [title, section, ranges] of groups) {
+    if (!section) continue;
+    const block = document.createElement('details');
+    const summary = document.createElement('summary');
+    summary.textContent = title;
+    block.append(summary);
+    for (const [key, range] of Object.entries(ranges)) {
+      if (section[key] === undefined) continue;
+      addSlider(block, key.replaceAll('_', ' '), section[key], range[0], range[1], range[1] - range[0] > 2 ? .01 : .01, value => {
+        section[key] = value;
+        applyDraft();
+      });
+    }
+    sliderBox.append(block);
+  }
+  const face = document.createElement('details');
+  const faceSummary = document.createElement('summary');
+  faceSummary.textContent = 'Face';
+  face.append(faceSummary);
+  for (const [key, value] of Object.entries(dna.face || {})) {
+    addSlider(face, key.replaceAll('_', ' '), value, -1, 1, .01, next => {
+      dna.face[key] = next;
+      applyDraft();
+    });
+  }
+  sliderBox.append(face);
+}
+async function loadDraft(id) {
+  draft = null;
+  if (sliderBox) sliderBox.replaceChildren();
+  const path = dnaFiles[id];
+  if (!path) {
+    if (customizeNote) customizeNote.textContent = 'Live zeros are the female and male bases. Other examples stay as generated files.';
+    return;
+  }
+  const response = await fetch(path);
+  if (!response.ok) throw new Error(`DNA: HTTP ${response.status}`);
+  draft = await response.json();
+  buildSliders(draft);
+  applyDraft();
+  const live = actor?.getObjectByProperty?.('type', 'SkinnedMesh');
+  let morphs = 0;
+  actor?.traverse(object => { if (object.morphTargetDictionary) morphs += Object.keys(object.morphTargetDictionary).filter(name => name.startsWith('FACE.')).length; });
+  if (customizeNote) customizeNote.textContent = morphs ? 'Face sliders update this view. Eye, brow and skin texture changes are in the downloaded DNA and need a rebuild.' : 'This GLB has no FACE morphs yet. Download the DNA and rebuild the base.';
+}
+window.__master = { scene, select, frame, setTime, setTest, setExpression, setPerformance, getActor: () => actor, getState: () => ({ loaded, preset, testing, localTime }), getDraft: () => draft, applyDraft };
 frame();
 select(preset);

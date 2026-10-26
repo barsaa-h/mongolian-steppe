@@ -111,6 +111,7 @@
   "brows": [
     {
       "id": "heavy-straight",
+      "style": "heavy",
       "thickness": 1.2,
       "greying": 0,
       "brow_angle": -0.15

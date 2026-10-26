@@ -31,6 +31,14 @@ def render_qa(folder):
     obj=body.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=obj.to_mesh()
     recovery=max((v.co-basis[v.index]).length for v in mesh.vertices);obj.to_mesh_clear()
     assert recovery<1e-6,'Neutral identity drift'
+    source=next(o for o in bpy.data.objects if o.name.startswith('SOURCE.Body'))
+    full=source.copy();full.data=source.data.copy();full.name='QA.FullBody';collection.objects.link(full)
+    full.parent=rig;full.matrix_parent_inverse=body.matrix_parent_inverse.copy();full['role']='Body'
+    full.hide_render=full.hide_viewport=False;full.hide_set(False)
+    for modifier in list(full.modifiers):
+        if modifier.type=='MASK' and not (modifier.vertex_group=='body' and not modifier.invert_vertex_group):full.modifiers.remove(modifier)
+        elif modifier.type=='ARMATURE':modifier.object=rig
+    body.hide_render=True;body=full
     def material(name,color):
         mat=bpy.data.materials.new(name);mat.diffuse_color=(*color,1)
         shader=mat.node_tree.nodes.get('Principled BSDF');shader.inputs['Base Color'].default_value=mat.diffuse_color;shader.inputs['Roughness'].default_value=.85
@@ -39,14 +47,17 @@ def render_qa(folder):
     for obj in collection.objects:
         if obj.type!='MESH':continue
         role=obj.get('role');obj.hide_render=role not in ['Body','Eyes','Eyebrows','Teeth','Tongue']
+        if role=='Body' and obj!=full:obj.hide_render=True
         if not obj.hide_render:
             obj.data.materials.clear();obj.data.materials.append(eye_clay if role=='Eyes' else brow_clay if role=='Eyebrows' else clay)
             for p in obj.data.polygons:p.material_index=0
     dna=json.loads((folder/'dna.json').read_text());height=dna['body']['height_m']
     eye=(rig.matrix_world@rig.data.bones['eye.L'].head_local+rig.matrix_world@rig.data.bones['eye.R'].head_local)*.5
-    top=max((body.matrix_world@v.co).z for v in body.data.vertices)
+    evaluated=body.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=evaluated.to_mesh()
+    world=[body.matrix_world@v.co for v in mesh.vertices];evaluated.to_mesh_clear()
+    top=max(v.z for v in world)
     low=eye.z-height*(.17 if dna['base']=='child' else .125);head_height=top-low
-    points=[body.matrix_world@v.co for v in body.data.vertices if (body.matrix_world@v.co).z>low and abs((body.matrix_world@v.co).x)<height*.15]
+    points=[v for v in world if v.z>low and abs(v.x)<height*.15]
     center=Vector((0,(min(v.y for v in points)+max(v.y for v in points))*.5,(top+low)*.5));camera=scene.camera
     camera.data.type='ORTHO';camera.data.ortho_scale=max(head_height,max(v.y for v in points)-min(v.y for v in points))*1.25
     scene.render.engine='CYCLES';scene.cycles.samples=12;scene.cycles.use_denoising=True

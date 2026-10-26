@@ -1,7 +1,7 @@
 {
   "smile": {"mouth-corner-puller": 0.65, "mouth-elevation": 0.15},
   "frown": {"mouth-depression": 0.45, "eyebrows-left-down": 0.3, "eyebrows-right-down": 0.3},
-  "blink": {"eye-left-closure": 1.0, "eye-right-closure": 1.0},
+  "blink": {"eye-left-closure": 0.7, "eye-right-closure": 0.7},
   "viseme_A": {"mouth-open": 0.65},
   "viseme_E": {"mouth-parling": 0.55, "mouth-open": 0.15},
   "viseme_O": {"mouth-pursing": 0.7, "mouth-open": 0.3},

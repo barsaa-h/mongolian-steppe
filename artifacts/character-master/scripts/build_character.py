@@ -98,14 +98,48 @@ def extract_faces(source, face_indices, name, collection):
     bmesh.ops.delete(bm, geom=[f for f in bm.faces if f.index not in face_indices], context='FACES')
     bmesh.ops.delete(bm, geom=[v for v in bm.verts if not v.link_faces], context='VERTS')
     kept_normals = [normals[vertex[original_index]] for vertex in bm.verts]
+    source_attr = source.data.attributes.get('source_vertex')
+    kept_ids = [source_attr.data[vertex[original_index]].value if source_attr else vertex[original_index] for vertex in bm.verts]
     bm.verts.layers.int.remove(original_index)
     bm.to_mesh(obj.data)
     bm.free()
+    kept = obj.data.attributes.get('source_vertex') or obj.data.attributes.new('source_vertex', 'INT', 'POINT')
+    if len(kept.data) == len(kept_ids):
+        kept.data.foreach_set('value', kept_ids)
     # Preserve the continuous source shading across separately editable wrist/waist cuts.
     obj.data.normals_split_custom_set_from_vertices(kept_normals)
     return obj
 
-def build(config, destination, *, render=True, eye_asset='low-poly'):
+def master_dna(config):
+    female = config['body']['gender'] < .5
+    return {
+        'hair': {'volume': 1, 'length': 1, 'greying': 0, 'color': '#29231f'},
+        'facial_hair': {'style': 'none', 'coverage': 0, 'greying': 0},
+        'eyes': {'color': 'brown', 'iris_scale': 1, 'sclera_tint': '#f4efe6', 'pupil_size': 1, 'limbal_darkness': .55, 'veins': .25, 'catchlight': .4, 'wetness': .24, 'lash_density': 0},
+        'brows': {'thickness': 1.15 if female else 1.2, 'color': '#30251f', 'greying': 0, 'style': 'soft' if female else 'straight', 'head_thickness': 1.15 if female else 1.25, 'tail_thickness': .62 if female else .75, 'arch': .16 if female else 0, 'tail_length': 1, 'density': .9 if female else .95, 'thickness_asymmetry': 0},
+        'skin': {'asset': config['skin'], 'tone': 1, 'ruddiness': 0, 'freckles': 0, 'pimples': 0, 'look': 'young', 'detail': .16, 'undertone': .04 if female else 0, 'pores': .34 if female else .38, 'oiliness': .18 if female else .14, 'age_lines': 0},
+    }
+
+def bake_skin(obj, size=2048):
+    import bpy
+    bpy.context.scene.render.engine = 'CYCLES'
+    bpy.context.scene.cycles.samples = 1
+    bpy.ops.object.select_all(action='DESELECT')
+    obj.select_set(True)
+    bpy.context.view_layer.objects.active = obj
+    for material in obj.data.materials:
+        shader = material.node_tree.nodes.get('Principled BSDF')
+        image = bpy.data.images.new(obj.name + ' | Skin albedo', size, size, alpha=True)
+        node = material.node_tree.nodes.new('ShaderNodeTexImage')
+        node.image = image
+        material.node_tree.nodes.active = node
+        bpy.ops.object.bake(type='DIFFUSE', pass_filter={'COLOR'}, margin=8, use_clear=True)
+        image.pack()
+        for link in list(shader.inputs['Base Color'].links):
+            material.node_tree.links.remove(link)
+        material.node_tree.links.new(node.outputs['Color'], shader.inputs['Base Color'])
+
+def build(config, destination, *, render=True, eye_asset='high-poly', appearance=True):
     validate_config(config, ASSETS, LIBRARY / 'data/targets')
     destination = validate_output_directory(Path(destination).resolve())
     import bpy
@@ -272,6 +306,13 @@ def build(config, destination, *, render=True, eye_asset='low-poly'):
     skin_body = extract_faces(visible_body, all_faces - hand_faces['L'] - hand_faces['R'], 'Body.Skin', render_collection)
     bpy.data.objects.remove(visible_body, do_unlink=True)
     skin_body.name = 'Body.Skin'
+    control_morphs = []
+    if appearance:
+        from appearance import apply_appearance
+        from facial import add_control_morphs
+        apply_appearance(master_dna(config), visible_rig, render_collection, bake_skin)
+        if config['name'] in {'Default', 'Male'}:
+            control_morphs = add_control_morphs(bpy.data.objects['Body.Skin'])
     meshes = [o for o in render_collection.objects if o.type == 'MESH']
     for obj in meshes:
         for vertex in obj.data.vertices:
@@ -326,7 +367,7 @@ def build(config, destination, *, render=True, eye_asset='low-poly'):
     bpy.context.view_layer.objects.active = visible_rig
     bpy.ops.export_scene.gltf(filepath=str(destination / 'character.glb'), use_selection=True, export_format='GLB',
         export_animations=True, export_animation_mode='ACTIONS', export_force_sampling=True,
-        export_frame_range=False, export_extras=True, export_apply=True, export_morph=False)
+        export_frame_range=False, export_extras=True, export_apply=True, export_morph=bool(control_morphs))
     bpy.ops.wm.save_as_mainfile(filepath=str(destination / 'Character-Master.blend'))
     report = {'name': config['name'], 'bodyHeightM': body_height * factor, 'sourceBodyVertices': len(body.data.vertices),
         'headHeightFraction': head_fraction, 'waistWidthM': waist_width * factor,

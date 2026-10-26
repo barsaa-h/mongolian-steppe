@@ -5,7 +5,7 @@
     "gender": 1.0,
     "age": 0.5,
     "weight": 0.48,
-    "muscle": 0.35,
+    "muscle": 0.42,
     "proportions": 0.5,
     "height": 0.5,
     "race": {
@@ -15,7 +15,7 @@
     }
   },
   "skin": "young_asian_male",
-  "hair": "short02",
+  "hair": "short01",
   "outfit": "male_casualsuit01",
   "shoes": "shoes02",
   "targets": {}

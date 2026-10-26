@@ -33,10 +33,10 @@ the face identity vector intact. The lower-level legacy presets remain usable.
 | `base` | child 2–8, adult 9–59, elder 60–90 |
 | `sex` | male/female macro baseline; other individual appearance comes from the full parameters |
 | `body` | Height in metres, weight, muscle, proportions, shoulders, chest, belly, hips, limb thickness, posture |
-| `skin` | CC0 source atlas, tone multiplier, ruddiness, freckles, small pimple count, weathering and normal detail |
+| `skin` | CC0 source atlas, tone, undertone, ruddiness, freckles, pores, oiliness, age lines, pimple count and weathering. Missing new fields keep the previous look. |
 | `hair` | Fitted asset/style, color, greying, length and volume |
-| `brows` | Thickness, color and greying; face controls supply angle, height and depth |
-| `eyes` | Iris source/color, iris scale and sclera tint; fitted eye mesh remains separate from lids |
+| `brows` | Style, head and tail thickness, arch, tail length, density and asymmetry, plus color and greying. Face controls still supply angle, height and depth. |
+| `eyes` | Iris color, iris scale, pupil size, limbal ring, veins, catchlight, wetness, lash density and sclera tint. The fitted eye stays separate from the lids. |
 | `facial_hair` | none or procedural stubble with coverage and greying |
 | `clothing` | Fitted outfit/shoes and the shared costume adapter, plus fabric colors |
 | `signature_traits` | Two or three visible identifying features, verified in the render |
@@ -126,8 +126,12 @@ python3 artifacts/character-master/scripts/dna.py report \
 python3 artifacts/episode-1-cast/scripts/qa_all.py
 blender -b --factory-startup --python-exit-code 1 -t 6 \
   --python artifacts/episode-1-cast/scripts/check_native.py
-node artifacts/episode-1-cast/scripts/check_browser.mjs
+CHROMIUM_EXECUTABLE_PATH=/opt/brave.com/brave/brave \
+  node artifacts/episode-1-cast/scripts/check_browser.mjs
 ```
+
+The browser check uses the installed Brave on this workstation. Omit
+`CHROMIUM_EXECUTABLE_PATH` to use Playwright's own installed Chromium instead.
 
 `qa_all.py` renders every actor with the same neutral clay materials, no hair or
 clothing in the head view, and the same view/framing rules. It assembles a lineup,

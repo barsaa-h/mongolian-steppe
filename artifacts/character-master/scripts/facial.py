@@ -5,6 +5,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 from mathutils.kdtree import KDTree
+from dna import FACE_CONTROLS
 
 ROOT=Path(__file__).resolve().parents[1]
 TARGETS=ROOT.parents[1]/'assets/sources/mpfb2-2.0.18/mpfb/data/targets'
@@ -70,6 +71,7 @@ def add_expressions(dna,collection,rig):
                 for index,weight in weights:
                     if index in deltas:vertex.co+=deltas[index]*weight
             key.value=0
+    calm_blink(body, rig)
     set_expression(collection)
     keys=body.data.shape_keys
     for frame,name in [(1,'neutral'),(9,'viseme_M'),(17,'viseme_A'),(25,'viseme_E'),(33,'viseme_O'),(41,'blink'),(49,'neutral')]:
@@ -87,3 +89,59 @@ def add_expressions(dna,collection,rig):
     rig['expressions']=json.dumps(['neutral',*EXPRESSIONS])
     rig['expression_workflow']='EXP.* keys are additive to this identity. Neutral means all EXP weights zero.'
     return list(EXPRESSIONS)
+
+def calm_blink(body, rig):
+    """Take the outward puff out of the lid closure so a blink is a crease, not a swollen roll."""
+    keys=body.data.shape_keys
+    if not keys or 'EXP.blink' not in keys.key_blocks:
+        return
+    blink=keys.key_blocks['EXP.blink']
+    basis=keys.key_blocks[blink.relative_key.name]
+    centers=[rig.data.bones[name].head_local for name in ('eye.L','eye.R') if name in rig.data.bones]
+    if not centers:
+        return
+    for index, vertex in enumerate(body.data.vertices):
+        if min((vertex.co-center).length for center in centers)>.035:
+            continue
+        delta=blink.data[index].co-basis.data[index].co
+        puff=delta.dot(vertex.normal)
+        if puff>0:
+            blink.data[index].co-=vertex.normal*puff*.85
+
+def add_control_morphs(body):
+    """Export the named face controls as live morphs on a zeroed base. Cast identity stays baked."""
+    attribute=body.data.attributes.get('source_vertex')
+    if attribute is None:
+        return []
+    index_of={}
+    for index, item in enumerate(attribute.data):
+        index_of.setdefault(item.value, []).append(index)
+    if not body.data.shape_keys:
+        body.shape_key_add(name='Basis', from_mix=False)
+    names=[]
+    for name, control in FACE_CONTROLS.items():
+        for label, paths in (('pos', control['positive']), ('neg', control['negative'])):
+            if not paths:
+                continue
+            key=body.shape_key_add(name=f'FACE.{name}.{label}', from_mix=False)
+            apply_targets(key, paths, index_of)
+            key.value=0
+            names.append(key.name)
+    return names
+
+def apply_targets(key, paths, index_of):
+    for path in paths:
+        with gzip.open(TARGETS/(path+'.target.gz'), 'rt') as stream:
+            for line in stream:
+                parts=line.split()
+                if len(parts)<4 or parts[0].startswith('#'):
+                    continue
+                try:
+                    index=int(parts[0]); x=float(parts[1]); z=float(parts[2]); y=float(parts[3])
+                except ValueError:
+                    continue
+                for vertex in index_of.get(index, ()):
+                    point=key.data[vertex]
+                    point.co.x+=x
+                    point.co.y-=y
+                    point.co.z+=z

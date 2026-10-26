@@ -14,6 +14,19 @@ FACE_CONTROLS=json.loads((ROOT/'dna/controls.json').read_text())
 AGE_TARGETS={'head_age':'head/head-age-incr','eye_bags_left':'eyes/l-eye-bag-incr','eye_bags_right':'eyes/r-eye-bag-incr','sagging':'neck/neck-double-incr','lip_thinning':'mouth/mouth-upperlip-volume-decr','brow_droop':'eyebrows/eyebrows-trans-down'}
 BODY_TARGETS={'shoulders':('torso/measure-shoulder-dist-decr','torso/measure-shoulder-dist-incr'),'chest':('torso/measure-bust-circ-decr','torso/measure-bust-circ-incr'),'belly':('torso/measure-waist-circ-decr','torso/measure-waist-circ-incr'),'hips':('hip/hip-scale-horiz-decr','hip/hip-scale-horiz-incr'),'arm_thickness':('arms/l-upperarm-scale-horiz-decr','arms/l-upperarm-scale-horiz-incr'),'leg_thickness':('legs/l-upperleg-scale-horiz-decr','legs/l-upperleg-scale-horiz-incr'),'posture':('head/head-angle-in','head/head-angle-out')}
 PALETTES=json.loads((ROOT/'dna/palettes.json').read_text())
+EYE_FIELDS={'color','iris_scale','sclera_tint'}
+EYE_OPTIONAL={'pupil_size','limbal_darkness','veins','catchlight','wetness','lash_density'}
+BROW_FIELDS={'thickness','color','greying'}
+BROW_OPTIONAL={'style','head_thickness','tail_thickness','arch','tail_length','density','thickness_asymmetry'}
+SKIN_FIELDS={'asset','tone','ruddiness','freckles','pimples','look','detail'}
+SKIN_OPTIONAL={'undertone','pores','oiliness','age_lines'}
+BROW_STYLES={'straight','soft','arched','heavy','sparse'}
+EYE_DEFAULTS={'pupil_size':1,'limbal_darkness':.5,'veins':.3,'catchlight':.32,'wetness':.2,'lash_density':0}
+BROW_DEFAULTS={'style':'straight','head_thickness':1,'tail_thickness':1,'arch':0,'tail_length':1,'density':1,'thickness_asymmetry':0}
+SKIN_DEFAULTS={'undertone':0,'pores':.35,'oiliness':.16,'age_lines':0}
+
+def resolve_appearance(dna):
+    return {'eyes':{**EYE_DEFAULTS,**dna['eyes']},'brows':{**BROW_DEFAULTS,**dna['brows']},'skin':{**SKIN_DEFAULTS,**dna['skin']}}
 
 def finite(value,low,high,label):
     if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or not low<=value<=high:raise ValueError(f'{label}: expected finite {low}..{high}')
@@ -47,9 +60,14 @@ def validate_dna(dna):
     finite(body['height_m'],.65,2.3,'height_m')
     for name,value in body.items():
         if name!='height_m':finite(value,-1 if name in BODY_TARGETS else 0,1,'body.'+name)
-    for section,fields in [('skin',{'asset','tone','ruddiness','freckles','pimples','look','detail'}),('hair',{'asset','style','color','greying','length','volume'}),('brows',{'thickness','color','greying'}),('eyes',{'color','iris_scale','sclera_tint'}),('facial_hair',{'style','coverage','greying'}),('clothing',{'asset','shoes','wardrobe','top_color','bottom_color','accent_color'})]:
+    for section,fields in [('hair',{'asset','style','color','greying','length','volume'}),('facial_hair',{'style','coverage','greying'}),('clothing',{'asset','shoes','wardrobe','top_color','bottom_color','accent_color'})]:
         if set(dna[section])!=fields:raise ValueError('Unknown or incomplete '+section+' fields')
-    for section,name,lo,hi in [('skin','tone',.7,1.3),('skin','ruddiness',0,1),('skin','detail',0,.3),('skin','freckles',0,100),('skin','pimples',0,30),('hair','greying',0,1),('hair','length',.5,1.5),('hair','volume',.7,1.4),('brows','thickness',.3,1.5),('brows','greying',0,1),('eyes','iris_scale',.7,1.3),('facial_hair','coverage',0,1),('facial_hair','greying',0,1)]:finite(dna[section][name],lo,hi,section+'.'+name)
+    for section,required,optional in [('skin',SKIN_FIELDS,SKIN_OPTIONAL),('brows',BROW_FIELDS,BROW_OPTIONAL),('eyes',EYE_FIELDS,EYE_OPTIONAL)]:
+        found=set(dna[section])
+        if not required<=found<=required|optional:raise ValueError('Unknown or incomplete '+section+' fields')
+    for section,name,lo,hi in [('skin','tone',.7,1.3),('skin','ruddiness',0,1),('skin','detail',0,.3),('skin','freckles',0,100),('skin','pimples',0,30),('skin','undertone',-1,1),('skin','pores',0,1),('skin','oiliness',0,1),('skin','age_lines',0,1),('hair','greying',0,1),('hair','length',.5,1.5),('hair','volume',.7,1.4),('brows','thickness',.3,1.5),('brows','greying',0,1),('brows','head_thickness',.4,1.6),('brows','tail_thickness',.2,1.4),('brows','arch',-1,1),('brows','tail_length',.7,1.3),('brows','density',0,1),('brows','thickness_asymmetry',-.25,.25),('eyes','iris_scale',.7,1.3),('eyes','pupil_size',.6,1.4),('eyes','limbal_darkness',0,1),('eyes','veins',0,1),('eyes','catchlight',0,1),('eyes','wetness',0,1),('eyes','lash_density',0,1),('facial_hair','coverage',0,1),('facial_hair','greying',0,1)]:
+        if name in dna[section]:finite(dna[section][name],lo,hi,section+'.'+name)
+    if 'style' in dna['brows'] and dna['brows']['style'] not in BROW_STYLES:raise ValueError('Unknown brow style')
     if dna['eyes']['color'] not in ['brown','brownlight','blue','bluegreen','grey','green']:raise ValueError('Unknown eye asset')
     for section,name in [('hair','color'),('brows','color'),('eyes','sclera_tint'),('clothing','top_color'),('clothing','bottom_color'),('clothing','accent_color')]:
         if not isinstance(dna[section][name],str) or not re.fullmatch(r'#[0-9a-fA-F]{6}',dna[section][name]):raise ValueError('Invalid color '+section+'.'+name)
@@ -104,6 +122,10 @@ def from_profile(profile):
     traits=[p.strip() for p in note.split(',')[:3]]
     if len(traits)<2:traits=[note,'Individual eyelids and nose']
     dna={'schema_version':1,'id':profile['id'],'name':profile['name'],'episode':profile['episode'],'category':profile['category'],'script_age':profile['scriptAge'],'source':{'facts':profile['ageNote'],'references':['research/appearance-notes.md']},'base':'child' if child else 'elder' if years>=60 else 'adult','sex':sex,'ancestry_preset':'slavic' if base['body']['race']['caucasian']>.5 else 'buryat-inspired' if profile['id']=='yard-guard' else 'mongolian','casting':profile['casting'],'seed':int(hashlib.sha256(profile['id'].encode()).hexdigest()[:8],16),'face':face,'asymmetry':asymmetry,'age':{'years':years,'features':features},'body':{k:base[k] if k=='height_m' else base['body'][k] if k in base['body'] else 0 for k in ['height_m','weight','muscle','proportions','height',*BODY_TARGETS]},'skin':{'asset':base['skin'],'tone':1,'ruddiness':0,'freckles':0,'pimples':profile['pimples'],'look':profile['skinLook'],'detail':.06},'hair':{'asset':base['hair'],'style':profile['hairstyle'],'color':profile['hairColor'],'greying':0,'length':1,'volume':1},'brows':{'thickness':.5 if child else .68 if sex=='female' else 1,'color':'#51483b' if years>=60 else '#30251f','greying':.35 if years>=60 else 0},'eyes':{'color':'grey' if profile['id']=='irina' else 'bluegreen' if profile['id']=='dasha' else 'brown','iris_scale':1,'sclera_tint':'#f0eadf'},'facial_hair':{'style':'stubble' if profile['id']=='ganaa' else 'none','coverage':.16 if profile['id']=='ganaa' else 0,'greying':.2 if profile['id']=='ganaa' else 0},'clothing':{'asset':base['outfit'],'shoes':base['shoes'],'wardrobe':profile['wardrobe'],'top_color':profile['topColor'],'bottom_color':profile['bottomColor'],'accent_color':profile['accentColor']},'signature_traits':traits,'face_design':note,'states':profile['states'],'review':'draft'}
+    female=sex=='female'
+    dna['eyes'].update(pupil_size=1,limbal_darkness=.5,veins=.25 if female else .3,catchlight=.34,wetness=.2,lash_density=0)
+    dna['brows'].update(style='soft' if female else 'straight',head_thickness=.9 if female else 1.05,tail_thickness=.58 if female else .72,arch=.18 if female else 0,tail_length=1,density=.78 if female else .9,thickness_asymmetry=0)
+    dna['skin'].update(undertone=.04 if female else 0,pores=.32 if female else .36,oiliness=.18 if female else .14,age_lines=0)
     return validate_dna(dna)
 
 def diversity_report(characters,threshold=.055):

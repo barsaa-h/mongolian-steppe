@@ -110,7 +110,8 @@ native skin maps. Native animators should author shot makeup as a separate pass.
 
 ```sh
 python3 artifacts/episode-1-cast/scripts/test_recipes.py
-node artifacts/episode-1-cast/scripts/check_browser.mjs
+CHROMIUM_EXECUTABLE_PATH=/opt/brave.com/brave/brave \
+  node artifacts/episode-1-cast/scripts/check_browser.mjs
 blender -b --factory-startup --python-exit-code 1 -t 8 \
   --python artifacts/episode-1-cast/scripts/check_native.py
 ```
