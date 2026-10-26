@@ -1,0 +1,220 @@
+{
+  "name": "Алтан",
+  "bodyHeightM": 0.95,
+  "sourceBodyVertices": 19158,
+  "headHeightFraction": 0.13146882872264096,
+  "waistWidthM": 0.45595847849749427,
+  "sourceShapeKeys": 30,
+  "rigBones": 137,
+  "fingerBones": 30,
+  "garmentCorrections": {
+    "Clothes.Outfit": 264,
+    "Shoes": 56
+  },
+  "fullBodyRetained": true,
+  "renderBodyUsesClothingMasks": true,
+  "meshes": [
+    {
+      "name": "Eyebrows",
+      "role": "Eyebrows",
+      "vertices": 124,
+      "triangles": 192
+    },
+    {
+      "name": "Eyes",
+      "role": "Eyes",
+      "vertices": 1064,
+      "triangles": 2040
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 3718,
+      "triangles": 5352
+    },
+    {
+      "name": "Shoes",
+      "role": "Shoes",
+      "vertices": 1594,
+      "triangles": 3064
+    },
+    {
+      "name": "Teeth",
+      "role": "Teeth",
+      "vertices": 3868,
+      "triangles": 7120
+    },
+    {
+      "name": "Tongue",
+      "role": "Tongue",
+      "vertices": 226,
+      "triangles": 448
+    },
+    {
+      "name": "Clothes.Top",
+      "role": "Clothes.Top",
+      "vertices": 1810,
+      "triangles": 3464
+    },
+    {
+      "name": "Hands.L",
+      "role": "Hands.L",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Hands.R",
+      "role": "Hands.R",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Body.Skin",
+      "role": "Body",
+      "vertices": 5533,
+      "triangles": 10830
+    },
+    {
+      "name": "Clothes.BirthdaySkirt",
+      "role": "Clothes.BirthdaySkirt",
+      "vertices": 624,
+      "triangles": 1152
+    },
+    {
+      "name": "Props.PaperCrown",
+      "role": "Props.PaperCrown",
+      "vertices": 48,
+      "triangles": 48
+    }
+  ],
+  "packedTextures": [
+    {
+      "name": "altan | Skin detail normal",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "brown_eye.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Top | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eyebrow001.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "eyelashes01.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "Eyes | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "female_elegantsuit01_ao.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "female_elegantsuit01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Hair | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "ponytail01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "shoes02_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Skin layer bake | Cast albedo",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "teeth.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "tongue01_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "young_lightskinned_female_diffuse3.png",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "id": "altan",
+  "episode": 1,
+  "scriptAge": 3,
+  "skinSource": "young_asian_female",
+  "skinDetailCount": 0,
+  "wrinkleParts": 0,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "toddler-dress",
+  "casting": "Mongolian",
+  "dnaHash": "449ba41facecfac350d56ed8cfbfa80ea2249fc663df27cdf2eea92e0d0747ee",
+  "baseStage": "child",
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "sourceIndexMap": true
+}

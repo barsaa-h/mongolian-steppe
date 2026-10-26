@@ -1,0 +1,220 @@
+{
+  "name": "Цэцэгмаа",
+  "bodyHeightM": 1.6000000000000003,
+  "sourceBodyVertices": 19158,
+  "headHeightFraction": 0.08774466633716219,
+  "waistWidthM": 0.3660714939773209,
+  "sourceShapeKeys": 37,
+  "rigBones": 137,
+  "fingerBones": 30,
+  "garmentCorrections": {
+    "Clothes.Outfit": 184,
+    "Shoes": 18
+  },
+  "fullBodyRetained": true,
+  "renderBodyUsesClothingMasks": true,
+  "meshes": [
+    {
+      "name": "Eyebrows",
+      "role": "Eyebrows",
+      "vertices": 124,
+      "triangles": 192
+    },
+    {
+      "name": "Eyes",
+      "role": "Eyes",
+      "vertices": 1064,
+      "triangles": 2040
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 3718,
+      "triangles": 5352
+    },
+    {
+      "name": "Shoes",
+      "role": "Shoes",
+      "vertices": 1594,
+      "triangles": 3064
+    },
+    {
+      "name": "Teeth",
+      "role": "Teeth",
+      "vertices": 3868,
+      "triangles": 7120
+    },
+    {
+      "name": "Tongue",
+      "role": "Tongue",
+      "vertices": 226,
+      "triangles": 448
+    },
+    {
+      "name": "Clothes.Top",
+      "role": "Clothes.Top",
+      "vertices": 1810,
+      "triangles": 3464
+    },
+    {
+      "name": "Clothes.Bottom",
+      "role": "Clothes.Bottom",
+      "vertices": 395,
+      "triangles": 728
+    },
+    {
+      "name": "Hands.L",
+      "role": "Hands.L",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Hands.R",
+      "role": "Hands.R",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Body.Skin",
+      "role": "Body",
+      "vertices": 5533,
+      "triangles": 10830
+    },
+    {
+      "name": "Details.Blemish.01",
+      "role": "Details.Blemish.01",
+      "vertices": 13,
+      "triangles": 12
+    }
+  ],
+  "packedTextures": [
+    {
+      "name": "brown_eye.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Bottom | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Top | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eyebrow001.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "eyelashes01.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "Eyes | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "female_elegantsuit01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Hair | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "ponytail01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "shoes02_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Skin layer bake | Cast albedo",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "teeth.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "tongue01_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "tsetsegmaa | Skin detail normal",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_lightskinned_female_diffuse3.png",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "id": "tsetsegmaa",
+  "episode": 1,
+  "scriptAge": 30,
+  "skinSource": "young_asian_female",
+  "skinDetailCount": 1,
+  "wrinkleParts": 0,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "dress",
+  "casting": "Mongolian",
+  "dnaHash": "39e00d6505e0ac02031d5a3b812a4a5675e38fbbc6811fdd94003f114dda9630",
+  "baseStage": "adult",
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "sourceIndexMap": true
+}

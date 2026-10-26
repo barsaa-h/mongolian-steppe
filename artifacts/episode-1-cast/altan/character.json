@@ -1,0 +1,44 @@
+{
+  "name": "altan",
+  "height_m": 0.95,
+  "body": {
+    "weight": 0.5,
+    "muscle": 0.2,
+    "proportions": 0.5,
+    "height": 0.5,
+    "gender": 0,
+    "age": 0.041666666666666664,
+    "race": {
+      "asian": 1,
+      "caucasian": 0,
+      "african": 0
+    }
+  },
+  "skin": "young_asian_female",
+  "hair": "ponytail01",
+  "outfit": "female_elegantsuit01",
+  "shoes": "shoes02",
+  "targets": {
+    "head/head-scale-horiz-incr": 0.16,
+    "head/head-round": 0.48,
+    "eyes/l-eye-eyefold-down": 0.38,
+    "eyes/r-eye-eyefold-down": 0.369,
+    "eyes/l-eye-height2-decr": 0.016,
+    "eyes/r-eye-height2-decr": 0.016,
+    "eyes/l-eye-epicanthus-out": 0.315,
+    "eyes/r-eye-epicanthus-out": 0.305,
+    "nose/nose-point-up": 0.18,
+    "nose/nose-scale-vert-decr": 0.3,
+    "nose/nose-scale-depth-decr": 0.3,
+    "mouth/mouth-scale-horiz-decr": 0.2,
+    "mouth/mouth-lowerlip-volume-incr": 0.08,
+    "chin/chin-width-decr": 0.1,
+    "chin/chin-height-decr": 0.38,
+    "cheek/l-cheek-bones-incr": 0.24,
+    "cheek/r-cheek-bones-incr": 0.24,
+    "cheek/l-cheek-volume-incr": 0.45,
+    "cheek/r-cheek-volume-incr": 0.45,
+    "mouth/mouth-upperlip-middle-down": 0.1,
+    "mouth/mouth-lowerlip-middle-up": 0.12
+  }
+}
