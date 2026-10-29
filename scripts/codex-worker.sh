@@ -24,8 +24,7 @@ cp "$brief" "$runs/$stamp-brief.md"
 codex exec - \
   -C "$tree" -m "$model" -c model_reasoning_effort="\"$effort\"" \
   -s workspace-write --skip-git-repo-check \
-  -c mcp_servers.blender.enabled=false -c mcp_servers.cua_repl.enabled=false \
-  -c mcp_servers.node_repl.enabled=false \
+  -c mcp_servers.blender.enabled=false \
   -o "$runs/$stamp-report.md" > "$runs/$stamp-log.txt" 2>&1 || true
 
 cat "$runs/$stamp-report.md" 2>/dev/null || tail -20 "$runs/$stamp-log.txt"

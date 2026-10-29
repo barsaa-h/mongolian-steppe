@@ -25,7 +25,7 @@ M2 birthday slice: Ganaa, Tsetsegmaa, Altan (CH02 first, if Base C can be ready;
 
 | ID | Task | Acceptance | Status |
 | --- | --- | --- | --- |
-| CH01 | **Apply the v4.2 cast** (from story S02) | New DNA for roles that are visible but have no actor yet (bus driver, kiosk seller, Hürel's helper, bleeding man at the gate, etc.). Rename `cousin` → Tungalag in metadata. Pasha is Russian (adjust his DNA ethnicity cues). Retire the pharmacist from EP01 publishing; keep the files. Run all QA and the distinctiveness checks. | open |
+| CH01 | **Apply the v4.2 cast** (from story S02) | New DNA for roles that are visible but have no actor yet (bus driver, kiosk seller, Hürel's helper, bleeding man at the gate, etc.). Rename `cousin` → Tungalag in metadata. Pasha is Russian (adjust his DNA ethnicity cues). Retire the pharmacist from EP01 publishing; keep the files. Run all QA and the distinctiveness checks. | DNA drafts done (Codex); builds + sharper signature traits + user review pending |
 | CH02 | **Base C finished → Altan rebuilt** | Toddler proportions (3 years), an age-appropriate skin atlas instead of the adult one, mitten-sized hands, paper crown fit. User review. | open |
 | CH03 | **Café trio review (C04)** | Ganaa + Hürel + Dasha: neutral lineup, profiles, dressed views. User approves Hürel and Dasha. | open |
 | CH04 | **T0 hero variant** (supports the M3 look test) | Per hero actor (Ganaa, Tsetsegmaa, Altan, Dulmaa, Hürel, Dasha, Irina, Sükhee): 4K skin with pores and redness, sclera veins and wet eye line, hand detail, 1 level of subdivision, and a hair card/strand upgrade for close-ups. One switch on the same rig, with no change to identity. | open |
