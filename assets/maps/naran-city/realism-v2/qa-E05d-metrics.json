@@ -1,0 +1,65 @@
+{
+  "task": "E05d",
+  "seed": 19981128,
+  "ger_coverage": 0.7733931160428965,
+  "ger_area_in_reference_rectangle_m2": 123897.57719007201,
+  "ger_parcels": 389,
+  "ger_tiers": {
+    "ordinary": 156,
+    "maintained": 85,
+    "poor": 117,
+    "better_off": 31
+  },
+  "empty_lots": 21,
+  "ger_lanes": 667,
+  "lane_roles": {
+    "arterial_connection": 2,
+    "lane": 18,
+    "lane_connection": 6,
+    "gap_passage": 641
+  },
+  "lane_graph_nodes": 809,
+  "lane_graph_edges": 839,
+  "lane_graph_components": 1,
+  "dead_ends": 164,
+  "arterial_contacts": {
+    "South distributor": 8,
+    "Ger approach": 6
+  },
+  "heading_std_degrees": 49.28198370908594,
+  "axis_aligned_edge_share": 0.18911917098445596,
+  "shared_fence_pairs_over_8m": 222,
+  "ger_items": 2292,
+  "shed_share_of_occupied": 0.6195652173913043,
+  "subdivision": {
+    "boundary": [
+      [
+        -1437.6825541192488,
+        -838.1136841836073
+      ],
+      [
+        -960.1258186585594,
+        -841.9101645550656
+      ],
+      [
+        -962.4888902555912,
+        -458.291257192894
+      ],
+      [
+        -1438.7899268968813,
+        -461.8865237512171
+      ]
+    ],
+    "lane_depth": 3,
+    "initial_leaves": 429,
+    "merged_pairs": 43,
+    "arterial_setback": 6,
+    "passage_width": 1.2,
+    "arterial_clipped_area": 166584.21824188923,
+    "split_area": 158802.75589731842,
+    "lane_carved_area": 155748.4559681882
+  },
+  "non_ger_records_preserved": true,
+  "preserved_fields_sha256": "9b1817eaed0d9fe70bb712fa42b0754fb27c5cc9e6a8b188aef49d5f722fb2ae",
+  "non_ger_parcels_sha256": "04c78b22f1e10f1f0863b423817d4cede71855027a0cb86a7bc9c210e7e7b03e"
+}
