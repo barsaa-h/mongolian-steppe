@@ -25,6 +25,7 @@
 - A sample line in a treatment is **not** locked dialogue. Only v4.2 is current for EP01.
 - When a source contradicts itself, preserve both versions, label the contradiction, and recommend one. Never rewrite it silently.
 - Infection: entry only by bite, deep scratch or blood into a wound. The delay depends on the bite's location. Infected sprint for 2–3 minutes, then seek heat. Cold slows them; heat revives them.
+- **Infected don't use door handles** (user decision, 29 Oct 2026). They throw their body toward sound, heat and food, so they push or slam a door; they never turn a knob or pull a door open. An inward-opening door is therefore the safe side: in EP02 the hall-side bench brace holds against Ganaa slamming outward, and he can't open the kitchen door himself. Any later scene where an infected gets through a door needs a physical reason: the door is pushed open, already ajar, or broken.
 - **Dialogue voice** (the user's corrections in the earlier ChatGPT dialogue thread, `~/can you improve my dialogue.txt`):
   - Write it the way Mongolians actually talk: real slang and swearing where people would swear.
   - The user rejected a "polished" pass as a "child show". Never sand the edges off.
