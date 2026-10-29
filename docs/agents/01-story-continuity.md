@@ -25,6 +25,13 @@
 - A sample line in a treatment is **not** locked dialogue. Only v4.2 is current for EP01.
 - When a source contradicts itself, preserve both versions, label the contradiction, and recommend one. Never rewrite it silently.
 - Infection: entry only by bite, deep scratch or blood into a wound. The delay depends on the bite's location. Infected sprint for 2–3 minutes, then seek heat. Cold slows them; heat revives them.
+- **Dialogue voice** (the user's corrections in the earlier ChatGPT dialogue thread, `~/can you improve my dialogue.txt`):
+  - Write it the way Mongolians actually talk: real slang and swearing where people would swear.
+  - The user rejected a "polished" pass as a "child show". Never sand the edges off.
+  - No one narrates the plot or their symptoms to themselves. The cut sheep-scene line «Боль, Ганаа! Боль!…» is the example of what not to write.
+  - Inner monologue is salt: rare, short, or none.
+  - Humour is spread across several characters, each in their own way, and not everyone is sarcastic. Bayar is cruel without telling jokes.
+  - Ordinary townspeople, such as the always-drunk street group, get life and lines of their own.
 
 ## Inbox
 _(other agents add requests here)_
