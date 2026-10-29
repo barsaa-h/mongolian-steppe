@@ -4,7 +4,6 @@ import { once } from "node:events";
 import { mkdir, writeFile, rename } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { getScene } from "../src/scenes.js";
-import { sceneSoundtrack } from "../src/sceneSound.js";
 import { DURATION as HOUR_FIVE_DURATION, CUES as HOUR_FIVE_CUES } from "../src/filmTimeline.js";
 import { createSoundtrack } from "../src/filmSound.js";
 
@@ -27,7 +26,7 @@ const output = resolve(process.argv[2] || `output/film/khaniad-${SCENE_ID}.mp4`)
 const base = output.replace(/\.mp4$/i, "");
 await mkdir(dirname(output), { recursive: true });
 const samples = sceneModule
-  ? (sceneModule.soundtrack?.() ?? sceneSoundtrack(SCENE_ID)?.() ?? new Float32Array(Math.floor(DURATION * 24000)))
+  ? (sceneModule.soundtrack?.() ?? new Float32Array(Math.floor(DURATION * 24000)))
   : createSoundtrack();
 const wav = Buffer.alloc(44 + samples.length * 2);
 wav.write("RIFF", 0); wav.writeUInt32LE(wav.length - 8, 4); wav.write("WAVEfmt ", 8);

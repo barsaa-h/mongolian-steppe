@@ -308,6 +308,11 @@
       "parcels": 411,
       "reversed_approaches": []
     },
+    "household_approaches_clear_neighbor_yards": {
+      "passed": true,
+      "width_m": 1,
+      "conflicts": []
+    },
     "ordinary_economic_services": {
       "passed": true,
       "businesses": 8,
@@ -467,18 +472,18 @@
       5.174465656280518
     ]
   },
-  "source_sha256": "4f3619600cc04862ddb83113510366ecb20bd779392640e309996fd5faec1a0b",
+  "source_sha256": "c7e9e5c3ffc5cb9b0bf3f810e35b1d78ab59a0f290474964a3b923f922731e0a",
   "filepath": "/home/barsaa/mongolian-steppe/assets/maps/naran-city/realism-v1/Naran-City-Realism-v001.blend",
   "version": "realism-v001",
   "geometry": {
     "mesh_objects_all": 25060,
     "visible_mesh_objects": 18675,
     "unique_visible_meshes": 4604,
-    "triangles_visible": 1873075
+    "triangles_visible": 1873083
   },
   "performance": {
-    "validation_seconds": 127.805,
-    "peak_rss_mib": 1627.4765625,
+    "validation_seconds": 223.002,
+    "peak_rss_mib": 1323.9453125,
     "blender": "5.2.2 LTS"
   },
   "limits": "Static spatial/material checks and rendered comparisons; no gameplay frame-rate, final actor/medical escape animation, exact period prop model or human art approval."

@@ -1,8 +1,6 @@
 import * as THREE from "three";
 import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter.js";
 import { createPipeline } from "./psx.js";
-import { sceneSoundtrack } from "./sceneSound.js";
-import { applyMapOverride } from "./mapPieces.js";
 
 // Generic deterministic film player. A scene module supplies:
 //   id, duration,
@@ -43,7 +41,7 @@ export async function createFilmPlayer({ canvas, sceneModule, renderMode = false
   const clock = document.getElementById("clock");
   const status = document.getElementById("status");
   const grade = sceneModule.grade || null;
-  const sound = sceneModule.soundtrack || (() => sceneSoundtrack(sceneModule.id));
+  const sound = sceneModule.soundtrack || (() => null);
   const hi8 = document.getElementById("hi8");
   const hi8Timecode = document.getElementById("hi8Timecode");
   const hi8Battery = document.getElementById("hi8Battery");
@@ -169,14 +167,6 @@ export async function createFilmPlayer({ canvas, sceneModule, renderMode = false
   playButton.disabled = replayButton.disabled = false;
   if (status) status.hidden = true;
   renderAt(0);
-
-  // Blender-authored map override, applied after the first render so the set
-  // is never blank. ?nomap=1 keeps the procedural set for comparison.
-  if (!new URLSearchParams(location.search).has("nomap")) {
-    applyMapOverride(scene, sceneModule.id)
-      .then(result => { if (result === "authored") renderAt(time); })
-      .catch(error => console.warn("Map override unavailable", error));
-  }
 
   function frame(now) {
     if (playing && !renderMode) {

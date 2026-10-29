@@ -11,3 +11,4 @@ output/
 .superpowers/
 *.blend1
 __pycache__/
+episodes/*/renders/

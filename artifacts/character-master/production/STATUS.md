@@ -53,25 +53,25 @@ All links below use the `episode-1` shortcut to the existing canonical cast fold
 
 | Actor | Identity review | Existing source/output | Next required proof |
 | --- | --- | --- | --- |
-| Ganaa, 46 | Approved identity | [DNA](../episode-1/dna/ganaa.json), [native](../episode-1/ganaa/Character-Master.blend), [GLB](../episode-1/ganaa/character.glb) | Healthy café sitting, banter, gaze, chair and escape; later wrist/rag continuity, livestock passenger and birthday. |
-| Hürel, 50s | Draft; exact age unstated | [DNA](../episode-1/dna/hurel.json), [build](../episode-1/hurel/) | Café work and speech, reach toward Dasha, neck/hand contact; apron deformation. |
-| Dasha, 24 | Draft | [DNA](../episode-1/dna/dasha.json), [build](../episode-1/dasha/) | Passenger and shared bowl; café sitting, rise, approach and attack; left scarf/coat fit. |
-| Irina, 54 | Draft | [DNA](../episode-1/dna/irina.json), [build](../episode-1/irina/) | Recorder/cigarette handling and satchel handoff, Russian performance. |
-| Tsetsegmaa, 30 | Draft | [DNA](../episode-1/dna/tsetsegmaa.json), [build](../episode-1/tsetsegmaa/) | Greeting, jaw/wrist touch and birthday concern; later survival retained in season breakdown. |
-| Dulmaa, 65 | Draft | [DNA](../episode-1/dna/dulmaa.json), [build](../episode-1/dulmaa/) | Deel walking/sitting, inspecting wrist and reaching for cloth. |
-| Sükhee | Draft; exact age unstated | [DNA](../episode-1/dna/sukhee.json), [build](../episode-1/sukhee/) | Seated banter, cup/food contact and change in reaction. |
-| Altan, 3 | Draft | [DNA](../episode-1/dna/altan.json), [build](../episode-1/altan/) | Child skin and dress, walking/climbing/lap contact, gift and mitten handling. |
-| Yard guard, 50s | Draft; exact age unstated | [DNA](../episode-1/dna/yard-guard.json), [build](../episode-1/yard-guard/) | Flashlight, key, freight door and attack response. |
-| Yard runner | Draft anonymous instance | [DNA](../episode-1/dna/yard-runner.json), [build](../episode-1/yard-runner/) | Mapped sprint, attack, exhaustion and standing near heat. |
-| Young male guest | Draft anonymous instance | [DNA](../episode-1/dna/party-young-man.json), [build](../episode-1/party-young-man/) | Assign a visible party instance; sitting/eating/reactions. |
-| Young female guest | Draft anonymous instance | [DNA](../episode-1/dna/party-young-woman.json), [build](../episode-1/party-young-woman/) | Assign a visible party instance; sitting/eating/reactions. |
-| Older male guest | Draft anonymous instance | [DNA](../episode-1/dna/party-older-man.json), [build](../episode-1/party-older-man/) | Assign a visible party instance; sitting/eating/reactions. |
+| Ganaa, 46 | Approved identity | [DNA](../../episode-1-cast/dna/ganaa.json), [native](../../episode-1-cast/ganaa/Character-Master.blend), [GLB](../../episode-1-cast/ganaa/character.glb) | Healthy café sitting, banter, gaze, chair and escape; later wrist/rag continuity, livestock passenger and birthday. |
+| Hürel, 50s | Draft; exact age unstated | [DNA](../../episode-1-cast/dna/hurel.json), [build](../../episode-1-cast/hurel/) | Café work and speech, reach toward Dasha, neck/hand contact; apron deformation. |
+| Dasha, 24 | Draft | [DNA](../../episode-1-cast/dna/dasha.json), [build](../../episode-1-cast/dasha/) | Passenger and shared bowl; café sitting, rise, approach and attack; left scarf/coat fit. |
+| Irina, 54 | Draft | [DNA](../../episode-1-cast/dna/irina.json), [build](../../episode-1-cast/irina/) | Recorder/cigarette handling and satchel handoff, Russian performance. |
+| Tsetsegmaa, 30 | Draft | [DNA](../../episode-1-cast/dna/tsetsegmaa.json), [build](../../episode-1-cast/tsetsegmaa/) | Greeting, jaw/wrist touch and birthday concern; later survival retained in season breakdown. |
+| Dulmaa, 65 | Draft | [DNA](../../episode-1-cast/dna/dulmaa.json), [build](../../episode-1-cast/dulmaa/) | Deel walking/sitting, inspecting wrist and reaching for cloth. |
+| Sükhee | Draft; exact age unstated | [DNA](../../episode-1-cast/dna/sukhee.json), [build](../../episode-1-cast/sukhee/) | Seated banter, cup/food contact and change in reaction. |
+| Altan, 3 | Draft | [DNA](../../episode-1-cast/dna/altan.json), [build](../../episode-1-cast/altan/) | Child skin and dress, walking/climbing/lap contact, gift and mitten handling. |
+| Yard guard, 50s | Draft; exact age unstated | [DNA](../../episode-1-cast/dna/yard-guard.json), [build](../../episode-1-cast/yard-guard/) | Flashlight, key, freight door and attack response. |
+| Yard runner | Draft anonymous instance | [DNA](../../episode-1-cast/dna/yard-runner.json), [build](../../episode-1-cast/yard-runner/) | Mapped sprint, attack, exhaustion and standing near heat. |
+| Young male guest | Draft anonymous instance | [DNA](../../episode-1-cast/dna/party-young-man.json), [build](../../episode-1-cast/party-young-man/) | Assign a visible party instance; sitting/eating/reactions. |
+| Young female guest | Draft anonymous instance | [DNA](../../episode-1-cast/dna/party-young-woman.json), [build](../../episode-1-cast/party-young-woman/) | Assign a visible party instance; sitting/eating/reactions. |
+| Older male guest | Draft anonymous instance | [DNA](../../episode-1-cast/dna/party-older-man.json), [build](../../episode-1-cast/party-older-man/) | Assign a visible party instance; sitting/eating/reactions. |
 
 The new Episode 1 also needs the **freight loader, two café drivers and livestock driver** assigned to visible roles. They do not yet have dedicated Episode 1 DNA in this pool. Reconcile existing legacy profiles and shot visibility before making new bodies. Radio and the off-screen crying guest infant need audio assignments. Three guest designs do not cover forty unique close-up party guests.
 
 ## Review material and known failures
 
-- [Neutral lineup](../episode-1/qa/lineup.png), [all profiles and expressions](../../episode-1-cast/qa/index.html), [face distances](../episode-1/diversity-report.json), [saved native report](../episode-1/native-report.json), [saved browser report](../episode-1/browser-report.json).
+- [Neutral lineup](../../episode-1-cast/qa/lineup.png), [all profiles and expressions](../../episode-1-cast/qa/index.html), [face distances](../../episode-1-cast/diversity-report.json), [saved native report](../../episode-1-cast/native-report.json), [saved browser report](../../episode-1-cast/browser-report.json).
 - Shared smile/lid behavior narrows the eyes; brows and straight hairlines still need review. Child skin remains an adult source atlas requiring an age-appropriate pass.
 - Apron/deel/skirt and layered sleeves need movement proof. A successful neutral render does not establish dressed motion or hand/prop clearance.
 - Wrist, cuff and dialogue studies remain provisional. The approved identity does not approve their costume states, audio, motion or camera shots.

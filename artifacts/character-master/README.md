@@ -70,8 +70,10 @@ No actor was regenerated or newly approved during this organization.
 
 ## Cleanup
 
-The LISA and standalone PS2 horror designs, plus nine superseded Ganaa builds,
-moved into [the archive](archive/README.md). Nothing was deleted. The
+29 October 2026: the LISA and standalone PS2 horror prototypes, the old ep1–ep10
+graybox maps and the `man.html` prototype were deleted. They can be recovered from git tag
+`snapshot/pre-cleanup-2026-10-29`. The nine superseded Ganaa builds remain in
+[the archive](archive/README.md). The
 [move manifest](production/organization-manifest.json) records all 405 files and
 their hashes. Current actors, fit/motion studies, master examples and runtime
 cast remain available.

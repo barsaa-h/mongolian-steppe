@@ -1,5 +1,7 @@
 # Naran — full-size Blender town
 
+**Latest exterior development:** [Naran realism v001](realism-v1/README.md), with a separate versioned native scene, terrain/services/household improvements, matching comparisons, revised map and measured QA. Use that pack for the current realism review. The foundation master described below remains unchanged; its static GLB does not include the realism pass.
+
 The editable town foundation for the series, developed from the World Bible's **3,300 × 3,000 m** fictional town frame. Open **`Naran-City-Master.blend`** and select `NARAN_City`. One Blender unit is one metre; X is east, Y is north and Z is up. The central square is the XY origin. Exact terrain, streets and infill remain artistic layout choices for review.
 
 The compact playable town remains available in the application. This pack has not replaced it. The four [Episode 1 sets](../episode-1/README.md) also remain separate and intact.

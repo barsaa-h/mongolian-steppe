@@ -1,6 +1,6 @@
 # Episode 1 Blender map work
 
-28 October 2026. Scope confirmed by the user: **heavily focus on Episode 1 only**. Use the current [source hierarchy](../../artifacts/character-master/production/SOURCES.md), [readiness plan G1/G2](../../artifacts/character-master/sources/planning/NARAN_PRODUCTION_READINESS_PLAN_v1.1.md), [café layout](../../artifacts/character-master/sources/cafe/docs/CONTINUITY_CHECK.md) and retained [Blender map plan](blender-map-master-plan.md).
+28 October 2026. Scope confirmed by the user: **heavily focus on Episode 1 only**. Use the current [source hierarchy](../../artifacts/character-master/production/SOURCES.md), [readiness plan G1/G2](../../artifacts/character-master/sources/planning/NARAN_PRODUCTION_READINESS_PLAN_v1.1.md), [café layout](../../artifacts/character-master/sources/cafe/docs/CONTINUITY_CHECK.md) and retained [Blender map plan](../history/blender-map-master-plan.md).
 
 Current pass: one editable Blender map pack with four local scenes—Hürel café/forecourt, border-road pickup, freight yard/office, and apartment/stair. Geometry and camera routes come first. Keep existing runtime scene files and character DNA unchanged. New map files live in `assets/maps/episode-1/`; Blender MCP performs the authoring.
 

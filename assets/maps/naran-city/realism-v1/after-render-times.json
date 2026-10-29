@@ -5,14 +5,14 @@
   ],
   "engine": "BLENDER_EEVEE",
   "seconds": {
-    "aerial": 19.599,
-    "apartment": 36.634,
-    "ger-district": 35.299,
-    "market": 33.357,
-    "entrance": 27.585,
-    "street": 29.34,
-    "ger-street": 27.512,
-    "agriculture": 25.005
+    "aerial": 49.362,
+    "apartment": 66.889,
+    "ger-district": 45.098,
+    "market": 40.414,
+    "entrance": 35.198,
+    "street": 33.361,
+    "ger-street": 29.785,
+    "agriculture": 27.973
   },
-  "peak_rss_mib": 2497.12109375
+  "peak_rss_mib": 2375.54296875
 }

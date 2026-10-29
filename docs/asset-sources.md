@@ -1,6 +1,6 @@
 # Character source assets
 
-> The selected production character source is now [MakeHuman/MPFB](../artifacts/character-master/README.md), with [local graphical assets](../artifacts/character-master/sources/makehuman-core/) and [pinned code/licenses](../artifacts/character-master/sources/mpfb2-2.0.18/). Keep the Vinrax credit and source packs below because the live legacy cast still uses them. Recovered story/world/café material has separate [import provenance](../artifacts/character-master/sources/provenance/README.md).
+> The selected production character source is now [MakeHuman/MPFB](../artifacts/character-master/README.md), with [local graphical assets](../assets/sources/makehuman-core/) and [pinned code/licenses](../assets/sources/mpfb2-2.0.18/). Keep the Vinrax credit and source packs below because the live legacy cast still uses them. Recovered story/world/café material has separate [import provenance](../artifacts/character-master/sources/provenance/README.md).
 
 Acquired from the authors' official download links on 2026-10-24. Original archives and model files are preserved unchanged under `assets/sources/`; the existing male archive remains under `assets/male_casual/`. These are editable source/reference assets, not additional runtime characters.
 

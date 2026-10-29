@@ -64,10 +64,12 @@ f"- All 20 anchor XYZ and all 60 original road names/widths/centerlines preserve
 f"- {qa['checks']['new_solid_details_clear_vehicle_routes']['samples']:,} sampled body-lane rays found no new solid obstruction; 252 inherited utility poles remain clear of streets.",
 '- All 34 roof vents supported; the school path avoids the school/workshop shells; new household modules fit their own parcel polygons; every recorded gate approach stays outside its own yard.',
 '- Original native master and byte-identical backup retain SHA `d2ca395f9c1642cb8fb7aa6e2253b4b4e1b19839d1eefddc5734078c1a19f9c0`.',
-'- Six layout unit tests and the 14-module deterministic self-check passed. Existing Episode 1 native/export preservation checker passed. Project Node test suite passed 73/73 tests; the realism pass does not change runtime code.',
+'- Seven layout unit tests and the 14-module deterministic self-check passed. Existing Episode 1 native/export preservation checker passed. Project Node test suite passed 73/73 tests; the realism pass does not change runtime code.',
 '- Eight matching before/after images exist and were visually inspected; independent reviews and corrections are retained alongside this report.',
 '', '## Organization and practical limits','',
 'New work is separated into landscape, parcels, apartments, services, institutions and agricultural/work-yard collections. Linked modules share geometry; batched mesh islands can be edited by purpose/material. Packed images keep the native file portable. Existing and new templates plus replaced original details are hidden, not discarded.','',
 'This scene is heavier than the compact playable map. No runtime export replacement, LOD/streaming, actor crowd performance, interactive viewport FPS, exhaustive collisions or full door/vehicle dynamics were measured. Institutions remain exterior shells. Numerical checks do not approve historical specificity, art, medical timing, actor blocking or story continuity.']
 (ROOT/'PERFORMANCE.md').write_text('\n'.join(lines)+'\n')
+delivery={'version':'Naran-City-Realism-v001','status':'exterior art draft; human approval outstanding','scene':blend.name,'scene_sha256':sha,'original_master_sha256':base['sha256'],'native_checks_passed':len(qa['checks']),'comparison_views':names,'resolution':times['resolution'],'preserved':'20 landmark XYZ, 60 original roads, Episode 1 arrival/entry and original source sets','limits':'CHANGES.md','render_files':{name:hashlib.sha256((ROOT/'previews/after'/(name+'.png')).read_bytes()).hexdigest() for name in names}}
+(ROOT/'delivery-manifest.json').write_text(json.dumps(delivery,indent=2)+'\n')
 print('Packaged eight matching pairs, contact sheet, catalog and measured report for',sha)

@@ -16,18 +16,10 @@ globalThis.document = { createElement: () => ({ getContext: () => context }) };
 const { SCENES, getScene } = await import("../src/scenes.js");
 const film = await import("../src/filmTimeline.js");
 
-test("the registry keeps the approved excerpt and every staging set", () => {
-  assert.deepEqual(Object.keys(SCENES).sort(), [
-    "ep1-apartment", "ep1-border-road", "ep1-truckstop", "ep1-yard", "ep10-dzud", "ep2-nursery",
-    "ep3-governor", "ep4-school", "ep5-cordon", "ep6-gorge", "ep7-boilerhouse",
-    "ep8-truckstop", "ep9-cabin", "hour-five", "kit-preview",
-  ]);
+test("the registry keeps the approved excerpt and the staging kit", () => {
+  assert.deepEqual(Object.keys(SCENES).sort(), ["hour-five", "kit-preview"]);
   assert.equal(getScene("hour-five").duration, film.DURATION);
   assert.equal(getScene("kit-preview").duration, 14);
-  assert.equal(getScene("ep2-nursery").duration, 24);
-  assert.equal(getScene("ep1-yard").duration, 10);
-  assert.equal(getScene("ep1-border-road").duration, 15);
-  assert.equal(getScene("ep10-dzud").duration, 16);
   assert.throws(() => getScene("unknown"), /Unknown scene/);
 });
 
@@ -61,34 +53,12 @@ test("shots in every registered scene form one continuous edit", () => {
 });
 
 test("the preview scene states stay bounded and subtitle gaps stay clean", () => {
-  for (const id of ["kit-preview", "ep2-nursery", "ep1-yard", "ep1-truckstop",
-    "ep1-apartment", "ep1-border-road", "ep3-governor", "ep4-school", "ep5-cordon",
-    "ep6-gorge", "ep7-boilerhouse", "ep8-truckstop", "ep9-cabin", "ep10-dzud"]) {
-    const scene = getScene(id);
-    for (let t = 0; t <= scene.duration; t += 0.25) {
-      const state = scene.state(t);
-      assert.ok(state.time >= 0 && state.time <= scene.duration, id);
-      assert.ok(state.fade >= 0 && state.fade <= 1, id);
-      assert.ok(state.shot, id);
-      assert.ok(state.subtitle === null || state.subtitle.text.length > 4, id);
-    }
+  const scene = getScene("kit-preview");
+  for (let t = 0; t <= scene.duration; t += 0.25) {
+    const state = scene.state(t);
+    assert.ok(state.time >= 0 && state.time <= scene.duration);
+    assert.ok(state.fade >= 0 && state.fade <= 1);
+    assert.ok(state.shot);
+    assert.ok(state.subtitle === null || state.subtitle.text.length > 4);
   }
-  const ep2 = getScene("ep2-nursery");
-  const settled = EP2_CUES_OF(ep2);
-  assert.ok(settled.length >= 4, `found ${settled.length} cues`);
-  for (let i = 1; i < settled.length; i++) {
-    assert.ok(settled[i].start >= settled[i - 1].end, "cues do not overlap");
-  }
-  assert.ok(ep2.state(2).location > 0, "the location card shows early");
-  assert.equal(ep2.state(5).location, 0, "the location card is gone before the ER beat");
 });
-
-function EP2_CUES_OF(scene) {
-  // Pull the cue list through the public state function across the timeline.
-  const found = [];
-  for (let t = 0; t < scene.duration; t += 0.1) {
-    const cue = scene.state(t).subtitle;
-    if (cue && (found.length === 0 || found.at(-1) !== cue)) found.push(cue);
-  }
-  return found;
-}

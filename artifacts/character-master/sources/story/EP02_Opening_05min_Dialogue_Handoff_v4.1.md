@@ -1,0 +1,138 @@
+# ХАНИАД — THE COUGH
+## EP02 · ХОЁР ХААЛГА
+### v4.1 · 00:00–05:20 dialogue handoff from revised EP01
+
+**Status:** Opening-scene table-read draft, **not a full Episode 2 screenplay**. Starts on exactly the last turn of the kitchen knob. Preserve the bite-to-turn delay. Sükhee's upper-arm bite is NOT an instant transformation. Tsetsegmaa, Altan, Dulmaa, Tungalag and the visiting infant leave the apartment; Ganaa remains behind the kitchen barrier at the last verified moment. All delivery directions are suggestions for acting, not orders to imitate a voice model.
+
+## A · 00:00–00:45 — The kitchen door
+**INT. GANAA'S APARTMENT — NIGHT, CONTINUOUS WITH EP01 BLACK**
+
+*Start on Sükhee's hand turning the knob. Ganaa is pressing it shut from inside. The door opens a hand's width after his strength falters.*
+
+**СҮХЭЭ:** Ганаа? Хөөе, наадхаа боль. Юу болчихов?
+
+**ЦЭЦЭГМАА** *(moving)*: Сүхээ, холд! ХҮҮХДИЙГ АВААД ГАР!
+
+*Ganaa lunges from the gap. Close-quarters confusion. He bites Sükhee's **upper arm**, hard enough to break skin. Sükhee instinctively yanks backward and slams the door.*
+
+**СҮХЭЭ:** АА! Пизда! Хазчихлаа! Ганаа, чи чинь яаж байгаа юм?!
+
+*For a second he still thinks it is his friend. One guest pushes a wooden stool beneath the handle. It holds just long enough to open the entrance.*
+
+**ДУЛМАА:** Наад сандлыг түлх! Цэцгээ, хүүхдээ аваад яв!
+
+**ТУНГАЛАГ** *(from bedroom)*: Миний хүүхэд байна! Түр хүлээ, гараад ирж байна!
+
+*Her infant is already in her arms. She exits after the first people clear the narrow hall; the route is visible, not magically unobstructed.*
+
+## B · 00:45–01:25 — Landing / What a three-year-old hears
+**INT. STAIR LANDING — CONTINUOUS**
+
+*Cold stairwell air. People pile together in socks and mismatched slippers. Altan has only one mitten. The other lies beside the birthday cake back inside. The household door closes. A dull impact from the kitchen travels through both doors.*
+
+**АЛТАН:** Аав яах гээд байгаа юм?
+
+**ЦЭЦЭГМАА** *(fighting to keep her voice ordinary)*: Аав нь өвдчихсөн байна. Ээжтэйгээ явъя.
+
+**АЛТАН:** Тэгээд ирэх үү?
+
+*She cannot say yes. She adjusts Altan's coat instead.*
+
+**ДУЛМАА** *(to others, practical)*: Хүүхдүүдээ доош нь буулга. Энд битгий шав!
+
+**СҮХЭЭ** *(pressing sleeve to arm)*: Юу ч биш ээ. Одоо яах вэ? Тэрийг чинь дотор нь орхиод...?
+
+**ЦЭЦЭГМАА** *(looks once at the door)*: Доошоо яв. Яг одоо.
+
+## C · 01:25–03:15 — Getting transport / Not yet an apocalypse
+**EXT. APARTMENT ENTRANCE / MARKET ROAD — NIGHT**
+
+*One neighbor brings an old sedan; someone tries the shop landline. A municipal UAZ can take only a few injured. The street is not filled with hundreds of monsters. Ordinary life continues one block away.*
+
+**ХӨРШ:** Манай машин асаад өгвөл гурвыг нь суулгаж чадна. Бусад нь араас нь яв.
+
+**ДУЛМАА:** Энэ хүүхдүүдийг чинь хаана суулгах юм? Наад хаалгаа нээ!
+
+**НЯМКА** *(arriving from shop with keys)*: Утас нь завгүй байна. Дахиад залгая. Хэнд мэдэгдэх ёстой юм бэ?
+
+**ЦЭЦЭГМАА:** Түргэн. Цагдаа ч гэсэн. Гэрт нь... хүн байна.
+
+*She cannot say “my husband” for a moment.*
+
+**БАТАА** *(without a joke)*: Би энд үлдээд харж байя. Та нар эмнэлэг яв.
+
+**СҮХЭЭ:** Харах юм юу байдаг юм? Ганаа чинь өөрийнхөө гэрт... *(sees blood)* За ёстой, ийм юм үзэх гэж.
+
+**ТОГОО** *(to Sükhee, seeing the wound)*: Наад гараа дар. Цус нь гоожоод байна.
+
+**СҮХЭЭ:** Дарж л байна ш дээ. Ганцхан... хазсан л юм.
+
+**ТОГОО:** Тэгээд л эмнэлэг орох гэж байна.
+
+*The town car starts after a rough crank. Altan sits in Tsetsegmaa's lap, watching the apartment windows until they turn a corner.*
+
+## D · 03:15–05:20 — Oyun / The handoff
+**INT. NARAN HOSPITAL — EMERGENCY ENTRANCE, NIGHT**
+
+*OYUN is already working. Bolor gathers clean bandages and labels a patient's name on a scrap of paper. Tsetsegmaa enters with Altan, Dulmaa and bitten Sükhee; other guests follow.*
+
+**БОЛОР:** За, нэг нэгээрээ. Хэн нь хамгийн их цус алдаж байна?
+
+**СҮХЭЭ:** Эгч ээ, би зүгээр. Эхлээд тэр хүүхдийг...
+
+**ОЮУН** *(cuts through without shouting)*: Хүүхдэд юу ч болоогүй юу?
+
+**ЦЭЦЭГМАА:** Хазуулаагүй. Айчихсан. Энэ хүний гар...
+
+**ОЮУН:** Наашаа, суу. Ханцуйг нь тайл. Хэзээ хазуулсан бэ?
+
+**СҮХЭЭ:** Сая. Гэрт... Манай Ганаа...
+
+**ОЮУН:** Хэзээ гэдгийг асууж байна. Арван минут уу? Хагас цаг уу?
+
+**ЦЭЦЭГМАА:** Арван хэдэн минут. Бид шууд ирсэн.
+
+*Oyun examines the torn upper arm with a light. She notices the bite pattern. Another injured guest tries to interrupt.*
+
+**ЗОЧИН:** Эмч ээ, тэр яг хүн шиг биш болчихсон. Нөгөө...
+
+**ОЮУН:** Нэг нэгээрээ ярь. Хаана байгаа юм, хазсан хүн нь?
+
+**ЦЭЦЭГМАА:** Манай гэрт. Бид гарахдаа... гал тогоонд байсан.
+
+*Oyun looks up for the first time.*
+
+**ОЮУН:** Түгжсэн үү?
+
+**ЦЭЦЭГМАА:** Хаалгыг нь хаасан. Өөр юм хийж амжаагүй.
+
+*Bolor arrives with a clean blanket. Without being asked, she drapes it over Altan, who still wears only one mitten.*
+
+**БОЛОР** *(low, to Altan)*: Май, даарахгүй бай.
+
+**АЛТАН:** Нөгөө бээлий гэртээ байгаа.
+
+**БОЛОР:** За яахав. Энэ одоохондоо болно.
+
+*Oyun turns to the other patients. Farther down the hall, someone is coughing violently. Another man, earlier admitted for a head wound, begins to convulse. Oyun reaches for the patient's chart.*
+
+**ОЮУН:** Болор, энэ хүмүүсийг тусад нь суулга. Ялангуяа хазуулсан хүмүүсийг.
+
+**БОЛОР:** Бүгд үү? Энд суух газар ч алга шүү дээ.
+
+**ОЮУН:** Ядаж салгачих. Дараа нь ярья.
+
+*Her use of “дараа” is functional: she'll be present for the consequences, unlike Ganaa. She does not recite the disease's rules. Offscreen, a metal tray hits the floor; staff hurry toward the other patient.*
+
+**CUT / CONTINUE TO NARANTSETSEG MATERNITY STORY.**
+
+---
+
+## Locked handoff facts / actor constraints
+1. The kitchen door is unlatched and weak. Sükhee opens it to help, not because he is malicious or impossibly stupid.
+2. Ganaa's bite is on the **wrist** from Dasha; Sükhee's fresh bite is on the **upper arm** from Ganaa. Never show Sükhee turning immediately.
+3. Tsetsegmaa, Altan, Dulmaa, Tungalag and her infant get out via the apartment entrance. Tsetsegmaa/Altan are in emergency triage, not trapped inside Oyun's later maternity-wing door.
+4. Ganaa remains behind the kitchen barrier at the last verified moment. If responders find him, that scene must be written, not implied.
+5. Oyun asks ordinary triage questions first; she is not magically familiar with the outbreak rules.
+6. The second mitten is left beside the birthday cake, a physical memory rather than a supernatural clue.
+7. The reveal of the older case / official warning is reserved for the wider season, and not delivered as a narrator's explanation during triage.

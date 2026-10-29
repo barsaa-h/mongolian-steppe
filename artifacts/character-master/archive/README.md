@@ -7,8 +7,7 @@ file was checked after the move.
 
 | Folder | Why it is archived |
 | --- | --- |
-| `prototypes/lisa-study/` | Earlier LISA reference experiment; not the selected MakeHuman source. |
-| `prototypes/ps2-horror-character/` | Earlier standalone horror character pipeline; replaced by the shared DNA system. |
+| ~~`prototypes/`~~ | **Deleted 29 October 2026** (LISA study, standalone PS2 horror character). Recover them from git tag `snapshot/pre-cleanup-2026-10-29`. |
 | `ganaa-designs/` | Nine superseded appearance/face/age/eye/production candidate builds. Active identity/build stay in `artifacts/episode-1-cast/dna/ganaa.json` and `artifacts/episode-1-cast/ganaa/`. |
 | `documents-before-organization/` | Exact document bytes saved before this cleanup, including pre-existing local edits. |
 

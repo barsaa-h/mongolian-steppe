@@ -1,0 +1,34 @@
+{
+  "version": "Naran-City-Realism-v001",
+  "status": "exterior art draft; human approval outstanding",
+  "scene": "Naran-City-Realism-v001.blend",
+  "scene_sha256": "c7e9e5c3ffc5cb9b0bf3f810e35b1d78ab59a0f290474964a3b923f922731e0a",
+  "original_master_sha256": "d2ca395f9c1642cb8fb7aa6e2253b4b4e1b19839d1eefddc5734078c1a19f9c0",
+  "native_checks_passed": 33,
+  "comparison_views": [
+    "aerial",
+    "apartment",
+    "ger-district",
+    "market",
+    "entrance",
+    "street",
+    "ger-street",
+    "agriculture"
+  ],
+  "resolution": [
+    1280,
+    800
+  ],
+  "preserved": "20 landmark XYZ, 60 original roads, Episode 1 arrival/entry and original source sets",
+  "limits": "CHANGES.md",
+  "render_files": {
+    "aerial": "3f122368c366e3db423ff818b7222a557cf1687b5657609044bbf2a1234a80ef",
+    "apartment": "ace2333d6e6e85e5590cfb05c941094437ae65fa675459fde99ab96f5e0d188e",
+    "ger-district": "6e0e7d7fe0ffc9505e8073d7f9fe9dec60c691c5ff5fd949be0f36d4be95fa91",
+    "market": "1af63a4ff919f240c77ab84632d190e34779b8e027601b338ecadf5bed394725",
+    "entrance": "63523ae8c732a84b8a52f67fce2c92c1824ae8bcbbd6d21041404d9baabbb3c8",
+    "street": "61521ebf33f1a68fa75b3c7641b43d4ebce5a72178c3f3a3e4836f775ccec71f",
+    "ger-street": "cc75e1e46eed61996fd074cfcff97e237d43641348bf0cb66fef4ca0f67582cb",
+    "agriculture": "5776f9d73365b2f579a5bc9bfd3d5186a5160431287dc5bc108d35e84497d5ec"
+  }
+}

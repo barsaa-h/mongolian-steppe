@@ -2,7 +2,7 @@
 
 Created: 2026-10-28. Status: **proposed**. Builds on, and does not replace, the active backlog in
 [Character Master jobs](../../artifacts/character-master/production/JOBS.md) (C01–C14) and the
-[2026-10-27 production master plan](2026-10-27-2156-character-production-master-plan.md).
+[2026-10-27 production master plan](../history/2026-10-27-character-production-master-plan.md).
 Nothing here approves a design, a shot or a story decision.
 
 ## 1. Where the project stands

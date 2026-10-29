@@ -1,5 +1,7 @@
 # Final focused review — saved scene and targeted fixes
 
+**Current status: the last approach finding is resolved in source and manifest.** The resolution addendum below supersedes the earlier remaining-P2 verdict. Fresh native QA and refreshed render/hash verification are being performed by the authoring agent.
+
 Reviewed 29 October 2026. Scene SHA-256:
 
 `4f3619600cc04862ddb83113510366ecb20bd779392640e309996fd5faec1a0b`
@@ -29,3 +31,19 @@ This affects an ordinary outer-ger-district approach, not a protected story rout
 No exhaustive solid pairwise collisions, foundations, turning radii, door/gate operation, pedestrian access widths, actor blocking, historical language/model validation or runtime performance test was performed. Source inspection verifies the crossbar correction; no dedicated close school render was inspected. The existing production limits in `CHANGES.md` remain applicable. Human art and canon approval are explicitly outstanding.
 
 Verdict: previous findings resolved; fix the one neighbouring-yard approach crossing before closing this technical review.
+
+## Resolution addendum — full-width neighbouring-yard check
+
+Latest saved native SHA-256 independently read:
+
+`c7e9e5c3ffc5cb9b0bf3f810e35b1d78ab59a0f290474964a3b923f922731e0a`
+
+The corrected manifest records Household.062's full route through waypoint `(-980,-775)`. This replaces my preliminary `(-980,-778)` suggestion, which cleared the centerline but was too close when the full 1 m strip was considered.
+
+Reviewed `realism_layout.py:28–48`: the separating-axis test checks both polygons' edge normals and includes the complete 1 m approach strip, with a bounding-box rejection before polygon work. Generated plot polygons are convex, and the checked strip matches the authoring helper's square-ended segment surface. The check excludes the owning plot deliberately; own-yard approach checks remain separate. The authoring path and manifest now use the same multisegment route. Native QA includes the new neighbour-yard test.
+
+Independent verification used **polygon clipping**, separately implemented from the production separating-axis test. Across **411 parcels and 412 approach segments**, it found **zero positive-area overlaps with neighbouring yard polygons**. The production check also returns no conflicts. Restoring the original straight Household.062 approach reproduces exactly its Household.058 conflict. All **seven layout unit tests pass**, including the clear-centerline/overlapping-half-width regression. Red evidence is retained in `source/neighbor-approach-regression.json`.
+
+**Updated verdict:** the last reported technical finding is resolved at source/manifest level; no further correction requested by this focused review. At addendum time the on-disk native QA report still named the prior `4f3619…` scene; this reviewer did not wait for or claim the pending fresh native QA/renders. The authoring agent is responsible for confirming those outputs match the new `c7e9e5…` saved scene before delivery.
+
+No new broad art review was performed. Native scene geometry was not opened here, and human art/canon approval, actor blocking, runtime performance and the other limits above remain outstanding.

@@ -8,7 +8,7 @@
 - **Layout proposal:** the [World Bible](../../artifacts/character-master/sources/world/NARAN_WORLD_BIBLE_v1.0.md), its [location registry](../../artifacts/character-master/sources/world/data/naran_locations.csv), metric dimensions/distances and floorplans. They are fictional design coordinates, not surveyed Mongolian geography. **Preserve the current registered XY and IDs in this pass**; provisional status does not authorize an unrecorded move.
 - **Artistic assumption:** exact terrain, street alignment, entrances, utilities, infill, material wear and weather staging authored in the town. These need review where they affect travel, visibility or escape. Added detail does not approve a floorplan or shot.
 
-The [Blender map plan](blender-map-master-plan.md) and [quality/density plan](quality-density-master-plan.md) retain engineering history. Their old pilot priority, autumn/runtime treatment, helicopter cabin package and PSX/texture budgets do not override the current source hierarchy. This pass does not choose a new render pipeline.
+The [Blender map plan](../history/blender-map-master-plan.md) and [quality/density plan](../history/quality-density-master-plan.md) retain engineering history. Their old pilot priority, autumn/runtime treatment, helicopter cabin package and PSX/texture budgets do not override the current source hierarchy. This pass does not choose a new render pipeline.
 
 ## Protected location register
 
@@ -81,3 +81,17 @@ Governor's regional path remains **N13 → failed southern relief post (Days2–
 **Verified in this audit:** all 20 JSON anchor XY match CSV; all 60 JSON roads (names, widths and points) and 17 arrival points match `layout.py`; complete JSON parsed (443 footprint records). Arrival polyline is 2,671.5 m within town. Foot entry is a further 10.8 m. These are static metadata checks, not turning-radius, collision, visibility, actor or escape validation.
 
 **Still required before scene approval:** World Bible Tests A–G with actors/vehicles, apartment crowd/sound/egress, four-zone hospital medical/timing review, school handoff/gate blocking, regional fuel/time/grade continuity and station capacity. This audit did not open Blender, inspect rendered sightlines, benchmark runtime or verify external historical/medical/thermal claims.
+
+## Exterior changes recorded — realism v001, 29 October 2026
+
+The [versioned native scene](../../assets/maps/naran-city/realism-v1/README.md) preserves every registered landmark XYZ, all 60 original roads, the 2,671.5 m arrival polyline and the 10.8 m foot entry. No local Episode 1 set, screenplay, character identity or existing master was overwritten. The following additions are artistic proposals within that protected network:
+
+| Area | Before → after | Story impact / status |
+|---|---|---|
+| N07/N08 grounds | Open exterior surroundings → perimeter at X −795…−665, Y −390…−190; public north gap at X−720, west service gap at Y−310, south workshop gap at X−760. Footpath goes east of N07 via `(−674,−202)` and `(−674,−315)`, then to `(−760,−340)`. South gap links through `(−760,−408)`, `(−825,−408)`, `(−825,−310)` to original west lane. | Separate shells and original lanes retained. Supported gateway signs, visible latch and gaps are exterior studies; lock ownership, child/window/camera handoff and Munkh movement remain unapproved. No actor-shot change is asserted. |
+| N04/N05/N20 grounds | Open surroundings → service boundary X700…989, Y270…507 with public/service gaps: south X760/715/909, west Y300, east Y350, north X960. Initial blocking shed at `(910,310)` moved to `(945,390)`. | Original diagonal/public/service roads retained; no new interior corridor or rescue shortcut. Current native body-lane samples check added solid obstructions. Four medical zones and timed survivor routes remain open. |
+| N12 neighborhood | Existing four-floor root/entry route → additive roof/facade repairs and yard services; shoulder cars away from unloading/entry. | N12 XYZ and scale unchanged. Existing separate interior, 40-person party, sound reach and evacuation blocking remain open. |
+| Households | Same 411 centers/dwelling meshes → varied enclosures/services and dwellings/gates facing nearest roads. `.062` foot approach detours around `.058` via `(−980,−775)`. | Local non-story frontage changes improve access; no landmark relocation. Recorded 1 m-wide approach corridors clear neighboring parcels. This does not prove door operation or all pedestrian collisions. |
+| Agriculture | Existing northern industry → two farm tracks and post-harvest/fallow fringe, working storage/repair/animal yards. | Tracks join existing roads inside the local frame; no new regional bypass, café relocation or rail evacuation route. |
+
+The native checks and matching renders are review evidence. Human art/canon approval, resident/linguistic review and World Bible actor Tests A–G remain outstanding. See the version's change/performance reports for exact verification scope.

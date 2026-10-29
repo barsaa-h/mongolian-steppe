@@ -1,10 +1,35 @@
-# НАРАН ХОРООЛОЛ — PSX
+# ХАНИАД — THE COUGH
 
-> Character production now starts at [Character Master](artifacts/character-master/README.md): the selected shared MakeHuman/MPFB source, Episode 1 files, jobs and archive. The season direction is ten episodes; the next development scene is Hürel’s café. Runtime cast/studio/film descriptions below document the existing implementation and do not certify it against the new screenplay.
+A ten-episode Mongolian animated horror series. It is set in Naran, a fictional northern town, in late November 1998. **EP01 «АЯГАА ХУВААЛЦ»** is a 25-minute pilot. The look is PS2-era horror, with high-resolution, detailed close-ups.
 
-Episode 1 environment authoring now lives in the [Blender map pack](assets/maps/episode-1/README.md): café, pickup road, freight yard and apartment/stair. See [current map progress](docs/production/episode-1-map-progress.md) for verification and remaining work. These editable sets are not yet integrated into the player.
+## Start here
 
-The [full-size Naran town](assets/maps/naran-city/README.md) is now a separate Blender foundation based on the 3.3 × 3.0 km world plan, reusing current environment assets and prioritizing the Episode 1 neighborhood. The playable compact map below remains available.
+| You want | Go to |
+| --- | --- |
+| The production plan, milestones and agent departments | [docs/agents/](docs/agents/README.md) → [00 master plan](docs/agents/00-production-master-plan.md) |
+| Which story version is current | [SOURCES.md](artifacts/character-master/production/SOURCES.md) |
+| EP01 script (v4.2) and beat sheet (v4.0) | [sources/story/](artifacts/character-master/sources/story/) |
+| Characters (DNA, builds, status) | [Character Master](artifacts/character-master/README.md), [status](artifacts/character-master/production/STATUS.md) |
+| EP01 location sets | [assets/maps/episode-1/](assets/maps/episode-1/README.md) |
+| The full Naran town | [assets/maps/naran-city/](assets/maps/naran-city/README.md) |
+| Historical plans and superseded docs | [docs/history/](docs/history/) |
+
+## Folder map
+
+| Folder | Contents |
+| --- | --- |
+| `artifacts/character-master/` | Shared MakeHuman/MPFB character system, story/world sources, production status, review boards |
+| `artifacts/episode-1-cast/` | EP01 actor DNA (`dna/<id>.json`), 43 built actors, the Ganaa studies, QA |
+| `assets/cast/` | Runtime GLBs: `dna/` (the new DNA cast) and the legacy 48-character roster |
+| `assets/maps/` | Blender sets: `episode-1/` (café, border road, freight yard, apartment) and `naran-city/` |
+| `assets/sources/` | Third-party source assets and licenses (MakeHuman, MPFB, etc.) |
+| `src/`, `tests/`, `scripts/` | Three.js runtime (town, character studio, HOUR-5 film), tests, build/inspect tools |
+| `docs/` | Agent plans, production notes, research, references, history |
+| `episodes/` | Created by the layout agent: shot files, animatic, edit, renders (renders are git-ignored) |
+
+## Runtime (Three.js preview)
+
+The browser app is the T2 preview tier and a technical testbed. It is not the final renderer for close-ups.
 
 A Three.js town with a PSX-style renderer, an animated day cycle, and a textured character.
 

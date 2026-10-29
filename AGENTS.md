@@ -1,3 +1,7 @@
+# Agents
+
+Production plans for every department (story, characters, environments, props, look, animation, sound, layout) live in [docs/agents/](docs/agents/README.md). Read [00-production-master-plan.md](docs/agents/00-production-master-plan.md) and your department's plan before working.
+
 # Character work
 
 When creating, regenerating or changing a 3D character, read
