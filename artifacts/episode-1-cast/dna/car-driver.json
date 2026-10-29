@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "car-driver",
+  "name": "Жолооч",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "Steers while Bataa and Togoo push a car.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_v4.2_FULL_SCRIPT_READTHROUGH_CANDIDATE.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 6107,
+  "face": {
+    "head_height": -0.364,
+    "head_width": 0.422,
+    "head_depth": 0.254,
+    "skull_depth": -0.012,
+    "forehead_slope": 0.279,
+    "forehead_height": -0.12,
+    "temple_width": -0.106,
+    "head_round": 0.436,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.069,
+    "eye_size": 0.063,
+    "eye_spacing": -0.252,
+    "eye_tilt": -0.402,
+    "eye_depth": 0.497,
+    "upper_lid_fold": 0.259,
+    "eye_opening": 0.426,
+    "inner_lid_fold": 0.537,
+    "lower_lid_height": 0.112,
+    "brow_height": 0.224,
+    "brow_angle": -0.059,
+    "brow_depth": -0.081,
+    "nose_bridge_width": -0.151,
+    "nose_tip_width": 0.087,
+    "nose_tip_angle": -0.544,
+    "nose_width": -0.338,
+    "nose_length": 0.25,
+    "nose_projection": 0.038,
+    "nose_curve": 0.099,
+    "nostril_width": -0.564,
+    "nostril_angle": 0.654,
+    "nose_hump": -0.118,
+    "mouth_width": 0.116,
+    "upper_lip_fullness": -0.263,
+    "lower_lip_fullness": -0.15,
+    "mouth_corner_tilt": 0.144,
+    "philtrum_length": 0.242,
+    "cupids_bow": 0.456,
+    "mouth_depth": -0.013,
+    "upper_lip_height": 0.17,
+    "lower_lip_height": -0.308,
+    "jaw_width": -0.072,
+    "chin_width": -0.137,
+    "chin_length": 0.191,
+    "chin_projection": 0.173,
+    "chin_prognathism": -0.023,
+    "chin_cleft": -0.089,
+    "cheek_height": -0.001,
+    "cheekbone_prominence": 0.7,
+    "cheek_fullness": 0.067,
+    "cheek_hollow": -0.145,
+    "ear_size": -0.134,
+    "ear_angle": 0.427,
+    "ear_lobe": 0.007,
+    "nose_mid_width": -0.032,
+    "nose_base_width": -0.095
+  },
+  "asymmetry": {
+    "eye_size": 0.009,
+    "eye_spacing": -0.029,
+    "eye_tilt": -0.002,
+    "eye_depth": -0.018,
+    "upper_lid_fold": 0.028,
+    "eye_opening": -0.006,
+    "inner_lid_fold": -0.032,
+    "lower_lid_height": -0.019,
+    "cheek_height": 0.023,
+    "cheekbone_prominence": 0.014,
+    "cheek_fullness": 0.012,
+    "cheek_hollow": -0.028,
+    "ear_size": 0.013,
+    "ear_angle": -0.013,
+    "ear_lobe": 0.011
+  },
+  "age": {
+    "years": 48,
+    "features": {
+      "head_age": 0.42,
+      "eye_bags_left": 0.31,
+      "eye_bags_right": 0.29,
+      "sagging": 0.16,
+      "lip_thinning": 0.16,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.71,
+    "weight": 0.45,
+    "muscle": 0.5,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "old_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.35,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "weathered",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short01",
+    "style": "short",
+    "color": "#2a2520",
+    "greying": 0.45,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.25,
+    "color": "#2a241f",
+    "greying": 0.5,
+    "style": "heavy",
+    "lift": 0.09
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.45,
+    "greying": 0.55
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#3d4650",
+    "bottom_color": "#2a2c2f",
+    "accent_color": "#7b6a55"
+  },
+  "signature_traits": [
+    "Broad brows",
+    "Short hair",
+    "Blue-grey work coat"
+  ],
+  "face_design": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

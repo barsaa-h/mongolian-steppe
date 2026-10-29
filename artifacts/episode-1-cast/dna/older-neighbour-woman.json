@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "id": "older-neighbour-woman",
+  "name": "Хөрш эмэгтэй",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "Coughs and complains about coal dust.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_v4.2_FULL_SCRIPT_READTHROUGH_CANDIDATE.md"
+    ]
+  },
+  "base": "elder",
+  "sex": "female",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 6106,
+  "face": {
+    "head_height": -0.076,
+    "head_width": -0.062,
+    "head_depth": 0.053,
+    "skull_depth": 0.032,
+    "forehead_slope": -0.028,
+    "forehead_height": -0.335,
+    "temple_width": 0.432,
+    "head_round": 0,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0.446,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.025,
+    "eye_size": -0.061,
+    "eye_spacing": -0.29,
+    "eye_tilt": 0.341,
+    "eye_depth": -0.508,
+    "upper_lid_fold": 0.619,
+    "eye_opening": -0.055,
+    "inner_lid_fold": 0.011,
+    "lower_lid_height": 0.32,
+    "brow_height": -0.045,
+    "brow_angle": 0.183,
+    "brow_depth": 0.163,
+    "nose_bridge_width": 0.252,
+    "nose_tip_width": 0.674,
+    "nose_tip_angle": -0.131,
+    "nose_width": 0.421,
+    "nose_length": -0.532,
+    "nose_projection": -0.422,
+    "nose_curve": 0.291,
+    "nostril_width": -0.356,
+    "nostril_angle": -0.471,
+    "nose_hump": 0.246,
+    "mouth_width": -0.349,
+    "upper_lip_fullness": 0.185,
+    "lower_lip_fullness": 0.248,
+    "mouth_corner_tilt": 0.212,
+    "philtrum_length": -0.108,
+    "cupids_bow": 0.366,
+    "mouth_depth": -0.43,
+    "upper_lip_height": -0.359,
+    "lower_lip_height": 0.034,
+    "jaw_width": 0.2,
+    "chin_width": -0.32,
+    "chin_length": -0.068,
+    "chin_projection": -0.273,
+    "chin_prognathism": -0.118,
+    "chin_cleft": -0.151,
+    "cheek_height": 0.133,
+    "cheekbone_prominence": 0.7,
+    "cheek_fullness": -0.371,
+    "cheek_hollow": 0.278,
+    "ear_size": -0.177,
+    "ear_angle": 0.191,
+    "ear_lobe": -0.089,
+    "nose_mid_width": 0.034,
+    "nose_base_width": -0.483
+  },
+  "asymmetry": {
+    "eye_size": -0.027,
+    "eye_spacing": 0.019,
+    "eye_tilt": -0.008,
+    "eye_depth": -0.012,
+    "upper_lid_fold": -0.008,
+    "eye_opening": 0.001,
+    "inner_lid_fold": 0.011,
+    "lower_lid_height": 0.001,
+    "cheek_height": 0.005,
+    "cheekbone_prominence": 0.025,
+    "cheek_fullness": -0.001,
+    "cheek_hollow": -0.001,
+    "ear_size": 0.005,
+    "ear_angle": 0.005,
+    "ear_lobe": 0.012
+  },
+  "age": {
+    "years": 66,
+    "features": {
+      "head_age": 0.48,
+      "eye_bags_left": 0.52,
+      "eye_bags_right": 0.473,
+      "sagging": 0,
+      "lip_thinning": 0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.54,
+    "weight": 0.66,
+    "muscle": 0.22,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "old_asian_female",
+    "tone": 1,
+    "ruddiness": 0.3,
+    "freckles": 0,
+    "pimples": 0,
+    "look": "elder",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "ponytail01",
+    "style": "bun",
+    "color": "#68645d",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.95,
+    "color": "#2e2822",
+    "greying": 0.5,
+    "style": "sparse",
+    "lift": 0.1
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit02",
+    "shoes": "shoes02",
+    "wardrobe": "deel",
+    "top_color": "#345e59",
+    "bottom_color": "#323c38",
+    "accent_color": "#ad9470"
+  },
+  "signature_traits": [
+    "Greying bun",
+    "Fine facial age lines",
+    "Dark green deel"
+  ],
+  "face_design": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
+}

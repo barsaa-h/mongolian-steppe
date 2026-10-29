@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
   "id": "yard-loader",
-  "name": "Ачигч",
+  "name": "Паша",
   "episode": 1,
   "category": "featured",
   "script_age": null,
   "source": {
-    "facts": "EP01 v4 beat 06: loader at the Ulan-Ude freight yard who roasts Ganaa about a loose cargo strap.",
+    "facts": "EP01 v4.2: Pasha is a Russian loader who knows Ganaa and helps with the cargo strap.",
     "references": [
-      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+      "artifacts/character-master/sources/story/EP01_v4.2_FULL_SCRIPT_READTHROUGH_CANDIDATE.md"
     ]
   },
   "base": "adult",
   "sex": "male",
-  "ancestry_preset": "mongolian",
-  "casting": "Mongolian",
+  "ancestry_preset": "slavic",
+  "casting": "Russian casting",
   "seed": 8774252,
   "face": {
     "head_height": 0.061,
@@ -121,7 +121,7 @@
     "posture": 0
   },
   "skin": {
-    "asset": "middleage_asian_male",
+    "asset": "young_caucasian_male",
     "tone": 0.97,
     "ruddiness": 0.4,
     "freckles": 6,
@@ -164,11 +164,11 @@
     "accent_color": "#7a6a4a"
   },
   "signature_traits": [
-    "Broad square Buryat jaw",
-    "Upturned eyes and high cheekbones",
-    "Crew cut"
+    "Square jaw",
+    "High cheekbones",
+    "Short crew cut"
   ],
-  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: upturned.",
+  "face_design": "Artistic draft: Russian casting palette; facial identity and appearance require visual review.",
   "states": [
     "normal"
   ],

@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "kiosk-seller",
+  "name": "Худалдагч",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "Keeps a loaf aside until the boy’s mother comes.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_v4.2_FULL_SCRIPT_READTHROUGH_CANDIDATE.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "female",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 6104,
+  "face": {
+    "head_height": -0.073,
+    "head_width": -0.063,
+    "head_depth": 0.203,
+    "skull_depth": 0.207,
+    "forehead_slope": 0.124,
+    "forehead_height": 0.087,
+    "temple_width": 0.157,
+    "head_round": 0,
+    "head_square": 0.497,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": -0.068,
+    "eye_size": 0.351,
+    "eye_spacing": -0.355,
+    "eye_tilt": 0.343,
+    "eye_depth": 0.341,
+    "upper_lid_fold": 0.374,
+    "eye_opening": -0.192,
+    "inner_lid_fold": 0.434,
+    "lower_lid_height": -0.152,
+    "brow_height": 0.147,
+    "brow_angle": -0.263,
+    "brow_depth": 0.018,
+    "nose_bridge_width": 0.108,
+    "nose_tip_width": 0.041,
+    "nose_tip_angle": -0.375,
+    "nose_width": 0.249,
+    "nose_length": 0.061,
+    "nose_projection": -0.303,
+    "nose_curve": 0.202,
+    "nostril_width": 0.364,
+    "nostril_angle": 0.132,
+    "nose_hump": 0.1,
+    "mouth_width": -0.092,
+    "upper_lip_fullness": 0.331,
+    "lower_lip_fullness": 0.174,
+    "mouth_corner_tilt": -0.345,
+    "philtrum_length": 0.172,
+    "cupids_bow": 0.564,
+    "mouth_depth": -0.034,
+    "upper_lip_height": 0.306,
+    "lower_lip_height": -0.34,
+    "jaw_width": -0.135,
+    "chin_width": 0.187,
+    "chin_length": 0.407,
+    "chin_projection": 0.096,
+    "chin_prognathism": -0.106,
+    "chin_cleft": -0.259,
+    "cheek_height": -0.206,
+    "cheekbone_prominence": 0.245,
+    "cheek_fullness": 0.017,
+    "cheek_hollow": -0.124,
+    "ear_size": 0.297,
+    "ear_angle": 0.191,
+    "ear_lobe": 0.125,
+    "nose_mid_width": -0.551,
+    "nose_base_width": 0.283
+  },
+  "asymmetry": {
+    "eye_size": -0.022,
+    "eye_spacing": 0.028,
+    "eye_tilt": -0.018,
+    "eye_depth": -0.032,
+    "upper_lid_fold": 0.002,
+    "eye_opening": 0.028,
+    "inner_lid_fold": 0.034,
+    "lower_lid_height": 0.034,
+    "cheek_height": 0.033,
+    "cheekbone_prominence": -0.018,
+    "cheek_fullness": 0.016,
+    "cheek_hollow": -0.021,
+    "ear_size": 0.008,
+    "ear_angle": 0.027,
+    "ear_lobe": 0.01
+  },
+  "age": {
+    "years": 41,
+    "features": {
+      "head_age": 0.26,
+      "eye_bags_left": 0.23,
+      "eye_bags_right": 0.21,
+      "sagging": 0.1,
+      "lip_thinning": 0.1,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.57,
+    "weight": 0.68,
+    "muscle": 0.3,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_female",
+    "tone": 1,
+    "ruddiness": 0.2,
+    "freckles": 0,
+    "pimples": 1,
+    "look": "weathered",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "short",
+    "color": "#1f1915",
+    "greying": 0.2,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.85,
+    "color": "#231c17",
+    "greying": 0,
+    "style": "arched",
+    "lift": 0.16,
+    "arch": 0.3
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#5b4a63",
+    "bottom_color": "#2f2a33",
+    "accent_color": "#9b7e57"
+  },
+  "signature_traits": [
+    "Straight brows",
+    "Short dark hair",
+    "Muted coat"
+  ],
+  "face_design": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
+}

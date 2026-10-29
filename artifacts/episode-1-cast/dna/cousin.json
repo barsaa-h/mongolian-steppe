@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "id": "cousin",
-  "name": "Үеэл эгч",
+  "name": "Тунгалаг",
   "episode": 1,
   "category": "featured",
   "script_age": null,
   "source": {
-    "facts": "EP01 v4 beats 05/24: visiting cousin who settles her infant in the bedroom and tells everyone not to wake him.",
+    "facts": "EP01 v4.2: Tungalag is a cousin who rocks her infant, takes the infant to the bedroom and later responds to crying.",
     "references": [
-      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+      "artifacts/character-master/sources/story/EP01_v4.2_FULL_SCRIPT_READTHROUGH_CANDIDATE.md"
     ]
   },
   "base": "adult",
