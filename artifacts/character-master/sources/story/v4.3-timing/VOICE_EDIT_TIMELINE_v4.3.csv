@@ -1,0 +1,33 @@
+test,cue,in,out,target_duration_sec,speaker,mood,spoken_text,v3_v4_tts_prompt,suggested_micro_pause_sec,performance_blocking,editor_notes
+Birthday 90s,1,00:00,00:05,5,ROOM,SFX,,,0.0,"quiet celebration; plate, cloth, soft household voices",Set warm room tone. No dramatic score.
+Birthday 90s,2,00:05,00:08,3,АЛТАН,curious,Надад уу?,[curious] Надад уу?,0.0,little girl; straightforward,"A small question, not a performed cute voice."
+Birthday 90s,3,00:08,00:13,5,ГАНАА,warm,Чамд. Өмсөөд үз.,[warmly] Чамд. [short pause] Өмсөөд үз.,0.3,sitting down at child height,"Warm, slightly tired; pause after giving gift."
+Birthday 90s,4,00:13,00:16,3,АЛТАН,matter of fact,Том байна.,Том байна.,0.0,feels large mitten,Plain fact.
+Birthday 90s,5,00:16,00:23,7,ГАНАА,affectionate,Жаахан том юм байна. Дараа жил бас өмсөнө.,[softly] Жаахан том юм байна... [short pause] Дараа жил бас өмсөнө.,0.35,light smile; covering mistake,"First pause is Ganaa noticing size, not exaggerated sadness."
+Birthday 90s,6,00:23,00:26,3,АЛТАН,expectant,Нөгөө дуугаа.,Нөгөө дуугаа.,0.0,remembers her promise,Dry and direct.
+Birthday 90s,7,00:26,00:29,3,ГАНАА,playful,Дуулах уу?,[warmly] Дуулах уу?,0.0,almost smiling,Teasing question.
+Birthday 90s,8,00:29,00:31,2,АЛТАН,impatient,Дуул.,Дуул.,0.0,wants the song now,"Command, not shout."
+Birthday 90s,9,00:31,00:40,9,GANAA_TUNE,SFX,,,0.0,hums familiar ORIGINAL little tune; avoid copyrighted tune,"Performance separately recorded; can be 5–8 seconds, dry/no sentimental music."
+Birthday 90s,10,00:40,00:43,3,АЛТАН,gleeful,Буруу дууллаа.,[amused] Буруу дууллаа.,0.0,interrupts humming,Friendly correction.
+Birthday 90s,11,00:43,00:50,7,ГАНАА,amused,Аав нь ер нь зөв дуулж байсан бил үү?,[chuckles softly] Аав нь ер нь... зөв дуулж байсан бил үү?,0.3,"smiling, slight warmth","Micro-pause follows ер нь, as he thinks."
+Birthday 90s,12,00:50,00:52,2,АЛТАН,certain,Үгүй.,Үгүй.,0.0,deadpan,No cartoonish smile.
+Birthday 90s,13,00:52,00:58,6,ROOM,SFX,,,0.0,two people quietly laugh; fade; Ganaa resumes one breath of original tune,Let laugh fall away naturally.
+Birthday 90s,14,00:58,01:03,5,INFANT,SFX,,,0.0,"unexpected crying from bedroom, normal human infant",Change soundscape before changing acting.
+Birthday 90s,15,01:03,01:07,4,ТУНГАЛАГ,ordinary,"Өө, сэрчихэж. Би аваад ирье.","Өө, сэрчихэж. Би аваад ирье.",0.15,"stands, already walking",Not alarmed.
+Birthday 90s,16,01:07,01:12,5,АЛТАН,confused,Аав аа? Дуугаа.,[curious] Аав аа?.. Дуугаа.,0.35,tugs on his good sleeve,Wait after аав аа for no reply.
+Birthday 90s,17,01:12,01:19,7,ГАНАА,shaken,Алтан...,[breathless] Алтан...,0.9,eyes fix on bedroom then daughter,One fragile word; silence after it is mainly in edit.
+Birthday 90s,18,01:19,01:23,4,ЦЭЦЭГМАА,controlled fear,"Тунгаа, түр хүлээ.",[softly] Тунгаа... түр хүлээ.,0.4,notices his eyes; stops Tungalag,She doesn’t yet know why she is scared.
+Birthday 90s,19,01:23,01:30,7,ROOM,SFX,,,0.0,"Ganaa starts toward crying, catches himself, walks away into kitchen",No Ganaa self-talk. Character decisions are conveyed visually.
+Door 64s,1,00:00,00:04,4,ЦЭЦЭГМАА,uncertain,Ганаа...?,[softly] Ганаа...?,0.2,watching him,Almost says it without voice.
+Door 64s,2,00:04,00:12,8,ГАНАА,fragile,Цэцгээ... хүүхдүүдийг...,[breathless] Цэцгээ... [pause] хүүхдүүдийг...,0.8,finding words while holding the door,"Say less, do not finish the sentence, avoid horror growls."
+Door 64s,3,00:12,00:15,3,DOOR,SFX,,,0.0,inward-opening kitchen door closes; Ganaa braces from inside,The sound changes from soft room to shut wood. Geometry matters.
+Door 64s,4,00:15,00:20,5,ЦЭЦЭГМАА,firm,"Ээж ээ, Алтаныг аваад гадаа гар.",[urgent] Ээж ээ... Алтаныг аваад гадаа гар.,0.2,directs Dulmaa and Altan toward entrance,"Fear has entered her voice, but she is practical."
+Door 64s,5,00:20,00:23,3,ДУЛМАА,confused,Юу болсон юм?,Юу болсон юм?,0.0,clearing the front entrance,"Low, not theatrical."
+Door 64s,6,00:23,00:28,5,ЦЭЦЭГМАА,decisive,"Гар, ээж ээ. Одоо.","[firmly] Гар, ээж ээ. [short pause] Одоо.",0.25,does not explain,Oдоо is short and unmistakable.
+Door 64s,7,00:28,00:34,6,ROOM,SFX,,,0.0,kitchen thud and choking breath; Sükhee reacts,Sükhee is trying to help a man he thinks collapsed.
+Door 64s,8,00:34,00:39,5,СҮХЭЭ,concern,"Ганаа? Хөөе, чи яачихав аа?",[concerned] Ганаа? Хөөе... чи яачихав аа?,0.3,"gets up, approaches kitchen",Not comic drunk; concerned and somewhat frustrated.
+Door 64s,9,00:39,00:43,4,ЦЭЦЭГМАА,warning,"Сүхээ, наад хаалгыг битгий нээ!",[urgent] Сүхээ! Наад хаалгыг битгий нээ!,0.1,sees his hand on knob,Urgency with no unnatural drawn-out panic.
+Door 64s,10,00:43,00:50,7,СҮХЭЭ,insistent,"Дотор уначихлаа ш дээ. Амьсгалж байна уу, үгүй юу?","[insistent] Дотор уначихлаа ш дээ... Амьсгалж байна уу, үгүй юу?",0.25,hears the choking noise,"Rational help attempt, misjudged."
+Door 64s,11,00:50,00:53,3,ЦЭЦЭГМАА,sharp,БОЛЬ! НААШАА ИР!,[shouting] БОЛЬ! НААШАА ИР!,0.0,calls him back,Two explosive short commands only.
+Door 64s,12,00:53,00:58,5,АЛТАН,innocent,Аав гарахгүй юм уу?,[softly] Аав гарахгүй юм уу?,0.0,one mitten on; second stays by cake,She doesn’t understand; not crying for effect.
+Door 64s,13,00:58,01:04,6,DOOR,SFX,,,0.0,"Sükhee turns knob, pushes INWARD, Ganaa resists then weakens; exhale to inhale; cut to black",Lock physical blocking. This is the EP02 exact-match cut.
