@@ -52,8 +52,8 @@ try:
 except Exception as e:
     sys.exit(f"no JSON result ({e}); see stderr log")
 r = d.get("result")
-print(r.get("text") if isinstance(r, dict) else r)
-u = (r if isinstance(r, dict) else d)
+u = r if isinstance(r, dict) else d
+print(u.get("text") or r)
 print(f"\n-- turns={u.get('num_turns')} cost_usd={u.get('total_cost_usd')} input_tokens={u.get('usage',{}).get('input_tokens')}")
 EOF
 echo "-- diff:"; git -C "$tree" status --short | head -50
