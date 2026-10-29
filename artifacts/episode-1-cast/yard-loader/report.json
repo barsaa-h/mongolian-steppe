@@ -1,15 +1,15 @@
 {
-  "name": "Ачигч",
-  "bodyHeightM": 1.76,
+  "name": "Паша",
+  "bodyHeightM": 1.8400000000000003,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.0832640354350108,
-  "waistWidthM": 0.3528086001933168,
-  "sourceShapeKeys": 84,
+  "headHeightFraction": 0.07478003621217238,
+  "waistWidthM": 0.40226410695908904,
+  "sourceShapeKeys": 96,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 46,
-    "Shoes": 24
+    "Clothes.Outfit": 47,
+    "Shoes": 20
   },
   "fullBodyRetained": true,
   "renderBodyUsesClothingMasks": true,
@@ -83,14 +83,14 @@
     {
       "name": "Details.Lashes.eye.L.Upper",
       "role": "Eyelashes",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 18,
+      "triangles": 16
     },
     {
       "name": "Details.WetLine.eye.L.Upper",
       "role": "Eyes.WetLine",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 18,
+      "triangles": 16
     },
     {
       "name": "Details.Caruncle.eye.L",
@@ -101,14 +101,14 @@
     {
       "name": "Details.Lashes.eye.L.Lower",
       "role": "Eyelashes",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 24,
+      "triangles": 22
     },
     {
       "name": "Details.WetLine.eye.L.Lower",
       "role": "Eyes.WetLine",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 24,
+      "triangles": 22
     },
     {
       "name": "Details.Lashes.eye.R.Upper",
@@ -131,14 +131,14 @@
     {
       "name": "Details.Lashes.eye.R.Lower",
       "role": "Eyelashes",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 24,
+      "triangles": 22
     },
     {
       "name": "Details.WetLine.eye.R.Lower",
       "role": "Eyes.WetLine",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 24,
+      "triangles": 22
     }
   ],
   "packedTextures": [
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "name": "brown.png",
+      "name": "blue.png",
       "size": [
         1024,
         1024
@@ -199,6 +199,13 @@
       ]
     },
     {
+      "name": "heavy.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
       "name": "lashes.png",
       "size": [
         512,
@@ -207,27 +214,6 @@
     },
     {
       "name": "male_casualsuit05_diffuse.png",
-      "size": [
-        2048,
-        2048
-      ]
-    },
-    {
-      "name": "middleage_asian_male_albedo.png",
-      "size": [
-        2048,
-        2048
-      ]
-    },
-    {
-      "name": "middleage_asian_male_normal.png",
-      "size": [
-        2048,
-        2048
-      ]
-    },
-    {
-      "name": "middleage_asian_male_roughness.png",
       "size": [
         2048,
         2048
@@ -262,13 +248,6 @@
       ]
     },
     {
-      "name": "straight.png",
-      "size": [
-        1024,
-        1024
-      ]
-    },
-    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -280,6 +259,27 @@
       "size": [
         1024,
         1024
+      ]
+    },
+    {
+      "name": "young_caucasian_male_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_caucasian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_caucasian_male_roughness.png",
+      "size": [
+        2048,
+        2048
       ]
     }
   ],
@@ -297,22 +297,22 @@
   "id": "yard-loader",
   "episode": 1,
   "scriptAge": null,
-  "skinSource": "middleage_asian_male",
+  "skinSource": "young_caucasian_male",
   "skinDetailCount": 0,
   "wrinkleParts": 0,
   "storyStates": [
     "normal"
   ],
   "wardrobe": "coat",
-  "casting": "Mongolian",
-  "dnaHash": "bfb2d20a5ef1b3880666d4ef6a6abcd64c85f597ab3697a3873650e163a6047b",
+  "casting": "Russian casting",
+  "dnaHash": "2040344947618a6de8bc1e20e2e483da4c1813af9c7d2b5d368790d98b60e672",
   "baseStage": "adult",
   "sourceIndexMap": true,
-  "glbSha256": "3a74f94cc1b6c38308b569283b6a59b227b10b741d541b47c680860ddcfd5a3d",
+  "glbSha256": "fe1f403ae6aff06168fb4430ca34715ddb8e5a462271bbff983ea455b7ccc4e4",
   "clips": [
     "Deformation_Check",
     "Talk_Check"
   ],
-  "exportInspectedAt": "2026-10-28T18:25:02.159791+00:00",
+  "exportInspectedAt": "2026-10-29T16:20:46.093200+00:00",
   "blenderVersion": "5.2.2 LTS"
 }

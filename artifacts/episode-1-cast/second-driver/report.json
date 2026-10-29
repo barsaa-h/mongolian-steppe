@@ -1,0 +1,311 @@
+{
+  "name": "Жолооч 2",
+  "bodyHeightM": 1.78,
+  "sourceBodyVertices": 19158,
+  "headHeightFraction": 0.0984146705300666,
+  "waistWidthM": 0.34427319887968844,
+  "sourceShapeKeys": 90,
+  "rigBones": 137,
+  "fingerBones": 30,
+  "garmentCorrections": {
+    "Clothes.Outfit": 41,
+    "Shoes": 18
+  },
+  "fullBodyRetained": true,
+  "renderBodyUsesClothingMasks": true,
+  "meshes": [
+    {
+      "name": "Eyebrows",
+      "role": "Eyebrows",
+      "vertices": 124,
+      "triangles": 192
+    },
+    {
+      "name": "Eyes",
+      "role": "Eyes",
+      "vertices": 1064,
+      "triangles": 2040
+    },
+    {
+      "name": "Shoes",
+      "role": "Shoes",
+      "vertices": 1594,
+      "triangles": 3064
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 1755,
+      "triangles": 3344
+    },
+    {
+      "name": "Teeth",
+      "role": "Teeth",
+      "vertices": 3868,
+      "triangles": 7120
+    },
+    {
+      "name": "Tongue",
+      "role": "Tongue",
+      "vertices": 226,
+      "triangles": 448
+    },
+    {
+      "name": "Clothes.Top",
+      "role": "Clothes.Top",
+      "vertices": 2309,
+      "triangles": 4284
+    },
+    {
+      "name": "Clothes.Bottom",
+      "role": "Clothes.Bottom",
+      "vertices": 886,
+      "triangles": 1712
+    },
+    {
+      "name": "Hands.L",
+      "role": "Hands.L",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Hands.R",
+      "role": "Hands.R",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Body.Skin",
+      "role": "Body",
+      "vertices": 4820,
+      "triangles": 9428
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    }
+  ],
+  "packedTextures": [
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Clothes.Bottom | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Top | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eye-brown-1.15-0.50.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eyelashes01.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "Hair | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
+      ]
+    },
+    {
+      "name": "male_casualsuit05_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "shoes02_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "short02_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Skin layer bake | Cast albedo",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "straight.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "teeth.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "tongue01_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "young_asian_male_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_male_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "young_asian_male_roughness.png",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "controlMorphs": 0,
+  "talkCheck": true,
+  "id": "second-driver",
+  "episode": 1,
+  "scriptAge": null,
+  "skinSource": "young_asian_male",
+  "skinDetailCount": 0,
+  "wrinkleParts": 0,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "coat",
+  "casting": "Mongolian",
+  "dnaHash": "d04ade310475abc0ba71c709e4275143d91b48f956108322b3a1b01d4dbf2ace",
+  "baseStage": "adult",
+  "sourceIndexMap": true,
+  "glbSha256": "b68238f88ce311af5c3924aa53e5046e9a221b60caf3ded277efa635f241a2cf",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-29T16:17:40.858310+00:00",
+  "blenderVersion": "5.2.2 LTS"
+}

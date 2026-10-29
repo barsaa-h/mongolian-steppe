@@ -1,14 +1,14 @@
 {
-  "name": "Үеэл эгч",
-  "bodyHeightM": 1.5999999999999999,
+  "name": "Тунгалаг",
+  "bodyHeightM": 1.5799999999999998,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.07762667297117455,
-  "waistWidthM": 0.35522471938570677,
-  "sourceShapeKeys": 81,
+  "headHeightFraction": 0.07996609171690981,
+  "waistWidthM": 0.37548935164995034,
+  "sourceShapeKeys": 93,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 185,
+    "Clothes.Outfit": 173,
     "Shoes": 18
   },
   "fullBodyRetained": true,
@@ -81,12 +81,6 @@
       "triangles": 10830
     },
     {
-      "name": "Details.Blemish.01",
-      "role": "Details.Blemish.01",
-      "vertices": 13,
-      "triangles": 12
-    },
-    {
       "name": "Details.Lashes.eye.L.Upper",
       "role": "Eyelashes",
       "vertices": 20,
@@ -107,14 +101,14 @@
     {
       "name": "Details.Lashes.eye.L.Lower",
       "role": "Eyelashes",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 22,
+      "triangles": 20
     },
     {
       "name": "Details.WetLine.eye.L.Lower",
       "role": "Eyes.WetLine",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 22,
+      "triangles": 20
     },
     {
       "name": "Details.Lashes.eye.R.Upper",
@@ -137,14 +131,14 @@
     {
       "name": "Details.Lashes.eye.R.Lower",
       "role": "Eyelashes",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 22,
+      "triangles": 20
     },
     {
       "name": "Details.WetLine.eye.R.Lower",
       "role": "Eyes.WetLine",
-      "vertices": 20,
-      "triangles": 18
+      "vertices": 22,
+      "triangles": 20
     }
   ],
   "packedTextures": [
@@ -297,21 +291,21 @@
   "episode": 1,
   "scriptAge": null,
   "skinSource": "young_asian_female",
-  "skinDetailCount": 1,
+  "skinDetailCount": 0,
   "wrinkleParts": 0,
   "storyStates": [
     "normal"
   ],
   "wardrobe": "dress",
   "casting": "Mongolian",
-  "dnaHash": "a94c79b6131b1edfa841fe6296998e3614412613df876832cd9e52578f5f35aa",
+  "dnaHash": "217e8cea3b4b8f11062368678b5be3c016be4a9f6c51bbaaac1d9d268b660a36",
   "baseStage": "adult",
   "sourceIndexMap": true,
-  "glbSha256": "d16a9ddb78314402c531dc480e6df5a96e78388e71c093be3e9f4c74ac706873",
+  "glbSha256": "0d13323449c1351e564fc462502112fd15aca20f82935d784d6f0708e5c267d6",
   "clips": [
     "Deformation_Check",
     "Talk_Check"
   ],
-  "exportInspectedAt": "2026-10-28T18:12:50.159511+00:00",
+  "exportInspectedAt": "2026-10-29T16:25:42.329193+00:00",
   "blenderVersion": "5.2.2 LTS"
 }
