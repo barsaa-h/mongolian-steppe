@@ -44,6 +44,7 @@ GROK_CLAUDE_MCPS_ENABLED=0 GROK_CURSOR_MCPS_ENABLED=0 grok -p "$(cat "$brief")" 
   --deny 'Bash(git commit*)' --deny 'Bash(git push*)' --deny 'Bash(git add*)' \
   --deny 'Bash(git checkout*)' --deny 'Bash(git switch*)' --deny 'Bash(git reset*)' \
   --deny 'Bash(git rebase*)' --deny 'Bash(sudo*)' --deny 'Bash(rm -rf*)' \
+  --background-wait-timeout 3600 \
   --output-format json > "$runs/$stamp-result.json" 2> "$runs/$stamp-stderr.log" || true
 
 python3 - "$runs/$stamp-result.json" <<'EOF'
