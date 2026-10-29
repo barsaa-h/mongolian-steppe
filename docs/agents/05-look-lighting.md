@@ -31,7 +31,7 @@ Wide shots feel like a 2002 console game running in-engine: modest textures, dep
 | L05 | **Render budget** | From L04 timings, a per-tier budget for 36,000 frames. Eevee by default; list the shots that justify Cycles. A target such as ≤ 40 s/frame (T1) and ≤ 3 min/frame (T0) is a proposal to check against the timings, not a given. | open |
 | L06 | **Light rigs per location × time** | Freight yard pre-dawn and morning; border day → late sun; Naran morning and midday; apartment afternoon and night; café late afternoon + fire; livestock cab at night; hospital gate at night. Each is a linkable collection. | open |
 | L07 | **Winter atmosphere** | Coal smoke volumes, breath vapor, frost and steam settings, shared with 03 and 06 | open |
-| L08 | **EP02 hospital lighting** | Fluorescent tubes, backup-power switch-over (ventilation slows, lights change), maternity wing. M6. | open |
+| L08 | **EP02 hospital lighting** | Fluorescent tubes, backup-power switch-over (ventilation slows, lights change), maternity wing. M10. | open |
 
 ## Rules
 - The grade is one node group/pass, versioned. Shots link it and never fork it.
