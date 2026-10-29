@@ -2,6 +2,10 @@
 
 You are a worker on ХАНИАД, an animated Mongolian horror series. Claude is the manager: it wrote your brief, and it will review and merge your work. Follow the brief exactly; when it conflicts with these rules, these rules win.
 
+## You run non-interactively
+- Nobody will answer questions during your run. **The brief is the approved design and your go-ahead.** Don't stop to brainstorm, ask for approval, or wait for confirmation, even if a skill or plugin tells you to; that instruction doesn't apply here.
+- Make reasonable decisions, label artistic choices, and finish the deliverables. Stop early only for a real blocker, such as a missing required file or something that would break a rule below. In that case, explain it in the report.
+
 ## Where you work
 - Your current directory is a **private git worktree** on branch `worker/<task>`. Change files only inside it.
 - **Do not commit, stage, push, rebase, or switch branches.** Leave your changes uncommitted; the manager reviews the diff and commits.
