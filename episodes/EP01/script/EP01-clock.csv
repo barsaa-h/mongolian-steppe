@@ -1,0 +1,27 @@
+beat,title,story_time_start,story_time_end,elapsed_since_bite,location,light,weather,ganaa_infection_stage,source
+1,A man standing where he shouldn't,~05:50,~05:53,,Ulan-Ude freight yard,dawn,unstated,not bitten,Script §01; clock event ledger; beat CSV #1; light assumption where interior or dusk
+2,The warning that has nowhere to go,~06:10,,,freight dispatch office,interior practical,unstated,not bitten,Script §02; clock event ledger; beat CSV #2; light assumption where interior or dusk
+3,Naran wakes,,,,Naran market street,day,unstated,not bitten,Script §03; clock event ledger; beat CSV #3; light assumption where interior or dusk
+4,"A small debt, a townful of witnesses",,,,neighborhood shop,interior practical,unstated,not bitten,Script §04; clock event ledger; beat CSV #4; light assumption where interior or dusk
+5,A girl waiting for the door,,,,apartment / landing,interior practical,unstated,not bitten,Script §05; clock event ledger; beat CSV #5; light assumption where interior or dusk
+6,A man who can talk his way out of anything,,~09:00,,Ulan-Ude freight yard,day,unstated,not bitten,Script §06; clock event ledger; beat CSV #6; light assumption where interior or dusk
+7,Irina gives him the wrong kind of favor,,~09:00,,yard beside KAMAZ,day,unstated,not bitten,Script §07; clock event ledger; beat CSV #7; light assumption where interior or dusk
+8,The long drive actually takes time,~09:00,~14:55,,border and road,day,unstated,not bitten,Script §08; clock event ledger; beat CSV #8; light assumption where interior or dusk
+9,The town thinks the problem is normal,,,,Naran clinic street,day,unstated,not bitten,Script §09; clock event ledger; beat CSV #9; light assumption where interior or dusk
+10,Birthday preparations keep going without him,,,,apartment,interior practical,unstated,not bitten,Script §10; clock event ledger; beat CSV #10; light assumption where interior or dusk
+11,The stranger and the bowl,~15:10,,,border road / KAMAZ,day,unstated,not bitten,Script §11; clock event ledger; beat CSV #11; light assumption where interior or dusk
+12,Hunger becomes unrecognizable,,,,KAMAZ / lay-by,day,unstated,not bitten,Script §12; clock event ledger; beat CSV #12; light assumption where interior or dusk
+13,"An unsettling silence, not another attack",,,,KAMAZ,day,unstated,not bitten,Script §13; clock event ledger; beat CSV #13; light assumption where interior or dusk
+14,A normal errand seen from home,,,,apartment courtyard,day,unstated,not bitten,Script §14; clock event ledger; beat CSV #14; light assumption where interior or dusk
+15,An old debt between real friends,~16:05,,,café,dusk,unstated,not bitten,Script §15; clock event ledger; beat CSV #15; light assumption where interior or dusk
+16,The comedy doesn't know it's ending,,,,café,interior practical,unstated,not bitten,Script §16; clock event ledger; beat CSV #16; light assumption where interior or dusk
+17,The attack and the bite,~16:35,,~00:00,café / KAMAZ,dusk,unstated,T0: wrist bite,Script §17; clock event ledger; beat CSV #17; light assumption where interior or dusk
+18,The wrong escape,,~16:55,~00:00–00:20,café forecourt,dusk,unstated,acute injury,Script §18; clock event ledger; beat CSV #18; light assumption where interior or dusk
+19,“Ямар алных нь томуу вэ”,~16:55,~17:50,~00:20–01:15,livestock truck,night,unstated,chilled / feverish,Script §19; clock event ledger; beat CSV #19; light assumption where interior or dusk
+20,A choice at the hospital sign,~17:50,~18:05,~01:15–01:30,clinic junction / gate,night,unstated,feverish / soaked wrap,Script §20; clock event ledger; beat CSV #20; light assumption where interior or dusk
+21,Everybody is relieved; nobody feels safe,~19:20,~20:05,~02:45–03:30,apartment / landing,interior practical,unstated,feverish,Script §21; clock event ledger; beat CSV #21; light assumption where interior or dusk
+22,A normal joke turns ugly,~20:05,~20:55,~03:30–04:20,apartment dining area,interior practical,unstated,sweat / worsening demeanor,Script §22; clock event ledger; beat CSV #22; light assumption where interior or dusk
+23,The one thing he manages to give her,~20:55,~21:00,~04:20–04:25,birthday table,interior practical,unstated,struggling fingers,Script §23; clock event ledger; beat CSV #23; light assumption where interior or dusk
+24,The sound from the next room,~21:00,,~04:25,living room / hall,interior practical,unstated,attention to crying / control failing,Script §24; clock event ledger; beat CSV #24; light assumption where interior or dusk
+25,"A tiny, nearly invisible act of protection",~21:00,,~04:25,corridor / kitchen,interior practical,unstated,bracing / failing speech,Script §25; clock event ledger; beat CSV #25; light assumption where interior or dusk
+26,ENDING B: THE DOOR,~21:00,~21:01,~04:25–04:26,apartment hall,interior practical,unstated,major loss of control,Script §26; clock event ledger; beat CSV #26; light assumption where interior or dusk
