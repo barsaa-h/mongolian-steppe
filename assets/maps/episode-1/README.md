@@ -25,19 +25,23 @@ Scenes use metres, X east / Y north / Z up. Independent cinematic sets remain at
 
 ## Verification and editing
 
-The current pack passes 11 layout checks: café attack/escape/staff routes and front opening; apartment bedroom/living and exit routes, entry floor support and stair rises; road width; boxcar opening and office camera sightline. The four scenes contain 27,622 native triangles in total, at most 200 per object, and 14 packed 128 × 128 textures. Review caught and corrected a 20 cm apartment threshold gap and a camera aimed into the office window jamb; both now have regression checks.
+The current pack passes the original 11 layout checks: café attack/escape/staff routes and front opening; apartment bedroom/living and exit routes, entry floor support and stair rises; road width; boxcar opening and office camera sightline. The kitchen-door pass adds `apartment_kitchen_door_swing`, `apartment_kitchen_not_exit`, `apartment_exit_clear_with_bench`, `apartment_bench_brace_fit` and `apartment_kitchen_sound`. Proof views are in [previews/door-checks](previews/door-checks/). Review caught and corrected a 20 cm apartment threshold gap and a camera aimed into the office window jamb; both now have regression checks.
 
-After editing the native file, run this through Blender MCP in the open project:
+After editing the native file, run this in Blender with the map open:
 
 ```python
 from pathlib import Path
-exec(Path('/home/barsaa/mongolian-steppe/assets/maps/episode-1/verify_in_blender.py').read_text())
+exec((Path(bpy.data.filepath).resolve().parent / 'verify_in_blender.py').read_text())
 result = verify_export()
 ```
 
 Then run `python3 assets/maps/episode-1/check_map.py` from the repository root. The standalone check validates the saved file/export hashes, isolated GLB scenes and the recorded layout results. It intentionally fails after a source or export changes without fresh QA. The saved file was also reopened in background Blender to confirm all four scenes, packed textures and both corrected layouts.
 
 The [overview board](previews/episode1-map-overview.jpg) shows the main sets; [the office view](previews/freight-yard-office.png) verifies the window framing. These are 1280 × 720 layout renders, not a final episode look benchmark. Texture wear, dressing, atmosphere and final lighting remain development work.
+
+## Staging order
+
+With the bench braced, the corridor is closed at seat height and people step over a 0.40 m seat. Tungalag with the infant and the first exit group pass the kitchen door before the bench goes in. Only Sükhee and the injured guests step over it.
 
 ## Production boundaries
 

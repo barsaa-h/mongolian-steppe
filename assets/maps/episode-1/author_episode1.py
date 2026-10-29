@@ -7,7 +7,25 @@ import bpy, math, json, random
 import numpy as np
 from mathutils import Vector
 
-ROOT = Path('/home/barsaa/mongolian-steppe/assets/maps/episode-1')
+def _root():
+    src = globals().get('__file__')
+    if src:
+        return Path(src).resolve().parent
+    # exec() from Blender has no __file__; the open map sits beside this script.
+    fp = getattr(bpy.data, 'filepath', '') or ''
+    if fp:
+        return Path(fp).resolve().parent
+    return Path.cwd()
+
+
+def activate(scene):
+    window = getattr(bpy.context, 'window', None)
+    if window is not None:
+        window.scene = scene
+    return scene
+
+
+ROOT = _root()
 COLORS = {'plaster':(.48,.44,.35), 'wood':(.25,.16,.095), 'concrete':(.31,.30,.27),
           'metal':(.22,.25,.25), 'rust':(.30,.20,.13), 'cloth':(.31,.29,.23),
           'asphalt':(.14,.15,.15), 'earth':(.32,.29,.21), 'grass':(.37,.35,.23),
@@ -41,7 +59,7 @@ def material(kind):
 
 def scene(name):
     if name in bpy.data.scenes:raise ValueError('Scene already exists: '+name)
-    s=bpy.data.scenes.new(name);bpy.context.window.scene=s
+    s=bpy.data.scenes.new(name);activate(s)
     s.unit_settings.system='METRIC';s.unit_settings.scale_length=1
     s.render.engine='BLENDER_EEVEE';s.render.resolution_x=1280;s.render.resolution_y=720
     s.render.resolution_percentage=100;s.render.image_settings.file_format='PNG';s.render.fps=24
@@ -438,10 +456,10 @@ def build_apartment():
 
 
 def finish_details():
-    bpy.context.window.scene=bpy.data.scenes['EP01_Cafe']
+    activate(bpy.data.scenes['EP01_Cafe'])
     roof=bpy.data.collections['CAFE | removable roof']
     if not bpy.data.objects.get('Store.Roof'):box('Store.Roof',(9.65,1,3),(5.45,5.45,.13),'metal',roof,False)
-    s=bpy.data.scenes['EP01_BorderRoad'];bpy.context.window.scene=s
+    s=bpy.data.scenes['EP01_BorderRoad'];activate(s)
     c=bpy.data.collections['ROAD | sparse roadside'];land=bpy.data.collections['ROAD | terrain']
     def route(y):return 2.5*math.sin(y/70),.18+.0015*y
     def height(x,y):
@@ -480,7 +498,7 @@ def finish_details():
             x,y=o.location.x,o.location.y;cx,z=route(y);d=abs(x-cx)
             old=z-.10+max(0,d-5)*.025+max(0,d-10)*.025*math.sin(y*.025+x*.018)
             o.location.z+=height(x,y)-old
-    bpy.context.window.scene=bpy.data.scenes['EP01_Apartment'];c=bpy.data.collections['HOME | landing stair and courtyard']
+    activate(bpy.data.scenes['EP01_Apartment']);c=bpy.data.collections['HOME | landing stair and courtyard']
     rail=bpy.data.objects['Stair.HandrailB'];bpy.data.objects.remove(rail,do_unlink=True)
     beam('Stair.HandrailB',(-5.2,-1.72,-.6),(-5.2,-4.13,-1.933),.06,'metal',c)
     for x,z in [(-2.1,0),(-3.3,-.75),(-4.5,-1.5)]:beam('Stair.RailPostA',(x,-1.7,z),(x,-1.7,z+.9),.045,'metal',c)
