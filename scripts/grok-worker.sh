@@ -30,6 +30,7 @@ if [ ! -d "$tree" ]; then
     > "$tree/.grok/config.toml"
 fi
 
+turns=${TURNS:-$turns}  # override per job, e.g. TURNS=200
 stamp=$(date +%Y%m%d-%H%M%S)
 cp "$brief" "$runs/$stamp-brief.md"
 

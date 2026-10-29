@@ -2,6 +2,8 @@
 
 Open **[Naran-City-Realism-v001.blend](Naran-City-Realism-v001.blend)**. This develops the existing town exterior for late November 1998. It is a production art draft, with the original world and separate Episode 1 sets preserved. One Blender unit is one metre; X east, Y north, Z up.
 
+**Current production alignment:** read [PRODUCTION-HANDOFF.md](PRODUCTION-HANDOFF.md). The new department plans use EP01 v4.2 and the v4.0 beat sheet. The preserved direct-to-apartment arrival is a legacy layout study; it does not stage v4.2's clinic-junction drop-off, hospital queue decision and walk home. E03/E04 remain open and E05 is partial. This package is not M1 story lock, M2 look approval or a finished Episode 1 set.
+
 Start with the [matching comparisons](previews/comparisons/comparison-sheet.jpg), [master map](Naran-Master-Map-v001.png), [changes and remaining work](CHANGES.md), [variant catalog](CATALOG.md), and [performance/verification report](PERFORMANCE.md). The map also has an editable [SVG](Naran-Master-Map-v001.svg).
 
 ## Review in Blender
@@ -46,3 +48,5 @@ Run `python3 assets/maps/naran-city/realism-v1/test_layout.py` for layout tests 
 To rebuild details, open a copy of `source/Geography-Checkpoint.blend` and run `upgrade_realism.py -- details`. It refuses a second application to a detailed scene. It writes this review version and manifests; preserve bespoke work before regeneration. The original master is never the save target. Geography regeneration is a separate stage from the original baseline and must also use a working copy.
 
 The current playable app and earlier static GLB have not been replaced. Use this native scene for realism review; the old GLB does not contain these additions.
+
+This continuation used the same installed Blender in background mode while the MCP bridge was disconnected. The final native file was also opened in the Blender UI at the Episode 1 entrance; the MCP connection itself remained unavailable. No preferences or original scene files were changed to reconnect it.

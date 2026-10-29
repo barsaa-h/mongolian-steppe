@@ -62,7 +62,7 @@ lines+=['','Times include ordinary scene/render preparation and concurrent host 
 '## Verification evidence','',f"- **{len(qa['checks'])}/{len(qa['checks'])} reopened native checks passed** for the SHA above. See `qa-report.json` for full measurements and sampling limits.",
 f"- All 20 anchor XYZ and all 60 original road names/widths/centerlines preserved; two connected farm tracks added. Maximum sampled grade {qa['checks']['road_grade']['max_grade_percent']:.2f}% against the 8% layout limit.",
 f"- {qa['checks']['new_solid_details_clear_vehicle_routes']['samples']:,} sampled body-lane rays found no new solid obstruction; 252 inherited utility poles remain clear of streets.",
-'- All 34 roof vents supported; the school path avoids the school/workshop shells; new household modules fit their own parcel polygons; every recorded gate approach stays outside its own yard.',
+'- All 34 roof vents supported; the school path avoids the school/workshop shells; new household modules fit their own parcel polygons; every recorded gate approach stays outside its own yard, and its full 1 m strip clears neighboring yard polygons.',
 '- Original native master and byte-identical backup retain SHA `d2ca395f9c1642cb8fb7aa6e2253b4b4e1b19839d1eefddc5734078c1a19f9c0`.',
 '- Seven layout unit tests and the 14-module deterministic self-check passed. Existing Episode 1 native/export preservation checker passed. Project Node test suite passed 73/73 tests; the realism pass does not change runtime code.',
 '- Eight matching before/after images exist and were visually inspected; independent reviews and corrections are retained alongside this report.',
