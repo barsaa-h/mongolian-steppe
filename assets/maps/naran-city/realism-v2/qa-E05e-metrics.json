@@ -1,0 +1,212 @@
+{
+  "task": "E05e",
+  "seed": 19981128,
+  "artistic_choices": true,
+  "residential": {
+    "east": {
+      "plots": 220,
+      "coverage": 0.7798622956114212,
+      "reference_area_m2": 171600,
+      "houses": 220,
+      "gardens": 66,
+      "sheds": 161,
+      "tiers": {
+        "poor": 49,
+        "maintained": 61,
+        "ordinary": 88,
+        "better_off": 22
+      },
+      "frontage_range_m": [
+        15.329865796364148,
+        29.709471630251358
+      ],
+      "lanes": 16,
+      "graph_nodes": 42,
+      "graph_edges": 67,
+      "graph_components": 1
+    },
+    "west": {
+      "plots": 160,
+      "coverage": 0.7731814160057998,
+      "reference_area_m2": 118800,
+      "houses": 160,
+      "gardens": 48,
+      "sheds": 106,
+      "tiers": {
+        "maintained": 44,
+        "poor": 36,
+        "ordinary": 64,
+        "better_off": 16
+      },
+      "frontage_range_m": [
+        15.403581315939695,
+        29.80181382762032
+      ],
+      "lanes": 12,
+      "graph_nodes": 29,
+      "graph_edges": 44,
+      "graph_components": 1
+    },
+    "apartment_south": {
+      "plots": 24,
+      "coverage": 0.715327642891002,
+      "reference_area_m2": 23100,
+      "houses": 24,
+      "gardens": 7,
+      "sheds": 16,
+      "tiers": {
+        "ordinary": 9,
+        "maintained": 7,
+        "poor": 6,
+        "better_off": 2
+      },
+      "frontage_range_m": [
+        25.899999999999977,
+        27.66954063851483
+      ],
+      "lanes": 8,
+      "graph_nodes": 11,
+      "graph_edges": 14,
+      "graph_components": 1
+    }
+  },
+  "apartments": {
+    "blocks": 12,
+    "shapes": {
+      "L": 2,
+      "slab": 9,
+      "merged_pair": 1
+    },
+    "min_block_clearance_m": 25.73430800671166,
+    "min_road_setback_m": 11.100000000000023,
+    "nonzero_rotation_excluding_n12": 1.0,
+    "n12_transform": {
+      "xy": [
+        420,
+        -370
+      ],
+      "length": 43,
+      "depth": 13,
+      "rotation_degrees": 0,
+      "entry": [
+        420,
+        -379.2
+      ],
+      "storeys": 4
+    },
+    "sections_total_excluding_n12": 46
+  },
+  "courtyards": [
+    {
+      "id": "north",
+      "counts": {
+        "playground_frame": 1,
+        "bench": 3,
+        "rubbish_point": 1,
+        "laundry_line": 2,
+        "heat_pipe": 1,
+        "uaz": 1,
+        "moskvich": 1,
+        "zhiguli": 1,
+        "desire_path": 3
+      },
+      "cars": 3,
+      "rusting_cars": 1,
+      "desire_paths": 3,
+      "heat_pipe_clearance_m": 0.6
+    },
+    {
+      "id": "middle",
+      "counts": {
+        "playground_frame": 1,
+        "bench": 2,
+        "rubbish_point": 1,
+        "laundry_line": 2,
+        "heat_pipe": 1,
+        "uaz": 2,
+        "moskvich": 2,
+        "zhiguli": 2,
+        "desire_path": 3
+      },
+      "cars": 6,
+      "rusting_cars": 2,
+      "desire_paths": 3,
+      "heat_pipe_clearance_m": 0.6
+    },
+    {
+      "id": "south",
+      "counts": {
+        "playground_frame": 1,
+        "bench": 2,
+        "rubbish_point": 1,
+        "laundry_line": 2,
+        "heat_pipe": 1,
+        "uaz": 2,
+        "moskvich": 1,
+        "zhiguli": 1,
+        "desire_path": 2
+      },
+      "cars": 4,
+      "rusting_cars": 1,
+      "desire_paths": 2,
+      "heat_pipe_clearance_m": 0.6
+    }
+  ],
+  "garages": {
+    "rows": 6,
+    "boxes": 52,
+    "row_box_counts": [
+      8,
+      7,
+      10,
+      8,
+      9,
+      10
+    ]
+  },
+  "clutter": {
+    "total_records": 5198,
+    "final_poisson_records": 348,
+    "poisson_counts": {
+      "water_cans": 22,
+      "laundry_line": 22,
+      "dog": 6,
+      "tyres": 22,
+      "scrap": 22,
+      "shed": 22,
+      "utility_pole": 22,
+      "chimney": 22,
+      "vegetable_plot": 22,
+      "uaz": 22,
+      "moskvich": 22,
+      "zhiguli": 22,
+      "satellite_dish": 6,
+      "hay_stack": 22,
+      "livestock_pen": 22,
+      "tractor": 22,
+      "farm_trailer": 22,
+      "car_shell": 6
+    },
+    "min_spacing_m": {
+      "water_cans": 8,
+      "laundry_line": 20,
+      "dog": 12,
+      "tyres": 14,
+      "scrap": 18,
+      "shed": 30,
+      "utility_pole": 32,
+      "chimney": 20,
+      "vegetable_plot": 35,
+      "uaz": 25,
+      "moskvich": 25,
+      "zhiguli": 25,
+      "satellite_dish": 100,
+      "hay_stack": 35,
+      "livestock_pen": 50,
+      "tractor": 40,
+      "farm_trailer": 35,
+      "car_shell": 70
+    }
+  },
+  "accepted_ger_sha256": "17fa580b5245f953fbefd9379305f3eb890dc5e2bb5356542e532dd944bb8d4f"
+}

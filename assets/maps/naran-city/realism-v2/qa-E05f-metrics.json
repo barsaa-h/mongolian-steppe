@@ -1,0 +1,105 @@
+{
+  "task": "E05f",
+  "seed": 19981128,
+  "artistic_choices": true,
+  "districts": {
+    "east": {
+      "plots": 249,
+      "reference_clipped_coverage": 0.7735481257964283,
+      "lane_heading_std_degrees": 58.18853691221038,
+      "axis_aligned_edge_share": 0.15486307837582625,
+      "block_area_min_m2": 1613.0121671146335,
+      "block_area_max_m2": 9045.518169819632,
+      "block_area_cv": 0.36128288762680844,
+      "lane_graph_components": 1,
+      "boundary_vertices": 7
+    },
+    "west": {
+      "plots": 186,
+      "reference_clipped_coverage": 0.7766392870677022,
+      "lane_heading_std_degrees": 57.104809937447065,
+      "axis_aligned_edge_share": 0.18867924528301888,
+      "block_area_min_m2": 2050.994886528977,
+      "block_area_max_m2": 7879.315561510935,
+      "block_area_cv": 0.280014204078255,
+      "lane_graph_components": 1,
+      "boundary_vertices": 6
+    },
+    "apartment_south": {
+      "plots": 41,
+      "reference_clipped_coverage": 0.7644000629295552,
+      "lane_heading_std_degrees": 61.162604395292306,
+      "axis_aligned_edge_share": 0.08092485549132948,
+      "block_area_min_m2": 2052.1915510479157,
+      "block_area_max_m2": 4908.83273660655,
+      "block_area_cv": 0.2784693178704079,
+      "lane_graph_components": 1,
+      "boundary_vertices": 5
+    }
+  },
+  "v001_households": {
+    "total": 411,
+    "inside_v002_parcel": 300,
+    "within_30m": 111,
+    "uncovered": [],
+    "maximum_distance_m": 16.998978815356143,
+    "removed_with_reason": []
+  },
+  "restored_roadside_plots": 299,
+  "roadside_by_road": {
+    "North approach": 80,
+    "West avenue": 56,
+    "East avenue": 59,
+    "South distributor": 100,
+    "Civic north lane": 2,
+    "Apartment west lane": 2
+  },
+  "courtyards": {
+    "north": {
+      "items": {
+        "desire_path": 4,
+        "playground_frame": 1,
+        "bench": 4,
+        "rubbish_point": 1,
+        "laundry_line": 2,
+        "heat_pipe": 1,
+        "uaz": 2,
+        "moskvich": 2,
+        "zhiguli": 2
+      },
+      "desire_paths": 4
+    },
+    "middle": {
+      "items": {
+        "desire_path": 4,
+        "playground_frame": 1,
+        "bench": 4,
+        "rubbish_point": 1,
+        "laundry_line": 2,
+        "heat_pipe": 1,
+        "uaz": 3,
+        "moskvich": 2,
+        "zhiguli": 2
+      },
+      "desire_paths": 4
+    },
+    "south": {
+      "items": {
+        "desire_path": 2,
+        "playground_frame": 1,
+        "bench": 4,
+        "rubbish_point": 1,
+        "laundry_line": 2,
+        "heat_pipe": 1,
+        "uaz": 2,
+        "moskvich": 2,
+        "zhiguli": 2
+      },
+      "desire_paths": 2
+    }
+  },
+  "apartment_blocks": 12,
+  "garage_rows": 6,
+  "garage_boxes": 52,
+  "clutter_records": 7557
+}
