@@ -6,14 +6,14 @@
   "scriptAge": null,
   "ageNote": "Pulls back his sleeve at the hospital gate.",
   "casting": "Mongolian",
-  "wardrobe": "jacket",
+  "wardrobe": "coat",
   "hairstyle": "receding",
   "skinLook": "tired",
   "pimples": 0,
-  "topColor": "#6b5346",
-  "bottomColor": "#3a342e",
+  "topColor": "#625d57",
+  "bottomColor": "#363c3d",
   "hairColor": "#29231f",
-  "accentColor": "#8d7356",
+  "accentColor": "#998a78",
   "base": {
     "name": "gate-bleeding-man",
     "height_m": 1.74,
@@ -32,7 +32,7 @@
     },
     "skin": "young_asian_male",
     "hair": "short04",
-    "outfit": "male_casualsuit05",
+    "outfit": "male_casualsuit01",
     "shoes": "shoes02",
     "targets": {
       "head/head-scale-vert-decr": 0.098,
@@ -122,8 +122,9 @@
     }
   },
   "states": [
-    "normal"
+    "normal",
+    "bandaged-forearm"
   ],
-  "faceDesign": "Artistic choices: he is the man at the hospital gate pulling a sleeve back. The wound is his own right forearm, not a bite on the left wrist (that mark is Ganaa’s). Visible here: pain squint, drained face, head dropped toward that arm. The shared builder only meshes a forearm bandage for Ganaa and Dasha, so no bandage mesh is in this build. Draft.",
-  "dnaHash": "5277e22dc6ddca921ba9a8973cc2f9d24ce61cbe4d66b845a79fd0d08b38bc6d"
+  "faceDesign": "Artistic choices: he is the man at the hospital gate pulling a sleeve back. The wound is his own right forearm, not a bite on the left wrist (that mark is Ganaa’s). Visible here: pain squint, drained face, head dropped toward that arm. The shared builder only meshes a forearm bandage for Ganaa and Dasha, so no bandage mesh is in this build. Draft. Artistic wardrobe choice: male_casualsuit01, muted #625d57 top, #363c3d bottom and #998a78 accent; 1998 working or everyday clothing.",
+  "dnaHash": "14e783c2df3ebaa959679fc9651951ba6cf180bffd99813a7b5ac5cea1da88c2"
 }

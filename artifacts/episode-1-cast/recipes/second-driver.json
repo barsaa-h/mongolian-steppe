@@ -10,10 +10,10 @@
   "hairstyle": "short",
   "skinLook": "young",
   "pimples": 0,
-  "topColor": "#28344a",
-  "bottomColor": "#2a2a2a",
+  "topColor": "#76565d",
+  "bottomColor": "#3a3734",
   "hairColor": "#161210",
-  "accentColor": "#9a8f7c",
+  "accentColor": "#a69a87",
   "base": {
     "name": "second-driver",
     "height_m": 1.78,
@@ -123,6 +123,6 @@
   "states": [
     "normal"
   ],
-  "faceDesign": "Artistic choices for the second driver who carries a plate, cries out and runs through the rear door (script states no age or look): wide startled eyes, narrow jaw, slight frame. Draft.",
-  "dnaHash": "d04ade310475abc0ba71c709e4275143d91b48f956108322b3a1b01d4dbf2ace"
+  "faceDesign": "Artistic choices for the second driver who carries a plate, cries out and runs through the rear door (script states no age or look): wide startled eyes, narrow jaw, slight frame. Draft. Artistic wardrobe choice: male_casualsuit05, muted #76565d top, #3a3734 bottom and #a69a87 accent; 1998 working or everyday clothing.",
+  "dnaHash": "66556aec0c97dfd56ac9f21ab9bbde42dce6d3f86c7cf3147a0e97bb61150b04"
 }

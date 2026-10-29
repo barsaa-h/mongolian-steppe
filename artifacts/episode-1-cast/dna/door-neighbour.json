@@ -36,10 +36,10 @@
     "eye_spacing": 0.48,
     "eye_tilt": 0.12,
     "eye_depth": -0.06,
-    "upper_lid_fold": 0.46,
+    "upper_lid_fold": 0.3,
     "eye_opening": 0.38,
     "inner_lid_fold": 0.18,
-    "lower_lid_height": -0.22,
+    "lower_lid_height": -0.12,
     "brow_height": 0.06,
     "brow_angle": -0.12,
     "brow_depth": -0.16,
@@ -56,7 +56,7 @@
     "mouth_width": 0.22,
     "upper_lip_fullness": 0.36,
     "lower_lip_fullness": 0.28,
-    "mouth_corner_tilt": 0.58,
+    "mouth_corner_tilt": 0.12,
     "philtrum_length": -0.06,
     "cupids_bow": 0.22,
     "mouth_depth": -0.265,
@@ -70,8 +70,8 @@
     "chin_cleft": 0.131,
     "cheek_height": -0.18,
     "cheekbone_prominence": 0.28,
-    "cheek_fullness": 0.58,
-    "cheek_hollow": -0.32,
+    "cheek_fullness": 0.32,
+    "cheek_hollow": -0.16,
     "ear_size": -0.08,
     "ear_angle": 0.169,
     "ear_lobe": 0.18,
@@ -160,16 +160,16 @@
     "asset": "female_elegantsuit01",
     "shoes": "shoes02",
     "wardrobe": "dress",
-    "top_color": "#7a5a3a",
-    "bottom_color": "#3a2f28",
-    "accent_color": "#c9b38f"
+    "top_color": "#a18b52",
+    "bottom_color": "#504436",
+    "accent_color": "#b3a184"
   },
   "signature_traits": [
     "Wide-set soft eyes with a low gentle lid",
     "Resting half-smile, mouth corners lifted",
     "Full low cheeks"
   ],
-  "face_design": "Artistic choices for the neighbour who brings an extra plate and tells Altan her father will come (script states no age or look): kind wide-set eyes, half-smile, full cheeks. Draft.",
+  "face_design": "Artistic choices for the neighbour who brings an extra plate and tells Altan her father will come (script states no age or look): kind wide-set eyes, half-smile, full cheeks. Draft. Artistic wardrobe choice: female_elegantsuit01, muted #a18b52 top, #504436 bottom and #b3a184 accent; 1998 working or everyday clothing.",
   "states": [
     "normal"
   ],

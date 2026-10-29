@@ -6,14 +6,14 @@
   "scriptAge": null,
   "ageNote": "Calls for help pushing the bus; jokes with a passenger.",
   "casting": "Mongolian",
-  "wardrobe": "jacket",
+  "wardrobe": "coat",
   "hairstyle": "receding",
   "skinLook": "weathered",
   "pimples": 0,
-  "topColor": "#4b5141",
-  "bottomColor": "#343b43",
+  "topColor": "#68594a",
+  "bottomColor": "#343b3a",
   "hairColor": "#29231f",
-  "accentColor": "#ad9470",
+  "accentColor": "#a18e76",
   "base": {
     "name": "bus-driver",
     "height_m": 1.68,
@@ -124,6 +124,6 @@
   "states": [
     "normal"
   ],
-  "faceDesign": "Artistic choices for the Naran bus driver who calls for a push and jokes the passenger off (script states no age or look): windshield squint, wide calling mouth, forward wheel-slump. Draft.",
-  "dnaHash": "19347519fb632711f5166142e4693fd8d9868796f562785921ba96e03ffdd3fc"
+  "faceDesign": "Artistic choices for the Naran bus driver who calls for a push and jokes the passenger off (script states no age or look): windshield squint, wide calling mouth, forward wheel-slump. Draft. Artistic wardrobe choice: male_casualsuit05, muted #68594a top, #343b3a bottom and #a18e76 accent; 1998 working or everyday clothing.",
+  "dnaHash": "467292e7396620c938ab8ccf517265f556b21c1013991cc4db2db2e97be7ae11"
 }

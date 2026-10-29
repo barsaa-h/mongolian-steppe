@@ -107,17 +107,17 @@
     }
   },
   "body": {
-    "height_m": 1.2,
-    "weight": 0.36,
-    "muscle": 0.12,
+    "height_m": 1.22,
+    "weight": 0.24,
+    "muscle": 0.08,
     "proportions": 0.5,
-    "height": 0.5,
+    "height": 0.3,
     "shoulders": -0.32,
     "chest": -0.18,
-    "belly": 0.12,
+    "belly": -0.12,
     "hips": -0.05,
     "arm_thickness": -0.28,
-    "leg_thickness": -0.12,
+    "leg_thickness": -0.25,
     "posture": 0.08
   },
   "skin": {
@@ -161,16 +161,16 @@
     "asset": "male_casualsuit01",
     "shoes": "shoes02",
     "wardrobe": "coat",
-    "top_color": "#7a5a3a",
-    "bottom_color": "#2a2a2c",
-    "accent_color": "#4b5a3d"
+    "top_color": "#68705a",
+    "bottom_color": "#303337",
+    "accent_color": "#59634e"
   },
   "signature_traits": [
     "Large wide-open child eyes under a high forehead",
     "Round full cheeks, short button nose, small soft chin",
     "Narrow shoulders on a short seven-year-old body"
   ],
-  "face_design": "Artistic choices for the boy who asks the kiosk seller for bread until his mother pays (script states no age; production reads him as 7): round child face, hungry wide eyes, small body. Not a scaled-down adult. Draft.",
+  "face_design": "Artistic choices for the boy who asks the kiosk seller for bread until his mother pays (script states no age; production reads him as 7): round child face, hungry wide eyes, small body. Not a scaled-down adult. Draft. Artistic wardrobe choice: male_casualsuit01, muted #68705a top, #303337 bottom and #59634e accent; 1998 working or everyday clothing. Artistic body adjustment: leaner, lower height macro on the seven-year child age and shared base-C; final proportions require a dressed rebuild.",
   "states": [
     "normal"
   ],

@@ -6,14 +6,14 @@
   "scriptAge": null,
   "ageNote": "Tired orderly asks the bleeding man about his injury at the gate.",
   "casting": "Mongolian",
-  "wardrobe": "coat",
+  "wardrobe": "jacket",
   "hairstyle": "cap",
   "skinLook": "tired",
   "pimples": 0,
-  "topColor": "#2c3442",
-  "bottomColor": "#24282e",
+  "topColor": "#b9c4c1",
+  "bottomColor": "#697273",
   "hairColor": "#2a2520",
-  "accentColor": "#8a8070",
+  "accentColor": "#c6c2b5",
   "base": {
     "name": "orderly",
     "height_m": 1.76,
@@ -32,7 +32,7 @@
     },
     "skin": "middleage_asian_male",
     "hair": "short02",
-    "outfit": "male_casualsuit05",
+    "outfit": "male_worksuit01",
     "shoes": "shoes02",
     "targets": {
       "head/head-scale-vert-incr": 0.12,
@@ -124,6 +124,6 @@
   "states": [
     "normal"
   ],
-  "faceDesign": "Artistic choices for the tired orderly who asks the bleeding man what happened to his arm (script states no age or look): deep bags, half-shut eyes, forward slump. Draft.",
-  "dnaHash": "0b65b11d3fb69eb0c7c4321dd54fec92426e26e532ffb6eb3f87c40bb837939f"
+  "faceDesign": "Artistic choices for the tired orderly who asks the bleeding man what happened to his arm (script states no age or look): deep bags, half-shut eyes, forward slump. Draft. Artistic wardrobe choice: male_worksuit01, muted #b9c4c1 top, #697273 bottom and #c6c2b5 accent; 1998 working or everyday clothing.",
+  "dnaHash": "1738acee8861f548411cffab8b271ddeaf036ab5a6a7e60c35c86a34e43eae9a"
 }

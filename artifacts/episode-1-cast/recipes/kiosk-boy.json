@@ -10,18 +10,18 @@
   "hairstyle": "short",
   "skinLook": "young",
   "pimples": 0,
-  "topColor": "#7a5a3a",
-  "bottomColor": "#2a2a2c",
+  "topColor": "#68705a",
+  "bottomColor": "#303337",
   "hairColor": "#120e0c",
-  "accentColor": "#4b5a3d",
+  "accentColor": "#59634e",
   "base": {
     "name": "kiosk-boy",
-    "height_m": 1.2,
+    "height_m": 1.22,
     "body": {
-      "weight": 0.36,
-      "muscle": 0.12,
+      "weight": 0.24,
+      "muscle": 0.08,
       "proportions": 0.5,
-      "height": 0.5,
+      "height": 0.3,
       "gender": 1,
       "age": 0.125,
       "race": {
@@ -106,12 +106,12 @@
       "mouth/mouth-lowerlip-middle-up": 0.12,
       "torso/measure-shoulder-dist-decr": 0.32,
       "torso/measure-bust-circ-decr": 0.18,
-      "torso/measure-waist-circ-incr": 0.12,
+      "torso/measure-waist-circ-decr": 0.12,
       "hip/hip-scale-horiz-decr": 0.05,
       "arms/l-upperarm-scale-horiz-decr": 0.28,
       "arms/r-upperarm-scale-horiz-decr": 0.28,
-      "legs/l-upperleg-scale-horiz-decr": 0.12,
-      "legs/r-upperleg-scale-horiz-decr": 0.12,
+      "legs/l-upperleg-scale-horiz-decr": 0.25,
+      "legs/r-upperleg-scale-horiz-decr": 0.25,
       "head/head-angle-out": 0.08
     },
     "sculpt": {
@@ -121,6 +121,6 @@
   "states": [
     "normal"
   ],
-  "faceDesign": "Artistic choices for the boy who asks the kiosk seller for bread until his mother pays (script states no age; production reads him as 7): round child face, hungry wide eyes, small body. Not a scaled-down adult. Draft.",
-  "dnaHash": "e44a5b27068ca15cfe46cb69322a4e9d43125627136c221268b218069c1a6817"
+  "faceDesign": "Artistic choices for the boy who asks the kiosk seller for bread until his mother pays (script states no age; production reads him as 7): round child face, hungry wide eyes, small body. Not a scaled-down adult. Draft. Artistic wardrobe choice: male_casualsuit01, muted #68705a top, #303337 bottom and #59634e accent; 1998 working or everyday clothing. Artistic body adjustment: leaner, lower height macro on the seven-year child age and shared base-C; final proportions require a dressed rebuild.",
+  "dnaHash": "1ac51be118dbad121e48e94fdd0a4206d19b8b47ad1984c692a12b715c104724"
 }

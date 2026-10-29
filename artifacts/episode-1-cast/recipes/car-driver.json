@@ -10,10 +10,10 @@
   "hairstyle": "short",
   "skinLook": "weathered",
   "pimples": 0,
-  "topColor": "#3d4650",
-  "bottomColor": "#2a2c2f",
+  "topColor": "#666f5d",
+  "bottomColor": "#393d36",
   "hairColor": "#2a2520",
-  "accentColor": "#7b6a55",
+  "accentColor": "#9c8e79",
   "base": {
     "name": "car-driver",
     "height_m": 1.73,
@@ -125,6 +125,6 @@
   "states": [
     "normal"
   ],
-  "faceDesign": "Artistic choices for the driver who steers and counts while Bataa and Togoo push (script states no age or look): uneven squint, clenched jaw, braced shoulders. Draft.",
-  "dnaHash": "0eb8d434151c529a7878325118ae608820d6fe1d56ec30a75ed136d91bcce3b4"
+  "faceDesign": "Artistic choices for the driver who steers and counts while Bataa and Togoo push (script states no age or look): uneven squint, clenched jaw, braced shoulders. Draft. Artistic wardrobe choice: male_casualsuit05, muted #666f5d top, #393d36 bottom and #9c8e79 accent; 1998 working or everyday clothing.",
+  "dnaHash": "4b955790018d8e3ff29b5172f26115254db139236a6d7ec3a7f2d978b56319e8"
 }

@@ -161,21 +161,22 @@
     "greying": 0.2
   },
   "clothing": {
-    "asset": "male_casualsuit05",
+    "asset": "male_casualsuit01",
     "shoes": "shoes02",
-    "wardrobe": "jacket",
-    "top_color": "#6b5346",
-    "bottom_color": "#3a342e",
-    "accent_color": "#8d7356"
+    "wardrobe": "coat",
+    "top_color": "#625d57",
+    "bottom_color": "#363c3d",
+    "accent_color": "#998a78"
   },
   "signature_traits": [
     "Pain squint, left eye clenched harder than the right",
     "Drained hollow cheeks and deep bags under the eyes",
     "Head dropped toward the right forearm he is guarding"
   ],
-  "face_design": "Artistic choices: he is the man at the hospital gate pulling a sleeve back. The wound is his own right forearm, not a bite on the left wrist (that mark is Ganaa’s). Visible here: pain squint, drained face, head dropped toward that arm. The shared builder only meshes a forearm bandage for Ganaa and Dasha, so no bandage mesh is in this build. Draft.",
+  "face_design": "Artistic choices: he is the man at the hospital gate pulling a sleeve back. The wound is his own right forearm, not a bite on the left wrist (that mark is Ganaa’s). Visible here: pain squint, drained face, head dropped toward that arm. The shared builder only meshes a forearm bandage for Ganaa and Dasha, so no bandage mesh is in this build. Draft. Artistic wardrobe choice: male_casualsuit01, muted #625d57 top, #363c3d bottom and #998a78 accent; 1998 working or everyday clothing.",
   "states": [
-    "normal"
+    "normal",
+    "bandaged-forearm"
   ],
   "review": "draft",
   "sculpt": {

@@ -161,16 +161,16 @@
     "asset": "female_elegantsuit01",
     "shoes": "shoes02",
     "wardrobe": "dress",
-    "top_color": "#5e6c74",
-    "bottom_color": "#3d4548",
-    "accent_color": "#c4b39a"
+    "top_color": "#92747a",
+    "bottom_color": "#51454e",
+    "accent_color": "#b4a397"
   },
   "signature_traits": [
     "Soft low lids and mild new-mother eye bags",
     "Small quiet mouth, the face that asks the room to hush",
     "Head tipped forward, soft arms from rocking the infant"
   ],
-  "face_design": "Artistic choices for Tungalag, the cousin who rocks her infant to sleep and carries the baby to the bedroom (script states no age or look): hushing mouth, mild new-mother bags, forward rocking head. Eye type: low soft lid. Draft.",
+  "face_design": "Artistic choices for Tungalag, the cousin who rocks her infant to sleep and carries the baby to the bedroom (script states no age or look): hushing mouth, mild new-mother bags, forward rocking head. Eye type: low soft lid. Draft. Artistic wardrobe choice: female_elegantsuit01, muted #92747a top, #51454e bottom and #b4a397 accent; 1998 working or everyday clothing.",
   "states": [
     "normal"
   ],

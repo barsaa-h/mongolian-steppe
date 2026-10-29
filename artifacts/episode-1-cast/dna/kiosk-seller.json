@@ -162,19 +162,19 @@
     "greying": 0
   },
   "clothing": {
-    "asset": "male_casualsuit05",
+    "asset": "female_elegantsuit01",
     "shoes": "shoes02",
     "wardrobe": "coat",
-    "top_color": "#5b4a63",
-    "bottom_color": "#2f2a33",
-    "accent_color": "#9b7e57"
+    "top_color": "#686b5a",
+    "bottom_color": "#393c37",
+    "accent_color": "#a0957e"
   },
   "signature_traits": [
     "Small close-set eyes under straight heavy brows",
     "Square practical jaw and a firm closed mouth",
     "Wide nose reddened from the outdoor counter"
   ],
-  "face_design": "Artistic choices for the seller who holds the loaf until the boy’s mother comes (script states no age or look): coin-counting eyes, square jaw, cold-reddened nose. Draft.",
+  "face_design": "Artistic choices for the seller who holds the loaf until the boy’s mother comes (script states no age or look): coin-counting eyes, square jaw, cold-reddened nose. Draft. Artistic wardrobe choice: female_elegantsuit01, muted #686b5a top, #393c37 bottom and #a0957e accent; 1998 working or everyday clothing.",
   "states": [
     "normal"
   ],

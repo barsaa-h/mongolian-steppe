@@ -6,14 +6,14 @@
   "scriptAge": null,
   "ageNote": "EP01 v4.2: Pasha is a Russian loader who knows Ganaa and helps with the cargo strap.",
   "casting": "Russian casting",
-  "wardrobe": "coat",
+  "wardrobe": "jacket",
   "hairstyle": "short",
   "skinLook": "weathered",
   "pimples": 0,
-  "topColor": "#4b4a3a",
-  "bottomColor": "#2c2b25",
+  "topColor": "#6b7a80",
+  "bottomColor": "#444f55",
   "hairColor": "#15110e",
-  "accentColor": "#7a6a4a",
+  "accentColor": "#9a9e99",
   "base": {
     "name": "yard-loader",
     "height_m": 1.84,
@@ -32,7 +32,7 @@
     },
     "skin": "young_caucasian_male",
     "hair": "short02",
-    "outfit": "male_casualsuit05",
+    "outfit": "male_worksuit01",
     "shoes": "shoes02",
     "targets": {
       "head/head-scale-vert-decr": 0.06,
@@ -127,6 +127,6 @@
   "states": [
     "normal"
   ],
-  "faceDesign": "Artistic choices on top of the script fact that Pasha is a Russian loader who knows Ganaa and helps with the strap: broad face, broken nose, wide shoulders and thick arms. Eye color blue is an artistic choice. Hand size is not a separate DNA control; thickness is the upper-arm morph. Draft.",
-  "dnaHash": "2040344947618a6de8bc1e20e2e483da4c1813af9c7d2b5d368790d98b60e672"
+  "faceDesign": "Artistic choices on top of the script fact that Pasha is a Russian loader who knows Ganaa and helps with the strap: broad face, broken nose, wide shoulders and thick arms. Eye color blue is an artistic choice. Hand size is not a separate DNA control; thickness is the upper-arm morph. Draft. Artistic wardrobe choice: male_worksuit01, muted #6b7a80 top, #444f55 bottom and #9a9e99 accent; 1998 working or everyday clothing.",
+  "dnaHash": "f1e51f2bd290ad5f5c06b3090f93f75d2b3ba6d7766b284433eef4d7961fb624"
 }

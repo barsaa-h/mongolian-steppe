@@ -162,19 +162,19 @@
     "greying": 0.05
   },
   "clothing": {
-    "asset": "male_casualsuit05",
+    "asset": "male_worksuit01",
     "shoes": "shoes02",
-    "wardrobe": "coat",
-    "top_color": "#4b4a3a",
-    "bottom_color": "#2c2b25",
-    "accent_color": "#7a6a4a"
+    "wardrobe": "jacket",
+    "top_color": "#6b7a80",
+    "bottom_color": "#444f55",
+    "accent_color": "#9a9e99"
   },
   "signature_traits": [
     "Broad face, heavy jaw, low brow ridge",
     "Broken nose: hump, wide bridge, tip pushed up",
     "Loader build: wide shoulders and thick arms"
   ],
-  "face_design": "Artistic choices on top of the script fact that Pasha is a Russian loader who knows Ganaa and helps with the strap: broad face, broken nose, wide shoulders and thick arms. Eye color blue is an artistic choice. Hand size is not a separate DNA control; thickness is the upper-arm morph. Draft.",
+  "face_design": "Artistic choices on top of the script fact that Pasha is a Russian loader who knows Ganaa and helps with the strap: broad face, broken nose, wide shoulders and thick arms. Eye color blue is an artistic choice. Hand size is not a separate DNA control; thickness is the upper-arm morph. Draft. Artistic wardrobe choice: male_worksuit01, muted #6b7a80 top, #444f55 bottom and #9a9e99 accent; 1998 working or everyday clothing.",
   "states": [
     "normal"
   ],

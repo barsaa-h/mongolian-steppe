@@ -164,19 +164,19 @@
     "greying": 0.4
   },
   "clothing": {
-    "asset": "male_casualsuit05",
+    "asset": "male_worksuit01",
     "shoes": "shoes02",
-    "wardrobe": "coat",
-    "top_color": "#2c3442",
-    "bottom_color": "#24282e",
-    "accent_color": "#8a8070"
+    "wardrobe": "jacket",
+    "top_color": "#b9c4c1",
+    "bottom_color": "#697273",
+    "accent_color": "#c6c2b5"
   },
   "signature_traits": [
     "Deep night-shift eye bags and half-closed lids",
     "Dropped brows and a slack tired mouth",
     "Night-shift slump: head sunk forward, narrow shoulders"
   ],
-  "face_design": "Artistic choices for the tired orderly who asks the bleeding man what happened to his arm (script states no age or look): deep bags, half-shut eyes, forward slump. Draft.",
+  "face_design": "Artistic choices for the tired orderly who asks the bleeding man what happened to his arm (script states no age or look): deep bags, half-shut eyes, forward slump. Draft. Artistic wardrobe choice: male_worksuit01, muted #b9c4c1 top, #697273 bottom and #c6c2b5 accent; 1998 working or everyday clothing.",
   "states": [
     "normal"
   ],

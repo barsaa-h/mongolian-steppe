@@ -10,10 +10,10 @@
   "hairstyle": "short",
   "skinLook": "weathered",
   "pimples": 1,
-  "topColor": "#5b4a63",
-  "bottomColor": "#2f2a33",
+  "topColor": "#686b5a",
+  "bottomColor": "#393c37",
   "hairColor": "#1f1915",
-  "accentColor": "#9b7e57",
+  "accentColor": "#a0957e",
   "base": {
     "name": "kiosk-seller",
     "height_m": 1.56,
@@ -32,7 +32,7 @@
     },
     "skin": "middleage_asian_female",
     "hair": "short02",
-    "outfit": "male_casualsuit05",
+    "outfit": "female_elegantsuit01",
     "shoes": "shoes02",
     "targets": {
       "head/head-scale-vert-decr": 0.073,
@@ -125,6 +125,6 @@
   "states": [
     "normal"
   ],
-  "faceDesign": "Artistic choices for the seller who holds the loaf until the boy’s mother comes (script states no age or look): coin-counting eyes, square jaw, cold-reddened nose. Draft.",
-  "dnaHash": "376dad872f956ea0f5c932474e7e3b02a61ed8f57bfa2f8d8bdee9825b7dcdc1"
+  "faceDesign": "Artistic choices for the seller who holds the loaf until the boy’s mother comes (script states no age or look): coin-counting eyes, square jaw, cold-reddened nose. Draft. Artistic wardrobe choice: female_elegantsuit01, muted #686b5a top, #393c37 bottom and #a0957e accent; 1998 working or everyday clothing.",
+  "dnaHash": "1dd69144e8d46ea641c5d93ee396247baced98ac63ff7bc37e5e392982a773c0"
 }

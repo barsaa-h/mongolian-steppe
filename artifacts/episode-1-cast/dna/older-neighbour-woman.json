@@ -36,10 +36,10 @@
     "eye_spacing": -0.12,
     "eye_tilt": 0.04,
     "eye_depth": -0.35,
-    "upper_lid_fold": 0.55,
-    "eye_opening": -0.38,
+    "upper_lid_fold": 0.3,
+    "eye_opening": -0.18,
     "inner_lid_fold": 0.2,
-    "lower_lid_height": 0.42,
+    "lower_lid_height": 0.18,
     "brow_height": -0.28,
     "brow_angle": 0.08,
     "brow_depth": 0.12,
@@ -56,11 +56,11 @@
     "mouth_width": -0.22,
     "upper_lip_fullness": -0.42,
     "lower_lip_fullness": -0.36,
-    "mouth_corner_tilt": -0.55,
+    "mouth_corner_tilt": -0.2,
     "philtrum_length": 0.28,
     "cupids_bow": -0.25,
-    "mouth_depth": -0.43,
-    "upper_lip_height": -0.359,
+    "mouth_depth": -0.22,
+    "upper_lip_height": -0.2,
     "lower_lip_height": 0.034,
     "jaw_width": 0.08,
     "chin_width": -0.32,
@@ -70,8 +70,8 @@
     "chin_cleft": -0.151,
     "cheek_height": 0.133,
     "cheekbone_prominence": 0.32,
-    "cheek_fullness": -0.36,
-    "cheek_hollow": 0.58,
+    "cheek_fullness": -0.2,
+    "cheek_hollow": 0.28,
     "ear_size": 0.42,
     "ear_angle": 0.191,
     "ear_lobe": 0.28,
@@ -98,12 +98,12 @@
   "age": {
     "years": 68,
     "features": {
-      "head_age": 0.66,
-      "eye_bags_left": 0.78,
-      "eye_bags_right": 0.74,
-      "sagging": 0.48,
-      "lip_thinning": 0.72,
-      "brow_droop": 0.42
+      "head_age": 0.42,
+      "eye_bags_left": 0.36,
+      "eye_bags_right": 0.34,
+      "sagging": 0.18,
+      "lip_thinning": 0.32,
+      "brow_droop": 0.18
     }
   },
   "body": {
@@ -160,19 +160,19 @@
     "greying": 0
   },
   "clothing": {
-    "asset": "male_casualsuit02",
+    "asset": "female_elegantsuit01",
     "shoes": "shoes02",
-    "wardrobe": "deel",
-    "top_color": "#345e59",
-    "bottom_color": "#323c38",
-    "accent_color": "#ad9470"
+    "wardrobe": "coat",
+    "top_color": "#667981",
+    "bottom_color": "#3d4540",
+    "accent_color": "#a99c84"
   },
   "signature_traits": [
     "Cough-pinched thin mouth with deep corner creases",
     "Red wide nose and hollows under the eyes",
     "Chest-tight stoop, head dropped forward"
   ],
-  "face_design": "Artistic choices for the older neighbour who coughs and blames yesterday’s coal dust (script states no age or look): pinched mouth, irritated red nose, forward stoop. Draft.",
+  "face_design": "Artistic choices for the older neighbour who coughs and blames yesterday’s coal dust (script states no age or look): pinched mouth, irritated red nose, forward stoop. Draft. Artistic wardrobe choice: female_elegantsuit01, muted #667981 top, #3d4540 bottom and #a99c84 accent; 1998 working or everyday clothing.",
   "states": [
     "normal"
   ],

@@ -10,10 +10,10 @@
   "hairstyle": "long",
   "skinLook": "young",
   "pimples": 0,
-  "topColor": "#5e6c74",
-  "bottomColor": "#3d4548",
+  "topColor": "#92747a",
+  "bottomColor": "#51454e",
   "hairColor": "#110d0b",
-  "accentColor": "#c4b39a",
+  "accentColor": "#b4a397",
   "base": {
     "name": "cousin",
     "height_m": 1.58,
@@ -126,6 +126,6 @@
   "states": [
     "normal"
   ],
-  "faceDesign": "Artistic choices for Tungalag, the cousin who rocks her infant to sleep and carries the baby to the bedroom (script states no age or look): hushing mouth, mild new-mother bags, forward rocking head. Eye type: low soft lid. Draft.",
-  "dnaHash": "217e8cea3b4b8f11062368678b5be3c016be4a9f6c51bbaaac1d9d268b660a36"
+  "faceDesign": "Artistic choices for Tungalag, the cousin who rocks her infant to sleep and carries the baby to the bedroom (script states no age or look): hushing mouth, mild new-mother bags, forward rocking head. Eye type: low soft lid. Draft. Artistic wardrobe choice: female_elegantsuit01, muted #92747a top, #51454e bottom and #b4a397 accent; 1998 working or everyday clothing.",
+  "dnaHash": "b8e34ec72157936d8b890960d4a4f37823a50ae5cf635a357fa5e851fbc91b72"
 }
