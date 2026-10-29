@@ -730,6 +730,66 @@
       "height": 1.02,
       "source": "Vinrax casual male",
       "performance": null
+    },
+    {
+      "id": "tsogt",
+      "glbBytes": 583220,
+      "sha256": "6e86a92949b6ef0efdbde87bb98d59f9dbc3c96135b32c0b0a48d93ca1e76c99",
+      "nativeSource": "tsogt.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.62,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "sarnai",
+      "glbBytes": 676960,
+      "sha256": "330ed6543214abbec972dea949c7c500b081d13251ae3b346e74e8fe38a8af4a",
+      "nativeSource": "sarnai.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.12,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "dorj",
+      "glbBytes": 536116,
+      "sha256": "d8f7303fe26aad913454435d9909a1d8c97e7941c47b22fdbf7194d9342254e7",
+      "nativeSource": "dorj.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.5,
+      "source": "Vinrax casual male",
+      "performance": null
+    },
+    {
+      "id": "bold",
+      "glbBytes": 514860,
+      "sha256": "5eb9cd20d61ded4d423f95911ec3b57b43586fdab2a068d28b81dfbaaaf93362",
+      "nativeSource": "bold.blend",
+      "animations": [
+        "idle",
+        "walk",
+        "wave",
+        "cough"
+      ],
+      "height": 1.54,
+      "source": "Vinrax casual male",
+      "performance": null
     }
   ]
 }

@@ -1,0 +1,9 @@
+# Ganaa DNA candidate, v1
+
+This is a technical candidate, copied from `artifacts/episode-1-cast/ganaa/character.glb`; it is not an approved film-shot asset. SHA-256: `0e0893c870eac2d2f20b4e750f6a8a3d8482f32ee4d007ff0fd61c7538bd0ea8`. The authoritative DNA and identity approval are recorded in `artifacts/episode-1-cast/dna/ganaa.json` and `artifacts/episode-1-cast/ganaa-production-review.md`.
+
+Select explicitly with `loadCharacter({id: 'ganaa', assetVersion: 'dna-candidate'})`. Existing callers continue to select the legacy file. The candidate starts at `rest`; `Deformation_Check` and `Talk_Check` are technical checks, not idle or film performances. The candidate defaults to `healthy`; `setStoryState("hour-five")` or `setStoryState("turning")` shows the bandage mesh. This controls visibility only, not finished infection makeup. Candidate expressions are `smile`, `frown`, `blink`, `viseme_A`, `viseme_E`, `viseme_O`, `viseme_M`, and `neutral`. Legacy emotions do not have an established semantic mapping and are rejected for this candidate.
+
+Measured geometry bounds in the film loader's Y-up units: 1.72175 high at rest, with the floor near zero. Legacy Ganaa measures 1.53000 high. The candidate's seated origin, orientation, materials in film lighting, wardrobe, expression combinations and cab contacts are not calibrated or approved. Do not replace the legacy HOUR 5 asset with this candidate until those checks and a shot performance are complete.
+
+For an explicit technical preview, run the local film server and open `film.html?ganaa=dna-candidate`. This deliberately loads the candidate at rest in the HOUR 5 scene, so it is expected to stand through the seat and fail the shot framing. The legacy scene is still the default. `node scripts/check-ganaa-candidate.mjs` exercises the real renderer, the two technical clips, facial morph availability and out-of-order seeking, and writes evidence under `artifacts/episode-1-cast/ganaa-pilot-qa/`.

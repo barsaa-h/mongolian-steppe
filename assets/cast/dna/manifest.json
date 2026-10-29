@@ -1,0 +1,904 @@
+{
+  "altan": {
+    "name": "Алтан",
+    "file": "altan.glb",
+    "kind": "child",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "toddler-dress",
+    "heightM": 0.95,
+    "age": 3,
+    "traits": [
+      "Toddler round cheeks and short button nose; echoes her mother without adult facial creases",
+      "Individual eyelids and nose"
+    ],
+    "review": "draft",
+    "dnaHash": "56c042da08054c640eb7a8a83166bdaeea5b410ba579bf065214621fa91d67f7",
+    "sha256": "182184d9a2368c6878c2a69336cdfdb9a0526e4e01497197ea7ca5754b662c5d",
+    "bytes": 16275256
+  },
+  "bataa": {
+    "name": "Батаа",
+    "file": "bataa.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "coat",
+    "heightM": 1.71,
+    "age": 56,
+    "traits": [
+      "Long weathered face with a slight nose hump",
+      "Deep-set eyes under greying heavy brows",
+      "Grey stubble"
+    ],
+    "review": "draft",
+    "dnaHash": "da36cac7b11013d20ddad32240bdd137f3dd74dde29ff65072f0abd2729b0e73",
+    "sha256": "5b3f4adcbd0389b171c06645e3c9c9e721412ed333ef671eda008aefa000d685",
+    "bytes": 18295744
+  },
+  "cafe-driver": {
+    "name": "Хүлээж буй жолооч",
+    "file": "cafe-driver.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "coat",
+    "heightM": 1.7,
+    "age": 40,
+    "traits": [
+      "Heavy round face",
+      "Small wide-set eyes",
+      "Broad nose tip"
+    ],
+    "review": "draft",
+    "dnaHash": "0d4068dacb2c17051d357f28d7f86d798b4bcbaee9454a6f022ec38cb17d9761",
+    "sha256": "30f1b436f6ddf43db0d26b3da27444c69073e8cb7213047e63d24efa9011c5c2",
+    "bytes": 16439964
+  },
+  "coal-driver": {
+    "name": "Нүүрсний машины жолооч",
+    "file": "coal-driver.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "coat",
+    "heightM": 1.72,
+    "age": 38,
+    "traits": [
+      "Coal-dusted angular face",
+      "Down-turned mouth corners",
+      "Heavy straight brows over narrow eyes"
+    ],
+    "review": "draft",
+    "dnaHash": "f13a3d4c1dfb6a0b66ae5c850af9b4995c52a3a1c06df20b303a58828f249a79",
+    "sha256": "a321c9187014d689da10f78c4ead3ed2575d22d738b43d2157129b95055060d5",
+    "bytes": 17304928
+  },
+  "cousin": {
+    "name": "Үеэл эгч",
+    "file": "cousin.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "dress",
+    "heightM": 1.6,
+    "age": 26,
+    "traits": [
+      "Heart-shaped young face",
+      "Low-crease almond eyes",
+      "Full upper lip"
+    ],
+    "review": "draft",
+    "dnaHash": "a94c79b6131b1edfa841fe6296998e3614412613df876832cd9e52578f5f35aa",
+    "sha256": "d16a9ddb78314402c531dc480e6df5a96e78388e71c093be3e9f4c74ac706873",
+    "bytes": 15673728
+  },
+  "customs-officer": {
+    "name": "Гаалийн ажилтан",
+    "file": "customs-officer.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "coat",
+    "heightM": 1.69,
+    "age": 45,
+    "traits": [
+      "Soft oval office face",
+      "Downturned tired eyes",
+      "Small thin-lipped mouth and receding hairline"
+    ],
+    "review": "draft",
+    "dnaHash": "85f7463a910759121c370da64b6f13ad33fada353275f76527449b61d7b6e24a",
+    "sha256": "6143d3b159e9929550a1eed1df85ae4465996014915ad0efa24ceb590173d0d7",
+    "bytes": 16978120
+  },
+  "dasha": {
+    "name": "Даша",
+    "file": "dasha.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "coat",
+    "heightM": 1.66,
+    "age": 24,
+    "traits": [
+      "Angular diamond cheekbones",
+      "pointed chin",
+      "narrow bridge"
+    ],
+    "review": "draft",
+    "dnaHash": "7d09382f6b35932c9696b855be440dd61f23e36b8f985e6086020fb6e5e6ffa3",
+    "sha256": "e976bde4c6e47ec1aa7975016824b7d7567c8dbfd3957f959aeb0446ac99ea3b",
+    "bytes": 16583484
+  },
+  "dulmaa": {
+    "name": "Дулмаа",
+    "file": "dulmaa.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "deel",
+    "heightM": 1.54,
+    "age": 65,
+    "traits": [
+      "Broad older face",
+      "soft jaw",
+      "downward nose tip"
+    ],
+    "review": "draft",
+    "dnaHash": "41166283d80b9c9bb18d187cd264930b75f810ce3f84c912ad6b32d4ca036308",
+    "sha256": "adb85129afe73ebcce1e850c866a0fcde51c48da22b60bce88444f2b015c7bd2",
+    "bytes": 17678264
+  },
+  "ganaa": {
+    "name": "Ганаа",
+    "file": "ganaa.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "jacket",
+    "heightM": 1.7,
+    "age": 46,
+    "traits": [
+      "Broad square jaw",
+      "low wide bridge",
+      "narrow straight hooded lids"
+    ],
+    "review": "approved",
+    "dnaHash": "44abe785b0e574240ad507f2dde9d7ccf2fd7626ec611062495933048fbf2665",
+    "sha256": "432f5298d24fa607a20d0d2c92621a3162fe78533cbe90759cbae9dadaa6014e",
+    "bytes": 16925756
+  },
+  "hospital-guard": {
+    "name": "Эмнэлгийн харуул",
+    "file": "hospital-guard.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "coat",
+    "heightM": 1.77,
+    "age": 50,
+    "traits": [
+      "Long face with a projecting chin",
+      "Convex nose",
+      "Deep-set eyes"
+    ],
+    "review": "draft",
+    "dnaHash": "ea87fb488e41e4af59d37a142e614877d9b91b30220906976ec4c99ce508a703",
+    "sha256": "75a2ece968018ac855f6dfd067113471a9fff7dde095ed0c3f2a2cc544e329b3",
+    "bytes": 17087896
+  },
+  "hurel": {
+    "name": "Хүрэл",
+    "file": "hurel.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "apron",
+    "heightM": 1.65,
+    "age": 55,
+    "traits": [
+      "Short round face",
+      "full cheeks",
+      "broad upturned nose"
+    ],
+    "review": "draft",
+    "dnaHash": "a4637bddbf853c49c2a5472f27026fbe595f3d768e391d6a3809a98992830282",
+    "sha256": "9f002dc620f1d803ae6a6fba1fa534833f4512f2f0bbb476630d8d4f254da8c9",
+    "bytes": 18884304
+  },
+  "irina": {
+    "name": "Ирина Ковалева",
+    "file": "irina.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "coat",
+    "heightM": 1.65,
+    "age": 54,
+    "traits": [
+      "Long lean rectangular face",
+      "deep-set grey eyes",
+      "prominent bridge and thin wide lips"
+    ],
+    "review": "draft",
+    "dnaHash": "ae08a30112fb928e6826f6267e5181464efb4974b49d02795292d201addc3244",
+    "sha256": "3c0eb5767dbfb888b54070c8abae61539d3ed282a8e4e35d09f01ca38f53cbec",
+    "bytes": 15988080
+  },
+  "kid-puddle-boy": {
+    "name": "kid-puddle-boy",
+    "file": "kid-puddle-boy.glb",
+    "kind": "child",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "coat",
+    "heightM": 1.27,
+    "age": 8,
+    "traits": [
+      "almond eyes",
+      "head round",
+      "upper lid fold"
+    ],
+    "review": "draft",
+    "dnaHash": "de210c51998d15158d326b59e335e69eeb588d0035a76ff2baf0acf3a152871c",
+    "sha256": "141472429d42804318bf9843eaca0ea69a335ec8d133be01085c0d9ee7876872",
+    "bytes": 16760708
+  },
+  "kid-puddle-girl": {
+    "name": "kid-puddle-girl",
+    "file": "kid-puddle-girl.glb",
+    "kind": "child",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "toddler-dress",
+    "heightM": 1.15,
+    "age": 6,
+    "traits": [
+      "upturned eyes",
+      "head round",
+      "upper lid fold"
+    ],
+    "review": "draft",
+    "dnaHash": "2fa8eb7d0c7dbea6a68b37b3c1721ecf669cc6614d98d7df13a46e7dcb8488f2",
+    "sha256": "1c413af939ccf369806ec429802baeaa6624e22fedda8074c2417efb88402216",
+    "bytes": 16473928
+  },
+  "kid-teaser": {
+    "name": "kid-teaser",
+    "file": "kid-teaser.glb",
+    "kind": "child",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "coat",
+    "heightM": 1.21,
+    "age": 7,
+    "traits": [
+      "almond eyes",
+      "head round",
+      "upper lid fold"
+    ],
+    "review": "draft",
+    "dnaHash": "17095eb276c2eaa1a8b9fce8341be125f9f6748c1b78bfba73b338be4dc487f7",
+    "sha256": "b6b13ed2762f4ec3b69b649e8167f75d65ae351816992bea39ab8bd666780907",
+    "bytes": 16732688
+  },
+  "livestock-driver": {
+    "name": "Малын машины жолооч",
+    "file": "livestock-driver.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "deel",
+    "heightM": 1.68,
+    "age": 58,
+    "traits": [
+      "Wind-burned broad herder face",
+      "Narrow monolid eyes",
+      "Very prominent cheekbones"
+    ],
+    "review": "draft",
+    "dnaHash": "331c5f67a1677bd30f0309014f6d3d33083e6c6dffd24609ba99d0b28af1e2b8",
+    "sha256": "eb64c7a7137f58046d63f7669caf41d5242811519b32617a7dd216e349f39043",
+    "bytes": 17829436
+  },
+  "nyamka": {
+    "name": "Нямхаа «Нямка»",
+    "file": "nyamka.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "coat",
+    "heightM": 1.57,
+    "age": 48,
+    "traits": [
+      "Broad square jaw and full cheeks",
+      "Penciled high-arched brows",
+      "Heavy hooded eyes"
+    ],
+    "review": "draft",
+    "dnaHash": "b45cbae1e07e26639f8843e8915edda4d020df1166768042fdfd803046d7ab52",
+    "sha256": "2c927454887e1bb8e9ae3f14a0fbe52610a85e87e2c6bfccdd6b77ae0a84cb0e",
+    "bytes": 16383548
+  },
+  "party-guest-01": {
+    "name": "party-guest-01",
+    "file": "party-guest-01.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.71,
+    "age": 34,
+    "traits": [
+      "hooded eyes",
+      "nose length",
+      "upper lid fold"
+    ],
+    "review": "draft",
+    "dnaHash": "d390cb98c7934074bdb5bc032ffb6e89a914e8a10f938a866b0846dfd7925bca",
+    "sha256": "4c7a0bee7c532f3407133a8d137414119741c293b93e4e8bb10ace712941b20f",
+    "bytes": 17313080
+  },
+  "party-guest-02": {
+    "name": "party-guest-02",
+    "file": "party-guest-02.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.64,
+    "age": 41,
+    "traits": [
+      "puffy eyes",
+      "cheekbone prominence",
+      "chin prognathism"
+    ],
+    "review": "draft",
+    "dnaHash": "f45cf7ffdbffe6e55f1f380448a2d48a4fcdea954aab66b6fb6aee215765bfaa",
+    "sha256": "271d865efe069475e85b74b777ceaf082c24819ef2e3ad63f8de9449cb8ee1cc",
+    "bytes": 15621644
+  },
+  "party-guest-03": {
+    "name": "party-guest-03",
+    "file": "party-guest-03.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.7,
+    "age": 62,
+    "traits": [
+      "monolid eyes",
+      "upper lid fold",
+      "chin width"
+    ],
+    "review": "draft",
+    "dnaHash": "a13e3c71ea584a3f05da87a6d2370bd3ba1ccdae68eada795ec358a2a183010a",
+    "sha256": "b6d13589e13660276fa31fa19bef929909d073299cc89b634652df4caface608",
+    "bytes": 18259056
+  },
+  "party-guest-04": {
+    "name": "party-guest-04",
+    "file": "party-guest-04.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.55,
+    "age": 28,
+    "traits": [
+      "upturned eyes",
+      "cheekbone prominence",
+      "nose projection"
+    ],
+    "review": "draft",
+    "dnaHash": "feb86791e7d917bb52be6018aa9698c96b929811694f0fda16a1a5d0f8fb3d73",
+    "sha256": "bbef12d37e999b87400f1e7683d3c283defc7c51f423f78427cd1dd6b2b1012f",
+    "bytes": 15569080
+  },
+  "party-guest-05": {
+    "name": "party-guest-05",
+    "file": "party-guest-05.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.75,
+    "age": 47,
+    "traits": [
+      "downturned eyes",
+      "nose length",
+      "eye depth"
+    ],
+    "review": "draft",
+    "dnaHash": "6f67b67de56b095a5b3c5a43486ff6c0e256a29daeacb4d4e37aa8fcf6bea762",
+    "sha256": "8b97bc6e38b7529d1f2d7a1da2c0ba51e4f6a8fc4aa453876cc711eb01408a07",
+    "bytes": 16801044
+  },
+  "party-guest-06": {
+    "name": "party-guest-06",
+    "file": "party-guest-06.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.55,
+    "age": 57,
+    "traits": [
+      "monolid eyes",
+      "upper lid fold",
+      "chin cleft"
+    ],
+    "review": "draft",
+    "dnaHash": "d9536f569d8e28d9bbcf61fa111367d1f8d9f56bcbb7dde1a1a05e3063250a03",
+    "sha256": "e7b5d5ebea8793ce4c80a80c841df82a5462fbdb771b2412160eb327786db1a3",
+    "bytes": 17202440
+  },
+  "party-guest-07": {
+    "name": "party-guest-07",
+    "file": "party-guest-07.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.7,
+    "age": 25,
+    "traits": [
+      "puffy eyes",
+      "cheekbone prominence",
+      "upper lid fold"
+    ],
+    "review": "draft",
+    "dnaHash": "7bb5dd46b8d35e9e935f2527f614dbe9bb48d8f262c101e697926b072d092add",
+    "sha256": "eb700907f97dcc601cfc19c6d8dc886434ac7dfdb6898d59a0c2bf9b967441b2",
+    "bytes": 17627460
+  },
+  "party-guest-08": {
+    "name": "party-guest-08",
+    "file": "party-guest-08.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.53,
+    "age": 36,
+    "traits": [
+      "upturned eyes",
+      "lower lid height",
+      "cheekbone prominence"
+    ],
+    "review": "draft",
+    "dnaHash": "d65000891ee5a53f53ed960ad2e3b6e66f3e5e52a3b94441e8024e7e3d003d72",
+    "sha256": "cc5c33d42c37fb1a80f89f494d46df90ffade1cae1de9686427f2e6732c8e014",
+    "bytes": 15515096
+  },
+  "party-guest-09": {
+    "name": "party-guest-09",
+    "file": "party-guest-09.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.68,
+    "age": 53,
+    "traits": [
+      "puffy eyes",
+      "nose hump",
+      "jaw width"
+    ],
+    "review": "draft",
+    "dnaHash": "eda4faba937d6242255a65da31402c4225f54293058a41be23683b07e3cf2cdd",
+    "sha256": "39a9e8945f27aaa9bfad6f44b5815d631d57f1e63873c2bb9505b269190e9a6a",
+    "bytes": 17033208
+  },
+  "party-guest-10": {
+    "name": "party-guest-10",
+    "file": "party-guest-10.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.64,
+    "age": 70,
+    "traits": [
+      "puffy eyes",
+      "nose length",
+      "eye depth"
+    ],
+    "review": "draft",
+    "dnaHash": "c914f85d837fa240a8e40fbbeebe9809bb55be68a805dcd578786fb9c4b0c01d",
+    "sha256": "fac2a3d08bb6d95109a799017d01fa7fbc4ff2e064667da9896f5f65fe42865a",
+    "bytes": 17361408
+  },
+  "party-older-man": {
+    "name": "Ахмад эрэгтэй зочин",
+    "file": "party-older-man.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "deel",
+    "heightM": 1.64,
+    "age": 69,
+    "traits": [
+      "Long lean older face",
+      "hollow cheeks",
+      "long curved nose"
+    ],
+    "review": "draft",
+    "dnaHash": "0ba92f7f8adaa5eaab687b5ae75168134be464efb726710eb7074904cc7fbbb0",
+    "sha256": "0968745afb648a9e437f7fc867e90311ad65ee052e026ff1f93347b51914e1e0",
+    "bytes": 17628988
+  },
+  "party-young-man": {
+    "name": "Залуу эрэгтэй зочин",
+    "file": "party-young-man.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.73,
+    "age": 22,
+    "traits": [
+      "Heart-shaped face",
+      "narrow chin",
+      "wider spaced open almond eyes and fuller wide lips"
+    ],
+    "review": "draft",
+    "dnaHash": "32dfc1fde0c628da30e409dde8024a6dfb6908a572354ddd2eba799a1af7d9b0",
+    "sha256": "6c405a28c8f6b200497862f29c130f3392efabd52d33c798910133cb14bd58d2",
+    "bytes": 17172032
+  },
+  "party-young-woman": {
+    "name": "Залуу эмэгтэй зочин",
+    "file": "party-young-woman.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "guest",
+    "heightM": 1.62,
+    "age": 23,
+    "traits": [
+      "Compact rounded face",
+      "soft full cheeks",
+      "broad short nose"
+    ],
+    "review": "draft",
+    "dnaHash": "88233270ed44f9bc0268b47348d53c5b22ad9183568aa27610bfd44fe393dffd",
+    "sha256": "6cb03fdefbf431058e5afda85e350e24704c0df586eccb2062e48da5698c973b",
+    "bytes": 16937116
+  },
+  "pharmacist": {
+    "name": "Эмийн сангийн худалдагч",
+    "file": "pharmacist.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "dress",
+    "heightM": 1.63,
+    "age": 24,
+    "traits": [
+      "Narrow oval face",
+      "Open round eyes",
+      "Narrow nose bridge"
+    ],
+    "review": "draft",
+    "dnaHash": "0a7371baccc3e54d9836f078e9721108af0829ccbabdc3443f048d3ef35993ff",
+    "sha256": "386ab0576fb662a5d1517178991480adb0a1f30fa1ec88583faaebb0d4079307",
+    "bytes": 15538984
+  },
+  "sukhee": {
+    "name": "Сүхээ",
+    "file": "sukhee.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "jacket",
+    "heightM": 1.68,
+    "age": 50,
+    "traits": [
+      "Long rectangular head",
+      "projecting chin",
+      "convex nose"
+    ],
+    "review": "draft",
+    "dnaHash": "295bf366ce56502699f016933df4fefe909f464f482f99b195c14ff05d16b62e",
+    "sha256": "399302cf59c15e3140978358def2a9fc18d2a71ba451db51556a128877e98e6f",
+    "bytes": 17089664
+  },
+  "togoo": {
+    "name": "Тогоо",
+    "file": "togoo.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "coat",
+    "heightM": 1.66,
+    "age": 44,
+    "traits": [
+      "Round face with a broad nose tip",
+      "Ears that stand out",
+      "Puffy lids and patchy stubble"
+    ],
+    "review": "draft",
+    "dnaHash": "e20b664b84372de9e8bb0db9b78e0d20d8a07fa377a9444af71266f3810fe447",
+    "sha256": "47d02818817e5f42769c215ece0cd35db9d99c3edf26b3e553981854dfc8a357",
+    "bytes": 17498568
+  },
+  "town-clinic-father": {
+    "name": "town-clinic-father",
+    "file": "town-clinic-father.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "coat",
+    "heightM": 1.73,
+    "age": 36,
+    "traits": [
+      "hooded eyes",
+      "philtrum length",
+      "upper lid fold"
+    ],
+    "review": "draft",
+    "dnaHash": "3999ea4a15e1643bf742bd537fa9350dcf0f5e59e419ff14287e8cfaf2311bf4",
+    "sha256": "d895a1f9df492264904973b87e326987ccb11f2dc839b3b9817352512e4e1158",
+    "bytes": 17212052
+  },
+  "town-cougher": {
+    "name": "town-cougher",
+    "file": "town-cougher.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "coat",
+    "heightM": 1.61,
+    "age": 60,
+    "traits": [
+      "downturned eyes",
+      "nose width",
+      "jaw width"
+    ],
+    "review": "draft",
+    "dnaHash": "b143d4adadfb272f21c6738b4665965340694d5950d0b52ec865aea73ce57d6a",
+    "sha256": "dd64496eea4ed485398f2eb6df2acd35ea390b138499b52cb480a6cbcea4c053",
+    "bytes": 17342324
+  },
+  "town-flu-joker": {
+    "name": "town-flu-joker",
+    "file": "town-flu-joker.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "coat",
+    "heightM": 1.72,
+    "age": 45,
+    "traits": [
+      "deepset eyes",
+      "cheekbone prominence",
+      "nostril width"
+    ],
+    "review": "draft",
+    "dnaHash": "5c2b09ed2ef52d1f1b45c32991f958f49cf0f3016725a6cffd12b0b9e3ae1fcb",
+    "sha256": "6063d5668de29a4657258de166810a1a4ca581a0311a248858e65d646ad46e20",
+    "bytes": 17565436
+  },
+  "town-rug-shaker": {
+    "name": "town-rug-shaker",
+    "file": "town-rug-shaker.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "coat",
+    "heightM": 1.58,
+    "age": 52,
+    "traits": [
+      "almond eyes",
+      "nose bridge width",
+      "nose tip angle"
+    ],
+    "review": "draft",
+    "dnaHash": "80b44fc8a0cb93b7cdfcc618ac12bb371721925119540127f89c9d9fe8563b85",
+    "sha256": "5ddcf36e52a20c7378dccad6a369e3e82f790b38ba6f8739e7dc3133ed8e4b46",
+    "bytes": 15968556
+  },
+  "town-water-woman": {
+    "name": "town-water-woman",
+    "file": "town-water-woman.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "coat",
+    "heightM": 1.62,
+    "age": 42,
+    "traits": [
+      "downturned eyes",
+      "chin cleft",
+      "head fullness"
+    ],
+    "review": "draft",
+    "dnaHash": "c14b6a3115ff4ad882c280ac218fb4ac0cd58056433ecd40aa125d30129143b9",
+    "sha256": "2ce90766589d350e40080211d943408514255ea9abf12048b2641b6d8f91c920",
+    "bytes": 15615772
+  },
+  "town-young-worker": {
+    "name": "town-young-worker",
+    "file": "town-young-worker.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "background",
+    "wardrobe": "coat",
+    "heightM": 1.76,
+    "age": 20,
+    "traits": [
+      "downturned eyes",
+      "nose curve",
+      "jaw width"
+    ],
+    "review": "draft",
+    "dnaHash": "84a915fbee1a83f4c4464816c00d93b2ad4740c35cc515ef6a78b6917e0d8f2e",
+    "sha256": "902336964685285b6e96191e220e4fdfa2d280cc83caa5d99778092f20a78a76",
+    "bytes": 16113332
+  },
+  "tsetsegmaa": {
+    "name": "Цэцэгмаа",
+    "file": "tsetsegmaa.glb",
+    "kind": "adultFemale",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "dress",
+    "heightM": 1.6,
+    "age": 30,
+    "traits": [
+      "Wide high cheekbones",
+      "tapered lower face",
+      "low straight bridge"
+    ],
+    "review": "draft",
+    "dnaHash": "081c3821fdf1613daa7069603673379528f00ea13ab24749921865fb6654c21c",
+    "sha256": "dc9737a7c54f9b829ba66146e40828ce98d67d71e94dafbfc2fa15a903cf0b92",
+    "bytes": 16917072
+  },
+  "yard-guard": {
+    "name": "Төмөр замын харуул",
+    "file": "yard-guard.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "principal",
+    "wardrobe": "coat",
+    "heightM": 1.72,
+    "age": 55,
+    "traits": [
+      "Wide temples and angular cheek planes",
+      "square lower face",
+      "broad blunt nose"
+    ],
+    "review": "draft",
+    "dnaHash": "e1b5552dbd3ab935da6302d7400637fa876636aa38c0750dd28797f14a06dccc",
+    "sha256": "12f91c3489fff53524bb549a376ff2f518a562ab2f04bf3d3d2ef9e643285d89",
+    "bytes": 17943136
+  },
+  "yard-loader": {
+    "name": "Ачигч",
+    "file": "yard-loader.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "featured",
+    "wardrobe": "coat",
+    "heightM": 1.76,
+    "age": 33,
+    "traits": [
+      "Broad square Buryat jaw",
+      "Upturned eyes and high cheekbones",
+      "Crew cut"
+    ],
+    "review": "draft",
+    "dnaHash": "bfb2d20a5ef1b3880666d4ef6a6abcd64c85f597ab3697a3873650e163a6047b",
+    "sha256": "3a74f94cc1b6c38308b569283b6a59b227b10b741d541b47c680860ddcfd5a3d",
+    "bytes": 16447040
+  },
+  "yard-runner": {
+    "name": "Төмөр замын халдварласан хүн",
+    "file": "yard-runner.glb",
+    "kind": "adultMale",
+    "episodes": [
+      1
+    ],
+    "category": "runner",
+    "wardrobe": "runner",
+    "heightM": 1.78,
+    "age": 35,
+    "traits": [
+      "Bony long head",
+      "angular jaw",
+      "humped projecting nose"
+    ],
+    "review": "draft",
+    "dnaHash": "de72250b27edec7c4b0b242cf1d94c11831e80e03af857b8061e0d16f6a7eb1b",
+    "sha256": "6694d32c71387d3c2b7b1108bb3c853635a7852aa08b8f37e0402e9e37295f1d",
+    "bytes": 17346740
+  }
+}

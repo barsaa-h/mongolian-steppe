@@ -1,2214 +1,2411 @@
 [
-  {
-    "id": "yard-guard",
-    "name": "Төмөр замын харуул",
-    "aliases": [
-      "ХАРУУЛ",
-      "GUARD"
-    ],
-    "episodes": [
-      1
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.49,
-    "build": [
-      1.02,
-      1.06
-    ],
-    "face": {
-      "width": 1.02,
-      "jaw": 1.12,
-      "nose": 1.14,
-      "eyeSpacing": 0.94,
-      "cheekbone": 0.98,
-      "brow": 1.14
-    },
-    "skin": "#b48e79",
-    "hair": "#68615c",
-    "hairStyle": "cap",
-    "outfit": "uniform",
-    "colors": {
-      "cloth": "#3e4945",
-      "trousers": "#303733",
-      "trim": "#8d8776"
-    },
-    "props": [
-      "flashlight",
-      "keys"
-    ],
-    "relationships": [],
-    "behavior": "Heavy tired steps; checks doors with a flashlight; recoils at the boxcar.",
-    "sourceNotes": "EP1 hook: Russian-speaking freight-yard GUARD, 50s; attacked and killed. Exact age and appearance beyond tired guard are unspecified.",
-    "infection": false
+ {
+  "id": "yard-guard",
+  "name": "Төмөр замын харуул",
+  "aliases": [
+   "ХАРУУЛ",
+   "GUARD"
+  ],
+  "episodes": [
+   1
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.49,
+  "build": [
+   1.02,
+   1.06
+  ],
+  "face": {
+   "width": 1.02,
+   "jaw": 1.12,
+   "nose": 1.14,
+   "eyeSpacing": 0.94,
+   "cheekbone": 0.98,
+   "brow": 1.14
   },
-  {
-    "id": "irina",
-    "name": "Ирина Ковалева",
-    "aliases": [
-      "ИРИНА",
-      "Irina Kovaleva"
-    ],
-    "episodes": [
-      1
-    ],
-    "age": 54,
-    "kind": "adultFemale",
-    "height": 1.45,
-    "build": [
-      0.88,
-      0.9
-    ],
-    "face": {
-      "width": 0.9,
-      "jaw": 0.83,
-      "nose": 1.17,
-      "eyeSpacing": 0.95,
-      "cheekbone": 1.08,
-      "brow": 1.1
-    },
-    "skin": "#d2ae9b",
-    "hair": "#938880",
-    "hairStyle": "bob",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#655c54",
-      "trousers": "#3d3937",
-      "trim": "#ab9986"
-    },
-    "props": [
-      "dictaphone",
-      "cigarette",
-      "satchel"
-    ],
-    "relationships": [
-      "ganaa:courier"
-    ],
-    "behavior": "Controlled voice, shaking hands and sleepless eyes; protects the tapes.",
-    "sourceNotes": "EP1 hook/setup: IRINA 54, Russian dialogue, cigarette, cassette dictaphone and leather satchel. Bible names epidemiologist Irina Kovaleva; not seen after EP1.",
-    "infection": false
+  "skin": "#b48e79",
+  "hair": "#68615c",
+  "hairStyle": "cap",
+  "outfit": "uniform",
+  "colors": {
+   "cloth": "#3e4945",
+   "trousers": "#303733",
+   "trim": "#8d8776"
   },
-  {
-    "id": "ganaa",
-    "name": "Ганаа",
-    "aliases": [
-      "ГАНАА"
-    ],
-    "episodes": [
-      1
-    ],
-    "age": 46,
-    "kind": "adultMale",
-    "height": 1.53,
-    "build": [
-      1.16,
-      1.18
-    ],
-    "face": {
-      "width": 1.13,
-      "jaw": 1.17,
-      "nose": 0.98,
-      "eyeSpacing": 1.04,
-      "cheekbone": 1.08,
-      "brow": 1.12
-    },
-    "skin": "#b5896b",
-    "hair": "#302c27",
-    "hairStyle": "receding",
-    "outfit": "jacket",
-    "colors": {
-      "cloth": "#495451",
-      "trousers": "#373f48",
-      "trim": "#b2a285"
-    },
-    "props": [
-      "thermos",
-      "enamel-bowl",
-      "wrist-bandage"
-    ],
-    "relationships": [
-      "tsetsegmaa:husband",
-      "altan:father",
-      "dulmaa:son-in-law",
-      "sukhee:neighbor",
-      "hurel:customer"
-    ],
-    "behavior": "Expansive grin and singing; generous open hands become shaking and hungry.",
-    "sourceNotes": "EP1: GANAA 46, KAMAZ trucker, husband of Tsetsegmaa, father of Altan. Wrist bite and red line; turns at birthday. EP2 mentions him; he is not shown there.",
-    "infection": true
+  "props": [
+   "flashlight",
+   "keys"
+  ],
+  "relationships": [],
+  "behavior": "Heavy tired steps; checks doors with a flashlight; recoils at the boxcar.",
+  "sourceNotes": "EP1 hook: Russian-speaking freight-yard GUARD, 50s; attacked and killed. Exact age and appearance beyond tired guard are unspecified.",
+  "infection": false
+ },
+ {
+  "id": "irina",
+  "name": "Ирина Ковалева",
+  "aliases": [
+   "ИРИНА",
+   "Irina Kovaleva"
+  ],
+  "episodes": [
+   1
+  ],
+  "age": 54,
+  "kind": "adultFemale",
+  "height": 1.45,
+  "build": [
+   0.88,
+   0.9
+  ],
+  "face": {
+   "width": 0.9,
+   "jaw": 0.83,
+   "nose": 1.17,
+   "eyeSpacing": 0.95,
+   "cheekbone": 1.08,
+   "brow": 1.1
   },
-  {
-    "id": "dasha",
-    "name": "Даша",
-    "aliases": [
-      "ДАША"
-    ],
-    "episodes": [
-      1
-    ],
-    "age": 24,
-    "kind": "adultFemale",
-    "height": 1.46,
-    "build": [
-      0.85,
-      0.84
-    ],
-    "face": {
-      "width": 0.89,
-      "jaw": 0.8,
-      "nose": 1.1,
-      "eyeSpacing": 1.07,
-      "cheekbone": 1.13,
-      "brow": 0.93
-    },
-    "skin": "#c9a28f",
-    "hair": "#4a3026",
-    "hairStyle": "long",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#6c5157",
-      "trousers": "#393c47",
-      "trim": "#a48b75"
-    },
-    "props": [
-      "shoulder-bag",
-      "forearm-bandage"
-    ],
-    "relationships": [
-      "ganaa:hitchhiker"
-    ],
-    "behavior": "Hunched from cold, watches meat, then sharply lifts her head and sprints.",
-    "sourceNotes": "EP1: DASHA 24, Russian hitchhiker with stained scarf on left forearm; becomes flushed runner and dies at the fuel-pump fire.",
-    "infection": true
+  "skin": "#d2ae9b",
+  "hair": "#938880",
+  "hairStyle": "bob",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#655c54",
+   "trousers": "#3d3937",
+   "trim": "#ab9986"
   },
-  {
-    "id": "hurel",
-    "name": "Хүрэл",
-    "aliases": [
-      "ХҮРЭЛ",
-      "Hürel"
-    ],
-    "episodes": [
-      1
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.46,
-    "build": [
-      1.18,
-      1.25
-    ],
-    "face": {
-      "width": 1.18,
-      "jaw": 1.12,
-      "nose": 1.04,
-      "eyeSpacing": 0.95,
-      "cheekbone": 1.02,
-      "brow": 0.92
-    },
-    "skin": "#ad7b5d",
-    "hair": "#3a302a",
-    "hairStyle": "short",
-    "outfit": "apron",
-    "colors": {
-      "cloth": "#c2b292",
-      "trousers": "#414441",
-      "trim": "#765c49"
-    },
-    "props": [
-      "serving-tray"
-    ],
-    "relationships": [
-      "ganaa:friend",
-      "tsetsegmaa:acquaintance"
-    ],
-    "behavior": "Stocky, broad smile; plants a tray with familiar teasing confidence.",
-    "sourceNotes": "EP1 truck-stop: HÜREL, cook in his 50s with stained apron. Eaten and explicitly stays dead; not a confirmed infected survivor.",
-    "infection": false
+  "props": [
+   "dictaphone",
+   "cigarette",
+   "satchel"
+  ],
+  "relationships": [
+   "ganaa:courier"
+  ],
+  "behavior": "Controlled voice, shaking hands and sleepless eyes; protects the tapes.",
+  "sourceNotes": "EP1 hook/setup: IRINA 54, Russian dialogue, cigarette, cassette dictaphone and leather satchel. Bible names epidemiologist Irina Kovaleva; not seen after EP1.",
+  "infection": false
+ },
+ {
+  "id": "ganaa",
+  "name": "Ганаа",
+  "aliases": [
+   "ГАНАА"
+  ],
+  "episodes": [
+   1
+  ],
+  "age": 46,
+  "kind": "adultMale",
+  "height": 1.53,
+  "build": [
+   1.16,
+   1.18
+  ],
+  "face": {
+   "width": 1.13,
+   "jaw": 1.17,
+   "nose": 0.98,
+   "eyeSpacing": 1.04,
+   "cheekbone": 1.08,
+   "brow": 1.12
   },
-  {
-    "id": "tsetsegmaa",
-    "name": "Цэцэгмаа",
-    "aliases": [
-      "ЦЭЦЭГМАА",
-      "Цэцгээ"
-    ],
-    "episodes": [
-      1,
-      2
-    ],
-    "age": 30,
-    "kind": "adultFemale",
-    "height": 1.44,
-    "build": [
-      0.98,
-      1.0
-    ],
-    "face": {
-      "width": 1.04,
-      "jaw": 0.94,
-      "nose": 0.92,
-      "eyeSpacing": 1.03,
-      "cheekbone": 1.06,
-      "brow": 1.02
-    },
-    "skin": "#c3987b",
-    "hair": "#211f1d",
-    "hairStyle": "braid",
-    "outfit": "dress",
-    "colors": {
-      "cloth": "#753c48",
-      "trousers": "#4c3b3d",
-      "trim": "#bf9a6b"
-    },
-    "props": [],
-    "relationships": [
-      "ganaa:wife",
-      "altan:mother",
-      "dulmaa:daughter"
-    ],
-    "behavior": "Quick practical gestures; tests Ganaa’s forehead, later grips Oyun in panic.",
-    "sourceNotes": "EP1 party: TSETSEGMAA 30, Ganaa’s wife, called Цэцгээ. EP2 ER: blood down dress, reports the attack; no confirmed bite of her own.",
-    "infection": false
+  "skin": "#b5896b",
+  "hair": "#302c27",
+  "hairStyle": "receding",
+  "outfit": "jacket",
+  "colors": {
+   "cloth": "#495451",
+   "trousers": "#373f48",
+   "trim": "#b2a285"
   },
-  {
-    "id": "dulmaa",
-    "name": "Дулмаа",
-    "aliases": [
-      "ДУЛМАА"
-    ],
-    "episodes": [
-      1
-    ],
-    "age": 65,
-    "kind": "adultFemale",
-    "height": 1.36,
-    "build": [
-      1.04,
-      1.11
-    ],
-    "face": {
-      "width": 1.08,
-      "jaw": 0.86,
-      "nose": 0.96,
-      "eyeSpacing": 0.98,
-      "cheekbone": 1.12,
-      "brow": 0.94
-    },
-    "skin": "#b18365",
-    "hair": "#a7a29a",
-    "hairStyle": "bun",
-    "outfit": "deel",
-    "colors": {
-      "cloth": "#5b4e6a",
-      "trousers": "#4a4145",
-      "trim": "#b0925c"
-    },
-    "props": [],
-    "relationships": [
-      "tsetsegmaa:mother",
-      "ganaa:mother-in-law",
-      "altan:grandmother"
-    ],
-    "behavior": "Stooped but attentive; affectionate head tilts and hands folded over belt.",
-    "sourceNotes": "EP1 party: DULMAA 65, Ganaa’s mother-in-law. Notices his wrist; exact infection and later fate are unspecified.",
-    "infection": false
+  "props": [
+   "thermos",
+   "enamel-bowl",
+   "wrist-bandage"
+  ],
+  "relationships": [
+   "tsetsegmaa:husband",
+   "altan:father",
+   "dulmaa:son-in-law",
+   "sukhee:neighbor",
+   "hurel:customer"
+  ],
+  "behavior": "Expansive grin and singing; generous open hands become shaking and hungry.",
+  "sourceNotes": "EP1: GANAA 46, KAMAZ trucker, husband of Tsetsegmaa, father of Altan. Wrist bite and red line; turns at birthday. EP2 mentions him; he is not shown there.",
+  "infection": true
+ },
+ {
+  "id": "dasha",
+  "name": "Даша",
+  "aliases": [
+   "ДАША"
+  ],
+  "episodes": [
+   1
+  ],
+  "age": 24,
+  "kind": "adultFemale",
+  "height": 1.46,
+  "build": [
+   0.85,
+   0.84
+  ],
+  "face": {
+   "width": 0.89,
+   "jaw": 0.8,
+   "nose": 1.1,
+   "eyeSpacing": 1.07,
+   "cheekbone": 1.13,
+   "brow": 0.93
   },
-  {
-    "id": "sukhee",
-    "name": "Сүхээ",
-    "aliases": [
-      "СҮХЭЭ"
-    ],
-    "episodes": [
-      1
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.5,
-    "build": [
-      1.12,
-      1.21
-    ],
-    "face": {
-      "width": 1.14,
-      "jaw": 1.09,
-      "nose": 0.91,
-      "eyeSpacing": 1.0,
-      "cheekbone": 1.04,
-      "brow": 1.05
-    },
-    "skin": "#b88d70",
-    "hair": "#352f2a",
-    "hairStyle": "short",
-    "outfit": "jacket",
-    "colors": {
-      "cloth": "#71604e",
-      "trousers": "#43494a",
-      "trim": "#aa997b"
-    },
-    "props": [
-      "vodka-glass"
-    ],
-    "relationships": [
-      "ganaa:neighbor",
-      "dagva:bites"
-    ],
-    "behavior": "Loose drunken sway and loud affectionate ribbing at the party.",
-    "sourceNotes": "EP1: drunk neighbour SÜKHEE; EP2 only mentions Ganaa biting him and Dagva naming him as attacker. Bite exposure is confirmed; no second on-screen episode assigned.",
-    "infection": true
+  "skin": "#c9a28f",
+  "hair": "#4a3026",
+  "hairStyle": "long",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#6c5157",
+   "trousers": "#393c47",
+   "trim": "#a48b75"
   },
-  {
-    "id": "altan",
-    "name": "Алтан",
-    "aliases": [
-      "АЛТАН"
-    ],
-    "episodes": [
-      1
-    ],
-    "age": 3,
-    "kind": "child",
-    "height": 0.76,
-    "build": [
-      0.82,
-      0.9
-    ],
-    "face": {
-      "width": 1.12,
-      "jaw": 0.72,
-      "nose": 0.76,
-      "eyeSpacing": 1.13,
-      "cheekbone": 1.06,
-      "brow": 0.8
-    },
-    "skin": "#cca181",
-    "hair": "#27211f",
-    "hairStyle": "bob",
-    "outfit": "dress",
-    "colors": {
-      "cloth": "#823e34",
-      "trousers": "#7b5250",
-      "trim": "#bd985e"
-    },
-    "props": [
-      "paper-crown"
-    ],
-    "relationships": [
-      "ganaa:daughter",
-      "tsetsegmaa:daughter",
-      "dulmaa:granddaughter"
-    ],
-    "behavior": "Small tentative steps, climbs into father’s lap and watches three candles.",
-    "sourceNotes": "EP1 birthday: ALTAN is explicitly a three-year-old girl wearing a paper crown. Her fate after the cut is not established.",
-    "infection": false
+  "props": [
+   "shoulder-bag",
+   "forearm-bandage"
+  ],
+  "relationships": [
+   "ganaa:hitchhiker"
+  ],
+  "behavior": "Hunched from cold, watches meat, then sharply lifts her head and sprints.",
+  "sourceNotes": "EP1: DASHA 24, Russian hitchhiker with stained scarf on left forearm; becomes flushed runner and dies at the fuel-pump fire.",
+  "infection": true
+ },
+ {
+  "id": "hurel",
+  "name": "Хүрэл",
+  "aliases": [
+   "ХҮРЭЛ",
+   "Hürel"
+  ],
+  "episodes": [
+   1
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.46,
+  "build": [
+   1.18,
+   1.25
+  ],
+  "face": {
+   "width": 1.18,
+   "jaw": 1.12,
+   "nose": 1.04,
+   "eyeSpacing": 0.95,
+   "cheekbone": 1.02,
+   "brow": 0.92
   },
-  {
-    "id": "oyun",
-    "name": "Оюун",
-    "aliases": [
-      "ОЮУН",
-      "Dr. Oyun"
-    ],
-    "episodes": [
-      2,
-      3
-    ],
-    "age": 38,
-    "kind": "adultFemale",
-    "height": 1.46,
-    "build": [
-      0.92,
-      0.91
-    ],
-    "face": {
-      "width": 0.97,
-      "jaw": 0.89,
-      "nose": 1.02,
-      "eyeSpacing": 0.96,
-      "cheekbone": 1.09,
-      "brow": 1.08
-    },
-    "skin": "#bc9378",
-    "hair": "#26221e",
-    "hairStyle": "bun",
-    "outfit": "medical",
-    "colors": {
-      "cloth": "#c5cec3",
-      "trousers": "#56646a",
-      "trim": "#6f8a83"
-    },
-    "props": [
-      "penlight",
-      "scalpel",
-      "nursery-key"
-    ],
-    "relationships": [
-      "naran:rescuer",
-      "bolor:colleague",
-      "narantsetseg:obstetrician",
-      "lkhagva:caller"
-    ],
-    "behavior": "Economical precise hands, counts under her breath; carries guilt in stillness.",
-    "sourceNotes": "EP2: obstetrician OYUN 38, C-section and laundry-hatch escape with Naran. EP3 hospital call repeats as voice only; one actor, not duplicate.",
-    "infection": false
+  "skin": "#ad7b5d",
+  "hair": "#3a302a",
+  "hairStyle": "short",
+  "outfit": "apron",
+  "colors": {
+   "cloth": "#c2b292",
+   "trousers": "#414441",
+   "trim": "#765c49"
   },
-  {
-    "id": "bolor",
-    "name": "Болор",
-    "aliases": [
-      "БОЛОР"
-    ],
-    "episodes": [
-      2
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.48,
-    "build": [
-      1.02,
-      1.04
-    ],
-    "face": {
-      "width": 1.06,
-      "jaw": 0.97,
-      "nose": 0.92,
-      "eyeSpacing": 1.05,
-      "cheekbone": 1.0,
-      "brow": 0.99
-    },
-    "skin": "#c49d81",
-    "hair": "#332825",
-    "hairStyle": "bun",
-    "outfit": "nurse",
-    "colors": {
-      "cloth": "#b5c1b9",
-      "trousers": "#64716d",
-      "trim": "#e0d8c0"
-    },
-    "props": [
-      "tea-cup",
-      "flashlight",
-      "thigh-bandage"
-    ],
-    "relationships": [
-      "oyun:colleague"
-    ],
-    "behavior": "Slouches over tea, jokes in fear, clamps flashlight in teeth while working.",
-    "sourceNotes": "EP2: BOLOR night nurse in her 30s; hides thigh bite, becomes flushed at nursery glass and admits bite. Exact age unspecified.",
-    "infection": true
+  "props": [
+   "serving-tray"
+  ],
+  "relationships": [
+   "ganaa:friend",
+   "tsetsegmaa:acquaintance"
+  ],
+  "behavior": "Stocky, broad smile; plants a tray with familiar teasing confidence.",
+  "sourceNotes": "EP1 truck-stop: HÜREL, cook in his 50s with stained apron. Eaten and explicitly stays dead; not a confirmed infected survivor.",
+  "infection": false
+ },
+ {
+  "id": "tsetsegmaa",
+  "name": "Цэцэгмаа",
+  "aliases": [
+   "ЦЭЦЭГМАА",
+   "Цэцгээ"
+  ],
+  "episodes": [
+   1,
+   2
+  ],
+  "age": 30,
+  "kind": "adultFemale",
+  "height": 1.44,
+  "build": [
+   0.98,
+   1.0
+  ],
+  "face": {
+   "width": 1.04,
+   "jaw": 0.94,
+   "nose": 0.92,
+   "eyeSpacing": 1.03,
+   "cheekbone": 1.06,
+   "brow": 1.02
   },
-  {
-    "id": "narantsetseg",
-    "name": "Наранцэцэг",
-    "aliases": [
-      "НАРАНЦЭЦЭГ"
-    ],
-    "episodes": [
-      2
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.44,
-    "build": [
-      1.0,
-      1.22
-    ],
-    "face": {
-      "width": 1.08,
-      "jaw": 0.91,
-      "nose": 0.98,
-      "eyeSpacing": 1.03,
-      "cheekbone": 1.12,
-      "brow": 0.96
-    },
-    "skin": "#c49a7a",
-    "hair": "#24201d",
-    "hairStyle": "braid",
-    "outfit": "dress",
-    "colors": {
-      "cloth": "#a59a93",
-      "trousers": "#716b65",
-      "trim": "#c8b6a4"
-    },
-    "props": [
-      "shoulder-bandage"
-    ],
-    "relationships": [
-      "tsogt:wife",
-      "naran:mother",
-      "sarnai:mother",
-      "myagmar:protects-baby"
-    ],
-    "behavior": "Pregnant silhouette; steadies herself through labour and shields another baby.",
-    "sourceNotes": "EP2: NARANTSETSEG, 30s, Tsogt’s wife; shoulder bite while shielding Myagmar’s newborn; gives birth to Naran. Pregnancy silhouette is a production choice.",
-    "infection": true
+  "skin": "#c3987b",
+  "hair": "#211f1d",
+  "hairStyle": "braid",
+  "outfit": "dress",
+  "colors": {
+   "cloth": "#753c48",
+   "trousers": "#4c3b3d",
+   "trim": "#bf9a6b"
   },
-  {
-    "id": "dagva",
-    "name": "Дагва",
-    "aliases": [
-      "ДАГВА"
-    ],
-    "episodes": [
-      2
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.51,
-    "build": [
-      0.98,
-      0.94
-    ],
-    "face": {
-      "width": 0.95,
-      "jaw": 1.04,
-      "nose": 1.16,
-      "eyeSpacing": 0.92,
-      "cheekbone": 1.1,
-      "brow": 1.16
-    },
-    "skin": "#ac8065",
-    "hair": "#332b26",
-    "hairStyle": "receding",
-    "outfit": "jacket",
-    "colors": {
-      "cloth": "#665846",
-      "trousers": "#3d4445",
-      "trim": "#a28c68"
-    },
-    "props": [
-      "neck-bandage"
-    ],
-    "relationships": [
-      "sukhee:bitten-by",
-      "tsolmon:attacks"
-    ],
-    "behavior": "Shaking denial; sleeve held low; convulses and rises abruptly.",
-    "sourceNotes": "EP2 ER: DAGVA in his 40s, names Sükhee; neck bite under an hour, convulses and attacks Dr. Tsolmon. Exact age unspecified.",
-    "infection": true
+  "props": [],
+  "relationships": [
+   "ganaa:wife",
+   "altan:mother",
+   "dulmaa:daughter"
+  ],
+  "behavior": "Quick practical gestures; tests Ganaa’s forehead, later grips Oyun in panic.",
+  "sourceNotes": "EP1 party: TSETSEGMAA 30, Ganaa’s wife, called Цэцгээ. EP2 ER: blood down dress, reports the attack; no confirmed bite of her own.",
+  "infection": false
+ },
+ {
+  "id": "dulmaa",
+  "name": "Дулмаа",
+  "aliases": [
+   "ДУЛМАА"
+  ],
+  "episodes": [
+   1
+  ],
+  "age": 65,
+  "kind": "adultFemale",
+  "height": 1.36,
+  "build": [
+   1.04,
+   1.11
+  ],
+  "face": {
+   "width": 1.08,
+   "jaw": 0.86,
+   "nose": 0.96,
+   "eyeSpacing": 0.98,
+   "cheekbone": 1.12,
+   "brow": 0.94
   },
-  {
-    "id": "tsolmon",
-    "name": "Цолмон эмч",
-    "aliases": [
-      "ЦОЛМОН ЭМЧ",
-      "ЦОЛМОН"
-    ],
-    "episodes": [
-      2
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.52,
-    "build": [
-      0.96,
-      1.02
-    ],
-    "face": {
-      "width": 0.96,
-      "jaw": 0.94,
-      "nose": 1.2,
-      "eyeSpacing": 0.94,
-      "cheekbone": 1.07,
-      "brow": 1.08
-    },
-    "skin": "#b9957b",
-    "hair": "#8c8279",
-    "hairStyle": "receding",
-    "outfit": "medical",
-    "colors": {
-      "cloth": "#d0d0bd",
-      "trousers": "#626b6b",
-      "trim": "#8d9c8d"
-    },
-    "props": [
-      "stethoscope"
-    ],
-    "relationships": [
-      "oyun:colleague",
-      "dagva:treats"
-    ],
-    "behavior": "Kneels decisively and reaches for the patient before ordering medication.",
-    "sourceNotes": "EP2 ER: DR. TSOLMON in his 50s; killed by risen Dagva. Fatal attack is not a confirmed surviving infection.",
-    "infection": false
+  "skin": "#b18365",
+  "hair": "#a7a29a",
+  "hairStyle": "bun",
+  "outfit": "deel",
+  "colors": {
+   "cloth": "#5b4e6a",
+   "trousers": "#4a4145",
+   "trim": "#b0925c"
   },
-  {
-    "id": "myagmar",
-    "name": "Мягмар",
-    "aliases": [
-      "МЯГМАР"
-    ],
-    "episodes": [
-      2
-    ],
-    "age": 20,
-    "kind": "adultFemale",
-    "height": 1.41,
-    "build": [
-      0.87,
-      0.89
-    ],
-    "face": {
-      "width": 0.97,
-      "jaw": 0.81,
-      "nose": 0.86,
-      "eyeSpacing": 1.11,
-      "cheekbone": 1.03,
-      "brow": 0.9
-    },
-    "skin": "#cfa88d",
-    "hair": "#2c241e",
-    "hairStyle": "braid",
-    "outfit": "dress",
-    "colors": {
-      "cloth": "#948789",
-      "trousers": "#6d6672",
-      "trim": "#cdb5ac"
-    },
-    "props": [
-      "baby-blanket"
-    ],
-    "relationships": [
-      "myagmar-newborn:mother",
-      "narantsetseg:protected-by"
-    ],
-    "behavior": "Protective curled posture, both arms tight around her newborn.",
-    "sourceNotes": "EP2 ward: MYAGMAR 20, mother holding her newborn; asks Oyun to save her child at the hatch. No confirmed bite is shown.",
-    "infection": false
+  "props": [],
+  "relationships": [
+   "tsetsegmaa:mother",
+   "ganaa:mother-in-law",
+   "altan:grandmother"
+  ],
+  "behavior": "Stooped but attentive; affectionate head tilts and hands folded over belt.",
+  "sourceNotes": "EP1 party: DULMAA 65, Ganaa’s mother-in-law. Notices his wrist; exact infection and later fate are unspecified.",
+  "infection": false
+ },
+ {
+  "id": "sukhee",
+  "name": "Сүхээ",
+  "aliases": [
+   "СҮХЭЭ"
+  ],
+  "episodes": [
+   1
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.5,
+  "build": [
+   1.12,
+   1.21
+  ],
+  "face": {
+   "width": 1.14,
+   "jaw": 1.09,
+   "nose": 0.91,
+   "eyeSpacing": 1.0,
+   "cheekbone": 1.04,
+   "brow": 1.05
   },
-  {
-    "id": "naran",
-    "name": "Наран",
-    "aliases": [
-      "НАРАН"
-    ],
-    "episodes": [
-      2
-    ],
-    "age": 0,
-    "kind": "infant",
-    "height": 0.44,
-    "build": [
-      0.88,
-      0.93
-    ],
-    "face": {
-      "width": 1.12,
-      "jaw": 0.68,
-      "nose": 0.72,
-      "eyeSpacing": 1.14,
-      "cheekbone": 1.08,
-      "brow": 0.76
-    },
-    "skin": "#d7ad90",
-    "hair": "#40312b",
-    "hairStyle": "bald",
-    "outfit": "swaddle",
-    "colors": {
-      "cloth": "#d5c9ae",
-      "trousers": "#d5c9ae",
-      "trim": "#afa485"
-    },
-    "props": [
-      "swaddle"
-    ],
-    "relationships": [
-      "narantsetseg:daughter",
-      "tsogt:daughter",
-      "sarnai:sister",
-      "oyun:rescued-by"
-    ],
-    "behavior": "Newborn curled limbs under swaddling; small breathing and sleep movement.",
-    "sourceNotes": "EP2: newborn girl NARAN, born by C-section, named by Narantsetseg and carried out in Oyun’s coat. Age 0 means newly born, not a schoolchild.",
-    "infection": false
+  "skin": "#b88d70",
+  "hair": "#352f2a",
+  "hairStyle": "short",
+  "outfit": "jacket",
+  "colors": {
+   "cloth": "#71604e",
+   "trousers": "#43494a",
+   "trim": "#aa997b"
   },
-  {
-    "id": "myagmar-newborn",
-    "name": "Мягмарын нярай",
-    "aliases": [],
-    "episodes": [
-      2
-    ],
-    "age": 0,
-    "kind": "infant",
-    "height": 0.43,
-    "build": [
-      0.87,
-      0.92
-    ],
-    "face": {
-      "width": 1.1,
-      "jaw": 0.7,
-      "nose": 0.74,
-      "eyeSpacing": 1.12,
-      "cheekbone": 1.06,
-      "brow": 0.78
-    },
-    "skin": "#d1a98d",
-    "hair": "#483831",
-    "hairStyle": "bald",
-    "outfit": "swaddle",
-    "colors": {
-      "cloth": "#bcbfae",
-      "trousers": "#bcbfae",
-      "trim": "#8e9d95"
-    },
-    "props": [
-      "swaddle"
-    ],
-    "relationships": [
-      "myagmar:child"
-    ],
-    "behavior": "Cradled in mother’s arms; tiny head turns and restrained breathing.",
-    "sourceNotes": "EP2 ward: Myagmar clutches an unnamed newborn, protected by Narantsetseg. Separate from Naran; gender not specified.",
-    "infection": false
+  "props": [
+   "vodka-glass"
+  ],
+  "relationships": [
+   "ganaa:neighbor",
+   "dagva:bites"
+  ],
+  "behavior": "Loose drunken sway and loud affectionate ribbing at the party.",
+  "sourceNotes": "EP1: drunk neighbour SÜKHEE; EP2 only mentions Ganaa biting him and Dagva naming him as attacker. Bite exposure is confirmed; no second on-screen episode assigned.",
+  "infection": true
+ },
+ {
+  "id": "altan",
+  "name": "Алтан",
+  "aliases": [
+   "АЛТАН"
+  ],
+  "episodes": [
+   1
+  ],
+  "age": 3,
+  "kind": "child",
+  "height": 0.76,
+  "build": [
+   0.82,
+   0.9
+  ],
+  "face": {
+   "width": 1.12,
+   "jaw": 0.72,
+   "nose": 0.76,
+   "eyeSpacing": 1.13,
+   "cheekbone": 1.06,
+   "brow": 0.8
   },
-  {
-    "id": "lkhagva",
-    "name": "Лхагвасүрэн «Лхагва»",
-    "aliases": [
-      "ЗАСАГ ДАРГА",
-      "ЛХАГВА",
-      "Governor",
-      "Lkhagvasuren"
-    ],
-    "episodes": [
-      2,
-      3
-    ],
-    "age": 58,
-    "kind": "adultMale",
-    "height": 1.49,
-    "build": [
-      1.1,
-      1.18
-    ],
-    "face": {
-      "width": 1.13,
-      "jaw": 1.03,
-      "nose": 1.07,
-      "eyeSpacing": 0.96,
-      "cheekbone": 1.01,
-      "brow": 1.14
-    },
-    "skin": "#bb9477",
-    "hair": "#66615a",
-    "hairStyle": "receding",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#363e45",
-      "trousers": "#303940",
-      "trim": "#af9275"
-    },
-    "props": [
-      "radiotelephone",
-      "fountain-pen",
-      "napkin-list",
-      "pistol"
-    ],
-    "relationships": [
-      "uyanga:father-in-law",
-      "dashnyam:cousin",
-      "sarantuya:employer",
-      "enkhee:employer",
-      "batu:employer",
-      "oyun:caller"
-    ],
-    "behavior": "Warm quiet voice and measured palms; hides fear by straightening small objects.",
-    "sourceNotes": "Bible: Governor Lkhagvasuren, 58, called Lkhagva. EP2 phone voice and EP3 on screen are the same man; no separate Governor asset.",
-    "infection": false
+  "skin": "#cca181",
+  "hair": "#27211f",
+  "hairStyle": "bob",
+  "outfit": "dress",
+  "colors": {
+   "cloth": "#823e34",
+   "trousers": "#7b5250",
+   "trim": "#bd985e"
   },
-  {
-    "id": "enkhee",
-    "name": "Энхээ",
-    "aliases": [
-      "ЭНХЭЭ"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.61,
-    "build": [
-      1.22,
-      1.1
-    ],
-    "face": {
-      "width": 1.07,
-      "jaw": 1.24,
-      "nose": 0.99,
-      "eyeSpacing": 0.9,
-      "cheekbone": 1.12,
-      "brow": 1.21
-    },
-    "skin": "#b28a6d",
-    "hair": "#26211d",
-    "hairStyle": "short",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#343b40",
-      "trousers": "#292f34",
-      "trim": "#80898a"
-    },
-    "props": [
-      "earpiece"
-    ],
-    "relationships": [
-      "lkhagva:bodyguard"
-    ],
-    "behavior": "Large still frame, gurgling shallow breaths; later rigid flushed pursuit.",
-    "sourceNotes": "EP3 bathroom: bodyguard ENKHEE, 30s, bleeding in tub; later upright, red and steaming in banquet corridor. Distinct from second bodyguard Batu.",
-    "infection": true
+  "props": [
+   "paper-crown"
+  ],
+  "relationships": [
+   "ganaa:daughter",
+   "tsetsegmaa:daughter",
+   "dulmaa:granddaughter"
+  ],
+  "behavior": "Small tentative steps, climbs into father’s lap and watches three candles.",
+  "sourceNotes": "EP1 birthday: ALTAN is explicitly a three-year-old girl wearing a paper crown. Her fate after the cut is not established.",
+  "infection": false
+ },
+ {
+  "id": "oyun",
+  "name": "Оюун",
+  "aliases": [
+   "ОЮУН",
+   "Dr. Oyun"
+  ],
+  "episodes": [
+   2,
+   3
+  ],
+  "age": 38,
+  "kind": "adultFemale",
+  "height": 1.46,
+  "build": [
+   0.92,
+   0.91
+  ],
+  "face": {
+   "width": 0.97,
+   "jaw": 0.89,
+   "nose": 1.02,
+   "eyeSpacing": 0.96,
+   "cheekbone": 1.09,
+   "brow": 1.08
   },
-  {
-    "id": "sarantuya",
-    "name": "Сарантуяа",
-    "aliases": [
-      "САРАНТУЯА"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.47,
-    "build": [
-      0.9,
-      0.94
-    ],
-    "face": {
-      "width": 0.92,
-      "jaw": 0.87,
-      "nose": 1.06,
-      "eyeSpacing": 0.97,
-      "cheekbone": 1.14,
-      "brow": 1.04
-    },
-    "skin": "#bf997f",
-    "hair": "#302925",
-    "hairStyle": "bun",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#595561",
-      "trousers": "#494751",
-      "trim": "#a8a29b"
-    },
-    "props": [
-      "landline",
-      "documents"
-    ],
-    "relationships": [
-      "lkhagva:secretary"
-    ],
-    "behavior": "Composed upright stance, careful pauses and eyes that avoid the governor.",
-    "sourceNotes": "EP3 office and roof: SARANTUYA, composed secretary in her 40s. Clings to helicopter strut; exact age unspecified.",
-    "infection": false
+  "skin": "#bc9378",
+  "hair": "#26221e",
+  "hairStyle": "bun",
+  "outfit": "medical",
+  "colors": {
+   "cloth": "#c5cec3",
+   "trousers": "#56646a",
+   "trim": "#6f8a83"
   },
-  {
-    "id": "dashnyam",
-    "name": "Дашням",
-    "aliases": [
-      "ДАШНЯМ"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.47,
-    "build": [
-      1.17,
-      1.28
-    ],
-    "face": {
-      "width": 1.17,
-      "jaw": 1.02,
-      "nose": 0.94,
-      "eyeSpacing": 1.06,
-      "cheekbone": 0.98,
-      "brow": 1.03
-    },
-    "skin": "#bc906f",
-    "hair": "#3c332d",
-    "hairStyle": "receding",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#62584c",
-      "trousers": "#494b47",
-      "trim": "#c0a570"
-    },
-    "props": [
-      "vodka-glass"
-    ],
-    "relationships": [
-      "lkhagva:cousin"
-    ],
-    "behavior": "Greasy smile and hunched confidential whispers; grabs an escape opening.",
-    "sourceNotes": "EP3 banquet: DASHNYAM in his 50s, governor’s cousin; takes doctor’s place on napkin and leaps aboard. Later EP9 fate is outside this roster’s infection scope.",
-    "infection": false
+  "props": [
+   "penlight",
+   "scalpel",
+   "nursery-key"
+  ],
+  "relationships": [
+   "naran:rescuer",
+   "bolor:colleague",
+   "narantsetseg:obstetrician",
+   "lkhagva:caller"
+  ],
+  "behavior": "Economical precise hands, counts under her breath; carries guilt in stillness.",
+  "sourceNotes": "EP2: obstetrician OYUN 38, C-section and laundry-hatch escape with Naran. EP3 hospital call repeats as voice only; one actor, not duplicate.",
+  "infection": false
+ },
+ {
+  "id": "bolor",
+  "name": "Болор",
+  "aliases": [
+   "БОЛОР"
+  ],
+  "episodes": [
+   2
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.48,
+  "build": [
+   1.02,
+   1.04
+  ],
+  "face": {
+   "width": 1.06,
+   "jaw": 0.97,
+   "nose": 0.92,
+   "eyeSpacing": 1.05,
+   "cheekbone": 1.0,
+   "brow": 0.99
   },
-  {
-    "id": "chinbat",
-    "name": "Чинбат",
-    "aliases": [
-      "ЧИНБАТ"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.54,
-    "build": [
-      1.18,
-      1.2
-    ],
-    "face": {
-      "width": 1.14,
-      "jaw": 1.18,
-      "nose": 1.11,
-      "eyeSpacing": 0.91,
-      "cheekbone": 1.02,
-      "brow": 1.18
-    },
-    "skin": "#ab7d60",
-    "hair": "#27221f",
-    "hairStyle": "short",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#4f4547",
-      "trousers": "#3c393d",
-      "trim": "#baa476"
-    },
-    "props": [
-      "vodka-glass"
-    ],
-    "relationships": [
-      "lkhagva:mine-license-associate",
-      "dashnyam:banquet-associate"
-    ],
-    "behavior": "Throws his chest forward, glass lifted high; loud laughter becomes alarm.",
-    "sourceNotes": "EP3 banquet: CHINBAT, mine-licence man. No numerical age or infection fate supplied; middle-aged appearance is production design.",
-    "infection": false
+  "skin": "#c49d81",
+  "hair": "#332825",
+  "hairStyle": "bun",
+  "outfit": "nurse",
+  "colors": {
+   "cloth": "#b5c1b9",
+   "trousers": "#64716d",
+   "trim": "#e0d8c0"
   },
-  {
-    "id": "lodoi",
-    "name": "Лодой",
-    "aliases": [
-      "ЛОДОЙ"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.5,
-    "build": [
-      0.98,
-      1.04
-    ],
-    "face": {
-      "width": 1.0,
-      "jaw": 1.06,
-      "nose": 1.15,
-      "eyeSpacing": 0.95,
-      "cheekbone": 1.08,
-      "brow": 1.06
-    },
-    "skin": "#b38b70",
-    "hair": "#85776d",
-    "hairStyle": "cap",
-    "outfit": "uniform",
-    "colors": {
-      "cloth": "#5e655a",
-      "trousers": "#414a45",
-      "trim": "#a5a18a"
-    },
-    "props": [
-      "pilot-headset"
-    ],
-    "relationships": [
-      "lkhagva:pilot"
-    ],
-    "behavior": "Hungover squint, shoulders forward in cockpit, impatient beckoning.",
-    "sourceNotes": "EP3 helipad: pilot LODOI, 50s, hungover; refuses to wait as fuel runs out. Exact age unspecified.",
-    "infection": false
+  "props": [
+   "tea-cup",
+   "flashlight",
+   "thigh-bandage"
+  ],
+  "relationships": [
+   "oyun:colleague"
+  ],
+  "behavior": "Slouches over tea, jokes in fear, clamps flashlight in teeth while working.",
+  "sourceNotes": "EP2: BOLOR night nurse in her 30s; hides thigh bite, becomes flushed at nursery glass and admits bite. Exact age unspecified.",
+  "infection": true
+ },
+ {
+  "id": "narantsetseg",
+  "name": "Наранцэцэг",
+  "aliases": [
+   "НАРАНЦЭЦЭГ"
+  ],
+  "episodes": [
+   2
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.44,
+  "build": [
+   1.0,
+   1.22
+  ],
+  "face": {
+   "width": 1.08,
+   "jaw": 0.91,
+   "nose": 0.98,
+   "eyeSpacing": 1.03,
+   "cheekbone": 1.12,
+   "brow": 0.96
   },
-  {
-    "id": "batu",
-    "name": "Бат",
-    "aliases": [
-      "BATU",
-      "БАТ",
-      "Batu"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.64,
-    "build": [
-      1.27,
-      1.15
-    ],
-    "face": {
-      "width": 1.1,
-      "jaw": 1.3,
-      "nose": 1.04,
-      "eyeSpacing": 0.87,
-      "cheekbone": 1.13,
-      "brow": 1.24
-    },
-    "skin": "#b48a6c",
-    "hair": "#201e1b",
-    "hairStyle": "short",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#30383a",
-      "trousers": "#282f33",
-      "trim": "#6e7e7c"
-    },
-    "props": [
-      "earpiece"
-    ],
-    "relationships": [
-      "lkhagva:second-bodyguard",
-      "uyanga:escorts"
-    ],
-    "behavior": "Square stance and scanning head; hauls Uyanga aboard with controlled strength.",
-    "sourceNotes": "EP3: BATU, second bodyguard, written Бат on the napkin; distinct from Enkhee. No age given. Hidden bite belongs to EP9, not EP1–5.",
-    "infection": false
+  "skin": "#c49a7a",
+  "hair": "#24201d",
+  "hairStyle": "braid",
+  "outfit": "dress",
+  "colors": {
+   "cloth": "#a59a93",
+   "trousers": "#716b65",
+   "trim": "#c8b6a4"
   },
-  {
-    "id": "uyanga",
-    "name": "Уянга",
-    "aliases": [
-      "УЯНГА"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": 25,
-    "kind": "adultFemale",
-    "height": 1.43,
-    "build": [
-      0.88,
-      1.03
-    ],
-    "face": {
-      "width": 0.91,
-      "jaw": 0.82,
-      "nose": 0.86,
-      "eyeSpacing": 1.08,
-      "cheekbone": 1.08,
-      "brow": 0.9
-    },
-    "skin": "#d1ac91",
-    "hair": "#342722",
-    "hairStyle": "bob",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#9e8d80",
-      "trousers": "#665b5b",
-      "trim": "#d1c0a6"
-    },
-    "props": [],
-    "relationships": [
-      "lkhagva:daughter-in-law",
-      "batu:escorted-by"
-    ],
-    "behavior": "Pale and inward, one hand rests on belly while looking down from aircraft.",
-    "sourceNotes": "EP3 helicopter: UYANGA 25, governor’s daughter-in-law; pale with hand on belly. Pregnancy is suggested, not explicitly diagnosed in dialogue.",
-    "infection": false
+  "props": [
+   "shoulder-bandage"
+  ],
+  "relationships": [
+   "tsogt:wife",
+   "naran:mother",
+   "sarnai:mother",
+   "myagmar:protects-baby"
+  ],
+  "behavior": "Pregnant silhouette; steadies herself through labour and shields another baby.",
+  "sourceNotes": "EP2: NARANTSETSEG, 30s, Tsogt’s wife; shoulder bite while shielding Myagmar’s newborn; gives birth to Naran. Pregnancy silhouette is a production choice.",
+  "infection": true
+ },
+ {
+  "id": "dagva",
+  "name": "Дагва",
+  "aliases": [
+   "ДАГВА"
+  ],
+  "episodes": [
+   2
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.51,
+  "build": [
+   0.98,
+   0.94
+  ],
+  "face": {
+   "width": 0.95,
+   "jaw": 1.04,
+   "nose": 1.16,
+   "eyeSpacing": 0.92,
+   "cheekbone": 1.1,
+   "brow": 1.16
   },
-  {
-    "id": "banquet-waiter",
-    "name": "Зоогийн зөөгч",
-    "aliases": [],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.5,
-    "build": [
-      0.88,
-      0.86
-    ],
-    "face": {
-      "width": 0.9,
-      "jaw": 0.94,
-      "nose": 1.01,
-      "eyeSpacing": 1.02,
-      "cheekbone": 1.05,
-      "brow": 1.0
-    },
-    "skin": "#c49b81",
-    "hair": "#332a24",
-    "hairStyle": "short",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#c4c1b1",
-      "trousers": "#34383a",
-      "trim": "#645552"
-    },
-    "props": [
-      "serving-tray",
-      "hand-bandage"
-    ],
-    "relationships": [
-      "chinbat:serves"
-    ],
-    "behavior": "Leans away from an injured hand, staggers under tray and collapses.",
-    "sourceNotes": "EP3 banquet: unnamed waiter with bleeding hand collapses. No dialogue, age, confirmed bite or later infection given; retained as a specific staging role.",
-    "infection": false
+  "skin": "#ac8065",
+  "hair": "#332b26",
+  "hairStyle": "receding",
+  "outfit": "jacket",
+  "colors": {
+   "cloth": "#665846",
+   "trousers": "#3d4445",
+   "trim": "#a28c68"
   },
-  {
-    "id": "citizen-1",
-    "name": "Талбайн иргэн 1",
-    "aliases": [
-      "ИРГЭН 1"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.51,
-    "build": [
-      1.05,
-      1.04
-    ],
-    "face": {
-      "width": 1.04,
-      "jaw": 1.13,
-      "nose": 1.08,
-      "eyeSpacing": 0.96,
-      "cheekbone": 1.11,
-      "brow": 1.13
-    },
-    "skin": "#ad8265",
-    "hair": "#3d332b",
-    "hairStyle": "cap",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#655a49",
-      "trousers": "#3d4643",
-      "trim": "#a39676"
-    },
-    "props": [
-      "bundle"
-    ],
-    "relationships": [],
-    "behavior": "Calls upward with cupped hands, then leads the hopeful cheers.",
-    "sourceNotes": "EP3 balcony: ИРГЭН 1 asks where buses are and whether dawn is true. Script does not specify gender or age; this silhouette is an authored casting choice.",
-    "infection": false
+  "props": [
+   "neck-bandage"
+  ],
+  "relationships": [
+   "sukhee:bitten-by",
+   "tsolmon:attacks"
+  ],
+  "behavior": "Shaking denial; sleeve held low; convulses and rises abruptly.",
+  "sourceNotes": "EP2 ER: DAGVA in his 40s, names Sükhee; neck bite under an hour, convulses and attacks Dr. Tsolmon. Exact age unspecified.",
+  "infection": true
+ },
+ {
+  "id": "tsolmon",
+  "name": "Цолмон эмч",
+  "aliases": [
+   "ЦОЛМОН ЭМЧ",
+   "ЦОЛМОН"
+  ],
+  "episodes": [
+   2
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.52,
+  "build": [
+   0.96,
+   1.02
+  ],
+  "face": {
+   "width": 0.96,
+   "jaw": 0.94,
+   "nose": 1.2,
+   "eyeSpacing": 0.94,
+   "cheekbone": 1.07,
+   "brow": 1.08
   },
-  {
-    "id": "citizen-2",
-    "name": "Талбайн иргэн 2",
-    "aliases": [
-      "ИРГЭН 2"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.39,
-    "build": [
-      0.99,
-      1.09
-    ],
-    "face": {
-      "width": 1.09,
-      "jaw": 0.9,
-      "nose": 0.95,
-      "eyeSpacing": 1.05,
-      "cheekbone": 1.13,
-      "brow": 0.93
-    },
-    "skin": "#bd9376",
-    "hair": "#42352c",
-    "hairStyle": "braid",
-    "outfit": "deel",
-    "colors": {
-      "cloth": "#786456",
-      "trousers": "#51484a",
-      "trim": "#b6a176"
-    },
-    "props": [
-      "child-blanket"
-    ],
-    "relationships": [],
-    "behavior": "Wraps a bundle close and pleads to have the doors opened against cold.",
-    "sourceNotes": "EP3 balcony: ИРГЭН 2 says a child is freezing. Script does not specify speaker gender, age or kinship; adult woman silhouette is production design.",
-    "infection": false
+  "skin": "#b9957b",
+  "hair": "#8c8279",
+  "hairStyle": "receding",
+  "outfit": "medical",
+  "colors": {
+   "cloth": "#d0d0bd",
+   "trousers": "#626b6b",
+   "trim": "#8d9c8d"
   },
-  {
-    "id": "citizen-3",
-    "name": "Талбайн иргэн 3",
-    "aliases": [
-      "ИРГЭН 3"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.57,
-    "build": [
-      0.93,
-      0.91
-    ],
-    "face": {
-      "width": 0.92,
-      "jaw": 1.03,
-      "nose": 1.19,
-      "eyeSpacing": 0.93,
-      "cheekbone": 1.17,
-      "brow": 1.1
-    },
-    "skin": "#a77a5e",
-    "hair": "#72665b",
-    "hairStyle": "cap",
-    "outfit": "jacket",
-    "colors": {
-      "cloth": "#536068",
-      "trousers": "#41474a",
-      "trim": "#a38e73"
-    },
-    "props": [],
-    "relationships": [],
-    "behavior": "Long narrow silhouette, raised fist and forward lean as he protests.",
-    "sourceNotes": "EP3 balcony: ИРГЭН 3 protests being abandoned. No scripted gender or age; adult man silhouette is a casting choice, distinct from Citizens 1 and 2.",
-    "infection": false
+  "props": [
+   "stethoscope"
+  ],
+  "relationships": [
+   "oyun:colleague",
+   "dagva:treats"
+  ],
+  "behavior": "Kneels decisively and reaches for the patient before ordering medication.",
+  "sourceNotes": "EP2 ER: DR. TSOLMON in his 50s; killed by risen Dagva. Fatal attack is not a confirmed surviving infection.",
+  "infection": false
+ },
+ {
+  "id": "myagmar",
+  "name": "Мягмар",
+  "aliases": [
+   "МЯГМАР"
+  ],
+  "episodes": [
+   2
+  ],
+  "age": 20,
+  "kind": "adultFemale",
+  "height": 1.41,
+  "build": [
+   0.87,
+   0.89
+  ],
+  "face": {
+   "width": 0.97,
+   "jaw": 0.81,
+   "nose": 0.86,
+   "eyeSpacing": 1.11,
+   "cheekbone": 1.03,
+   "brow": 0.9
   },
-  {
-    "id": "helipad-parent",
-    "name": "Нисдэг тэрэгний талбайн эцэг эх",
-    "aliases": [
-      "ИРГЭН"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.42,
-    "build": [
-      0.93,
-      1.01
-    ],
-    "face": {
-      "width": 0.96,
-      "jaw": 0.84,
-      "nose": 1.03,
-      "eyeSpacing": 1.07,
-      "cheekbone": 1.1,
-      "brow": 0.97
-    },
-    "skin": "#c19c80",
-    "hair": "#2f2722",
-    "hairStyle": "braid",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#6e5860",
-      "trousers": "#4e444e",
-      "trim": "#b5a28b"
-    },
-    "props": [
-      "child-blanket"
-    ],
-    "relationships": [],
-    "behavior": "Reaches toward helicopter with both hands and clings to the escape path.",
-    "sourceNotes": "EP3 roof: ИРГЭН begs governor to take their child. Not identified as any balcony citizen; gender and exact age unspecified, woman silhouette is production design.",
-    "infection": false
+  "skin": "#cfa88d",
+  "hair": "#2c241e",
+  "hairStyle": "braid",
+  "outfit": "dress",
+  "colors": {
+   "cloth": "#948789",
+   "trousers": "#6d6672",
+   "trim": "#cdb5ac"
   },
-  {
-    "id": "anu",
-    "name": "Анударь «Ану»",
-    "aliases": [
-      "АНУ",
-      "Anudari",
-      "ANU"
-    ],
-    "episodes": [
-      4
-    ],
-    "age": 16,
-    "kind": "teenFemale",
-    "height": 1.36,
-    "build": [
-      0.83,
-      0.83
-    ],
-    "face": {
-      "width": 0.95,
-      "jaw": 0.78,
-      "nose": 0.88,
-      "eyeSpacing": 1.07,
-      "cheekbone": 1.07,
-      "brow": 0.92
-    },
-    "skin": "#c7a185",
-    "hair": "#29231e",
-    "hairStyle": "bob",
-    "outfit": "school",
-    "colors": {
-      "cloth": "#4a515a",
-      "trousers": "#3e4351",
-      "trim": "#a6b0a7"
-    },
-    "props": [
-      "hi8-camcorder",
-      "tape-bag"
-    ],
-    "relationships": [
-      "nomin:friend",
-      "munkh:deskmate"
-    ],
-    "behavior": "Holds the camera steady to avoid eye contact; guilt interrupts her breathing.",
-    "sourceNotes": "Bible: ANUDARI “ANU” 16. EP4 filmmaker seen in reflection and self-filmed boiler-room shot; later bite is EP12 and not included here.",
-    "infection": false
+  "props": [
+   "baby-blanket"
+  ],
+  "relationships": [
+   "myagmar-newborn:mother",
+   "narantsetseg:protected-by"
+  ],
+  "behavior": "Protective curled posture, both arms tight around her newborn.",
+  "sourceNotes": "EP2 ward: MYAGMAR 20, mother holding her newborn; asks Oyun to save her child at the hatch. No confirmed bite is shown.",
+  "infection": false
+ },
+ {
+  "id": "naran",
+  "name": "Наран",
+  "aliases": [
+   "НАРАН"
+  ],
+  "episodes": [
+   2
+  ],
+  "age": 0,
+  "kind": "infant",
+  "height": 0.44,
+  "build": [
+   0.88,
+   0.93
+  ],
+  "face": {
+   "width": 1.12,
+   "jaw": 0.68,
+   "nose": 0.72,
+   "eyeSpacing": 1.14,
+   "cheekbone": 1.08,
+   "brow": 0.76
   },
-  {
-    "id": "nomin",
-    "name": "Номин",
-    "aliases": [
-      "НОМИН"
-    ],
-    "episodes": [
-      4
-    ],
-    "age": null,
-    "kind": "teenFemale",
-    "height": 1.35,
-    "build": [
-      0.9,
-      0.85
-    ],
-    "face": {
-      "width": 1.04,
-      "jaw": 0.82,
-      "nose": 0.85,
-      "eyeSpacing": 1.1,
-      "cheekbone": 1.02,
-      "brow": 0.87
-    },
-    "skin": "#cfa98b",
-    "hair": "#332821",
-    "hairStyle": "braid",
-    "outfit": "school",
-    "colors": {
-      "cloth": "#5d6570",
-      "trousers": "#434a5d",
-      "trim": "#b1a88a"
-    },
-    "props": [],
-    "relationships": [
-      "anu:friend"
-    ],
-    "behavior": "Expressive fake news voice and grin; later suppresses a stove-smoke cough.",
-    "sourceNotes": "EP4: НОМИН, Anu’s friend, mocks broadcast then admits stove-smoke cough. No exact age or bite given; teenager placement follows the classroom.",
-    "infection": false
+  "skin": "#d7ad90",
+  "hair": "#40312b",
+  "hairStyle": "bald",
+  "outfit": "swaddle",
+  "colors": {
+   "cloth": "#d5c9ae",
+   "trousers": "#d5c9ae",
+   "trim": "#afa485"
   },
-  {
-    "id": "bat-erdene",
-    "name": "Бат-Эрдэнэ багш",
-    "aliases": [
-      "БАТ-ЭРДЭНЭ БАГШ",
-      "БАТ-ЭРДЭНЭ"
-    ],
-    "episodes": [
-      4
-    ],
-    "age": 45,
-    "kind": "adultMale",
-    "height": 1.59,
-    "build": [
-      1.18,
-      1.03
-    ],
-    "face": {
-      "width": 1.05,
-      "jaw": 1.22,
-      "nose": 1.02,
-      "eyeSpacing": 0.91,
-      "cheekbone": 1.15,
-      "brow": 1.2
-    },
-    "skin": "#b48b6b",
-    "hair": "#3a3028",
-    "hairStyle": "short",
-    "outfit": "tracksuit",
-    "colors": {
-      "cloth": "#3d5c62",
-      "trousers": "#384b58",
-      "trim": "#b6bcb0"
-    },
-    "props": [
-      "hand-bandage",
-      "whistle"
-    ],
-    "relationships": [
-      "gantsetseg:colleague",
-      "baasaa:colleague"
-    ],
-    "behavior": "Athletic shoulders sag over injured hand; later unnaturally still then explosive.",
-    "sourceNotes": "EP4: BAT-ERDENE 45, PE teacher in tracksuit, bitten hand; Standing in equipment room, wakes to noise and pursues Anu.",
-    "infection": true
+  "props": [
+   "swaddle"
+  ],
+  "relationships": [
+   "narantsetseg:daughter",
+   "tsogt:daughter",
+   "sarnai:sister",
+   "oyun:rescued-by"
+  ],
+  "behavior": "Newborn curled limbs under swaddling; small breathing and sleep movement.",
+  "sourceNotes": "EP2: newborn girl NARAN, born by C-section, named by Narantsetseg and carried out in Oyun’s coat. Age 0 means newly born, not a schoolchild.",
+  "infection": false
+ },
+ {
+  "id": "myagmar-newborn",
+  "name": "Мягмарын нярай",
+  "aliases": [],
+  "episodes": [
+   2
+  ],
+  "age": 0,
+  "kind": "infant",
+  "height": 0.43,
+  "build": [
+   0.87,
+   0.92
+  ],
+  "face": {
+   "width": 1.1,
+   "jaw": 0.7,
+   "nose": 0.74,
+   "eyeSpacing": 1.12,
+   "cheekbone": 1.06,
+   "brow": 0.78
   },
-  {
-    "id": "gantsetseg",
-    "name": "Ганцэцэг захирал",
-    "aliases": [
-      "ЗАХИРАЛ ГАНЦЭЦЭГ",
-      "ЗАХИРАЛ",
-      "Headmistress",
-      "Gantsetseg"
-    ],
-    "episodes": [
-      4
-    ],
-    "age": 60,
-    "kind": "adultFemale",
-    "height": 1.4,
-    "build": [
-      0.99,
-      1.03
-    ],
-    "face": {
-      "width": 1.01,
-      "jaw": 0.97,
-      "nose": 1.1,
-      "eyeSpacing": 0.93,
-      "cheekbone": 1.16,
-      "brow": 1.16
-    },
-    "skin": "#b58f74",
-    "hair": "#8b8176",
-    "hairStyle": "bun",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#56505a",
-      "trousers": "#45414e",
-      "trim": "#b4aa8c"
-    },
-    "props": [
-      "whistle",
-      "gate-keys"
-    ],
-    "relationships": [
-      "baasaa:headmistress",
-      "bat-erdene:headmistress"
-    ],
-    "behavior": "Rigid high chin, hands grip keys; whistle and counting arms enforce order.",
-    "sourceNotes": "EP4: Headmistress GANTSETSEG 60, bun and whistle; ЗАХИРАЛ ГАНЦЭЦЭГ and ЗАХИРАЛ are the same person.",
-    "infection": false
+  "skin": "#d1a98d",
+  "hair": "#483831",
+  "hairStyle": "bald",
+  "outfit": "swaddle",
+  "colors": {
+   "cloth": "#bcbfae",
+   "trousers": "#bcbfae",
+   "trim": "#8e9d95"
   },
-  {
-    "id": "baasaa",
-    "name": "Баясаа багш",
-    "aliases": [
-      "БАГШ БАЯСАА",
-      "БАЯСАА",
-      "БАГШ",
-      "Teacher",
-      "Baasaa"
-    ],
-    "episodes": [
-      4
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.45,
-    "build": [
-      0.88,
-      0.9
-    ],
-    "face": {
-      "width": 0.92,
-      "jaw": 0.84,
-      "nose": 0.97,
-      "eyeSpacing": 1.04,
-      "cheekbone": 1.08,
-      "brow": 0.97
-    },
-    "skin": "#c7a185",
-    "hair": "#302720",
-    "hairStyle": "braid",
-    "outfit": "dress",
-    "colors": {
-      "cloth": "#63706c",
-      "trousers": "#535c5d",
-      "trim": "#c5bca5"
-    },
-    "props": [
-      "class-register"
-    ],
-    "relationships": [
-      "gantsetseg:teacher",
-      "munkh:teacher"
-    ],
-    "behavior": "Keeps palms open in appeal; later tiptoes between children with finger to lips.",
-    "sourceNotes": "EP4: young teacher БАГШ БАЯСАА, called Baasaa in English directions; female pronoun in gym stage direction. Exact age unspecified.",
-    "infection": false
+  "props": [
+   "swaddle"
+  ],
+  "relationships": [
+   "myagmar:child"
+  ],
+  "behavior": "Cradled in mother’s arms; tiny head turns and restrained breathing.",
+  "sourceNotes": "EP2 ward: Myagmar clutches an unnamed newborn, protected by Narantsetseg. Separate from Naran; gender not specified.",
+  "infection": false
+ },
+ {
+  "id": "lkhagva",
+  "name": "Лхагвасүрэн «Лхагва»",
+  "aliases": [
+   "ЗАСАГ ДАРГА",
+   "ЛХАГВА",
+   "Governor",
+   "Lkhagvasuren"
+  ],
+  "episodes": [
+   2,
+   3
+  ],
+  "age": 58,
+  "kind": "adultMale",
+  "height": 1.49,
+  "build": [
+   1.1,
+   1.18
+  ],
+  "face": {
+   "width": 1.13,
+   "jaw": 1.03,
+   "nose": 1.07,
+   "eyeSpacing": 0.96,
+   "cheekbone": 1.01,
+   "brow": 1.14
   },
-  {
-    "id": "munkh",
-    "name": "Мөнх",
-    "aliases": [
-      "МӨНХ"
-    ],
-    "episodes": [
-      4
-    ],
-    "age": 15,
-    "kind": "teenMale",
-    "height": 1.31,
-    "build": [
-      0.77,
-      0.76
-    ],
-    "face": {
-      "width": 0.89,
-      "jaw": 0.81,
-      "nose": 1.02,
-      "eyeSpacing": 1.06,
-      "cheekbone": 1.12,
-      "brow": 0.96
-    },
-    "skin": "#bd9476",
-    "hair": "#30291f",
-    "hairStyle": "short",
-    "outfit": "jacket",
-    "colors": {
-      "cloth": "#776b55",
-      "trousers": "#414a50",
-      "trim": "#a18b6f"
-    },
-    "props": [
-      "patched-jacket"
-    ],
-    "relationships": [
-      "anu:deskmate",
-      "baasaa:pupil"
-    ],
-    "behavior": "Thin hunched shoulders and fist over smoke cough; begs through gate bars.",
-    "sourceNotes": "EP4: MUNKH 15, thin boy in patched jacket, 9Б, Anu’s deskmate. Cough is stove smoke; no bite established. Silence after expulsion does not prove a turn.",
-    "infection": false
+  "skin": "#bb9477",
+  "hair": "#66615a",
+  "hairStyle": "receding",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#363e45",
+   "trousers": "#303940",
+   "trim": "#af9275"
   },
-  {
-    "id": "temuujin",
-    "name": "Тэмүүжин",
-    "aliases": [
-      "ТЭМҮҮЖИН"
-    ],
-    "episodes": [
-      4
-    ],
-    "age": null,
-    "kind": "teenMale",
-    "height": 1.4,
-    "build": [
-      0.98,
-      0.9
-    ],
-    "face": {
-      "width": 1.04,
-      "jaw": 1.06,
-      "nose": 0.94,
-      "eyeSpacing": 0.95,
-      "cheekbone": 1.03,
-      "brow": 1.04
-    },
-    "skin": "#bf9578",
-    "hair": "#24201c",
-    "hairStyle": "short",
-    "outfit": "school",
-    "colors": {
-      "cloth": "#4a5355",
-      "trousers": "#39434d",
-      "trim": "#a2a7a0"
-    },
-    "props": [],
-    "relationships": [
-      "munkh:classmate"
-    ],
-    "behavior": "Chin pushed forward, shoulders squared; dismisses Munkh with a quick wave.",
-    "sourceNotes": "EP4 vote: ТЭМҮҮЖИН, explicitly a boy, argues coughing pupils must leave. No exact age or infection provided.",
-    "infection": false
+  "props": [
+   "radiotelephone",
+   "fountain-pen",
+   "napkin-list",
+   "pistol"
+  ],
+  "relationships": [
+   "uyanga:father-in-law",
+   "dashnyam:cousin",
+   "sarantuya:employer",
+   "enkhee:employer",
+   "batu:employer",
+   "oyun:caller"
+  ],
+  "behavior": "Warm quiet voice and measured palms; hides fear by straightening small objects.",
+  "sourceNotes": "Bible: Governor Lkhagvasuren, 58, called Lkhagva. EP2 phone voice and EP3 on screen are the same man; no separate Governor asset.",
+  "infection": false
+ },
+ {
+  "id": "enkhee",
+  "name": "Энхээ",
+  "aliases": [
+   "ЭНХЭЭ"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.61,
+  "build": [
+   1.22,
+   1.1
+  ],
+  "face": {
+   "width": 1.07,
+   "jaw": 1.24,
+   "nose": 0.99,
+   "eyeSpacing": 0.9,
+   "cheekbone": 1.12,
+   "brow": 1.21
   },
-  {
-    "id": "saruul",
-    "name": "Саруул",
-    "aliases": [
-      "САРУУЛ"
-    ],
-    "episodes": [
-      4
-    ],
-    "age": 16,
-    "kind": "teenFemale",
-    "height": 1.37,
-    "build": [
-      0.87,
-      0.82
-    ],
-    "face": {
-      "width": 0.94,
-      "jaw": 0.85,
-      "nose": 0.96,
-      "eyeSpacing": 1.03,
-      "cheekbone": 1.1,
-      "brow": 1.03
-    },
-    "skin": "#c29a7b",
-    "hair": "#2c241e",
-    "hairStyle": "braid",
-    "outfit": "school",
-    "colors": {
-      "cloth": "#6a5964",
-      "trousers": "#474653",
-      "trim": "#b1a397"
-    },
-    "props": [
-      "calf-bandage",
-      "bloody-sock"
-    ],
-    "relationships": [
-      "anu:schoolmate"
-    ],
-    "behavior": "Limping weight shift; threatens in a hiss while shielding wrapped calf.",
-    "sourceNotes": "EP4: SARUUL 16, bloody sock and scarf-wrapped calf, fever and bite concealment. Bible calls hidden-calf-bite pupil a girl.",
-    "infection": true
+  "skin": "#b28a6d",
+  "hair": "#26211d",
+  "hairStyle": "short",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#343b40",
+   "trousers": "#292f34",
+   "trim": "#80898a"
   },
-  {
-    "id": "erdene",
-    "name": "Эрдэнэ",
-    "aliases": [
-      "ЭРДЭНЭ"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": 19,
-    "kind": "adultMale",
-    "height": 1.48,
-    "build": [
-      0.9,
-      0.87
-    ],
-    "face": {
-      "width": 0.96,
-      "jaw": 0.91,
-      "nose": 0.98,
-      "eyeSpacing": 1.04,
-      "cheekbone": 1.03,
-      "brow": 0.96
-    },
-    "skin": "#c19b7d",
-    "hair": "#28221b",
-    "hairStyle": "cap",
-    "outfit": "uniform",
-    "colors": {
-      "cloth": "#697057",
-      "trousers": "#4d5847",
-      "trim": "#b7aa7b"
-    },
-    "props": [
-      "rifle",
-      "ammo-pouch"
-    ],
-    "relationships": [
-      "bayar:conscript",
-      "jargal:comrade",
-      "narantuya:encounters"
-    ],
-    "behavior": "Too-young tense face; rifle held awkwardly, hands shake while counting.",
-    "sourceNotes": "EP5 and bible: ERDENE 19, conscript, first shooting, counts Burn and drops rifle to walk east. Adult age, intentionally lean youthful silhouette.",
-    "infection": false
+  "props": [
+   "earpiece"
+  ],
+  "relationships": [
+   "lkhagva:bodyguard"
+  ],
+  "behavior": "Large still frame, gurgling shallow breaths; later rigid flushed pursuit.",
+  "sourceNotes": "EP3 bathroom: bodyguard ENKHEE, 30s, bleeding in tub; later upright, red and steaming in banquet corridor. Distinct from second bodyguard Batu.",
+  "infection": true
+ },
+ {
+  "id": "sarantuya",
+  "name": "Сарантуяа",
+  "aliases": [
+   "САРАНТУЯА"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.47,
+  "build": [
+   0.9,
+   0.94
+  ],
+  "face": {
+   "width": 0.92,
+   "jaw": 0.87,
+   "nose": 1.06,
+   "eyeSpacing": 0.97,
+   "cheekbone": 1.14,
+   "brow": 1.04
   },
-  {
-    "id": "bayar",
-    "name": "Баяр дэслэгч",
-    "aliases": [
-      "БАЯР",
-      "LT. BAYAR"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": 35,
-    "kind": "adultMale",
-    "height": 1.55,
-    "build": [
-      1.12,
-      1.13
-    ],
-    "face": {
-      "width": 1.09,
-      "jaw": 1.18,
-      "nose": 1.09,
-      "eyeSpacing": 0.91,
-      "cheekbone": 1.08,
-      "brow": 1.18
-    },
-    "skin": "#ae8263",
-    "hair": "#2e261e",
-    "hairStyle": "cap",
-    "outfit": "uniform",
-    "colors": {
-      "cloth": "#4f5b43",
-      "trousers": "#3e4836",
-      "trim": "#9a8a68"
-    },
-    "props": [
-      "cigarette",
-      "pistol",
-      "gold-ring"
-    ],
-    "relationships": [
-      "erdene:lieutenant",
-      "jargal:lieutenant"
-    ],
-    "behavior": "Market-trader palm held out, easy grin; relaxed cruelty and quick retreat.",
-    "sourceNotes": "EP5: LT. BAYAR 35, fur collar, cigarette, sells passage for flour; steals ring and escapes with flour. Alive and no known bite in scope.",
-    "infection": false
+  "skin": "#bf997f",
+  "hair": "#302925",
+  "hairStyle": "bun",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#595561",
+   "trousers": "#494751",
+   "trim": "#a8a29b"
   },
-  {
-    "id": "jargal",
-    "name": "Жаргал",
-    "aliases": [
-      "ЖАРГАЛ"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": 20,
-    "kind": "adultMale",
-    "height": 1.51,
-    "build": [
-      0.95,
-      0.91
-    ],
-    "face": {
-      "width": 1.02,
-      "jaw": 0.96,
-      "nose": 0.92,
-      "eyeSpacing": 1.05,
-      "cheekbone": 0.98,
-      "brow": 0.98
-    },
-    "skin": "#bc9274",
-    "hair": "#32281e",
-    "hairStyle": "cap",
-    "outfit": "uniform",
-    "colors": {
-      "cloth": "#6c735c",
-      "trousers": "#505e4b",
-      "trim": "#a8a27a"
-    },
-    "props": [
-      "rifle",
-      "ammo-pouch"
-    ],
-    "relationships": [
-      "erdene:comrade",
-      "bayar:conscript"
-    ],
-    "behavior": "Sideways grin and friendly elbow; joking gives way to a reaching plea.",
-    "sourceNotes": "EP5: JARGAL 20, conscript exactly one year older than Erdene; pulled under in stampede. Death is stated in Cost, surviving bite not established.",
-    "infection": false
+  "props": [
+   "landline",
+   "documents"
+  ],
+  "relationships": [
+   "lkhagva:secretary"
+  ],
+  "behavior": "Composed upright stance, careful pauses and eyes that avoid the governor.",
+  "sourceNotes": "EP3 office and roof: SARANTUYA, composed secretary in her 40s. Clings to helicopter strut; exact age unspecified.",
+  "infection": false
+ },
+ {
+  "id": "dashnyam",
+  "name": "Дашням",
+  "aliases": [
+   "ДАШНЯМ"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.47,
+  "build": [
+   1.17,
+   1.28
+  ],
+  "face": {
+   "width": 1.17,
+   "jaw": 1.02,
+   "nose": 0.94,
+   "eyeSpacing": 1.06,
+   "cheekbone": 0.98,
+   "brow": 1.03
   },
-  {
-    "id": "cordon-mother-meat",
-    "name": "Хориг дээр мах санал болгосон эх",
-    "aliases": [
-      "ЭХ ХҮН 1"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.42,
-    "build": [
-      1.04,
-      1.09
-    ],
-    "face": {
-      "width": 1.1,
-      "jaw": 0.92,
-      "nose": 0.95,
-      "eyeSpacing": 1.0,
-      "cheekbone": 1.09,
-      "brow": 0.94
-    },
-    "skin": "#b98e71",
-    "hair": "#493a30",
-    "hairStyle": "braid",
-    "outfit": "deel",
-    "colors": {
-      "cloth": "#72614f",
-      "trousers": "#4b5048",
-      "trim": "#b3a074"
-    },
-    "props": [
-      "meat-bundle"
-    ],
-    "relationships": [],
-    "behavior": "Offers her bundle with both hands, hesitates at the flour demand.",
-    "sourceNotes": "EP5 setup: ЭХ ХҮН 1 offers meat instead of flour. Kept separate from later coughing-boy mother; no identity, age or infection is supplied.",
-    "infection": false
+  "skin": "#bc906f",
+  "hair": "#3c332d",
+  "hairStyle": "receding",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#62584c",
+   "trousers": "#494b47",
+   "trim": "#c0a570"
   },
-  {
-    "id": "cordon-mother-smoke",
-    "name": "Ханиалгасан хүүгийн эх",
-    "aliases": [
-      "ЭХ"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.4,
-    "build": [
-      0.96,
-      1.02
-    ],
-    "face": {
-      "width": 1.0,
-      "jaw": 0.87,
-      "nose": 1.03,
-      "eyeSpacing": 1.06,
-      "cheekbone": 1.1,
-      "brow": 0.96
-    },
-    "skin": "#c19a7a",
-    "hair": "#332a21",
-    "hairStyle": "braid",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#6f5c65",
-      "trousers": "#48464c",
-      "trim": "#b6a78d"
-    },
-    "props": [
-      "child-blanket"
-    ],
-    "relationships": [
-      "cordon-coughing-boy:mother"
-    ],
-    "behavior": "One arm shields child; turns between his face and Bayar in pleading.",
-    "sourceNotes": "EP5 setup: ЭХ, mother with coughing boy, explains stove smoke. No bite or exact age given; distinct from meat-offering mother.",
-    "infection": false
+  "props": [
+   "vodka-glass"
+  ],
+  "relationships": [
+   "lkhagva:cousin"
+  ],
+  "behavior": "Greasy smile and hunched confidential whispers; grabs an escape opening.",
+  "sourceNotes": "EP3 banquet: DASHNYAM in his 50s, governor’s cousin; takes doctor’s place on napkin and leaps aboard. Later EP9 fate is outside this roster’s infection scope.",
+  "infection": false
+ },
+ {
+  "id": "chinbat",
+  "name": "Чинбат",
+  "aliases": [
+   "ЧИНБАТ"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.54,
+  "build": [
+   1.18,
+   1.2
+  ],
+  "face": {
+   "width": 1.14,
+   "jaw": 1.18,
+   "nose": 1.11,
+   "eyeSpacing": 0.91,
+   "cheekbone": 1.02,
+   "brow": 1.18
   },
-  {
-    "id": "cordon-coughing-boy",
-    "name": "Хориг дээрх ханиалгасан хүү",
-    "aliases": [],
-    "episodes": [
-      5
-    ],
-    "age": null,
-    "kind": "child",
-    "height": 1.02,
-    "build": [
-      0.8,
-      0.81
-    ],
-    "face": {
-      "width": 1.07,
-      "jaw": 0.77,
-      "nose": 0.81,
-      "eyeSpacing": 1.11,
-      "cheekbone": 1.06,
-      "brow": 0.85
-    },
-    "skin": "#c9a17e",
-    "hair": "#352a20",
-    "hairStyle": "cap",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#7b7461",
-      "trousers": "#4d5252",
-      "trim": "#b9a88d"
-    },
-    "props": [
-      "scarf"
-    ],
-    "relationships": [
-      "cordon-mother-smoke:son"
-    ],
-    "behavior": "Hides against mother’s side and coughs into scarf, shoulders drawn upward.",
-    "sourceNotes": "EP5 setup: unnamed coughing boy; mother specifies stove smoke. Exact age not given; primary-school-sized silhouette is production design.",
-    "infection": false
+  "skin": "#ab7d60",
+  "hair": "#27221f",
+  "hairStyle": "short",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#4f4547",
+   "trousers": "#3c393d",
+   "trim": "#baa476"
   },
-  {
-    "id": "cordon-bitten-man",
-    "name": "Хориг дээр хазуулснаа нуусан хүн",
-    "aliases": [
-      "ХҮН"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.52,
-    "build": [
-      0.95,
-      0.95
-    ],
-    "face": {
-      "width": 0.94,
-      "jaw": 1.05,
-      "nose": 1.17,
-      "eyeSpacing": 0.94,
-      "cheekbone": 1.14,
-      "brow": 1.13
-    },
-    "skin": "#b18467",
-    "hair": "#3b2f25",
-    "hairStyle": "receding",
-    "outfit": "jacket",
-    "colors": {
-      "cloth": "#6a6251",
-      "trousers": "#434c49",
-      "trim": "#a79272"
-    },
-    "props": [
-      "wrist-bandage"
-    ],
-    "relationships": [
-      "erdene:protected-by"
-    ],
-    "behavior": "Pulls sleeve down and leans in to beg; keeps infected wrist away from crowd.",
-    "sourceNotes": "EP5 escalation: ХҮН, man in his 40s, red line creeping from wrist; asks Erdene for silence. Confirmed infection, exact age unspecified.",
-    "infection": true
+  "props": [
+   "vodka-glass"
+  ],
+  "relationships": [
+   "lkhagva:mine-license-associate",
+   "dashnyam:banquet-associate"
+  ],
+  "behavior": "Throws his chest forward, glass lifted high; loud laughter becomes alarm.",
+  "sourceNotes": "EP3 banquet: CHINBAT, mine-licence man. No numerical age or infection fate supplied; middle-aged appearance is production design.",
+  "infection": false
+ },
+ {
+  "id": "lodoi",
+  "name": "Лодой",
+  "aliases": [
+   "ЛОДОЙ"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.5,
+  "build": [
+   0.98,
+   1.04
+  ],
+  "face": {
+   "width": 1.0,
+   "jaw": 1.06,
+   "nose": 1.15,
+   "eyeSpacing": 0.95,
+   "cheekbone": 1.08,
+   "brow": 1.06
   },
-  {
-    "id": "cordon-father",
-    "name": "Бөгжөө өгсөн эцэг",
-    "aliases": [
-      "АВ",
-      "FATHER"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": null,
-    "kind": "adultMale",
-    "height": 1.56,
-    "build": [
-      1.09,
-      1.08
-    ],
-    "face": {
-      "width": 1.06,
-      "jaw": 1.15,
-      "nose": 1.1,
-      "eyeSpacing": 0.97,
-      "cheekbone": 1.12,
-      "brow": 1.15
-    },
-    "skin": "#b08567",
-    "hair": "#372b22",
-    "hairStyle": "short",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#665a4a",
-      "trousers": "#424b47",
-      "trim": "#ac9470"
-    },
-    "props": [
-      "gold-ring"
-    ],
-    "relationships": [
-      "bayar:robbed-by"
-    ],
-    "behavior": "Offers ring with trembling fingers then lunges forward when dismissed.",
-    "sourceNotes": "EP5 set piece A: FATHER in his 40s, speech label АВ, with wife and two children; shot after Bayar takes ring. No surviving bite established.",
-    "infection": false
+  "skin": "#b38b70",
+  "hair": "#85776d",
+  "hairStyle": "cap",
+  "outfit": "uniform",
+  "colors": {
+   "cloth": "#5e655a",
+   "trousers": "#414a45",
+   "trim": "#a5a18a"
   },
-  {
-    "id": "cordon-woman",
-    "name": "Элсэн уутны дэргэдэх эмэгтэй",
-    "aliases": [
-      "ЭМЭГТЭЙ"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": null,
-    "kind": "adultFemale",
-    "height": 1.46,
-    "build": [
-      1.06,
-      1.05
-    ],
-    "face": {
-      "width": 1.05,
-      "jaw": 0.96,
-      "nose": 1.04,
-      "eyeSpacing": 1.03,
-      "cheekbone": 1.14,
-      "brow": 1.03
-    },
-    "skin": "#b98f71",
-    "hair": "#30271f",
-    "hairStyle": "braid",
-    "outfit": "coat",
-    "colors": {
-      "cloth": "#77664d",
-      "trousers": "#4c5146",
-      "trim": "#b5aa83"
-    },
-    "props": [
-      "bundle"
-    ],
-    "relationships": [
-      "erdene:holds-sandbags-with"
-    ],
-    "behavior": "Crouches protectively in front of children and snaps urgent questions.",
-    "sourceNotes": "EP5 set piece B: ЭМЭГТЭЙ, woman with three children beside Erdene. Not identified as an earlier mother or father’s wife; no exact age or infection given.",
-    "infection": false
+  "props": [
+   "pilot-headset"
+  ],
+  "relationships": [
+   "lkhagva:pilot"
+  ],
+  "behavior": "Hungover squint, shoulders forward in cockpit, impatient beckoning.",
+  "sourceNotes": "EP3 helipad: pilot LODOI, 50s, hungover; refuses to wait as fuel runs out. Exact age unspecified.",
+  "infection": false
+ },
+ {
+  "id": "batu",
+  "name": "Бат",
+  "aliases": [
+   "BATU",
+   "БАТ",
+   "Batu"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.64,
+  "build": [
+   1.27,
+   1.15
+  ],
+  "face": {
+   "width": 1.1,
+   "jaw": 1.3,
+   "nose": 1.04,
+   "eyeSpacing": 0.87,
+   "cheekbone": 1.13,
+   "brow": 1.24
   },
-  {
-    "id": "narantuya",
-    "name": "Нарантуяа",
-    "aliases": [
-      "НАРАНТУЯА"
-    ],
-    "episodes": [
-      5
-    ],
-    "age": 27,
-    "kind": "adultFemale",
-    "height": 1.49,
-    "build": [
-      0.99,
-      0.94
-    ],
-    "face": {
-      "width": 0.97,
-      "jaw": 0.95,
-      "nose": 1.02,
-      "eyeSpacing": 0.99,
-      "cheekbone": 1.17,
-      "brow": 1.09
-    },
-    "skin": "#b78c6c",
-    "hair": "#27221c",
-    "hairStyle": "braid",
-    "outfit": "deel",
-    "colors": {
-      "cloth": "#75684e",
-      "trousers": "#4a5144",
-      "trim": "#b29a68"
-    },
-    "props": [
-      "bow",
-      "quiver"
-    ],
-    "relationships": [
-      "tsogt:sister",
-      "naran:aunt",
-      "sarnai:aunt",
-      "erdene:encounters"
-    ],
-    "behavior": "Balanced archer’s stance; draws smoothly and fixes eyes along arrow.",
-    "sourceNotes": "EP5 closing ridge: NARANTUYA aims bow at Erdene. Bible supplies age 27, archer and Tsogt’s sister; later events are not assigned to EP1–5.",
-    "infection": false
+  "skin": "#b48a6c",
+  "hair": "#201e1b",
+  "hairStyle": "short",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#30383a",
+   "trousers": "#282f33",
+   "trim": "#6e7e7c"
   },
-  {
-    "id": "minister",
-    "name": "Сайд — утасны дуу",
-    "aliases": [
-      "МИНИСТР",
-      "Minister"
-    ],
-    "episodes": [
-      3
-    ],
-    "age": null,
-    "kind": "voice",
-    "height": 0,
-    "build": [
-      0,
-      0
-    ],
-    "face": {
-      "width": 1,
-      "jaw": 1,
-      "nose": 1,
-      "eyeSpacing": 1,
-      "cheekbone": 1,
-      "brow": 1
-    },
-    "skin": "#000000",
-    "hair": "#000000",
-    "hairStyle": "bald",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#000000",
-      "trousers": "#000000",
-      "trim": "#000000"
-    },
-    "props": [],
-    "relationships": [
-      "lkhagva:superior"
-    ],
-    "behavior": "Sleepy authoritative phone voice; short orders shut down the argument.",
-    "sourceNotes": "EP3: МИНИСТР, Ulaanbaatar phone voice only. No body, visible clothing, exact age or gender is established; not a renderable cast asset.",
-    "infection": false
+  "props": [
+   "earpiece"
+  ],
+  "relationships": [
+   "lkhagva:second-bodyguard",
+   "uyanga:escorts"
+  ],
+  "behavior": "Square stance and scanning head; hauls Uyanga aboard with controlled strength.",
+  "sourceNotes": "EP3: BATU, second bodyguard, written Бат on the napkin; distinct from Enkhee. No age given. Hidden bite belongs to EP9, not EP1–5.",
+  "infection": false
+ },
+ {
+  "id": "uyanga",
+  "name": "Уянга",
+  "aliases": [
+   "УЯНГА"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": 25,
+  "kind": "adultFemale",
+  "height": 1.43,
+  "build": [
+   0.88,
+   1.03
+  ],
+  "face": {
+   "width": 0.91,
+   "jaw": 0.82,
+   "nose": 0.86,
+   "eyeSpacing": 1.08,
+   "cheekbone": 1.08,
+   "brow": 0.9
   },
-  {
-    "id": "radio",
-    "name": "Радиогийн нэвтрүүлэгч",
-    "aliases": [
-      "РАДИО",
-      "Radio"
-    ],
-    "episodes": [
-      1,
-      2,
-      4
-    ],
-    "age": null,
-    "kind": "voice",
-    "height": 0,
-    "build": [
-      0,
-      0
-    ],
-    "face": {
-      "width": 1,
-      "jaw": 1,
-      "nose": 1,
-      "eyeSpacing": 1,
-      "cheekbone": 1,
-      "brow": 1
-    },
-    "skin": "#000000",
-    "hair": "#000000",
-    "hairStyle": "bald",
-    "outfit": "suit",
-    "colors": {
-      "cloth": "#000000",
-      "trousers": "#000000",
-      "trim": "#000000"
-    },
-    "props": [],
-    "relationships": [],
-    "behavior": "Neutral public-health and weather delivery; calm diction against catastrophe.",
-    "sourceNotes": "EP1 ministry bulletin, EP2 car-radio weather, EP4 staff-room flu broadcast. Voice-role bucket, not a claim all broadcasts share one person. EP3 governor’s live radio belongs to Lkhagva.",
-    "infection": false
-  }
+  "skin": "#d1ac91",
+  "hair": "#342722",
+  "hairStyle": "bob",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#9e8d80",
+   "trousers": "#665b5b",
+   "trim": "#d1c0a6"
+  },
+  "props": [],
+  "relationships": [
+   "lkhagva:daughter-in-law",
+   "batu:escorted-by"
+  ],
+  "behavior": "Pale and inward, one hand rests on belly while looking down from aircraft.",
+  "sourceNotes": "EP3 helicopter: UYANGA 25, governor’s daughter-in-law; pale with hand on belly. Pregnancy is suggested, not explicitly diagnosed in dialogue.",
+  "infection": false
+ },
+ {
+  "id": "banquet-waiter",
+  "name": "Зоогийн зөөгч",
+  "aliases": [],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.5,
+  "build": [
+   0.88,
+   0.86
+  ],
+  "face": {
+   "width": 0.9,
+   "jaw": 0.94,
+   "nose": 1.01,
+   "eyeSpacing": 1.02,
+   "cheekbone": 1.05,
+   "brow": 1.0
+  },
+  "skin": "#c49b81",
+  "hair": "#332a24",
+  "hairStyle": "short",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#c4c1b1",
+   "trousers": "#34383a",
+   "trim": "#645552"
+  },
+  "props": [
+   "serving-tray",
+   "hand-bandage"
+  ],
+  "relationships": [
+   "chinbat:serves"
+  ],
+  "behavior": "Leans away from an injured hand, staggers under tray and collapses.",
+  "sourceNotes": "EP3 banquet: unnamed waiter with bleeding hand collapses. No dialogue, age, confirmed bite or later infection given; retained as a specific staging role.",
+  "infection": false
+ },
+ {
+  "id": "citizen-1",
+  "name": "Талбайн иргэн 1",
+  "aliases": [
+   "ИРГЭН 1"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.51,
+  "build": [
+   1.05,
+   1.04
+  ],
+  "face": {
+   "width": 1.04,
+   "jaw": 1.13,
+   "nose": 1.08,
+   "eyeSpacing": 0.96,
+   "cheekbone": 1.11,
+   "brow": 1.13
+  },
+  "skin": "#ad8265",
+  "hair": "#3d332b",
+  "hairStyle": "cap",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#655a49",
+   "trousers": "#3d4643",
+   "trim": "#a39676"
+  },
+  "props": [
+   "bundle"
+  ],
+  "relationships": [],
+  "behavior": "Calls upward with cupped hands, then leads the hopeful cheers.",
+  "sourceNotes": "EP3 balcony: ИРГЭН 1 asks where buses are and whether dawn is true. Script does not specify gender or age; this silhouette is an authored casting choice.",
+  "infection": false
+ },
+ {
+  "id": "citizen-2",
+  "name": "Талбайн иргэн 2",
+  "aliases": [
+   "ИРГЭН 2"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.39,
+  "build": [
+   0.99,
+   1.09
+  ],
+  "face": {
+   "width": 1.09,
+   "jaw": 0.9,
+   "nose": 0.95,
+   "eyeSpacing": 1.05,
+   "cheekbone": 1.13,
+   "brow": 0.93
+  },
+  "skin": "#bd9376",
+  "hair": "#42352c",
+  "hairStyle": "braid",
+  "outfit": "deel",
+  "colors": {
+   "cloth": "#786456",
+   "trousers": "#51484a",
+   "trim": "#b6a176"
+  },
+  "props": [
+   "child-blanket"
+  ],
+  "relationships": [],
+  "behavior": "Wraps a bundle close and pleads to have the doors opened against cold.",
+  "sourceNotes": "EP3 balcony: ИРГЭН 2 says a child is freezing. Script does not specify speaker gender, age or kinship; adult woman silhouette is production design.",
+  "infection": false
+ },
+ {
+  "id": "citizen-3",
+  "name": "Талбайн иргэн 3",
+  "aliases": [
+   "ИРГЭН 3"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.57,
+  "build": [
+   0.93,
+   0.91
+  ],
+  "face": {
+   "width": 0.92,
+   "jaw": 1.03,
+   "nose": 1.19,
+   "eyeSpacing": 0.93,
+   "cheekbone": 1.17,
+   "brow": 1.1
+  },
+  "skin": "#a77a5e",
+  "hair": "#72665b",
+  "hairStyle": "cap",
+  "outfit": "jacket",
+  "colors": {
+   "cloth": "#536068",
+   "trousers": "#41474a",
+   "trim": "#a38e73"
+  },
+  "props": [],
+  "relationships": [],
+  "behavior": "Long narrow silhouette, raised fist and forward lean as he protests.",
+  "sourceNotes": "EP3 balcony: ИРГЭН 3 protests being abandoned. No scripted gender or age; adult man silhouette is a casting choice, distinct from Citizens 1 and 2.",
+  "infection": false
+ },
+ {
+  "id": "helipad-parent",
+  "name": "Нисдэг тэрэгний талбайн эцэг эх",
+  "aliases": [
+   "ИРГЭН"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.42,
+  "build": [
+   0.93,
+   1.01
+  ],
+  "face": {
+   "width": 0.96,
+   "jaw": 0.84,
+   "nose": 1.03,
+   "eyeSpacing": 1.07,
+   "cheekbone": 1.1,
+   "brow": 0.97
+  },
+  "skin": "#c19c80",
+  "hair": "#2f2722",
+  "hairStyle": "braid",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#6e5860",
+   "trousers": "#4e444e",
+   "trim": "#b5a28b"
+  },
+  "props": [
+   "child-blanket"
+  ],
+  "relationships": [],
+  "behavior": "Reaches toward helicopter with both hands and clings to the escape path.",
+  "sourceNotes": "EP3 roof: ИРГЭН begs governor to take their child. Not identified as any balcony citizen; gender and exact age unspecified, woman silhouette is production design.",
+  "infection": false
+ },
+ {
+  "id": "anu",
+  "name": "Анударь «Ану»",
+  "aliases": [
+   "АНУ",
+   "Anudari",
+   "ANU"
+  ],
+  "episodes": [
+   4
+  ],
+  "age": 16,
+  "kind": "teenFemale",
+  "height": 1.36,
+  "build": [
+   0.83,
+   0.83
+  ],
+  "face": {
+   "width": 0.95,
+   "jaw": 0.78,
+   "nose": 0.88,
+   "eyeSpacing": 1.07,
+   "cheekbone": 1.07,
+   "brow": 0.92
+  },
+  "skin": "#c7a185",
+  "hair": "#29231e",
+  "hairStyle": "bob",
+  "outfit": "school",
+  "colors": {
+   "cloth": "#4a515a",
+   "trousers": "#3e4351",
+   "trim": "#a6b0a7"
+  },
+  "props": [
+   "hi8-camcorder",
+   "tape-bag"
+  ],
+  "relationships": [
+   "nomin:friend",
+   "munkh:deskmate"
+  ],
+  "behavior": "Holds the camera steady to avoid eye contact; guilt interrupts her breathing.",
+  "sourceNotes": "Bible: ANUDARI “ANU” 16. EP4 filmmaker seen in reflection and self-filmed boiler-room shot; later bite is EP12 and not included here.",
+  "infection": false
+ },
+ {
+  "id": "nomin",
+  "name": "Номин",
+  "aliases": [
+   "НОМИН"
+  ],
+  "episodes": [
+   4
+  ],
+  "age": null,
+  "kind": "teenFemale",
+  "height": 1.35,
+  "build": [
+   0.9,
+   0.85
+  ],
+  "face": {
+   "width": 1.04,
+   "jaw": 0.82,
+   "nose": 0.85,
+   "eyeSpacing": 1.1,
+   "cheekbone": 1.02,
+   "brow": 0.87
+  },
+  "skin": "#cfa98b",
+  "hair": "#332821",
+  "hairStyle": "braid",
+  "outfit": "school",
+  "colors": {
+   "cloth": "#5d6570",
+   "trousers": "#434a5d",
+   "trim": "#b1a88a"
+  },
+  "props": [],
+  "relationships": [
+   "anu:friend"
+  ],
+  "behavior": "Expressive fake news voice and grin; later suppresses a stove-smoke cough.",
+  "sourceNotes": "EP4: НОМИН, Anu’s friend, mocks broadcast then admits stove-smoke cough. No exact age or bite given; teenager placement follows the classroom.",
+  "infection": false
+ },
+ {
+  "id": "bat-erdene",
+  "name": "Бат-Эрдэнэ багш",
+  "aliases": [
+   "БАТ-ЭРДЭНЭ БАГШ",
+   "БАТ-ЭРДЭНЭ"
+  ],
+  "episodes": [
+   4
+  ],
+  "age": 45,
+  "kind": "adultMale",
+  "height": 1.59,
+  "build": [
+   1.18,
+   1.03
+  ],
+  "face": {
+   "width": 1.05,
+   "jaw": 1.22,
+   "nose": 1.02,
+   "eyeSpacing": 0.91,
+   "cheekbone": 1.15,
+   "brow": 1.2
+  },
+  "skin": "#b48b6b",
+  "hair": "#3a3028",
+  "hairStyle": "short",
+  "outfit": "tracksuit",
+  "colors": {
+   "cloth": "#3d5c62",
+   "trousers": "#384b58",
+   "trim": "#b6bcb0"
+  },
+  "props": [
+   "hand-bandage",
+   "whistle"
+  ],
+  "relationships": [
+   "gantsetseg:colleague",
+   "baasaa:colleague"
+  ],
+  "behavior": "Athletic shoulders sag over injured hand; later unnaturally still then explosive.",
+  "sourceNotes": "EP4: BAT-ERDENE 45, PE teacher in tracksuit, bitten hand; Standing in equipment room, wakes to noise and pursues Anu.",
+  "infection": true
+ },
+ {
+  "id": "gantsetseg",
+  "name": "Ганцэцэг захирал",
+  "aliases": [
+   "ЗАХИРАЛ ГАНЦЭЦЭГ",
+   "ЗАХИРАЛ",
+   "Headmistress",
+   "Gantsetseg"
+  ],
+  "episodes": [
+   4
+  ],
+  "age": 60,
+  "kind": "adultFemale",
+  "height": 1.4,
+  "build": [
+   0.99,
+   1.03
+  ],
+  "face": {
+   "width": 1.01,
+   "jaw": 0.97,
+   "nose": 1.1,
+   "eyeSpacing": 0.93,
+   "cheekbone": 1.16,
+   "brow": 1.16
+  },
+  "skin": "#b58f74",
+  "hair": "#8b8176",
+  "hairStyle": "bun",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#56505a",
+   "trousers": "#45414e",
+   "trim": "#b4aa8c"
+  },
+  "props": [
+   "whistle",
+   "gate-keys"
+  ],
+  "relationships": [
+   "baasaa:headmistress",
+   "bat-erdene:headmistress"
+  ],
+  "behavior": "Rigid high chin, hands grip keys; whistle and counting arms enforce order.",
+  "sourceNotes": "EP4: Headmistress GANTSETSEG 60, bun and whistle; ЗАХИРАЛ ГАНЦЭЦЭГ and ЗАХИРАЛ are the same person.",
+  "infection": false
+ },
+ {
+  "id": "baasaa",
+  "name": "Баясаа багш",
+  "aliases": [
+   "БАГШ БАЯСАА",
+   "БАЯСАА",
+   "БАГШ",
+   "Teacher",
+   "Baasaa"
+  ],
+  "episodes": [
+   4
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.45,
+  "build": [
+   0.88,
+   0.9
+  ],
+  "face": {
+   "width": 0.92,
+   "jaw": 0.84,
+   "nose": 0.97,
+   "eyeSpacing": 1.04,
+   "cheekbone": 1.08,
+   "brow": 0.97
+  },
+  "skin": "#c7a185",
+  "hair": "#302720",
+  "hairStyle": "braid",
+  "outfit": "dress",
+  "colors": {
+   "cloth": "#63706c",
+   "trousers": "#535c5d",
+   "trim": "#c5bca5"
+  },
+  "props": [
+   "class-register"
+  ],
+  "relationships": [
+   "gantsetseg:teacher",
+   "munkh:teacher"
+  ],
+  "behavior": "Keeps palms open in appeal; later tiptoes between children with finger to lips.",
+  "sourceNotes": "EP4: young teacher БАГШ БАЯСАА, called Baasaa in English directions; female pronoun in gym stage direction. Exact age unspecified.",
+  "infection": false
+ },
+ {
+  "id": "munkh",
+  "name": "Мөнх",
+  "aliases": [
+   "МӨНХ"
+  ],
+  "episodes": [
+   4
+  ],
+  "age": 15,
+  "kind": "teenMale",
+  "height": 1.31,
+  "build": [
+   0.77,
+   0.76
+  ],
+  "face": {
+   "width": 0.89,
+   "jaw": 0.81,
+   "nose": 1.02,
+   "eyeSpacing": 1.06,
+   "cheekbone": 1.12,
+   "brow": 0.96
+  },
+  "skin": "#bd9476",
+  "hair": "#30291f",
+  "hairStyle": "short",
+  "outfit": "jacket",
+  "colors": {
+   "cloth": "#776b55",
+   "trousers": "#414a50",
+   "trim": "#a18b6f"
+  },
+  "props": [
+   "patched-jacket"
+  ],
+  "relationships": [
+   "anu:deskmate",
+   "baasaa:pupil"
+  ],
+  "behavior": "Thin hunched shoulders and fist over smoke cough; begs through gate bars.",
+  "sourceNotes": "EP4: MUNKH 15, thin boy in patched jacket, 9Б, Anu’s deskmate. Cough is stove smoke; no bite established. Silence after expulsion does not prove a turn.",
+  "infection": false
+ },
+ {
+  "id": "temuujin",
+  "name": "Тэмүүжин",
+  "aliases": [
+   "ТЭМҮҮЖИН"
+  ],
+  "episodes": [
+   4
+  ],
+  "age": null,
+  "kind": "teenMale",
+  "height": 1.4,
+  "build": [
+   0.98,
+   0.9
+  ],
+  "face": {
+   "width": 1.04,
+   "jaw": 1.06,
+   "nose": 0.94,
+   "eyeSpacing": 0.95,
+   "cheekbone": 1.03,
+   "brow": 1.04
+  },
+  "skin": "#bf9578",
+  "hair": "#24201c",
+  "hairStyle": "short",
+  "outfit": "school",
+  "colors": {
+   "cloth": "#4a5355",
+   "trousers": "#39434d",
+   "trim": "#a2a7a0"
+  },
+  "props": [],
+  "relationships": [
+   "munkh:classmate"
+  ],
+  "behavior": "Chin pushed forward, shoulders squared; dismisses Munkh with a quick wave.",
+  "sourceNotes": "EP4 vote: ТЭМҮҮЖИН, explicitly a boy, argues coughing pupils must leave. No exact age or infection provided.",
+  "infection": false
+ },
+ {
+  "id": "saruul",
+  "name": "Саруул",
+  "aliases": [
+   "САРУУЛ"
+  ],
+  "episodes": [
+   4
+  ],
+  "age": 16,
+  "kind": "teenFemale",
+  "height": 1.37,
+  "build": [
+   0.87,
+   0.82
+  ],
+  "face": {
+   "width": 0.94,
+   "jaw": 0.85,
+   "nose": 0.96,
+   "eyeSpacing": 1.03,
+   "cheekbone": 1.1,
+   "brow": 1.03
+  },
+  "skin": "#c29a7b",
+  "hair": "#2c241e",
+  "hairStyle": "braid",
+  "outfit": "school",
+  "colors": {
+   "cloth": "#6a5964",
+   "trousers": "#474653",
+   "trim": "#b1a397"
+  },
+  "props": [
+   "calf-bandage",
+   "bloody-sock"
+  ],
+  "relationships": [
+   "anu:schoolmate"
+  ],
+  "behavior": "Limping weight shift; threatens in a hiss while shielding wrapped calf.",
+  "sourceNotes": "EP4: SARUUL 16, bloody sock and scarf-wrapped calf, fever and bite concealment. Bible calls hidden-calf-bite pupil a girl.",
+  "infection": true
+ },
+ {
+  "id": "erdene",
+  "name": "Эрдэнэ",
+  "aliases": [
+   "ЭРДЭНЭ"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": 19,
+  "kind": "adultMale",
+  "height": 1.48,
+  "build": [
+   0.9,
+   0.87
+  ],
+  "face": {
+   "width": 0.96,
+   "jaw": 0.91,
+   "nose": 0.98,
+   "eyeSpacing": 1.04,
+   "cheekbone": 1.03,
+   "brow": 0.96
+  },
+  "skin": "#c19b7d",
+  "hair": "#28221b",
+  "hairStyle": "cap",
+  "outfit": "uniform",
+  "colors": {
+   "cloth": "#697057",
+   "trousers": "#4d5847",
+   "trim": "#b7aa7b"
+  },
+  "props": [
+   "rifle",
+   "ammo-pouch"
+  ],
+  "relationships": [
+   "bayar:conscript",
+   "jargal:comrade",
+   "narantuya:encounters"
+  ],
+  "behavior": "Too-young tense face; rifle held awkwardly, hands shake while counting.",
+  "sourceNotes": "EP5 and bible: ERDENE 19, conscript, first shooting, counts Burn and drops rifle to walk east. Adult age, intentionally lean youthful silhouette.",
+  "infection": false
+ },
+ {
+  "id": "bayar",
+  "name": "Баяр дэслэгч",
+  "aliases": [
+   "БАЯР",
+   "LT. BAYAR"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": 35,
+  "kind": "adultMale",
+  "height": 1.55,
+  "build": [
+   1.12,
+   1.13
+  ],
+  "face": {
+   "width": 1.09,
+   "jaw": 1.18,
+   "nose": 1.09,
+   "eyeSpacing": 0.91,
+   "cheekbone": 1.08,
+   "brow": 1.18
+  },
+  "skin": "#ae8263",
+  "hair": "#2e261e",
+  "hairStyle": "cap",
+  "outfit": "uniform",
+  "colors": {
+   "cloth": "#4f5b43",
+   "trousers": "#3e4836",
+   "trim": "#9a8a68"
+  },
+  "props": [
+   "cigarette",
+   "pistol",
+   "gold-ring"
+  ],
+  "relationships": [
+   "erdene:lieutenant",
+   "jargal:lieutenant"
+  ],
+  "behavior": "Market-trader palm held out, easy grin; relaxed cruelty and quick retreat.",
+  "sourceNotes": "EP5: LT. BAYAR 35, fur collar, cigarette, sells passage for flour; steals ring and escapes with flour. Alive and no known bite in scope.",
+  "infection": false
+ },
+ {
+  "id": "jargal",
+  "name": "Жаргал",
+  "aliases": [
+   "ЖАРГАЛ"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": 20,
+  "kind": "adultMale",
+  "height": 1.51,
+  "build": [
+   0.95,
+   0.91
+  ],
+  "face": {
+   "width": 1.02,
+   "jaw": 0.96,
+   "nose": 0.92,
+   "eyeSpacing": 1.05,
+   "cheekbone": 0.98,
+   "brow": 0.98
+  },
+  "skin": "#bc9274",
+  "hair": "#32281e",
+  "hairStyle": "cap",
+  "outfit": "uniform",
+  "colors": {
+   "cloth": "#6c735c",
+   "trousers": "#505e4b",
+   "trim": "#a8a27a"
+  },
+  "props": [
+   "rifle",
+   "ammo-pouch"
+  ],
+  "relationships": [
+   "erdene:comrade",
+   "bayar:conscript"
+  ],
+  "behavior": "Sideways grin and friendly elbow; joking gives way to a reaching plea.",
+  "sourceNotes": "EP5: JARGAL 20, conscript exactly one year older than Erdene; pulled under in stampede. Death is stated in Cost, surviving bite not established.",
+  "infection": false
+ },
+ {
+  "id": "cordon-mother-meat",
+  "name": "Хориг дээр мах санал болгосон эх",
+  "aliases": [
+   "ЭХ ХҮН 1"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.42,
+  "build": [
+   1.04,
+   1.09
+  ],
+  "face": {
+   "width": 1.1,
+   "jaw": 0.92,
+   "nose": 0.95,
+   "eyeSpacing": 1.0,
+   "cheekbone": 1.09,
+   "brow": 0.94
+  },
+  "skin": "#b98e71",
+  "hair": "#493a30",
+  "hairStyle": "braid",
+  "outfit": "deel",
+  "colors": {
+   "cloth": "#72614f",
+   "trousers": "#4b5048",
+   "trim": "#b3a074"
+  },
+  "props": [
+   "meat-bundle"
+  ],
+  "relationships": [],
+  "behavior": "Offers her bundle with both hands, hesitates at the flour demand.",
+  "sourceNotes": "EP5 setup: ЭХ ХҮН 1 offers meat instead of flour. Kept separate from later coughing-boy mother; no identity, age or infection is supplied.",
+  "infection": false
+ },
+ {
+  "id": "cordon-mother-smoke",
+  "name": "Ханиалгасан хүүгийн эх",
+  "aliases": [
+   "ЭХ"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.4,
+  "build": [
+   0.96,
+   1.02
+  ],
+  "face": {
+   "width": 1.0,
+   "jaw": 0.87,
+   "nose": 1.03,
+   "eyeSpacing": 1.06,
+   "cheekbone": 1.1,
+   "brow": 0.96
+  },
+  "skin": "#c19a7a",
+  "hair": "#332a21",
+  "hairStyle": "braid",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#6f5c65",
+   "trousers": "#48464c",
+   "trim": "#b6a78d"
+  },
+  "props": [
+   "child-blanket"
+  ],
+  "relationships": [
+   "cordon-coughing-boy:mother"
+  ],
+  "behavior": "One arm shields child; turns between his face and Bayar in pleading.",
+  "sourceNotes": "EP5 setup: ЭХ, mother with coughing boy, explains stove smoke. No bite or exact age given; distinct from meat-offering mother.",
+  "infection": false
+ },
+ {
+  "id": "cordon-coughing-boy",
+  "name": "Хориг дээрх ханиалгасан хүү",
+  "aliases": [],
+  "episodes": [
+   5
+  ],
+  "age": null,
+  "kind": "child",
+  "height": 1.02,
+  "build": [
+   0.8,
+   0.81
+  ],
+  "face": {
+   "width": 1.07,
+   "jaw": 0.77,
+   "nose": 0.81,
+   "eyeSpacing": 1.11,
+   "cheekbone": 1.06,
+   "brow": 0.85
+  },
+  "skin": "#c9a17e",
+  "hair": "#352a20",
+  "hairStyle": "cap",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#7b7461",
+   "trousers": "#4d5252",
+   "trim": "#b9a88d"
+  },
+  "props": [
+   "scarf"
+  ],
+  "relationships": [
+   "cordon-mother-smoke:son"
+  ],
+  "behavior": "Hides against mother’s side and coughs into scarf, shoulders drawn upward.",
+  "sourceNotes": "EP5 setup: unnamed coughing boy; mother specifies stove smoke. Exact age not given; primary-school-sized silhouette is production design.",
+  "infection": false
+ },
+ {
+  "id": "cordon-bitten-man",
+  "name": "Хориг дээр хазуулснаа нуусан хүн",
+  "aliases": [
+   "ХҮН"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.52,
+  "build": [
+   0.95,
+   0.95
+  ],
+  "face": {
+   "width": 0.94,
+   "jaw": 1.05,
+   "nose": 1.17,
+   "eyeSpacing": 0.94,
+   "cheekbone": 1.14,
+   "brow": 1.13
+  },
+  "skin": "#b18467",
+  "hair": "#3b2f25",
+  "hairStyle": "receding",
+  "outfit": "jacket",
+  "colors": {
+   "cloth": "#6a6251",
+   "trousers": "#434c49",
+   "trim": "#a79272"
+  },
+  "props": [
+   "wrist-bandage"
+  ],
+  "relationships": [
+   "erdene:protected-by"
+  ],
+  "behavior": "Pulls sleeve down and leans in to beg; keeps infected wrist away from crowd.",
+  "sourceNotes": "EP5 escalation: ХҮН, man in his 40s, red line creeping from wrist; asks Erdene for silence. Confirmed infection, exact age unspecified.",
+  "infection": true
+ },
+ {
+  "id": "cordon-father",
+  "name": "Бөгжөө өгсөн эцэг",
+  "aliases": [
+   "АВ",
+   "FATHER"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": null,
+  "kind": "adultMale",
+  "height": 1.56,
+  "build": [
+   1.09,
+   1.08
+  ],
+  "face": {
+   "width": 1.06,
+   "jaw": 1.15,
+   "nose": 1.1,
+   "eyeSpacing": 0.97,
+   "cheekbone": 1.12,
+   "brow": 1.15
+  },
+  "skin": "#b08567",
+  "hair": "#372b22",
+  "hairStyle": "short",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#665a4a",
+   "trousers": "#424b47",
+   "trim": "#ac9470"
+  },
+  "props": [
+   "gold-ring"
+  ],
+  "relationships": [
+   "bayar:robbed-by"
+  ],
+  "behavior": "Offers ring with trembling fingers then lunges forward when dismissed.",
+  "sourceNotes": "EP5 set piece A: FATHER in his 40s, speech label АВ, with wife and two children; shot after Bayar takes ring. No surviving bite established.",
+  "infection": false
+ },
+ {
+  "id": "cordon-woman",
+  "name": "Элсэн уутны дэргэдэх эмэгтэй",
+  "aliases": [
+   "ЭМЭГТЭЙ"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": null,
+  "kind": "adultFemale",
+  "height": 1.46,
+  "build": [
+   1.06,
+   1.05
+  ],
+  "face": {
+   "width": 1.05,
+   "jaw": 0.96,
+   "nose": 1.04,
+   "eyeSpacing": 1.03,
+   "cheekbone": 1.14,
+   "brow": 1.03
+  },
+  "skin": "#b98f71",
+  "hair": "#30271f",
+  "hairStyle": "braid",
+  "outfit": "coat",
+  "colors": {
+   "cloth": "#77664d",
+   "trousers": "#4c5146",
+   "trim": "#b5aa83"
+  },
+  "props": [
+   "bundle"
+  ],
+  "relationships": [
+   "erdene:holds-sandbags-with"
+  ],
+  "behavior": "Crouches protectively in front of children and snaps urgent questions.",
+  "sourceNotes": "EP5 set piece B: ЭМЭГТЭЙ, woman with three children beside Erdene. Not identified as an earlier mother or father’s wife; no exact age or infection given.",
+  "infection": false
+ },
+ {
+  "id": "narantuya",
+  "name": "Нарантуяа",
+  "aliases": [
+   "НАРАНТУЯА"
+  ],
+  "episodes": [
+   5
+  ],
+  "age": 27,
+  "kind": "adultFemale",
+  "height": 1.49,
+  "build": [
+   0.99,
+   0.94
+  ],
+  "face": {
+   "width": 0.97,
+   "jaw": 0.95,
+   "nose": 1.02,
+   "eyeSpacing": 0.99,
+   "cheekbone": 1.17,
+   "brow": 1.09
+  },
+  "skin": "#b78c6c",
+  "hair": "#27221c",
+  "hairStyle": "braid",
+  "outfit": "deel",
+  "colors": {
+   "cloth": "#75684e",
+   "trousers": "#4a5144",
+   "trim": "#b29a68"
+  },
+  "props": [
+   "bow",
+   "quiver"
+  ],
+  "relationships": [
+   "tsogt:sister",
+   "naran:aunt",
+   "sarnai:aunt",
+   "erdene:encounters"
+  ],
+  "behavior": "Balanced archer’s stance; draws smoothly and fixes eyes along arrow.",
+  "sourceNotes": "EP5 closing ridge: NARANTUYA aims bow at Erdene. Bible supplies age 27, archer and Tsogt’s sister; later events are not assigned to EP1–5.",
+  "infection": false
+ },
+ {
+  "id": "minister",
+  "name": "Сайд — утасны дуу",
+  "aliases": [
+   "МИНИСТР",
+   "Minister"
+  ],
+  "episodes": [
+   3
+  ],
+  "age": null,
+  "kind": "voice",
+  "height": 0,
+  "build": [
+   0,
+   0
+  ],
+  "face": {
+   "width": 1,
+   "jaw": 1,
+   "nose": 1,
+   "eyeSpacing": 1,
+   "cheekbone": 1,
+   "brow": 1
+  },
+  "skin": "#000000",
+  "hair": "#000000",
+  "hairStyle": "bald",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#000000",
+   "trousers": "#000000",
+   "trim": "#000000"
+  },
+  "props": [],
+  "relationships": [
+   "lkhagva:superior"
+  ],
+  "behavior": "Sleepy authoritative phone voice; short orders shut down the argument.",
+  "sourceNotes": "EP3: МИНИСТР, Ulaanbaatar phone voice only. No body, visible clothing, exact age or gender is established; not a renderable cast asset.",
+  "infection": false
+ },
+ {
+  "id": "radio",
+  "name": "Радиогийн нэвтрүүлэгч",
+  "aliases": [
+   "РАДИО",
+   "Radio"
+  ],
+  "episodes": [
+   1,
+   2,
+   4
+  ],
+  "age": null,
+  "kind": "voice",
+  "height": 0,
+  "build": [
+   0,
+   0
+  ],
+  "face": {
+   "width": 1,
+   "jaw": 1,
+   "nose": 1,
+   "eyeSpacing": 1,
+   "cheekbone": 1,
+   "brow": 1
+  },
+  "skin": "#000000",
+  "hair": "#000000",
+  "hairStyle": "bald",
+  "outfit": "suit",
+  "colors": {
+   "cloth": "#000000",
+   "trousers": "#000000",
+   "trim": "#000000"
+  },
+  "props": [],
+  "relationships": [],
+  "behavior": "Neutral public-health and weather delivery; calm diction against catastrophe.",
+  "sourceNotes": "EP1 ministry bulletin, EP2 car-radio weather, EP4 staff-room flu broadcast. Voice-role bucket, not a claim all broadcasts share one person. EP3 governor’s live radio belongs to Lkhagva.",
+  "infection": false
+ },
+ {
+  "id": "tsogt",
+  "name": "Цогт",
+  "aliases": [
+   "ЦОГТ",
+   "TSOGT"
+  ],
+  "episodes": [
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "age": 40,
+  "kind": "adultMale",
+  "height": 1.62,
+  "build": [
+   1.32,
+   1.24
+  ],
+  "face": {
+   "width": 1.08,
+   "jaw": 1.22,
+   "nose": 1.05,
+   "eyeSpacing": 0.94,
+   "cheekbone": 1.1,
+   "brow": 1.18
+  },
+  "skin": "#b08060",
+  "hair": "#1e1a16",
+  "hairStyle": "long",
+  "outfit": "deel",
+  "colors": {
+   "cloth": "#5a4632",
+   "trousers": "#3e3428",
+   "trim": "#a8874e"
+  },
+  "props": [
+   "felt-hoof-wraps"
+  ],
+  "relationships": [
+   "narantsetseg:husband",
+   "sarnai:daughter",
+   "naran:daughter",
+   "dorj:son",
+   "narantuya:sister",
+   "bold:nephew"
+  ],
+  "behavior": "Few words, huge careful hands; rides front, checks knots, never looks back at the gorge.",
+  "sourceNotes": "Bible Act II (EP6–10): Sarnai’s herder father, rides toward Naran from EP6, carries baby Naran from EP7, kills a raider silently in EP10. The EP1–5 dialogue master never shows him; casting and face are art direction. His EP15 death is outside this roster window.",
+  "infection": false
+ },
+ {
+  "id": "sarnai",
+  "name": "Сарнай",
+  "aliases": [
+   "САРНАЙ",
+   "SARNAI"
+  ],
+  "episodes": [
+   6,
+   7,
+   8,
+   10
+  ],
+  "age": 10,
+  "kind": "child",
+  "height": 1.12,
+  "build": [
+   0.78,
+   0.8
+  ],
+  "face": {
+   "width": 1.05,
+   "jaw": 0.8,
+   "nose": 0.82,
+   "eyeSpacing": 1.12,
+   "cheekbone": 1.02,
+   "brow": 0.86
+  },
+  "skin": "#c09272",
+  "hair": "#241f1c",
+  "hairStyle": "braid",
+  "outfit": "deel",
+  "colors": {
+   "cloth": "#7a4a3a",
+   "trousers": "#4a4034",
+   "trim": "#c8a060"
+  },
+  "props": [
+   "counter-beads"
+  ],
+  "relationships": [
+   "tsogt:daughter",
+   "narantsetseg:mother",
+   "naran:sister",
+   "dorj:granddaughter",
+   "narantuya:cousin"
+  ],
+  "behavior": "Counts everything under her breath; light forward seat on a racing mare; keeps counting when the adults cannot speak.",
+  "sourceNotes": "Bible Act II (EP6–10): ten-year-old child jockey, invents the 180-second count in EP6, loses her mare in EP10. No approved EP6+ dialogue exists; counting is staged, not voiced.",
+  "infection": false
+ },
+ {
+  "id": "dorj",
+  "name": "Дорж",
+  "aliases": [
+   "ДОРЖ",
+   "DORJ"
+  ],
+  "episodes": [
+   6
+  ],
+  "age": 71,
+  "kind": "adultMale",
+  "height": 1.5,
+  "build": [
+   1.38,
+   1.3
+  ],
+  "face": {
+   "width": 1.12,
+   "jaw": 1.26,
+   "nose": 1.1,
+   "eyeSpacing": 0.9,
+   "cheekbone": 1.2,
+   "brow": 1.24
+  },
+  "skin": "#a87a58",
+  "hair": "#9a9088",
+  "hairStyle": "bald",
+  "outfit": "deel",
+  "colors": {
+   "cloth": "#4e4438",
+   "trousers": "#3a322a",
+   "trim": "#9a7c48"
+  },
+  "props": [],
+  "relationships": [
+   "tsogt:father",
+   "sarnai:grandfather",
+   "narantuya:daughter"
+  ],
+  "behavior": "A retired wrestler’s slow wide stance; folds his arms into the eagle dance and does not step back.",
+  "sourceNotes": "Bible EP6: TSOGT’s father, retired wrestler, holds the gorge mouth with the eagle dance for 2:55 and dies there. The EP1–5 master never shows him; age from the bible cast list, build is art direction for an old strongman.",
+  "infection": false
+ },
+ {
+  "id": "bold",
+  "name": "Болд",
+  "aliases": [
+   "БОЛД",
+   "BOLD"
+  ],
+  "episodes": [
+   6,
+   7,
+   8,
+   9
+  ],
+  "age": 19,
+  "kind": "adultMale",
+  "height": 1.54,
+  "build": [
+   1.02,
+   0.96
+  ],
+  "face": {
+   "width": 0.98,
+   "jaw": 0.98,
+   "nose": 1.0,
+   "eyeSpacing": 1.06,
+   "cheekbone": 0.98,
+   "brow": 0.98
+  },
+  "skin": "#b8886a",
+  "hair": "#2a2420",
+  "hairStyle": "short",
+  "outfit": "jacket",
+  "colors": {
+   "cloth": "#4a5a48",
+   "trousers": "#38403a",
+   "trim": "#8a8876"
+  },
+  "props": [
+   "radio"
+  ],
+  "relationships": [
+   "tsogt:cousin",
+   "sarnai:cousin",
+   "narantuya:cousin"
+  ],
+  "behavior": "Talks constantly, fidgets with the radio he should not touch, flinches at his own echoes.",
+  "sourceNotes": "Bible Act II (EP6–9): TSOGT’s cousin who talks too much; the radio in his pocket turns the Standing in EP6 and he takes the noise in EP15 (outside this window). Casting and palette are art direction.",
+  "infection": false
+ }
 ]
