@@ -29,13 +29,13 @@
       "export_sha256": "a8b44fef31798fff852b9f37a46c281f22b0644b9fcc20fa5c7cd498940eeb6b"
     },
     "EP01_Apartment": {
-      "mesh_objects": 133,
-      "triangles": 2172,
-      "max_object_triangles": 60,
+      "mesh_objects": 151,
+      "triangles": 2720,
+      "max_object_triangles": 124,
       "finite_geometry": true,
       "packed_textures": true,
       "export": "glb/apartment.glb",
-      "export_sha256": "035975efa51b9b2d9ca139d16322be4286af6542aa9bcf5107447fcb3679cef0"
+      "export_sha256": "3d8bd32ae80ffff067b2591428fca76ac32fd2ffb275be00b69e383e35e47ff2"
     }
   },
   "clearances": {
@@ -212,8 +212,157 @@
         -1.5099996328353882,
         1.615566611289978
       ]
+    },
+    "apartment_kitchen_door_swing": {
+      "passed": true,
+      "opens": "inward",
+      "open_angle_deg": -90.0,
+      "open_angle_min_deg": -90.0,
+      "open_angle_max_deg": 0.0,
+      "ui_min_deg": -90.0,
+      "ui_max_deg": 0.0,
+      "rest_rotation_deg": 0.0,
+      "keyed": false,
+      "max_x_m": -1.506,
+      "full_open_center_x_m": -1.976,
+      "moved_west": true,
+      "hits": []
+    },
+    "apartment_kitchen_not_exit": {
+      "passed": true,
+      "bedroom_route_clear": true,
+      "living_route_clear": true,
+      "bedroom_obstacles": [],
+      "living_obstacles": [],
+      "kitchen_interior": "x < -1.5 and 0 < y < 3.5",
+      "samples_inside_kitchen": [],
+      "bedroom_points": [
+        [
+          -2.4,
+          5.3
+        ],
+        [
+          -0.85,
+          5.15
+        ],
+        [
+          -0.85,
+          0.35
+        ],
+        [
+          -0.8,
+          -0.55
+        ]
+      ],
+      "living_points": [
+        [
+          3.8,
+          1.35
+        ],
+        [
+          0.55,
+          1.35
+        ],
+        [
+          -0.85,
+          1.35
+        ],
+        [
+          -0.85,
+          0.35
+        ],
+        [
+          -0.8,
+          -0.55
+        ]
+      ]
+    },
+    "apartment_exit_clear_with_bench": {
+      "passed": true,
+      "required_width_m": 0.8,
+      "rest_clear_width_m": 0.978,
+      "rest_pinch": {
+        "y_m": 2.2,
+        "z_m": 0.35,
+        "width_m": 0.978
+      },
+      "brace_clear_width_above_bench_m": 1.28,
+      "brace_above_pinch": {
+        "y_m": 0.0,
+        "z_m": 0.95,
+        "width_m": 1.28
+      },
+      "brace_width_at_0_35_m": 0.0,
+      "brace_seat_pinch": {
+        "y_m": 0.8,
+        "z_m": 0.35,
+        "width_m": 0.0
+      },
+      "front_opening_width_rest_m": 0.995,
+      "front_opening_width_brace_m": 0.995,
+      "bench_intersects_front_opening": false,
+      "rule": "Rest width at z=0.35/0.95/1.75 is at least 0.8 m. Braced, width at z=0.95/1.75 and the front opening stay at least 0.8 m. The seat blocks the corridor; that width is brace_width_at_0_35_m and is not a walking gap."
+    },
+    "apartment_bench_brace_fit": {
+      "passed": true,
+      "bench_length_m": 1.4165,
+      "length_band_m": [
+        1.2,
+        1.45
+      ],
+      "corridor_centerline_span_m": 1.5,
+      "straight_clear_span_m": 1.396,
+      "door_face_x_m": -1.506,
+      "opposite_wall_face_x_m": -0.11,
+      "door_contact_gap_m": 0.0254,
+      "opposite_wall_contact_gap_m": 0.0254,
+      "door_contact_m": [
+        -1.4806,
+        1.2678,
+        0.32
+      ],
+      "opposite_wall_contact_m": [
+        -0.1354,
+        0.7322,
+        0.32
+      ],
+      "straight_span_meets_solid_wall": false,
+      "brace_resists": "outward",
+      "brace_does_not_resist": "inward",
+      "note": "A hall-side brace stops the leaf being forced outward, into the corridor. It does not stop the leaf being pulled or pushed inward, into the kitchen. The living-room door is opposite the kitchen leaf, so the bench is diagonal onto the solid wall south of that door."
+    },
+    "apartment_kitchen_sound": {
+      "passed": true,
+      "crowd_distance_m": 4.986,
+      "table_distance_m": 4.534,
+      "crowd_point_m": [
+        3.4,
+        1.0,
+        1.58
+      ],
+      "table_point_m": [
+        2.7,
+        3.1,
+        1.5
+      ],
+      "door_point_m": [
+        -1.526,
+        1.53,
+        1.02
+      ],
+      "crowd_hits": [
+        "Home.KitchenDoorLeaf"
+      ],
+      "table_hits": [
+        "Home.LivingDoor.001",
+        "Home.KitchenDoorLeaf"
+      ],
+      "crowd_walls": [],
+      "table_walls": [
+        "Home.LivingDoor.001"
+      ]
     }
   },
-  "limits": "Static mesh/AABB samples; not moving-rig contact, final art, or shot approval.",
-  "source_sha256": "643deef643dad645025535dae2e749945991a0a24cf4a0a3cf0fb71fdbe299d6"
+  "limits": "Static mesh/AABB samples; not moving-rig contact, final art, or shot approval. The kitchen-door sweep is 19 rigid samples of the leaf bounds. A hall-side bench resists outward force only.",
+  "source_sha256": "82fa3173479efe59a39cf6e1be54045846c4c423da51508154a406c8a15030a2"
 }
