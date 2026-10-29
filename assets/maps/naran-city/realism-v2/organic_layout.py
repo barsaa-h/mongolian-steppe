@@ -211,7 +211,7 @@ def gate_on_lane(poly, lanes):
     return None
 
 
-def yard_items(parcel, rng):
+def yard_items(parcel, rng, residential=False, garden=False):
     poly, placed = parcel['polygon'], []
     edge = max(zip(poly,poly[1:]+poly[:1]),key=lambda ab:(ab[0][1]+ab[1][1])/2)
     angle = math.atan2(edge[1][1]-edge[0][1],edge[1][0]-edge[0][0])
@@ -244,15 +244,17 @@ def yard_items(parcel, rng):
             if not any(overlap(footprint,item['footprint']) for item in placed):
                 item = {'type':kind,'xy':xy,'rotation':angle,'scale':1,'width':w,'depth':d,
                         'footprint':footprint,'parcel':parcel['id']}
+                if residential and kind=='zhiguli':
+                    item['parking'] = 'private_yard'
                 placed.append(item)
                 return item
         return None
     north = rng.random()<.5
     preference = (lambda p:-p[1]+.05*p[0]) if north else (lambda p:p[0]-.05*p[1])
-    ger = rng.random()<.6
-    main = place('ger' if ger else 'house',rng.uniform(6,7) if ger else rng.uniform(6,10),rng.uniform(5,8),preference,ger)
+    ger = False if residential else rng.random()<.6
+    main = place('ger' if ger else 'house',rng.uniform(6,7) if ger else rng.uniform(6,11) if residential else rng.uniform(6,10),rng.uniform(6,9) if residential else rng.uniform(5,8),preference,ger)
     if main is None:
-        main = place('ger',6,6,preference,True)
+        main = place('house' if residential else 'ger',6,6,preference,not residential)
     if main is None:
         raise ValueError(f"Dwelling cannot fit {parcel['id']}")
     radius = main['width']/2 if main['type']=='ger' else main['depth']/2
@@ -262,12 +264,16 @@ def yard_items(parcel, rng):
                 place('firewood',2,1,lambda p:math.dist(p,main['door']))]
     if any(item is None for item in required):
         raise ValueError(f"Required yard items cannot fit {parcel['id']}")
-    if rng.random()<.6:
+    if rng.random()<(.72 if residential else .6):
         place('shed',2.4,3,lambda p:-math.dist(p,main['door']))
     extras = {'poor':[('scrap',1.5,1),('tyres',.9,.9)],
               'ordinary':[('water_cans',.8,.6)],
               'maintained':[('vegetable_plot',3,2),('laundry_line',3,.5)],
               'better_off':[('vegetable_plot',4,3),('zhiguli',3.8,1.6)]}
+    if residential:
+        extras = {tier:[item for item in kinds if item[0]!='vegetable_plot'] for tier,kinds in extras.items()}
+        if garden and place('vegetable_plot',3,2,lambda p:math.dist(p,parcel['gate'])) is None:
+            raise ValueError(f"Garden cannot fit {parcel['id']}")
     for kind,w,d in extras[parcel['condition']]:
         place(kind,w,d,lambda p:math.dist(p,parcel['gate']))
     return placed
@@ -578,8 +584,457 @@ def _legacy_generate(seed, ger_clutter):
     return {'version':'v002', 'seed':seed, 'artistic_choices':True, 'landmarks':landmarks, 'routes':{'arrival':[list(p) for p in L.ARRIVAL], 'foot_entry':[list(p) for p in L.FOOT_ENTRY]}, 'roads':roads, 'lanes':lanes, 'parcels':parcels, 'apartments':apartments, 'desire_paths':paths, 'clutter':clutter, 'garages':garages}
 
 
+
+def rectangle(xy,w,d,angle=0):
+    c,s = math.cos(angle),math.sin(angle)
+    return [[xy[0]+x*c-y*s,xy[1]+x*s+y*c] for x,y in ((-w/2,-d/2),(w/2,-d/2),(w/2,d/2),(-w/2,d/2))]
+
+
+def footprint_distance(first,second):
+    best = math.inf
+    for a in first:
+        for b in second:
+            if overlap(a,b):
+                return 0
+            best = min(best,*(L.distance_segment(p,u,v) for p in a for u,v in zip(b,b[1:]+b[:1])),
+                       *(L.distance_segment(p,u,v) for p in b for u,v in zip(a,a[1:]+a[:1])))
+    return best
+
+
+def landmark_footprints():
+    # N11/N17 are district extents, while N12 is represented by its block record.
+    return [rectangle([float(r['x_m_east']),float(r['y_m_north'])],float(r['placeholder_width_m']),float(r['placeholder_depth_m']))
+            for key,r in L.LOCATIONS.items() if key not in ('N01','N11','N12','N17')]
+
+
+def subdivide_residential(district,bounds,roads,seed):
+    """Jittered BSP blocks and varying lane-facing yard strips; no grid scaffold."""
+    rng = random.Random(seed)
+    xmin,ymin,xmax,ymax = bounds
+    boundary = []
+    for x,y in ((xmin,ymin),(xmax,ymin),(xmax,ymax),(xmin,ymax)):
+        angle = math.atan2(y-(ymin+ymax)/2,x-(xmin+xmax)/2)+rng.uniform(-.45,.45)
+        if district=='apartment_south':
+            # The south distributor bounds a tapering strip: its old track peels southeast.
+            angle = {(xmin,ymax):math.pi+.45,(xmax,ymax):-.45,
+                     (xmin,ymin):-1.7,(xmax,ymin):-.06}[(x,y)]
+        distance = rng.uniform(35,40) if district=='apartment_south' else rng.uniform(15,40)
+        boundary.append([x+math.cos(angle)*distance,y+math.sin(angle)*distance])
+    corners = [p[:] for p in boundary]
+    if district=='apartment_south':
+        boundary = hull(boundary+[[(xmin+xmax)/2,ymax+4]])
+    else:
+        # Unequal shoulders bend the perimeter; the north edge follows the industry road.
+        boundary = hull(boundary+[[xmin-rng.uniform(35,40),ymin+(ymax-ymin)*.35],
+                                  [xmax+rng.uniform(35,40),ymin+(ymax-ymin)*.65]])
+        if district=='east':
+            boundary = clip_line(boundary,[50,-390],50*(-40)-390*600+4.8*math.hypot(50,390))
+    lanes,blocks,cuts = [],[],[]
+    def add(points,name=None,role='residential_lane'):
+        lane = {'id':f'{district}_lane_{len(lanes):03}','district':district,'width':4.8,
+                'points':points,'surface':'dirt','role':role}
+        if name:
+            lane['name'] = name
+        lanes.append(lane)
+    add(boundary+[boundary[0]],role='boundary_lane')
+    connections = [r for r in L.ROADS if r[0].startswith('East residential' if district=='east' else 'West residential') and 'connection' in r[0]] if district!='apartment_south' else []
+    for name,_,points in connections:
+        ps = [list(p) for p in points]
+        add(ps,name)
+        p = ps[-1] if district=='east' else ps[0]
+        _,q = min((math.dist(p,q),q) for l in lanes[:-1] for a,b in zip(l['points'],l['points'][1:]) for q in [project(p,a,b)])
+        if math.dist(p,q)>1e-6:
+            add([p,q])
+    # Artistic old tracks aim at the retained junctions, splitting rather than crossing a grid.
+    track = {'east':[[-60,310],[650,670]],'west':[[-760,-540],[-120,-220]],
+             'apartment_south':[[170,-530],[550,-680]]}[district]
+    add(track,role='old_track')
+    pieces = [inset(boundary,2.4)]
+    blockers = [corridor(a,b,r['width']+1) for r in roads for a,b in zip(r['points'],r['points'][1:])]+landmark_footprints()
+    for shape in blockers+[corridor(*track,4.8)]:
+        pieces = [p for old in pieces for p in subtract_polygon(old,shape) if polygon_area(p)>=220 and inset(p,4.5)]
+    def split(poly):
+        area = polygon_area(poly)
+        if area<rng.uniform(4500,10500):
+            blocks.append(poly)
+            return
+        _,vectors = np.linalg.eigh(np.cov(np.asarray(poly).T))
+        axis = vectors[:,-1]
+        for _ in range(32):
+            jitter = rng.choice((-1,1))*rng.uniform(8,20)
+            angle = math.atan2(axis[1],axis[0])+math.radians(jitter)
+            normal = [math.cos(angle),math.sin(angle)]
+            values = [sum(p[i]*normal[i] for i in (0,1)) for p in poly]
+            fraction = rng.uniform(.35,.65)
+            offset = min(values)+(max(values)-min(values))*fraction
+            halves = split_by_line(poly,normal,offset,4.8)
+            if any(polygon_area(p)<1300 or not inset(p,10) for p in halves):
+                continue
+            hits = []
+            for a,b in zip(poly,poly[1:]+poly[:1]):
+                da,db = [sum(v[i]*normal[i] for i in (0,1))-offset for v in (a,b)]
+                if da*db<0:
+                    hits.append([a[i]+da/(da-db)*(b[i]-a[i]) for i in (0,1)])
+            if len(hits)!=2:
+                continue
+            direction = [(hits[1][i]-hits[0][i])/math.dist(*hits) for i in (0,1)]
+            for j,p in enumerate(hits):
+                end = [p[i]+direction[i]*(12 if j else -12) for i in (0,1)]
+                joins = [q for l in lanes for a,b in zip(l['points'],l['points'][1:]) if (q:=intersection(p,end,a,b)) is not None]
+                if joins:
+                    hits[j] = min(joins,key=lambda q:math.dist(p,q))
+            add(hits)
+            cuts.append({'jitter_degrees':jitter,'split_fraction':fraction})
+            for p in halves:
+                split(p)
+            return
+        blocks.append(poly)
+    for p in pieces:
+        split(p)
+    graph = lane_graph(lanes)
+    while len(graph_components(graph))>1:
+        groups,nodes = graph_components(graph),graph['nodes']
+        _,a,b = min((math.dist(nodes[i]['xy'],nodes[j]['xy']),nodes[i]['xy'],nodes[j]['xy'])
+                    for i in groups[0] for group in groups[1:] for j in group)
+        add([a,b])
+        graph = lane_graph(lanes)
+    block_areas = [polygon_area(p) for p in blocks]
+    shapes = [corridor(a,b,l['width']) for l in lanes for a,b in zip(l['points'],l['points'][1:])]
+    for shape in shapes:
+        blocks = [p for old in blocks for p in subtract_polygon(old,shape) if polygon_area(p)>=180 and inset(p,4.5)]
+    yards = []
+    for block in blocks:
+        remainder = [block]
+        # Cut strips from the longest frontages first, leaving non-overlapping corner yards.
+        for a,b in sorted(zip(block,block[1:]+block[:1]),key=lambda ab:-math.dist(*ab)):
+            length = math.dist(a,b)
+            if length<15:
+                continue
+            u = [(b[i]-a[i])/length for i in (0,1)]
+            n = [-u[1],u[0]]
+            offset = sum(a[i]*n[i] for i in (0,1))+rng.uniform(28,38)
+            strips,next_remainder = [],[]
+            for poly in remainder:
+                core,front = split_by_line(poly,n,offset)
+                if core:
+                    next_remainder.append(core)
+                if front:
+                    strips.append(front)
+            remainder = next_remainder
+            for front in strips:
+                fronts = []
+                for c,d in zip(front,front[1:]+front[:1]):
+                    for shape in shapes:
+                        for e,f in zip(shape,shape[1:]+shape[:1]):
+                            ends = [v for v in (c,d,e,f) if L.distance_segment(v,c,d)<1e-6 and L.distance_segment(v,e,f)<1e-6]
+                            if len(ends)>=2:
+                                v,w = max(((v,w) for v in ends for w in ends),key=lambda pair:math.dist(*pair))
+                                fronts.append((math.dist(v,w),v,w))
+                if not fronts:
+                    continue
+                length,v,w = max(fronts)
+                if length<15:
+                    continue
+                tangent = [(w[i]-v[i])/length for i in (0,1)]
+                start = sum(v[i]*tangent[i] for i in (0,1))
+                count = max(math.ceil(length/30),min(round(length/22),math.floor(length/15)))
+                cursor,remaining = start,length
+                for j in range(count):
+                    left = count-j-1
+                    width = rng.uniform(max(15,remaining-30*left),min(30,remaining-15*left)) if left else remaining
+                    end = cursor+width
+                    poly = front if j==0 else clip_line(front,tangent,cursor)
+                    if left:
+                        poly = clip_line(poly,[-t for t in tangent],-end)
+                    cursor,remaining = end,remaining-width
+                    if polygon_area(poly)>=180 and inset(poly,4.5):
+                        yards.append(poly)
+    frontages = []
+    for poly in yards:
+        choices = [(max(shared_edge(poly,corridor(a,b,l['width'])) for a,b in zip(l['points'],l['points'][1:])),l) for l in lanes]
+        suitable = [l for width,l in sorted(choices,key=lambda pair:-pair[0]) if 15-1e-6<=width<=30+1e-6]
+        gate = gate_on_lane(poly,suitable)
+        if gate:
+            frontages.append((poly,gate))
+    yards = [p for p,_ in frontages]
+    gardens = set(rng.sample(range(len(yards)),round(len(yards)*.3)))
+    scores = [rng.gauss(0,.55)+.2*math.sin(sum(v[0] for v in p)/len(p)/70)+.15*math.cos(sum(v[1] for v in p)/len(p)/85) for p in yards]
+    rank = {i:n/len(yards) for n,i in enumerate(sorted(range(len(yards)),key=lambda i:scores[i]))}
+    parcels,items = [],[]
+    for i,(poly,(lane,gate)) in enumerate(frontages):
+        tier = 'poor' if rank[i]<.22 else 'ordinary' if rank[i]<.62 else 'maintained' if rank[i]<.9 else 'better_off'
+        p = {'id':f'{district}_parcel_{i:03}','district':district,'polygon':poly,'lane':lane,
+             'gate':gate,'road_edge':gate[:],'approach':[gate,gate[:]],'condition':tier,'status':'occupied','fence':'timber_patched'}
+        contents = yard_items(p,rng,residential=True,garden=i in gardens)
+        p['contents'] = [item['type'] for item in contents]
+        parcels.append(p)
+        items.extend(contents)
+    return parcels,lanes,items,{'bounds':bounds,'boundary':boundary,'perturbed_corners':corners,'area':(xmax-xmin)*(ymax-ymin),
+                                'block_areas':block_areas,'cuts':cuts,'yard_depth_range':[28,38]}
+
+
+def restore_roadside(data,seed,obstacles):
+    """Restore v001 frontage ribbons, reserving each fitted yard before the next."""
+    rng = random.Random(seed)
+    old = json.loads((ROOT.parent/'realism-v1/city-manifest.json').read_text())['parcels']
+    centers = [[sum(v[i] for v in p['polygon'])/len(p['polygon']) for i in (0,1)] for p in old]
+    segments = [(r['name'],a,b) for r in data['roads'] for a,b in zip(r['points'],r['points'][1:])]
+    frontages = {}
+    for c in centers:
+        name,a,b = min(segments,key=lambda row:L.distance_segment(c,row[1],row[2]))
+        frontages.setdefault((name,tuple(a),tuple(b)),[]).append(c)
+    road_shapes = [corridor(a,b,r['width']) for r in data['roads']+data['lanes'] for a,b in zip(r['points'],r['points'][1:])]
+    blockers = road_shapes+obstacles+[p['polygon'] for p in data['parcels']]
+    restored = []
+    for road in data['roads']:
+        lane = {'id':f'roadside_{len(data["lanes"]):03}','district':'roadside','name':road['name'],
+                'points':road['points'],'width':road['width'],'surface':'dirt','role':'roadside_frontage'}
+        for a,b in zip(road['points'],road['points'][1:]):
+            length = math.dist(a,b)
+            u = [(b[i]-a[i])/length for i in (0,1)]
+            for side in (-1,1):
+                n = [-u[1]*side,u[0]*side]
+                targets = [sum((c[i]-a[i])*u[i] for i in (0,1)) for c in frontages.get((road['name'],tuple(a),tuple(b)),[])
+                           if L.distance_segment(c,a,b)<60 and 0<sum((c[i]-a[i])*n[i] for i in (0,1))<60]
+                if not targets:
+                    continue
+                cursor = max(2,min(targets)-22)
+                stop = min(length-2,max(targets)+22)
+                while cursor+14<stop:
+                    width = min(rng.uniform(14,28),stop-cursor)
+                    depth = rng.uniform(22,38)
+                    def point(t,d): return [a[i]+u[i]*t+n[i]*d for i in (0,1)]
+                    edge = road['width']/2
+                    poly = hull([point(cursor,edge),point(cursor+width,edge),
+                                 point(cursor+width-rng.uniform(0,2),edge+depth),point(cursor+rng.uniform(0,2),edge+depth)])
+                    pieces = [poly]
+                    for shape in blockers:
+                        pieces = [p for old_poly in pieces for p in subtract_polygon(old_poly,shape)]
+                        if not pieces:
+                            break
+                    for poly in pieces:
+                        frontage = max(shared_edge(poly,corridor(c,d,lane['width'])) for c,d in zip(lane['points'],lane['points'][1:]))
+                        gate = gate_on_lane(poly,[lane])
+                        if not (14-1e-6<=frontage<=28+1e-6 and polygon_area(poly)>=200 and inset(poly,4.5) and gate):
+                            continue
+                        p = {'id':f'roadside_parcel_{len(restored):03}','district':'roadside','polygon':poly,
+                             'lane':lane['id'],'gate':gate[1],'road_edge':gate[1][:],'approach':[gate[1],gate[1][:]],
+                             'condition':rng.choices(['poor','ordinary','maintained','better_off'],[30,40,22,8])[0],
+                             'status':'occupied','fence':'timber_patched','road':road['name']}
+                        items = yard_items(p,rng,residential=True,garden=rng.random()<.3)
+                        p['contents'] = [i['type'] for i in items]
+                        data['parcels'].append(p)
+                        data['clutter'].extend(items)
+                        restored.append(p)
+                        blockers.append(poly)
+                    cursor += width+rng.uniform(2,9)
+        if any(p['lane']==lane['id'] for p in restored):
+            data['lanes'].append(lane)
+    data['removed_with_reason'] = []
+    data['restored_roadside_plots'] = len(restored)
+
+
+def apartment_blocks(seed,hero):
+    rng = random.Random(seed)
+    # Artistic choices: three street bands; the northern band forms two-sided courts.
+    sites = [(220,-317,3,16,5,'L',-1),(305,-326,4,15,-4,'slab',-1),
+             (441,-320,6,16,4,'merged_pair',-1),(270,-367,4,16,-6,'slab',1),
+             (216,-417,3,14,5,'slab',1),(293,-426,4,15,-7,'slab',1),
+             (391,-425,5,15,3,'slab',-1),(480,-434,3,14,-5,'slab',-1),
+             (218,-504,3,14,-4,'L',1),(322,-488,5,15,6,'slab',1),
+             (454,-504,6,15,-3,'slab',1)]
+    blocks = []
+    for i,(x,y,sections,section_length,rotation,shape,side) in enumerate(sites):
+        length,depth = sections*section_length,12
+        angle = math.radians(rotation)
+        def transform(p):
+            return [x+p[0]*math.cos(angle)-p[1]*math.sin(angle),y+p[0]*math.sin(angle)+p[1]*math.cos(angle)]
+        parts = [rectangle([0,0],length,depth)]
+        if shape=='L':
+            parts.append(rectangle([-length/2+depth/2,side*(depth/2+8)],depth,16))
+        if shape=='merged_pair':
+            parts = [rectangle([-length/4,0],length/2,depth),rectangle([length/4,3],length/2,depth)]
+        entries = [transform([-length/2+(n+.5)*section_length,side*depth/2+(3 if shape=='merged_pair' and n>=sections/2 else 0)]) for n in range(sections)]
+        if shape=='L':
+            entries[0] = transform([-length/2+depth/2,side*(depth/2+16)])
+        blocks.append({'id':f'apartment_{i:02}','xy':[x,y],'sections':sections,'section_length':section_length,
+                       'length':length,'depth':depth,'storeys':rng.choice([4,5]),'rotation_degrees':rotation,
+                       'shape':shape,'footprints':[[transform(v) for v in part] for part in parts],
+                       'condition':rng.choice(['ordinary','maintained','weathered']),'stains':rng.randint(1,5),
+                       'enclosed_balconies':rng.randint(2,12),'laundry':rng.randint(2,8),'antennas':rng.randint(2,6),
+                       'entrance':rng.choice(['repainted','patched','worn']),'entrances':entries,'courtyard_side':side,
+                       'courtyard':'north' if y>-390 else 'middle' if y>-460 else 'south'})
+    hero.update({'footprints':[rectangle(hero['xy'],hero['length'],hero['depth'])],
+                 'entrances':[hero['entry']],'courtyard_side':-1,'courtyard':'north'})
+    blocks.append(hero)
+    return blocks
+
+
+def extend_town(data,seed):
+    rng = random.Random(seed+400)
+    data['parcels'] = [p for p in data['parcels'] if p['district']=='ger']
+    data['lanes'] = [l for l in data['lanes'] if l['district']=='ger']
+    data['clutter'] = [i for i in data['clutter'] if i.get('parcel','').startswith('ger_parcel_')]
+    data['residential_subdivision'] = {}
+    for j,(district,bounds) in enumerate([('east',[100,290,620,620]),('west',[-600,-510,-160,-240]),('apartment_south',[180,-610,510,-540])]):
+        parcels,lanes,items,meta = subdivide_residential(district,bounds,data['roads'],seed+100+j)
+        data['parcels'].extend(parcels)
+        data['lanes'].extend(lanes)
+        data['clutter'].extend(items)
+        data['residential_subdivision'][district] = meta
+    data['apartments'] = apartment_blocks(seed+200,next(a for a in data['apartments'] if a['id']=='N12'))
+    roads = [corridor(a,b,r['width']) for r in data['roads']+data['lanes'] for a,b in zip(r['points'],r['points'][1:])]
+    routes = [corridor(a,b,2) for points in data['routes'].values() for a,b in zip(points,points[1:])]
+    structures = landmark_footprints()+[f for a in data['apartments'] for f in a['footprints']]
+    parcels = [p['polygon'] for p in data['parcels']]
+    occupied = [i['footprint'] for i in data['clutter']]
+    # Broad-phase bins keep the final rejection pass cheap on the production laptop.
+    bins = {}
+    def cells(shape):
+        return [(x,y) for x in range(math.floor(min(p[0] for p in shape)/32),math.floor(max(p[0] for p in shape)/32)+1)
+                for y in range(math.floor(min(p[1] for p in shape)/32),math.floor(max(p[1] for p in shape)/32)+1)]
+    def reserve(shape):
+        for key in cells(shape):
+            bins.setdefault(key,[]).append(shape)
+    for shape in roads+routes+structures+occupied+parcels:
+        reserve(shape)
+    def free(shape):
+        candidates = {id(s):s for key in cells(shape) for s in bins.get(key,[])}
+        return not any(overlap(shape,s) for s in candidates.values())
+    data['garages'] = []
+    # Waste strips: two apartment flanks, two market edges and two plant approaches.
+    for j,(xy,units,angle,road_name) in enumerate([([145,-338],8,90,'Apartment west lane'),([545,-431],7,90,'Apartment west lane'),
+                                                ([-350,-151],10,0,'West avenue'),([-170,-151],8,0,'West avenue'),
+                                                ([1080,550],9,90,'Plant access'),([1175,652],10,0,'Plant access')]):
+        a = math.radians(angle)
+        footprint = rectangle(xy,units*3.5,6,a)
+        road = next(r for r in data['roads'] if r['name']==road_name)
+        _,q = min((math.dist(xy,q),q) for u,v in zip(road['points'],road['points'][1:]) for q in [project(xy,u,v)])
+        distance = math.dist(xy,q)
+        toward = [(q[k]-xy[k])/distance for k in (0,1)]
+        apron_center = [xy[k]+toward[k]*(3+(distance-3)/2) for k in (0,1)]
+        apron = rectangle(apron_center,units*3.5,distance-3,a)
+        # The apron touches its road; only the boxes must stay off the carriageway.
+        if not free(footprint) or any(overlap(apron,s) for s in structures+occupied+parcels):
+            raise ValueError(f'Garage {j} does not fit')
+        boxes = [rectangle([xy[0]+(n-(units-1)/2)*3.5*math.cos(a),xy[1]+(n-(units-1)/2)*3.5*math.sin(a)],3.5,6,a) for n in range(units)]
+        data['garages'].append({'id':f'garage_row_{j}','xy':xy,'units':units,'box_size':[3.5,6],
+                                'type':'brick' if j%2 else 'metal','rotation_degrees':angle,'footprint':footprint,
+                                'boxes':boxes,'apron':apron,'access':[apron_center,q],'road':road_name,'parking':'dirt'})
+        structures.extend([footprint,apron])
+        reserve(footprint)
+        reserve(apron)
+    def place(kind,w,d,bounds,owner=None,angle=0):
+        for _ in range(4000):
+            xy = [rng.uniform(bounds[0]+w/2,bounds[2]-w/2),rng.uniform(bounds[1]+d/2,bounds[3]-d/2)]
+            shape = rectangle(xy,w,d,angle)
+            if free(shape):
+                item = {'type':kind,'xy':xy,'width':w,'depth':d,'rotation':angle,'scale':1,'footprint':shape}
+                if owner:
+                    item['courtyard'] = owner
+                data['clutter'].append(item)
+                occupied.append(shape)
+                reserve(shape)
+                return item
+        raise ValueError(f'Cannot fit {kind} in {owner or bounds}')
+    data['courtyards'] = []
+    data['desire_paths'] = [p for p in data['desire_paths'] if p['points']!=[[170,-390],[220,-370],[250,-340]]]
+    for name,bounds in [('north',[183,-380,506,-299]),('middle',[182,-451,508,-399]),('south',[182,-521,508,-469])]:
+        courtyard = {'id':name,'bounds':bounds}
+        # Desire paths cut the lane corners; endpoints stop at the carriageway edge.
+        paths = []
+        top,bottom = (-290,-390) if name=='north' else (-390,-460) if name=='middle' else (-460,-530)
+        for cx,cy,sx,sy in [(170,top,1,-1),(520,top,-1,-1),(170,bottom,1,1),(520,bottom,-1,1)]:
+            for length in (22,28,34,40):
+                points = [[cx+sx*3,cy+sy*length],[cx+sx*(length/2+1),cy+sy*(length/2+1)],[cx+sx*length,cy+sy*3]]
+                shape = hull([v for a,b in zip(points,points[1:]) for v in corridor(a,b,.8)])
+                if not free(shape):
+                    continue
+                item = {'type':'desire_path','xy':points[1],'width':.8,'depth':length,'rotation':0,'scale':1,
+                        'footprint':shape,'points':points,'courtyard':name}
+                data['clutter'].append(item)
+                occupied.append(shape)
+                reserve(shape)
+                paths.append({'points':points,'width':.8,'surface':'dirt','courtyard':name})
+                break
+            if len(paths)==4:
+                break
+        if len(paths)<2:
+            raise ValueError(f'Not enough corner paths in {name}')
+        courtyard['desire_paths'] = paths
+        data['desire_paths'].extend(paths)
+        for kind,w,d,count in [('playground_frame',5,3,1),('bench',2,.65,4),('rubbish_point',3,2,1),('laundry_line',7,.7,2)]:
+            for _ in range(count):
+                place(kind,w,d,bounds,name)
+        pipe = place('heat_pipe',19,3,bounds,name)
+        x,y = pipe['xy']
+        pipe['points'] = [[x-8.5,y-.75],[x+8.5,y-.75],[x+8.5,y+.75]]
+        pipe['clearance'] = .6
+        courtyard['heat_pipe'] = {'points':pipe['points'],'diameter':.3,'clearance':.6}
+        # Parking patches are reservations; cars are fitted inside their own patch.
+        count = rng.randint(6,8)
+        patch = place('parking_patch',count*3+1,6,bounds,name)
+        data['clutter'].remove(patch)
+        occupied.remove(patch['footprint'])
+        courtyard['parking_patch'] = patch['footprint']
+        for n in range(count):
+            xy = [patch['xy'][0]+(n-(count-1)/2)*3,patch['xy'][1]]
+            kind = ('uaz','moskvich','zhiguli')[n%3]
+            car = {'type':kind,'xy':xy,'rotation':math.pi/2,'width':4.4,'depth':1.8,'scale':1,
+                   'footprint':rectangle(xy,4.4,1.8,math.pi/2),'courtyard':name,'parking':'dirt_patch',
+                   'condition':'rusting' if n%4==0 else 'used'}
+            data['clutter'].append(car)
+            occupied.append(car['footprint'])
+            reserve(car['footprint'])
+        data['courtyards'].append(courtyard)
+    before = len(data['clutter'])
+    restore_roadside(data,seed+500,structures+routes+[i['footprint'] for i in data['clutter'] if 'parcel' not in i])
+    for p in data['parcels']:
+        if p['district']=='roadside':
+            reserve(p['polygon'])
+    for item in data['clutter'][before:]:
+        reserve(item['footprint'])
+    # Final variable-radius Poisson rejection pass, after every solid reservation.
+    sizes = {'water_cans':(.8,.6,8),'laundry_line':(5,.6,20),'dog':(1.1,.5,12),'tyres':(1.3,1.3,14),
+             'scrap':(2,1.5,18),'shed':(3,3,30),'utility_pole':(.6,.6,32),'chimney':(.7,.7,20),
+             'vegetable_plot':(4,3,35),'uaz':(4.4,1.8,25),'moskvich':(4.2,1.7,25),'zhiguli':(4.1,1.7,25),
+             'satellite_dish':(1,1,100),'hay_stack':(3,3,35),'livestock_pen':(6,5,50),
+             'tractor':(4,2.4,40),'farm_trailer':(4,2.5,35),'car_shell':(4.4,1.8,70)}
+    data['clutter_min_spacing'] = {k:v[2] for k,v in sizes.items()}
+    for kind,(w,d,spacing) in sizes.items():
+        accepted = []
+        target = 6 if kind in ('dog','car_shell','satellite_dish') else 22
+        for _ in range(12000):
+            if len(accepted)>=target:
+                break
+            if kind=='dog':
+                center = [-275,-80] if rng.random()<.5 else rng.choice(data['garages'])['xy']
+                xy = [center[0]+rng.uniform(-55,55),center[1]+rng.uniform(-55,55)]
+            elif kind in ('hay_stack','livestock_pen','tractor','farm_trailer','car_shell'):
+                xy = [rng.uniform(-1500,1500),rng.choice([-1,1])*rng.uniform(850,1350)]
+            else:
+                xy = [rng.uniform(-1450,1450),rng.uniform(-1050,1250)]
+            angle = rng.uniform(-math.pi,math.pi)
+            shape = rectangle(xy,w,d,angle)
+            if any(math.dist(xy,p)<spacing for p in accepted) or not free(shape):
+                continue
+            if kind in ('uaz','moskvich','zhiguli'):
+                if not any(0<=min(L.distance_segment(xy,a,b) for a,b in zip(r['points'],r['points'][1:]))-r['width']/2<=5 for r in data['roads']):
+                    continue
+            item = {'type':kind,'xy':xy,'rotation':angle,'width':w,'depth':d,'scale':1,'footprint':shape,'pass':'poisson'}
+            if kind=='car_shell':
+                item['condition'] = 'burnt' if len(accepted)%2 else 'abandoned'
+            if kind in ('uaz','moskvich','zhiguli'):
+                item['parking'] = 'shoulder'
+            accepted.append(xy)
+            data['clutter'].append(item)
+            occupied.append(shape)
+            reserve(shape)
+        if len(accepted)<target:
+            raise ValueError(f'Poisson pass only placed {len(accepted)}/{target} {kind}')
+
 def generate(seed=SEED):
-    # Retain the old RNG sequence so every non-ger record stays unchanged this round.
+    # Preserve round 3 ger records exactly; later passes have independent random streams.
     ger_clutter = set()
     data = _legacy_generate(seed,ger_clutter)
     ger = subdivide_ger_district(seed)
@@ -587,6 +1042,7 @@ def generate(seed=SEED):
     data['lanes'] = [l for l in data['lanes'] if l['district']!='ger']+ger['lanes']
     data['clutter'] = [p for i,p in enumerate(data['clutter']) if i not in ger_clutter]+ger['clutter']
     data.update({k:v for k,v in ger.items() if k not in ('parcels','lanes','clutter')})
+    extend_town(data,seed)
     return data
 
 if __name__ == '__main__':

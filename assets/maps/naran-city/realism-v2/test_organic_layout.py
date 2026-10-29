@@ -19,6 +19,7 @@ class OrganicLayoutTests(unittest.TestCase):
     def test_deterministic_and_protected(self):
         a = self.data
         self.assertEqual(json.dumps(a, sort_keys=True), json.dumps(O.generate(), sort_keys=True))
+        self.assertEqual(a,json.loads((PATH/'city-layout-v002.json').read_text()))
         roads = {r['name']: r['points'] for r in a['roads']}
         for name, width, points in O.protected_roads():
             self.assertEqual(roads[name], [list(p) for p in points])
@@ -33,7 +34,7 @@ class OrganicLayoutTests(unittest.TestCase):
         data = self.data
         parcels = data['parcels']
         self.assertGreater(len(parcels), 100)
-        strips = [O.strip(a,b,r['width'] + (0 if r.get('district') == 'ger' else 1)) for r in data['roads']+data['lanes'] for a,b in zip(r['points'],r['points'][1:])]
+        strips = [O.strip(a,b,r['width']) for r in data['roads']+data['lanes'] for a,b in zip(r['points'],r['points'][1:])]
         for i, p in enumerate(parcels):
             self.assertFalse(any(O.overlap(p['polygon'], q) for q in strips), p['id'])
             self.assertFalse(any(O.overlap(p['polygon'], q['polygon']) for q in parcels[i+1:]), p['id'])
@@ -193,6 +194,174 @@ class OrganicLayoutTests(unittest.TestCase):
         same = sum(p['condition'] == min((q for q in parcels if q is not p), key=lambda q:math.dist(center(p),center(q)))['condition'] for p in parcels)
         self.assertLess(same/len(parcels),.55)
 
+    def test_e05e_residential_coverage_and_connections(self):
+        for district in ('east','west','apartment_south'):
+            meta = self.data['residential_subdivision'][district]
+            yards = [p for p in self.data['parcels'] if p['district']==district]
+            xmin,ymin,xmax,ymax = meta['bounds']
+            area = 0
+            for p in yards:
+                poly = p['polygon']
+                for normal,offset in [([1,0],xmin),([-1,0],-xmax),([0,1],ymin),([0,-1],-ymax)]:
+                    poly = O.clip_line(poly,normal,offset)
+                area += O.polygon_area(poly)
+            self.assertGreaterEqual(area/meta['area'], .65)
+            lanes = [l for l in self.data['lanes'] if l['district']==district]
+            self.assertEqual(len(O.graph_components(O.lane_graph(lanes))),1)
+            self.assertTrue(all(4<=l['width']<=6 for l in lanes))
+            for p in yards:
+                self.assertIsNotNone(O.gate_on_lane(p['polygon'],lanes),p['id'])
+                lane = next(l for l in lanes if l['id']==p['lane'])
+                frontage = max(O.shared_edge(p['polygon'],O.corridor(a,b,lane['width'])) for a,b in zip(lane['points'],lane['points'][1:]))
+                self.assertTrue(15-1e-6<=frontage<=30+1e-6,(p['id'],frontage))
+                items = [i for i in self.data['clutter'] if i.get('parcel')==p['id']]
+                self.assertTrue({'house','privy','coal_bin'} <= {i['type'] for i in items},p['id'])
+                house = next(i for i in items if i['type']=='house')
+                self.assertTrue(6<=house['width']<=11)
+                for item in items:
+                    self.assertAlmostEqual(sum(O.polygon_area(q) for q in O.subtract_polygon(item['footprint'],p['polygon'])),0,delta=1e-6)
+            garden_fraction = sum('vegetable_plot' in p['contents'] for p in yards)/len(yards)
+            self.assertAlmostEqual(garden_fraction,.3,delta=.025)
+        for name,_,points in O.L.ROADS:
+            if name in ('East residential north connection','East residential west connection','West residential east connection'):
+                self.assertEqual(next(l['points'] for l in self.data['lanes'] if l.get('name')==name),[list(p) for p in points])
+
+    def test_e05f_residential_not_a_grid(self):
+        for district in ('east','west','apartment_south'):
+            with self.subTest(district=district):
+                lanes = [l for l in self.data['lanes'] if l['district']==district]
+                yards = [p for p in self.data['parcels'] if p['district']==district]
+                headings = [(math.degrees(math.atan2(b[1]-a[1],b[0]-a[0]))+90)%180-90
+                            for l in lanes for a,b in zip(l['points'],l['points'][1:])]
+                edges = [math.degrees(math.atan2(b[1]-a[1],b[0]-a[0]))%90
+                         for p in yards for a,b in zip(p['polygon'],p['polygon'][1:]+p['polygon'][:1])]
+                self.assertGreater(statistics.pstdev(headings),15)
+                self.assertLess(sum(min(a,90-a)<=5 for a in edges)/len(edges),.4)
+                meta = self.data['residential_subdivision'][district]
+                areas = meta['block_areas']
+                self.assertGreater(max(areas)/min(areas),2)
+                self.assertTrue(any(l['role']=='old_track' for l in lanes))
+                self.assertTrue(meta['cuts'])
+                for cut in meta['cuts']:
+                    self.assertTrue(8<=abs(cut['jitter_degrees'])<=20)
+                    self.assertTrue(.35<=cut['split_fraction']<=.65)
+                x,y,xx,yy = meta['bounds']
+                for before,after in zip(((x,y),(xx,y),(xx,yy),(x,yy)),meta['perturbed_corners']):
+                    self.assertTrue(15<=math.dist(before,after)<=40)
+
+    def test_e05f_v001_households_preserved(self):
+        old = json.loads((PATH.parent/'realism-v1/city-manifest.json').read_text())['parcels']
+        removed = self.data.get('removed_with_reason',[])
+        self.assertFalse(removed,'No household removals are justified by this brief')
+        for household in old:
+            c = [sum(v[i] for v in household['polygon'])/len(household['polygon']) for i in (0,1)]
+            distances = []
+            for p in self.data['parcels']:
+                poly = p['polygon']
+                crosses = [(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0])
+                           for a,b in zip(poly,poly[1:]+poly[:1])]
+                inside = all(t>=-1e-6 for t in crosses) or all(t<=1e-6 for t in crosses)
+                distances.append(0 if inside else min(O.L.distance_segment(c,a,b) for a,b in zip(poly,poly[1:]+poly[:1])))
+            self.assertLessEqual(min(distances),30,household['id'])
+
+    def test_e05f_roadside_frontages(self):
+        ribbons = [p for p in self.data['parcels'] if p['district']=='roadside']
+        self.assertGreater(len(ribbons),100)
+        widths,depths = [],[]
+        for p in ribbons:
+            lane = next(l for l in self.data['lanes'] if l['id']==p['lane'])
+            frontage = max(O.shared_edge(p['polygon'],O.corridor(a,b,lane['width'])) for a,b in zip(lane['points'],lane['points'][1:]))
+            self.assertTrue(14-1e-6<=frontage<=28+1e-6,(p['id'],frontage))
+            self.assertIsNotNone(O.gate_on_lane(p['polygon'],[lane]))
+            self.assertIn('house',p['contents'])
+            widths.append(frontage)
+            depths.append(O.polygon_area(p['polygon'])/frontage)
+        self.assertGreater(max(widths)-min(widths),8)
+        self.assertGreater(max(depths)-min(depths),8)
+
+    def test_e05f_courtyard_life(self):
+        for c in self.data['courtyards']:
+            kinds = Counter(i['type'] for i in self.data['clutter'] if i.get('courtyard')==c['id'])
+            self.assertEqual(kinds['bench'],4)
+            self.assertTrue(6<=sum(kinds[k] for k in ('uaz','moskvich','zhiguli'))<=8)
+            self.assertTrue(2<=len(c['desire_paths'])<=4)
+
+    def test_e05e_ger_frozen(self):
+        import hashlib
+        d = self.data
+        subset = {k:[i for i in d[k] if i.get('district')=='ger' or (k=='clutter' and i.get('parcel','').startswith('ger_parcel_'))] for k in ('parcels','lanes','clutter')}
+        subset.update({k:d[k] for k in ('ger_lane_graph','ger_subdivision')})
+        self.assertEqual(hashlib.sha256(json.dumps(subset,sort_keys=True).encode()).hexdigest(),'17fa580b5245f953fbefd9379305f3eb890dc5e2bb5356542e532dd944bb8d4f')
+        self.assertIn({'points':[[-1100,-690],[-1040,-655],[-980,-630]],'surface':'dirt','width':1.2},d['desire_paths'])
+
+    def test_e05e_apartment_clearances(self):
+        apartments = self.data['apartments']
+        for i,a in enumerate(apartments):
+            for b in apartments[i+1:]:
+                self.assertGreaterEqual(O.footprint_distance(a['footprints'],b['footprints']),12-1e-6,(a['id'],b['id']))
+            for road in self.data['roads']+self.data['lanes']:
+                shapes = [O.corridor(u,v,road['width']) for u,v in zip(road['points'],road['points'][1:])]
+                self.assertGreaterEqual(O.footprint_distance(a['footprints'],shapes),6-1e-6,(a['id'],road.get('name',road.get('id'))))
+            if a['id']!='N12':
+                self.assertTrue(3<=a['sections']<=6)
+                self.assertTrue(14<=a['section_length']<=18)
+                self.assertAlmostEqual(a['length'],a['sections']*a['section_length'])
+                self.assertTrue(3<=abs(a['rotation_degrees'])<=8)
+            self.assertTrue(a['entrances'])
+            for entry in a['entrances']:
+                if a['id']!='N12':
+                    self.assertAlmostEqual(min(O.L.distance_segment(entry,u,v) for part in a['footprints'] for u,v in zip(part,part[1:]+part[:1])),0,delta=1e-6)
+        hero = next(a for a in apartments if a['id']=='N12')
+        self.assertEqual(hero['entry'],self.data['routes']['foot_entry'][-1])
+        obstacles = [f for a in apartments for f in a['footprints']]+[i['footprint'] for i in self.data['clutter'] if not i.get('parcel','').startswith('ger_')]+[g['footprint'] for g in self.data['garages']]
+        for route in self.data['routes'].values():
+            for u,v in zip(route,route[1:]):
+                self.assertFalse(any(O.overlap(O.corridor(u,v,2),f) for f in obstacles))
+
+    def test_e05e_garages_courtyards_and_clutter(self):
+        data = self.data
+        self.assertTrue(4<=len(data['garages'])<=8)
+        for j,g in enumerate(data['garages']):
+            self.assertTrue(6<=g['units']<=14)
+            self.assertEqual(len(g['boxes']),g['units'])
+            self.assertEqual(g['box_size'],[3.5,6])
+            solid = [p['polygon'] for p in data['parcels']]+[f for a in data['apartments'] for f in a['footprints']]+O.landmark_footprints()
+            self.assertFalse(any(O.overlap(g['footprint'],s) or O.overlap(g['apron'],s) for s in solid))
+            for other in data['garages'][j+1:]:
+                self.assertFalse(any(O.overlap(a,b) for a in (g['footprint'],g['apron']) for b in (other['footprint'],other['apron'])))
+            for r in data['roads']+data['lanes']:
+                self.assertFalse(any(O.overlap(g['footprint'],O.corridor(a,b,r['width'])) for a,b in zip(r['points'],r['points'][1:])))
+            for item in data['clutter']:
+                self.assertFalse(O.overlap(item['footprint'],g['apron']))
+            self.assertLess(O.footprint_distance([g['apron']], [O.corridor(a,b,r['width']) for r in data['roads']+data['lanes'] for a,b in zip(r['points'],r['points'][1:])]),1e-6)
+        for c in data['courtyards']:
+            items = [i for i in data['clutter'] if i.get('courtyard')==c['id']]
+            kinds = Counter(i['type'] for i in items)
+            self.assertEqual(kinds['playground_frame'],1)
+            self.assertTrue(2<=kinds['bench']<=4)
+            self.assertEqual(kinds['rubbish_point'],1)
+            self.assertTrue(3<=sum(kinds[k] for k in ('uaz','moskvich','zhiguli'))<=8)
+            self.assertTrue(kinds['laundry_line'])
+            self.assertTrue(2<=len(c['desire_paths'])<=4)
+            self.assertEqual(c['heat_pipe']['clearance'],.6)
+            self.assertGreaterEqual(len(c['heat_pipe']['points']),3)
+            pipe = next(i for i in items if i['type']=='heat_pipe')
+            obstacles = [i['footprint'] for i in data['clutter'] if i is not pipe]+[f for a in data['apartments'] for f in a['footprints']]+[g['footprint'] for g in data['garages']]
+            for u,v in zip(pipe['points'],pipe['points'][1:]):
+                self.assertGreaterEqual(O.footprint_distance([O.corridor(u,v,.3)],obstacles),.6-1e-6)
+        items = data['clutter']
+        roads = [O.corridor(a,b,r['width']) for r in data['roads']+data['lanes'] for a,b in zip(r['points'],r['points'][1:])]
+        structures = [f for a in data['apartments'] for f in a['footprints']]+[g['footprint'] for g in data['garages']]+O.landmark_footprints()
+        for j,item in enumerate(items):
+            self.assertIn('footprint',item)
+            self.assertFalse(any(O.overlap(item['footprint'],s) for s in roads+structures),(j,item['type']))
+            self.assertFalse(any(O.overlap(item['footprint'],q['footprint']) for q in items[j+1:]),(j,item['type']))
+            if item.get('pass')=='poisson':
+                spacing = data['clutter_min_spacing'][item['type']]
+                self.assertTrue(all(math.dist(item['xy'],q['xy'])>=spacing for q in items[:j] if q['type']==item['type'] and q.get('pass')=='poisson'))
+        self.assertTrue(any(i['type']=='dog' for i in items))
+        self.assertTrue(any(i['type']=='car_shell' for i in items))
+
     def test_polygon_helpers(self):
         square = [[0,0],[10,0],[10,10],[0,10]]
         a,b = O.split_by_line(square,[1,0],4,2)
@@ -202,6 +371,8 @@ class OrganicLayoutTests(unittest.TestCase):
         self.assertFalse(O.overlap(square,[[10,0],[12,0],[12,2],[10,2]]))
         self.assertTrue(O.overlap(square,[[9,0],[12,0],[12,2],[9,2]]))
         self.assertEqual(O.intersection([0,0],[10,0],[5,-1],[5,1]),[5,0])
+        self.assertEqual(O.footprint_distance([square],[[[13,0],[15,0],[15,2],[13,2]]]),3)
+        self.assertEqual(O.footprint_distance([square],[square]),0)
 
 if __name__ == '__main__':
     unittest.main()
