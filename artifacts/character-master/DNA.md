@@ -1,5 +1,7 @@
 # Character DNA workflow
 
+Current production context: [source decisions](production/SOURCES.md), [actor status](production/STATUS.md) and [jobs](production/JOBS.md). The selected foundation stays MakeHuman/MPFB; the next scene is the Episode 1 café. The `episode-1/` shortcut exposes the cast without changing canonical build paths. Screenplay versions and technical studies do not establish identity or shot approval.
+
 Use `artifacts/episode-1-cast/dna/<id>.json` as the editable source of truth
 for the 13 episode cast actors. The five master presets in
 `artifacts/character-master/presets/` carry the same identity system at recipe
@@ -7,9 +9,9 @@ level: optional `face`, `asymmetry`, `age`, `eyes`, `brows`, `skin_detail`,
 `facial_hair` and `hair_dna` fields compile through the same
 `scripts/dna.py` controls. The episode recipes, Blender scenes, GLBs and
 previews are generated outputs. Changing a face means changing its DNA and
-regenerating, rather than sculpting one output or swapping its hairstyle. The
-current 13 cast identities and the five master presets remain drafts for
-human creative review.
+regenerating, rather than sculpting one output or swapping its hairstyle.
+Ganaa’s episode DNA has human design approval; the other 12 episode identities
+and the five master presets remain drafts for human creative review.
 
 ## Adopted foundation
 

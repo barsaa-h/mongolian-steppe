@@ -1,0 +1,12 @@
+﻿shot_id,start_s,end_s,start_frame,end_frame,camera_xyz_m,target_xyz_m,lens_mm,description,acting_direction,voice_ids,sound_cues
+SH01,0,6,1,144,"[13.0, -25.0, 6.0]","[0.0, -2.0, 1.8]",28,EXT. establishing / ordinary life,"Truck forecourt, café sign; no ominous move",,
+SH02,6,14,145,336,"[2.5, -2.0, 1.7]","[-1.6, 1.8, 1.65]",50,Hürel calls from counter,"Recognize Ganaa; old friends, loud",E01-D023,"SPOON, STOVE"
+SH03,14,23,337,552,"[-4.1, -1.8, 1.75]","[-1.3, -1.1, 1.55]",55,Ganaa sits / joking,"Casual counter-joke, no sitcom beat",E01-D024,SEAT SCRAPE
+SH04,23,32,553,768,"[0.9, 0.4, 2.1]","[-1.4, 1.2, 1.5]",40,Counter two-shot,"Dry debt joke, old routine",E01-D025;E01-D026,"COUNTER, CUTLERY"
+SH05,32,40,769,960,"[-2.3, 0.2, 1.6]","[2.8, 0.8, 1.55]",65,Hürel notices Dasha,Quiet jab; no flirtatious staging,E01-D027;E01-D028,OVEN HISS
+SH06,40,49,961,1176,"[-2.5, 2.0, 1.75]","[-1.3, -1.3, 1.6]",58,Ganaa fends off teasing,Two quick replies; defensive not furious,E01-D029;E01-D030,CARD FLAP
+SH07,49,57,1177,1368,"[0.5, -1.1, 1.55]","[-1.6, 1.8, 1.6]",50,Hürel smiles / room continues,Banter ends; eye drift to heater,E01-D031,DRIVER CHUCKLE
+SH08,57,64,1369,1536,"[5.7, -1.3, 1.68]","[3.7, 1.25, 1.6]",75,Dasha close: steam & stillness,Steam catches attention; chair scrapes,,CHAIR SCRAPE; ROOM TONE TAIL
+SH09,64,70,1537,1680,"[0.8, 3.0, 1.8]","[-1.4, 1.8, 1.55]",42,Hürel reaches / sudden contact,"Human reaction, one sudden movement; no slow motion",E01-D032,FABRIC; METAL TRAY; IMPACT
+SH10,70,77,1681,1848,"[-0.5, -3.3, 1.55]","[-1.3, -1.1, 1.5]",68,Ganaa frozen -> shout,"1-beat shock, then raw cry; E01-D033",E01-D033,ROOM NOISE DUCK; FIRST SHOUT
+SH11,77,84,1849,2016,"[3.2, -2.8, 2.2]","[-0.5, 0.65, 1.25]",36,Chairs overturn / cut into next scene,Ganaa grabs a chair; exit line of action established,,CHAIR FALL; FOOTSTEPS; CUT

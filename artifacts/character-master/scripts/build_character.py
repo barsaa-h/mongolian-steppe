@@ -13,6 +13,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 LIBRARY = ROOT / 'assets/sources/mpfb2-2.0.18/mpfb'
 ASSETS = ROOT / 'assets/sources/makehuman-core'
+SCULPT = HERE.parent / 'sculpt'
 sys.path.insert(0, str(HERE))
 from config import validate_config, validate_output_directory, OUTPUT_MARKER
 
@@ -164,8 +165,6 @@ def build(config, destination, *, render=True, eye_asset='high-poly', appearance
     body = HumanService.create_human(macro_detail_dict=macro)
     source_index=body.data.attributes.new('source_vertex','INT','POINT')
     source_index.data.foreach_set('value',list(range(len(body.data.vertices))))
-    for target, weight in config['targets'].items():
-        TargetService.load_target(body, str(LIBRARY / 'data/targets' / (target + '.target.gz')), weight=weight)
     body.name = 'SOURCE.Body | Complete editable topology'
     skin = ASSETS / 'skins' / config['skin'] / (config['skin'] + '.mhmat')
     body.data.materials.clear()
@@ -177,8 +176,15 @@ def build(config, destination, *, render=True, eye_asset='high-poly', appearance
     compiled_targets = recipe_targets(config)
     for path, weight in config['targets'].items():
         compiled_targets[path] = round(min(1, compiled_targets.get(path, 0) + weight), 6)
+    # Each target is loaded exactly once. An earlier second loop loaded config['targets'] again as
+    # '<name>.001' keys, silently doubling every face control and stretching all identities.
     for target, weight in compiled_targets.items():
         TargetService.load_target(body, str(LIBRARY / 'data/targets' / (target + '.target.gz')), weight=weight)
+    # Hand/scripted sculpt layers (base model, then per-character), saved as MakeHuman .target files.
+    for layer, weight in (config.get('sculpt') or {}).items():
+        TargetService.load_target(body, str(SCULPT / (layer + '.target')), weight=weight, name='sculpt-' + layer)
+    doubled = [key.name for key in body.data.shape_keys.key_blocks if re.search(r'\.\d{3}$', key.name)] if body.data.shape_keys else []
+    assert not doubled, f'Targets loaded more than once: {doubled[:5]}'
     rig = HumanService.add_builtin_rig(body, 'default_no_toes')
     rig.name = 'SOURCE.Rig | Refit after source edits'
     bpy.context.view_layer.update()

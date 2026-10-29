@@ -1,5 +1,7 @@
 # Character Master Implementation Plan
 
+> Historical implementation plan/specification. Current source authority, chosen design, Episode 1 status and remaining work are in [Character Master](../../../artifacts/character-master/README.md). Its [jobs](../../../artifacts/character-master/production/JOBS.md) now prioritize the café test; completed boxes here describe the original implementation scope, not finished-shot approval.
+
 **Goal:** Deliver a clean, modular, agent-editable character source with verified
 adult/child and body-build variations.
 

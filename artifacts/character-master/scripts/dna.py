@@ -17,12 +17,12 @@ PALETTES=json.loads((ROOT/'dna/palettes.json').read_text())
 EYE_FIELDS={'color','iris_scale','sclera_tint'}
 EYE_OPTIONAL={'pupil_size','limbal_darkness','veins','catchlight','wetness','lash_density'}
 BROW_FIELDS={'thickness','color','greying'}
-BROW_OPTIONAL={'style','head_thickness','tail_thickness','arch','tail_length','density','thickness_asymmetry'}
+BROW_OPTIONAL={'style','head_thickness','tail_thickness','arch','tail_length','density','thickness_asymmetry','lift'}
 SKIN_FIELDS={'asset','tone','ruddiness','freckles','pimples','look','detail'}
 SKIN_OPTIONAL={'undertone','pores','oiliness','age_lines'}
 BROW_STYLES={'straight','soft','arched','heavy','sparse'}
-EYE_DEFAULTS={'pupil_size':1,'limbal_darkness':.5,'veins':.3,'catchlight':.32,'wetness':.2,'lash_density':0}
-BROW_DEFAULTS={'style':'straight','head_thickness':1,'tail_thickness':1,'arch':0,'tail_length':1,'density':1,'thickness_asymmetry':0}
+EYE_DEFAULTS={'pupil_size':1,'limbal_darkness':.5,'veins':.3,'catchlight':.32,'wetness':.2,'lash_density':.8}
+BROW_DEFAULTS={'style':'straight','head_thickness':1,'tail_thickness':1,'arch':0,'tail_length':1,'density':1,'thickness_asymmetry':0,'lift':.12}
 SKIN_DEFAULTS={'undertone':0,'pores':.35,'oiliness':.16,'age_lines':0}
 
 def resolve_appearance(dna):
@@ -30,7 +30,7 @@ def resolve_appearance(dna):
 
 # Optional low-level recipe fields; ranges mirror the full DNA validation above.
 RECIPE_APPEARANCE_FIELDS={'eyes':EYE_FIELDS|EYE_OPTIONAL,'brows':BROW_FIELDS|BROW_OPTIONAL,'facial_hair':{'style','coverage','greying'},'skin_detail':(SKIN_FIELDS-{'asset'})|SKIN_OPTIONAL,'hair_dna':{'volume','length'}}
-RECIPE_APPEARANCE_RANGES={'eyes':{'iris_scale':(.7,1.3),'pupil_size':(.6,1.4),'limbal_darkness':(0,1),'veins':(0,1),'catchlight':(0,1),'wetness':(0,1),'lash_density':(0,1)},'brows':{'thickness':(.3,1.5),'greying':(0,1),'head_thickness':(.4,1.6),'tail_thickness':(.2,1.4),'arch':(-1,1),'tail_length':(.7,1.3),'density':(0,1),'thickness_asymmetry':(-.25,.25)},'skin_detail':{'tone':(.7,1.3),'ruddiness':(0,1),'detail':(0,.3),'freckles':(0,100),'pimples':(0,30),'undertone':(-1,1),'pores':(0,1),'oiliness':(0,1),'age_lines':(0,1)},'facial_hair':{'coverage':(0,1),'greying':(0,1)},'hair_dna':{'volume':(.7,1.4),'length':(.5,1.5)}}
+RECIPE_APPEARANCE_RANGES={'eyes':{'iris_scale':(.7,1.3),'pupil_size':(.6,1.4),'limbal_darkness':(0,1),'veins':(0,1),'catchlight':(0,1),'wetness':(0,1),'lash_density':(0,1)},'brows':{'thickness':(.3,1.5),'greying':(0,1),'head_thickness':(.4,1.6),'tail_thickness':(.2,1.4),'arch':(-1,1),'tail_length':(.7,1.3),'density':(0,1),'thickness_asymmetry':(-.25,.25),'lift':(0,.3)},'skin_detail':{'tone':(.7,1.3),'ruddiness':(0,1),'detail':(0,.3),'freckles':(0,100),'pimples':(0,30),'undertone':(-1,1),'pores':(0,1),'oiliness':(0,1),'age_lines':(0,1)},'facial_hair':{'coverage':(0,1),'greying':(0,1)},'hair_dna':{'volume':(.7,1.4),'length':(.5,1.5)}}
 RECIPE_APPEARANCE_INTS={'skin_detail':{'freckles','pimples'}}
 RECIPE_APPEARANCE_ENUMS={'eyes':{'color':['brown','brownlight','blue','bluegreen','grey','green']},'brows':{'style':BROW_STYLES},'skin_detail':{'look':['adult','young','toddler','weathered','tired','elder']},'facial_hair':{'style':['none','stubble']}}
 RECIPE_APPEARANCE_COLORS={'eyes':{'sclera_tint'},'brows':{'color'}}
@@ -92,7 +92,10 @@ def fingerprint(dna):
 
 def validate_dna(dna):
     expected={'schema_version','id','name','episode','category','script_age','source','base','sex','ancestry_preset','casting','seed','face','asymmetry','age','body','skin','hair','brows','eyes','facial_hair','clothing','signature_traits','face_design','states','review'}
-    if not isinstance(dna,dict) or set(dna)!=expected:raise ValueError(f'DNA fields must be exactly {sorted(expected)}')
+    if not isinstance(dna,dict) or not expected<=set(dna)<=expected|{'sculpt'}:raise ValueError(f'DNA fields must be exactly {sorted(expected)} plus optional sculpt')
+    sculpt=dna.get('sculpt',{})
+    if not isinstance(sculpt,dict):raise ValueError('sculpt must map layer names to weights')
+    for layer,value in sculpt.items():finite(value,0,1,'sculpt.'+layer)
     if dna['schema_version']!=1 or not isinstance(dna['id'],str) or not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,63}',dna['id']):raise ValueError('Invalid DNA version/id')
     if dna['ancestry_preset'] not in PALETTES or dna['sex'] not in ['male','female']:raise ValueError('Unknown art palette or sex baseline')
     if set(dna['face'])!=set(FACE_CONTROLS):raise ValueError('A full face vector with all named controls is required')
@@ -117,7 +120,7 @@ def validate_dna(dna):
     for section,required,optional in [('skin',SKIN_FIELDS,SKIN_OPTIONAL),('brows',BROW_FIELDS,BROW_OPTIONAL),('eyes',EYE_FIELDS,EYE_OPTIONAL)]:
         found=set(dna[section])
         if not required<=found<=required|optional:raise ValueError('Unknown or incomplete '+section+' fields')
-    for section,name,lo,hi in [('skin','tone',.7,1.3),('skin','ruddiness',0,1),('skin','detail',0,.3),('skin','freckles',0,100),('skin','pimples',0,30),('skin','undertone',-1,1),('skin','pores',0,1),('skin','oiliness',0,1),('skin','age_lines',0,1),('hair','greying',0,1),('hair','length',.5,1.5),('hair','volume',.7,1.4),('brows','thickness',.3,1.5),('brows','greying',0,1),('brows','head_thickness',.4,1.6),('brows','tail_thickness',.2,1.4),('brows','arch',-1,1),('brows','tail_length',.7,1.3),('brows','density',0,1),('brows','thickness_asymmetry',-.25,.25),('eyes','iris_scale',.7,1.3),('eyes','pupil_size',.6,1.4),('eyes','limbal_darkness',0,1),('eyes','veins',0,1),('eyes','catchlight',0,1),('eyes','wetness',0,1),('eyes','lash_density',0,1),('facial_hair','coverage',0,1),('facial_hair','greying',0,1)]:
+    for section,name,lo,hi in [('skin','tone',.7,1.3),('skin','ruddiness',0,1),('skin','detail',0,.3),('skin','freckles',0,100),('skin','pimples',0,30),('skin','undertone',-1,1),('skin','pores',0,1),('skin','oiliness',0,1),('skin','age_lines',0,1),('hair','greying',0,1),('hair','length',.5,1.5),('hair','volume',.7,1.4),('brows','thickness',.3,1.5),('brows','greying',0,1),('brows','head_thickness',.4,1.6),('brows','tail_thickness',.2,1.4),('brows','arch',-1,1),('brows','tail_length',.7,1.3),('brows','density',0,1),('brows','thickness_asymmetry',-.25,.25),('brows','lift',0,.3),('eyes','iris_scale',.7,1.3),('eyes','pupil_size',.6,1.4),('eyes','limbal_darkness',0,1),('eyes','veins',0,1),('eyes','catchlight',0,1),('eyes','wetness',0,1),('eyes','lash_density',0,1),('facial_hair','coverage',0,1),('facial_hair','greying',0,1)]:
         if name in dna[section]:finite(dna[section][name],lo,hi,section+'.'+name)
     if 'style' in dna['brows'] and dna['brows']['style'] not in BROW_STYLES:raise ValueError('Unknown brow style')
     if dna['eyes']['color'] not in ['brown','brownlight','blue','bluegreen','grey','green']:raise ValueError('Unknown eye asset')
@@ -150,6 +153,7 @@ def compile_dna(dna):
     body={k:dna['body'][k] for k in ['weight','muscle','proportions','height']}
     body.update(gender=1 if dna['sex']=='male' else 0,age=age_value(dna['age']['years']),race=PALETTES[dna['ancestry_preset']]['macro'].copy())
     base={'name':dna['id'],'height_m':dna['body']['height_m'],'body':body,'skin':dna['skin']['asset'],'hair':dna['hair']['asset'],'outfit':dna['clothing']['asset'],'shoes':dna['clothing']['shoes'],'targets':targets}
+    if dna.get('sculpt'):base['sculpt']=dict(dna['sculpt'])
     validate_config(base,REPO/'assets/sources/makehuman-core',REPO/'assets/sources/mpfb2-2.0.18/mpfb/data/targets')
     return {'id':dna['id'],'name':dna['name'],'episode':dna['episode'],'category':dna['category'],'scriptAge':dna['script_age'],'ageNote':dna['source']['facts'],'casting':dna['casting'],'wardrobe':dna['clothing']['wardrobe'],'hairstyle':dna['hair']['style'],'skinLook':dna['skin']['look'],'pimples':dna['skin']['pimples'],'topColor':dna['clothing']['top_color'],'bottomColor':dna['clothing']['bottom_color'],'hairColor':dna['hair']['color'],'accentColor':dna['clothing']['accent_color'],'base':base,'states':dna['states'],'faceDesign':dna['face_design'],'dnaHash':fingerprint(dna)}
 
@@ -199,7 +203,8 @@ def generate_dna(template,*,seed,id,existing=()):
         for name,c in FACE_CONTROLS.items():
             center=palette['face_center'].get(name,template['face'][name]*.35)
             result['face'][name]=round(max(-.7,min(.7,rng.gauss(center,palette['spread'][c['group']]))),3) if c['negative'] else 0
-        shape=rng.choice([n for n,c in FACE_CONTROLS.items() if not c['negative']]);result['face'][shape]=round(rng.uniform(.35,.8),3)
+        # Moderate head shape; triangular/diamond/heart at high weight read as a pointed skull.
+        shape=rng.choice([n for n,c in FACE_CONTROLS.items() if not c['negative'] and n not in ('head_triangular','head_diamond','head_heart')]);result['face'][shape]=round(rng.uniform(.2,.5),3)
         for name in result['asymmetry']:result['asymmetry'][name]=round(rng.uniform(-.035,.035),3)
         strongest=sorted(result['face'],key=lambda n:abs(result['face'][n]),reverse=True)
         result['signature_traits']=[f'{n.replace("_"," ")} ({result["face"][n]:+.2f})' for n in strongest[:3]]

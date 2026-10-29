@@ -1,0 +1,12 @@
+﻿id,route_segment,surface,distance_km,planning_time,grounding
+R01,Ulan-Ude → Altanbulag border,Paved international road,235,4–6 h + border formalities; scripted timing requires customs plan,"External reference, not invented"
+R02,Border → Hürel café,Main highway,23,25–40 min on late-1990s truck route,Fictional estimate
+R03,Hürel café → Upper Junction,Main highway backtrack,2,4–8 min plus salvage/loading,Fictional estimate
+R04,Upper Junction → Naran north entrance,Main highway,27,35–55 min,Fictional estimate
+R05,Naran → West cordon,West/south town road,13,25–40 min by vehicle; longer by foot,Fictional estimate
+R06,West cordon → Failed South Post,Agricultural road,38,1.5–3 h if passable,Fictional estimate
+R07,Upper Junction → Old Repeater,Gravel service road,18,45–80 min under dry conditions,Fictional estimate
+R08,Old Repeater → Lower Bridge,Gravel track and valley switchbacks,29,1.5–3 h before damage,Fictional estimate
+R09,Lower Bridge → Warm Cut,Narrow culvert / warm industrial cut,6,20–50 min with obstruction,Fictional estimate
+R10,Warm Cut → Cold Station,Upper grade and exposed traverse,20,"1–3 h by working vehicle, longer/impassable in blizzard",Fictional estimate
+R11,Failed South Post → Lower Bridge,Agricultural bypass and old track,64,One long day or more with diversions,Fictional estimate

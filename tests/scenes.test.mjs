@@ -18,14 +18,15 @@ const film = await import("../src/filmTimeline.js");
 
 test("the registry keeps the approved excerpt and every staging set", () => {
   assert.deepEqual(Object.keys(SCENES).sort(), [
-    "ep1-apartment", "ep1-truckstop", "ep1-yard", "ep10-dzud", "ep2-nursery",
-    "ep3-governor", "ep4-school", "ep5-cordon", "ep6-gorge",
-    "hour-five", "kit-preview",
+    "ep1-apartment", "ep1-border-road", "ep1-truckstop", "ep1-yard", "ep10-dzud", "ep2-nursery",
+    "ep3-governor", "ep4-school", "ep5-cordon", "ep6-gorge", "ep7-boilerhouse",
+    "ep8-truckstop", "ep9-cabin", "hour-five", "kit-preview",
   ]);
   assert.equal(getScene("hour-five").duration, film.DURATION);
   assert.equal(getScene("kit-preview").duration, 14);
   assert.equal(getScene("ep2-nursery").duration, 24);
   assert.equal(getScene("ep1-yard").duration, 10);
+  assert.equal(getScene("ep1-border-road").duration, 15);
   assert.equal(getScene("ep10-dzud").duration, 16);
   assert.throws(() => getScene("unknown"), /Unknown scene/);
 });
@@ -61,7 +62,8 @@ test("shots in every registered scene form one continuous edit", () => {
 
 test("the preview scene states stay bounded and subtitle gaps stay clean", () => {
   for (const id of ["kit-preview", "ep2-nursery", "ep1-yard", "ep1-truckstop",
-    "ep1-apartment", "ep3-governor", "ep4-school", "ep5-cordon", "ep6-gorge", "ep10-dzud"]) {
+    "ep1-apartment", "ep1-border-road", "ep3-governor", "ep4-school", "ep5-cordon",
+    "ep6-gorge", "ep7-boilerhouse", "ep8-truckstop", "ep9-cabin", "ep10-dzud"]) {
     const scene = getScene(id);
     for (let t = 0; t <= scene.duration; t += 0.25) {
       const state = scene.state(t);

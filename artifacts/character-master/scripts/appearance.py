@@ -49,6 +49,10 @@ def finish_brows(look, rig):
     brows = bpy.data.objects['Eyebrows']
     settings = look['brows']
     deform_brows(brows, settings)
+    # The fitted brow card sits below the brow bone; lift it (in eye-distance units) and re-seat it on the skin.
+    span = (rig.data.bones['eye.L'].head_local - rig.data.bones['eye.R'].head_local).length
+    for vertex in brows.data.vertices:
+        vertex.co.z += span * settings['lift']
     seat_brows(brows, bpy.data.objects['Body.Skin'], rig)
     material = brows.data.materials[0]
     tree = material.node_tree
@@ -61,18 +65,17 @@ def finish_brows(look, rig):
         for link in list(shader.inputs[socket].links):
             tree.links.remove(link)
     shade = rgb(settings['color'])
-    brightest = max(shade) or 1
-    tint = tree.nodes.new('ShaderNodeMixRGB')
-    tint.blend_type = 'MULTIPLY'
-    tint.inputs[0].default_value = 1
-    tint.inputs[2].default_value = (*(channel / brightest for channel in shade), 1)
-    tree.links.new(texture.outputs['Color'], tint.inputs[1])
+    # The brow color is used as is; the painted texture supplies hair-strand alpha. (Dividing by the
+    # brightest channel kept only the hue, so every brow rendered mid-brown whatever its DNA color.)
+    tint = tree.nodes.new('ShaderNodeRGB')
+    tint.outputs[0].default_value = (*shade, 1)
     color = tint.outputs[0]
     if settings['greying']:
         grey = tree.nodes.new('ShaderNodeMixRGB')
         grey.blend_type = 'MIX'
-        grey.inputs[0].default_value = settings['greying']
-        grey.inputs[2].default_value = (*rgb('#aaaaaa'), 1)
+        # Grey brow hair is warm and partial; a cool #aaa mix read as painted blue-grey on darker skin.
+        grey.inputs[0].default_value = settings['greying'] * .7
+        grey.inputs[2].default_value = (*rgb('#8f877d'), 1)
         tree.links.new(color, grey.inputs[1])
         color = grey.outputs[0]
     tree.links.new(color, shader.inputs['Base Color'])
@@ -95,7 +98,8 @@ def deform_brows(brows, settings):
         mid_z = sum(vertex.co.z for vertex in group) / len(group)
         for vertex in group:
             along = abs(vertex.co.x - inner.co.x) / span
-            thickness = settings['thickness'] * ((1 - along) * settings['head_thickness'] + along * settings['tail_thickness'])
+            # The fitted card is thin; 1.45 brings DNA thickness 1.0 to a believable adult brow height.
+            thickness = 1.45 * settings['thickness'] * ((1 - along) * settings['head_thickness'] + along * settings['tail_thickness'])
             thickness *= 1 + settings['thickness_asymmetry'] * side
             vertex.co.z = mid_z + (vertex.co.z - mid_z) * thickness
             vertex.co.z += math.sin(along * math.pi) * settings['arch'] * span * .18
@@ -113,7 +117,7 @@ def seat_brows(brows, body, rig):
         if hit is None:
             continue
         gap = (hit - world).length
-        if .0004 < gap < .008:
+        if .0004 < gap < .025:
             vertex.co = inverse @ (hit + normal * .0012)
 
 def finish_eyes(look, rig, collection):
@@ -135,6 +139,7 @@ def finish_eyes(look, rig, collection):
     tint.inputs[2].default_value = (*rgb(settings['sclera_tint']), 1)
     tree.links.new(texture.outputs['Color'], tint.inputs[1])
     tree.links.new(tint.outputs[0], shader.inputs['Base Color'])
+    fill_iris_pit(eyes)
     aim_irises(eyes, settings['iris_scale'])
     normal_path = TEXTURES / 'eyes' / 'normal.png'
     if normal_path.is_file():
@@ -150,9 +155,11 @@ def finish_eyes(look, rig, collection):
     shader.inputs['Coat Weight'].default_value = 0
     stock = bpy.data.objects.get('Eyelashes')
     if stock:
+        # The stock cards look wrong, but they are fitted exactly on the lid edge: keep that line.
+        lines = lid_lines(stock, bpy.data.objects['Body.Skin'], rig)
         bpy.data.objects.remove(stock, do_unlink=True)
-    if settings['lash_density'] > .05:
-        add_lashes(rig, collection, settings['lash_density'])
+        if settings['lash_density'] > .05 and lines:
+            add_lashes(rig, collection, settings['lash_density'], lines)
     eyes['eye_finish'] = 'Painted iris, soft catchlight, cornea shell, no sharp coat'
 
 def prepared_eye(settings):
@@ -183,7 +190,7 @@ def prepared_eye(settings):
         if red + green + blue > 420 and abs(red - green) < 40:
             break
         radius += 1
-    pupil = radius * .2 * settings['pupil_size']
+    pupil = radius * .38 * settings['pupil_size']
     limbal = settings['limbal_darkness']
     for y in range(height):
         for x in range(width):
@@ -192,7 +199,7 @@ def prepared_eye(settings):
             red, green, blue, alpha = pixels[x, y]
             if distance < pupil:
                 pixels[x, y] = (8, 6, 6, 255)
-            elif distance < radius * .22 * 1.35 and settings['pupil_size'] < 1 and red + green + blue < 80:
+            elif distance < radius * .4 * 1.35 and settings['pupil_size'] < 1 and red + green + blue < 80:
                 pixels[x, y] = (78, 46, 28, 255)
             elif radius * .75 < distance < radius:
                 shade = (distance - radius * .75) / (radius * .25) * limbal
@@ -207,6 +214,31 @@ def prepared_eye(settings):
     image.save(destination)
     return destination
 
+def fill_iris_pit(eyes):
+    """Push the recessed iris dish out onto the eyeball sphere.
+
+    The stock eye models the iris as a pit meant to sit under a transparent cornea, which is not rendered.
+    The pit's back-facing walls kept stock UVs and showed a grey ghost iris beside the painted one.
+    """
+    from statistics import median
+    for side in (1, -1):
+        vertices = [v for v in eyes.data.vertices if v.co.x * side > 0]
+        if not vertices:
+            continue
+        center = sum((v.co for v in vertices), Vector()) / len(vertices)
+        radius = median((v.co - center).length for v in vertices)
+        front = min(v.co.y for v in vertices)
+        for vertex in vertices:
+            offset = vertex.co - center
+            if offset.y < 0 and offset.length < radius * .985:
+                vertex.co = center + offset.normalized() * radius
+        # Filling the pit moves the front of the eye forward; set it back so it stays behind the lids.
+        push = front - min(v.co.y for v in vertices)
+        for vertex in vertices:
+            vertex.co.y += push
+    eyes.data.update()
+
+
 def aim_irises(eyes, scale):
     """The fitted eye's front faces do not all land on the iris. Stamp the iris on the faces that look at the camera."""
     mesh = eyes.data
@@ -214,11 +246,16 @@ def aim_irises(eyes, scale):
     if layer is None:
         return
     view = Vector((0, -1, 0))
-    spread = .42 / max(.7, scale)
+    # The painted iris has a 0.135 UV radius. A real iris spans ~28° of the eyeball (normal ~0.47 off-axis);
+    # the old .42 spread drew it at half that size and left a ring of white around every iris. Slightly
+    # generous (~31°) so the upper lid rests on the iris in a relaxed gaze.
+    spread = .26 / max(.7, scale)
     for polygon in mesh.polygons:
         for loop_index, vertex_index in zip(polygon.loop_indices, polygon.vertices):
             vertex = mesh.vertices[vertex_index]
-            if vertex.normal.dot(view) < .15:
+            # Re-map the whole visible half: faces angled toward the nose kept the stock UVs, which land on
+            # the texture's iris and showed a pale ghost iris in the inner corner.
+            if vertex.normal.dot(view) < -.2:
                 continue
             center = Vector((0.295, 0.291)) if vertex.co.x >= 0 else Vector((0.698, 0.700))
             layer.data[loop_index].uv = center + Vector((vertex.normal.x, vertex.normal.z)) * spread
@@ -288,45 +325,124 @@ def add_cornea(eyes, collection, catchlight):
     material.node_tree.links.new(node.outputs['Color'], shader.inputs['Base Color'])
     material.node_tree.links.new(node.outputs['Alpha'], shader.inputs['Alpha'])
 
-def add_lashes(rig, collection, density):
-    if bpy.data.objects.get('Eyelashes.Fine'):
-        return
-    body = bpy.data.objects['Body.Skin']
-    material = bpy.data.materials.new('Eyelashes | Fine')
-    material.use_nodes = True
-    material.surface_render_method = 'DITHERED'
-    shader = material.node_tree.nodes.get('Principled BSDF')
-    shader.inputs['Base Color'].default_value = (*rgb('#241c18'), 1)
-    shader.inputs['Alpha'].default_value = .35 + .5 * density
-    shader.inputs['Roughness'].default_value = .8
-    for side, bone_name in ((-1, 'eye.R'), (1, 'eye.L')):
-        bone = rig.data.bones[bone_name].head_local
-        chosen = []
-        for vertex in body.data.vertices:
-            point = vertex.co
-            if (point - bone).length > .018 or point.z < bone.z or point.y > bone.y:
+def lid_lines(stock, body, rig, bins=14):
+    """Upper and lower lid lines per eye, from the roots of MakeHuman's fitted stock lash mesh.
+
+    The skin has no open eye hole to trace, but the stock lashes are fitted exactly on the lid edge.
+    Returns body-local points, inner corner first.
+    """
+    bpy.context.view_layer.update()
+    to_body = body.matrix_world.inverted()
+    surface = BVHTree.FromPolygons([v.co for v in body.data.vertices], [tuple(p.vertices) for p in body.data.polygons])
+    roots = []
+    for vertex in stock.data.vertices:
+        point = to_body @ (stock.matrix_world @ vertex.co)
+        nearest = surface.find_nearest(point)
+        if nearest[0] is not None and nearest[3] < .0012:
+            roots.append(point)
+    lines = {}
+    for bone_name in ('eye.L', 'eye.R'):
+        center = to_body @ (rig.matrix_world @ rig.data.bones[bone_name].head_local)
+        side = [p for p in roots if p.x * center.x > 0 and (p - center).length < .03]
+        inward = -1 if center.x > 0 else 1
+        for lid, chosen in (('Upper', [p for p in side if p.z >= center.z]), ('Lower', [p for p in side if p.z < center.z])):
+            if len(chosen) < 4:
                 continue
-            chosen.append(point.copy())
-        if len(chosen) < 6:
-            continue
-        chosen.sort(key=lambda point: point.x)
-        step = max(1, len(chosen) // 10)
-        points = chosen[::step][:10]
-        vertices = []
-        for point in points:
-            vertices.append((point.x, point.y - .001, point.z))
-            vertices.append((point.x, point.y - .001, point.z + .004 * density))
-        faces = [(index, index + 1, index + 3, index + 2) for index in range(0, len(vertices) - 2, 2)]
-        mesh = bpy.data.meshes.new(f'Eyelashes.Fine.{side}')
-        mesh.from_pydata(vertices, [], faces)
-        mesh.materials.append(material)
-        obj = bpy.data.objects.new('Eyelashes.Fine', mesh)
-        obj['role'] = 'Eyelashes.Fine'
-        collection.objects.link(obj)
-        group = obj.vertex_groups.new(name='head')
-        group.add(list(range(len(mesh.vertices))), 1, 'REPLACE')
-        modifier = obj.modifiers.new('Character skin', 'ARMATURE')
-        modifier.object = rig
+            chosen.sort(key=lambda p: (p.x - center.x) * -inward)
+            low, high = (chosen[0].x - center.x) * -inward, (chosen[-1].x - center.x) * -inward
+            buckets = [[] for _ in range(bins)]
+            for p in chosen:
+                t = ((p.x - center.x) * -inward - low) / max(1e-6, high - low)
+                buckets[min(bins - 1, int(t * bins))].append(p)
+            line = [sum(b, Vector()) / len(b) for b in buckets if b]
+            lines[(bone_name, lid)] = {'center': center, 'points': line}
+    return lines
+
+
+def strip(name, roots, tips, material, collection, rig):
+    vertices, faces, uvs = [], [], []
+    count = len(roots)
+    for root, tip in zip(roots, tips):
+        vertices += [root, tip]
+    for i in range(count - 1):
+        faces.append((2 * i, 2 * i + 2, 2 * i + 3, 2 * i + 1))
+    mesh = bpy.data.meshes.new(name)
+    mesh.from_pydata(vertices, [], faces)
+    layer = mesh.uv_layers.new()
+    for polygon in mesh.polygons:
+        for loop_index, vertex_index in zip(polygon.loop_indices, polygon.vertices):
+            layer.data[loop_index].uv = ((vertex_index // 2) / max(1, count - 1), vertex_index % 2)
+    for polygon in mesh.polygons:
+        polygon.use_smooth = True
+    mesh.materials.append(material)
+    obj = bpy.data.objects.new(name, mesh)
+    obj['role'] = 'Eyelashes'
+    collection.objects.link(obj)
+    body = bpy.data.objects['Body.Skin']
+    obj.parent = body.parent
+    obj.matrix_parent_inverse = body.matrix_parent_inverse.copy()
+    obj.matrix_basis = body.matrix_basis.copy()
+    group = obj.vertex_groups.new(name='head')
+    group.add(list(range(len(vertices))), 1, 'REPLACE')
+    obj.modifiers.new('Character skin', 'ARMATURE').object = rig
+    return obj
+
+
+def add_lashes(rig, collection, density, lines):
+    """Lash lines, lid wet line and inner-corner caruncle on the fitted lid lines.
+
+    Named Details.* so the expression pass gives them the same blink and speech shapes as the lids.
+    """
+    lashes = bpy.data.materials.new('Eyelashes | Lash line')
+    lashes.use_nodes = True
+    lashes.surface_render_method = 'DITHERED'
+    tree = lashes.node_tree
+    shader = tree.nodes.get('Principled BSDF')
+    shader.inputs['Base Color'].default_value = (*rgb('#120e0c'), 1)
+    shader.inputs['Roughness'].default_value = .55
+    texture = texture_node(tree, pack_image(TEXTURES / 'eyes' / 'lashes.png'))
+    fade = tree.nodes.new('ShaderNodeMath')
+    fade.operation = 'MULTIPLY'
+    fade.inputs[1].default_value = min(1, .45 + .6 * density)
+    tree.links.new(texture.outputs['Alpha'], fade.inputs[0])
+    tree.links.new(fade.outputs[0], shader.inputs['Alpha'])
+    wet = bpy.data.materials.new('Eyes | Wet line and caruncle')
+    wet.use_nodes = True
+    wet_shader = wet.node_tree.nodes.get('Principled BSDF')
+    wet_shader.inputs['Base Color'].default_value = (*rgb('#8e5650'), 1)
+    wet_shader.inputs['Roughness'].default_value = .45
+    wet_shader.inputs['Specular IOR Level'].default_value = .25
+    for (side, lid), line in lines.items():
+        center, points = line['center'], line['points']
+        span = (points[-1] - points[0]).length
+        upper = lid == 'Upper'
+        length, lift, strength = (.22, .55, density) if upper else (.08, -.7, density * .45)
+        roots, tips, inner = [], [], []
+        for n, point in enumerate(points):
+            t = n / (len(points) - 1)
+            outward = point - center
+            outward.y = 0
+            outward = outward.normalized() if outward.length else Vector((0, 0, 1))
+            # Short at the inner corner, longest past the middle of the lid.
+            taper = math.sin(math.pi * min(1, .15 + .85 * t)) ** .5 * (.85 + .3 * t)
+            direction = (Vector((0, -1, lift)) + outward * .35).normalized()
+            root = point + Vector((0, -.0003, 0))
+            roots.append(root)
+            tips.append(root + direction * span * length * taper)
+            inner.append(point + (center - point).normalized() * span * .022 + Vector((0, .0004, 0)))
+        if strength >= .05:
+            strip(f'Details.Lashes.{side}.{lid}', roots, tips, lashes, collection, rig)
+        # Wet line: a thin glossy strip from the lid edge toward the eyeball.
+        strip(f'Details.WetLine.{side}.{lid}', points, inner, wet, collection, rig)['role'] = 'Eyes.WetLine'
+        if upper:
+            # Caruncle: a small pink wedge filling the inner corner.
+            corner = points[0]
+            toward = center - corner
+            toward.y = 0
+            tip = corner + toward.normalized() * span * .06 + Vector((0, .0012, 0))
+            up, down = corner + Vector((0, .0004, span * .035)), corner + Vector((0, .0004, -span * .035))
+            strip(f'Details.Caruncle.{side}', [up, corner, down], [tip, tip, tip], wet, collection, rig)['role'] = 'Eyes.Caruncle'
+
 
 def add_skin(dna, look, rig, collection, bake):
     source = next(obj for obj in bpy.data.objects if obj.name.startswith('SOURCE.Body'))
@@ -365,13 +481,17 @@ def add_skin(dna, look, rig, collection, bake):
         # Fine grain on a geometric beard mask: the head mask alone would speckle the whole skull.
         mask_path = beard_mask(source, rig)
         beard_area = mask_image(nodes, links, uv, mask_path) if mask_path else head
-        grain = nodes.new('ShaderNodeTexNoise')
-        grain.inputs['Scale'].default_value = 150
-        grain.inputs['Detail'].default_value = 2
-        links.new(uv.outputs['UV'], grain.inputs['Vector'])
-        dots = math_node(nodes, links, 'GREATER_THAN', grain.outputs['Fac'], .55)
         area = beard_area if beard_area is not None else head
-        color = mix_color(nodes, links, color, rgb(grey_color('#4c3d32', beard['greying'])), scale_socket(nodes, links, scale_socket(nodes, links, dots, area), beard['coverage'] * .55), 'MIX')
+        # Beard shadow: a soft darkening of the whole beard area (stubble reads as shadow at shot distance).
+        color = mix_color(nodes, links, color, rgb('#6b6560'), scale_socket(nodes, links, area, beard['coverage'] * .55), 'MULTIPLY')
+        # Hair dots: fine enough to be individual whiskers. The old scale-150 noise made centimetre blotches,
+        # and mixing toward grey left pale patches on darker skin; grey stubble stays darker than skin.
+        grain = nodes.new('ShaderNodeTexNoise')
+        grain.inputs['Scale'].default_value = 1600
+        grain.inputs['Detail'].default_value = 0
+        links.new(uv.outputs['UV'], grain.inputs['Vector'])
+        dots = math_node(nodes, links, 'GREATER_THAN', grain.outputs['Fac'], .58)
+        color = mix_color(nodes, links, color, rgb(grey_color('#1c1714', beard['greying'] * .6)), scale_socket(nodes, links, scale_socket(nodes, links, dots, area), beard['coverage'] * .7), 'MIX')
     links.new(color, shader.inputs['Base Color'])
     normal_path = TEXTURES / 'skin' / f"{settings['asset']}_normal.png"
     if normal_path.is_file():

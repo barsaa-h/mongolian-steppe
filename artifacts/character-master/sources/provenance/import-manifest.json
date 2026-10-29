@@ -1,0 +1,263 @@
+{
+  "source_url": "https://chatgpt.com/share/6ae1cba6-19d0-83ec-b2e6-028640ff7590",
+  "retrieved_on": "2026-10-28",
+  "conversation_messages_in_source": 456,
+  "readable_transcript": "user messages and final assistant responses only; duplicates preserved; no private reasoning or tool transcript",
+  "download_status": "Shared attachment download links did not produce a file; recovered source literals and reviewed final text patches from shared conversation",
+  "original_local_files": [
+    "/home/barsaa/Downloads/khaniad-act1-v2.1-production-direction.md",
+    "/home/barsaa/Downloads/NARAN_PRODUCTION_READINESS_PLAN_v1.1.md"
+  ],
+  "recovery_methods": {
+    "story": "season v3 and audit recovered from literal source plus final recorded text patches; production script copied byte-for-byte from local download; 238-row cue CSV regenerated from original script and recorded cue intentions",
+    "world": "literal bible/README/builder recovered; final recorded builder fixes applied; maps, CSV and GLB regenerated locally",
+    "planning": "plan and README recovered; plan verified byte-identical to local download; original 44 task rows recovered",
+    "cafe": "literal builders/docs recovered and final recorded fixes applied; GLB, diagrams, shot manifest and tables regenerated; 11 lines selected from recovered source cue sheet"
+  },
+  "local_adaptations": [
+    "cafe/validate_pack.py: replaces original /mnt/data cue-sheet path with sibling story path",
+    "world/docs source snapshots link to the one current recovered story copy"
+  ],
+  "not_done": [
+    "Original attachment binaries not downloaded or byte-compared",
+    "Blender cafe builder not executed",
+    "No character rebuilt, identity changed or shot approved",
+    "No map or character runtime assets replaced"
+  ],
+  "generation_environment": {
+    "python": "3.14 in temporary /tmp/khaniad-recovery-env; no project dependencies changed",
+    "trimesh": "5.2.0",
+    "matplotlib": "3.11.2",
+    "scipy": "1.18.1"
+  },
+  "files": [
+    {
+      "path": "story/khaniad-act1-v2.1-production-direction.md",
+      "bytes": 113697,
+      "sha256": "c576451f1f11820c9e0772aea8abd4db0fe851ba46f80c89b78d7b8ee38e451a",
+      "method": "original_local_download"
+    },
+    {
+      "path": "story/khaniad-season1-v3-ten-episode-story-bible.md",
+      "bytes": 57600,
+      "sha256": "258422c8953ca4d64ff2bda086ee36dc532b5eeec2d3b8f462215888e197e3ee",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "story/khaniad-v2.1-vo-line-cue-sheet.csv",
+      "bytes": 69033,
+      "sha256": "0c0f4041fa48497c419a60eeb2804e347cbc10ac527671fbec44f8cbfd0731eb",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "story/khaniad-v3-logic-audit-and-story-changes.md",
+      "bytes": 9375,
+      "sha256": "69d2b70a3a2c3644d82dd0cfe92566cb95d14451d502b480a9ffca157540b515",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "world/3d/naran_town_blockout_v1.glb",
+      "bytes": 52784,
+      "sha256": "2297e38ba796923e8ad202bf9c1ec2f368d1724a41c5872ee0cdccdca3932d0e",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/NARAN_WORLD_BIBLE_v1.0.md",
+      "bytes": 46017,
+      "sha256": "3fc65ba82cbd10e7df42712a35181ba013386c6b812a4ae16b850220a7b67e24",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "world/README_START_HERE.md",
+      "bytes": 2305,
+      "sha256": "4fac47d0c2fb87247838b8a6c7a38104c0576860083ac0369823247cb61d73bc",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "world/build_world_assets.py",
+      "bytes": 20196,
+      "sha256": "117abf418cc907a1168d7bfcf639d7f30a5f5b1e3d4f337b7bf982a2d477c4ba",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "world/data/asset_inventory.csv",
+      "bytes": 4267,
+      "sha256": "132468bf06ee7c6d1f271092541c3e0ef1aaa666f8723f44e1f944585277fa3d",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/data/naran_locations.csv",
+      "bytes": 2106,
+      "sha256": "12bada886e37b93099a68b2435aac1adf3cea8c4145d1d7e5a00d0c2ab7e4b62",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/data/naran_scene_manifest.json",
+      "bytes": 2233,
+      "sha256": "4a37050e2d5e93d6b452414aad0c24a3079eb2d830a0298fda97d50af5170f8c",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/data/regional_routes.csv",
+      "bytes": 1375,
+      "sha256": "7c3995ae0fdd3f42d7aaea1b066e75a8a3d2e08e6d0620f43e881116049b3e2d",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/docs/continuity_logic_v3_reference.md",
+      "bytes": 9375,
+      "sha256": "69d2b70a3a2c3644d82dd0cfe92566cb95d14451d502b480a9ffca157540b515",
+      "method": "source_shortcut"
+    },
+    {
+      "path": "world/docs/episode1_production_direction_v2.1_reference.md",
+      "bytes": 113697,
+      "sha256": "c576451f1f11820c9e0772aea8abd4db0fe851ba46f80c89b78d7b8ee38e451a",
+      "method": "source_shortcut"
+    },
+    {
+      "path": "world/docs/season1_story_bible_v3_reference.md",
+      "bytes": 57600,
+      "sha256": "258422c8953ca4d64ff2bda086ee36dc532b5eeec2d3b8f462215888e197e3ee",
+      "method": "source_shortcut"
+    },
+    {
+      "path": "world/maps/01_region_story_map.png",
+      "bytes": 193873,
+      "sha256": "8fe1e05ff1c8196386ede1e8226d0d53fca1421fdd7879c66ef144da0ce8b0b7",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/maps/01_region_story_map.svg",
+      "bytes": 21407,
+      "sha256": "d04e93269e6e68aef463ea3558fd8721d97876eeb9c32dd72bfcfa6e2f103064",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/maps/02_naran_town_plan.png",
+      "bytes": 234847,
+      "sha256": "50828ebc5bdbeac9cc4aaf21dc198c16c3aa292785b8f9071eba4d2adb0fe627",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/maps/02_naran_town_plan.svg",
+      "bytes": 21062,
+      "sha256": "aa05f238f4a258cb76766a4a7c1de68abf60ca4944cf3823b39967fd109bbf94",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/maps/03_hospital_escape_study.png",
+      "bytes": 145520,
+      "sha256": "48e57c119b3a074febd3f155921b3c5c3c5780aed7918f626cafcefd30ba6842",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "world/maps/03_hospital_escape_study.svg",
+      "bytes": 10556,
+      "sha256": "50f0dbeb8805f05ed8e1580e217bb17c104b74d0b3a29ca8790fcd39d0545f09",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "planning/NARAN_PRODUCTION_BACKLOG_v1.1.csv",
+      "bytes": 7503,
+      "sha256": "d54de1500cf567824fd0f6798cd995cd18ea0046e1c2c8282ed9d7ceb2f53deb",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "planning/NARAN_PRODUCTION_READINESS_PLAN_v1.1.md",
+      "bytes": 19529,
+      "sha256": "068fcc823b9574835fe94c65e101dfc0c6bc8a5ed6e5e529efbc191dad3257b2",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "planning/README.md",
+      "bytes": 823,
+      "sha256": "8c1aabf0e5c52fc429429e6686ab7c73085d7957f60446daeb81edc7cc3128c3",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "cafe/3d/hurel_cafe_graybox_v1.glb",
+      "bytes": 47192,
+      "sha256": "628238cfd8cbd3a10c6272cf7df07829a59a455f1389bffe676968e63a989a9b",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "cafe/README_START_HERE.md",
+      "bytes": 4322,
+      "sha256": "af0a3a88851e6a31e733e28952a08a910470ab64626e719d268febb18260d74b",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "cafe/blender/build_hurel_cafe_animatic.py",
+      "bytes": 6493,
+      "sha256": "bbb58a1bae4d31ce708391d35074a94f6af0321b08372ed4334ca5ac9cfe2c98",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "cafe/build_cafe_pack.py",
+      "bytes": 13843,
+      "sha256": "bae237205f1e0773c8d8384aebf30ea156868cb748b935c3a02b785a57755b1d",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "cafe/data/recording_and_dialogue_cues.csv",
+      "bytes": 2500,
+      "sha256": "a5bf1dd8d6773e09f28af5368914c24e50a2f85f31345568627f6a709c92e837",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "cafe/data/scene_manifest.json",
+      "bytes": 8270,
+      "sha256": "18bcf90405b18843365414f3bfaec3d54ca1adba270ff843fdf9230b9b10b692",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "cafe/data/shot_list.csv",
+      "bytes": 1860,
+      "sha256": "3cc1ca01fe3eda655c1251bc27a6db474620f83203daf728bd3ac9da9cbee4f0",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "cafe/data/sound_events.csv",
+      "bytes": 1198,
+      "sha256": "57a3e11471bccf8d796e67d13f68de0b31df5581561b2ec155f24ffc5129a6c9",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "cafe/docs/ASSET_AND_RIG_INTEGRATION.md",
+      "bytes": 2830,
+      "sha256": "1d41a4532c36a5c1e38f7ada5245772b2bfbaf44534e6ad1f69a004d29e73ada",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "cafe/docs/CONTINUITY_CHECK.md",
+      "bytes": 3132,
+      "sha256": "c34b2511cd46e59b17f49afbab52a95dbeafa7c75b18e073546ca289bbafd0c0",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "cafe/docs/DIRECTORS_BOOK.md",
+      "bytes": 5555,
+      "sha256": "e22879565d846857d30052e4261205739a8d55fa91bc160a2d280ea22eb0f9fe",
+      "method": "recovered_source_text"
+    },
+    {
+      "path": "cafe/maps/cafe_floorplan_1m_grid.png",
+      "bytes": 57899,
+      "sha256": "9887e7f1d014364fcdea70d5ce26d0b475b983f3d79428ec9d8d9b992f06f642",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "cafe/previews/shotboard_schematic.png",
+      "bytes": 78523,
+      "sha256": "83cc1d38a104a424565c818e3cb5c7bad4a4a585790d84fe22f64141fc4deaa6",
+      "method": "regenerated_from_recovered_source"
+    },
+    {
+      "path": "cafe/validate_pack.py",
+      "bytes": 2730,
+      "sha256": "9e172696e6d3ebf3a2679d53fb873b6da2292763d5d55abe2eb1c81cb8a15d15",
+      "method": "recovered_source_text"
+    }
+  ]
+}

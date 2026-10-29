@@ -1,5 +1,7 @@
 # ХАНИАД — Тав дахь цаг
 
+> Current Episode 1 story/acting source: [source decisions](../artifacts/character-master/production/SOURCES.md). The next production test is the recovered 84-second café layout. The 30-second HOUR 5 export below remains legacy technical evidence: its face slap/self-talk and driver staging differ from the current screenplay. It is not current Episode 1 story approval.
+
 A 30-second excerpt from the approved Episode 1 **HOUR 5** scene. Source dialogue
 and series bible are preserved in `docs/production/`. It is an excerpt from a
 longer episode: Hürel and Altan are established earlier in that episode.

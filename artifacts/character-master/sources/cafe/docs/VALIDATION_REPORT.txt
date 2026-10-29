@@ -1,0 +1,8 @@
+EP01 HUREL CAFÉ VERTICAL SLICE v1.0 — STRUCTURAL VALIDATION
+PASS: 11 contiguous shots, 84s, 2016 frames @ 24fps.
+PASS: 11 exact dialogue lines (E01-D023 .. E01-D033) byte-compared to v2.1 voice sheet.
+PASS: Importable GLB parsed as scene, 68 named geometry nodes including café props, truck and forecourt.
+PASS: JSON manifest, camera vectors, actor motion waypoints, sound cue ledger.
+PASS: Blender script compiles under Python syntax rules.
+NOT TESTED: Blender execution, physical rigging, render output, actual sound, real VO timing, user character pack, collisions against animated meshes.
+STATUS: pre-production blocking package, not final animated footage.

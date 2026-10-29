@@ -1,5 +1,7 @@
 # Character DNA System Implementation Plan
 
+> Historical implementation plan/specification. Current source authority, chosen design, Episode 1 status and remaining work are in [Character Master](../../../artifacts/character-master/README.md). Its [jobs](../../../artifacts/character-master/production/JOBS.md) now prioritize the café test; completed boxes here describe the original implementation scope, not finished-shot approval.
+
 > Execute inline in the existing checkout; preserve unrelated work and leave changes uncommitted.
 
 **Goal:** Make characters data-driven and prove facial differences independently of costume.

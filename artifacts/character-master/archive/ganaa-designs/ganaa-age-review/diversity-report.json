@@ -1,0 +1,1663 @@
+{
+  "passed": true,
+  "threshold": 0.055,
+  "controls": 60,
+  "metric": "Equal-weight RMS by face region; excludes age, ancestry, skin, hair and clothing",
+  "pairs": [
+    {
+      "a": "altan",
+      "b": "party-young-woman",
+      "distance": 0.086742,
+      "groups": {
+        "brow": 0.069282,
+        "cheeks": 0.051478,
+        "ears": 0.0,
+        "eyes": 0.062431,
+        "head": 0.093238,
+        "jaw": 0.084063,
+        "mouth": 0.136789,
+        "nose": 0.119896
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "hurel",
+      "b": "party-young-woman",
+      "distance": 0.095154,
+      "groups": {
+        "brow": 0.0,
+        "cheeks": 0.035,
+        "ears": 0.0,
+        "eyes": 0.126837,
+        "head": 0.119499,
+        "jaw": 0.083267,
+        "mouth": 0.109392,
+        "nose": 0.148127
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "brow",
+        "ears",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "sukhee",
+      "b": "yard-runner",
+      "distance": 0.105903,
+      "groups": {
+        "brow": 0.023094,
+        "cheeks": 0.073824,
+        "ears": 0.0,
+        "eyes": 0.038079,
+        "head": 0.12474,
+        "jaw": 0.124633,
+        "mouth": 0.172691,
+        "nose": 0.146202
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "irina",
+      "b": "yard-runner",
+      "distance": 0.114547,
+      "groups": {
+        "brow": 0.057735,
+        "cheeks": 0.106888,
+        "ears": 0.0,
+        "eyes": 0.191018,
+        "head": 0.107517,
+        "jaw": 0.132916,
+        "mouth": 0.121838,
+        "nose": 0.098234
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "nose"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "party-young-man",
+      "distance": 0.129497,
+      "groups": {
+        "brow": 0.023094,
+        "cheeks": 0.03,
+        "ears": 0.0,
+        "eyes": 0.114996,
+        "head": 0.256502,
+        "jaw": 0.124164,
+        "mouth": 0.155528,
+        "nose": 0.118743
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "yard-guard",
+      "distance": 0.13002,
+      "groups": {
+        "brow": 0.193563,
+        "cheeks": 0.02,
+        "ears": 0.0,
+        "eyes": 0.130542,
+        "head": 0.173897,
+        "jaw": 0.175689,
+        "mouth": 0.061464,
+        "nose": 0.124298
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "mouth"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "hurel",
+      "distance": 0.131296,
+      "groups": {
+        "brow": 0.069282,
+        "cheeks": 0.026926,
+        "ears": 0.0,
+        "eyes": 0.154151,
+        "head": 0.20445,
+        "jaw": 0.098658,
+        "mouth": 0.109189,
+        "nose": 0.212525
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "brow"
+      ]
+    },
+    {
+      "a": "yard-guard",
+      "b": "yard-runner",
+      "distance": 0.138612,
+      "groups": {
+        "brow": 0.046188,
+        "cheeks": 0.123794,
+        "ears": 0.0,
+        "eyes": 0.113261,
+        "head": 0.241895,
+        "jaw": 0.140475,
+        "mouth": 0.014907,
+        "nose": 0.212014
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "brow"
+      ]
+    },
+    {
+      "a": "irina",
+      "b": "sukhee",
+      "distance": 0.1414,
+      "groups": {
+        "brow": 0.080829,
+        "cheeks": 0.110114,
+        "ears": 0.0,
+        "eyes": 0.153786,
+        "head": 0.108382,
+        "jaw": 0.228619,
+        "mouth": 0.210924,
+        "nose": 0.095612
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "nose"
+      ]
+    },
+    {
+      "a": "party-young-man",
+      "b": "tsetsegmaa",
+      "distance": 0.148203,
+      "groups": {
+        "brow": 0.173205,
+        "cheeks": 0.131529,
+        "ears": 0.0,
+        "eyes": 0.141633,
+        "head": 0.253206,
+        "jaw": 0.130703,
+        "mouth": 0.113969,
+        "nose": 0.119024
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "nose"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "tsetsegmaa",
+      "distance": 0.150666,
+      "groups": {
+        "brow": 0.196299,
+        "cheeks": 0.10198,
+        "ears": 0.0,
+        "eyes": 0.244908,
+        "head": 0.098658,
+        "jaw": 0.057735,
+        "mouth": 0.116428,
+        "nose": 0.214631
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "jaw",
+        "head"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "hurel",
+      "distance": 0.153475,
+      "groups": {
+        "brow": 0.069282,
+        "cheeks": 0.267067,
+        "ears": 0.0,
+        "eyes": 0.04638,
+        "head": 0.183557,
+        "jaw": 0.103923,
+        "mouth": 0.201908,
+        "nose": 0.157797
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "tsetsegmaa",
+      "distance": 0.153809,
+      "groups": {
+        "brow": 0.069282,
+        "cheeks": 0.275,
+        "ears": 0.0,
+        "eyes": 0.096753,
+        "head": 0.195004,
+        "jaw": 0.152753,
+        "mouth": 0.148024,
+        "nose": 0.127279
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "yard-guard",
+      "distance": 0.154778,
+      "groups": {
+        "brow": 0.23094,
+        "cheeks": 0.036401,
+        "ears": 0.0,
+        "eyes": 0.081419,
+        "head": 0.236897,
+        "jaw": 0.176257,
+        "mouth": 0.169312,
+        "nose": 0.120451
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "dasha",
+      "distance": 0.16527,
+      "groups": {
+        "brow": 0.127017,
+        "cheeks": 0.220511,
+        "ears": 0.0,
+        "eyes": 0.165756,
+        "head": 0.218663,
+        "jaw": 0.182574,
+        "mouth": 0.12,
+        "nose": 0.175309
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "brow"
+      ]
+    },
+    {
+      "a": "sukhee",
+      "b": "yard-guard",
+      "distance": 0.165665,
+      "groups": {
+        "brow": 0.023094,
+        "cheeks": 0.122577,
+        "ears": 0.0,
+        "eyes": 0.145269,
+        "head": 0.298943,
+        "jaw": 0.164317,
+        "mouth": 0.180616,
+        "nose": 0.184142
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "party-older-man",
+      "b": "yard-runner",
+      "distance": 0.166204,
+      "groups": {
+        "brow": 0.288675,
+        "cheeks": 0.134536,
+        "ears": 0.0,
+        "eyes": 0.0886,
+        "head": 0.230463,
+        "jaw": 0.09798,
+        "mouth": 0.125477,
+        "nose": 0.182346
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "jaw"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "ganaa",
+      "distance": 0.167617,
+      "groups": {
+        "brow": 0.196299,
+        "cheeks": 0.018028,
+        "ears": 0.0,
+        "eyes": 0.185716,
+        "head": 0.233895,
+        "jaw": 0.161038,
+        "mouth": 0.197315,
+        "nose": 0.178442
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "jaw"
+      ]
+    },
+    {
+      "a": "irina",
+      "b": "party-older-man",
+      "distance": 0.167904,
+      "groups": {
+        "brow": 0.23094,
+        "cheeks": 0.216622,
+        "ears": 0.0,
+        "eyes": 0.233619,
+        "head": 0.226701,
+        "jaw": 0.040825,
+        "mouth": 0.021344,
+        "nose": 0.131085
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "jaw"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "dulmaa",
+      "distance": 0.16812,
+      "groups": {
+        "brow": 0.138564,
+        "cheeks": 0.24135,
+        "ears": 0.0,
+        "eyes": 0.195374,
+        "head": 0.068993,
+        "jaw": 0.166533,
+        "mouth": 0.177012,
+        "nose": 0.216025
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "head",
+        "brow"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "party-young-man",
+      "distance": 0.168191,
+      "groups": {
+        "brow": 0.103923,
+        "cheeks": 0.20573,
+        "ears": 0.0,
+        "eyes": 0.069879,
+        "head": 0.235641,
+        "jaw": 0.249165,
+        "mouth": 0.182361,
+        "nose": 0.132035
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "tsetsegmaa",
+      "b": "yard-guard",
+      "distance": 0.171827,
+      "groups": {
+        "brow": 0.11547,
+        "cheeks": 0.031623,
+        "ears": 0.0,
+        "eyes": 0.054333,
+        "head": 0.231977,
+        "jaw": 0.351188,
+        "mouth": 0.153912,
+        "nose": 0.134443
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "irina",
+      "b": "party-young-man",
+      "distance": 0.174755,
+      "groups": {
+        "brow": 0.184752,
+        "cheeks": 0.134536,
+        "ears": 0.0,
+        "eyes": 0.141845,
+        "head": 0.23975,
+        "jaw": 0.116976,
+        "mouth": 0.258306,
+        "nose": 0.184594
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "jaw",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "tsetsegmaa",
+      "b": "yard-runner",
+      "distance": 0.177296,
+      "groups": {
+        "brow": 0.069282,
+        "cheeks": 0.152398,
+        "ears": 0.0,
+        "eyes": 0.072636,
+        "head": 0.242226,
+        "jaw": 0.297321,
+        "mouth": 0.14453,
+        "nose": 0.224072
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "party-young-woman",
+      "distance": 0.178141,
+      "groups": {
+        "brow": 0.069282,
+        "cheeks": 0.29,
+        "ears": 0.0,
+        "eyes": 0.162679,
+        "head": 0.090259,
+        "jaw": 0.090185,
+        "mouth": 0.29044,
+        "nose": 0.194615
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "jaw"
+      ]
+    },
+    {
+      "a": "party-young-man",
+      "b": "yard-runner",
+      "distance": 0.180975,
+      "groups": {
+        "brow": 0.242487,
+        "cheeks": 0.081394,
+        "ears": 0.0,
+        "eyes": 0.089174,
+        "head": 0.256671,
+        "jaw": 0.24661,
+        "mouth": 0.168819,
+        "nose": 0.182871
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "yard-runner",
+      "distance": 0.181107,
+      "groups": {
+        "brow": 0.150111,
+        "cheeks": 0.111018,
+        "ears": 0.0,
+        "eyes": 0.047979,
+        "head": 0.287112,
+        "jaw": 0.295635,
+        "mouth": 0.061824,
+        "nose": 0.22712
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "mouth"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "tsetsegmaa",
+      "distance": 0.181959,
+      "groups": {
+        "brow": 0.154919,
+        "cheeks": 0.068007,
+        "ears": 0.0,
+        "eyes": 0.123282,
+        "head": 0.216856,
+        "jaw": 0.292803,
+        "mouth": 0.224103,
+        "nose": 0.195107
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "party-young-woman",
+      "b": "tsetsegmaa",
+      "distance": 0.185511,
+      "groups": {
+        "brow": 0.09798,
+        "cheeks": 0.326075,
+        "ears": 0.0,
+        "eyes": 0.076909,
+        "head": 0.246577,
+        "jaw": 0.204287,
+        "mouth": 0.185472,
+        "nose": 0.128614
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "irina",
+      "distance": 0.186157,
+      "groups": {
+        "brow": 0.207846,
+        "cheeks": 0.156205,
+        "ears": 0.0,
+        "eyes": 0.063624,
+        "head": 0.213307,
+        "jaw": 0.217409,
+        "mouth": 0.296723,
+        "nose": 0.157401
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "party-older-man",
+      "b": "party-young-man",
+      "distance": 0.18692,
+      "groups": {
+        "brow": 0.046188,
+        "cheeks": 0.205244,
+        "ears": 0.0,
+        "eyes": 0.144368,
+        "head": 0.280036,
+        "jaw": 0.157533,
+        "mouth": 0.256645,
+        "nose": 0.212858
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "party-young-man",
+      "b": "party-young-woman",
+      "distance": 0.188827,
+      "groups": {
+        "brow": 0.1249,
+        "cheeks": 0.24965,
+        "ears": 0.0,
+        "eyes": 0.100921,
+        "head": 0.276562,
+        "jaw": 0.271078,
+        "mouth": 0.167498,
+        "nose": 0.138233
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "yard-runner",
+      "distance": 0.189039,
+      "groups": {
+        "brow": 0.195959,
+        "cheeks": 0.09434,
+        "ears": 0.0,
+        "eyes": 0.164239,
+        "head": 0.270271,
+        "jaw": 0.263565,
+        "mouth": 0.176131,
+        "nose": 0.195128
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "party-young-woman",
+      "distance": 0.191551,
+      "groups": {
+        "brow": 0.144684,
+        "cheeks": 0.267067,
+        "ears": 0.0,
+        "eyes": 0.195788,
+        "head": 0.24996,
+        "jaw": 0.240278,
+        "mouth": 0.099107,
+        "nose": 0.181407
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "brow"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "tsetsegmaa",
+      "distance": 0.19514,
+      "groups": {
+        "brow": 0.090185,
+        "cheeks": 0.05099,
+        "ears": 0.0,
+        "eyes": 0.078804,
+        "head": 0.241771,
+        "jaw": 0.423714,
+        "mouth": 0.176635,
+        "nose": 0.136045
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "ganaa",
+      "distance": 0.195418,
+      "groups": {
+        "brow": 0.057735,
+        "cheeks": 0.243977,
+        "ears": 0.0,
+        "eyes": 0.033468,
+        "head": 0.228269,
+        "jaw": 0.30692,
+        "mouth": 0.226372,
+        "nose": 0.209702
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "irina",
+      "b": "tsetsegmaa",
+      "distance": 0.199524,
+      "groups": {
+        "brow": 0.011547,
+        "cheeks": 0.250599,
+        "ears": 0.0,
+        "eyes": 0.249118,
+        "head": 0.237669,
+        "jaw": 0.201494,
+        "mouth": 0.21187,
+        "nose": 0.226954
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "jaw"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "yard-guard",
+      "distance": 0.199525,
+      "groups": {
+        "brow": 0.184752,
+        "cheeks": 0.258312,
+        "ears": 0.0,
+        "eyes": 0.143257,
+        "head": 0.216395,
+        "jaw": 0.288675,
+        "mouth": 0.203961,
+        "nose": 0.159191
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "nose"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "sukhee",
+      "distance": 0.199957,
+      "groups": {
+        "brow": 0.171659,
+        "cheeks": 0.103078,
+        "ears": 0.0,
+        "eyes": 0.059296,
+        "head": 0.321216,
+        "jaw": 0.308329,
+        "mouth": 0.187261,
+        "nose": 0.207224
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "party-young-man",
+      "b": "yard-guard",
+      "distance": 0.199984,
+      "groups": {
+        "brow": 0.288675,
+        "cheeks": 0.100499,
+        "ears": 0.0,
+        "eyes": 0.185898,
+        "head": 0.143132,
+        "jaw": 0.347011,
+        "mouth": 0.181873,
+        "nose": 0.134071
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "nose"
+      ]
+    },
+    {
+      "a": "party-older-man",
+      "b": "tsetsegmaa",
+      "distance": 0.20167,
+      "groups": {
+        "brow": 0.219393,
+        "cheeks": 0.190591,
+        "ears": 0.0,
+        "eyes": 0.133664,
+        "head": 0.274591,
+        "jaw": 0.237487,
+        "mouth": 0.207766,
+        "nose": 0.21926
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "party-older-man",
+      "b": "sukhee",
+      "distance": 0.202862,
+      "groups": {
+        "brow": 0.311769,
+        "cheeks": 0.205548,
+        "ears": 0.0,
+        "eyes": 0.105357,
+        "head": 0.292518,
+        "jaw": 0.194765,
+        "mouth": 0.206478,
+        "nose": 0.11199
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "nose"
+      ]
+    },
+    {
+      "a": "irina",
+      "b": "yard-guard",
+      "distance": 0.203747,
+      "groups": {
+        "brow": 0.103923,
+        "cheeks": 0.219545,
+        "ears": 0.0,
+        "eyes": 0.292753,
+        "head": 0.253364,
+        "jaw": 0.251529,
+        "mouth": 0.118697,
+        "nose": 0.214126
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "mouth"
+      ]
+    },
+    {
+      "a": "party-young-man",
+      "b": "sukhee",
+      "distance": 0.204402,
+      "groups": {
+        "brow": 0.265581,
+        "cheeks": 0.025,
+        "ears": 0.0,
+        "eyes": 0.068367,
+        "head": 0.295454,
+        "jaw": 0.336774,
+        "mouth": 0.179165,
+        "nose": 0.16
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "sukhee",
+      "b": "tsetsegmaa",
+      "distance": 0.205104,
+      "groups": {
+        "brow": 0.092376,
+        "cheeks": 0.154029,
+        "ears": 0.0,
+        "eyes": 0.103334,
+        "head": 0.285061,
+        "jaw": 0.385141,
+        "mouth": 0.172176,
+        "nose": 0.185382
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "yard-runner",
+      "distance": 0.207008,
+      "groups": {
+        "brow": 0.138564,
+        "cheeks": 0.285044,
+        "ears": 0.0,
+        "eyes": 0.039257,
+        "head": 0.223801,
+        "jaw": 0.299555,
+        "mouth": 0.196977,
+        "nose": 0.249416
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "party-older-man",
+      "distance": 0.208664,
+      "groups": {
+        "brow": 0.204287,
+        "cheeks": 0.1772,
+        "ears": 0.0,
+        "eyes": 0.153768,
+        "head": 0.298954,
+        "jaw": 0.305723,
+        "mouth": 0.17,
+        "nose": 0.19952
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "mouth"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "irina",
+      "distance": 0.208748,
+      "groups": {
+        "brow": 0.080829,
+        "cheeks": 0.285,
+        "ears": 0.0,
+        "eyes": 0.170602,
+        "head": 0.214243,
+        "jaw": 0.264449,
+        "mouth": 0.229492,
+        "nose": 0.251479
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "party-older-man",
+      "b": "yard-guard",
+      "distance": 0.210215,
+      "groups": {
+        "brow": 0.334863,
+        "cheeks": 0.180624,
+        "ears": 0.0,
+        "eyes": 0.144666,
+        "head": 0.276863,
+        "jaw": 0.22745,
+        "mouth": 0.123153,
+        "nose": 0.210436
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "eyes"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "party-young-woman",
+      "distance": 0.210239,
+      "groups": {
+        "brow": 0.127017,
+        "cheeks": 0.293641,
+        "ears": 0.0,
+        "eyes": 0.06183,
+        "head": 0.26803,
+        "jaw": 0.231948,
+        "mouth": 0.31791,
+        "nose": 0.143933
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "hurel",
+      "b": "tsetsegmaa",
+      "distance": 0.211092,
+      "groups": {
+        "brow": 0.09798,
+        "cheeks": 0.298329,
+        "ears": 0.0,
+        "eyes": 0.088465,
+        "head": 0.328613,
+        "jaw": 0.248462,
+        "mouth": 0.169607,
+        "nose": 0.227083
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "party-young-woman",
+      "b": "yard-guard",
+      "distance": 0.211455,
+      "groups": {
+        "brow": 0.197315,
+        "cheeks": 0.308585,
+        "ears": 0.0,
+        "eyes": 0.115765,
+        "head": 0.27198,
+        "jaw": 0.209125,
+        "mouth": 0.285112,
+        "nose": 0.105594
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "nose",
+        "eyes"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "yard-runner",
+      "distance": 0.212058,
+      "groups": {
+        "brow": 0.265581,
+        "cheeks": 0.081394,
+        "ears": 0.0,
+        "eyes": 0.18887,
+        "head": 0.245669,
+        "jaw": 0.325167,
+        "mouth": 0.235985,
+        "nose": 0.158561
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "nose"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "party-older-man",
+      "distance": 0.214331,
+      "groups": {
+        "brow": 0.023094,
+        "cheeks": 0.190066,
+        "ears": 0.0,
+        "eyes": 0.234098,
+        "head": 0.261661,
+        "jaw": 0.256385,
+        "mouth": 0.286065,
+        "nose": 0.244966
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "cheeks"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "sukhee",
+      "distance": 0.21458,
+      "groups": {
+        "brow": 0.161658,
+        "cheeks": 0.211896,
+        "ears": 0.0,
+        "eyes": 0.034556,
+        "head": 0.268092,
+        "jaw": 0.374611,
+        "mouth": 0.190671,
+        "nose": 0.218098
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "party-older-man",
+      "distance": 0.214756,
+      "groups": {
+        "brow": 0.160831,
+        "cheeks": 0.183371,
+        "ears": 0.0,
+        "eyes": 0.128577,
+        "head": 0.315151,
+        "jaw": 0.365787,
+        "mouth": 0.08544,
+        "nose": 0.229165
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "eyes"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "irina",
+      "distance": 0.215077,
+      "groups": {
+        "brow": 0.099331,
+        "cheeks": 0.202485,
+        "ears": 0.0,
+        "eyes": 0.191411,
+        "head": 0.283843,
+        "jaw": 0.379649,
+        "mouth": 0.074237,
+        "nose": 0.228801
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "brow"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "sukhee",
+      "distance": 0.218094,
+      "groups": {
+        "brow": 0.212916,
+        "cheeks": 0.086313,
+        "ears": 0.0,
+        "eyes": 0.200276,
+        "head": 0.304839,
+        "jaw": 0.309946,
+        "mouth": 0.247386,
+        "nose": 0.193477
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "nose"
+      ]
+    },
+    {
+      "a": "party-young-woman",
+      "b": "sukhee",
+      "distance": 0.219951,
+      "groups": {
+        "brow": 0.175879,
+        "cheeks": 0.252686,
+        "ears": 0.0,
+        "eyes": 0.056965,
+        "head": 0.305908,
+        "jaw": 0.312943,
+        "mouth": 0.24504,
+        "nose": 0.193498
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "party-young-man",
+      "distance": 0.221118,
+      "groups": {
+        "brow": 0.118884,
+        "cheeks": 0.080623,
+        "ears": 0.0,
+        "eyes": 0.085639,
+        "head": 0.286973,
+        "jaw": 0.449759,
+        "mouth": 0.206478,
+        "nose": 0.189495
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "ganaa",
+      "b": "hurel",
+      "distance": 0.221362,
+      "groups": {
+        "brow": 0.127017,
+        "cheeks": 0.269072,
+        "ears": 0.0,
+        "eyes": 0.142671,
+        "head": 0.339038,
+        "jaw": 0.246441,
+        "mouth": 0.277068,
+        "nose": 0.175143
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "party-young-man",
+      "distance": 0.222514,
+      "groups": {
+        "brow": 0.173205,
+        "cheeks": 0.065,
+        "ears": 0.0,
+        "eyes": 0.239221,
+        "head": 0.26727,
+        "jaw": 0.350927,
+        "mouth": 0.284195,
+        "nose": 0.171172
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "nose"
+      ]
+    },
+    {
+      "a": "party-young-woman",
+      "b": "yard-runner",
+      "distance": 0.224631,
+      "groups": {
+        "brow": 0.154919,
+        "cheeks": 0.326497,
+        "ears": 0.0,
+        "eyes": 0.03245,
+        "head": 0.290253,
+        "jaw": 0.245493,
+        "mouth": 0.275358,
+        "nose": 0.22734
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "hurel",
+      "b": "yard-guard",
+      "distance": 0.225768,
+      "groups": {
+        "brow": 0.197315,
+        "cheeks": 0.282843,
+        "ears": 0.0,
+        "eyes": 0.064653,
+        "head": 0.361976,
+        "jaw": 0.270308,
+        "mouth": 0.235348,
+        "nose": 0.158666
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "nose"
+      ]
+    },
+    {
+      "a": "dulmaa",
+      "b": "irina",
+      "distance": 0.229004,
+      "groups": {
+        "brow": 0.160416,
+        "cheeks": 0.184459,
+        "ears": 0.0,
+        "eyes": 0.352554,
+        "head": 0.265292,
+        "jaw": 0.306485,
+        "mouth": 0.181842,
+        "nose": 0.195214
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "mouth"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "hurel",
+      "distance": 0.230119,
+      "groups": {
+        "brow": 0.144684,
+        "cheeks": 0.246982,
+        "ears": 0.0,
+        "eyes": 0.311545,
+        "head": 0.33116,
+        "jaw": 0.281188,
+        "mouth": 0.126535,
+        "nose": 0.19975
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "mouth",
+        "brow"
+      ]
+    },
+    {
+      "a": "hurel",
+      "b": "party-young-man",
+      "distance": 0.23167,
+      "groups": {
+        "brow": 0.1249,
+        "cheeks": 0.232594,
+        "ears": 0.0,
+        "eyes": 0.200868,
+        "head": 0.355518,
+        "jaw": 0.337861,
+        "mouth": 0.189678,
+        "nose": 0.206882
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "mouth"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "sukhee",
+      "distance": 0.23319,
+      "groups": {
+        "brow": 0.288675,
+        "cheeks": 0.052202,
+        "ears": 0.0,
+        "eyes": 0.154745,
+        "head": 0.279058,
+        "jaw": 0.413521,
+        "mouth": 0.216436,
+        "nose": 0.171172
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "eyes"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "dulmaa",
+      "distance": 0.23399,
+      "groups": {
+        "brow": 0.187972,
+        "cheeks": 0.035,
+        "ears": 0.0,
+        "eyes": 0.348612,
+        "head": 0.249773,
+        "jaw": 0.330252,
+        "mouth": 0.258972,
+        "nose": 0.20347
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "brow"
+      ]
+    },
+    {
+      "a": "irina",
+      "b": "party-young-woman",
+      "distance": 0.236253,
+      "groups": {
+        "brow": 0.106458,
+        "cheeks": 0.313249,
+        "ears": 0.0,
+        "eyes": 0.198053,
+        "head": 0.255669,
+        "jaw": 0.248328,
+        "mouth": 0.343447,
+        "nose": 0.229891
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "eyes"
+      ]
+    },
+    {
+      "a": "altan",
+      "b": "party-older-man",
+      "distance": 0.243294,
+      "groups": {
+        "brow": 0.150111,
+        "cheeks": 0.409939,
+        "ears": 0.0,
+        "eyes": 0.11136,
+        "head": 0.255838,
+        "jaw": 0.28589,
+        "mouth": 0.214295,
+        "nose": 0.278283
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "ganaa",
+      "distance": 0.243413,
+      "groups": {
+        "brow": 0.139523,
+        "cheeks": 0.05099,
+        "ears": 0.0,
+        "eyes": 0.183712,
+        "head": 0.272617,
+        "jaw": 0.452622,
+        "mouth": 0.273658,
+        "nose": 0.253196
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "brow"
+      ]
+    },
+    {
+      "a": "dasha",
+      "b": "yard-guard",
+      "distance": 0.250174,
+      "groups": {
+        "brow": 0.311769,
+        "cheeks": 0.070711,
+        "ears": 0.0,
+        "eyes": 0.29039,
+        "head": 0.256177,
+        "jaw": 0.387298,
+        "mouth": 0.245493,
+        "nose": 0.19564
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "cheeks",
+        "nose"
+      ]
+    },
+    {
+      "a": "hurel",
+      "b": "yard-runner",
+      "distance": 0.250966,
+      "groups": {
+        "brow": 0.154919,
+        "cheeks": 0.31197,
+        "ears": 0.0,
+        "eyes": 0.126436,
+        "head": 0.393895,
+        "jaw": 0.326599,
+        "mouth": 0.230579,
+        "nose": 0.227101
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "hurel",
+      "b": "sukhee",
+      "distance": 0.253982,
+      "groups": {
+        "brow": 0.175879,
+        "cheeks": 0.238799,
+        "ears": 0.0,
+        "eyes": 0.163674,
+        "head": 0.38237,
+        "jaw": 0.385832,
+        "mouth": 0.23516,
+        "nose": 0.225684
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "hurel",
+      "b": "irina",
+      "distance": 0.268098,
+      "groups": {
+        "brow": 0.106458,
+        "cheeks": 0.310161,
+        "ears": 0.0,
+        "eyes": 0.317286,
+        "head": 0.344819,
+        "jaw": 0.32914,
+        "mouth": 0.296592,
+        "nose": 0.227175
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "brow",
+        "nose"
+      ]
+    },
+    {
+      "a": "party-older-man",
+      "b": "party-young-woman",
+      "distance": 0.268902,
+      "groups": {
+        "brow": 0.165328,
+        "cheeks": 0.454863,
+        "ears": 0.0,
+        "eyes": 0.092968,
+        "head": 0.305134,
+        "jaw": 0.258199,
+        "mouth": 0.332415,
+        "nose": 0.255571
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    },
+    {
+      "a": "hurel",
+      "b": "party-older-man",
+      "distance": 0.289424,
+      "groups": {
+        "brow": 0.165328,
+        "cheeks": 0.436606,
+        "ears": 0.0,
+        "eyes": 0.128632,
+        "head": 0.399283,
+        "jaw": 0.340979,
+        "mouth": 0.285696,
+        "nose": 0.279836
+      },
+      "tooClose": false,
+      "changeGroups": [
+        "ears",
+        "eyes",
+        "brow"
+      ]
+    }
+  ],
+  "baseCounts": {
+    "child": 1,
+    "adult": 10,
+    "elder": 2
+  },
+  "ageRange": [
+    3,
+    69
+  ],
+  "heightRangeM": [
+    0.95,
+    1.78
+  ],
+  "weightRange": [
+    0.22,
+    0.87
+  ]
+}

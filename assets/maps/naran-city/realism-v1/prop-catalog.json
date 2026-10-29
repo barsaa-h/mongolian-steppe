@@ -1,0 +1,170 @@
+[
+  {
+    "name": "firewood",
+    "dimensions_m": {
+      "width": 1.45,
+      "depth": 0.94,
+      "height": 0.68
+    },
+    "purpose": "Household winter fuel stacked on ground bearers.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 13
+  },
+  {
+    "name": "coal_bin",
+    "dimensions_m": {
+      "width": 1.8,
+      "depth": 1.3,
+      "height": 1.1
+    },
+    "purpose": "Open household coal storage with a low shovelling front.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 6
+  },
+  {
+    "name": "privy",
+    "dimensions_m": {
+      "width": 1.22,
+      "depth": 1.335,
+      "height": 2.1
+    },
+    "purpose": "Simple detached timber household toilet.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 5
+  },
+  {
+    "name": "shed",
+    "dimensions_m": {
+      "width": 3.2,
+      "depth": 2.218,
+      "height": 2.66
+    },
+    "purpose": "Small domestic tool and fuel store with paired doors.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 5
+  },
+  {
+    "name": "small_timber_house",
+    "dimensions_m": {
+      "width": 6.2,
+      "depth": 4.955,
+      "height": 4.4
+    },
+    "purpose": "Single-storey timber home with painted door, framed windows and chimney.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 18
+  },
+  {
+    "name": "hay_stack",
+    "dimensions_m": {
+      "width": 2.6,
+      "depth": 1.8,
+      "height": 1.88
+    },
+    "purpose": "Covered-shape loose hay reserve on timber bearers.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 3
+  },
+  {
+    "name": "water_cart",
+    "dimensions_m": {
+      "width": 1.6,
+      "depth": 3.009,
+      "height": 1.48
+    },
+    "purpose": "Hand-drawn two-wheel water tank cart.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 9
+  },
+  {
+    "name": "bicycle",
+    "dimensions_m": {
+      "width": 0.56,
+      "depth": 2.034,
+      "height": 1.144
+    },
+    "purpose": "Utilitarian upright bicycle with a simple diamond frame.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 46
+  },
+  {
+    "name": "tractor",
+    "dimensions_m": {
+      "width": 2.066,
+      "depth": 3.49,
+      "height": 2.62
+    },
+    "purpose": "Generic older blue agricultural tractor with enclosed cab.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 25
+  },
+  {
+    "name": "farm_trailer",
+    "dimensions_m": {
+      "width": 2.371,
+      "depth": 4.177,
+      "height": 1.54
+    },
+    "purpose": "Single-axle timber-sided agricultural trailer and tow drawbar.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 12
+  },
+  {
+    "name": "loading_pallet",
+    "dimensions_m": {
+      "width": 1.2,
+      "depth": 0.9,
+      "height": 0.21
+    },
+    "purpose": "Reusable timber loading pallet.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 8
+  },
+  {
+    "name": "repair_bench",
+    "dimensions_m": {
+      "width": 1.8,
+      "depth": 0.712,
+      "height": 1.21
+    },
+    "purpose": "Outdoor timber repair workbench with a small metal vice.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 9
+  },
+  {
+    "name": "sandpit",
+    "dimensions_m": {
+      "width": 2.84,
+      "depth": 2.84,
+      "height": 0.36
+    },
+    "purpose": "Timber-edged communal play sandpit.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 5
+  },
+  {
+    "name": "climbing_frame",
+    "dimensions_m": {
+      "width": 1.505,
+      "depth": 2.265,
+      "height": 1.982
+    },
+    "purpose": "Painted steel ladder and overhead-rung playground frame.",
+    "period_status": "Artistic interpretation for late-November 1998; no specific model or provenance claimed.",
+    "artistic_generic": true,
+    "part_count": 22
+  }
+]

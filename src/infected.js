@@ -278,3 +278,76 @@ export function attachSteam(scene, anchors, { strength = 1, height = 1.5 } = {})
     }
   };
 }
+
+// A figure with independent limbs so scenes can walk, sprint and lunge it.
+// Same look as the standing figure; the parts live in figure.userData.limbs.
+export function buildWalkingFigure({ x = 0, z = 0, yaw = 0, seed = 0, state = "red", scale = 1 } = {}) {
+  const look = infectedStateLook(state);
+  const rand = mulberry(seed * 733 + 17);
+  const height = (1.42 + rand() * 0.24) * scale;
+  const shoulder = 0.34 + rand() * 0.08;
+  const clothKey = [0x4a4a44, 0x50443c, 0x3e4a50, 0x554a3e, 0x464038][(rand() * 5) | 0];
+
+  const torso = new THREE.Mesh(mergeGeometries([
+    limbPiece(new THREE.BoxGeometry(shoulder, height * 0.44, 0.22), 0, height * 0.72, 0),
+    limbPiece(new THREE.BoxGeometry(0.17, 0.2, 0.19), 0, height * 0.97, look.lean * 0.6),
+  ], false), crowdMaterial(state, clothKey));
+  torso.geometry.computeVertexNormals();
+
+  const figure = new THREE.Group();
+  figure.add(torso);
+  const limbs = { legs: [], arms: [] };
+  const legGeo = new THREE.BoxGeometry(0.12, height * 0.52, 0.14);
+  legGeo.translate(0, -height * 0.26, 0);
+  const armGeo = new THREE.BoxGeometry(0.1, height * 0.42, 0.11);
+  armGeo.translate(0, -height * 0.21, 0);
+  for (const side of [-1, 1]) {
+    const leg = new THREE.Mesh(legGeo.clone(), crowdMaterial(state, clothKey));
+    leg.position.set(side * 0.1, height * 0.52, 0);
+    figure.add(leg);
+    limbs.legs.push(leg);
+    const arm = new THREE.Mesh(armGeo.clone(), crowdSkinMaterial(state));
+    arm.position.set(side * (shoulder / 2 + 0.02), height * 0.9, look.lean * 0.4);
+    figure.add(arm);
+    limbs.arms.push(arm);
+  }
+  figure.position.set(x, 0, z);
+  figure.rotation.y = yaw;
+  figure.scale.setScalar(scale);
+  figure.userData.infectedState = state;
+  figure.userData.limbs = limbs;
+  return figure;
+}
+
+function limbPiece(geometry, x, y, z) {
+  geometry.translate(x, y, z);
+  return geometry;
+}
+
+// Per-frame gait: leg and arm swing, body bob, sprint lean.
+export function animateWalk(figure, t, speed = 1, sprint = false) {
+  const limbs = figure.userData.limbs;
+  if (!limbs) return;
+  const sw = Math.sin(t * (sprint ? 11 : 7.2) * speed);
+  const amp = sprint ? 0.75 : 0.5;
+  limbs.legs[0].rotation.x = sw * amp;
+  limbs.legs[1].rotation.x = -sw * amp;
+  const armAmp = sprint ? 0.85 : 0.3;
+  const armBase = sprint ? -0.55 : 0;
+  limbs.arms[0].rotation.x = -sw * armAmp + armBase;
+  limbs.arms[1].rotation.x = sw * armAmp + armBase;
+  figure.position.y = Math.abs(Math.cos(t * (sprint ? 11 : 7.2) * speed)) * (sprint ? 0.05 : 0.03);
+  figure.rotation.x = sprint ? 0.16 : 0.05;
+}
+
+// A held lunge: leaned forward, both arms reaching.
+export function animateLunge(figure, t) {
+  const limbs = figure.userData.limbs;
+  if (!limbs) return;
+  figure.rotation.x = 0.3 + Math.sin(t * 5) * 0.04;
+  limbs.arms[0].rotation.x = -2.2 + Math.sin(t * 6) * 0.1;
+  limbs.arms[1].rotation.x = -2.2 - Math.sin(t * 6) * 0.1;
+  limbs.legs[0].rotation.x = 0.35;
+  limbs.legs[1].rotation.x = -0.35;
+  figure.position.y = 0;
+}

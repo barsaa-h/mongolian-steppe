@@ -1,5 +1,11 @@
 # НАРАН ХОРООЛОЛ — PSX
 
+> Character production now starts at [Character Master](artifacts/character-master/README.md): the selected shared MakeHuman/MPFB source, Episode 1 files, jobs and archive. The season direction is ten episodes; the next development scene is Hürel’s café. Runtime cast/studio/film descriptions below document the existing implementation and do not certify it against the new screenplay.
+
+Episode 1 environment authoring now lives in the [Blender map pack](assets/maps/episode-1/README.md): café, pickup road, freight yard and apartment/stair. See [current map progress](docs/production/episode-1-map-progress.md) for verification and remaining work. These editable sets are not yet integrated into the player.
+
+The [full-size Naran town](assets/maps/naran-city/README.md) is now a separate Blender foundation based on the 3.3 × 3.0 km world plan, reusing current environment assets and prioritizing the Episode 1 neighborhood. The playable compact map below remains available.
+
 A Three.js town with a PSX-style renderer, an animated day cycle, and a textured character.
 
 The map opens on the restored autumn Naran Khoroolol overview: muted steppe,

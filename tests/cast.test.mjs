@@ -32,8 +32,12 @@ test('distinct unnamed speakers remain distinct and mentioned-only people get no
   const { CAST, getCastMember } = await import('../src/cast.js');
   const speakers = ['citizen-1', 'citizen-2', 'citizen-3', 'helipad-parent', 'cordon-mother-meat', 'cordon-mother-smoke', 'cordon-bitten-man', 'cordon-father', 'cordon-woman'];
   assert.equal(new Set(speakers.map(id => getCastMember(id))).size, speakers.length);
-  for (const id of ['tsogt', 'sarnai', 'dorj', 'bold', 'bayarsaikhan']) {
-    assert.ok(!CAST.some(member => member.id === id), `${id} is not shown in Episodes 1–5`);
+  for (const id of ['bayarsaikhan']) {
+    assert.ok(!CAST.some(member => member.id === id), 'the helicopter doctor is mentioned-only');
+  }
+  for (const id of ['tsogt', 'sarnai', 'dorj', 'bold']) {
+    const member = getCastMember(id);
+    assert.ok(member.episodes.every(episode => episode >= 6), `${id} is an Act II arrival, not an Episodes 1–5 face`);
   }
   for (const id of ['minister', 'radio']) assert.equal(getCastMember(id).kind, 'voice');
   assert.equal(getCastMember('munkh').infection, false, 'stove smoke is not a bite');
@@ -53,7 +57,7 @@ test('every model profile has usable units, materials, proportions and provenanc
     assert.match(member.name, /[А-Яа-яӨөҮү]/);
     assert.ok(kinds.has(member.kind));
     assert.ok(member.age === null || Number.isFinite(member.age) && member.age >= 0);
-    assert.ok(member.episodes.length > 0 && member.episodes.every(episode => Number.isInteger(episode) && episode >= 1 && episode <= 5));
+    assert.ok(member.episodes.length > 0 && member.episodes.every(episode => Number.isInteger(episode) && episode >= 1 && episode <= 10));
     assert.equal(typeof member.infection, 'boolean');
     assert.ok(member.sourceNotes.length > 30);
     assert.ok(member.behavior.length > 20);

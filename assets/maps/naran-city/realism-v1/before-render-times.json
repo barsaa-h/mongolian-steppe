@@ -1,0 +1,18 @@
+{
+  "resolution": [
+    1280,
+    800
+  ],
+  "engine": "BLENDER_EEVEE",
+  "seconds": {
+    "aerial": 22.923,
+    "apartment": 42.84,
+    "ger-district": 29.813,
+    "market": 35.284,
+    "entrance": 32.15,
+    "street": 31.734,
+    "ger-street": 38.23,
+    "agriculture": 32.332
+  },
+  "peak_rss_mib": 2895.51171875
+}

@@ -1,0 +1,23 @@
+# Episode 1 Blender map work
+
+28 October 2026. Scope confirmed by the user: **heavily focus on Episode 1 only**. Use the current [source hierarchy](../../artifacts/character-master/production/SOURCES.md), [readiness plan G1/G2](../../artifacts/character-master/sources/planning/NARAN_PRODUCTION_READINESS_PLAN_v1.1.md), [café layout](../../artifacts/character-master/sources/cafe/docs/CONTINUITY_CHECK.md) and retained [Blender map plan](blender-map-master-plan.md).
+
+Current pass: one editable Blender map pack with four local scenes—Hürel café/forecourt, border-road pickup, freight yard/office, and apartment/stair. Geometry and camera routes come first. Keep existing runtime scene files and character DNA unchanged. New map files live in `assets/maps/episode-1/`; Blender MCP performs the authoring.
+
+Ruling: use the recovered 14 × 10 m café footprint and its north/east kitchen/heater layout as proposed physical dimensions; add actual front and staff openings. Treat furniture, terrain, road curves and the apartment floor plan as artistic layout choices awaiting visual review. Do not claim these dimensions are canon or historical measurements.
+
+Ruling: work in a new file on the current local development branch because the requested source assets and extensive WIP exist here. Do not reset, commit or copy unrelated work. The Blender connection had only its clean default Cube/Camera/Light scene at intake.
+
+Ruling: keep the regional travel diagram and proposed 29 km café-to-town distance in source documents. Four cinematic local sets are not a fabricated continuous 235 km road. The truck, characters, crash, infection effects, dialogue animation and final episode timing remain separate tasks.
+
+Evidence strategy: saved native mesh data, exported GLBs, finite geometry/triangle/texture checks, measured openings and sampled physical route clearances, plus rendered views. No application behavior is changed by this asset-authoring pass. A source/export/clearance self-check failed before authoring because the Episode 1 map file did not exist.
+
+Progress: **first spatial development pass delivered** through Blender MCP (5.2.2 LTS). Open [the map pack](../../assets/maps/episode-1/README.md) or [native Blender source](../../assets/maps/episode-1/EP01-Map.blend). Use the scene selector for `EP01_Cafe`, `EP01_BorderRoad`, `EP01_FreightYard` and `EP01_Apartment`. Rendered views, four isolated static GLBs, source scripts and a QA report live beside the source.
+
+The café has a working interior/forecourt, front and staff/store openings, counter/kitchen/heater, removable roof, evidence ledger and vehicle placement proxy. The road has a 6.6 m carriageway, sloped ground, pickup anchors, overhead wires and sparse late-season vegetation/frost. The yard has two rail tracks, a hollow open boxcar, windowed office, recorder, loading zone and steam pipe. The apartment connects the living room, kitchen, separate guest-infant bedroom and corridor to a landing, two stair flights and courtyard. These are proposed spatial layouts; hero detail, wear and final dressing are unfinished.
+
+Verification: 11 native geometry/layout checks pass. Four GLBs each contain only their intended scene and no character skins. Native total is 27,622 triangles, maximum 200 per object; fourteen 128 × 128 textures are packed. Source/export hashes bind `qa-report.json` to the delivered files. A separate background Blender process reopened the saved file and confirmed the four scenes, textures, entry support and office sightline. `check_map.py`, Python compilation and `git diff --check` pass. The repository's `npm run check` passed 71 tests and built all three bundles; no runtime code was changed by this map pass.
+
+Review fixes: a 20 cm gap between apartment floor and landing was closed, and the office camera was repositioned to look through the actual window. New floor-support and first-hit ray checks failed before the fixes and passed afterward. The earlier export test also caught unrelated scenes being included; exports now explicitly use only the active scene.
+
+Next: place Ganaa, Hürel and Dasha's actual shared rigs in the café, reconcile Hürel's start position, test seats/reaches/contact and the eleven-shot camera route, then improve the visible hero surfaces. After café staging, build the KAMAZ and livestock passenger interiors and test the truck-door bite/escape. The apartment still needs forty-guest occupancy and the yard needs guard/runner staging. Final lighting, dialogue/voices, animation, collision/fire and player integration remain open. No map or shot has been marked human-approved.

@@ -1,0 +1,264 @@
+{
+  "name": "Ганаа",
+  "bodyHeightM": 1.7,
+  "sourceBodyVertices": 19158,
+  "headHeightFraction": 0.08589173857717852,
+  "waistWidthM": 0.363511066331657,
+  "sourceShapeKeys": 46,
+  "rigBones": 137,
+  "fingerBones": 30,
+  "garmentCorrections": {
+    "Clothes.Outfit": 40,
+    "Shoes": 22
+  },
+  "fullBodyRetained": true,
+  "renderBodyUsesClothingMasks": true,
+  "meshes": [
+    {
+      "name": "Eyebrows",
+      "role": "Eyebrows",
+      "vertices": 124,
+      "triangles": 192
+    },
+    {
+      "name": "Eyes",
+      "role": "Eyes",
+      "vertices": 1064,
+      "triangles": 2040
+    },
+    {
+      "name": "Shoes",
+      "role": "Shoes",
+      "vertices": 1594,
+      "triangles": 3064
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 865,
+      "triangles": 1050
+    },
+    {
+      "name": "Teeth",
+      "role": "Teeth",
+      "vertices": 3868,
+      "triangles": 7120
+    },
+    {
+      "name": "Tongue",
+      "role": "Tongue",
+      "vertices": 226,
+      "triangles": 448
+    },
+    {
+      "name": "Clothes.Top",
+      "role": "Clothes.Top",
+      "vertices": 2309,
+      "triangles": 4284
+    },
+    {
+      "name": "Clothes.Bottom",
+      "role": "Clothes.Bottom",
+      "vertices": 886,
+      "triangles": 1712
+    },
+    {
+      "name": "Hands.L",
+      "role": "Hands.L",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Hands.R",
+      "role": "Hands.R",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Body.Skin",
+      "role": "Body",
+      "vertices": 4820,
+      "triangles": 9428
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.1",
+      "role": "Details.Wrinkle.Forehead.1",
+      "vertices": 50,
+      "triangles": 48
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.2",
+      "role": "Details.Wrinkle.Forehead.2",
+      "vertices": 50,
+      "triangles": 48
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.3",
+      "role": "Details.Wrinkle.Forehead.3",
+      "vertices": 50,
+      "triangles": 48
+    },
+    {
+      "name": "Details.Wrinkle.Eye.-1.0",
+      "role": "Details.Wrinkle.Eye.-1.0",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Wrinkle.Eye.-1.1",
+      "role": "Details.Wrinkle.Eye.-1.1",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Wrinkle.Eye.1.0",
+      "role": "Details.Wrinkle.Eye.1.0",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Wrinkle.Eye.1.1",
+      "role": "Details.Wrinkle.Eye.1.1",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Story.ForearmBandage",
+      "role": "Story.ForearmBandage",
+      "vertices": 144,
+      "triangles": 240
+    }
+  ],
+  "packedTextures": [
+    {
+      "name": "brown_eye.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Bottom | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Top | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eyebrow001.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "eyelashes01.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "Eyes | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "ganaa | Skin detail normal",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Hair | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "male_casualsuit05_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "middleage_lightskinned_male_diffuse2.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "shoes02_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "short04_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Skin layer bake | Cast albedo",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "teeth.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "tongue01_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "id": "ganaa",
+  "episode": 1,
+  "scriptAge": 46,
+  "skinSource": "middleage_asian_male",
+  "skinDetailCount": 0,
+  "wrinkleParts": 7,
+  "storyStates": [
+    "healthy",
+    "hour-five",
+    "turning"
+  ],
+  "wardrobe": "jacket",
+  "casting": "Mongolian",
+  "dnaHash": "ffa98ccef10aa3cf624033af6f6d27ddbac51d7ad2ac0d23d6c7a50fbe39994b",
+  "baseStage": "adult",
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "sourceIndexMap": true
+}

@@ -1,0 +1,221 @@
+{
+  "passed": true,
+  "checks": {
+    "registered_locations": {
+      "passed": true,
+      "count": 20
+    },
+    "metric_town_frame": {
+      "passed": true,
+      "extent_m": [
+        3300.0,
+        3000.0
+      ]
+    },
+    "all_streets_connected": {
+      "passed": true,
+      "street_alignments": 60,
+      "unreachable": []
+    },
+    "roads_above_actual_terrain": {
+      "passed": true,
+      "samples": 6930,
+      "buried_samples": []
+    },
+    "road_grade": {
+      "passed": true,
+      "max_grade_percent": 5.937063801325099,
+      "limit_percent": 8
+    },
+    "vehicle_routes_clear": {
+      "passed": true,
+      "body_radius_m": 1.2,
+      "obstacles": []
+    },
+    "utility_poles_clear_of_streets": {
+      "passed": true,
+      "pole_count": 252,
+      "blocked_poles": [],
+      "pavement_clearance_m": 0.3
+    },
+    "reused_asset_part_transforms": {
+      "passed": true,
+      "checked_parts": 16575,
+      "incorrect_parts": [],
+      "incorrect_count": 0
+    },
+    "episode1_arrival_connected": {
+      "passed": true,
+      "road_length_m": 2671.54526852821,
+      "uncovered_samples": []
+    },
+    "street_house_gates_face_road": {
+      "passed": true,
+      "reversed_households": []
+    },
+    "school_workshop_maternity_access": {
+      "passed": true,
+      "expected_visible_doors": [
+        "N07.NorthDoor",
+        "N08.NorthDoor",
+        "N05.EastDoor"
+      ]
+    },
+    "textures_packed": {
+      "passed": true,
+      "images": 59
+    },
+    "existing_assets_reused": {
+      "passed": true,
+      "instances": {
+        "Bench": 12,
+        "Stall": 24,
+        "Car": 11,
+        "Apartment": 13,
+        "Dumpster": 4,
+        "House": 342,
+        "Fence": 2055,
+        "Gate": 411,
+        "Barrel": 419,
+        "Crate": 425,
+        "Ger": 69,
+        "BusStop": 3,
+        "WaterKiosk": 3,
+        "Pole": 252,
+        "Rock": 28,
+        "Apartment3": 2,
+        "Apartment5": 2
+      }
+    },
+    "finite_geometry": {
+      "passed": true
+    },
+    "residential_blocks_and_ground_surface": {
+      "passed": true,
+      "new_street_alignments": 25,
+      "ground_atlas_packed": true,
+      "three_floor_blocks": 2,
+      "five_floor_blocks": 2
+    },
+    "painted_ground_has_color": {
+      "passed": true,
+      "mean_rgb": [
+        0.4771355734139888,
+        0.461816198578731,
+        0.33839570111308603
+      ]
+    }
+  },
+  "locations": {
+    "N01": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "N02": [
+      -120.0,
+      170.0,
+      -0.19484665989875793
+    ],
+    "N03": [
+      -270.0,
+      260.0,
+      -0.5696032643318176
+    ],
+    "N04": [
+      760.0,
+      300.0,
+      4.330183506011963
+    ],
+    "N05": [
+      840.0,
+      350.0,
+      4.7063798904418945
+    ],
+    "N06": [
+      1330.0,
+      755.0,
+      7.085721969604492
+    ],
+    "N07": [
+      -720.0,
+      -230.0,
+      0.44305941462516785
+    ],
+    "N08": [
+      -760.0,
+      -360.0,
+      0.5289350748062134
+    ],
+    "N09": [
+      -370.0,
+      195.0,
+      -0.5351343154907227
+    ],
+    "N10": [
+      -275.0,
+      -80.0,
+      0.19239303469657898
+    ],
+    "N11": [
+      335.0,
+      -410.0,
+      0.43468809127807617
+    ],
+    "N12": [
+      420.0,
+      -370.0,
+      0.859685480594635
+    ],
+    "N13": [
+      -330.0,
+      -560.0,
+      0.9802142381668091
+    ],
+    "N14": [
+      945.0,
+      -400.0,
+      5.138605117797852
+    ],
+    "N15": [
+      710.0,
+      940.0,
+      3.927074432373047
+    ],
+    "N16": [
+      90.0,
+      1070.0,
+      0.2961174249649048
+    ],
+    "N17": [
+      -1180.0,
+      -650.0,
+      -0.761264979839325
+    ],
+    "N18": [
+      -1300.0,
+      -210.0,
+      -0.5628805756568909
+    ],
+    "N19": [
+      -40.0,
+      1180.0,
+      0.01985318772494793
+    ],
+    "N20": [
+      960.0,
+      470.0,
+      5.174465656280518
+    ]
+  },
+  "source_sha256": "d2ca395f9c1642cb8fb7aa6e2253b4b4e1b19839d1eefddc5734078c1a19f9c0",
+  "export_sha256": "318dc4721da56d213a881d21318cf7476a6e00e564c4c1cc1bb6ac161cf4eb64",
+  "registry_sha256": "12bada886e37b93099a68b2435aac1adf3cea8c4145d1d7e5a00d0c2ab7e4b62",
+  "layout_source_sha256": "594950e4a5bd9978e56d2bc5d8b5e7b063cbe6a9109d7e005a420c9f273f853c",
+  "geometry": {
+    "mesh_objects": 23048,
+    "unique_meshes": 6497,
+    "triangles": 776964
+  },
+  "limits": "Spatial development and static samples; no live player integration, interior alignment, vehicles/actors or final look approval."
+}

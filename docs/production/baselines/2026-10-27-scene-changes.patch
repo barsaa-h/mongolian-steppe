@@ -1,0 +1,998 @@
+diff --git a/src/sceneStages.js b/src/sceneStages.js
+index 356f5b3..cbac998 100644
+--- a/src/sceneStages.js
++++ b/src/sceneStages.js
+@@ -2,18 +2,19 @@ import * as THREE from "three";
+ import {
+   buildRoom, buildTubeLight, updateTubeLights, lightInterior,
+   floorMaterial, buildDesk, buildChair, buildCabinet, buildChalkboard,
+-  buildLaundryHatch, buildBoilerPipe,
++  buildLaundryHatch, buildBoilerPipe, buildDoor, ceilingMaterial,
+ } from "./interior.js";
+ import {
+-  buildStandingFigure, buildCrowd, crowdRows, attachSteam, updateInfected,
++  buildStandingFigure, buildWalkingFigure, animateWalk, animateLunge,
++  buildCrowd, crowdRows, crowdRing, attachSteam, updateInfected, dressInfected,
+ } from "./infected.js";
+ import {
+   addBox, asphaltMaterial, cylinder, mat, mulberry, solid, buildGer, buildPerson, buildHorse,
+-  buildFenceRun, buildWoodpile, groundPlane, contactShadow,
++  buildFenceRun, buildWoodpile, groundPlane, contactShadow, woodMaterial,
+ } from "./parts.js";
+ import { buildUAZ, buildHelicopter } from "./vehicles.js";
+ import {
+-  corrugatedTexture, cloneRepeat, dirtTexture, snowTexture, concreteTexture,
++  corrugatedTexture, cloneRepeat, dirtTexture, snowTexture, concreteTexture, iceTexture,
+ } from "./textures.js";
+ 
+ // Staging sets for the remaining map plan. Each module follows the scene
+@@ -101,7 +102,7 @@ const ep1Yard = {
+     scene.add(boxcar);
+ 
+     // The thing in the boxcar: flushed, steaming, mid-lunge.
+-    const infected = buildStandingFigure({ x: 0, z: 0, seed: 4, state: "red" });
++    const infected = buildWalkingFigure({ x: 0, z: 0, seed: 4, state: "red" });
+     infected.position.set(5.6, 0, -3.1);
+     infected.rotation.y = Math.PI / 2;
+     scene.add(infected);
+@@ -145,11 +146,32 @@ const ep1Yard = {
+     fence.position.set(-14, 0, -14);
+     fence.rotation.y = 0.2;
+     scene.add(fence);
+-    for (let i = 0; i < 10; i++) {
++    for (let i = 0; i < 14; i++) {
+       const crate = addBox(scene, 0.7 + rand() * 0.5, 0.5 + rand() * 0.3, 0.7, solid(0x5a4a36),
+         -18 + rand() * 34, 0.3, -14 + rand() * 22);
+       crate.rotation.y = rand() * 1.2;
+     }
++    // Oil stains, a frozen puddle, and tipped junk clusters on the yard floor.
++    const stainMat = mat({ color: 0x1c1c1a, transparent: true, opacity: 0.4, depthWrite: false });
++    for (const [x, z, sc] of [[2.5, 1.2, 1.6], [-6.5, -2.0, 2.2], [9.5, -1.0, 1.4], [-2.0, 5.5, 1.8]]) {
++      const stain = groundPlane(2.2 * sc, 1.5 * sc, stainMat, x, z, 0.03);
++      stain.rotation.z = rand() * 3;
++      scene.add(stain);
++    }
++    const iceMat = mat({ color: 0xb8ccd6, transparent: true, opacity: 0.65, depthWrite: false });
++    const puddle = groundPlane(1.9, 1.1, iceMat, -6.5, -2.0, 0.032);
++    scene.add(puddle);
++    const junk = new THREE.Group();
++    addBox(junk, 1.6, 0.12, 0.8, solid(0x4a4438), 0, 0.06, 0);
++    addBox(junk, 0.5, 0.4, 0.5, solid(0x5a4a36), -0.4, 0.3, 0.1);
++    addBox(junk, 0.36, 0.7, 0.14, solid(0x6a5a44), 0.5, 0.35, -0.1);
++    junk.rotation.y = 0.7;
++    junk.position.set(-4.2, 0, -0.4);
++    scene.add(junk);
++    const junk2 = junk.clone();
++    junk2.position.set(10.5, 0, 2.6);
++    junk2.rotation.y = -1.2;
++    scene.add(junk2);
+ 
+     const guard = (await import("./character.js")).loadCharacter;
+     const guardFigure = await guard({ id: "yard-guard" });
+@@ -174,6 +196,7 @@ const ep1Yard = {
+       updateInfected(time);
+       updateSteamLunge(time);
+       updateVent(time);
++      animateLunge(infected, time);
+       guardFigure.setTime(time);
+       irina.setTime(time);
+       // The guard walks toward the open boxcar and freezes there.
+@@ -307,7 +330,7 @@ const ep1Truckstop = {
+     hurel.group.position.set(-10.4, 0, -7.2);
+     hurel.group.rotation.y = 0.6;
+     scene.add(hurel.group);
+-    const dasha = buildStandingFigure({ x: 0, z: 0, seed: 21, state: "red" });
++    const dasha = buildWalkingFigure({ x: 0, z: 0, seed: 21, state: "red" });
+     scene.add(dasha);
+ 
+     function update(time, camera) {
+@@ -317,8 +340,19 @@ const ep1Truckstop = {
+       hurel.setTime(time);
+       // Dasha sprints past the KAMAZ, then the pump goes up.
+       const sprint = clamp01((time - 7.2) / 3.2);
+-      dasha.position.set(4.5 - sprint * 5.5, 0, -3.4 + sprint * 3.4);
+-      dasha.rotation.y = Math.atan2(-5.5, 3.4);
++      if (time > 7.2) {
++        animateWalk(dasha, time, 1.3, true);
++        dasha.rotation.y = Math.atan2(-5.5, 3.4);
++      } else {
++        dasha.position.y = 0;
++        dasha.rotation.x = 0;
++        dasha.userData.limbs.legs.forEach(l => { l.rotation.x = 0; });
++        dasha.userData.limbs.arms.forEach(a => { a.rotation.x = 0; });
++        dasha.position.set(4.5, 0, -3.4);
++        dasha.rotation.y = 2.4;
++      }
++      dasha.position.x = 4.5 - sprint * 5.5;
++      dasha.position.z = -3.4 + sprint * 3.4;
+       const blast = clamp01((time - 10.35) / 0.5);
+       const falloff = clamp01(1 - (time - 10.85) / 1.1);
+       fire.children.forEach((cone, i) => {
+@@ -489,16 +523,19 @@ const GOV_SHOTS = [
+   { id: "office", start: 4, end: 7, lens: 42 },
+   { id: "banquet", start: 7, end: 10.5, lens: 44 },
+   { id: "helipad", start: 10.5, end: 14, lens: 48 },
++  { id: "clock", start: 14, end: 19, lens: 50 },
+ ];
+ 
+ const ep3Governor = {
+   id: "ep3-governor",
+-  duration: 14,
++  duration: 19,
+   shots: GOV_SHOTS,
+-  state: makeState(GOV_SHOTS, 14, [
++  state: makeState(GOV_SHOTS, 19, [
+     { start: 4.3, end: 6.7, speaker: "МИНИСТР", text: "Лхагва, намайг сайн сонс. Томуу гэж мэдээл. Тэгээд л болоо." },
+     { start: 7.3, end: 9.2, speaker: "ЧИНБАТ", text: "Хөөе, согтуу ал аа! Бос! Тавгаа аваад яв!" },
+     { start: 10.7, end: 13.4, speaker: "ИРГЭН 1", text: "Дарга аа! Автобус нь хаана байна аа?! Хэдэн цаг хүлээх юм?!" },
++    { start: 14.8, end: 16.6, speaker: "УЯНГА", text: "Энэ... доор байгаа хүмүүс чинь бүгд яагаад ингэж зогсоод байгаа юм?" },
++    { start: 17.0, end: 18.7, speaker: "ЛХАГВА", text: "...Автобус хүлээгээд байгаа юм байлгүй." },
+   ]),
+   async build() {
+     const { loadCharacter } = await import("./character.js");
+@@ -605,10 +642,50 @@ const ep3Governor = {
+ 
+     const updateSteamPad = attachSteam(scene, [heli], { strength: 1.6, height: 3.4 });
+ 
++    // The cliffhanger: from above, the heating plant ringed by thousands of
++    // the Standing like numbers on a clock face.
++    const plantGround = new THREE.Mesh(new THREE.PlaneGeometry(90, 70), floorMaterial("concrete"));
++    plantGround.rotation.x = -Math.PI / 2;
++    plantGround.position.set(0, 0, -46);
++    scene.add(plantGround);
++    const plantHall = addBox(scene, 22, 7, 14, floorMaterial("concrete"), 0, 3.5, -46);
++    void plantHall;
++    for (const x of [-5.5, 0, 5.5]) {
++      const stack = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 1.05, 17, 8), solid(0x5a5048));
++      stack.position.set(x, 8.5, -49);
++      scene.add(stack);
++      const ember = new THREE.Mesh(
++        new THREE.PlaneGeometry(1.3, 1.9),
++        new THREE.MeshLambertMaterial({ color: 0x2c2018, emissive: 0xd85a18, emissiveIntensity: 0.9 })
++      );
++      ember.position.set(x, 14.2, -49);
++      scene.add(ember);
++    }
++    const plantGlow = new THREE.PointLight(0xd85a18, 2.4, 34, 1.3);
++    plantGlow.position.set(0, 4, -42);
++    scene.add(plantGlow);
++    const clockPositions = [
++      ...crowdRing({ center: [0, -42], radius: 15, count: 420, seed: 91 }),
++      ...crowdRing({ center: [0, -42], radius: 19.5, count: 520, seed: 92 }),
++    ];
++    const clockCrowd = buildCrowd({ positions: clockPositions, seed: 91, state: "white" });
++    scene.add(clockCrowd);
++    const clockSteamAnchors = clockPositions.slice(0, 5).map(([x, z]) => {
++      const anchor = new THREE.Object3D();
++      anchor.position.set(x, 0, z);
++      scene.add(anchor);
++      return anchor;
++    });
++    const stackAnchor = new THREE.Object3D();
++    stackAnchor.position.set(0, 17.2, -49);
++    scene.add(stackAnchor);
++    const updateSteamClock = attachSteam(scene, [stackAnchor, ...clockSteamAnchors], { strength: 2.0, height: 0 });
++
+     function update(time, camera) {
+       updateTubeLights(time);
+       updateInfected(time);
+       updateSteamPad(time);
++      updateSteamClock(time);
+       lkhagva.setTime(time);
+       waiter.setTime(time);
+       heli.userData.rotor.rotation.y += 0.55;
+@@ -623,7 +700,8 @@ const ep3Governor = {
+         ? { id: "bathroom", p: time / 4 }
+         : time < 7 ? { id: "office", p: (time - 4) / 3 }
+           : time < 10.5 ? { id: "banquet", p: (time - 7) / 3.5 }
+-            : { id: "helipad", p: (time - 10.5) / 3.5 };
++            : time < 14 ? { id: "helipad", p: (time - 10.5) / 3.5 }
++              : { id: "clock", p: (time - 14) / 5 };
+       if (s.id === "bathroom") {
+         camera.position.set(-4.4, 1.5, -6.8);
+         camera.lookAt(-6, 0.8, -8.6);
+@@ -633,9 +711,14 @@ const ep3Governor = {
+       } else if (s.id === "banquet") {
+         camera.position.set(6.2, 1.7, -3.2);
+         camera.lookAt(2.2, 1.0, -6.2);
+-      } else {
++      } else if (s.id === "helipad") {
+         camera.position.set(7.2 - s.p * 2.0, 7.6 - s.p * 1.4, -9.0 - s.p * 1.2);
+         camera.lookAt(2.5, 3.8, -14.6);
++      } else {
++        // The helicopter's view: the clock face below, slow drift clockwise.
++        const a = 0.5 + s.p * 0.5;
++        camera.position.set(Math.sin(a) * 26, 21 - s.p * 3, -42 + Math.cos(a) * 26);
++        camera.lookAt(0, 3, -44);
+       }
+     }
+ 
+@@ -655,6 +738,7 @@ const SCHOOL_SHOTS = [
+ const ep4School = {
+   id: "ep4-school",
+   duration: 12,
++  grade: { type: "hi8" },
+   shots: SCHOOL_SHOTS,
+   state: makeState(SCHOOL_SHOTS, 12, [
+     { start: 0.8, end: 3.0, speaker: "АНУ", text: "Номин, наашаа хар! За, Наран хотын хоёрдугаар сургуулиас шууд дамжуулж байна!" },
+@@ -874,6 +958,33 @@ const ep5Cordon = {
+     }
+     const queue = buildCrowd({ positions: queueSpots, seed: 6, state: "grey" });
+     scene.add(queue);
++    // What the six hundred carried: flour sacks, bundles, a hand cart.
++    const sackMat = mat({ map: cloneRepeat(concreteTexture("#c8b890"), 1, 1) });
++    for (let i = 0; i < 9; i++) {
++      const [qx, qz] = queueSpots[(rand() * queueSpots.length) | 0];
++      const sack = addBox(scene, 0.42 + rand() * 0.16, 0.3, 0.26, sackMat,
++        qx + 0.9 + rand() * 0.5, 0.15, qz + rand() * 0.5);
++      sack.rotation.y = rand() * 2;
++    }
++    for (let i = 0; i < 5; i++) {
++      const [qx, qz] = queueSpots[(rand() * queueSpots.length) | 0];
++      addBox(scene, 0.5, 0.34, 0.4, solid(0x4e4438), qx - 1.0 - rand() * 0.4, 0.17, qz + rand() * 0.4);
++    }
++    const cart = new THREE.Group();
++    addBox(cart, 0.9, 0.08, 0.6, solid(0x5a4a36), 0, 0.42, 0);
++    addBox(cart, 0.06, 0.4, 0.5, solid(0x4a3c2c), -0.4, 0.2, 0);
++    addBox(cart, 0.06, 0.4, 0.5, solid(0x4a3c2c), 0.4, 0.2, 0);
++    for (const x of [-0.32, 0.32]) {
++      const wheel = cylinder(0.2, 0.2, 0.06, solid(0x2c2a26), 8);
++      wheel.rotation.x = Math.PI / 2;
++      wheel.position.set(x, 0.2, 0.34);
++      cart.add(wheel);
++    }
++    const cartLoad = addBox(cart, 0.6, 0.3, 0.45, sackMat, 0, 0.62, 0);
++    void cartLoad;
++    cart.position.set(-2.6, 0, 3.4);
++    cart.rotation.y = 0.3;
++    scene.add(cart);
+ 
+     // The field of the Standing behind the line, waking.
+     const field = buildCrowd({
+@@ -976,21 +1087,29 @@ const ep6Gorge = {
+       scene.add(east);
+     }
+ 
+-    // The family riding the ridge line, wrapped hooves, felt steadying.
++    // The family riding the ridge line: Tsogt front, Sarnai the lightest,
++    // Narantuya with her bow, Bold with the radio. Wrapped hooves, no talk.
++    const { loadCharacter } = await import("./character.js");
+     const riders = [];
+-    const riderSpots = [[-9, 4.5], [-10.5, 2.6], [-8, 0.8], [-11, -1.2]];
+-    riderSpots.forEach(([x, z], i) => {
++    const riderSpots = [
++      ["tsogt", -9, 4.5, 0.9],
++      ["sarnai", -10.5, 2.6, 0.86],
++      ["narantuya", -8, 0.8, 0.88],
++      ["bold", -11, -1.2, 0.9],
++    ];
++    for (const [id, x, z, seatY] of riderSpots) {
+       const horse = buildHorse();
+-      horse.scale.setScalar(0.92 + (i % 2) * 0.06);
++      horse.scale.setScalar(id === "sarnai" ? 0.84 : 0.92);
+       horse.position.set(x, 0, z);
+       horse.rotation.y = -Math.PI / 2 + 0.3;
+       scene.add(horse);
+-      const rider = buildPerson({ coat: [0x8c5a32, 0x4a5a78, 0x8a4038, 0x3a5a48][i], hat: 0x8c2f24 });
+-      rider.group.position.set(x, 0.86, z);
++      const rider = await loadCharacter({ id });
++      rider.group.position.set(x, seatY, z);
+       rider.group.rotation.y = -Math.PI / 2 + 0.3;
++      rider.group.scale.setScalar(id === "sarnai" ? 0.78 : 0.94);
+       scene.add(rider.group);
+       riders.push({ horse, rider });
+-    });
++    }
+ 
+     // Fresh runners pouring into the mouth of the gorge.
+     const pour = buildCrowd({
+@@ -999,12 +1118,10 @@ const ep6Gorge = {
+       state: "red",
+     });
+     scene.add(pour);
+-    // The hero stand: one figure, arms folded, in the mouth of the pass.
+-    const hero = buildPerson({ coat: 0x6a4a30, hat: 0x2a2a28, stance: true });
++    // The hero stand: Dorj in the mouth of the pass, arms wide, counting too.
++    const hero = await loadCharacter({ id: "dorj" });
+     hero.group.position.set(0, 0, -9.5);
+     hero.group.rotation.y = Math.PI;
+-    hero.arms[0].rotation.z = 1.1;
+-    hero.arms[1].rotation.z = -1.1;
+     scene.add(hero.group);
+ 
+     function update(time, camera) {
+@@ -1016,9 +1133,10 @@ const ep6Gorge = {
+       if (s.id === "ridge") {
+         riders.forEach(({ horse, rider }, i) => {
+           const drift = s.p * 3.2;
+-          horse.position.z = riderSpots[i][1] + drift;
+-          rider.group.position.z = riderSpots[i][1] + drift;
+-          rider.group.position.y = 0.86 + Math.sin(time * 9 + i) * 0.04;
++          horse.position.z = riderSpots[i][2] + drift;
++          rider.group.position.z = riderSpots[i][2] + drift;
++          rider.group.position.y = riderSpots[i][3] + Math.sin(time * 9 + i) * 0.04;
++          rider.setTime(time);
+         });
+         camera.position.set(-4, 3.2, 12 - s.p * 2);
+         camera.lookAt(-9.5, 1.2, 2);
+@@ -1062,8 +1180,45 @@ const ep10Dzud = {
+     const snowGround = groundPlane(80, 120, mat({ map: cloneRepeat(snowTexture(), 18, 26) }), 0, -20, 0);
+     scene.add(snowGround);
+ 
+-    // Winter camp: three gers, smoke, wood, horses hobbled in the white.
+-    for (const [x, z, s] of [[-5, -2, 0.95], [0.5, 1.5, 1.05], [-1.5, -7, 0.9]]) {
++    // Snow relief: drifts, buried grass, and a trampled ring around camp.
++    const driftMat = mat({ map: cloneRepeat(snowTexture(), 2, 2), color: 0xf6fafd });
++    const driftSpots = [];
++    for (let i = 0; i < 22; i++) {
++      const dx = -26 + rand() * 52;
++      const dz = -22 + rand() * 34;
++      // Keep the lake fly-through corridor clear of mounds.
++      if (dx > 3 && dz < -8) continue;
++      driftSpots.push([dx, dz, 1 + rand() * 2.6]);
++    }
++    for (const [x, z, sc] of driftSpots) {
++      const drift = new THREE.Mesh(new THREE.IcosahedronGeometry(sc, 0), driftMat);
++      drift.position.set(x, sc * 0.16, z);
++      drift.scale.set(1 + rand() * 0.8, 0.32, 0.8 + rand() * 0.6);
++      drift.rotation.y = rand() * 3;
++      scene.add(drift);
++    }
++    const tuftMat = solid(0x9a8c58);
++    for (let i = 0; i < 30; i++) {
++      const tuft = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.24 + rand() * 0.2, 4), tuftMat);
++      tuft.position.set(-24 + rand() * 48, 0.1, -20 + rand() * 30);
++      tuft.rotation.z = (rand() - 0.5) * 0.6;
++      scene.add(tuft);
++    }
++    // Distant ridgelines break the clean horizon in every shot.
++    const ridgeMat = mat({ color: 0x9db0c0 });
++    for (const [x, z, w, hgt] of [[-46, -58, 40, 7], [34, -64, 52, 9], [-8, -92, 74, 8], [56, -30, 30, 5], [-62, -34, 34, 6]]) {
++      const ridge = new THREE.Mesh(new THREE.IcosahedronGeometry(1, 1), ridgeMat);
++      ridge.position.set(x, -hgt * 0.55, z);
++      ridge.scale.set(w, hgt, 10);
++      scene.add(ridge);
++    }
++
++    // Winter camp: three gers banked with snow skirts, smoke, wood, tethered
++    // horses, a sled, dung piles, buckets, and footprint trails in the snow.
++    const trampled = mat({ map: cloneRepeat(dirtTexture(), 2, 2), color: 0xb8ac96, transparent: true, opacity: 0.5, depthWrite: false });
++    const skirtMat = driftMat;
++    const gerSpots = [[-5, -2, 0.95], [0.5, 1.5, 1.05], [-1.5, -7, 0.9]];
++    for (const [x, z, s] of gerSpots) {
+       const ger = buildGer(s);
+       ger.position.set(x, 0, z);
+       ger.rotation.y = rand() * 1.5;
+@@ -1071,14 +1226,53 @@ const ep10Dzud = {
+       const shadow = contactShadow(5.4, 5.4, 0.22);
+       shadow.position.set(x, 0.05, z);
+       scene.add(shadow);
++      // Snow banked around the felt wall, hugging it like a drifted skirt.
++      const skirt = new THREE.Mesh(
++        new THREE.CylinderGeometry(2.34 * s, 2.8 * s, 0.55 * s, 14, 1, true), skirtMat);
++      skirt.position.set(x, 0.22 * s, z);
++      scene.add(skirt);
++      const trample = groundPlane(4.6 * s, 3.4 * s, trampled, x, z + 2.0 * s, 0.035);
++      scene.add(trample);
+       const gerSmoke = new THREE.Object3D();
+       gerSmoke.position.set(x - 1.0 * s, 3.4 * s, z - 0.5 * s);
+       scene.add(gerSmoke);
+       gerSmoke.userData.campSmoke = true;
++      // Buckets and a dung pile by the door.
++      addBox(scene, 0.24, 0.3, 0.24, solid(0x5a6a72), x + 1.4 * s, 0.15, z + 1.6 * s);
++      addBox(scene, 0.2, 0.24, 0.2, solid(0x6a5a48), x + 1.75 * s, 0.12, z + 1.5 * s);
++      const dung = new THREE.Mesh(new THREE.IcosahedronGeometry(0.4, 0), solid(0x6a5638));
++      dung.position.set(x - 1.9 * s, 0.14, z + 1.8 * s);
++      dung.scale.y = 0.5;
++      scene.add(dung);
++    }
++    // Footprint trails between the gers and out to the horses.
++    const stepMat = mat({ color: 0xaab6c4, transparent: true, opacity: 0.5, depthWrite: false });
++    const trails = [
++      [[-4.0, 0.2], [-2.0, 0.8], [0.0, 1.2], [2.0, 1.6], [3.6, 2.4]],
++      [[-1.2, -5.4], [-0.9, -3.9], [-0.6, -2.4], [-0.3, -0.9]],
++      [[0.9, 2.4], [2.6, 3.6], [4.0, 5.0], [5.0, 6.8]],
++    ];
++    for (const trail of trails) {
++      trail.forEach(([x, z], i) => {
++        for (const side of [-0.16, 0.16]) {
++          const print = groundPlane(0.16, 0.26, stepMat, x + side, z + (i % 2) * 0.12, 0.028);
++          print.rotation.z = (rand() - 0.5) * 0.4;
++          scene.add(print);
++        }
++      });
+     }
+     const wood = buildWoodpile();
+     wood.position.set(2.8, 0, -3.5);
+     scene.add(wood);
++    addBox(scene, 1.35, 0.06, 0.7, driftMat, 2.8, 0.62, -3.5);
++    // A sled and a tether line for the horses.
++    const sled = new THREE.Group();
++    addBox(sled, 2.1, 0.1, 0.9, solid(0x6a4e32), 0, 0.3, 0);
++    addBox(sled, 2.3, 0.08, 0.14, solid(0x4a3826), 0, 0.1, -0.38);
++    addBox(sled, 2.3, 0.08, 0.14, solid(0x4a3826), 0, 0.1, 0.38);
++    sled.position.set(5.6, 0, -2.2);
++    sled.rotation.y = 0.5;
++    scene.add(sled);
+     const campHorses = [];
+     for (let i = 0; i < 3; i++) {
+       const horse = buildHorse();
+@@ -1087,6 +1281,7 @@ const ep10Dzud = {
+       horse.rotation.y = rand() * 2;
+       scene.add(horse);
+       campHorses.push(horse);
++      addBox(scene, 0.1, 1.1, 0.1, solid(0x4a3826), 4.5 + i * 1.4 + 0.9, 0.55, -8 + (i % 2) * 1.2 + 0.9);
+     }
+     const campSmokeAnchors = scene.children.filter(o => o.userData.campSmoke);
+     const updateCampSteam = attachSteam(scene, campSmokeAnchors, { strength: 1.1, height: 0 });
+@@ -1094,13 +1289,32 @@ const ep10Dzud = {
+     // Frozen lake: translucent ice with the Standing caught beneath it.
+     const lakeIce = new THREE.Mesh(
+       new THREE.PlaneGeometry(26, 14),
+-      new THREE.MeshLambertMaterial({ color: 0xbdd2da, transparent: true, opacity: 0.55 })
++      new THREE.MeshLambertMaterial({
++        map: cloneRepeat(iceTexture(), 5, 3),
++        color: 0xd4e2ea, transparent: true, opacity: 0.82,
++      })
+     );
+     lakeIce.rotation.x = -Math.PI / 2;
+     lakeIce.position.set(-2, 0.06, -24);
+     scene.add(lakeIce);
+     const lakeBed = groundPlane(26, 14, solid(0x5a6870), -2, -24, -0.9);
+     scene.add(lakeBed);
++    // Wind-blown snow patches and a cracked pressure ridge along the far shore.
++    for (let i = 0; i < 7; i++) {
++      const patch = new THREE.Mesh(new THREE.IcosahedronGeometry(0.9 + rand() * 1.4, 0), driftMat);
++      patch.position.set(-13 + rand() * 22, 0.1, -29 + rand() * 9);
++      patch.scale.set(1.4, 0.14, 1);
++      patch.rotation.y = rand() * 3;
++      scene.add(patch);
++    }
++    for (let i = 0; i < 5; i++) {
++      addBox(scene, 0.7 + rand() * 1.3, 0.22, 0.4, solid(0x9ab4c2),
++        -12 + rand() * 22, 0.1, -30.5 + rand() * 2);
++    }
++    const farShore = new THREE.Mesh(new THREE.IcosahedronGeometry(1, 1), ridgeMat);
++    farShore.position.set(-2, -2.6, -40);
++    farShore.scale.set(34, 3.4, 9);
++    scene.add(farShore);
+     const iceFigures = [];
+     const iceSpots = [];
+     for (let i = 0; i < 12; i++) {
+@@ -1110,21 +1324,28 @@ const ep10Dzud = {
+         rand() * Math.PI * 2,
+       ]);
+     }
++    const iceShadowMat = mat({ color: 0x8aa2b2, transparent: true, opacity: 0.5, depthWrite: false });
+     for (const [x, z, yaw] of iceSpots) {
+       const figure = buildStandingFigure({ x, z, yaw, seed: 30 + iceFigures.length, state: "white" });
+       figure.position.y = -0.55;
+       scene.add(figure);
+       iceFigures.push(figure);
++      const pool = groundPlane(1.4, 1.1, iceShadowMat, x, z, 0.075);
++      pool.rotation.z = yaw;
++      scene.add(pool);
++      // Thawed dark hole where each figure broke through.
++      addBox(scene, 0.5, 0.02, 0.4, solid(0x42586a), x, 0.072, z - 0.55);
+     }
+ 
+     // Blizzard: hard white streaks crossing the wind.
+     const flakes = [];
+-    for (let i = 0; i < 26; i++) {
++    for (let i = 0; i < 44; i++) {
+       const flake = new THREE.Mesh(
+-        new THREE.PlaneGeometry(0.34, 0.03),
++        new THREE.PlaneGeometry(0.3 + rand() * 0.22, 0.03),
+         new THREE.MeshBasicMaterial({ color: 0xf2f6fa, transparent: true, opacity: 0.5, depthWrite: false })
+       );
+       flake.userData.seed = rand() * 10;
++      flake.userData.low = rand() < 0.5;
+       scene.add(flake);
+       flakes.push(flake);
+     }
+@@ -1132,30 +1353,47 @@ const ep10Dzud = {
+     // North pass vista: the valley beyond, breathing steam in the cold.
+     for (let i = 0; i < 7; i++) {
+       const column = new THREE.Object3D();
+-      column.position.set(-22 + i * 6 + rand() * 2.5, 0, -46 - rand() * 10);
++      column.position.set(-22 + i * 6 + rand() * 2.5, 0.5, -46 - rand() * 8);
+       scene.add(column);
+       column.userData.vapor = true;
+     }
+     const vaporAnchors = scene.children.filter(o => o.userData.vapor);
+-    const updateVapor = attachSteam(scene, vaporAnchors, { strength: 2.2, height: 0 });
++    const updateVapor = attachSteam(scene, vaporAnchors, { strength: 3.4, height: 0.6 });
+     const valleyGlow = new THREE.PointLight(0xffb060, 1.6, 44, 1.2);
+     valleyGlow.position.set(-6, 3, -52);
+     scene.add(valleyGlow);
+ 
++    const birds = [];
++    for (let i = 0; i < 3; i++) {
++      const bird = (await import("./parts.js")).buildBird();
++      bird.group.scale.setScalar(1.4);
++      scene.add(bird.group);
++      birds.push({ ...bird, phase: i * 2.1 });
++    }
++
+     function update(time, camera) {
+       updateTubeLights(time);
+       updateInfected(time);
+       updateCampSteam(time);
+       updateVapor(time);
++      for (const bird of birds) {
++        const angle = time * 0.24 + bird.phase;
++        bird.group.position.set(Math.sin(angle) * 16, 6.5 + Math.sin(time + bird.phase) * 0.8, -6 + Math.cos(angle) * 13);
++        bird.group.rotation.y = angle + Math.PI / 2;
++        const flap = Math.sin(time * 7 + bird.phase * 3) * 0.5;
++        bird.left.rotation.z = flap;
++        bird.right.rotation.z = -flap;
++      }
+       for (const flake of flakes) {
+         const t = time * (5 + flake.userData.seed) + flake.userData.seed * 20;
++        const low = flake.userData.low;
+         flake.position.set(
+-          -30 + ((t * 4 + flake.userData.seed * 50) % 60),
+-          0.4 + flake.userData.seed % 3.4,
+-          -34 + ((t * 2.4 + flake.userData.seed * 30) % 44)
++          -30 + ((t * (low ? 5.5 : 4) + flake.userData.seed * 50) % 60),
++          low ? 0.12 + (flake.userData.seed % 0.5) : 0.9 + flake.userData.seed % 3.4,
++          -34 + ((t * (low ? 3 : 2.4) + flake.userData.seed * 30) % 44)
+         );
+         flake.rotation.y = t;
+-        flake.material.opacity = 0.28 + 0.22 * Math.sin(t * 2 + flake.userData.seed);
++        flake.material.opacity = (low ? 0.4 : 0.26) + 0.22 * Math.sin(t * 2 + flake.userData.seed);
+       }
+       const s = time < 5.5
+         ? { id: "camp", p: time / 5.5 }
+@@ -1176,11 +1414,417 @@ const ep10Dzud = {
+   },
+ };
+ 
++// EP7: the boiler house. Oyun waits with baby Naran, the door opens on a dawn
++// silhouette, and outside the field of the Standing faces the heat. Episode 7
++// has no approved dialogue yet, so the staging stays silent.
++const BOILER_SHOTS = [
++  { id: "waiting", start: 0, end: 4.5, lens: 40 },
++  { id: "door", start: 4.5, end: 8.5, lens: 44 },
++  { id: "handoff", start: 8.5, end: 12, lens: 46 },
++];
++
++const ep7Boilerhouse = {
++  id: "ep7-boilerhouse",
++  duration: 12,
++  shots: BOILER_SHOTS,
++  state: makeState(BOILER_SHOTS, 12, []),
++  async build() {
++    const { loadCharacter } = await import("./character.js");
++    const scene = new THREE.Scene();
++    scene.fog = new THREE.Fog(0x1c1a18, 3, 34);
++    scene.background = new THREE.Color(0x12100e);
++    lightInterior(scene, { warm: 0xd89a60, level: 0.55 });
++
++    const room = buildRoom({ w: 6.5, d: 5.5, h: 3.4, x: 0, z: 0, wall: 2, floor: "concrete", doorWidth: 1.1 });
++    scene.add(room);
++
++    // The boiler: firebox glow, hot pipes, gauges, a workbench.
++    addBox(scene, 2.1, 2.3, 1.5, mat({ color: 0x453a32, emissive: 0x7a2e10, emissiveIntensity: 0.3 }), -1.6, 1.15, -1.6);
++    const firebox = new THREE.Mesh(
++      new THREE.PlaneGeometry(0.7, 0.5),
++      new THREE.MeshLambertMaterial({ color: 0x180c06, emissive: 0xff6a20, emissiveIntensity: 1.3 })
++    );
++    firebox.position.set(-1.6, 0.7, -0.84);
++    scene.add(firebox);
++    const fireGlow = new THREE.PointLight(0xff6a20, 2.6, 12, 1.4);
++    fireGlow.position.set(-1.6, 0.9, -0.5);
++    scene.add(fireGlow);
++    const pipe = buildBoilerPipe({ length: 4.4, y: 2.5 });
++    pipe.position.set(-1.6, 0, -0.78);
++    scene.add(pipe);
++    const pipe2 = buildBoilerPipe({ length: 3.2, y: 2.1 });
++    pipe2.position.set(-2.6, 0, -0.78);
++    pipe2.rotation.y = Math.PI / 2;
++    scene.add(pipe2);
++    for (const x of [-0.3, 0.1, 0.5]) {
++      addBox(scene, 0.22, 0.16, 0.03, solid(0xd8d0b8), x, 1.9, -2.72);
++    }
++    addBox(scene, 1.7, 0.5, 0.55, woodMaterial(), 1.9, 0.25, -1.9);
++
++    // The heavy street door at dawn; beyond it, the waiting field.
++    const door = buildDoor({ width: 1.1, open: 0, glazed: false });
++    door.position.set(0, 0, 2.72);
++    scene.add(door);
++    const dawnShaft = new THREE.SpotLight(0xd8b890, 5.0, 16, 0.62, 0.55, 1.2);
++    dawnShaft.position.set(0, 2.6, 4.5);
++    const shaftTarget = new THREE.Object3D();
++    shaftTarget.position.set(1.2, 0.6, 0.5);
++    scene.add(shaftTarget, dawnShaft);
++    dawnShaft.target = shaftTarget;
++
++    const fieldSpots = crowdRows({ origin: [0, 9.5], dir: [0, -1], across: 5, rows: 3, spacing: 1.8, seed: 71 });
++    const field = buildCrowd({ positions: fieldSpots, seed: 71, state: "white" });
++    scene.add(field);
++    const nearField = fieldSpots.slice(0, 3).map(([x, z]) => {
++      const anchor = new THREE.Object3D();
++      anchor.position.set(x, 0, z);
++      scene.add(anchor);
++      return anchor;
++    });
++    const updateSteamField = attachSteam(scene, nearField, { strength: 0.9, height: 1.5 });
++    const boilerAnchor = new THREE.Object3D();
++    boilerAnchor.position.set(-1.6, 2.6, -1.0);
++    scene.add(boilerAnchor);
++    const updateSteamBoiler = attachSteam(scene, [boilerAnchor], { strength: 1.1, height: 0 });
++
++    const oyun = await loadCharacter({ id: "oyun" });
++    oyun.group.position.set(1.2, 0, -0.6);
++    oyun.group.rotation.y = -0.5;
++    scene.add(oyun.group);
++    const naran = await loadCharacter({ id: "naran" });
++    // The swaddle rides in Oyun's arms: parented, so it moves when she rises.
++    naran.group.position.set(0.17, 0.98, 0.2);
++    naran.group.rotation.y = 0.4;
++    oyun.group.add(naran.group);
++    // Tsogt has no cast model yet; a blocky deel figure stands in at the door.
++    const tsogt = buildPerson({ coat: 0x6a4a30, hat: 0x2a2a28, stance: true });
++    tsogt.group.position.set(0, 0, 5.2);
++    tsogt.group.rotation.y = Math.PI;
++    scene.add(tsogt.group);
++
++    function update(time, camera) {
++      updateTubeLights(time);
++      updateInfected(time);
++      updateSteamField(time);
++      updateSteamBoiler(time);
++      oyun.setTime(time);
++      naran.setTime(time);
++      // The door swings open on the dawn silhouette; Oyun rises to meet it.
++      const open = eased(clamp01((time - 4.6) / 1.4));
++      const leaf = door.children.at(-1);
++      leaf.rotation.y = -open * 1.25;
++      const rise = eased(clamp01((time - 5.2) / 1.6));
++      oyun.group.position.set(1.2 - rise * 1.0, 0, -0.6 + rise * 1.7);
++      tsogt.group.position.z = 5.2 - open * 2.3;
++      fireGlow.intensity = 2.6 + Math.sin(time * 23) * 0.35;
++      const s = time < 4.5
++        ? { id: "waiting", p: time / 4.5 }
++        : time < 8.5 ? { id: "door", p: (time - 4.5) / 4 } : { id: "handoff", p: (time - 8.5) / 3.5 };
++      if (s.id === "waiting") {
++        camera.position.set(3.2 - s.p * 0.8, 1.6, 2.6 - s.p * 0.6);
++        camera.lookAt(-1.2, 1.1, -1.6);
++      } else if (s.id === "door") {
++        camera.position.set(-2.2, 1.6, 0.0);
++        camera.lookAt(0.3, 1.25, 3.1);
++      } else {
++        camera.position.set(2.9 - s.p * 0.5, 1.5, 2.7 - s.p * 0.4);
++        camera.lookAt(0.4 - s.p * 0.3, 1.0, 0.6);
++      }
++    }
++
++    return { scene, update, actor: () => oyun };
++  },
++};
++
++// EP9: the Mi-8 cabin. A shaking metal box at dawn — Batu's hidden bite turns
++// mid-flight, Dashnyam is eaten and stays, the Governor is pressed to the wall.
++// Episode 9 has no approved dialogue yet, so the staging stays silent.
++const CABIN_SHOTS = [
++  { id: "cabin", start: 0, end: 4, lens: 40 },
++  { id: "turn", start: 4, end: 8, lens: 44 },
++  { id: "aftermath", start: 8, end: 11, lens: 46 },
++];
++
++const ep9Cabin = {
++  id: "ep9-cabin",
++  duration: 11,
++  shots: CABIN_SHOTS,
++  state: makeState(CABIN_SHOTS, 11, []),
++  async build() {
++    const { loadCharacter } = await import("./character.js");
++    const scene = new THREE.Scene();
++    scene.fog = new THREE.Fog(0x2a2e30, 2, 18);
++    scene.background = new THREE.Color(0x1a1e20);
++    lightInterior(scene, { warm: 0xc8ccd0, level: 0.7 });
++
++    // A ribbed metal box: corrugated walls, bench seats, cockpit bulkhead.
++    const cabin = new THREE.Group();
++    const metal = mat({ map: cloneRepeat(corrugatedTexture("#7e827a"), 6, 1), side: THREE.DoubleSide });
++    const floor = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 7), floorMaterial("concrete"));
++    floor.rotation.x = -Math.PI / 2;
++    cabin.add(floor);
++    addBox(cabin, 2.6, 1.9, 0.1, metal, 0, 1.5, -3.5);
++    addBox(cabin, 0.1, 1.9, 7, metal, -1.3, 1.5, 0);
++    addBox(cabin, 0.1, 1.9, 7, metal, 1.3, 1.5, 0);
++    addBox(cabin, 2.6, 1.9, 0.1, metal, 0, 1.5, 3.5);
++    const cabinCeiling = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 7), ceilingMaterial());
++    cabinCeiling.rotation.x = Math.PI / 2;
++    cabinCeiling.position.y = 2.45;
++    cabin.add(cabinCeiling);
++    for (let i = 0; i < 6; i++) {
++      addBox(cabin, 2.6, 0.08, 0.06, solid(0x4a4e48), 0, 2.35, -2.8 + i * 1.15);
++      for (const x of [-1.31, 1.31]) {
++        const porthole = new THREE.Mesh(
++          new THREE.CircleGeometry(0.17, 8),
++          mat({ color: 0x35507a, emissive: 0x8a6a4a, emissiveIntensity: 0.45 })
++        );
++        porthole.position.set(x * 0.995, 1.55, -2.2 + i * 1.15);
++        porthole.rotation.y = x > 0 ? Math.PI / 2 : -Math.PI / 2;
++        cabin.add(porthole);
++      }
++    }
++    for (const x of [-0.95, 0.95]) {
++      addBox(cabin, 0.55, 0.12, 5.6, solid(0x4e5248), x, 0.52, 0);
++      addBox(cabin, 0.12, 0.6, 5.6, solid(0x42463e), x + Math.sign(x) * 0.28, 0.85, 0);
++    }
++    addBox(cabin, 0.9, 1.7, 0.08, solid(0x3a3e3a), 0, 0.85, -3.42);
++    scene.add(cabin);
++    const engineGlow = new THREE.PointLight(0xc8d0d8, 0.8, 10, 1.5);
++    engineGlow.position.set(0, 2.1, -2.6);
++    scene.add(engineGlow);
++
++    // Passengers. Batu is bitten and turns mid-shot; Dashnyam is eaten (stays).
++    const batu = await loadCharacter({ id: "batu" });
++    batu.group.position.set(0.85, 0.58, -1.4);
++    batu.group.rotation.y = Math.PI;
++    scene.add(batu.group);
++    const dashnyam = await loadCharacter({ id: "dashnyam" });
++    dashnyam.group.position.set(-0.6, 0.35, -2.5);
++    dashnyam.group.rotation.set(-Math.PI / 2, 0, 0.3);
++    scene.add(dashnyam.group);
++    const lkhagva = await loadCharacter({ id: "lkhagva" });
++    lkhagva.group.position.set(0.85, 0.58, 1.6);
++    lkhagva.group.rotation.y = Math.PI - 0.2;
++    scene.add(lkhagva.group);
++    const uyanga = await loadCharacter({ id: "uyanga" });
++    uyanga.group.position.set(-0.85, 0.58, 1.2);
++    uyanga.group.rotation.y = Math.PI + 0.3;
++    scene.add(uyanga.group);
++    const extraSpots = [[-0.85, 0.58, -2.2], [0.85, 0.58, -2.6], [-0.85, 0.58, 2.6]];
++    const extras = extraSpots.map(([x, y, z], i) => {
++      const person = buildPerson({ coat: [0x3a3a42, 0x40382e, 0x2e3a40][i], hat: 0x26262a, pants: 0x2a2c30, stance: true });
++      person.group.position.set(x, y, z);
++      person.group.rotation.y = Math.PI + (i - 1) * 0.2;
++      scene.add(person.group);
++      return person;
++    });
++
++    let turned = false;
++
++    function update(time, camera) {
++      updateTubeLights(time);
++      updateInfected(time);
++      // Engine shake: the whole metal box trembles deterministically.
++      cabin.position.set(Math.sin(time * 37) * 0.006, Math.sin(time * 41) * 0.009, 0);
++      cabin.rotation.z = Math.sin(time * 29) * 0.004;
++      batu.setTime(time);
++      lkhagva.setTime(time);
++      uyanga.setTime(time);
++      if (time >= 4.2 && !turned) {
++        dressInfected(batu.group, "red");
++        turned = true;
++      }
++      // Batu rises off the bench and sways; the others press to the far wall.
++      const turn = eased(clamp01((time - 4.4) / 2.2));
++      batu.group.position.set(0.85 - turn * 0.45, 0.58 + turn * 0.42, -1.4 + turn * 0.9);
++      batu.group.rotation.z = turn * Math.sin(time * 7) * 0.06;
++      lkhagva.group.position.set(0.85 - turn * 0.3, 0.58, 1.6 + turn * 0.55);
++      uyanga.group.position.set(-0.85 + turn * 0.18, 0.58, 1.2 + turn * 0.55);
++      const s = time < 4
++        ? { id: "cabin", p: time / 4 }
++        : time < 8 ? { id: "turn", p: (time - 4) / 4 } : { id: "aftermath", p: (time - 8) / 3 };
++      if (s.id === "cabin") {
++        camera.position.set(0, 1.5, 3.1);
++        camera.lookAt(0, 1.0, -3.2);
++      } else if (s.id === "turn") {
++        camera.position.set(0.1, 1.72, 2.95 - s.p * 0.7);
++        camera.lookAt(0.55, 0.95, -1.9);
++      } else {
++        camera.position.set(-0.55, 1.5, -2.5);
++        camera.lookAt(0.2, 0.9, 0.9);
++      }
++    }
++
++    return { scene, update, actor: () => batu };
++  },
++};
++
++// EP8: the same truck stop at night, dressed for the siege — KAMAZ empty with
++// the satchel on the seat, Anu hiding under the counter, forty RED runners off
++// the highway, the fuel-line fireball, and the Governor's helicopter landing
++// out of the smoke. No approved EP8 dialogue, so the staging stays silent.
++const EP8_SHOTS = [
++  { id: "stop", start: 0, end: 4, lens: 40 },
++  { id: "anu", start: 4, end: 7, lens: 44 },
++  { id: "runners", start: 7, end: 10.5, lens: 46 },
++  { id: "blast", start: 10.5, end: 14, lens: 42 },
++];
++
++const ep8Truckstop = {
++  id: "ep8-truckstop",
++  duration: 14,
++  shots: EP8_SHOTS,
++  state: makeState(EP8_SHOTS, 14, [], {
++    location: time => clamp01(1 - Math.abs(time - 1.4) / 1.0),
++  }),
++  async build() {
++    const [{ loadCharacter }, { buildKamaz }] = await Promise.all([
++      import("./character.js"),
++      import("./winter.js"),
++    ]);
++    const scene = new THREE.Scene();
++    scene.fog = new THREE.Fog(0x14181c, 4, 60);
++    scene.background = new THREE.Color(0x0c1014);
++    lightInterior(scene, { warm: 0xd8b870, level: 0.5 });
++    const rand = mulberry(8008);
++
++    const lot = groundPlane(50, 34, mat({ map: cloneRepeat(dirtTexture(), 14, 10), color: 0x6e6a60 }), 0, 0, 0);
++    scene.add(lot);
++    scene.add(groundPlane(16, 10, asphaltMaterial(6, 4), 6, -2, 0.02));
++
++    const cafe = new THREE.Group();
++    cafe.add(buildRoom({ w: 9, d: 5, h: 3.2, wall: 0, floor: "linoleum", doorWidth: 1.2 }));
++    const counter = buildDesk({ w: 2.6 });
++    counter.position.set(-2.6, 0, 1.4);
++    cafe.add(counter);
++    const windowGlow = new THREE.Mesh(
++      new THREE.PlaneGeometry(5.5, 1.5),
++      new THREE.MeshLambertMaterial({ color: 0x181410, emissive: 0xd8a050, emissiveIntensity: 1.1 })
++    );
++    windowGlow.position.set(0.5, 1.7, 2.53);
++    cafe.add(windowGlow);
++    const cafeLight = new THREE.PointLight(0xd8a050, 2.2, 16, 1.5);
++    cafeLight.position.set(0, 1.8, 2.0);
++    cafe.add(cafeLight);
++    cafe.position.set(-8, 0, -6);
++    cafe.rotation.y = 0.35;
++    scene.add(cafe);
++
++    for (const x of [5.5, 7.3]) {
++      const pump = new THREE.Group();
++      addBox(pump, 0.5, 1.5, 0.4, solid(0x9a4438), 0, 0.75, 0);
++      addBox(pump, 0.55, 0.3, 0.45, solid(0xd8d0c0), 0, 1.55, 0);
++      pump.position.set(x, 0, -1.5);
++      scene.add(pump);
++    }
++    const signPole = new THREE.Group();
++    addBox(signPole, 0.3, 7, 0.3, solid(0x3a3b3b), 0, 3.5, 0);
++    addBox(signPole, 4.2, 1.6, 0.15, mat({ color: 0x4a1e18, emissive: 0x8a2818, emissiveIntensity: 0.4 }), 0, 6.4, 0);
++    signPole.position.set(12, 0, 2);
++    scene.add(signPole);
++
++    // The KAMAZ, cab door open, Irina's satchel waiting on the seat.
++    const truck = buildKamaz();
++    truck.position.set(7.4, 0, 0.6);
++    truck.rotation.y = Math.PI / 2 + 0.15;
++    scene.add(truck);
++    addBox(truck, 0.34, 0.42, 0.2, solid(0x6a4a2c), 0.55, 2.35, 2.6);
++    addBox(truck, 0.02, 0.3, 0.06, solid(0x4e3822), 0.38, 2.32, 2.6);
++
++    // Anu crouched behind the counter with the dead camcorder bag.
++    const anu = await loadCharacter({ id: "anu" });
++    anu.group.position.set(-3.3, 0, 0.9);
++    anu.group.rotation.y = 2.4;
++    anu.group.scale.setScalar(0.92);
++    scene.add(anu.group);
++    addBox(scene, 0.26, 0.14, 0.12, solid(0x22242a), -3.0, 0.62, 1.15);
++
++    // The approaching forty.
++    const pack = buildCrowd({
++      positions: crowdRows({ origin: [2, -26], dir: [0.15, 1], across: 6, rows: 7, spacing: 2.0, seed: 81 }),
++      seed: 81,
++      state: "red",
++    });
++    scene.add(pack);
++
++    // Fuel-line fireball at the near pump, and the helicopter out of the smoke.
++    const fire = new THREE.Group();
++    for (let i = 0; i < 6; i++) {
++      const cone = new THREE.Mesh(
++        new THREE.ConeGeometry(0.55 + rand() * 0.5, 1.8 + rand() * 1.4, 6),
++        new THREE.MeshBasicMaterial({ color: i % 2 ? 0xff9a30 : 0xffd060, transparent: true, opacity: 0 })
++      );
++      cone.position.set((rand() - 0.5) * 1.8, 0.9, (rand() - 0.5) * 1.3);
++      fire.add(cone);
++    }
++    const fireLight = new THREE.PointLight(0xff8a30, 0, 30, 1.3);
++    fire.add(fireLight);
++    fire.position.set(5.5, 0, -1.5);
++    scene.add(fire);
++    const fireAnchor = new THREE.Object3D();
++    fireAnchor.position.set(5.5, 1.2, -1.5);
++    fireAnchor.userData.infectedStrength = 3.4;
++    scene.add(fireAnchor);
++    const updateFireSmoke = attachSteam(scene, [fireAnchor], { strength: 4, height: 0 });
++
++    const heli = buildHelicopter(0x46524a);
++    heli.position.set(-4, 0.2, -20);
++    heli.rotation.y = 0.9;
++    heli.visible = false;
++    scene.add(heli);
++
++    function update(time, camera) {
++      updateTubeLights(time);
++      updateInfected(time);
++      updateFireSmoke(time);
++      anu.setTime(time);
++      const blast = clamp01((time - 10.8) / 0.5);
++      const falloff = clamp01(1 - (time - 11.3) / 2.6);
++      fire.children.forEach((cone, i) => {
++        if (!cone.isMesh) return;
++        cone.material.opacity = blast * falloff * (0.55 + i * 0.07);
++        const sc = 0.6 + blast * (1.2 + i * 0.24) * (0.85 + 0.15 * Math.sin(time * 23 + i * 2.2));
++        cone.scale.set(sc, sc * 1.5, sc);
++      });
++      fireLight.intensity = blast * falloff * (6 + Math.sin(time * 31) * 1.4);
++      // The helicopter limps in over the smoke for the cliffhanger.
++      heli.visible = time > 11.8;
++      const drop = eased(clamp01((time - 11.8) / 2.2));
++      heli.position.set(-4 + drop * 2, 0.2 + (1 - drop) * 7, -20 + drop * 4);
++      heli.userData.rotor.rotation.y += 0.5;
++      heli.userData.tailRotor.rotation.x += 0.85;
++      const s = time < 4
++        ? { id: "stop", p: time / 4 }
++        : time < 7 ? { id: "anu", p: (time - 4) / 3 }
++          : time < 10.5 ? { id: "runners", p: (time - 7) / 3.5 }
++            : { id: "blast", p: (time - 10.5) / 3.5 };
++      if (s.id === "stop") {
++        camera.position.set(2.4 - s.p * 1.2, 1.9, 6.5 - s.p * 1.4);
++        camera.lookAt(7.4, 1.8, 0.6);
++      } else if (s.id === "anu") {
++        camera.position.set(-1.6, 1.3, 3.0);
++        camera.lookAt(-3.4, 0.7, 0.7);
++      } else if (s.id === "runners") {
++        camera.position.set(5.2, 2.2, -4.4);
++        camera.lookAt(3.0, 1.0, -20);
++      } else {
++        camera.position.set(-1.0, 2.3, 4.6 - s.p * 0.6);
++        camera.lookAt(5.4, 1.4, -2.4);
++      }
++    }
++
++    return { scene, update, actor: () => anu };
++  },
++};
++
+ export const ACT_STAGES = {
+   ...ACT_ONE_STAGES,
+   "ep3-governor": ep3Governor,
+   "ep4-school": ep4School,
+   "ep5-cordon": ep5Cordon,
+   "ep6-gorge": ep6Gorge,
++  "ep7-boilerhouse": ep7Boilerhouse,
++  "ep8-truckstop": ep8Truckstop,
++  "ep9-cabin": ep9Cabin,
+   "ep10-dzud": ep10Dzud,
+ };
+diff --git a/src/scenes.js b/src/scenes.js
+index 7b68953..b6ea719 100644
+--- a/src/scenes.js
++++ b/src/scenes.js
+@@ -9,7 +9,7 @@ import {
+   buildLaundryHatch, buildWaitingBench, interiorWallMaterial, floorMaterial,
+   ceilingMaterial,
+ } from "./interior.js";
+-import { buildStandingFigure, buildCrowd, crowdRows, crowdRing, attachSteam, updateInfected } from "./infected.js";
++import { buildStandingFigure, buildWalkingFigure, animateWalk, buildCrowd, crowdRows, crowdRing, attachSteam, updateInfected } from "./infected.js";
+ import { ACT_STAGES } from "./sceneStages.js";
+ import { solid } from "./parts.js";
+ 
+@@ -504,7 +504,7 @@ const ep2Nursery = {
+     scene.add(burned);
+     const runners = [];
+     for (let i = 0; i < 3; i++) {
+-      const runner = buildStandingFigure({ x: 0, z: 0, seed: 70 + i, state: "red" });
++      const runner = buildWalkingFigure({ x: 0, z: 0, seed: 70 + i, state: "red" });
+       runner.rotation.x = 0.14;
+       scene.add(runner);
+       runners.push(runner);
+@@ -559,9 +559,8 @@ const ep2Nursery = {
+       const p = THREE.MathUtils.clamp((time - 6.3) / 3.6, 0, 1);
+       runners.forEach((runner, i) => {
+         const k = THREE.MathUtils.clamp(p * 1.25 - i * 0.16, 0, 1);
+-        const x = -3.1 + k * 2.4;
+-        const z = -5.4 + k * 1.5;
+-        runner.position.set(x, 0, z);
++        animateWalk(runner, time + i * 0.3, 1.25, true);
++        runner.position.set(-3.1 + k * 2.4, 0, -5.4 + k * 1.5);
+         runner.rotation.y = Math.atan2(2.4, 1.5);
+       });
+       penlight.intensity = time < 6 ? 2.1 : 0;

@@ -1,0 +1,437 @@
+{
+  "package": "EP01_HUREL_CAFE_VERTICAL_SLICE_v1.0",
+  "story_canon": "EP01 v2.1 line IDs + Season v3.0",
+  "fps": 24,
+  "start_frame": 1,
+  "end_frame": 2016,
+  "duration_seconds": 84,
+  "axis": "X east / Y north / Z up; unit = 1 metre",
+  "scene_origin": "Cafe interior center at floor level",
+  "interior_m": {
+    "x_min": -7,
+    "x_max": 7,
+    "y_min": -5,
+    "y_max": 5,
+    "wall_height": 3.1
+  },
+  "front_door": {
+    "opening_x": [
+      -0.3,
+      1.5
+    ],
+    "south_wall_y": -5,
+    "opening_width_m": 1.8,
+    "opening_height_m": 2.25
+  },
+  "service_gap": {
+    "counter_end_x": -2.0,
+    "hurel_position": [
+      -1.6,
+      1.8
+    ],
+    "dasha_approach_position": [
+      3.7,
+      1.15
+    ]
+  },
+  "initial_actor_proxy_xy": {
+    "GANAA": [
+      -1.3,
+      -1.45
+    ],
+    "HUREL": [
+      -1.6,
+      1.8
+    ],
+    "DASHA": [
+      3.7,
+      1.15
+    ],
+    "DRIVER_A": [
+      -4.15,
+      -1.2
+    ],
+    "DRIVER_B": [
+      -4.75,
+      -2.4
+    ]
+  },
+  "signage": [
+    "ХҮРЭЛИЙН ГУАНЗ",
+    "БУУЗ"
+  ],
+  "continuity": {
+    "fuel": "Forecourt dispenser petrol, KAMAZ engine diesel; independent fuels. No truck impact in 84s slice.",
+    "irina_satchel": "Remains in KAMAZ cab; never placed in cafe.",
+    "dasha": "Bandaged left forearm; infection spread from pre-existing bite; shared bowl does not infect Ganaa.",
+    "ganaa": "Bitten at drivers door AFTER this 84-second slice; not yet bitten in cafe interior.",
+    "later_return": "EP08 visit must reuse building footprint, side store and char states."
+  },
+  "shots": [
+    {
+      "id": "SH01",
+      "start_sec": 0,
+      "end_sec": 6,
+      "start_frame": 1,
+      "end_frame": 144,
+      "description": "EXT. establishing / ordinary life",
+      "camera_m": [
+        13.0,
+        -25.0,
+        6.0
+      ],
+      "target_m": [
+        0.0,
+        -2.0,
+        1.8
+      ],
+      "lens_mm": 28,
+      "acting": "Truck forecourt, café sign; no ominous move",
+      "vo_cues": [],
+      "sound": ""
+    },
+    {
+      "id": "SH02",
+      "start_sec": 6,
+      "end_sec": 14,
+      "start_frame": 145,
+      "end_frame": 336,
+      "description": "Hürel calls from counter",
+      "camera_m": [
+        2.5,
+        -2.0,
+        1.7
+      ],
+      "target_m": [
+        -1.6,
+        1.8,
+        1.65
+      ],
+      "lens_mm": 50,
+      "acting": "Recognize Ganaa; old friends, loud",
+      "vo_cues": [
+        "E01-D023"
+      ],
+      "sound": "SPOON, STOVE"
+    },
+    {
+      "id": "SH03",
+      "start_sec": 14,
+      "end_sec": 23,
+      "start_frame": 337,
+      "end_frame": 552,
+      "description": "Ganaa sits / joking",
+      "camera_m": [
+        -4.1,
+        -1.8,
+        1.75
+      ],
+      "target_m": [
+        -1.3,
+        -1.1,
+        1.55
+      ],
+      "lens_mm": 55,
+      "acting": "Casual counter-joke, no sitcom beat",
+      "vo_cues": [
+        "E01-D024"
+      ],
+      "sound": "SEAT SCRAPE"
+    },
+    {
+      "id": "SH04",
+      "start_sec": 23,
+      "end_sec": 32,
+      "start_frame": 553,
+      "end_frame": 768,
+      "description": "Counter two-shot",
+      "camera_m": [
+        0.9,
+        0.4,
+        2.1
+      ],
+      "target_m": [
+        -1.4,
+        1.2,
+        1.5
+      ],
+      "lens_mm": 40,
+      "acting": "Dry debt joke, old routine",
+      "vo_cues": [
+        "E01-D025",
+        "E01-D026"
+      ],
+      "sound": "COUNTER, CUTLERY"
+    },
+    {
+      "id": "SH05",
+      "start_sec": 32,
+      "end_sec": 40,
+      "start_frame": 769,
+      "end_frame": 960,
+      "description": "Hürel notices Dasha",
+      "camera_m": [
+        -2.3,
+        0.2,
+        1.6
+      ],
+      "target_m": [
+        2.8,
+        0.8,
+        1.55
+      ],
+      "lens_mm": 65,
+      "acting": "Quiet jab; no flirtatious staging",
+      "vo_cues": [
+        "E01-D027",
+        "E01-D028"
+      ],
+      "sound": "OVEN HISS"
+    },
+    {
+      "id": "SH06",
+      "start_sec": 40,
+      "end_sec": 49,
+      "start_frame": 961,
+      "end_frame": 1176,
+      "description": "Ganaa fends off teasing",
+      "camera_m": [
+        -2.5,
+        2.0,
+        1.75
+      ],
+      "target_m": [
+        -1.3,
+        -1.3,
+        1.6
+      ],
+      "lens_mm": 58,
+      "acting": "Two quick replies; defensive not furious",
+      "vo_cues": [
+        "E01-D029",
+        "E01-D030"
+      ],
+      "sound": "CARD FLAP"
+    },
+    {
+      "id": "SH07",
+      "start_sec": 49,
+      "end_sec": 57,
+      "start_frame": 1177,
+      "end_frame": 1368,
+      "description": "Hürel smiles / room continues",
+      "camera_m": [
+        0.5,
+        -1.1,
+        1.55
+      ],
+      "target_m": [
+        -1.6,
+        1.8,
+        1.6
+      ],
+      "lens_mm": 50,
+      "acting": "Banter ends; eye drift to heater",
+      "vo_cues": [
+        "E01-D031"
+      ],
+      "sound": "DRIVER CHUCKLE"
+    },
+    {
+      "id": "SH08",
+      "start_sec": 57,
+      "end_sec": 64,
+      "start_frame": 1369,
+      "end_frame": 1536,
+      "description": "Dasha close: steam & stillness",
+      "camera_m": [
+        5.7,
+        -1.3,
+        1.68
+      ],
+      "target_m": [
+        3.7,
+        1.25,
+        1.6
+      ],
+      "lens_mm": 75,
+      "acting": "Steam catches attention; chair scrapes",
+      "vo_cues": [],
+      "sound": "CHAIR SCRAPE; ROOM TONE TAIL"
+    },
+    {
+      "id": "SH09",
+      "start_sec": 64,
+      "end_sec": 70,
+      "start_frame": 1537,
+      "end_frame": 1680,
+      "description": "Hürel reaches / sudden contact",
+      "camera_m": [
+        0.8,
+        3.0,
+        1.8
+      ],
+      "target_m": [
+        -1.4,
+        1.8,
+        1.55
+      ],
+      "lens_mm": 42,
+      "acting": "Human reaction, one sudden movement; no slow motion",
+      "vo_cues": [
+        "E01-D032"
+      ],
+      "sound": "FABRIC; METAL TRAY; IMPACT"
+    },
+    {
+      "id": "SH10",
+      "start_sec": 70,
+      "end_sec": 77,
+      "start_frame": 1681,
+      "end_frame": 1848,
+      "description": "Ganaa frozen -> shout",
+      "camera_m": [
+        -0.5,
+        -3.3,
+        1.55
+      ],
+      "target_m": [
+        -1.3,
+        -1.1,
+        1.5
+      ],
+      "lens_mm": 68,
+      "acting": "1-beat shock, then raw cry; E01-D033",
+      "vo_cues": [
+        "E01-D033"
+      ],
+      "sound": "ROOM NOISE DUCK; FIRST SHOUT"
+    },
+    {
+      "id": "SH11",
+      "start_sec": 77,
+      "end_sec": 84,
+      "start_frame": 1849,
+      "end_frame": 2016,
+      "description": "Chairs overturn / cut into next scene",
+      "camera_m": [
+        3.2,
+        -2.8,
+        2.2
+      ],
+      "target_m": [
+        -0.5,
+        0.65,
+        1.25
+      ],
+      "lens_mm": 36,
+      "acting": "Ganaa grabs a chair; exit line of action established",
+      "vo_cues": [],
+      "sound": "CHAIR FALL; FOOTSTEPS; CUT"
+    }
+  ],
+  "blocking_waypoints": {
+    "DASHA": [
+      [
+        0,
+        3.7,
+        1.15
+      ],
+      [
+        57,
+        3.7,
+        1.15
+      ],
+      [
+        62,
+        3.5,
+        1.25
+      ],
+      [
+        65,
+        1.5,
+        1.55
+      ],
+      [
+        67,
+        -1.2,
+        1.75
+      ],
+      [
+        70,
+        -1.55,
+        1.75
+      ],
+      [
+        84,
+        -1.55,
+        1.75
+      ]
+    ],
+    "HUREL": [
+      [
+        0,
+        -1.6,
+        1.8
+      ],
+      [
+        62,
+        -1.6,
+        1.8
+      ],
+      [
+        64,
+        -1.4,
+        1.8
+      ],
+      [
+        66,
+        -1.25,
+        1.8
+      ],
+      [
+        84,
+        -1.25,
+        1.8
+      ]
+    ],
+    "GANAA": [
+      [
+        0,
+        -1.3,
+        -1.45
+      ],
+      [
+        69,
+        -1.3,
+        -1.45
+      ],
+      [
+        73,
+        -1.3,
+        -1.45
+      ],
+      [
+        77,
+        -0.9,
+        -1.6
+      ],
+      [
+        81,
+        0.3,
+        -0.6
+      ],
+      [
+        84,
+        0.85,
+        0.3
+      ]
+    ]
+  },
+  "risk_notes": [
+    "Dialogue durations are provisional until recorded Mongolian performances arrive.",
+    "Hürel/Dasha neck contact must be validated against actual character rigs.",
+    "Actor meshes in GLB are static markers; Blender build script creates animating actors.",
+    "Truck impact, fire and EP08 ruins deliberately outside this 84s slice."
+  ]
+}

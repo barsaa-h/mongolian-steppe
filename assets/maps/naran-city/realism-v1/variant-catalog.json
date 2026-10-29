@@ -1,0 +1,321 @@
+[
+  {
+    "variant": "firewood",
+    "source": "new procedural module",
+    "parts": 13,
+    "triangles": 444,
+    "shared_mesh": "Module.firewood"
+  },
+  {
+    "variant": "coal_bin",
+    "source": "new procedural module",
+    "parts": 6,
+    "triangles": 68,
+    "shared_mesh": "Module.coal_bin"
+  },
+  {
+    "variant": "privy",
+    "source": "new procedural module",
+    "parts": 5,
+    "triangles": 56,
+    "shared_mesh": "Module.privy"
+  },
+  {
+    "variant": "shed",
+    "source": "new procedural module",
+    "parts": 5,
+    "triangles": 56,
+    "shared_mesh": "Module.shed"
+  },
+  {
+    "variant": "small_timber_house",
+    "source": "new procedural module",
+    "parts": 18,
+    "triangles": 212,
+    "shared_mesh": "Module.small_timber_house"
+  },
+  {
+    "variant": "hay_stack",
+    "source": "new procedural module",
+    "parts": 3,
+    "triangles": 32,
+    "shared_mesh": "Module.hay_stack"
+  },
+  {
+    "variant": "water_cart",
+    "source": "new procedural module",
+    "parts": 9,
+    "triangles": 276,
+    "shared_mesh": "Module.water_cart"
+  },
+  {
+    "variant": "bicycle",
+    "source": "new procedural module",
+    "parts": 46,
+    "triangles": 1584,
+    "shared_mesh": "Module.bicycle"
+  },
+  {
+    "variant": "tractor",
+    "source": "new procedural module",
+    "parts": 25,
+    "triangles": 564,
+    "shared_mesh": "Module.tractor"
+  },
+  {
+    "variant": "farm_trailer",
+    "source": "new procedural module",
+    "parts": 12,
+    "triangles": 288,
+    "shared_mesh": "Module.farm_trailer"
+  },
+  {
+    "variant": "loading_pallet",
+    "source": "new procedural module",
+    "parts": 8,
+    "triangles": 96,
+    "shared_mesh": "Module.loading_pallet"
+  },
+  {
+    "variant": "repair_bench",
+    "source": "new procedural module",
+    "parts": 9,
+    "triangles": 132,
+    "shared_mesh": "Module.repair_bench"
+  },
+  {
+    "variant": "sandpit",
+    "source": "new procedural module",
+    "parts": 5,
+    "triangles": 60,
+    "shared_mesh": "Module.sandpit"
+  },
+  {
+    "variant": "climbing_frame",
+    "source": "new procedural module",
+    "parts": 22,
+    "triangles": 792,
+    "shared_mesh": "Module.climbing_frame"
+  },
+  {
+    "variant": "Apartment / cared_for / flat_service",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      235.0,
+      -340.0
+    ],
+    "treatments": [
+      "flush service hatch",
+      "renewed entrance trim"
+    ]
+  },
+  {
+    "variant": "Apartment / panel_repairs / vent_renewal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      305.0,
+      -340.0
+    ],
+    "treatments": [
+      "renewed duct cover",
+      "vertical panel-joint repairs"
+    ]
+  },
+  {
+    "variant": "Apartment / weather_streaks / patched_metal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      375.0,
+      -340.0
+    ],
+    "treatments": [
+      "two metal roof repair sheets",
+      "runoff beneath six sills"
+    ]
+  },
+  {
+    "variant": "Apartment / partial_repaint / flat_service",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      475.0,
+      -340.0
+    ],
+    "treatments": [
+      "flush service hatch",
+      "repainted plinth and gable patch"
+    ]
+  },
+  {
+    "variant": "Apartment / mixed_windows / vent_renewal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      235.0,
+      -430.0
+    ],
+    "treatments": [
+      "renewed duct cover",
+      "two repaired timber window frames and curtains"
+    ]
+  },
+  {
+    "variant": "Apartment / cared_for / patched_metal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      315.0,
+      -430.0
+    ],
+    "treatments": [
+      "two metal roof repair sheets",
+      "renewed entrance trim"
+    ]
+  },
+  {
+    "variant": "Apartment / panel_repairs / flat_service",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      395.0,
+      -430.0
+    ],
+    "treatments": [
+      "flush service hatch",
+      "vertical panel-joint repairs"
+    ]
+  },
+  {
+    "variant": "Apartment / weather_streaks / vent_renewal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      475.0,
+      -430.0
+    ],
+    "treatments": [
+      "renewed duct cover",
+      "runoff beneath six sills"
+    ]
+  },
+  {
+    "variant": "Apartment / partial_repaint / patched_metal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      235.0,
+      -495.0
+    ],
+    "treatments": [
+      "two metal roof repair sheets",
+      "repainted plinth and gable patch"
+    ]
+  },
+  {
+    "variant": "Apartment / mixed_windows / flat_service",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      315.0,
+      -495.0
+    ],
+    "treatments": [
+      "flush service hatch",
+      "two repaired timber window frames and curtains"
+    ]
+  },
+  {
+    "variant": "Apartment / cared_for / vent_renewal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      395.0,
+      -495.0
+    ],
+    "treatments": [
+      "renewed duct cover",
+      "renewed entrance trim"
+    ]
+  },
+  {
+    "variant": "Apartment / panel_repairs / patched_metal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      475.0,
+      -495.0
+    ],
+    "treatments": [
+      "two metal roof repair sheets",
+      "vertical panel-joint repairs"
+    ]
+  },
+  {
+    "variant": "Apartment3 / weather_streaks / flat_service",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      160.0,
+      337.5
+    ],
+    "treatments": [
+      "flush service hatch",
+      "runoff beneath six sills"
+    ]
+  },
+  {
+    "variant": "Apartment3 / partial_repaint / vent_renewal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      480.0,
+      562.5
+    ],
+    "treatments": [
+      "renewed duct cover",
+      "repainted plinth and gable patch"
+    ]
+  },
+  {
+    "variant": "Apartment5 / mixed_windows / patched_metal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      320.0,
+      487.5
+    ],
+    "treatments": [
+      "two metal roof repair sheets",
+      "two repaired timber window frames and curtains"
+    ]
+  },
+  {
+    "variant": "Apartment5 / cared_for / flat_service",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": false,
+    "location": [
+      560.0,
+      412.5
+    ],
+    "treatments": [
+      "flush service hatch",
+      "renewed entrance trim"
+    ]
+  },
+  {
+    "variant": "Apartment / panel_repairs / vent_renewal",
+    "source": "existing apartment kit with additive repairs/services",
+    "hero_preserved": true,
+    "location": [
+      420.0,
+      -370.0
+    ],
+    "treatments": [
+      "renewed duct cover",
+      "vertical panel-joint repairs"
+    ]
+  }
+]

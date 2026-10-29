@@ -1,5 +1,7 @@
 # Agent-editable character master
 
+> Historical implementation plan/specification. Current source authority, chosen design, Episode 1 status and remaining work are in [Character Master](../../../artifacts/character-master/README.md). Its [jobs](../../../artifacts/character-master/production/JOBS.md) now prioritize the café test; completed boxes here describe the original implementation scope, not finished-shot approval.
+
 The user wants the painted early-PS2 character quality of the LISA study, with
 a clean neck, real hands and separate clothing, and a reusable default that an
 agent can turn into fat, thin, tall, male, female and child characters. The user

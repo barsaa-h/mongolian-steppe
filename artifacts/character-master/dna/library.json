@@ -87,9 +87,9 @@
     },
     {
       "id": "compact-crew",
-      "asset": "short03",
+      "asset": "short01",
       "style": "short",
-      "length": 0.65,
+      "length": 0.7,
       "volume": 0.9
     },
     {
@@ -107,7 +107,7 @@
       "volume": 1.1
     }
   ],
-  "hairNote": "15 fitted style recipes from 9 source meshes; cropped/bun variants also use the shared builder. Different colors do not count as additional styles.",
+  "hairNote": "15 fitted style recipes from 9 source meshes; cropped/bun variants also use the shared builder. Different colors do not count as additional styles. short03 is a long-fringe style that hangs in front of the face; compact-crew uses short01 (2026-10-29). Hair length below 1 squashes these meshes into the scalp (reads bald); keep length 1 until the hair library pass.",
   "brows": [
     {
       "id": "heavy-straight",
@@ -175,5 +175,6 @@
     "apron",
     "birthday/toddler skirt"
   ],
-  "propsNote": "Existing episode props only. New shot-specific props require their own assets."
+  "propsNote": "Existing episode props only. New shot-specific props require their own assets.",
+  "clothingNote": "female_casualsuit01/02 and male_worksuit01 are T-shirt outfits with a modern logo; avoid them for 1998 winter roles. Women outdoors use male_casualsuit05 with the padded coat adapter (2026-10-29). male_casualsuit04 is also a logo T-shirt; male_casualsuit03 is a knit cardigan; padded coats use male_casualsuit05."
 }

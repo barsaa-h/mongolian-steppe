@@ -1,5 +1,7 @@
 # Episode 1 cast production
 
+> Historical implementation plan/specification. Current source authority, chosen design, Episode 1 status and remaining work are in [Character Master](../../../artifacts/character-master/README.md). Its [jobs](../../../artifacts/character-master/production/JOBS.md) now prioritize the café test; completed boxes here describe the original implementation scope, not finished-shot approval.
+
 Use the approved reusable MakeHuman/MPFB Blender source and retain its editable
 anatomy, separate clothes/hands, 137-bone rig, packed materials and GLB output.
 Read the full available animation script and preserve exact source ages/roles.

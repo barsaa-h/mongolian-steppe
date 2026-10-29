@@ -1,5 +1,7 @@
 # Cast and autumn revision
 
+> Historical runtime revision. Current character production uses [Character Master](../../artifacts/character-master/README.md) and the ten-episode v3/EP1 v2.1 source hierarchy. The HOUR 5 export and cast counts below describe that earlier runtime version.
+
 The studio contains 48 on-screen profiles from Episodes 1–5 and preserves the original wardrobe as Legacy. Every visible profile has a paired editable Blender source and embedded-texture GLB. The minister and radio remain voice-only records.
 
 Ganaa’s 30-second HOUR 5 performance is authored and baked at 24fps, including radio reaction, breathing/tremor, hunger, facial movement, a right-hand face strike and recovery. Cast body proportions and rig endpoints are resized from snapshots to avoid connected-joint distortion. Original weighted arm surfaces supply fitted sleeves; separate tube sleeves were removed after pose QA. The cab has an actual interior and a shared wheel calibration.

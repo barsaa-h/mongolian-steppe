@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-28",
+  "scope": "Organization and recovery; no new character or shot approval",
+  "checks": {
+    "character_python_suites": {
+      "test_config": 10,
+      "test_dna": 9,
+      "test_recipes": 7,
+      "passed": true
+    },
+    "npm_run_check": {
+      "tests": 71,
+      "failures": 0,
+      "production_bundles": 3,
+      "passed": true
+    },
+    "local_document_links": {
+      "files": 28,
+      "links": 165,
+      "broken": 0
+    },
+    "archive_file_integrity": {
+      "files": 405,
+      "folders": 11,
+      "passed": true
+    },
+    "source_file_integrity": {
+      "files": 38,
+      "passed": true
+    },
+    "world_glb_meshes": 97,
+    "cafe_glb_meshes": 68,
+    "tables": {
+      "world/data/naran_locations.csv": 20,
+      "world/data/asset_inventory.csv": 32,
+      "world/data/regional_routes.csv": 11,
+      "planning/NARAN_PRODUCTION_BACKLOG_v1.1.csv": 44,
+      "story/khaniad-v2.1-vo-line-cue-sheet.csv": 238,
+      "cafe/data/recording_and_dialogue_cues.csv": 11
+    },
+    "cafe_structural_validator": {
+      "passed": true,
+      "frames": 2016,
+      "seconds": 84,
+      "shots": 11,
+      "exact_dialogue_lines": 11
+    }
+  },
+  "not_checked": [
+    "Fresh Blender native character or browser visual suites",
+    "Executing cafe Blender scene builder",
+    "Recorded speech, full scene animation, final rendering or human design/shot sign-off",
+    "Original attachment binary equivalence"
+  ]
+}

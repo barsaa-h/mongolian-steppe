@@ -48,8 +48,14 @@ def render_qa(folder):
         if obj.type!='MESH':continue
         role=obj.get('role');obj.hide_render=role not in ['Body','Eyes','Eyebrows','Teeth','Tongue']
         if role=='Body' and obj!=full:obj.hide_render=True
-        if not obj.hide_render:
-            obj.data.materials.clear();obj.data.materials.append(eye_clay if role=='Eyes' else brow_clay if role=='Eyebrows' else clay)
+        if role=='Eyebrows' and not obj.hide_render:
+            # Same flat brow color for everyone, but keep each brow's hair alpha; a solid card reads as a carved groove.
+            mat=obj.data.materials[0].copy();shader=mat.node_tree.nodes.get('Principled BSDF')
+            for link in list(shader.inputs['Base Color'].links):mat.node_tree.links.remove(link)
+            shader.inputs['Base Color'].default_value=brow_clay.diffuse_color
+            obj.data.materials.clear();obj.data.materials.append(mat)
+        elif not obj.hide_render:
+            obj.data.materials.clear();obj.data.materials.append(eye_clay if role=='Eyes' else clay)
             for p in obj.data.polygons:p.material_index=0
     dna=json.loads((folder/'dna.json').read_text());height=dna['body']['height_m']
     eye=(rig.matrix_world@rig.data.bones['eye.L'].head_local+rig.matrix_world@rig.data.bones['eye.R'].head_local)*.5
@@ -73,7 +79,7 @@ def render_qa(folder):
     for name in EXPRESSIONS:
         set_expression(collection,name);render(name)
     set_expression(collection)
-    report={'passed':True,'views':['front','three-quarter','profile'],'expressions':results,'neutralRecoveryM':recovery*rig.scale.x,'identicalMaterials':True,'hairAndClothesHidden':True,'animationClip':'Talk_Check','humanReview':'pending'}
+    report={'passed':True,'views':['front','three-quarter','profile'],'expressions':results,'neutralRecoveryM':recovery*rig.scale.x,'identicalMaterials':True,'hairAndClothesHidden':True,'animationClip':'Talk_Check','humanReview':'approved' if dna.get('review') == 'approved' else 'pending','humanReviewScope':'identity design'}
     (output/'report.json').write_text(json.dumps(report,indent=2)+'\n')
     print('DNA_QA_OK',folder.name,flush=True)
 

@@ -1,8 +1,10 @@
 """The small, validated interface used by agents; has no Blender dependency."""
 import math
 import re
+from pathlib import Path
 
 OUTPUT_MARKER = '.character-master-output'
+SCULPT = Path(__file__).resolve().parents[1] / 'sculpt'
 
 def validate_output_directory(path):
     if path.exists() and (not path.is_dir() or (any(path.iterdir()) and not (path / OUTPUT_MARKER).is_file())):
@@ -13,10 +15,10 @@ def validate_config(config, assets, targets):
     if not isinstance(config, dict):
         raise ValueError('Character configuration must be an object')
     fields = {'name', 'height_m', 'body', 'skin', 'hair', 'outfit', 'shoes', 'targets', 'tints',
-              'face', 'asymmetry', 'age', 'eyes', 'brows', 'skin_detail', 'facial_hair', 'hair_dna'}
+              'face', 'asymmetry', 'age', 'eyes', 'brows', 'skin_detail', 'facial_hair', 'hair_dna', 'sculpt'}
     if set(config) - fields:
         raise ValueError(f'Unknown configuration keys: {set(config) - fields}')
-    required = fields - {'tints', 'face', 'asymmetry', 'age', 'eyes', 'brows', 'skin_detail', 'facial_hair', 'hair_dna'}
+    required = fields - {'tints', 'face', 'asymmetry', 'age', 'eyes', 'brows', 'skin_detail', 'facial_hair', 'hair_dna', 'sculpt'}
     if required - set(config):
         raise ValueError(f'Missing configuration keys: {required - set(config)}')
     if not isinstance(config['name'], str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9 _-]{0,63}', config['name']):
@@ -52,6 +54,15 @@ def validate_config(config, assets, targets):
         if not (targets / (target + '.target.gz')).is_file():
             raise ValueError(f'Missing modeling target: {target}')
         number(value, 0, 1, f'targets.{target}')
+    sculpt = config.get('sculpt', {})
+    if not isinstance(sculpt, dict):
+        raise ValueError('sculpt must map sculpt layer names to weights')
+    for layer, value in sculpt.items():
+        if not isinstance(layer, str) or not re.fullmatch(r'[a-z0-9][a-z0-9_-]{0,63}', layer):
+            raise ValueError(f'Invalid sculpt layer name: {layer}')
+        if not (SCULPT / (layer + '.target')).is_file():
+            raise ValueError(f'Missing sculpt layer: {layer}')
+        number(value, 0, 1, f'sculpt.{layer}')
     tints = config.get('tints', {})
     if not isinstance(tints, dict) or set(tints) - {'hair', 'outfit', 'shoes'}:
         raise ValueError('tints supports hair, outfit and shoes')

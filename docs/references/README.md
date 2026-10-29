@@ -1,5 +1,7 @@
 # Naran visual direction
 
+> For current season/world authority, read [source decisions](../../artifacts/character-master/production/SOURCES.md) and the recovered [World Bible v1.0](../../artifacts/character-master/sources/world/NARAN_WORLD_BIBLE_v1.0.md). The runtime autumn and older winter explorations below are visual history, not the new geography or episode timeline.
+
 The approved series bible and cleaned dialogue master in `docs/production/`
 establish autumn 1998 and freezing conditions. Later script scenes explicitly
 include snow and frost. The current town restores the earlier warm autumn

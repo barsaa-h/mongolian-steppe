@@ -9,7 +9,7 @@ import {
   buildLaundryHatch, buildWaitingBench, interiorWallMaterial, floorMaterial,
   ceilingMaterial,
 } from "./interior.js";
-import { buildStandingFigure, buildCrowd, crowdRows, crowdRing, attachSteam, updateInfected } from "./infected.js";
+import { buildStandingFigure, buildWalkingFigure, animateWalk, buildCrowd, crowdRows, crowdRing, attachSteam, updateInfected } from "./infected.js";
 import { ACT_STAGES } from "./sceneStages.js";
 import { solid } from "./parts.js";
 
@@ -32,7 +32,7 @@ const hourFive = {
     return s;
   },
   soundtrack: () => createSoundtrack(),
-  async build() {
+  async build({ ganaaAssetVersion = "legacy" } = {}) {
     const [
       { buildWorld, worldState },
       { approachCurve, positionKamaz },
@@ -75,8 +75,13 @@ const hourFive = {
       truck.add(puff);
       exhaust.push(puff);
     }
-    const driver = await loadCharacter({ id: "ganaa" });
-    driver.setMotion("hour-five");
+    const driver = await loadCharacter({ id: "ganaa", assetVersion: ganaaAssetVersion });
+    if (ganaaAssetVersion === "legacy") driver.setMotion("hour-five");
+    else {
+      driver.setStoryState("hour-five");
+      // The dialogue places the line at the elbow before the HOUR 5 scene.
+      driver.setInfectionProgress(1);
+    }
     driver.group.position.fromArray(cabLayout.driverOrigin);
     truck.add(driver.group);
 
@@ -117,8 +122,8 @@ const hourFive = {
           truckPoint(0, 2.7, 7, target);
           break;
         case "wrist":
-          truckPoint(0.84, 2.49, 3.28, camera.position);
-          truckPoint(0.86, 2.28, 2.94, target);
+          truckPoint(ganaaAssetVersion === "legacy" ? 0.84 : 0.46, 2.49, 3.28, camera.position);
+          truckPoint(ganaaAssetVersion === "legacy" ? 0.86 : 0.44, 2.28, 2.94, target);
           break;
         case "tracking":
           truckPoint(-0.02, 2.72, 3.27, camera.position);
@@ -504,7 +509,7 @@ const ep2Nursery = {
     scene.add(burned);
     const runners = [];
     for (let i = 0; i < 3; i++) {
-      const runner = buildStandingFigure({ x: 0, z: 0, seed: 70 + i, state: "red" });
+      const runner = buildWalkingFigure({ x: 0, z: 0, seed: 70 + i, state: "red" });
       runner.rotation.x = 0.14;
       scene.add(runner);
       runners.push(runner);
@@ -559,9 +564,8 @@ const ep2Nursery = {
       const p = THREE.MathUtils.clamp((time - 6.3) / 3.6, 0, 1);
       runners.forEach((runner, i) => {
         const k = THREE.MathUtils.clamp(p * 1.25 - i * 0.16, 0, 1);
-        const x = -3.1 + k * 2.4;
-        const z = -5.4 + k * 1.5;
-        runner.position.set(x, 0, z);
+        animateWalk(runner, time + i * 0.3, 1.25, true);
+        runner.position.set(-3.1 + k * 2.4, 0, -5.4 + k * 1.5);
         runner.rotation.y = Math.atan2(2.4, 1.5);
       });
       penlight.intensity = time < 6 ? 2.1 : 0;

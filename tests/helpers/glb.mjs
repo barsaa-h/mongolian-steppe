@@ -2,8 +2,8 @@ import { readFile } from 'node:fs/promises';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 // Pose/geometry checks do not require a GPU or image decoder; keep the actual binary mesh and animation data.
-export async function readGeometryGLB(id) {
-  const source = await readFile(new URL(`../../assets/cast/${id}.glb`, import.meta.url));
+export async function readGeometryGLB(id, url = new URL(`../../assets/cast/${id}.glb`, import.meta.url)) {
+  const source = await readFile(url);
   const length = source.readUInt32LE(12);
   const json = JSON.parse(source.toString('utf8', 20, 20 + length));
   json.materials = (json.materials || []).map(material => ({ name: material.name }));

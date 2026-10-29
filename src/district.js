@@ -32,7 +32,9 @@ import {
   buildTree,
   buildWeedTuft,
   buildWoodpile,
+  box,
   contactShadow,
+  cylinder,
   dirtMaterial,
   groundPlane,
   groundWearMaterial,
@@ -66,6 +68,8 @@ import {
 } from "./structures.js";
 import { terrainHeight } from "./terrain.js";
 import { glowTexture } from "./textures.js";
+import { stoneMaterial } from "./parts.js";
+function stoneMaterialFor() { return stoneMaterial(); }
 
 const UP = new THREE.Vector3(0, 1, 0);
 const PAD_X0 = -102;
@@ -896,6 +900,56 @@ export function placeTown(scene) {
   standing(scene, { coat: 0x8a4038, hat: 0x8c2f24, pants: 0x3a3630, stance: true }, 22, 0, -13.2, -0.6);
   standing(scene, { coat: 0x4a4038, hat: 0x6a6840, pants: 0x3a3630, stance: true }, -132, 0, -4.2, 0.6);
   standing(scene, { coat: 0xd8d0c0, hat: 0x2b4a7a, pants: 0x3a3630, stance: true }, -74, 0, -11.2, -0.4);
+
+  // Density pass: parked cars along the avenue, store/market clutter,
+  // a sheep flock outside town, and ovoos on the hills.
+  const parkedRand = mulberry(9150);
+  for (const [px, rot] of [[-138, 0.1], [-124, -0.06], [-95, 0.14], [58, 0.08], [76, -0.12], [132, 0.05], [146, -0.07]]) {
+    const parked = buildCar([0x8a4a3a, 0x3e5a48, 0x6a6a62, 0x8a7448, 0x4a5a6a, 0x7a4438, 0x5a5a4a][(parkedRand() * 7) | 0], "sedan", parkedRand() * 3 | 0);
+    parked.position.set(px, -0.015, 10.6);
+    parked.rotation.y = Math.PI / 2 + rot;
+    scene.add(parked);
+  }
+  for (let i = 0; i < 6; i++) {
+    const crate = buildCrate();
+    crate.position.set(108 + parkedRand() * 6, 0, 12.4 + parkedRand() * 1.6);
+    crate.rotation.y = parkedRand() * 1.2;
+    scene.add(crate);
+  }
+  for (let i = 0; i < 5; i++) {
+    const barrel = buildBarrel(i % 2 ? 0x4a6a8a : 0x7a5a3a);
+    barrel.position.set(94 + i * 0.9, 0, 11.6 + (i % 2) * 0.7);
+    scene.add(barrel);
+  }
+  const flock = new THREE.Group();
+  flock.name = "outer-flock";
+  for (let i = 0; i < 9; i++) {
+    const sheep = buildSheep();
+    sheep.position.set(58 + (i % 3) * 1.6 + parkedRand() * 0.8, terrainHeight(60, 138) , 137 + ((i / 3) | 0) * 1.5);
+    sheep.rotation.y = parkedRand() * Math.PI;
+    flock.add(sheep);
+  }
+  scene.add(flock);
+  for (const [ox, oz] of [[-60, 96], [88, 108]]) {
+    const ovoo = new THREE.Group();
+    ovoo.name = "ovoo";
+    for (let i = 0; i < 3; i++) {
+      const tier = cylinder(1.5 - i * 0.42, 1.7 - i * 0.42, 0.42, stoneMaterialFor(ovoo), 9);
+      tier.position.y = 0.21 + i * 0.42;
+      ovoo.add(tier);
+    }
+    const pole = cylinder(0.05, 0.06, 2.2, solid(0x6a4c30), 5);
+    pole.position.y = 1.9;
+    ovoo.add(pole);
+    for (const dx of [-0.5, 0.5]) {
+      const flag = box(0.02, 0.7, 0.3, solid(0x2b4a7a, { side: THREE.DoubleSide }));
+      flag.position.set(dx, 2.1, dx * 0.4);
+      flag.rotation.y = dx * 0.6;
+      ovoo.add(flag);
+    }
+    ovoo.position.set(ox, terrainHeight(ox, oz), oz);
+    scene.add(ovoo);
+  }
 
   const dumpster = buildDumpster();
   dumpster.position.set(92, 0, 9.2);

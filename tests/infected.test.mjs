@@ -17,6 +17,9 @@ const {
   INFECTED_STATES,
   crowdMaterial,
   buildStandingFigure,
+  buildWalkingFigure,
+  animateWalk,
+  animateLunge,
   buildCrowd,
   crowdRing,
   crowdRows,
@@ -114,4 +117,16 @@ test("crowd time advances through one shared uniform", () => {
   // The uniform is wired in onBeforeCompile; here we pin the shared object's
   // contract: one value drives every state's shader clock.
   assert.equal(typeof material.onBeforeCompile, "function");
+});
+
+test("walking figures carry animatable limbs and react to gait calls", () => {
+  const figure = buildWalkingFigure({ seed: 7, state: "red" });
+  assert.equal(figure.children.length, 5, "torso plus two legs and two arms");
+  const legs = figure.userData.limbs.legs;
+  animateWalk(figure, 1.0, 1, true);
+  assert.ok(Math.abs(legs[0].rotation.x) > 0.1, "legs swing when walking");
+  const lungeA = legs[0].rotation.x;
+  animateLunge(figure, 2.0);
+  assert.ok(legs[0].rotation.x !== lungeA, "the lunge re-poses the legs");
+  assert.ok(figure.rotation.x > 0.2, "the lunge leans the body");
 });

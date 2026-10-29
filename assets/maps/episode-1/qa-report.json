@@ -1,0 +1,219 @@
+{
+  "passed": true,
+  "scenes": {
+    "EP01_Cafe": {
+      "mesh_objects": 231,
+      "triangles": 7380,
+      "max_object_triangles": 200,
+      "finite_geometry": true,
+      "packed_textures": true,
+      "export": "glb/cafe.glb",
+      "export_sha256": "c4a2fbbc3c5832c35a51da1a0d01ab9253c7f7780aaeadb4717044f8b3463583"
+    },
+    "EP01_BorderRoad": {
+      "mesh_objects": 405,
+      "triangles": 9794,
+      "max_object_triangles": 200,
+      "finite_geometry": true,
+      "packed_textures": true,
+      "export": "glb/border-road.glb",
+      "export_sha256": "c65afb5dac02049a91be9e184cb0ebe8e588dd012af10dd97db20d4ab9e15a1a"
+    },
+    "EP01_FreightYard": {
+      "mesh_objects": 351,
+      "triangles": 8276,
+      "max_object_triangles": 200,
+      "finite_geometry": true,
+      "packed_textures": true,
+      "export": "glb/freight-yard.glb",
+      "export_sha256": "a8b44fef31798fff852b9f37a46c281f22b0644b9fcc20fa5c7cd498940eeb6b"
+    },
+    "EP01_Apartment": {
+      "mesh_objects": 133,
+      "triangles": 2172,
+      "max_object_triangles": 60,
+      "finite_geometry": true,
+      "packed_textures": true,
+      "export": "glb/apartment.glb",
+      "export_sha256": "035975efa51b9b2d9ca139d16322be4286af6542aa9bcf5107447fcb3679cef0"
+    }
+  },
+  "clearances": {
+    "cafe_attack_route": {
+      "passed": true,
+      "sample_step_m": 0.08,
+      "radius_m": 0.3,
+      "heights_m": [
+        0.35,
+        0.95,
+        1.75
+      ],
+      "obstacles": [],
+      "points": [
+        [
+          3.7,
+          1.15
+        ],
+        [
+          1.5,
+          1.55
+        ],
+        [
+          -1.3,
+          1.8
+        ]
+      ]
+    },
+    "cafe_escape_route": {
+      "passed": true,
+      "sample_step_m": 0.08,
+      "radius_m": 0.3,
+      "heights_m": [
+        0.35,
+        0.95,
+        1.75
+      ],
+      "obstacles": [],
+      "points": [
+        [
+          -0.3,
+          -2.2
+        ],
+        [
+          0.6,
+          -3
+        ],
+        [
+          0.6,
+          -6.1
+        ],
+        [
+          -3.5,
+          -13.7
+        ]
+      ]
+    },
+    "cafe_staff_exit": {
+      "passed": true,
+      "sample_step_m": 0.08,
+      "radius_m": 0.3,
+      "heights_m": [
+        0.35,
+        0.95,
+        1.75
+      ],
+      "obstacles": [],
+      "points": [
+        [
+          6,
+          0.75
+        ],
+        [
+          8,
+          0.75
+        ],
+        [
+          9.6,
+          2.7
+        ],
+        [
+          9.6,
+          4.2
+        ]
+      ]
+    },
+    "apartment_bedroom_to_living": {
+      "passed": true,
+      "sample_step_m": 0.08,
+      "radius_m": 0.3,
+      "heights_m": [
+        0.35,
+        0.95,
+        1.75
+      ],
+      "obstacles": [],
+      "points": [
+        [
+          -2.5,
+          5.2
+        ],
+        [
+          -0.75,
+          5.2
+        ],
+        [
+          -0.75,
+          1.5
+        ],
+        [
+          0.65,
+          1.5
+        ]
+      ]
+    },
+    "apartment_exit_route": {
+      "passed": true,
+      "sample_step_m": 0.08,
+      "radius_m": 0.3,
+      "heights_m": [
+        0.35,
+        0.95,
+        1.75
+      ],
+      "obstacles": [],
+      "points": [
+        [
+          -0.75,
+          1.5
+        ],
+        [
+          -0.8,
+          -0.8
+        ]
+      ]
+    },
+    "cafe_front_door": {
+      "passed": true,
+      "measured_width_m": 1.79,
+      "required_width_m": 1.8,
+      "tolerance_m": 0.01
+    },
+    "yard_boxcar_opening": {
+      "passed": true,
+      "measured_width_m": 2.19,
+      "required_width_m": 2.2,
+      "tolerance_m": 0.01
+    },
+    "border_road_width": {
+      "passed": true,
+      "measured_width_m": 6.599999904632568
+    },
+    "apartment_stair": {
+      "passed": true,
+      "steps": 18,
+      "max_rise_m": 0.16666674613952637,
+      "clear_width_m": 1.2
+    },
+    "apartment_entry_support": {
+      "passed": true,
+      "sample_x_m": -0.8,
+      "sample_y_range_m": [
+        -0.8,
+        0.3
+      ],
+      "samples": 41,
+      "unsupported_y_m": []
+    },
+    "yard_office_sightline": {
+      "passed": true,
+      "first_hit": "Boxcar.OpenSide",
+      "hit_point_m": [
+        -4.478865623474121,
+        -1.5099996328353882,
+        1.615566611289978
+      ]
+    }
+  },
+  "limits": "Static mesh/AABB samples; not moving-rig contact, final art, or shot approval.",
+  "source_sha256": "643deef643dad645025535dae2e749945991a0a24cf4a0a3cf0fb71fdbe299d6"
+}

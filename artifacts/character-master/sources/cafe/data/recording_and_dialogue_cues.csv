@@ -1,0 +1,12 @@
+﻿cue_id,character,exact_v2.1_spoken_text,v2.1_delivery_intention,rough_start_s,rough_end_s,temp_frame_start,temp_frame_end,status
+E01-D023,ХҮРЭЛ,Ганаа ах! Та амьд мэнд үү? Өнгөрсөн удаагийнхаа мөнгийг өгчихөөд бууз идээрэй!,shouted from behind the counter in delighted recognition; mock creditor,7,12.8,169,307,TEMP TIMING — retime from real VO
+E01-D024,ГАНАА,"Өө, тэр чинь өр биш ээ, Хүрэл ээ. Бид хоёрын хамтын хөрөнгө оруулалт.",smiling as he sits; builds a ridiculous defense without waiting for approval,14.5,21.4,349,513,TEMP TIMING — retime from real VO
+E01-D025,ХҮРЭЛ,Тэгвэл хөрөнгө оруулалтаа буцааж авъя. Дээр нь хүүтэй нь.,"dry arithmetic, delighted to catch him; throw the final phrase away",23.1,27.1,555,650,TEMP TIMING — retime from real VO
+E01-D026,ГАНАА,"Арван бууз өгчих. Тэгээд тооцоогоо хийе, муу лалар аа.","easy camaraderie, not a threat; curse tossed lightly as he orders",27.5,31.7,661,760,TEMP TIMING — retime from real VO
+E01-D027,ХҮРЭЛ,Цэцгээ эгч чинь мэдэж байгаа юу?,leaning close so the drivers cannot hear; makes mischief without saying it outright,33.2,36.4,797,873,TEMP TIMING — retime from real VO
+E01-D028,ГАНАА,Юуг нь?,"immediate, genuinely confused; look at Dasha only after speaking",36.6,38.8,879,931,TEMP TIMING — retime from real VO
+E01-D029,ХҮРЭЛ,"За, мэдээгүй юм байна.",knows exactly what he is implying; pause and turn back to work,40.3,42.7,968,1024,TEMP TIMING — retime from real VO
+E01-D030,ГАНАА,Битгий шаа. Замд даарч явахаар нь суулгаад авсан юм.,"brief defensive irritation, not rage; then rushes to justify himself",43,48.7,1033,1168,TEMP TIMING — retime from real VO
+E01-D031,ХҮРЭЛ,Би юу ч хэлээгүй шүү дээ.,innocent in a deliberately false way; almost to himself,50.2,53.6,1205,1286,TEMP TIMING — retime from real VO
+E01-D032,ХҮРЭЛ,"Эгч ээ, зүгээр үү?..","begins professional concern, cut short by the attack",64.4,66.3,1546,1591,TEMP TIMING — retime from real VO
+E01-D033,ГАНАА,Хүрэл! ХҮРЭЛ ЭЭ!,"full raw shout, voice breaks on the name; no explanatory words",71,76.5,1705,1836,TEMP TIMING — retime from real VO

@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { getCastMember } from "./cast.js";
+import { DNA_CAST, getCastMember } from "./cast.js";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { clone } from "three/examples/jsm/utils/SkeletonUtils.js";
 import { buildGarmentGeometry, GARMENT_BONES } from "./characterGarments.js";
@@ -232,26 +232,47 @@ export async function loadMongolianMan({ position = new THREE.Vector3(), rotatio
 const castModels = new Map();
 const EXPRESSIONS = ["neutral", "fear", "hunger", "resolve"];
 
-export async function loadCharacter({ id = "ganaa", detail = "hero", position = new THREE.Vector3(), rotationY = 0 } = {}) {
+export async function loadCharacter({ id = "ganaa", detail = "hero", position = new THREE.Vector3(), rotationY = 0, assetVersion = "legacy" } = {}) {
   const profile = getCastMember(id);
   if (profile.kind === "voice") throw new Error(`${profile.name} is a voice role and has no model`);
   if (!["hero", "crowd"].includes(detail)) throw new Error(`Unknown character detail: ${detail}`);
-  if (!castModels.has(profile.id)) {
-    const promise = new GLTFLoader().loadAsync(`assets/cast/${profile.id}.glb`)
-      .catch(error => { castModels.delete(profile.id); throw error; });
-    castModels.set(profile.id, promise);
+  const published = assetVersion === "dna" && DNA_CAST[profile.id];
+  if (assetVersion !== "legacy" && !published && !(assetVersion === "dna-candidate" && profile.id === "ganaa")) {
+    throw new Error(`Unknown asset version ${assetVersion} for ${profile.name}`);
   }
-  const source = await castModels.get(profile.id);
+  const url = assetVersion === "legacy" ? `assets/cast/${profile.id}.glb`
+    : published ? `assets/cast/dna/${published.file}` : "assets/cast/candidates/ganaa/dna-v1.glb";
+  if (!castModels.has(url)) {
+    const promise = new GLTFLoader().loadAsync(url)
+      .catch(error => { castModels.delete(url); throw error; });
+    castModels.set(url, promise);
+  }
+  const source = await castModels.get(url);
   const group = clone(source.scene);
   group.name = `cast-${profile.id}`;
   group.position.copy(position);
   group.rotation.y = rotationY;
   const ownedMaterials = new Set();
+  const ownedGeometries = new Set();
   const skeletons = new Set();
   const faces = [];
+  const stateObjects = [];
+  const infectionLines = [];
+  let storyStates = [];
   let textureWidth = 0;
   group.traverse(object => {
+    if (object.userData.story_states) storyStates = JSON.parse(object.userData.story_states);
+    if (object.userData.states) stateObjects.push(object);
     if (!object.isMesh) return;
+    if (object.userData.role === "Story.InfectionLine") {
+      const segments = object.userData.reveal_segments;
+      if (!Number.isInteger(segments) || segments < 1 || object.geometry.index?.count !== segments * 6) {
+        throw new Error("Infection line must have six ordered indices per reveal segment");
+      }
+      object.geometry = object.geometry.clone();
+      ownedGeometries.add(object.geometry);
+      infectionLines.push({ geometry: object.geometry, segments });
+    }
     const copy = material => {
       const next = material.clone();
       ownedMaterials.add(next);
@@ -279,7 +300,7 @@ export async function loadCharacter({ id = "ganaa", detail = "hero", position = 
   function applyExpression() {
     if (expression === "neutral") return;
     for (const mesh of faces) {
-      const index = mesh.morphTargetDictionary[expression];
+      const index = mesh.morphTargetDictionary[assetVersion === "legacy" ? expression : `EXP.${expression}`];
       if (index !== undefined) {
         manualExpressions.push({ mesh, index, value: mesh.morphTargetInfluences[index] });
         mesh.morphTargetInfluences[index] = 1;
@@ -313,13 +334,27 @@ export async function loadCharacter({ id = "ganaa", detail = "hero", position = 
     }
     setTime(0);
   }
-  setMotion("idle");
+  function setStoryState(name) {
+    if (!storyStates.includes(name)) throw new Error(`Story state ${name} is unavailable for ${profile.name}`);
+    for (const object of stateObjects) object.visible = String(object.userData.states).split(',').includes(name);
+  }
+  function setInfectionProgress(progress) {
+    if (!Number.isFinite(progress)) throw new Error("Infection progress must be finite");
+    const value = THREE.MathUtils.clamp(progress, 0, 1);
+    for (const { geometry, segments } of infectionLines) {
+      geometry.setDrawRange(0, Math.floor(value * segments + 1e-8) * 6);
+    }
+  }
+  if (storyStates.length) setStoryState(storyStates[0]);
+  setInfectionProgress(0);
+  setMotion(assetVersion === "legacy" ? "idle" : "rest");
   return {
     group, profile, detail,
     motions: ["rest", ...clips.keys()],
-    setMotion, setTime,
+    setMotion, setTime, setStoryState, setInfectionProgress, storyStates,
     setExpression(name) {
-      if (!EXPRESSIONS.includes(name)) throw new Error(`Unknown expression: ${name}`);
+      const names = assetVersion === "legacy" ? EXPRESSIONS : ["neutral", "smile", "frown", "blink", "viseme_A", "viseme_E", "viseme_O", "viseme_M"];
+      if (!names.includes(name)) throw new Error(`Expression ${name} is unavailable for ${profile.name}`);
       expression = name;
       setTime(time);
     },
@@ -333,8 +368,9 @@ export async function loadCharacter({ id = "ganaa", detail = "hero", position = 
       mixer.uncacheRoot(group);
       group.removeFromParent();
       for (const material of ownedMaterials) material.dispose();
+      for (const geometry of ownedGeometries) geometry.dispose();
       for (const skeleton of skeletons) skeleton.dispose();
     },
-    info: { textureWidth, rigBones: [...skeletons].reduce((count, skeleton) => count + skeleton.bones.length, 0) },
+    info: { textureWidth, rigBones: new Set([...skeletons].flatMap(skeleton => skeleton.bones)).size },
   };
 }

@@ -1,0 +1,129 @@
+{
+  "units": "meters",
+  "axes": "X east, Y north, Z up",
+  "origin": "Naran town central square (0,0,0)",
+  "fictional": true,
+  "hero_locations": [
+    {
+      "id": "N01",
+      "name": "Central Square",
+      "x_m": 0,
+      "y_m": 0
+    },
+    {
+      "id": "N02",
+      "name": "Governor Office",
+      "x_m": -120,
+      "y_m": 170
+    },
+    {
+      "id": "N03",
+      "name": "Radio Office",
+      "x_m": -270,
+      "y_m": 260
+    },
+    {
+      "id": "N04",
+      "name": "Naran Hospital",
+      "x_m": 760,
+      "y_m": 300
+    },
+    {
+      "id": "N05",
+      "name": "Maternity Wing",
+      "x_m": 840,
+      "y_m": 350
+    },
+    {
+      "id": "N06",
+      "name": "Heating Plant",
+      "x_m": 1330,
+      "y_m": 755
+    },
+    {
+      "id": "N07",
+      "name": "School No.2",
+      "x_m": -720,
+      "y_m": -230
+    },
+    {
+      "id": "N08",
+      "name": "School Workshop",
+      "x_m": -760,
+      "y_m": -360
+    },
+    {
+      "id": "N09",
+      "name": "Police Office",
+      "x_m": -370,
+      "y_m": 195
+    },
+    {
+      "id": "N10",
+      "name": "Town Market",
+      "x_m": -275,
+      "y_m": -80
+    },
+    {
+      "id": "N11",
+      "name": "Naran Apartments",
+      "x_m": 335,
+      "y_m": -410
+    },
+    {
+      "id": "N12",
+      "name": "Ganaa Apartment",
+      "x_m": 420,
+      "y_m": -370
+    },
+    {
+      "id": "N13",
+      "name": "Municipal Garage",
+      "x_m": -330,
+      "y_m": -560
+    },
+    {
+      "id": "N14",
+      "name": "Fuel Store",
+      "x_m": 945,
+      "y_m": -400
+    },
+    {
+      "id": "N15",
+      "name": "Grain Warehouse",
+      "x_m": 710,
+      "y_m": 940
+    },
+    {
+      "id": "N16",
+      "name": "Rail Siding",
+      "x_m": 90,
+      "y_m": 1070
+    },
+    {
+      "id": "N17",
+      "name": "Ger District",
+      "x_m": -1180,
+      "y_m": -650
+    },
+    {
+      "id": "N18",
+      "name": "Town West Gate",
+      "x_m": -1300,
+      "y_m": -210
+    },
+    {
+      "id": "N19",
+      "name": "Town North Gate",
+      "x_m": -40,
+      "y_m": 1180
+    },
+    {
+      "id": "N20",
+      "name": "Hospital Boiler Annex",
+      "x_m": 960,
+      "y_m": 470
+    }
+  ],
+  "note": "GLB is geometry-only 1:1 placeholders, no interiors/characters/textures"
+}

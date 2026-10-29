@@ -1,0 +1,33 @@
+﻿asset_id,asset,type,location_refs,priority,model_or_variant_scope,world_states,notes
+BLD-001,Soviet apartment 4-floor modular shell,architecture,N11 N12,A,6 facades + stair module,S0 S1 S2 S3,"Main Ganaa scene, 1:1 playable interior"
+BLD-002,Central hospital shell + maternity wing,architecture,N04 N05,A,Exterior + playable corridor set,S0 S1 S2 S3,Must test evacuation and blocked access
+BLD-003,School No.2 + workshop,architecture,N07 N08,A,Exterior + gym/corridor/stair + workshop,S0 S1 S2 S3,Gate/fence/annex physically coherent
+BLD-004,Hürel café and forecourt,architecture,RG04,A,"Playable kitchen, counter, windows, roof",S0 S2 S3,EP1 wreck must match EP8 return
+BLD-005,Heating plant + pipe network,architecture,N06,A,Stacks + boiler + access lane,S0 S1 S3,Sightline to hospital and carpark
+BLD-006,Governor municipal office,architecture,N02,B,"Office, radio room and garage view",S0 S1 S2,Ground the authority and evacuation
+BLD-007,Cold Station insulated shelter,architecture,RG10,A,Two rooms vestibule and generator,S0 S4,Final capacity test
+BLD-008,Warm Cut culvert + bridge,architecture,RG09,A,Playable road + heat pipe + drainage,S0 S3 S4,Auditable alternate paths
+VEH-001,KAMAZ diesel truck,vehicle,RG04,A,"Cab interior, wheel, burned variant",S0 S2 S3,EP1 to EP8 matching damage
+VEH-002,UAZ-452 ambulance gasoline,vehicle,N13 RG08 RG10,A,"Van, doors, interior, supplies",S0 S1 S3 S4,4.4m x 1.94m x ~2.1m design baseline
+VEH-003,Civilian truck / ride home,vehicle,RG04 N19,A,Cab + daylight / night option,S0 S1,Ganaa ride after crash
+VEH-004,Bayar patrol jeep,vehicle,N18 RG09,B,Staging-ready + worn variant,S0 S3,Do not teleport jeep
+PROP-001,Irina satchel + evidence cassettes,prop,RG04,A,Openable flap + labels + undamaged option,S0 S3,Must survive café fire in cab
+PROP-002,Hürel debt ledger + buuz bill,prop,RG04,A,Close-up readable Mongolian writing,S0 S3,Emotional EP8 callback
+PROP-003,Altan mittens and birthday gift,prop,N12,A,"Close-up quality, washable/dirty versions",S0 S2 S3,Human continuity
+PROP-004,Anu Hi8 camera + tape set,prop,N07 RG08,A,"Physical buttons, tape/battery swaps",S0 S1 S3,Date/recording timer correctness
+PROP-005,"Medical chart, door key, triage cards",prop,N04,A,Credible formats and variants,S0 S1 S2,Hospital physical logic
+PROP-006,Governor stamped medical fax,prop,N02 N03 RG09,A,"Dates, stamp, chain of custody",S0 S1 S3,Different from Irina tape
+PROP-007,"Portable radio, watch and map",prop,N12 RG07 RG10,A,"Analog, legible display",S0 S3,Sarnai observation and station forecasts
+PROP-008,Fuel drums gasoline/diesel labeled,prop,N13 RG04 RG09,A,Separate fuel markings and capacity,S0 S1 S3,No diesel into gasoline UAZ
+PROP-009,Newborn carrier + formula + flasks,prop,N04 VEH-002 RG10,A,Secured transport and continuity states,S0 S3 S4,Nursery/transport realism
+PROP-010,School register / shelter assignment sheets,prop,N07,B,"Handwritten, period-safe ink/paper",S0 S1 S2,Visual social hierarchy
+ENV-001,"Power poles, cables, lamps",environment,all town,A,3 variants with day/night emission,S0 S1 S2 S3,Networks must connect
+ENV-002,Ger and fenced yard modules,environment,N17,B,"5 fence segments, gate, stove, coal",S0 S1 S2 S3,Habitation not empty props
+ENV-003,Larch/pine/brush dry grass set,environment,region,B,Seasonal dry/winter variants,S0 S3 S4,Northern forest-steppe
+ENV-004,Bus stop / 1998 sign kit,environment,N01 N10 N18,B,"Mongolian lettering, aging variants",S0 S1 S2 S3,No modern iconography
+ENV-005,District heating pipes + valves,environment,N06 N04 RG09,A,Connected segments + leaks and frost,S0 S1 S3 S4,Heat location rules
+FX-001,Breath / steam / frost decals,effect,all,A,Density from temp and exertion,S0 S1 S2 S3 S4,No uniform fog everywhere
+FX-002,Infection RED GREY WHITE variants,effect,all,A,Character material presets,S1 S2 S3 S4,Matched to exertion & temperature
+FX-003,Fire/char/water/snow damage,effect,RG04 N12 RG10,A,Progressive decals and removable props,S2 S3 S4,Repeatable continuity
+AUDIO-001,Industrial town ambience loops,audio,N06 N01 N04,A,Distinct day/night states,S0 S1 S2 S3,Steam/hiss/relays/transformer
+AUDIO-002,Rural ambience loops,audio,region,A,"Wind, horse harness, frozen soil",S0 S3 S4,Avoid constant horror drones

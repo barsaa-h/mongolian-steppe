@@ -1,0 +1,21 @@
+﻿location_id,english_name,mongolian_name,x_m_east,y_m_north,placeholder_width_m,placeholder_depth_m,episode_appearance,production_purpose
+N01,Central Square,Төв талбай,0,0,0,0,"EP3, EP5",Municipal plaza / announcement
+N02,Governor Office,Засаг даргын байр,-120,170,36,18,EP3,Two-floor masonry building
+N03,Radio Office,Радио холбооны байр,-270,260,25,15,"EP3, EP9","Switchboard, archive, fax"
+N04,Naran Hospital,Наран эмнэлэг,760,300,70,44,"EP2, EP7","West service lane, east maternity wing"
+N05,Maternity Wing,Төрөх тасаг,840,350,35,28,"EP2, EP7",Locked corridor / nursery access
+N06,Heating Plant,Дулааны станц,1330,755,130,95,"EP2, EP6–7","Two stacks, live heat, ash yard"
+N07,School No.2,2-р сургууль,-720,-230,74,46,EP4,Emergency shelter
+N08,School Workshop,Сургуулийн цех,-760,-360,42,28,EP4,Separated cough shelter
+N09,Police Office,Цагдаагийн байр,-370,195,33,20,EP2–5,Intake and escort
+N10,Town Market,Зах,-275,-80,115,65,"EP1, EP3","Stalls, delivery bay"
+N11,Naran Apartments,Наран хороолол,335,-410,260,175,EP1–2,3–5 floor block cluster
+N12,Ganaa Apartment,Ганаагийн байр,420,-370,43,13,EP1,"Main party set, four-floor block"
+N13,Municipal Garage,Авто гарааш,-330,-560,115,75,EP3,UAZ convoy departure
+N14,Fuel Store,Түлшний агуулах,945,-400,115,65,EP3,Heating reserve and guard post
+N15,Grain Warehouse,Үр тарианы агуулах,710,940,100,66,EP3,Agrarian industry silhouette
+N16,Rail Siding,Төмөр замын зогсоол,90,1070,500,26,EP1 atmosphere,"Rail yard, nonfunctional scene transit"
+N17,Ger District,Гэр хороолол,-1180,-650,440,350,EP3–5,"Fences, coal smoke, water kiosk"
+N18,Town West Gate,Баруун гарц,-1300,-210,18,12,"EP5, EP6",Toward bypass/checkpoint
+N19,Town North Gate,Хойд гарц,-40,1180,18,12,"EP1, EP8",Toward border highway
+N20,Hospital Boiler Annex,Эмнэлгийн бойлер,960,470,29,24,"EP2, EP7",Oyun hideout / rear door

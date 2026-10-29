@@ -1,0 +1,185 @@
+{
+  "before_source_sha256": "66bbf0dae727bec3468ae4342c80e54afd84c0b841b311964d6e155c55ba6ce4",
+  "checks_before_fixes": {
+    "vehicle_routes_clear": {
+      "passed": false,
+      "body_radius_m": 1.2,
+      "obstacles": [
+        [
+          "Road.South distributor",
+          "Apartment.013.Mesh_29"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.Mesh_30"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-0.002"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-1.002"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-11"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-13"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-15"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-2.001"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-3.001"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-4.001"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-5.001"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-6.001"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-7"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-8"
+        ],
+        [
+          "Road.South distributor",
+          "Apartment.013.static-batch-9"
+        ]
+      ]
+    },
+    "roads_above_actual_terrain": {
+      "passed": false,
+      "samples": 4847,
+      "buried_samples": [
+        [
+          "Road.West avenue",
+          -1630.11,
+          -228.86
+        ],
+        [
+          "Road.West avenue",
+          -1626.14,
+          -228.64
+        ],
+        [
+          "Road.West avenue",
+          -1622.16,
+          -228.41
+        ],
+        [
+          "Road.West avenue",
+          -1618.18,
+          -228.18
+        ],
+        [
+          "Road.West avenue",
+          -1614.2,
+          -227.95
+        ],
+        [
+          "Road.West avenue",
+          -1610.23,
+          -227.73
+        ],
+        [
+          "Road.West avenue",
+          -1606.25,
+          -227.5
+        ],
+        [
+          "Road.West avenue",
+          -1602.27,
+          -227.27
+        ],
+        [
+          "Road.West avenue",
+          -1598.3,
+          -227.05
+        ],
+        [
+          "Road.West avenue",
+          -1594.32,
+          -226.82
+        ],
+        [
+          "Road.West avenue",
+          -1558.52,
+          -224.77
+        ],
+        [
+          "Road.West avenue",
+          -1554.55,
+          -224.55
+        ],
+        [
+          "Road.West avenue",
+          -1550.57,
+          -224.32
+        ],
+        [
+          "Road.West avenue",
+          -1546.59,
+          -224.09
+        ],
+        [
+          "Road.West avenue",
+          -1542.61,
+          -223.86
+        ]
+      ]
+    },
+    "street_house_gates_face_road": {
+      "passed": false,
+      "reversed_households": [
+        "Household.086",
+        "Household.130",
+        "Household.131",
+        "Household.132",
+        "Household.133",
+        "Household.134",
+        "Household.135",
+        "Household.136",
+        "Household.137",
+        "Household.138",
+        "Household.139",
+        "Household.140",
+        "Household.141",
+        "Household.142",
+        "Household.143",
+        "Household.144",
+        "Household.145",
+        "Household.146",
+        "Household.147",
+        "Household.148"
+      ]
+    },
+    "school_workshop_maternity_access": {
+      "passed": false,
+      "expected_visible_doors": [
+        "N07.NorthDoor",
+        "N08.NorthDoor",
+        "N05.EastDoor"
+      ]
+    }
+  }
+}

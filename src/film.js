@@ -9,6 +9,7 @@ createFilmPlayer({
   canvas: document.getElementById("film"),
   sceneModule: getScene(sceneId),
   renderMode: new URLSearchParams(location.search).has("render"),
+  ganaaAssetVersion: new URLSearchParams(location.search).get("ganaa") || "legacy",
 }).catch(error => {
   console.error(error);
   document.getElementById("status").textContent = "Could not load the film. Reload to try again.";

@@ -30,12 +30,52 @@
     #status[hidden] { display: none; }
     body.render #controls { display: none; }
     @media (max-width: 600px) { #controls { gap: 8px; left: 3%; right: 3%; font-size: 10px; } button, a { padding: 7px; } #captions { left: 5%; right: 5%; } }
+  /* Hi8 found-footage grade (EP4): 4:3 pillars, scanlines, timecode, battery. */
+  #hi8 { position: fixed; inset: 0; pointer-events: none; z-index: 5; }
+  #hi8 .pillar { position: absolute; top: 0; bottom: 0; width: 12.5%; background: #000; }
+  #hi8 .pillar.left { left: 0; }
+  #hi8 .pillar.right { right: 0; }
+  #hi8 .scanlines {
+    position: absolute; top: 0; bottom: 0; left: 12.5%; right: 12.5%;
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.16) 0 1px, transparent 1px 3px),
+      radial-gradient(ellipse at center, transparent 55%, rgba(10,20,8,0.35) 100%);
+    mix-blend-mode: multiply;
+  }
+  #hi8 span {
+    position: absolute; top: 4.5%; font: 600 17px/1 "Courier New", monospace;
+    color: #e8f0e2; text-shadow: 0 0 6px rgba(120,220,140,0.7); letter-spacing: 0.08em;
+  }
+  #hi8Timecode { left: 14.5%; }
+  #hi8Battery {
+    right: 14.5%; display: inline-flex; align-items: center; gap: 5px;
+  }
+  #hi8Battery b {
+    display: inline-block; width: 34px; height: 14px; border: 2px solid #e8f0e2;
+    border-radius: 2px; position: relative;
+  }
+  #hi8Battery b::after {
+    content: ""; position: absolute; right: -6px; top: 2px; width: 4px; height: 6px;
+    background: #e8f0e2;
+  }
+  #hi8Battery i {
+    display: block; height: 100%; background: #b8e8a0; width: 90%;
+  }
+  #hi8Rec { top: 9.5%; left: 14.5%; color: #ff5040; text-shadow: none; font-size: 14px; }
+  body.render #hi8 span { font-size: 12px; }
   </style>
 </head>
 <body>
   <canvas id="film" aria-label="Ханиад: Тав дахь цаг, 30 секундийн анимейшн"></canvas>
   <div class="bar top"></div><div class="bar bottom"></div>
   <div id="shade"></div>
+  <div id="hi8" hidden>
+    <div class="pillar left"></div><div class="pillar right"></div>
+    <div class="scanlines"></div>
+    <span id="hi8Timecode">PLAY &#9654; 00:00:00</span>
+    <span id="hi8Battery"><i></i><b></b></span>
+    <span id="hi8Rec">&#9679; REC</span>
+  </div>
   <div id="location"><strong>НАРАН</strong><small>1998 ОН · ТАВ ДАХЬ ЦАГ</small></div>
   <div id="captions" aria-live="off"><div id="speaker"></div><div id="subtitle"></div></div>
   <div id="endTitle"><h1>ХАНИАД</h1><p>THE COUGH</p></div>

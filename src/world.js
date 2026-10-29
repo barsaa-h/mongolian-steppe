@@ -11,6 +11,11 @@ import {
   windowMaterials,
 } from "./parts.js";
 import { cloneRepeat, glowTexture, smokeTexture, steppeTexture } from "./textures.js";
+import {
+  buildSwingingSign, buildCreakingGate, buildSaggingWire, buildTumbleweed,
+  buildDustDevil, buildTrafficLoop, buildStrayDog, makeAmbientRunner,
+} from "./ambientLife.js";
+import { buildCar, buildCrate } from "./parts.js";
 import { mergeStatic } from "./mergeStatic.js";
 import { placeTown, townHeight } from "./district.js";
 import { terrainHeight, groundGeometry } from "./terrain.js";
@@ -301,6 +306,34 @@ export function buildWorld() {
     object.receiveShadow = true;
   });
 
+  // Ambient life: swinging signs, a creaking gate, sagging wires, tumbleweeds,
+  // dust devils, avenue traffic and a stray dog — all deterministic in t.
+  const ambient = [];
+  const addAmbient = item => { if (item) { scene.add(item.object); ambient.push(item); } };
+  addAmbient(buildSwingingSign({ x: 113.6, y: 3.3, z: -14.4, seed: 21, width: 1.3 }));
+  addAmbient(buildSwingingSign({ x: 97.4, y: 2.9, z: 7.0, seed: 22, width: 0.9, color: 0x2b4a7a }));
+  addAmbient(buildCreakingGate({ x: -84.4, z: 13.4, seed: 23 }));
+  addAmbient(buildSaggingWire({ from: [-62, 9.4, 8.6], to: [-40, 9.4, 8.6], sag: 0.55, seed: 24 }));
+  addAmbient(buildSaggingWire({ from: [42, 9.4, 8.6], to: [64, 9.4, 8.6], sag: 0.5, seed: 25 }));
+  for (let i = 0; i < 3; i++) {
+    addAmbient(buildTumbleweed({ laneZ: -124 - i * 6, from: -120, to: 120, speed: 3 + i, seed: 30 + i, scale: 0.8 + i * 0.15 }));
+  }
+  for (let i = 0; i < 2; i++) {
+    addAmbient(buildDustDevil({ from: [-90 + i * 40, 138], to: [60 + i * 30, 152], seed: 40 + i }));
+  }
+  const trafficCar = buildCar(0x6a6a62, "sedan");
+  scene.add(trafficCar);
+  addAmbient(buildTrafficLoop({ model: trafficCar, from: [-158, 3.4], to: [158, 3.4], speed: 11, seed: 1 }));
+  const trafficTruck = buildCar(0x4a5a6a, "van");
+  scene.add(trafficTruck);
+  addAmbient(buildTrafficLoop({ model: trafficTruck, from: [158, -3.4], to: [-158, -3.4], speed: 8, seed: 2 }));
+  addAmbient(buildStrayDog({
+    anchors: [[18, -6.4], [34, -6.4], [34, 2.2], [20, 2.2]],
+    ground: townHeight,
+    seed: 50,
+  }));
+  const runAmbient = makeAmbientRunner(ambient);
+
   // Foliage wind: shader-side sway keyed on world position, so it also moves the
   // merged static batches. Amplitude stays small to keep crowns on their trunks.
   const windTime = { value: 0 };
@@ -333,6 +366,7 @@ export function buildWorld() {
   function apply(state, animationTime = state.t) {
     const t = animationTime;
     windTime.value = t;
+    runAmbient(t);
 
     sun.position.copy(state.sunDir).multiplyScalar(360);
     sun.color.copy(state.sunColor);

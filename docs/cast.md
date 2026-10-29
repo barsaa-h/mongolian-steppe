@@ -1,5 +1,7 @@
 # ХАНИАД — Episodes 1–5 cast
 
+> Current character design and production authority: [Character Master](../artifacts/character-master/README.md), [source decisions](../artifacts/character-master/production/SOURCES.md) and [Episode 1 status](../artifacts/character-master/production/STATUS.md). The roster contract below describes the legacy runtime profiles and old Episodes 1–5 breakdown; do not use its episode appearances as the ten-episode v3 casting plan.
+
 The roster covers the complete cleaned dialogue master, Episodes 1–5: **48 on-screen character profiles and two voice roles**. Each named on-screen person and individual dialogue speaker has one canonical identity. Specific unnamed speakers remain separate unless the script establishes they are the same person.
 
 Sources: [cleaned dialogue master](/home/barsaa/Downloads/KHANIAD_Dialogue_Master_Clean_Episodes_1-5.md) and [series bible v0.2](/home/barsaa/Downloads/ХАНИАД-THE-COUGH-Series-Bible-v0.2-15-89-min.md). The dialogue master controls individual scene appearances and role labels; the bible supplies full names, relationships, Anu’s age, Narantuya’s age, and Saruul’s gender where the master omits them. The setting is Mongolia and the Russian border, autumn 1998.

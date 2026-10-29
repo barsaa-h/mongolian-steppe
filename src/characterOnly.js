@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { loadCharacter as loadCastCharacter, loadMongolianMan } from "./character.js";
-import { CAST, getCastMember } from "./cast.js";
+import { CAST, DNA_CAST, getCastMember } from "./cast.js";
 import { createPipeline } from "./psx.js";
 import { DEFAULT_OUTFIT, GARMENTS, PALETTES, HEADWEAR, OUTFITS, getOutfit } from "./wardrobe.js";
 
@@ -61,8 +61,21 @@ for (const [id, items] of [["garment", GARMENTS], ["palette", PALETTES], ["headw
   for (const item of items) ui[id].add(new Option(item.name, item.id));
 }
 const cast = CAST.filter(member => member.kind !== "voice");
-for (const member of cast) ui.cast.add(new Option(member.name, member.id));
+const dnaGroup = document.createElement("optgroup");
+dnaGroup.label = "EP01 pilot cast · new DNA characters";
+for (const [id, entry] of Object.entries(DNA_CAST)) dnaGroup.append(new Option(entry.name === id ? id.replaceAll("-", " ") : entry.name, `dna:${id}`));
+ui.cast.add(dnaGroup);
+const legacyGroup = document.createElement("optgroup");
+legacyGroup.label = "Legacy roster";
+for (const member of cast) legacyGroup.append(new Option(member.name, member.id));
+ui.cast.add(legacyGroup);
 ui.cast.add(new Option("Legacy wardrobe · 320 outfits", "legacy"));
+const LEGACY_EXPRESSIONS = [...ui.expression.options].map(option => [option.textContent, option.value]);
+const DNA_EXPRESSIONS = [["Neutral", "neutral"], ["Smile", "smile"], ["Frown", "frown"], ["Blink", "blink"],
+  ["Viseme A", "viseme_A"], ["Viseme E", "viseme_E"], ["Viseme O", "viseme_O"], ["Viseme M", "viseme_M"]];
+function setExpressionOptions(dna) {
+  ui.expression.replaceChildren(...(dna ? DNA_EXPRESSIONS : LEGACY_EXPRESSIONS).map(([label, value]) => new Option(label, value)));
+}
 ui.cast.value = "ganaa";
 document.getElementById("cast-count").textContent = `${cast.length} visible characters · ${CAST.length - cast.length} voice roles documented in the roster.`;
 let outfitId = DEFAULT_OUTFIT;
@@ -128,7 +141,9 @@ function displayProfile() {
 
 async function loadSelectedCharacter() {
   const request = ++loading;
-  const id = ui.cast.value;
+  const choice = ui.cast.value;
+  const dna = choice.startsWith("dna:");
+  const id = dna ? choice.slice(4) : choice;
   isLoading = true;
   ui.controls.disabled = true;
   document.getElementById("retry").hidden = true;
@@ -138,11 +153,12 @@ async function loadSelectedCharacter() {
     const options = { rotationY: 0, detail: ui.detail.value };
     const loaded = id === "legacy"
       ? await loadMongolianMan({ ...options, outfit: outfitId })
-      : await loadCastCharacter({ ...options, id });
+      : await loadCastCharacter({ ...options, id, assetVersion: dna ? "dna" : "legacy" });
     if (request !== loading) { loaded.dispose(); return; }
     character?.dispose();
     character = loaded;
-    currentId = id;
+    currentId = choice;
+    setExpressionOptions(dna);
     performanceTime = 0;
     performancePlaying = true;
     scene.add(character.group);
@@ -155,7 +171,7 @@ async function loadSelectedCharacter() {
     if (request !== loading) return;
     const retry = document.getElementById("retry");
     retry.hidden = false;
-    retry.onclick = () => { ui.cast.value = id; loadSelectedCharacter(); };
+    retry.onclick = () => { ui.cast.value = choice; loadSelectedCharacter(); };
     console.error("Character could not load", error);
     ui.status.classList.add("error");
     ui.status.textContent = "Character could not load. Retry below, or choose another character.";
@@ -274,6 +290,12 @@ loadSelectedCharacter();
 window.__character = {
   scene, camera,
   async select(id) {
+    if (id.startsWith("dna:")) {
+      if (!DNA_CAST[id.slice(4)]) throw new Error(`No published DNA character ${id.slice(4)}`);
+      ui.cast.value = id;
+      await loadSelectedCharacter();
+      return;
+    }
     const canonical = id === "legacy" ? id : getCastMember(id).id;
     if (canonical !== "legacy" && !cast.some(member => member.id === canonical)) throw new Error("Voice roles have no character model");
     ui.cast.value = canonical;

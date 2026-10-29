@@ -977,22 +977,79 @@ export function ceilingTexture() {
   }));
 }
 
-// Dzud snow: blue-shadowed white with wind scours and buried grass tips.
+// Dzud snow: blue-shadowed white with wind scours, sparkles and buried grass.
 export function snowTexture() {
   return cached("snow", () => canvasTexture(128, 128, (ctx, w, h) => {
-    ctx.fillStyle = "#dfe4e8";
+    ctx.fillStyle = "#e8edf2";
     ctx.fillRect(0, 0, w, h);
-    for (let i = 0; i < 60; i++) {
-      ctx.fillStyle = "rgba(168,184,200,0.28)";
+    for (let i = 0; i < 70; i++) {
+      ctx.fillStyle = i % 3 ? "rgba(148,168,192,0.34)" : "rgba(126,148,174,0.3)";
       ctx.beginPath();
-      ctx.ellipse(Math.random() * w, Math.random() * h, 6 + Math.random() * 16, 2 + Math.random() * 5,
+      ctx.ellipse(Math.random() * w, Math.random() * h, 6 + Math.random() * 18, 2 + Math.random() * 6,
         Math.random() * Math.PI, 0, Math.PI * 2);
       ctx.fill();
     }
-    speckle(ctx, w, h, ["rgba(150,168,188,0.3)", "rgba(244,248,252,0.4)"], 900, 1, 3);
-    for (let i = 0; i < 26; i++) {
-      ctx.fillStyle = "rgba(158,150,110,0.4)";
+    for (let i = 0; i < 12; i++) {
+      // wind scours: long pale streaks
+      ctx.strokeStyle = "rgba(246,250,254,0.5)";
+      ctx.lineWidth = 1 + Math.random() * 2;
+      ctx.beginPath();
+      const y = Math.random() * h;
+      ctx.moveTo(Math.random() * w, y);
+      ctx.lineTo(Math.random() * w, y + (Math.random() - 0.5) * 6);
+      ctx.stroke();
+    }
+    speckle(ctx, w, h, ["rgba(128,148,172,0.32)", "rgba(250,253,255,0.5)"], 1200, 1, 3);
+    for (let i = 0; i < 40; i++) {
+      ctx.fillStyle = "rgba(150,140,96,0.45)";
       ctx.fillRect(Math.random() * w, Math.random() * h, 1, 2 + Math.random() * 3);
+    }
+  }));
+}
+
+// Lake ice under the dzud: pale blue with fracture lines and pressure shading.
+export function iceTexture() {
+  return cached("ice", () => canvasTexture(256, 256, (ctx, w, h) => {
+    ctx.fillStyle = "#c6d8e2";
+    ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 46; i++) {
+      ctx.fillStyle = i % 2 ? "rgba(154,180,198,0.3)" : "rgba(226,238,244,0.36)";
+      ctx.beginPath();
+      ctx.ellipse(Math.random() * w, Math.random() * h, 8 + Math.random() * 26, 3 + Math.random() * 8,
+        Math.random() * Math.PI, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // fracture lines: branching dark polylines
+    for (let i = 0; i < 16; i++) {
+      ctx.strokeStyle = "rgba(74,98,116,0.5)";
+      ctx.lineWidth = 0.8 + Math.random() * 1.2;
+      let x = Math.random() * w;
+      let y = Math.random() * h;
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      const steps = 4 + (Math.random() * 5) | 0;
+      let angle = Math.random() * Math.PI * 2;
+      for (let s = 0; s < steps; s++) {
+        angle += (Math.random() - 0.5) * 1.2;
+        x += Math.cos(angle) * (8 + Math.random() * 16);
+        y += Math.sin(angle) * (8 + Math.random() * 16);
+        ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      // bright glint alongside the fresh crack
+      ctx.strokeStyle = "rgba(240,248,252,0.5)";
+      ctx.lineWidth = 0.8;
+      ctx.beginPath();
+      ctx.moveTo(x - Math.cos(angle) * steps * 4, y - Math.sin(angle) * steps * 4);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    }
+    for (let i = 0; i < 24; i++) {
+      // frozen air bubbles
+      ctx.fillStyle = "rgba(236,246,250,0.4)";
+      ctx.beginPath();
+      ctx.arc(Math.random() * w, Math.random() * h, 1 + Math.random() * 2.5, 0, Math.PI * 2);
+      ctx.fill();
     }
   }));
 }

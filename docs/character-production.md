@@ -1,5 +1,7 @@
 # Character production
 
+> For new character authoring use [Character Master](../artifacts/character-master/README.md) and the shared MakeHuman/MPFB DNA workflow. The API and Vinrax pipeline below document the current legacy runtime. Keep that runtime working while the café test proves the new actors; it is not the chosen source for new identities.
+
 The cast studio includes 48 on-screen actors from the Episodes 1–5 dialogue master,
 plus two documented voice roles. Each visible actor has an editable `.blend` and
 an embedded-texture GLB under `assets/cast/`. The roster, aliases and authored

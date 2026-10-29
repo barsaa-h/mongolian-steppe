@@ -1,1 +1,1 @@
-Baseline stills copied before the eye, brow and skin rebuild. Same files as the previous master presets and the current Ganaa gallery.
+Historical stills copied before the eye, brow and skin rebuild. They preserve the earlier master examples and earlier Ganaa appearance, not the current approved design. Current work starts at [Character Master](../README.md).

@@ -1,0 +1,45 @@
+﻿task_id,priority,gate,task,episodes,department,deliverable,acceptance_test,dependencies,status
+P000,P0,G0,EP1 canon alignment,EP1,story,Compare EP1 v2.1 spoken/staging lines with v3 story changes,No contradictory approved scene; protected dialogue preserved,,open
+P001,P0,G0,Timecode and bite clock,EP1,continuity,Border/café/ride/birthday hours and Dasha/Ganaa bite progress,Every time jump and bite incubation checked,P000,open
+P002,P0,G0,Character routes by episode,EP1–10,continuity,"Who is where scene by scene, with travel mode",No teleportation or impossible weather travel,P000,open
+P003,P0,G0,Resource tracking,EP1–10,continuity,"Fuel, baby formula, medicine, keys, evidence, clothing, ammo",Each increase has a source; no resource teleportation,P002,open
+P004,P0,G1,EP1 café blocking set,"EP1,EP8",environment,Café kitchen/counter/doors/forecourt as 1:1 Blender graybox,"Bite, retreat, sightline, EP8 search route all pass",P000,open
+P005,P0,G1,KAMAZ collision and satchel survival,"EP1,EP8",staging,"Truck bounding box, impact point, spill ignition boundary, evidence zone",Plausible wreck and stable later evidence,P004,open
+P006,P0,G1,Apartment/stairwell 1:1 scene,"EP1,EP2",environment,"Kitchen, living room, bedroom, stair and courtyard","Crowd circulation, sound path and exits visibly plausible",P000,open
+P007,P0,G1,Hospital escape graybox,"EP2,EP7",environment,"Four-zone layout, lock and service exit with occupancy markers",All rescue alternatives reviewed and story choice physically motivated,P002,open
+P008,P1,G1,School annex + gates layout,"EP4,EP5",environment,"Gym, corridor, separate annex, sightlines and working gates",Separation/escape/camera transfer feasible,P002,open
+P009,P0,G1,Existing character rig import,EP1,rig,One lead rig imported at 1:1; correct transform,"Bounding dimensions, camera, feet grounded",,open
+P010,P0,G2,Facial/hand acting test,EP1,animation,"Dialogue closeup, eyes, jaw, hand touching bowl",Speech and contact plausible in 3 viewing angles,P009,open
+P011,P0,G2,Café 60–90s animatic test,EP1,storyboard,"Camera boards, temp dialogue and action in café",Timing readable; visual cause and effect clear,"P004,P010",open
+P012,P0,G2,Short infected sprint test,EP1,animation,10–15s approach/run/contact through mapped path,"No clipping, implausible speed or impossible path","P004,P009",open
+P013,P1,G2,Birthday acting and crowd proof,EP1,animation,15–25s subtle domestic performance with guest baby sound,"Believable facial acting, occlusion and acoustics","P006,P010",open
+P014,P0,G2,Render budget benchmark,EP1,render,Render cafe look test under production lighting,"Record seconds/frame, GPU/RAM, storage and quality",P011,open
+P015,P1,G2,1998 texture/look test,EP1,art,"One polished room before/after alert, exterior light study",Period credible and PS2-era stylization approved,P011,open
+P016,P1,G2,Natural-Mongolian table read,EP1,audio,Read EP1 lines with physical action and time pauses,No stiff/translated phrasing; actual runtime determined,P000,open
+P017,P1,G2,Temp VO sound scene,EP1,audio,"Dialogue + room tone + Foley placeholders, Russia/Mongolian captions",Full dialogue intelligible and captions timed,P016,open
+P018,P1,G3,Reusable town architecture kit,EP1–10,assets,Modular apartment/window/stair/gate/road/fence units,"Matches scale and locations, has asset IDs and variants","P014,P015",open
+P019,P1,G3,Café hero assets,"EP1,EP8",assets,"Enamel bowl, food, ledger, satchel, KAMAZ cabin",Correct camera detail and EP8 durability states,"P005,P015",open
+P020,P1,G3,Hospital modular door/lock system,"EP2,EP7",assets,"Doors, hinges, lock states, cots and carts",Animated or clearly staged operation; width true,P007,open
+P021,P1,G3,Vehicle fleet and seat test,EP1–10,vehicles,"KAMAZ diesel, petrol UAZ, civilian ride truck, jeep","Dimensions, fuel type, occupant and load constraints recorded",P003,open
+P022,P1,G3,Regional road grade tests,EP6–10,terrain,"Track profiles, width, culvert and bridge clearances",Horse/UAZ paths physically passable as scripted,P002,open
+P023,P1,G3,Cold Station occupancy plan,EP10,environment,"Vestibule, generator, rooms, people/food/heating",Everyone fits or is excluded for shown reason,"P002,P003",open
+P024,P1,G3,Warm Cut thermal reference,"EP9,EP10",design,Bounded fictional seep and gradients,Heat exposure does not contradict freeze rule,P022,open
+P025,P1,G3,Crowd/winter wardrobe system,EP1–10,rig,"LOD body kit, layers, clothing and outbreak variants",3 distance tiers; no 1998 modern clothing slip,P015,open
+P026,P1,G3,Infected state variants,EP1–10,fx,Red/grey/standing/frozen looks and locomotion rules,States correspond to bite/feeding/time/temperature,P012,open
+P027,P1,G3,Episode 4 Hi8 camera prop test,"EP4,EP8–10",props,Correct aspect and battery/tape model,No recordings continue after power loss,P003,open
+P028,P0,G4,EP1 full shot list/animatic,EP1,editing,Every shot with ID/duration/camera/state/VO,Entire cut 8–10min using authentic spoken pacing,"P011,P013,P016",open
+P029,P1,G4,Scene shot template and link pipeline,EP1–10,pipeline,Named shots with linked assets and version metadata,Can reopen and update assets without scene breakage,P014,open
+P030,P1,G4,Render-to-edit recovery test,EP1,post,"Image sequence, dialogue stems, subtitles and edit conform","No missing frames, broken files or timing drift","P014,P029",open
+P031,P1,G4,EP1 sound design and mix pass,EP1,audio,Record/list sound stems and arrange intentional silence,"Voice clarity, localized Foley and consistent volume","P017,P028",open
+P032,P1,G4,EP1 picture/QC lock,EP1,release,"Final sequence of approved frames, audio and subtitles",Full-view QC; no continuity failures or render errors,"P028,P030,P031",open
+P033,P1,G5,EP2 screenplay v3,EP2,story,"New screenplay, delivery, dialogue, spatial logic",Episode reads against v3 and lockable hospital layout,"P007,P000",open
+P034,P1,G5,EP2 staging and animatic,EP2,storyboard,"Scene cut, temp VO, room/door logic",8–10min and plausible moral choice,"P033,P020",open
+P035,P1,G5,EP3 screenplay v3,EP3,story,"Gov office, radio, convoy cause-effect",Does not duplicate earlier outdated EP3 plot,P002,open
+P036,P1,G5,EP4 screenplay v3,EP4,story,Anu camera + school gate cause-effect,No magical recording or implausible vote mechanism,"P008,P027",open
+P037,P1,G5,EP5 screenplay v3,EP5,story,"Erdene, Bayar and hidden bitten man",Same victim/event visually trackable,P002,open
+P038,P2,G5,EP6–10 screenplay and animatic packets,EP6–10,story,One episode at a time with geography/state ledger,All episode stories screenable and timed,"P022,P023,P024",open
+P039,P1,G0,Episode-version and source hierarchy manifest,EP1–10,management,Mark obsolete scripts as reference-only,Agent never silently sources superseded 5-episode plot,P000,open
+P040,P1,G4,Backup and source control,EP1–10,pipeline,Versioned master rig/set plus reviewed scene exports,Can revert one destructive agent edit,P029,open
+P041,P2,G3,Historical reference audit,EP1–10,research,Verify dated signage/vehicles/camera and medical objects,No conspicuous anachronisms in hero shots,P015,open
+P042,P1,G3,Asset state transitions,EP1–10,assets,"S0-S4 scene variant tagging, especially café damage",Same physical building persists across episodes,P019,open
+P043,P2,G5,Reuse/cost per minute review,EP1–10,production,Use measured EP1 work to revise story complexity,Each subsequent episode fits real capacity,P032,open
