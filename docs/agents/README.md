@@ -18,3 +18,5 @@ Every agent reads **[00 — production master plan](00-production-master-plan.md
 Claude Code wrappers for the same agents live in `.claude/agents/khaniad-*.md`. They load these files, so **edit the plan here, not in the wrapper**.
 
 To launch one from Claude Code, ask for it by name, e.g. "use khaniad-environments to do E02". To use one from another tool (Codex, ChatGPT), paste this README, the master plan and the department plan, then name the task ID.
+
+**Worker CLIs (Grok, later Codex):** Claude writes a brief per task and runs it in an isolated worktree. See [workers/README.md](workers/README.md).

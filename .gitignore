@@ -12,3 +12,4 @@ output/
 *.blend1
 __pycache__/
 episodes/*/renders/
+.worker-runs/
