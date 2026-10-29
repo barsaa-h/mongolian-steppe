@@ -70,6 +70,9 @@
       "eyes/r-eye-bag-incr": 0.23,
       "mouth/mouth-upperlip-middle-down": 0.1,
       "mouth/mouth-lowerlip-middle-up": 0.12
+    },
+    "sculpt": {
+      "base-m": 1
     }
   },
   "states": [
@@ -77,6 +80,6 @@
     "hour-five",
     "turning"
   ],
-  "faceDesign": "Production revision of ganaa-eye-final: lids opened for readable irises, hooded character retained, lighter eye bags, cooler skin",
-  "dnaHash": "21a987f5ee44073d8114bc5bd3e3493eca26000bf61b5a7517e996a0be15a9e6"
+  "faceDesign": "Production revision of ganaa-eye-final: lids opened for readable irises, hooded character retained, lighter eye bags, cooler skin 2026-10-29: user approved the Base M layer, new eyes (lashes, iris, pupils, whites) and brows on the brow bone.",
+  "dnaHash": "44abe785b0e574240ad507f2dde9d7ccf2fd7626ec611062495933048fbf2665"
 }

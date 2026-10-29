@@ -37,36 +37,43 @@
     "targets": {
       "head/head-scale-vert-decr": 0.23,
       "head/head-scale-horiz-incr": 0.27,
-      "head/head-round": 0.56,
-      "eyes/l-eye-eyefold-down": 0.82,
-      "eyes/r-eye-eyefold-down": 0.746,
-      "eyes/l-eye-height2-decr": 0.128,
-      "eyes/r-eye-height2-decr": 0.116,
-      "eyes/l-eye-epicanthus-out": 0.63,
-      "eyes/r-eye-epicanthus-out": 0.573,
+      "head/head-round": 0.5,
+      "eyes/l-eye-corner2-up": 0.1,
+      "eyes/r-eye-corner2-up": 0.1,
+      "eyes/l-eye-eyefold-down": 0.75,
+      "eyes/r-eye-eyefold-down": 0.676,
+      "eyes/l-eye-height2-decr": 0.25,
+      "eyes/r-eye-height2-decr": 0.238,
+      "eyes/l-eye-epicanthus-out": 0.55,
+      "eyes/r-eye-epicanthus-out": 0.493,
       "eyebrows/eyebrows-trans-up": 0.24,
       "nose/nose-point-down": 0.28,
-      "nose/nose-scale-horiz-incr": 0.3,
+      "nose/nose-scale-horiz-incr": 0.4,
+      "nose/nose-scale-depth-decr": 0.25,
       "mouth/mouth-scale-horiz-decr": 0.14,
-      "mouth/mouth-upperlip-volume-decr": 0.44,
+      "mouth/mouth-upperlip-volume-decr": 0.35,
       "mouth/mouth-angles-down": 0.28,
+      "chin/chin-bones-incr": 0.35,
       "chin/chin-width-incr": 0.3,
       "chin/chin-height-decr": 0.3,
-      "cheek/l-cheek-bones-incr": 0.55,
-      "cheek/r-cheek-bones-incr": 0.55,
-      "cheek/l-cheek-volume-incr": 0.08,
-      "cheek/r-cheek-volume-incr": 0.08,
+      "cheek/l-cheek-bones-incr": 0.5,
+      "cheek/r-cheek-bones-incr": 0.5,
+      "cheek/l-cheek-volume-incr": 0.3,
+      "cheek/r-cheek-volume-incr": 0.3,
       "nose/nose-width3-incr": 0.28,
       "head/head-age-incr": 0.48,
       "eyes/l-eye-bag-incr": 0.52,
       "eyes/r-eye-bag-incr": 0.473,
       "mouth/mouth-upperlip-middle-down": 0.1,
       "mouth/mouth-lowerlip-middle-up": 0.12
+    },
+    "sculpt": {
+      "base-f": 1
     }
   },
   "states": [
     "normal"
   ],
-  "faceDesign": "Broad older face, soft jaw, downward nose tip, hooded asymmetrical lids and thin downturned lips",
-  "dnaHash": "39163de927d42d1bff9fc21487c1a846c03e793e32f05515f86394acc4957de9"
+  "faceDesign": "Broad older face, soft jaw, downward nose tip, hooded asymmetrical lids and thin downturned lips | Artistic 2026-10-29: sparse greying elder brows, sun-weathered skin. | Eye type: monolid.",
+  "dnaHash": "41166283d80b9c9bb18d187cd264930b75f810ce3f84c912ad6b32d4ca036308"
 }

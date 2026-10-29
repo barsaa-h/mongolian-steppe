@@ -38,12 +38,14 @@
       "head/head-scale-vert-incr": 0.28,
       "head/head-scale-horiz-decr": 0.25,
       "head/head-rectangular": 0.46,
-      "eyes/l-eye-eyefold-down": 0.12,
-      "eyes/r-eye-eyefold-down": 0.109,
-      "eyes/l-eye-height2-decr": 0.112,
-      "eyes/r-eye-height2-decr": 0.102,
-      "eyes/l-eye-epicanthus-in": 0.08,
-      "eyes/r-eye-epicanthus-in": 0.073,
+      "eyes/l-eye-push1-in": 0.5,
+      "eyes/r-eye-push1-in": 0.5,
+      "eyes/l-eye-eyefold-up": 0.2,
+      "eyes/r-eye-eyefold-up": 0.211,
+      "eyes/l-eye-height2-decr": 0.05,
+      "eyes/r-eye-height2-decr": 0.04,
+      "eyes/l-eye-epicanthus-out": 0.1,
+      "eyes/r-eye-epicanthus-out": 0.107,
       "eyebrows/eyebrows-angle-down": 0.14,
       "nose/nose-scale-vert-incr": 0.3,
       "nose/nose-scale-depth-incr": 0.26,
@@ -62,11 +64,14 @@
       "eyes/r-eye-bag-incr": 0.364,
       "mouth/mouth-upperlip-middle-down": 0.1,
       "mouth/mouth-lowerlip-middle-up": 0.12
+    },
+    "sculpt": {
+      "base-f": 0.5
     }
   },
   "states": [
     "normal"
   ],
-  "faceDesign": "Long lean rectangular face, deep-set grey eyes, prominent bridge and thin wide lips",
-  "dnaHash": "df147e4ec020dc8f8bae343143744ec2aaf2503435b6a74ac4b5363ea53447a2"
+  "faceDesign": "Long lean rectangular face, deep-set grey eyes, prominent bridge and thin wide lips | Artistic 2026-10-29: thin arched 1990s brows, smoker's lines, Base F at half strength (Slavic). | Eye type: deepset.",
+  "dnaHash": "ae08a30112fb928e6826f6267e5181464efb4974b49d02795292d201addc3244"
 }

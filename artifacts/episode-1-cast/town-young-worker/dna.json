@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "town-young-worker",
+  "name": "town-young-worker",
+  "episode": 1,
+  "category": "background",
+  "script_age": null,
+  "source": {
+    "facts": "Young worker complaining the hospital wants people to phone first (beat 09). Age and look are artistic.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 185789246,
+  "face": {
+    "head_height": -0.148,
+    "head_width": 0.005,
+    "head_depth": -0.048,
+    "skull_depth": 0.2,
+    "forehead_slope": 0.314,
+    "forehead_height": -0.155,
+    "temple_width": 0.266,
+    "head_round": 0,
+    "head_square": 0.251,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.162,
+    "eye_size": -0.203,
+    "eye_spacing": 0.567,
+    "eye_tilt": -0.35,
+    "eye_depth": 0.54,
+    "upper_lid_fold": 0.3,
+    "eye_opening": -0.1,
+    "inner_lid_fold": -0.044,
+    "lower_lid_height": 0.394,
+    "brow_height": -0.087,
+    "brow_angle": 0.066,
+    "brow_depth": -0.022,
+    "nose_bridge_width": 0.032,
+    "nose_tip_width": 0.017,
+    "nose_tip_angle": -0.58,
+    "nose_width": -0.591,
+    "nose_length": -0.119,
+    "nose_projection": -0.209,
+    "nose_curve": 0.7,
+    "nostril_width": 0.15,
+    "nostril_angle": 0.121,
+    "nose_hump": -0.488,
+    "mouth_width": 0.016,
+    "upper_lip_fullness": 0.282,
+    "lower_lip_fullness": -0.119,
+    "mouth_corner_tilt": 0.116,
+    "philtrum_length": -0.136,
+    "cupids_bow": 0.497,
+    "mouth_depth": -0.214,
+    "upper_lip_height": 0.303,
+    "lower_lip_height": -0.098,
+    "jaw_width": 0.7,
+    "chin_width": 0.099,
+    "chin_length": -0.314,
+    "chin_projection": 0.026,
+    "chin_prognathism": -0.25,
+    "chin_cleft": 0.068,
+    "cheek_height": -0.141,
+    "cheekbone_prominence": 0.45,
+    "cheek_fullness": -0.115,
+    "cheek_hollow": 0.241,
+    "ear_size": -0.22,
+    "ear_angle": 0.479,
+    "ear_lobe": -0.311,
+    "nose_mid_width": -0.352,
+    "nose_base_width": 0.254
+  },
+  "asymmetry": {
+    "eye_size": 0.013,
+    "eye_spacing": -0.031,
+    "eye_tilt": -0.005,
+    "eye_depth": -0.02,
+    "upper_lid_fold": -0.014,
+    "eye_opening": -0.004,
+    "inner_lid_fold": 0.021,
+    "lower_lid_height": -0.024,
+    "cheek_height": -0.034,
+    "cheekbone_prominence": 0.03,
+    "cheek_fullness": 0.028,
+    "cheek_hollow": -0.026,
+    "ear_size": 0.017,
+    "ear_angle": 0.004,
+    "ear_lobe": -0.023
+  },
+  "age": {
+    "years": 20,
+    "features": {
+      "head_age": 0.0,
+      "eye_bags_left": 0.1,
+      "eye_bags_right": 0.09,
+      "sagging": 0.0,
+      "lip_thinning": 0.0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.76,
+    "weight": 0.44,
+    "muscle": 0.29,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "young_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.15,
+    "freckles": 6,
+    "pimples": 2,
+    "look": "weathered",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "short",
+    "color": "#120e0c",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.09,
+    "color": "#241d18",
+    "greying": 0,
+    "lift": 0.15,
+    "style": "straight"
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#5a4a3c",
+    "bottom_color": "#2a2a2c",
+    "accent_color": "#5b4a63"
+  },
+  "signature_traits": [
+    "downturned eyes",
+    "nose curve",
+    "jaw width"
+  ],
+  "face_design": "Background draft for EP01 v4.0; eye type downturned; wardrobe coat.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

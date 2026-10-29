@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "cousin",
+  "name": "Үеэл эгч",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beats 05/24: visiting cousin who settles her infant in the bedroom and tells everyone not to wake him.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "female",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 5202783,
+  "face": {
+    "head_height": -0.044,
+    "head_width": 0.196,
+    "head_depth": -0.013,
+    "skull_depth": -0.472,
+    "forehead_slope": -0.183,
+    "forehead_height": -0.225,
+    "temple_width": -0.029,
+    "head_round": 0,
+    "head_square": 0.381,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0.4,
+    "head_triangular": 0,
+    "head_fullness": 0.034,
+    "eye_size": 0.1,
+    "eye_spacing": 0.071,
+    "eye_tilt": 0.2,
+    "eye_depth": 0.194,
+    "upper_lid_fold": 0.1,
+    "eye_opening": 0,
+    "inner_lid_fold": 0.35,
+    "lower_lid_height": -0.292,
+    "brow_height": -0.22,
+    "brow_angle": -0.172,
+    "brow_depth": -0.15,
+    "nose_bridge_width": -0.2,
+    "nose_tip_width": 0.226,
+    "nose_tip_angle": -0.157,
+    "nose_width": 0.145,
+    "nose_length": -0.084,
+    "nose_projection": -0.247,
+    "nose_curve": 0.013,
+    "nostril_width": -0.068,
+    "nostril_angle": -0.175,
+    "nose_hump": 0.651,
+    "mouth_width": -0.303,
+    "upper_lip_fullness": 0.3,
+    "lower_lip_fullness": -0.017,
+    "mouth_corner_tilt": 0.142,
+    "philtrum_length": 0.084,
+    "cupids_bow": -0.115,
+    "mouth_depth": -0.281,
+    "upper_lip_height": -0.505,
+    "lower_lip_height": 0.229,
+    "jaw_width": 0.433,
+    "chin_width": -0.25,
+    "chin_length": 0.054,
+    "chin_projection": 0.111,
+    "chin_prognathism": 0.455,
+    "chin_cleft": 0.006,
+    "cheek_height": -0.344,
+    "cheekbone_prominence": 0.35,
+    "cheek_fullness": -0.214,
+    "cheek_hollow": 0.171,
+    "ear_size": 0.201,
+    "ear_angle": 0.092,
+    "ear_lobe": -0.305,
+    "nose_mid_width": 0.323,
+    "nose_base_width": 0.428
+  },
+  "asymmetry": {
+    "eye_size": -0.001,
+    "eye_spacing": 0.021,
+    "eye_tilt": -0.014,
+    "eye_depth": 0.002,
+    "upper_lid_fold": -0.003,
+    "eye_opening": 0.003,
+    "inner_lid_fold": -0.026,
+    "lower_lid_height": -0.002,
+    "cheek_height": -0.033,
+    "cheekbone_prominence": -0.005,
+    "cheek_fullness": 0.018,
+    "cheek_hollow": -0.002,
+    "ear_size": 0.004,
+    "ear_angle": 0.02,
+    "ear_lobe": 0.033
+  },
+  "age": {
+    "years": 26,
+    "features": {
+      "head_age": 0.0,
+      "eye_bags_left": 0.1,
+      "eye_bags_right": 0.09,
+      "sagging": 0.0,
+      "lip_thinning": 0.0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.6,
+    "weight": 0.42,
+    "muscle": 0.3,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "young_asian_female",
+    "tone": 1,
+    "ruddiness": 0.15,
+    "freckles": 0,
+    "pimples": 1,
+    "look": "young",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "long01",
+    "style": "long",
+    "color": "#110d0b",
+    "greying": 0,
+    "length": 0.9,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.05,
+    "color": "#16110e",
+    "greying": 0,
+    "style": "soft",
+    "lift": 0.13,
+    "arch": 0.12
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "female_elegantsuit01",
+    "shoes": "shoes02",
+    "wardrobe": "dress",
+    "top_color": "#7a5a3a",
+    "bottom_color": "#3a2f28",
+    "accent_color": "#c9b38f"
+  },
+  "signature_traits": [
+    "Heart-shaped young face",
+    "Low-crease almond eyes",
+    "Full upper lip"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: almond.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
+}

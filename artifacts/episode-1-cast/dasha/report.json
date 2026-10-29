@@ -2,13 +2,13 @@
   "name": "Даша",
   "bodyHeightM": 1.66,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.08555066679545456,
-  "waistWidthM": 0.339932292637588,
-  "sourceShapeKeys": 67,
+  "headHeightFraction": 0.08397525241713216,
+  "waistWidthM": 0.34051792838801354,
+  "sourceShapeKeys": 41,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 35,
+    "Clothes.Outfit": 34,
     "Shoes": 16
   },
   "fullBodyRetained": true,
@@ -109,6 +109,66 @@
       "role": "Story.ForearmBandage",
       "vertices": 144,
       "triangles": 240
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
     }
   ],
   "packedTextures": [
@@ -162,6 +222,13 @@
       ]
     },
     {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
+      ]
+    },
+    {
       "name": "long01_diffuse.png",
       "size": [
         2048,
@@ -197,10 +264,10 @@
       ]
     },
     {
-      "name": "straight.png",
+      "name": "soft.png",
       "size": [
-        512,
-        512
+        1024,
+        1024
       ]
     },
     {
@@ -249,7 +316,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "dasha",
   "episode": 1,
   "scriptAge": 24,
@@ -262,7 +329,14 @@
   ],
   "wardrobe": "coat",
   "casting": "Russian casting",
-  "dnaHash": "b8e108e92addd00d1ef19b6f0553eb90f998efcdbcdfe7a9952c2b87d31371a8",
+  "dnaHash": "7d09382f6b35932c9696b855be440dd61f23e36b8f985e6086020fb6e5e6ffa3",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "e976bde4c6e47ec1aa7975016824b7d7567c8dbfd3957f959aeb0446ac99ea3b",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:13:35.907957+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

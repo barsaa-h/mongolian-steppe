@@ -139,8 +139,8 @@
     "volume": 1
   },
   "brows": {
-    "thickness": 1.12,
-    "color": "#54483f",
+    "thickness": 1.3,
+    "color": "#1e1915",
     "greying": 0
   },
   "eyes": {
@@ -166,11 +166,14 @@
     "low wide bridge",
     "narrow straight hooded lids"
   ],
-  "face_design": "Production revision of ganaa-eye-final: lids opened for readable irises, hooded character retained, lighter eye bags, cooler skin",
+  "face_design": "Production revision of ganaa-eye-final: lids opened for readable irises, hooded character retained, lighter eye bags, cooler skin 2026-10-29: user approved the Base M layer, new eyes (lashes, iris, pupils, whites) and brows on the brow bone.",
   "states": [
     "healthy",
     "hour-five",
     "turning"
   ],
-  "review": "approved"
+  "review": "approved",
+  "sculpt": {
+    "base-m": 1
+  }
 }

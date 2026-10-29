@@ -1,14 +1,14 @@
 {
   "name": "Цэцэгмаа",
-  "bodyHeightM": 1.6000000000000003,
+  "bodyHeightM": 1.6,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.08774473907759248,
-  "waistWidthM": 0.36607146478790764,
-  "sourceShapeKeys": 65,
+  "headHeightFraction": 0.08698127183382376,
+  "waistWidthM": 0.3663778303241955,
+  "sourceShapeKeys": 41,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 186,
+    "Clothes.Outfit": 191,
     "Shoes": 18
   },
   "fullBodyRetained": true,
@@ -85,6 +85,66 @@
       "role": "Details.Blemish.01",
       "vertices": 13,
       "triangles": 12
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
     }
   ],
   "packedTextures": [
@@ -145,6 +205,13 @@
       ]
     },
     {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
+      ]
+    },
+    {
       "name": "normal.png",
       "size": [
         1024,
@@ -173,10 +240,10 @@
       ]
     },
     {
-      "name": "straight.png",
+      "name": "soft.png",
       "size": [
-        512,
-        512
+        1024,
+        1024
       ]
     },
     {
@@ -225,7 +292,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "tsetsegmaa",
   "episode": 1,
   "scriptAge": 30,
@@ -237,7 +304,14 @@
   ],
   "wardrobe": "dress",
   "casting": "Mongolian",
-  "dnaHash": "39e00d6505e0ac02031d5a3b812a4a5675e38fbbc6811fdd94003f114dda9630",
+  "dnaHash": "081c3821fdf1613daa7069603673379528f00ea13ab24749921865fb6654c21c",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "dc9737a7c54f9b829ba66146e40828ce98d67d71e94dafbfc2fa15a903cf0b92",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T17:55:54.826034+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

@@ -1,5 +1,7 @@
 import json
+import hashlib
 import sys
+import struct
 import unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,6 +37,27 @@ class RecipeTests(unittest.TestCase):
         self.assertEqual(by_id['hurel']['states'],['normal'])
         self.assertEqual(by_id['ganaa']['states'][0],'healthy')
         self.assertIn('fed-runner',by_id['dasha']['states'])
+    def test_actor_report_talk_clip_matches_export(self):
+        for profile in self.profiles:
+            folder = ROOT / profile['id']
+            with (folder / 'character.glb').open('rb') as glb:
+                header = glb.read(20)
+                document = json.loads(glb.read(struct.unpack('<I', header[12:16])[0]))
+            clips = {animation.get('name') for animation in document.get('animations', [])}
+            report = json.loads((folder / 'report.json').read_text())
+            with self.subTest(id=profile['id']):
+                self.assertEqual(report['talkCheck'], 'Talk_Check' in clips)
+                self.assertEqual(set(report['clips']), clips)
+                self.assertEqual(report['glbSha256'], hashlib.sha256((folder / 'character.glb').read_bytes()).hexdigest())
+
+    def test_face_qa_reports_respect_design_approval(self):
+        for profile in self.profiles:
+            id = profile['id']
+            dna = json.loads((ROOT / 'dna' / (id + '.json')).read_text())
+            report = json.loads((ROOT / id / 'qa' / 'report.json').read_text())
+            with self.subTest(id=id):
+                self.assertEqual(report['humanReview'], 'approved' if dna['review'] == 'approved' else 'pending')
+
     def test_faces_have_individual_eyelids_and_proportions(self):
         for recipe in self.recipes:
             targets=recipe['base']['targets']

@@ -1,5 +1,7 @@
 # ХАНИАД — Episode 1 cast development
 
+Current production home: [Character Master](../character-master/README.md). Use its [source decisions](../character-master/production/SOURCES.md), [status](../character-master/production/STATUS.md) and [jobs](../character-master/production/JOBS.md). Current direction is the ten-episode v3 treatment with **Episode 1 only** from the production-directed v2.1 screenplay. The original five-episode casting background below is historical. The next scene is Hürel’s café.
+
 Thirteen editable 3D designs for **АЯГАА ХУВААЛЦ / Share the Bowl**, autumn 1998.
 The complete available dialogue master (Episodes 1–5) and series bible were read
 before casting. [Research and continuity notes](research/appearance-notes.md)
@@ -10,7 +12,8 @@ Character anatomy and appearance now come from **`dna/<id>.json`**. Read the
 age/body baselines, material libraries, deterministic drafting and review rules.
 [Open the matching-material face QA](qa/index.html) to compare identities without
 hair/clothing cues, inspect profiles and expressions, and read the distance report.
-All 13 remain drafts for human creative review.
+Ganaa’s DNA design is approved; the other 12 remain drafts for human creative
+review. Design approval does not establish readiness for a film shot.
 
 ## Cast
 
@@ -72,7 +75,7 @@ blender -b --factory-startup --python-exit-code 1 -t 8 \
 
 This rebuilds **that actor's generated folder**, replacing manual edits there.
 Keep manual sculpt/paint revisions in a sibling file or change the DNA and
-builder. The original `assets/cast/`, film rigs, old LISA study and existing master
+builder. The original `assets/cast/`, film rigs, archived LISA study and existing master
 presets are preserved. Native files and GLBs are stored in `<id>/`:
 `Character-Master.blend`, `character.glb`, `report.json`, `dna.json`, `episode-recipe.json`,
 `full.png`, and `face.png`.

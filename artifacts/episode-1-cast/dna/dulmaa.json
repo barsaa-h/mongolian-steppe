@@ -24,7 +24,7 @@
     "forehead_slope": 0,
     "forehead_height": 0,
     "temple_width": 0,
-    "head_round": 0.56,
+    "head_round": 0.5,
     "head_square": 0,
     "head_oval": 0,
     "head_diamond": 0,
@@ -34,11 +34,11 @@
     "head_fullness": 0,
     "eye_size": 0,
     "eye_spacing": 0,
-    "eye_tilt": 0,
+    "eye_tilt": 0.1,
     "eye_depth": 0,
-    "upper_lid_fold": 0.82,
-    "eye_opening": -0.128,
-    "inner_lid_fold": 0.63,
+    "upper_lid_fold": 0.75,
+    "eye_opening": -0.25,
+    "inner_lid_fold": 0.55,
     "lower_lid_height": 0,
     "brow_height": 0.24,
     "brow_angle": 0,
@@ -46,15 +46,15 @@
     "nose_bridge_width": 0,
     "nose_tip_width": 0,
     "nose_tip_angle": -0.28,
-    "nose_width": 0.3,
+    "nose_width": 0.4,
     "nose_length": 0,
-    "nose_projection": 0,
+    "nose_projection": -0.25,
     "nose_curve": 0,
     "nostril_width": 0,
     "nostril_angle": 0,
     "nose_hump": 0,
     "mouth_width": -0.14,
-    "upper_lip_fullness": -0.44,
+    "upper_lip_fullness": -0.35,
     "lower_lip_fullness": 0,
     "mouth_corner_tilt": -0.28,
     "philtrum_length": 0,
@@ -62,15 +62,15 @@
     "mouth_depth": 0,
     "upper_lip_height": 0,
     "lower_lip_height": 0,
-    "jaw_width": 0,
+    "jaw_width": 0.35,
     "chin_width": 0.3,
     "chin_length": -0.3,
     "chin_projection": 0,
     "chin_prognathism": 0,
     "chin_cleft": 0,
     "cheek_height": 0,
-    "cheekbone_prominence": 0.55,
-    "cheek_fullness": 0.08,
+    "cheekbone_prominence": 0.5,
+    "cheek_fullness": 0.3,
     "cheek_hollow": 0,
     "ear_size": 0,
     "ear_angle": 0,
@@ -123,7 +123,7 @@
   "skin": {
     "asset": "old_asian_female",
     "tone": 1,
-    "ruddiness": 0,
+    "ruddiness": 0.3,
     "freckles": 0,
     "pimples": 0,
     "look": "elder",
@@ -138,9 +138,11 @@
     "volume": 1
   },
   "brows": {
-    "thickness": 0.68,
-    "color": "#51483b",
-    "greying": 0.35
+    "thickness": 0.95,
+    "color": "#2e2822",
+    "greying": 0.5,
+    "style": "sparse",
+    "lift": 0.1
   },
   "eyes": {
     "color": "brown",
@@ -165,9 +167,12 @@
     "soft jaw",
     "downward nose tip"
   ],
-  "face_design": "Broad older face, soft jaw, downward nose tip, hooded asymmetrical lids and thin downturned lips",
+  "face_design": "Broad older face, soft jaw, downward nose tip, hooded asymmetrical lids and thin downturned lips | Artistic 2026-10-29: sparse greying elder brows, sun-weathered skin. | Eye type: monolid.",
   "states": [
     "normal"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
 }

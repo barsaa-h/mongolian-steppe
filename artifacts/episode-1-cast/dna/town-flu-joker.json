@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "town-flu-joker",
+  "name": "town-flu-joker",
+  "episode": 1,
+  "category": "background",
+  "script_age": null,
+  "source": {
+    "facts": "Neighbor who jokes about flu while asking after the birthday (beat 09). Age and look are artistic.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 147877348,
+  "face": {
+    "head_height": -0.309,
+    "head_width": 0.089,
+    "head_depth": -0.036,
+    "skull_depth": -0.49,
+    "forehead_slope": 0.077,
+    "forehead_height": -0.123,
+    "temple_width": -0.022,
+    "head_round": 0,
+    "head_square": 0,
+    "head_oval": 0.365,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.07,
+    "eye_size": 0.39,
+    "eye_spacing": 0.094,
+    "eye_tilt": 0.135,
+    "eye_depth": -0.5,
+    "upper_lid_fold": -0.2,
+    "eye_opening": -0.05,
+    "inner_lid_fold": 0.1,
+    "lower_lid_height": -0.048,
+    "brow_height": 0.311,
+    "brow_angle": 0.115,
+    "brow_depth": 0.076,
+    "nose_bridge_width": 0.276,
+    "nose_tip_width": 0.253,
+    "nose_tip_angle": -0.173,
+    "nose_width": 0.46,
+    "nose_length": 0.316,
+    "nose_projection": -0.577,
+    "nose_curve": 0.112,
+    "nostril_width": -0.646,
+    "nostril_angle": -0.104,
+    "nose_hump": -0.46,
+    "mouth_width": 0.297,
+    "upper_lip_fullness": 0.12,
+    "lower_lip_fullness": 0.399,
+    "mouth_corner_tilt": -0.259,
+    "philtrum_length": -0.474,
+    "cupids_bow": -0.197,
+    "mouth_depth": -0.278,
+    "upper_lip_height": -0.075,
+    "lower_lip_height": -0.034,
+    "jaw_width": -0.343,
+    "chin_width": 0.466,
+    "chin_length": 0.219,
+    "chin_projection": -0.353,
+    "chin_prognathism": 0.289,
+    "chin_cleft": -0.284,
+    "cheek_height": 0.105,
+    "cheekbone_prominence": 0.7,
+    "cheek_fullness": 0.033,
+    "cheek_hollow": 0.121,
+    "ear_size": -0.043,
+    "ear_angle": -0.106,
+    "ear_lobe": 0.106,
+    "nose_mid_width": 0.47,
+    "nose_base_width": 0.381
+  },
+  "asymmetry": {
+    "eye_size": 0.007,
+    "eye_spacing": -0.021,
+    "eye_tilt": 0.005,
+    "eye_depth": 0.02,
+    "upper_lid_fold": -0.028,
+    "eye_opening": 0.033,
+    "inner_lid_fold": -0.017,
+    "lower_lid_height": 0.006,
+    "cheek_height": -0.003,
+    "cheekbone_prominence": -0.009,
+    "cheek_fullness": 0.028,
+    "cheek_hollow": -0.034,
+    "ear_size": -0.021,
+    "ear_angle": 0.025,
+    "ear_lobe": 0.032
+  },
+  "age": {
+    "years": 45,
+    "features": {
+      "head_age": 0.2,
+      "eye_bags_left": 0.2,
+      "eye_bags_right": 0.18,
+      "sagging": 0.07,
+      "lip_thinning": 0.07,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.72,
+    "weight": 0.77,
+    "muscle": 0.47,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.06,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "adult",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short01",
+    "style": "short",
+    "color": "#2a2622",
+    "greying": 0.16,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.22,
+    "color": "#241d18",
+    "greying": 0.12,
+    "lift": 0.12,
+    "style": "sparse"
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.43,
+    "greying": 0.12
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#3a3f36",
+    "bottom_color": "#2a2a2c",
+    "accent_color": "#3b4250"
+  },
+  "signature_traits": [
+    "deepset eyes",
+    "cheekbone prominence",
+    "nostril width"
+  ],
+  "face_design": "Background draft for EP01 v4.0; eye type deepset; wardrobe coat.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

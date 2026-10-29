@@ -1,14 +1,14 @@
 {
   "name": "Сүхээ",
-  "bodyHeightM": 1.6799999999999997,
+  "bodyHeightM": 1.68,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.10070399330232925,
-  "waistWidthM": 0.36572932744035874,
-  "sourceShapeKeys": 63,
+  "headHeightFraction": 0.09227549653383066,
+  "waistWidthM": 0.3773848322157804,
+  "sourceShapeKeys": 43,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 51,
+    "Clothes.Outfit": 39,
     "Shoes": 22
   },
   "fullBodyRetained": true,
@@ -79,9 +79,76 @@
       "role": "Body",
       "vertices": 4820,
       "triangles": 9428
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
     }
   ],
   "packedTextures": [
+    {
+      "name": "beard-region-mask.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
     {
       "name": "brown.png",
       "size": [
@@ -129,6 +196,13 @@
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
       ]
     },
     {
@@ -190,8 +264,8 @@
     {
       "name": "straight.png",
       "size": [
-        512,
-        512
+        1024,
+        1024
       ]
     },
     {
@@ -219,7 +293,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "sukhee",
   "episode": 1,
   "scriptAge": null,
@@ -231,7 +305,14 @@
   ],
   "wardrobe": "jacket",
   "casting": "Mongolian",
-  "dnaHash": "7d4fdddba7a085a685a3a8b7dac60e067d4fee1c13d2eeb7a1c5c1917b974d5b",
+  "dnaHash": "295bf366ce56502699f016933df4fefe909f464f482f99b195c14ff05d16b62e",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "399302cf59c15e3140978358def2a9fc18d2a71ba451db51556a128877e98e6f",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:01:32.429802+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

@@ -1,0 +1,11 @@
+{
+  "status": "draft blocking, not a performance",
+  "wristTargetErrorM": {
+    "L": 3.414154885201379e-06,
+    "R": 3.414154885201379e-06
+  },
+  "palmContactsChecked": false,
+  "sourceBlendSha256": "64a49974f294492ecd9aa824e6230e9b3ec2ac3460abda64c91c7199a7693aba",
+  "glbSha256": "b287a0bc9ae48bbee194760dad81c33033cf4b25ea9f0fe3f8403a5b4394e79b",
+  "blenderVersion": "5.2.2 LTS"
+}

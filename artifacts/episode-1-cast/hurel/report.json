@@ -1,14 +1,14 @@
 {
   "name": "Хүрэл",
-  "bodyHeightM": 1.6500000000000001,
+  "bodyHeightM": 1.65,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.07572594713963413,
-  "waistWidthM": 0.37998732005422964,
-  "sourceShapeKeys": 63,
+  "headHeightFraction": 0.0804009502769095,
+  "waistWidthM": 0.37905731418118616,
+  "sourceShapeKeys": 43,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 215,
+    "Clothes.Outfit": 216,
     "Shoes": 0
   },
   "fullBodyRetained": true,
@@ -97,9 +97,76 @@
       "role": "Clothes.ApronStrap1",
       "vertices": 4,
       "triangles": 2
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
     }
   ],
   "packedTextures": [
+    {
+      "name": "beard-region-mask.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
     {
       "name": "brown.png",
       "size": [
@@ -147,6 +214,20 @@
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "heavy.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
       ]
     },
     {
@@ -206,13 +287,6 @@
       ]
     },
     {
-      "name": "straight.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -237,7 +311,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "hurel",
   "episode": 1,
   "scriptAge": null,
@@ -249,7 +323,14 @@
   ],
   "wardrobe": "apron",
   "casting": "Mongolian",
-  "dnaHash": "dd99531b84152224fffa65652539cd1e55de6431b78dacb90a8735f460469806",
+  "dnaHash": "a4637bddbf853c49c2a5472f27026fbe595f3d768e391d6a3809a98992830282",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "9f002dc620f1d803ae6a6fba1fa534833f4512f2f0bbb476630d8d4f254da8c9",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:00:16.674052+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

@@ -20,14 +20,16 @@
   "shoes": "shoes02",
   "targets": {
     "head/head-scale-vert-decr": 0.18,
-    "head/head-round": 0.68,
+    "head/head-round": 0.45,
     "head/head-fat-incr": 0.18,
-    "eyes/l-eye-eyefold-down": 0.55,
-    "eyes/r-eye-eyefold-down": 0.501,
+    "eyes/l-eye-corner2-up": 0.4,
+    "eyes/r-eye-corner2-up": 0.4,
+    "eyes/l-eye-eyefold-down": 0.35,
+    "eyes/r-eye-eyefold-down": 0.301,
     "eyes/l-eye-height2-decr": 0.032,
     "eyes/r-eye-height2-decr": 0.029,
-    "eyes/l-eye-epicanthus-out": 0.27,
-    "eyes/r-eye-epicanthus-out": 0.246,
+    "eyes/l-eye-epicanthus-out": 0.4,
+    "eyes/r-eye-epicanthus-out": 0.376,
     "eyebrows/eyebrows-trans-up": 0.12,
     "nose/nose-point-up": 0.23,
     "nose/nose-scale-horiz-incr": 0.28,
@@ -39,11 +41,14 @@
     "chin/chin-height-decr": 0.28,
     "cheek/l-cheek-bones-incr": 0.15,
     "cheek/r-cheek-bones-incr": 0.15,
-    "cheek/l-cheek-volume-incr": 0.5,
-    "cheek/r-cheek-volume-incr": 0.5,
+    "cheek/l-cheek-volume-incr": 0.3,
+    "cheek/r-cheek-volume-incr": 0.3,
     "eyes/l-eye-bag-incr": 0.12,
     "eyes/r-eye-bag-incr": 0.109,
     "mouth/mouth-upperlip-middle-down": 0.1,
     "mouth/mouth-lowerlip-middle-up": 0.12
+  },
+  "sculpt": {
+    "base-f": 1
   }
 }

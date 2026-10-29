@@ -35,10 +35,10 @@
     "eye_size": 0,
     "eye_spacing": 0,
     "eye_tilt": 0,
-    "eye_depth": 0,
-    "upper_lid_fold": 0.12,
-    "eye_opening": -0.112,
-    "inner_lid_fold": -0.08,
+    "eye_depth": -0.5,
+    "upper_lid_fold": -0.2,
+    "eye_opening": -0.05,
+    "inner_lid_fold": 0.1,
     "lower_lid_height": 0,
     "brow_height": 0,
     "brow_angle": -0.14,
@@ -127,7 +127,8 @@
     "freckles": 0,
     "pimples": 0,
     "look": "tired",
-    "detail": 0.06
+    "detail": 0.06,
+    "age_lines": 0.4
   },
   "hair": {
     "asset": "long01",
@@ -138,9 +139,12 @@
     "volume": 1
   },
   "brows": {
-    "thickness": 0.68,
-    "color": "#30251f",
-    "greying": 0
+    "thickness": 0.8,
+    "color": "#4a3f36",
+    "greying": 0.3,
+    "style": "arched",
+    "lift": 0.15,
+    "arch": 0.3
   },
   "eyes": {
     "color": "grey",
@@ -165,9 +169,12 @@
     "deep-set grey eyes",
     "prominent bridge and thin wide lips"
   ],
-  "face_design": "Long lean rectangular face, deep-set grey eyes, prominent bridge and thin wide lips",
+  "face_design": "Long lean rectangular face, deep-set grey eyes, prominent bridge and thin wide lips | Artistic 2026-10-29: thin arched 1990s brows, smoker's lines, Base F at half strength (Slavic). | Eye type: deepset.",
   "states": [
     "normal"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-f": 0.5
+  }
 }

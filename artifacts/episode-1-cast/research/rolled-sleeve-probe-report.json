@@ -1,0 +1,62 @@
+{
+  "status": "research only; visual failures remain",
+  "sourceBlendSha256": "cab0dbebf0b2bd9940c04ff833f7f956a6347a84114570ca2a35914013895b6e",
+  "probeBlendSha256": "8910f9aa644a6df8a584f78c37db869b3ec2ac3460abda64c91eac65e9976ac9",
+  "probeGlbSha256": "b3ced214ad63bfbab7aee1923d0be62fc789a597109744acc6674855120204d9",
+  "unmaskedSourceVertices": 308,
+  "removedSleeveFaces": 122,
+  "bandageSkinDistanceM": {
+    "min": 0.0005071667,
+    "median": 0.0015031262,
+    "max": 0.0019823944
+  },
+  "neutralQA": {
+    "passed": true,
+    "views": [
+      "front",
+      "three-quarter",
+      "profile"
+    ],
+    "expressions": {
+      "smile": {
+        "maxMotionM": 0.009360184666837393
+      },
+      "frown": {
+        "maxMotionM": 0.004183074875863523
+      },
+      "blink": {
+        "maxMotionM": 0.003241064496038568
+      },
+      "viseme_A": {
+        "maxMotionM": 0.027773468769952826
+      },
+      "viseme_E": {
+        "maxMotionM": 0.007708987082152979
+      },
+      "viseme_O": {
+        "maxMotionM": 0.014139357634712107
+      },
+      "viseme_M": {
+        "maxMotionM": 0.0057587721181079875
+      }
+    },
+    "neutralRecoveryM": 1.4263340908371447e-07,
+    "identicalMaterials": true,
+    "hairAndClothesHidden": true,
+    "animationClip": "Talk_Check",
+    "humanReview": "approved",
+    "humanReviewScope": "identity design"
+  },
+  "faceRenderPixelDifferences": {
+    "front": 0,
+    "profile": 0,
+    "smile": 0
+  },
+  "limitations": [
+    "Single held pose only",
+    "Cuff is unfinished and wrist silhouette is distorted",
+    "Bandage is not readable at the shot camera",
+    "Body adaptation is not integrated into shared generator or MHCLO source",
+    "No clearance or motion proof"
+  ]
+}

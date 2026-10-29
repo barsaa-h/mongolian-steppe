@@ -1,0 +1,32 @@
+{
+  "frame": 13,
+  "tubeRadiusM": 0.025,
+  "vertexSamplingOnly": true,
+  "hands": {
+    "L": {
+      "verticesInsideOver1mm": 0,
+      "deepestVertexPenetrationM": 0,
+      "closestVertexToSurfaceM": 0.00020907156709913666,
+      "fingerBoneTipSignedDistancesM": {
+        "1": 0.021510226950560457,
+        "2": 0.021938722186111703,
+        "3": 0.003041349219278726,
+        "4": 0.007166308622443357,
+        "5": 0.02139722339646142
+      }
+    },
+    "R": {
+      "verticesInsideOver1mm": 0,
+      "deepestVertexPenetrationM": 0,
+      "closestVertexToSurfaceM": 0.00020911978832946487,
+      "fingerBoneTipSignedDistancesM": {
+        "1": 0.021510226950560457,
+        "2": 0.021938722186111703,
+        "3": 0.003041349219278726,
+        "4": 0.007166308622443357,
+        "5": 0.0213972287057586
+      }
+    }
+  },
+  "sourceBlendSha256": "cab0dbebf0b2bd9940c04ff833f7f956a6347a84114570ca2a35914013895b6e"
+}

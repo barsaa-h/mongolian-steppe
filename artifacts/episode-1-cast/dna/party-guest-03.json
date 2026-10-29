@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "party-guest-03",
+  "name": "party-guest-03",
+  "episode": 1,
+  "category": "background",
+  "script_age": null,
+  "source": {
+    "facts": "Late party guest at Altan's birthday (v4.0 beats 21-26: 12-18 visible late guests). Age and look are artistic.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "elder",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 136252429,
+  "face": {
+    "head_height": -0.261,
+    "head_width": -0.247,
+    "head_depth": -0.034,
+    "skull_depth": 0.192,
+    "forehead_slope": 0.215,
+    "forehead_height": -0.271,
+    "temple_width": -0.335,
+    "head_round": 0,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0.432,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.034,
+    "eye_size": 0.033,
+    "eye_spacing": -0.17,
+    "eye_tilt": 0.1,
+    "eye_depth": 0.173,
+    "upper_lid_fold": 0.75,
+    "eye_opening": -0.25,
+    "inner_lid_fold": 0.55,
+    "lower_lid_height": 0.134,
+    "brow_height": 0.154,
+    "brow_angle": -0.026,
+    "brow_depth": 0.347,
+    "nose_bridge_width": 0.064,
+    "nose_tip_width": -0.311,
+    "nose_tip_angle": -0.162,
+    "nose_width": -0.346,
+    "nose_length": -0.053,
+    "nose_projection": -0.168,
+    "nose_curve": -0.065,
+    "nostril_width": 0.06,
+    "nostril_angle": 0.491,
+    "nose_hump": 0.247,
+    "mouth_width": 0.357,
+    "upper_lip_fullness": 0.105,
+    "lower_lip_fullness": -0.012,
+    "mouth_corner_tilt": -0.009,
+    "philtrum_length": 0.635,
+    "cupids_bow": 0.007,
+    "mouth_depth": -0.077,
+    "upper_lip_height": -0.347,
+    "lower_lip_height": 0.21,
+    "jaw_width": 0.124,
+    "chin_width": 0.7,
+    "chin_length": 0.212,
+    "chin_projection": 0.141,
+    "chin_prognathism": -0.014,
+    "chin_cleft": 0.654,
+    "cheek_height": -0.001,
+    "cheekbone_prominence": 0.206,
+    "cheek_fullness": 0.07,
+    "cheek_hollow": -0.128,
+    "ear_size": -0.156,
+    "ear_angle": -0.171,
+    "ear_lobe": 0.158,
+    "nose_mid_width": 0.188,
+    "nose_base_width": -0.238
+  },
+  "asymmetry": {
+    "eye_size": -0.014,
+    "eye_spacing": -0.031,
+    "eye_tilt": 0.005,
+    "eye_depth": 0.023,
+    "upper_lid_fold": -0.019,
+    "eye_opening": 0.001,
+    "inner_lid_fold": -0.01,
+    "lower_lid_height": -0.031,
+    "cheek_height": -0.003,
+    "cheekbone_prominence": 0.001,
+    "cheek_fullness": -0.004,
+    "cheek_hollow": -0.02,
+    "ear_size": 0.007,
+    "ear_angle": -0.021,
+    "ear_lobe": 0.022
+  },
+  "age": {
+    "years": 62,
+    "features": {
+      "head_age": 0.5,
+      "eye_bags_left": 0.37,
+      "eye_bags_right": 0.35,
+      "sagging": 0.2,
+      "lip_thinning": 0.2,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.7,
+    "weight": 0.62,
+    "muscle": 0.33,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "old_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.34,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "elder",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short04",
+    "style": "receding",
+    "color": "#2a2622",
+    "greying": 0.53,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.15,
+    "color": "#15110e",
+    "greying": 0.55,
+    "lift": 0.12,
+    "style": "heavy"
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.22,
+    "greying": 0.55
+  },
+  "clothing": {
+    "asset": "male_casualsuit01",
+    "shoes": "shoes02",
+    "wardrobe": "guest",
+    "top_color": "#5b4a63",
+    "bottom_color": "#2a2a2c",
+    "accent_color": "#2f3f5a"
+  },
+  "signature_traits": [
+    "monolid eyes",
+    "upper lid fold",
+    "chin width"
+  ],
+  "face_design": "Background draft for EP01 v4.0; eye type monolid; wardrobe guest.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

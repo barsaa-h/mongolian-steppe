@@ -18,7 +18,7 @@
   "seed": 1384393927,
   "face": {
     "head_height": 0.24,
-    "head_width": -0.1,
+    "head_width": -0.35,
     "head_depth": 0,
     "skull_depth": 0,
     "forehead_slope": 0,
@@ -36,10 +36,10 @@
     "eye_spacing": 0,
     "eye_tilt": 0,
     "eye_depth": 0,
-    "upper_lid_fold": 0.4,
-    "eye_opening": -0.088,
+    "upper_lid_fold": 0.5,
+    "eye_opening": -0.2,
     "inner_lid_fold": 0.252,
-    "lower_lid_height": 0,
+    "lower_lid_height": 0.3,
     "brow_height": 0,
     "brow_angle": -0.28,
     "brow_depth": 0,
@@ -47,15 +47,15 @@
     "nose_tip_width": 0,
     "nose_tip_angle": 0,
     "nose_width": 0,
-    "nose_length": 0.26,
+    "nose_length": 0.25,
     "nose_projection": 0,
-    "nose_curve": 0.32,
+    "nose_curve": 0.4,
     "nostril_width": 0,
     "nostril_angle": 0,
     "nose_hump": 0,
-    "mouth_width": 0.18,
+    "mouth_width": 0.25,
     "upper_lip_fullness": 0,
-    "lower_lip_fullness": 0,
+    "lower_lip_fullness": 0.3,
     "mouth_corner_tilt": 0,
     "philtrum_length": 0,
     "cupids_bow": 0,
@@ -64,14 +64,14 @@
     "lower_lip_height": 0,
     "jaw_width": 0,
     "chin_width": 0.28,
-    "chin_length": 0.42,
+    "chin_length": 0.45,
     "chin_projection": 0,
     "chin_prognathism": 0.24,
     "chin_cleft": 0,
     "cheek_height": 0,
     "cheekbone_prominence": 0.38,
-    "cheek_fullness": 0.05,
-    "cheek_hollow": 0,
+    "cheek_fullness": -0.3,
+    "cheek_hollow": 0.35,
     "ear_size": 0,
     "ear_angle": 0,
     "ear_lobe": 0,
@@ -99,8 +99,8 @@
     "years": 50,
     "features": {
       "head_age": 0,
-      "eye_bags_left": 0.08,
-      "eye_bags_right": 0.073,
+      "eye_bags_left": 0.35,
+      "eye_bags_right": 0.33,
       "sagging": 0,
       "lip_thinning": 0,
       "brow_droop": 0
@@ -123,24 +123,27 @@
   "skin": {
     "asset": "middleage_asian_male",
     "tone": 1,
-    "ruddiness": 0,
+    "ruddiness": 0.55,
     "freckles": 0,
     "pimples": 0,
-    "look": "adult",
+    "look": "tired",
     "detail": 0.06
   },
   "hair": {
     "asset": "short02",
     "style": "short",
     "color": "#29231f",
-    "greying": 0,
+    "greying": 0.15,
     "length": 1,
     "volume": 1
   },
   "brows": {
-    "thickness": 1,
-    "color": "#30251f",
-    "greying": 0
+    "thickness": 0.95,
+    "color": "#241d18",
+    "greying": 0.1,
+    "style": "straight",
+    "lift": 0.15,
+    "arch": 0.15
   },
   "eyes": {
     "color": "brown",
@@ -148,9 +151,9 @@
     "sclera_tint": "#f0eadf"
   },
   "facial_hair": {
-    "style": "none",
-    "coverage": 0,
-    "greying": 0
+    "style": "stubble",
+    "coverage": 0.45,
+    "greying": 0.2
   },
   "clothing": {
     "asset": "male_casualsuit03",
@@ -165,9 +168,12 @@
     "projecting chin",
     "convex nose"
   ],
-  "face_design": "Long rectangular head, projecting chin, convex nose, unequal upper-lid folds and thin upper lip",
+  "face_design": "Long rectangular head, projecting chin, convex nose, unequal upper-lid folds and thin upper lip | Artistic 2026-10-29: Base M; drinker's red face, raised loose brows, puffy lower lids, unshaven. | Face type: long rectangular, hollow-cheeked, convex nose, loose lips. | Eye type: puffy.",
   "states": [
     "normal"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
 }

@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-27T15:16:09.794Z",
+  "glbSha256": "0e0893c870eac2d2f20b4e750f6a8a3d8482f32ee4d007ff0fd61c7538bd0ea8",
+  "info": {
+    "bones": 137,
+    "motions": [
+      "rest",
+      "Deformation_Check",
+      "Talk_Check"
+    ],
+    "roles": [
+      "BodySkin",
+      "ClothesBottom",
+      "ClothesTop",
+      "DetailsWrinkleEye10",
+      "DetailsWrinkleEye11",
+      "DetailsWrinkleEye-10",
+      "DetailsWrinkleEye-11",
+      "DetailsWrinkleForehead1",
+      "DetailsWrinkleForehead2",
+      "DetailsWrinkleForehead3",
+      "Eyebrows",
+      "Eyes",
+      "Hair",
+      "HandsL",
+      "HandsR",
+      "Shoes",
+      "StoryForearmBandage",
+      "Teeth",
+      "Tongue"
+    ],
+    "textured": 11,
+    "normalMapped": 4,
+    "morphMeshes": 11
+  },
+  "wristView": {
+    "cameraX": 0.4636567471706172,
+    "actorX": 0.65,
+    "bandageVisible": true
+  },
+  "seek": true,
+  "errors": []
+}

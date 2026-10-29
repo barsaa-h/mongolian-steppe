@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "town-water-woman",
+  "name": "town-water-woman",
+  "episode": 1,
+  "category": "background",
+  "script_age": null,
+  "source": {
+    "facts": "Woman hauling a water can (beat 03). Age and look are artistic.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "female",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 171650831,
+  "face": {
+    "head_height": 0.457,
+    "head_width": -0.012,
+    "head_depth": -0.144,
+    "skull_depth": -0.062,
+    "forehead_slope": 0.231,
+    "forehead_height": -0.235,
+    "temple_width": 0.083,
+    "head_round": 0,
+    "head_square": 0,
+    "head_oval": 0.41,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": -0.546,
+    "eye_size": -0.164,
+    "eye_spacing": -0.196,
+    "eye_tilt": -0.35,
+    "eye_depth": -0.314,
+    "upper_lid_fold": 0.3,
+    "eye_opening": -0.1,
+    "inner_lid_fold": -0.452,
+    "lower_lid_height": 0.268,
+    "brow_height": 0.367,
+    "brow_angle": -0.148,
+    "brow_depth": 0.213,
+    "nose_bridge_width": -0.494,
+    "nose_tip_width": 0.158,
+    "nose_tip_angle": -0.075,
+    "nose_width": 0.365,
+    "nose_length": 0.285,
+    "nose_projection": -0.388,
+    "nose_curve": 0.381,
+    "nostril_width": 0.328,
+    "nostril_angle": 0.089,
+    "nose_hump": -0.242,
+    "mouth_width": -0.18,
+    "upper_lip_fullness": 0.151,
+    "lower_lip_fullness": 0.018,
+    "mouth_corner_tilt": -0.11,
+    "philtrum_length": 0.184,
+    "cupids_bow": 0.177,
+    "mouth_depth": -0.138,
+    "upper_lip_height": 0.084,
+    "lower_lip_height": -0.167,
+    "jaw_width": 0.219,
+    "chin_width": -0.335,
+    "chin_length": 0.261,
+    "chin_projection": 0.027,
+    "chin_prognathism": -0.288,
+    "chin_cleft": 0.7,
+    "cheek_height": -0.052,
+    "cheekbone_prominence": 0.266,
+    "cheek_fullness": 0.259,
+    "cheek_hollow": -0.093,
+    "ear_size": 0.226,
+    "ear_angle": -0.123,
+    "ear_lobe": 0.007,
+    "nose_mid_width": 0.151,
+    "nose_base_width": -0.273
+  },
+  "asymmetry": {
+    "eye_size": 0.019,
+    "eye_spacing": 0.018,
+    "eye_tilt": -0.02,
+    "eye_depth": 0.018,
+    "upper_lid_fold": 0.029,
+    "eye_opening": 0.007,
+    "inner_lid_fold": 0.002,
+    "lower_lid_height": 0.014,
+    "cheek_height": -0.023,
+    "cheekbone_prominence": -0.002,
+    "cheek_fullness": 0.026,
+    "cheek_hollow": 0.011,
+    "ear_size": 0.0,
+    "ear_angle": 0.008,
+    "ear_lobe": -0.01
+  },
+  "age": {
+    "years": 42,
+    "features": {
+      "head_age": 0.14,
+      "eye_bags_left": 0.17,
+      "eye_bags_right": 0.16,
+      "sagging": 0.05,
+      "lip_thinning": 0.05,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.62,
+    "weight": 0.4,
+    "muscle": 0.51,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_female",
+    "tone": 1,
+    "ruddiness": 0.09,
+    "freckles": 0,
+    "pimples": 0,
+    "look": "adult",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "braid01",
+    "style": "long",
+    "color": "#120e0c",
+    "greying": 0.09,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.97,
+    "color": "#241d18",
+    "greying": 0.05,
+    "style": "soft",
+    "lift": 0.11,
+    "arch": 0.1
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#7a5a3a",
+    "bottom_color": "#2a2a2c",
+    "accent_color": "#3b4250"
+  },
+  "signature_traits": [
+    "downturned eyes",
+    "chin cleft",
+    "head fullness"
+  ],
+  "face_design": "Background draft for EP01 v4.0; eye type downturned; wardrobe coat.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
+}

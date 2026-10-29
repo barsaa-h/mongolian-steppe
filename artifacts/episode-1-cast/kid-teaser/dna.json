@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "kid-teaser",
+  "name": "kid-teaser",
+  "episode": 1,
+  "category": "background",
+  "script_age": null,
+  "source": {
+    "facts": "Child who makes fun of Altan waiting for her father (beat 14). Age and look are artistic.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "child",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 104833729,
+  "face": {
+    "head_height": -0.053,
+    "head_width": -0.037,
+    "head_depth": -0.227,
+    "skull_depth": -0.023,
+    "forehead_slope": -0.145,
+    "forehead_height": 0.026,
+    "temple_width": 0.135,
+    "head_round": 0.35,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0.0,
+    "head_rectangular": 0,
+    "head_heart": 0.0,
+    "head_triangular": 0.0,
+    "head_fullness": 0.141,
+    "eye_size": -0.117,
+    "eye_spacing": -0.083,
+    "eye_tilt": -0.04,
+    "eye_depth": 0.122,
+    "upper_lid_fold": 0.35,
+    "eye_opening": 0.051,
+    "inner_lid_fold": 0.236,
+    "lower_lid_height": 0.166,
+    "brow_height": -0.011,
+    "brow_angle": -0.013,
+    "brow_depth": 0.118,
+    "nose_bridge_width": -0.088,
+    "nose_tip_width": -0.163,
+    "nose_tip_angle": -0.193,
+    "nose_width": -0.35,
+    "nose_length": -0.029,
+    "nose_projection": -0.013,
+    "nose_curve": -0.147,
+    "nostril_width": -0.017,
+    "nostril_angle": -0.071,
+    "nose_hump": 0.07,
+    "mouth_width": 0.081,
+    "upper_lip_fullness": 0.038,
+    "lower_lip_fullness": -0.033,
+    "mouth_corner_tilt": -0.139,
+    "philtrum_length": -0.162,
+    "cupids_bow": 0.006,
+    "mouth_depth": -0.22,
+    "upper_lip_height": 0.008,
+    "lower_lip_height": 0.083,
+    "jaw_width": 0.003,
+    "chin_width": -0.121,
+    "chin_length": -0.077,
+    "chin_projection": 0.165,
+    "chin_prognathism": -0.015,
+    "chin_cleft": -0.022,
+    "cheek_height": 0.017,
+    "cheekbone_prominence": 0.005,
+    "cheek_fullness": -0.092,
+    "cheek_hollow": -0.216,
+    "ear_size": -0.097,
+    "ear_angle": 0.072,
+    "ear_lobe": 0.079,
+    "nose_mid_width": 0.096,
+    "nose_base_width": -0.087
+  },
+  "asymmetry": {
+    "eye_size": 0.034,
+    "eye_spacing": 0.029,
+    "eye_tilt": 0.012,
+    "eye_depth": -0.011,
+    "upper_lid_fold": 0.03,
+    "eye_opening": -0.023,
+    "inner_lid_fold": 0.021,
+    "lower_lid_height": 0.027,
+    "cheek_height": 0.001,
+    "cheekbone_prominence": 0.031,
+    "cheek_fullness": 0.029,
+    "cheek_hollow": 0.029,
+    "ear_size": 0.025,
+    "ear_angle": 0.028,
+    "ear_lobe": 0.023
+  },
+  "age": {
+    "years": 7,
+    "features": {
+      "head_age": 0,
+      "eye_bags_left": 0,
+      "eye_bags_right": 0,
+      "sagging": 0,
+      "lip_thinning": 0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.21,
+    "weight": 0.55,
+    "muscle": 0.2,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "young_asian_male",
+    "tone": 1,
+    "ruddiness": 0.57,
+    "freckles": 0,
+    "pimples": 0,
+    "look": "young",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "short",
+    "color": "#120e0c",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.5,
+    "color": "#1d1814",
+    "greying": 0,
+    "lift": 0.08,
+    "style": "soft",
+    "density": 0.6
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit01",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#4d3b2c",
+    "bottom_color": "#2a2a2c",
+    "accent_color": "#3a3f36"
+  },
+  "signature_traits": [
+    "almond eyes",
+    "head round",
+    "upper lid fold"
+  ],
+  "face_design": "Background draft for EP01 v4.0; eye type almond; wardrobe coat.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-c": 1
+  }
+}

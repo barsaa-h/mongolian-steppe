@@ -1,14 +1,14 @@
 {
   "name": "Ахмад эрэгтэй зочин",
-  "bodyHeightM": 1.6399999999999997,
+  "bodyHeightM": 1.64,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.11381039809511063,
-  "waistWidthM": 0.33636414615342114,
-  "sourceShapeKeys": 73,
+  "headHeightFraction": 0.09915987412315468,
+  "waistWidthM": 0.34667806406163576,
+  "sourceShapeKeys": 51,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 100,
+    "Clothes.Outfit": 99,
     "Shoes": 32
   },
   "fullBodyRetained": true,
@@ -57,12 +57,6 @@
       "triangles": 12330
     },
     {
-      "name": "Clothes.Bottom",
-      "role": "Clothes.Bottom",
-      "vertices": 1357,
-      "triangles": 2626
-    },
-    {
       "name": "Hands.L",
       "role": "Hands.L",
       "vertices": 1610,
@@ -79,9 +73,112 @@
       "role": "Body",
       "vertices": 4652,
       "triangles": 9092
+    },
+    {
+      "name": "Clothes.DeelSkirt",
+      "role": "Clothes.DeelSkirt",
+      "vertices": 624,
+      "triangles": 1152
+    },
+    {
+      "name": "Clothes.DeelOverlap",
+      "role": "Clothes.DeelOverlap",
+      "vertices": 32,
+      "triangles": 30
+    },
+    {
+      "name": "Clothes.Sash",
+      "role": "Clothes.Sash",
+      "vertices": 96,
+      "triangles": 96
+    },
+    {
+      "name": "Clothes.DeelCollar",
+      "role": "Clothes.DeelCollar",
+      "vertices": 64,
+      "triangles": 64
+    },
+    {
+      "name": "Clothes.BootShaft.L",
+      "role": "Clothes.BootShaft.L",
+      "vertices": 168,
+      "triangles": 288
+    },
+    {
+      "name": "Clothes.BootShaft.R",
+      "role": "Clothes.BootShaft.R",
+      "vertices": 168,
+      "triangles": 288
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
     }
   ],
   "packedTextures": [
+    {
+      "name": "beard-region-mask.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
     {
       "name": "brown.png",
       "size": [
@@ -94,13 +191,6 @@
       "size": [
         2048,
         2048
-      ]
-    },
-    {
-      "name": "Clothes.Bottom | Cast albedo",
-      "size": [
-        1024,
-        1024
       ]
     },
     {
@@ -129,6 +219,20 @@
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "heavy.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
       ]
     },
     {
@@ -188,13 +292,6 @@
       ]
     },
     {
-      "name": "straight.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -219,7 +316,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "party-older-man",
   "episode": 1,
   "scriptAge": null,
@@ -229,9 +326,16 @@
   "storyStates": [
     "normal"
   ],
-  "wardrobe": "guest",
+  "wardrobe": "deel",
   "casting": "Mongolian",
-  "dnaHash": "750fbf20f1976966473af65ad434576bc62324edac527ae5f181106f55265400",
+  "dnaHash": "0ba92f7f8adaa5eaab687b5ae75168134be464efb726710eb7074904cc7fbbb0",
   "baseStage": "elder",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "0968745afb648a9e437f7fc867e90311ad65ee052e026ff1f93347b51914e1e0",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:05:56.742673+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

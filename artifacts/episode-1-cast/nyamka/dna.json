@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "nyamka",
+  "name": "Нямхаа «Нямка»",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beats 04/14: neighborhood shopkeeper with a penciled household debt notebook; pulls shutters at evening.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "female",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 5076079,
+  "face": {
+    "head_height": 0.167,
+    "head_width": 0.151,
+    "head_depth": 0.184,
+    "skull_depth": -0.305,
+    "forehead_slope": 0.043,
+    "forehead_height": -0.038,
+    "temple_width": 0.403,
+    "head_round": 0,
+    "head_square": 0.35,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0.543,
+    "head_fullness": -0.008,
+    "eye_size": 0.536,
+    "eye_spacing": -0.347,
+    "eye_tilt": -0.1,
+    "eye_depth": 0.276,
+    "upper_lid_fold": 0.6,
+    "eye_opening": -0.15,
+    "inner_lid_fold": 0.3,
+    "lower_lid_height": 0.7,
+    "brow_height": 0.11,
+    "brow_angle": -0.165,
+    "brow_depth": -0.339,
+    "nose_bridge_width": -0.405,
+    "nose_tip_width": -0.196,
+    "nose_tip_angle": -0.229,
+    "nose_width": 0.3,
+    "nose_length": 0.027,
+    "nose_projection": -0.213,
+    "nose_curve": 0.498,
+    "nostril_width": 0.425,
+    "nostril_angle": -0.017,
+    "nose_hump": -0.101,
+    "mouth_width": 0.2,
+    "upper_lip_fullness": 0.093,
+    "lower_lip_fullness": 0.09,
+    "mouth_corner_tilt": -0.044,
+    "philtrum_length": -0.052,
+    "cupids_bow": 0.358,
+    "mouth_depth": -0.602,
+    "upper_lip_height": 0.386,
+    "lower_lip_height": 0.547,
+    "jaw_width": 0.3,
+    "chin_width": -0.409,
+    "chin_length": 0.189,
+    "chin_projection": 0.038,
+    "chin_prognathism": -0.342,
+    "chin_cleft": 0.031,
+    "cheek_height": 0.276,
+    "cheekbone_prominence": 0.131,
+    "cheek_fullness": 0.35,
+    "cheek_hollow": 0.261,
+    "ear_size": -0.013,
+    "ear_angle": 0.176,
+    "ear_lobe": 0.002,
+    "nose_mid_width": -0.415,
+    "nose_base_width": -0.26
+  },
+  "asymmetry": {
+    "eye_size": 0.003,
+    "eye_spacing": 0.016,
+    "eye_tilt": -0.014,
+    "eye_depth": -0.025,
+    "upper_lid_fold": -0.016,
+    "eye_opening": -0.011,
+    "inner_lid_fold": 0.01,
+    "lower_lid_height": 0.019,
+    "cheek_height": 0.023,
+    "cheekbone_prominence": 0.024,
+    "cheek_fullness": 0.033,
+    "cheek_hollow": 0.02,
+    "ear_size": 0.021,
+    "ear_angle": -0.003,
+    "ear_lobe": 0.011
+  },
+  "age": {
+    "years": 48,
+    "features": {
+      "head_age": 0.26,
+      "eye_bags_left": 0.23,
+      "eye_bags_right": 0.21,
+      "sagging": 0.1,
+      "lip_thinning": 0.1,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.57,
+    "weight": 0.68,
+    "muscle": 0.3,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_female",
+    "tone": 1,
+    "ruddiness": 0.2,
+    "freckles": 0,
+    "pimples": 1,
+    "look": "weathered",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "short",
+    "color": "#1f1915",
+    "greying": 0.2,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.85,
+    "color": "#231c17",
+    "greying": 0,
+    "style": "arched",
+    "lift": 0.16,
+    "arch": 0.3
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#5b4a63",
+    "bottom_color": "#2f2a33",
+    "accent_color": "#9b7e57"
+  },
+  "signature_traits": [
+    "Broad square jaw and full cheeks",
+    "Penciled high-arched brows",
+    "Heavy hooded eyes"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: hooded.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
+}

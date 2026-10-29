@@ -1,0 +1,23 @@
+{
+  "status": "draft blocking, not a performance",
+  "sourceBlendSha256": "64a49974f294492ecd9aa824e6230e9b3ec2ac3460abda64c91c7199a7693aba",
+  "glbSha256": "9f0d06ef37bcb75af12924ba027db1e0dd8e7df917ab8e78f32f0430fea28058",
+  "blenderVersion": "5.2.2 LTS",
+  "palmProxyTargetErrorM": {
+    "L": 7.664239555578067e-06,
+    "R": 7.664239555578067e-06
+  },
+  "wheelVertexClearance": {
+    "L": {
+      "verticesInsideOver1mm": 0,
+      "deepestVertexPenetrationM": 0,
+      "closestVertexToSurfaceM": 0.00020912882474347777
+    },
+    "R": {
+      "verticesInsideOver1mm": 0,
+      "deepestVertexPenetrationM": 0,
+      "closestVertexToSurfaceM": 0.00020917704606259607
+    }
+  },
+  "palmContactsChecked": false
+}

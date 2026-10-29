@@ -18,7 +18,7 @@
   "seed": 3182987859,
   "face": {
     "head_height": 0.35,
-    "head_width": 0,
+    "head_width": -0.35,
     "head_depth": 0,
     "skull_depth": 0,
     "forehead_slope": 0,
@@ -28,17 +28,17 @@
     "head_square": 0,
     "head_oval": 0,
     "head_diamond": 0,
-    "head_rectangular": 0.52,
+    "head_rectangular": 0.5,
     "head_heart": 0,
     "head_triangular": 0,
     "head_fullness": -0.32,
     "eye_size": 0,
     "eye_spacing": 0,
     "eye_tilt": 0,
-    "eye_depth": 0,
-    "upper_lid_fold": 0.48,
-    "eye_opening": -0.064,
-    "inner_lid_fold": 0.32,
+    "eye_depth": -0.5,
+    "upper_lid_fold": -0.2,
+    "eye_opening": -0.05,
+    "inner_lid_fold": 0.1,
     "lower_lid_height": 0,
     "brow_height": 0,
     "brow_angle": -0.24,
@@ -52,7 +52,7 @@
     "nose_curve": 0,
     "nostril_width": 0,
     "nostril_angle": 0,
-    "nose_hump": 0.25,
+    "nose_hump": 0.5,
     "mouth_width": 0.32,
     "upper_lip_fullness": -0.2,
     "lower_lip_fullness": 0,
@@ -62,16 +62,16 @@
     "mouth_depth": 0,
     "upper_lip_height": 0,
     "lower_lip_height": 0,
-    "jaw_width": 0,
+    "jaw_width": 0.2,
     "chin_width": 0.12,
     "chin_length": 0.32,
-    "chin_projection": 0,
+    "chin_projection": 0.3,
     "chin_prognathism": 0,
     "chin_cleft": 0,
     "cheek_height": 0,
-    "cheekbone_prominence": 0.45,
+    "cheekbone_prominence": 0.5,
     "cheek_fullness": -0.08,
-    "cheek_hollow": 0,
+    "cheek_hollow": 0.6,
     "ear_size": 0,
     "ear_angle": 0,
     "ear_lobe": 0,
@@ -123,10 +123,10 @@
   "skin": {
     "asset": "young_asian_male",
     "tone": 1,
-    "ruddiness": 0,
+    "ruddiness": 0.3,
     "freckles": 0,
     "pimples": 0,
-    "look": "adult",
+    "look": "tired",
     "detail": 0.06
   },
   "hair": {
@@ -138,9 +138,11 @@
     "volume": 1
   },
   "brows": {
-    "thickness": 1,
-    "color": "#30251f",
-    "greying": 0
+    "thickness": 0.9,
+    "color": "#1b1613",
+    "greying": 0,
+    "style": "sparse",
+    "lift": 0.12
   },
   "eyes": {
     "color": "brown",
@@ -148,8 +150,8 @@
     "sclera_tint": "#f0eadf"
   },
   "facial_hair": {
-    "style": "none",
-    "coverage": 0,
+    "style": "stubble",
+    "coverage": 0.3,
     "greying": 0
   },
   "clothing": {
@@ -165,10 +167,13 @@
     "angular jaw",
     "humped projecting nose"
   ],
-  "face_design": "Bony long head, angular jaw, humped projecting nose, tired asymmetric lids and broad thin mouth",
+  "face_design": "Bony long head, angular jaw, humped projecting nose, tired asymmetric lids and broad thin mouth | Artistic 2026-10-29: Base M; sparse thin brows, gaunt tired skin, light stubble. | Face type: bony and lean, deep-set eyes, humped nose, angular jaw. | Eye type: deepset.",
   "states": [
     "fed",
     "standing"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
 }

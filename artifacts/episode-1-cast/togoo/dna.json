@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "id": "togoo",
+  "name": "Тогоо",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beats 04/09: regular doing odd jobs, sometimes sleeping at friends' places; bickers with Bataa.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 4371288,
+  "face": {
+    "head_height": -0.226,
+    "head_width": 0.2,
+    "head_depth": -0.318,
+    "skull_depth": 0.16,
+    "forehead_slope": 0.536,
+    "forehead_height": 0.168,
+    "temple_width": -0.076,
+    "head_round": 0.4,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0.361,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": -0.269,
+    "eye_size": 0.113,
+    "eye_spacing": 0.44,
+    "eye_tilt": 0.283,
+    "eye_depth": 0.245,
+    "upper_lid_fold": 0.5,
+    "eye_opening": -0.2,
+    "inner_lid_fold": 0.181,
+    "lower_lid_height": 0.3,
+    "brow_height": 0.242,
+    "brow_angle": -0.037,
+    "brow_depth": -0.006,
+    "nose_bridge_width": 0.529,
+    "nose_tip_width": 0.3,
+    "nose_tip_angle": 0.018,
+    "nose_width": 0.35,
+    "nose_length": 0.23,
+    "nose_projection": 0.162,
+    "nose_curve": -0.028,
+    "nostril_width": -0.609,
+    "nostril_angle": 0.557,
+    "nose_hump": 0.444,
+    "mouth_width": 0.25,
+    "upper_lip_fullness": -0.7,
+    "lower_lip_fullness": 0.35,
+    "mouth_corner_tilt": -0.143,
+    "philtrum_length": -0.338,
+    "cupids_bow": -0.428,
+    "mouth_depth": -0.064,
+    "upper_lip_height": 0.418,
+    "lower_lip_height": -0.29,
+    "jaw_width": 0.202,
+    "chin_width": 0.008,
+    "chin_length": -0.077,
+    "chin_projection": 0.165,
+    "chin_prognathism": -0.077,
+    "chin_cleft": -0.58,
+    "cheek_height": -0.158,
+    "cheekbone_prominence": 0.153,
+    "cheek_fullness": -0.047,
+    "cheek_hollow": 0.125,
+    "ear_size": 0.297,
+    "ear_angle": 0.4,
+    "ear_lobe": 0.249,
+    "nose_mid_width": -0.229,
+    "nose_base_width": -0.579
+  },
+  "asymmetry": {
+    "eye_size": 0.013,
+    "eye_spacing": 0.03,
+    "eye_tilt": -0.009,
+    "eye_depth": 0.025,
+    "upper_lid_fold": -0.004,
+    "eye_opening": 0.008,
+    "inner_lid_fold": 0.027,
+    "lower_lid_height": -0.018,
+    "cheek_height": 0.019,
+    "cheekbone_prominence": -0.013,
+    "cheek_fullness": -0.011,
+    "cheek_hollow": 0.02,
+    "ear_size": -0.011,
+    "ear_angle": 0.003,
+    "ear_lobe": -0.004
+  },
+  "age": {
+    "years": 44,
+    "features": {
+      "head_age": 0.18,
+      "eye_bags_left": 0.19,
+      "eye_bags_right": 0.18,
+      "sagging": 0.07,
+      "lip_thinning": 0.07,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.66,
+    "weight": 0.6,
+    "muscle": 0.35,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.45,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "tired",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short01",
+    "style": "short",
+    "color": "#1d1814",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.0,
+    "color": "#201a16",
+    "greying": 0,
+    "style": "sparse",
+    "lift": 0.15,
+    "arch": 0.2
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.5,
+    "greying": 0.1
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#5a4a3c",
+    "bottom_color": "#2f2c28",
+    "accent_color": "#6d4b3a"
+  },
+  "signature_traits": [
+    "Round face with a broad nose tip",
+    "Ears that stand out",
+    "Puffy lids and patchy stubble"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: puffy.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

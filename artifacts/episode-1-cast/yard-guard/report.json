@@ -1,10 +1,10 @@
 {
   "name": "Төмөр замын харуул",
-  "bodyHeightM": 1.72,
+  "bodyHeightM": 1.7200000000000002,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.08903627577223956,
-  "waistWidthM": 0.35394521039473315,
-  "sourceShapeKeys": 65,
+  "headHeightFraction": 0.08585719570016885,
+  "waistWidthM": 0.355180407949855,
+  "sourceShapeKeys": 38,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
@@ -85,9 +85,76 @@
       "role": "Clothes.GuardCap",
       "vertices": 312,
       "triangles": 576
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
     }
   ],
   "packedTextures": [
+    {
+      "name": "beard-region-mask.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
     {
       "name": "brown.png",
       "size": [
@@ -135,6 +202,20 @@
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "heavy.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
       ]
     },
     {
@@ -194,13 +275,6 @@
       ]
     },
     {
-      "name": "straight.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -225,7 +299,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "yard-guard",
   "episode": 1,
   "scriptAge": null,
@@ -235,9 +309,16 @@
   "storyStates": [
     "normal"
   ],
-  "wardrobe": "uniform",
+  "wardrobe": "coat",
   "casting": "Unspecified; Buryat casting",
-  "dnaHash": "7d4191c6119d22014d0808d6f4d4e048b8d3b9ed926dbcab7996cc414ffa1bfa",
+  "dnaHash": "e1b5552dbd3ab935da6302d7400637fa876636aa38c0750dd28797f14a06dccc",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "12f91c3489fff53524bb549a376ff2f518a562ab2f04bf3d3d2ef9e643285d89",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:05:08.132617+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

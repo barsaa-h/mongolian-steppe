@@ -36,7 +36,8 @@
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
-      "humanReview": "pending"
+      "humanReview": "approved",
+      "humanReviewScope": "identity design"
     },
     {
       "id": "irina",
@@ -480,7 +481,8 @@
       "identicalMaterials": true,
       "hairAndClothesHidden": true,
       "animationClip": "Talk_Check",
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "humanReviewScope": "identity design"
     }
   ],
   "diversityPassed": true,

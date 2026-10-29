@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "livestock-driver",
+  "name": "Малын машины жолооч",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beats 18-20: passing livestock driver who gives Ganaa a ride, offers the clinic, asks what he said.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 13280163,
+  "face": {
+    "head_height": -0.221,
+    "head_width": 0.3,
+    "head_depth": 0.172,
+    "skull_depth": -0.034,
+    "forehead_slope": 0.259,
+    "forehead_height": -0.558,
+    "temple_width": 0.3,
+    "head_round": 0,
+    "head_square": 0.45,
+    "head_oval": 0.745,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.139,
+    "eye_size": -0.199,
+    "eye_spacing": 0.501,
+    "eye_tilt": 0.1,
+    "eye_depth": -0.308,
+    "upper_lid_fold": 0.75,
+    "eye_opening": -0.25,
+    "inner_lid_fold": 0.55,
+    "lower_lid_height": -0.23,
+    "brow_height": 0.17,
+    "brow_angle": -0.244,
+    "brow_depth": -0.048,
+    "nose_bridge_width": 0.206,
+    "nose_tip_width": 0.7,
+    "nose_tip_angle": 0.042,
+    "nose_width": 0.4,
+    "nose_length": -0.143,
+    "nose_projection": 0.011,
+    "nose_curve": -0.239,
+    "nostril_width": -0.229,
+    "nostril_angle": -0.195,
+    "nose_hump": -0.517,
+    "mouth_width": -0.066,
+    "upper_lip_fullness": -0.082,
+    "lower_lip_fullness": -0.027,
+    "mouth_corner_tilt": -0.092,
+    "philtrum_length": 0.363,
+    "cupids_bow": 0.322,
+    "mouth_depth": 0.125,
+    "upper_lip_height": -0.202,
+    "lower_lip_height": -0.039,
+    "jaw_width": 0.326,
+    "chin_width": 0.3,
+    "chin_length": -0.006,
+    "chin_projection": 0.193,
+    "chin_prognathism": -0.157,
+    "chin_cleft": -0.035,
+    "cheek_height": 0.166,
+    "cheekbone_prominence": 0.65,
+    "cheek_fullness": -0.15,
+    "cheek_hollow": -0.301,
+    "ear_size": 0.053,
+    "ear_angle": 0.265,
+    "ear_lobe": -0.009,
+    "nose_mid_width": -0.329,
+    "nose_base_width": -0.201
+  },
+  "asymmetry": {
+    "eye_size": 0.027,
+    "eye_spacing": 0.018,
+    "eye_tilt": -0.014,
+    "eye_depth": 0.012,
+    "upper_lid_fold": 0.015,
+    "eye_opening": -0.012,
+    "inner_lid_fold": 0.004,
+    "lower_lid_height": 0.006,
+    "cheek_height": 0.013,
+    "cheekbone_prominence": 0.008,
+    "cheek_fullness": -0.017,
+    "cheek_hollow": -0.027,
+    "ear_size": 0.016,
+    "ear_angle": 0.029,
+    "ear_lobe": -0.01
+  },
+  "age": {
+    "years": 58,
+    "features": {
+      "head_age": 0.46,
+      "eye_bags_left": 0.33,
+      "eye_bags_right": 0.31,
+      "sagging": 0.17,
+      "lip_thinning": 0.17,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.68,
+    "weight": 0.55,
+    "muscle": 0.6,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "old_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.6,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "weathered",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short01",
+    "style": "short",
+    "color": "#3a3530",
+    "greying": 0.6,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.3,
+    "color": "#2c2620",
+    "greying": 0.55,
+    "style": "heavy",
+    "lift": 0.08
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.35,
+    "greying": 0.7
+  },
+  "clothing": {
+    "asset": "male_casualsuit02",
+    "shoes": "shoes02",
+    "wardrobe": "deel",
+    "top_color": "#5b3b2a",
+    "bottom_color": "#2d2721",
+    "accent_color": "#c49a4a"
+  },
+  "signature_traits": [
+    "Wind-burned broad herder face",
+    "Narrow monolid eyes",
+    "Very prominent cheekbones"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: monolid.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

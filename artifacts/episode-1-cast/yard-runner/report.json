@@ -2,13 +2,13 @@
   "name": "Төмөр замын халдварласан хүн",
   "bodyHeightM": 1.78,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.10464355769944343,
-  "waistWidthM": 0.33509200195642064,
-  "sourceShapeKeys": 63,
+  "headHeightFraction": 0.09486995149689705,
+  "waistWidthM": 0.34617153905650994,
+  "sourceShapeKeys": 45,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 47,
+    "Clothes.Outfit": 46,
     "Shoes": 22
   },
   "fullBodyRetained": true,
@@ -79,9 +79,76 @@
       "role": "Body",
       "vertices": 4820,
       "triangles": 9428
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 18,
+      "triangles": 16
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
     }
   ],
   "packedTextures": [
+    {
+      "name": "beard-region-mask.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
     {
       "name": "brown.png",
       "size": [
@@ -132,6 +199,13 @@
       ]
     },
     {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
+      ]
+    },
+    {
       "name": "male_casualsuit03_diffuse.png",
       "size": [
         2048,
@@ -167,10 +241,10 @@
       ]
     },
     {
-      "name": "straight.png",
+      "name": "sparse.png",
       "size": [
-        512,
-        512
+        1024,
+        1024
       ]
     },
     {
@@ -219,7 +293,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "yard-runner",
   "episode": 1,
   "scriptAge": null,
@@ -232,7 +306,14 @@
   ],
   "wardrobe": "runner",
   "casting": "East Asian appearance; identity unstated",
-  "dnaHash": "a9a13451eac00e3f9b305156b7f6494479dcb842b89890f09fc1a995d886e5f0",
+  "dnaHash": "de72250b27edec7c4b0b242cf1d94c11831e80e03af857b8061e0d16f6a7eb1b",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "6694d32c71387d3c2b7b1108bb3c853635a7852aa08b8f37e0402e9e37295f1d",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:06:13.483056+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

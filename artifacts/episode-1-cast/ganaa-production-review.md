@@ -1,6 +1,8 @@
-# Ganaa production promotion — approved
+# Ganaa identity design — approved
 
-Ganaa is the first cast member promoted to production (`review: approved` in
+Approval scope is **identity design**. This historical promotion does not approve wardrobe motion, recorded speech, runtime integration or a finished shot. See [current character status](../character-master/production/STATUS.md). Superseded Ganaa design builds now live in `../character-master/archive/ganaa-designs/`; the active build remains `ganaa/`.
+
+Ganaa is the first cast member with identity design approval (`review: approved` in
 `dna/ganaa.json`), on the user's explicit instruction to finalize him.
 
 ## What changed from the last active build

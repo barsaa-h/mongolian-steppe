@@ -1,0 +1,383 @@
+{
+  "name": "town-cougher",
+  "bodyHeightM": 1.61,
+  "sourceBodyVertices": 19158,
+  "headHeightFraction": 0.08736159404527526,
+  "waistWidthM": 0.36138876177266005,
+  "sourceShapeKeys": 87,
+  "rigBones": 137,
+  "fingerBones": 30,
+  "garmentCorrections": {
+    "Clothes.Outfit": 56,
+    "Shoes": 38
+  },
+  "fullBodyRetained": true,
+  "renderBodyUsesClothingMasks": true,
+  "meshes": [
+    {
+      "name": "Eyebrows",
+      "role": "Eyebrows",
+      "vertices": 124,
+      "triangles": 192
+    },
+    {
+      "name": "Eyes",
+      "role": "Eyes",
+      "vertices": 1064,
+      "triangles": 2040
+    },
+    {
+      "name": "Hair",
+      "role": "Hair",
+      "vertices": 3239,
+      "triangles": 4108
+    },
+    {
+      "name": "Shoes",
+      "role": "Shoes",
+      "vertices": 1594,
+      "triangles": 3064
+    },
+    {
+      "name": "Teeth",
+      "role": "Teeth",
+      "vertices": 3868,
+      "triangles": 7120
+    },
+    {
+      "name": "Tongue",
+      "role": "Tongue",
+      "vertices": 226,
+      "triangles": 448
+    },
+    {
+      "name": "Clothes.Top",
+      "role": "Clothes.Top",
+      "vertices": 2309,
+      "triangles": 4284
+    },
+    {
+      "name": "Clothes.Bottom",
+      "role": "Clothes.Bottom",
+      "vertices": 886,
+      "triangles": 1712
+    },
+    {
+      "name": "Hands.L",
+      "role": "Hands.L",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Hands.R",
+      "role": "Hands.R",
+      "vertices": 1610,
+      "triangles": 3194
+    },
+    {
+      "name": "Body.Skin",
+      "role": "Body",
+      "vertices": 4820,
+      "triangles": 9428
+    },
+    {
+      "name": "Details.Wrinkle.Eye.1.0",
+      "role": "Details.Wrinkle.Eye.1.0",
+      "vertices": 16,
+      "triangles": 14
+    },
+    {
+      "name": "Details.Wrinkle.Eye.1.1",
+      "role": "Details.Wrinkle.Eye.1.1",
+      "vertices": 16,
+      "triangles": 14
+    },
+    {
+      "name": "Details.Wrinkle.Eye.1.2",
+      "role": "Details.Wrinkle.Eye.1.2",
+      "vertices": 16,
+      "triangles": 14
+    },
+    {
+      "name": "Details.Wrinkle.Eye.-1.0",
+      "role": "Details.Wrinkle.Eye.-1.0",
+      "vertices": 16,
+      "triangles": 14
+    },
+    {
+      "name": "Details.Wrinkle.Eye.-1.1",
+      "role": "Details.Wrinkle.Eye.-1.1",
+      "vertices": 16,
+      "triangles": 14
+    },
+    {
+      "name": "Details.Wrinkle.Eye.-1.2",
+      "role": "Details.Wrinkle.Eye.-1.2",
+      "vertices": 16,
+      "triangles": 14
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.1.1",
+      "role": "Details.Wrinkle.Forehead.1.1",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.1.2",
+      "role": "Details.Wrinkle.Forehead.1.2",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.1.3",
+      "role": "Details.Wrinkle.Forehead.1.3",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.2.1",
+      "role": "Details.Wrinkle.Forehead.2.1",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.2.2",
+      "role": "Details.Wrinkle.Forehead.2.2",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.2.3",
+      "role": "Details.Wrinkle.Forehead.2.3",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 16,
+      "triangles": 14
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 16,
+      "triangles": 14
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 14,
+      "triangles": 12
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 14,
+      "triangles": 12
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    }
+  ],
+  "packedTextures": [
+    {
+      "name": "brown.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "cheek_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Clothes.Bottom | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Clothes.Top | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "eyelashes01.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "Hair | Cast albedo",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "head_mask.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
+      ]
+    },
+    {
+      "name": "long01_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "male_casualsuit05_diffuse.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "normal.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "old_asian_female_albedo.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "old_asian_female_normal.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "old_asian_female_roughness.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "shoes02_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Skin layer bake | Cast albedo",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "soft.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "teeth.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "tongue01_diffuse.png",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "expressions": [
+    "smile",
+    "frown",
+    "blink",
+    "viseme_A",
+    "viseme_E",
+    "viseme_O",
+    "viseme_M"
+  ],
+  "controlMorphs": 0,
+  "talkCheck": true,
+  "id": "town-cougher",
+  "episode": 1,
+  "scriptAge": null,
+  "skinSource": "old_asian_female",
+  "skinDetailCount": 0,
+  "wrinkleParts": 12,
+  "storyStates": [
+    "normal"
+  ],
+  "wardrobe": "coat",
+  "casting": "Mongolian",
+  "dnaHash": "b143d4adadfb272f21c6738b4665965340694d5950d0b52ec865aea73ce57d6a",
+  "baseStage": "elder",
+  "sourceIndexMap": true,
+  "glbSha256": "dd64496eea4ed485398f2eb6df2acd35ea390b138499b52cb480a6cbcea4c053",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T19:01:34.783278+00:00",
+  "blenderVersion": "5.2.2 LTS"
+}

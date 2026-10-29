@@ -2,9 +2,9 @@
   "name": "Дулмаа",
   "bodyHeightM": 1.54,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.07675451263959854,
-  "waistWidthM": 0.3925252507258917,
-  "sourceShapeKeys": 65,
+  "headHeightFraction": 0.08054711173585057,
+  "waistWidthM": 0.3834160561730967,
+  "sourceShapeKeys": 43,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
@@ -29,8 +29,8 @@
     {
       "name": "Hair",
       "role": "Hair",
-      "vertices": 2213,
-      "triangles": 3148
+      "vertices": 2218,
+      "triangles": 3158
     },
     {
       "name": "Shoes",
@@ -83,7 +83,7 @@
     {
       "name": "Clothes.DeelOverlap",
       "role": "Clothes.DeelOverlap",
-      "vertices": 34,
+      "vertices": 35,
       "triangles": 32
     },
     {
@@ -107,50 +107,74 @@
     {
       "name": "Details.Wrinkle.Eye.1.0",
       "role": "Details.Wrinkle.Eye.1.0",
-      "vertices": 24,
-      "triangles": 22
+      "vertices": 16,
+      "triangles": 14
     },
     {
       "name": "Details.Wrinkle.Eye.1.1",
       "role": "Details.Wrinkle.Eye.1.1",
-      "vertices": 24,
-      "triangles": 22
+      "vertices": 16,
+      "triangles": 14
     },
     {
       "name": "Details.Wrinkle.Eye.1.2",
       "role": "Details.Wrinkle.Eye.1.2",
-      "vertices": 12,
-      "triangles": 10
+      "vertices": 16,
+      "triangles": 14
     },
     {
       "name": "Details.Wrinkle.Eye.-1.0",
       "role": "Details.Wrinkle.Eye.-1.0",
-      "vertices": 24,
-      "triangles": 22
+      "vertices": 16,
+      "triangles": 14
     },
     {
       "name": "Details.Wrinkle.Eye.-1.1",
       "role": "Details.Wrinkle.Eye.-1.1",
-      "vertices": 24,
-      "triangles": 22
+      "vertices": 16,
+      "triangles": 14
     },
     {
       "name": "Details.Wrinkle.Eye.-1.2",
       "role": "Details.Wrinkle.Eye.-1.2",
-      "vertices": 12,
-      "triangles": 10
+      "vertices": 16,
+      "triangles": 14
     },
     {
-      "name": "Details.Wrinkle.Forehead.1",
-      "role": "Details.Wrinkle.Forehead.1",
-      "vertices": 50,
-      "triangles": 48
+      "name": "Details.Wrinkle.Forehead.1.1",
+      "role": "Details.Wrinkle.Forehead.1.1",
+      "vertices": 20,
+      "triangles": 18
     },
     {
-      "name": "Details.Wrinkle.Forehead.2",
-      "role": "Details.Wrinkle.Forehead.2",
-      "vertices": 50,
-      "triangles": 48
+      "name": "Details.Wrinkle.Forehead.1.2",
+      "role": "Details.Wrinkle.Forehead.1.2",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.1.3",
+      "role": "Details.Wrinkle.Forehead.1.3",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.2.1",
+      "role": "Details.Wrinkle.Forehead.2.1",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.2.2",
+      "role": "Details.Wrinkle.Forehead.2.2",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Wrinkle.Forehead.2.3",
+      "role": "Details.Wrinkle.Forehead.2.3",
+      "vertices": 20,
+      "triangles": 18
     },
     {
       "name": "Clothes.BootShaft.L",
@@ -163,6 +187,66 @@
       "role": "Clothes.BootShaft.R",
       "vertices": 168,
       "triangles": 288
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
     }
   ],
   "packedTextures": [
@@ -206,6 +290,13 @@
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
       ]
     },
     {
@@ -272,10 +363,10 @@
       ]
     },
     {
-      "name": "straight.png",
+      "name": "sparse.png",
       "size": [
-        512,
-        512
+        1024,
+        1024
       ]
     },
     {
@@ -303,19 +394,26 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "dulmaa",
   "episode": 1,
   "scriptAge": 65,
   "skinSource": "old_asian_female",
   "skinDetailCount": 0,
-  "wrinkleParts": 8,
+  "wrinkleParts": 12,
   "storyStates": [
     "normal"
   ],
   "wardrobe": "deel",
   "casting": "Mongolian",
-  "dnaHash": "39163de927d42d1bff9fc21487c1a846c03e793e32f05515f86394acc4957de9",
+  "dnaHash": "41166283d80b9c9bb18d187cd264930b75f810ce3f84c912ad6b32d4ca036308",
   "baseStage": "elder",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "adb85129afe73ebcce1e850c866a0fcde51c48da22b60bce88444f2b015c7bd2",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T17:58:53.021880+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

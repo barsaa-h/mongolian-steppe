@@ -18,7 +18,7 @@
   "seed": 3532987653,
   "face": {
     "head_height": 0.3,
-    "head_width": -0.17,
+    "head_width": -0.3,
     "head_depth": 0,
     "skull_depth": 0,
     "forehead_slope": 0,
@@ -26,7 +26,7 @@
     "temple_width": 0,
     "head_round": 0,
     "head_square": 0,
-    "head_oval": 0.7,
+    "head_oval": 0.6,
     "head_diamond": 0,
     "head_rectangular": 0,
     "head_heart": 0,
@@ -34,10 +34,10 @@
     "head_fullness": -0.25,
     "eye_size": 0,
     "eye_spacing": 0,
-    "eye_tilt": -0.22,
+    "eye_tilt": -0.35,
     "eye_depth": 0,
-    "upper_lid_fold": 0.56,
-    "eye_opening": -0.144,
+    "upper_lid_fold": 0.3,
+    "eye_opening": -0.1,
     "inner_lid_fold": 0.36,
     "lower_lid_height": 0,
     "brow_height": 0,
@@ -49,7 +49,7 @@
     "nose_width": 0,
     "nose_length": 0.35,
     "nose_projection": 0,
-    "nose_curve": 0.42,
+    "nose_curve": 0.4,
     "nostril_width": 0,
     "nostril_angle": 0,
     "nose_hump": 0,
@@ -71,10 +71,10 @@
     "cheek_height": 0,
     "cheekbone_prominence": 0.65,
     "cheek_fullness": -0.26,
-    "cheek_hollow": 0,
-    "ear_size": 0,
+    "cheek_hollow": 0.5,
+    "ear_size": 0.4,
     "ear_angle": 0,
-    "ear_lobe": 0,
+    "ear_lobe": 0.4,
     "nose_mid_width": 0,
     "nose_base_width": 0
   },
@@ -101,9 +101,9 @@
       "head_age": 0.35,
       "eye_bags_left": 0.42,
       "eye_bags_right": 0.382,
-      "sagging": 0,
-      "lip_thinning": 0,
-      "brow_droop": 0
+      "sagging": 0.4,
+      "lip_thinning": 0.4,
+      "brow_droop": 0.3
     }
   },
   "body": {
@@ -138,9 +138,12 @@
     "volume": 1
   },
   "brows": {
-    "thickness": 1,
-    "color": "#51483b",
-    "greying": 0.35
+    "thickness": 1.25,
+    "color": "#3a332c",
+    "greying": 0.6,
+    "style": "heavy",
+    "lift": 0.1,
+    "tail_length": 1.1
   },
   "eyes": {
     "color": "brown",
@@ -148,26 +151,29 @@
     "sclera_tint": "#f0eadf"
   },
   "facial_hair": {
-    "style": "none",
-    "coverage": 0,
-    "greying": 0
+    "style": "stubble",
+    "coverage": 0.2,
+    "greying": 0.8
   },
   "clothing": {
     "asset": "male_elegantsuit01",
     "shoes": "shoes02",
-    "wardrobe": "guest",
-    "top_color": "#57524e",
-    "bottom_color": "#383638",
-    "accent_color": "#ad9470"
+    "wardrobe": "deel",
+    "top_color": "#2f3f5a",
+    "bottom_color": "#24262c",
+    "accent_color": "#b89650"
   },
   "signature_traits": [
     "Long lean older face",
     "hollow cheeks",
     "long curved nose"
   ],
-  "face_design": "Long lean older face, hollow cheeks, long curved nose, downsloping outer lids and narrow lips",
+  "face_design": "Long lean older face, hollow cheeks, long curved nose, downsloping outer lids and narrow lips | Artistic 2026-10-29: Base M; long bushy grey elder brows, white stubble. | Face type: long lean elder face, hollow cheeks, long curved nose, large elder ears. | Eye type: downturned.",
   "states": [
     "normal"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
 }

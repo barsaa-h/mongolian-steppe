@@ -32,13 +32,13 @@
     "head_heart": 0,
     "head_triangular": 0,
     "head_fullness": 0,
-    "eye_size": 0,
+    "eye_size": 0.2,
     "eye_spacing": 0.16,
     "eye_tilt": 0,
     "eye_depth": 0,
-    "upper_lid_fold": 0.12,
-    "eye_opening": -0.04,
-    "inner_lid_fold": -0.04,
+    "upper_lid_fold": -0.3,
+    "eye_opening": 0.2,
+    "inner_lid_fold": 0,
     "lower_lid_height": 0,
     "brow_height": 0,
     "brow_angle": 0.22,
@@ -99,8 +99,8 @@
     "years": 24,
     "features": {
       "head_age": 0,
-      "eye_bags_left": 0.08,
-      "eye_bags_right": 0.073,
+      "eye_bags_left": 0.25,
+      "eye_bags_right": 0.24,
       "sagging": 0,
       "lip_thinning": 0,
       "brow_droop": 0
@@ -123,10 +123,10 @@
   "skin": {
     "asset": "young_caucasian_female",
     "tone": 1,
-    "ruddiness": 0,
+    "ruddiness": 0.3,
     "freckles": 0,
     "pimples": 4,
-    "look": "young",
+    "look": "tired",
     "detail": 0.06
   },
   "hair": {
@@ -138,9 +138,11 @@
     "volume": 1
   },
   "brows": {
-    "thickness": 0.68,
-    "color": "#30251f",
-    "greying": 0
+    "thickness": 0.9,
+    "color": "#5a4636",
+    "greying": 0,
+    "style": "soft",
+    "lift": 0.13
   },
   "eyes": {
     "color": "bluegreen",
@@ -165,10 +167,13 @@
     "pointed chin",
     "narrow bridge"
   ],
-  "face_design": "Angular diamond cheekbones, pointed chin, narrow bridge, wider-set blue-green eyes and full bow lips",
+  "face_design": "Angular diamond cheekbones, pointed chin, narrow bridge, wider-set blue-green eyes and full bow lips | Artistic 2026-10-29: pale, feverish flush, light-brown brows, tired eyes; Base F at half strength (Slavic). | Eye type: round.",
   "states": [
     "unwell",
     "fed-runner"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-f": 0.5
+  }
 }

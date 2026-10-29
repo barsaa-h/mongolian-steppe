@@ -1,14 +1,14 @@
 {
   "name": "Ирина Ковалева",
-  "bodyHeightM": 1.65,
+  "bodyHeightM": 1.6500000000000001,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.10014512219923495,
-  "waistWidthM": 0.35293120572323594,
-  "sourceShapeKeys": 65,
+  "headHeightFraction": 0.09422510668232793,
+  "waistWidthM": 0.36574070609981474,
+  "sourceShapeKeys": 41,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 38,
+    "Clothes.Outfit": 37,
     "Shoes": 38
   },
   "fullBodyRetained": true,
@@ -29,8 +29,8 @@
     {
       "name": "Hair",
       "role": "Hair",
-      "vertices": 1213,
-      "triangles": 1500
+      "vertices": 1193,
+      "triangles": 1468
     },
     {
       "name": "Shoes",
@@ -79,9 +79,83 @@
       "role": "Body",
       "vertices": 4820,
       "triangles": 9428
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
     }
   ],
   "packedTextures": [
+    {
+      "name": "age_lines.png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "arched.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
     {
       "name": "cheek_mask.png",
       "size": [
@@ -129,6 +203,13 @@
       "size": [
         2048,
         2048
+      ]
+    },
+    {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
       ]
     },
     {
@@ -188,13 +269,6 @@
       ]
     },
     {
-      "name": "straight.png",
-      "size": [
-        512,
-        512
-      ]
-    },
-    {
       "name": "teeth.png",
       "size": [
         2048,
@@ -219,7 +293,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "irina",
   "episode": 1,
   "scriptAge": 54,
@@ -231,7 +305,14 @@
   ],
   "wardrobe": "coat",
   "casting": "Russian casting",
-  "dnaHash": "df147e4ec020dc8f8bae343143744ec2aaf2503435b6a74ac4b5363ea53447a2",
+  "dnaHash": "ae08a30112fb928e6826f6267e5181464efb4974b49d02795292d201addc3244",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "3c0eb5767dbfb888b54070c8abae61539d3ed282a8e4e35d09f01ca38f53cbec",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:14:20.978486+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

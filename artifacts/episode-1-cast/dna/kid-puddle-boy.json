@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "kid-puddle-boy",
+  "name": "kid-puddle-boy",
+  "episode": 1,
+  "category": "background",
+  "script_age": null,
+  "source": {
+    "facts": "Child dodging a puddle (beat 03). Age and look are artistic.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "child",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 143478730,
+  "face": {
+    "head_height": -0.149,
+    "head_width": 0.179,
+    "head_depth": -0.198,
+    "skull_depth": -0.058,
+    "forehead_slope": -0.001,
+    "forehead_height": 0.198,
+    "temple_width": 0.088,
+    "head_round": 0.35,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0.0,
+    "head_rectangular": 0,
+    "head_heart": 0.0,
+    "head_triangular": 0.0,
+    "head_fullness": 0.116,
+    "eye_size": -0.119,
+    "eye_spacing": -0.068,
+    "eye_tilt": 0.164,
+    "eye_depth": -0.064,
+    "upper_lid_fold": 0.35,
+    "eye_opening": -0.021,
+    "inner_lid_fold": -0.021,
+    "lower_lid_height": -0.161,
+    "brow_height": -0.225,
+    "brow_angle": 0.15,
+    "brow_depth": -0.107,
+    "nose_bridge_width": -0.003,
+    "nose_tip_width": -0.108,
+    "nose_tip_angle": -0.01,
+    "nose_width": -0.146,
+    "nose_length": 0.033,
+    "nose_projection": -0.101,
+    "nose_curve": -0.35,
+    "nostril_width": 0.197,
+    "nostril_angle": 0.085,
+    "nose_hump": -0.092,
+    "mouth_width": -0.337,
+    "upper_lip_fullness": -0.117,
+    "lower_lip_fullness": 0.018,
+    "mouth_corner_tilt": 0.072,
+    "philtrum_length": 0.066,
+    "cupids_bow": 0.171,
+    "mouth_depth": -0.286,
+    "upper_lip_height": -0.034,
+    "lower_lip_height": -0.122,
+    "jaw_width": -0.175,
+    "chin_width": 0.075,
+    "chin_length": 0.153,
+    "chin_projection": -0.121,
+    "chin_prognathism": -0.06,
+    "chin_cleft": 0.064,
+    "cheek_height": -0.106,
+    "cheekbone_prominence": 0.134,
+    "cheek_fullness": 0.14,
+    "cheek_hollow": -0.117,
+    "ear_size": -0.147,
+    "ear_angle": -0.049,
+    "ear_lobe": -0.066,
+    "nose_mid_width": 0.011,
+    "nose_base_width": 0.056
+  },
+  "asymmetry": {
+    "eye_size": -0.022,
+    "eye_spacing": -0.033,
+    "eye_tilt": -0.008,
+    "eye_depth": 0.003,
+    "upper_lid_fold": 0.03,
+    "eye_opening": 0.011,
+    "inner_lid_fold": 0.026,
+    "lower_lid_height": 0.008,
+    "cheek_height": 0.02,
+    "cheekbone_prominence": 0.017,
+    "cheek_fullness": -0.032,
+    "cheek_hollow": -0.008,
+    "ear_size": -0.006,
+    "ear_angle": -0.012,
+    "ear_lobe": 0.024
+  },
+  "age": {
+    "years": 8,
+    "features": {
+      "head_age": 0,
+      "eye_bags_left": 0,
+      "eye_bags_right": 0,
+      "sagging": 0,
+      "lip_thinning": 0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.27,
+    "weight": 0.49,
+    "muscle": 0.2,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "young_asian_male",
+    "tone": 1,
+    "ruddiness": 0.42,
+    "freckles": 0,
+    "pimples": 0,
+    "look": "young",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "short",
+    "color": "#120e0c",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.5,
+    "color": "#1d1814",
+    "greying": 0,
+    "lift": 0.08,
+    "style": "soft",
+    "density": 0.6
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit01",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#7a5a3a",
+    "bottom_color": "#2a2a2c",
+    "accent_color": "#4b5a3d"
+  },
+  "signature_traits": [
+    "almond eyes",
+    "head round",
+    "upper lid fold"
+  ],
+  "face_design": "Background draft for EP01 v4.0; eye type almond; wardrobe coat.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-c": 1
+  }
+}

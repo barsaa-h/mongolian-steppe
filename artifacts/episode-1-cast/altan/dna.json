@@ -24,7 +24,7 @@
     "forehead_slope": 0,
     "forehead_height": 0,
     "temple_width": 0,
-    "head_round": 0.48,
+    "head_round": 0.25,
     "head_square": 0,
     "head_oval": 0,
     "head_diamond": 0,
@@ -70,7 +70,7 @@
     "chin_cleft": 0,
     "cheek_height": 0,
     "cheekbone_prominence": 0.24,
-    "cheek_fullness": 0.45,
+    "cheek_fullness": 0.15,
     "cheek_hollow": 0,
     "ear_size": 0,
     "ear_angle": 0,
@@ -123,7 +123,7 @@
   "skin": {
     "asset": "young_asian_female",
     "tone": 1,
-    "ruddiness": 0,
+    "ruddiness": 0.5,
     "freckles": 0,
     "pimples": 0,
     "look": "toddler",
@@ -132,15 +132,18 @@
   "hair": {
     "asset": "ponytail01",
     "style": "ponytail",
-    "color": "#29231f",
+    "color": "#110d0b",
     "greying": 0,
     "length": 1,
     "volume": 1
   },
   "brows": {
     "thickness": 0.5,
-    "color": "#30251f",
-    "greying": 0
+    "color": "#1d1814",
+    "greying": 0,
+    "lift": 0.08,
+    "style": "soft",
+    "density": 0.6
   },
   "eyes": {
     "color": "brown",
@@ -164,9 +167,12 @@
     "Toddler round cheeks and short button nose; echoes her mother without adult facial creases",
     "Individual eyelids and nose"
   ],
-  "face_design": "Toddler round cheeks and short button nose; echoes her mother without adult facial creases",
+  "face_design": "Toddler round cheeks and short button nose; echoes her mother without adult facial creases | Artistic 2026-10-29: Base C (small closed mouth, button nose, full rosy cheeks, soft fine brows).",
   "states": [
     "normal"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-c": 1
+  }
 }

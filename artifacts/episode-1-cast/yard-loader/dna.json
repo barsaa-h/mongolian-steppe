@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "yard-loader",
+  "name": "Ачигч",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beat 06: loader at the Ulan-Ude freight yard who roasts Ganaa about a loose cargo strap.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 8774252,
+  "face": {
+    "head_height": 0.061,
+    "head_width": 0.191,
+    "head_depth": 0.305,
+    "skull_depth": 0.397,
+    "forehead_slope": 0.197,
+    "forehead_height": -0.321,
+    "temple_width": 0.079,
+    "head_round": 0,
+    "head_square": 0.55,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0.778,
+    "head_triangular": 0,
+    "head_fullness": -0.128,
+    "eye_size": 0.506,
+    "eye_spacing": -0.022,
+    "eye_tilt": 0.4,
+    "eye_depth": -0.397,
+    "upper_lid_fold": 0.35,
+    "eye_opening": -0.195,
+    "inner_lid_fold": 0.4,
+    "lower_lid_height": 0.213,
+    "brow_height": 0.096,
+    "brow_angle": -0.076,
+    "brow_depth": 0.091,
+    "nose_bridge_width": -0.035,
+    "nose_tip_width": 0.154,
+    "nose_tip_angle": 0.264,
+    "nose_width": -0.078,
+    "nose_length": 0.268,
+    "nose_projection": -0.2,
+    "nose_curve": 0.419,
+    "nostril_width": -0.427,
+    "nostril_angle": 0.363,
+    "nose_hump": 0.031,
+    "mouth_width": 0.37,
+    "upper_lip_fullness": -0.067,
+    "lower_lip_fullness": -0.281,
+    "mouth_corner_tilt": 0.13,
+    "philtrum_length": -0.491,
+    "cupids_bow": 0.055,
+    "mouth_depth": 0.175,
+    "upper_lip_height": -0.138,
+    "lower_lip_height": 0.312,
+    "jaw_width": 0.5,
+    "chin_width": -0.009,
+    "chin_length": 0.172,
+    "chin_projection": -0.234,
+    "chin_prognathism": 0.093,
+    "chin_cleft": 0.491,
+    "cheek_height": -0.094,
+    "cheekbone_prominence": 0.55,
+    "cheek_fullness": 0.064,
+    "cheek_hollow": 0.226,
+    "ear_size": -0.168,
+    "ear_angle": 0.362,
+    "ear_lobe": 0.041,
+    "nose_mid_width": 0.015,
+    "nose_base_width": 0.7
+  },
+  "asymmetry": {
+    "eye_size": -0.025,
+    "eye_spacing": -0.032,
+    "eye_tilt": -0.012,
+    "eye_depth": 0.016,
+    "upper_lid_fold": -0.023,
+    "eye_opening": -0.034,
+    "inner_lid_fold": -0.026,
+    "lower_lid_height": 0.035,
+    "cheek_height": 0.001,
+    "cheekbone_prominence": 0.021,
+    "cheek_fullness": -0.004,
+    "cheek_hollow": 0.015,
+    "ear_size": -0.018,
+    "ear_angle": 0.032,
+    "ear_lobe": -0.024
+  },
+  "age": {
+    "years": 33,
+    "features": {
+      "head_age": 0.0,
+      "eye_bags_left": 0.1,
+      "eye_bags_right": 0.09,
+      "sagging": 0.0,
+      "lip_thinning": 0.0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.76,
+    "weight": 0.55,
+    "muscle": 0.7,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.4,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "weathered",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "short",
+    "color": "#15110e",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.2,
+    "color": "#15110e",
+    "greying": 0,
+    "style": "straight",
+    "lift": 0.11
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.3,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#4b4a3a",
+    "bottom_color": "#2c2b25",
+    "accent_color": "#7a6a4a"
+  },
+  "signature_traits": [
+    "Broad square Buryat jaw",
+    "Upturned eyes and high cheekbones",
+    "Crew cut"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: upturned.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "id": "customs-officer",
+  "name": "Гаалийн ажилтан",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beat 08: tired border official who checks cargo and fumbles for a stamp.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 12361559,
+  "face": {
+    "head_height": -0.545,
+    "head_width": 0.578,
+    "head_depth": 0.173,
+    "skull_depth": 0.162,
+    "forehead_slope": 0.11,
+    "forehead_height": 0.256,
+    "temple_width": -0.173,
+    "head_round": 0,
+    "head_square": 0,
+    "head_oval": 0.5,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.3,
+    "eye_size": -0.277,
+    "eye_spacing": 0.309,
+    "eye_tilt": -0.35,
+    "eye_depth": 0.306,
+    "upper_lid_fold": 0.3,
+    "eye_opening": -0.1,
+    "inner_lid_fold": -0.018,
+    "lower_lid_height": -0.374,
+    "brow_height": -0.112,
+    "brow_angle": -0.194,
+    "brow_depth": 0.105,
+    "nose_bridge_width": -0.127,
+    "nose_tip_width": 0.064,
+    "nose_tip_angle": 0.052,
+    "nose_width": 0.422,
+    "nose_length": -0.2,
+    "nose_projection": -0.273,
+    "nose_curve": 0.215,
+    "nostril_width": -0.493,
+    "nostril_angle": 0.656,
+    "nose_hump": -0.207,
+    "mouth_width": -0.2,
+    "upper_lip_fullness": -0.2,
+    "lower_lip_fullness": 0.27,
+    "mouth_corner_tilt": 0.038,
+    "philtrum_length": 0.025,
+    "cupids_bow": -0.153,
+    "mouth_depth": 0.434,
+    "upper_lip_height": -0.419,
+    "lower_lip_height": 0.33,
+    "jaw_width": -0.171,
+    "chin_width": -0.234,
+    "chin_length": -0.2,
+    "chin_projection": 0.163,
+    "chin_prognathism": 0.507,
+    "chin_cleft": -0.015,
+    "cheek_height": 0.161,
+    "cheekbone_prominence": 0.03,
+    "cheek_fullness": -0.546,
+    "cheek_hollow": -0.265,
+    "ear_size": 0.288,
+    "ear_angle": 0.219,
+    "ear_lobe": 0.071,
+    "nose_mid_width": -0.419,
+    "nose_base_width": 0.641
+  },
+  "asymmetry": {
+    "eye_size": -0.013,
+    "eye_spacing": 0.017,
+    "eye_tilt": -0.001,
+    "eye_depth": -0.021,
+    "upper_lid_fold": -0.007,
+    "eye_opening": -0.032,
+    "inner_lid_fold": -0.001,
+    "lower_lid_height": -0.002,
+    "cheek_height": -0.013,
+    "cheekbone_prominence": -0.02,
+    "cheek_fullness": -0.001,
+    "cheek_hollow": -0.024,
+    "ear_size": -0.032,
+    "ear_angle": -0.035,
+    "ear_lobe": -0.03
+  },
+  "age": {
+    "years": 45,
+    "features": {
+      "head_age": 0.2,
+      "eye_bags_left": 0.2,
+      "eye_bags_right": 0.18,
+      "sagging": 0.07,
+      "lip_thinning": 0.07,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.69,
+    "weight": 0.62,
+    "muscle": 0.42,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.15,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "tired",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "short",
+    "color": "#1d1814",
+    "greying": 0.15,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.0,
+    "color": "#1b1612",
+    "greying": 0,
+    "style": "soft",
+    "lift": 0.13,
+    "arch": 0.1
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_elegantsuit01",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#4d5340",
+    "bottom_color": "#33362c",
+    "accent_color": "#b3a77a"
+  },
+  "signature_traits": [
+    "Soft oval office face",
+    "Downturned tired eyes",
+    "Small thin-lipped mouth and receding hairline"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: downturned.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "id": "cafe-driver",
+  "name": "Хүлээж буй жолооч",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beat 15: driver waiting for food at Hürel's café, watching Ganaa and Hürel.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 8679224,
+  "face": {
+    "head_height": -0.129,
+    "head_width": -0.165,
+    "head_depth": -0.062,
+    "skull_depth": -0.01,
+    "forehead_slope": 0.351,
+    "forehead_height": -0.077,
+    "temple_width": 0.08,
+    "head_round": 0.3,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0.498,
+    "head_fullness": 0.45,
+    "eye_size": -0.25,
+    "eye_spacing": 0.15,
+    "eye_tilt": -0.072,
+    "eye_depth": 0.398,
+    "upper_lid_fold": 0.2,
+    "eye_opening": 0.05,
+    "inner_lid_fold": 0.073,
+    "lower_lid_height": 0.444,
+    "brow_height": 0.062,
+    "brow_angle": 0.07,
+    "brow_depth": -0.365,
+    "nose_bridge_width": 0.245,
+    "nose_tip_width": 0.35,
+    "nose_tip_angle": -0.034,
+    "nose_width": 0.062,
+    "nose_length": 0.249,
+    "nose_projection": -0.321,
+    "nose_curve": 0.044,
+    "nostril_width": -0.7,
+    "nostril_angle": -0.096,
+    "nose_hump": -0.393,
+    "mouth_width": 0.514,
+    "upper_lip_fullness": -0.313,
+    "lower_lip_fullness": -0.084,
+    "mouth_corner_tilt": -0.167,
+    "philtrum_length": -0.522,
+    "cupids_bow": -0.365,
+    "mouth_depth": -0.184,
+    "upper_lip_height": -0.429,
+    "lower_lip_height": 0.523,
+    "jaw_width": -0.7,
+    "chin_width": 0.552,
+    "chin_length": -0.3,
+    "chin_projection": 0.322,
+    "chin_prognathism": 0.253,
+    "chin_cleft": 0.037,
+    "cheek_height": -0.619,
+    "cheekbone_prominence": 0.437,
+    "cheek_fullness": 0.45,
+    "cheek_hollow": -0.115,
+    "ear_size": 0.201,
+    "ear_angle": -0.21,
+    "ear_lobe": -0.022,
+    "nose_mid_width": 0.57,
+    "nose_base_width": -0.072
+  },
+  "asymmetry": {
+    "eye_size": 0.003,
+    "eye_spacing": -0.026,
+    "eye_tilt": -0.02,
+    "eye_depth": 0.034,
+    "upper_lid_fold": 0.022,
+    "eye_opening": -0.017,
+    "inner_lid_fold": -0.024,
+    "lower_lid_height": -0.028,
+    "cheek_height": -0.032,
+    "cheekbone_prominence": 0.012,
+    "cheek_fullness": 0.007,
+    "cheek_hollow": -0.032,
+    "ear_size": -0.012,
+    "ear_angle": 0.012,
+    "ear_lobe": 0.013
+  },
+  "age": {
+    "years": 40,
+    "features": {
+      "head_age": 0.1,
+      "eye_bags_left": 0.15,
+      "eye_bags_right": 0.14,
+      "sagging": 0.04,
+      "lip_thinning": 0.04,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.7,
+    "weight": 0.78,
+    "muscle": 0.42,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.15,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "adult",
+    "detail": 0.2,
+    "undertone": -0.06,
+    "oiliness": 0.4
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "short",
+    "color": "#161210",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.15,
+    "color": "#1a1511",
+    "greying": 0,
+    "style": "straight",
+    "lift": 0.12
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.4,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#28344a",
+    "bottom_color": "#2a2a2a",
+    "accent_color": "#9a8f7c"
+  },
+  "signature_traits": [
+    "Heavy round face",
+    "Small wide-set eyes",
+    "Broad nose tip"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: smallround.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

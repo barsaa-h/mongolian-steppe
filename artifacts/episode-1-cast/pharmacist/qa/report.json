@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "views": [
+    "front",
+    "three-quarter",
+    "profile"
+  ],
+  "expressions": {
+    "smile": {
+      "maxMotionM": 0.008038032797348502
+    },
+    "frown": {
+      "maxMotionM": 0.003592158165601745
+    },
+    "blink": {
+      "maxMotionM": 0.003077707819607755
+    },
+    "viseme_A": {
+      "maxMotionM": 0.023850072136104693
+    },
+    "viseme_E": {
+      "maxMotionM": 0.006620065332095831
+    },
+    "viseme_O": {
+      "maxMotionM": 0.012142063173058668
+    },
+    "viseme_M": {
+      "maxMotionM": 0.0049453677225923965
+    }
+  },
+  "neutralRecoveryM": 2.685742628087751e-07,
+  "identicalMaterials": true,
+  "hairAndClothesHidden": true,
+  "animationClip": "Talk_Check",
+  "humanReview": "pending",
+  "humanReviewScope": "identity design"
+}

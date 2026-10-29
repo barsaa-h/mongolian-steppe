@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "bataa",
+  "name": "Батаа",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beats 04/09/14: regular at the shop; used to work at the heating plant; competent, not a caricature.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 3999095,
+  "face": {
+    "head_height": -0.284,
+    "head_width": 0.356,
+    "head_depth": -0.187,
+    "skull_depth": -0.081,
+    "forehead_slope": 0.193,
+    "forehead_height": -0.359,
+    "temple_width": 0.103,
+    "head_round": 0,
+    "head_square": 0.652,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0.5,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.047,
+    "eye_size": 0.364,
+    "eye_spacing": 0.01,
+    "eye_tilt": -0.25,
+    "eye_depth": -0.5,
+    "upper_lid_fold": -0.2,
+    "eye_opening": -0.05,
+    "inner_lid_fold": 0.1,
+    "lower_lid_height": -0.02,
+    "brow_height": 0.075,
+    "brow_angle": -0.089,
+    "brow_depth": -0.084,
+    "nose_bridge_width": -0.147,
+    "nose_tip_width": 0.561,
+    "nose_tip_angle": -0.323,
+    "nose_width": 0.573,
+    "nose_length": 0.121,
+    "nose_projection": -0.588,
+    "nose_curve": -0.045,
+    "nostril_width": -0.239,
+    "nostril_angle": 0.291,
+    "nose_hump": 0.35,
+    "mouth_width": -0.157,
+    "upper_lip_fullness": -0.367,
+    "lower_lip_fullness": -0.223,
+    "mouth_corner_tilt": 0.31,
+    "philtrum_length": 0.04,
+    "cupids_bow": 0.045,
+    "mouth_depth": 0.217,
+    "upper_lip_height": -0.355,
+    "lower_lip_height": -0.249,
+    "jaw_width": 0.132,
+    "chin_width": 0.172,
+    "chin_length": 0.091,
+    "chin_projection": 0.25,
+    "chin_prognathism": -0.181,
+    "chin_cleft": -0.27,
+    "cheek_height": 0.047,
+    "cheekbone_prominence": 0.5,
+    "cheek_fullness": -0.194,
+    "cheek_hollow": 0.3,
+    "ear_size": 0.31,
+    "ear_angle": 0.266,
+    "ear_lobe": 0.006,
+    "nose_mid_width": 0.26,
+    "nose_base_width": 0.241
+  },
+  "asymmetry": {
+    "eye_size": -0.034,
+    "eye_spacing": 0.006,
+    "eye_tilt": -0.011,
+    "eye_depth": 0.028,
+    "upper_lid_fold": 0.02,
+    "eye_opening": 0.03,
+    "inner_lid_fold": 0.023,
+    "lower_lid_height": 0.021,
+    "cheek_height": 0.012,
+    "cheekbone_prominence": 0.032,
+    "cheek_fullness": 0.007,
+    "cheek_hollow": 0.002,
+    "ear_size": 0.002,
+    "ear_angle": -0.027,
+    "ear_lobe": 0.013
+  },
+  "age": {
+    "years": 56,
+    "features": {
+      "head_age": 0.42,
+      "eye_bags_left": 0.31,
+      "eye_bags_right": 0.29,
+      "sagging": 0.16,
+      "lip_thinning": 0.16,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.71,
+    "weight": 0.45,
+    "muscle": 0.5,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "old_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.35,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "weathered",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short01",
+    "style": "short",
+    "color": "#2a2520",
+    "greying": 0.45,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.25,
+    "color": "#2a241f",
+    "greying": 0.5,
+    "style": "heavy",
+    "lift": 0.09
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.45,
+    "greying": 0.55
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#3d4650",
+    "bottom_color": "#2a2c2f",
+    "accent_color": "#7b6a55"
+  },
+  "signature_traits": [
+    "Long weathered face with a slight nose hump",
+    "Deep-set eyes under greying heavy brows",
+    "Grey stubble"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: deepset.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

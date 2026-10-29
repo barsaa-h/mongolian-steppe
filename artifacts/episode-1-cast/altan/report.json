@@ -1,15 +1,15 @@
 {
   "name": "Алтан",
-  "bodyHeightM": 0.9500000000000001,
+  "bodyHeightM": 0.95,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.12865400705486263,
-  "waistWidthM": 0.20093705951123142,
-  "sourceShapeKeys": 51,
+  "headHeightFraction": 0.1330265055548928,
+  "waistWidthM": 0.4557697300134227,
+  "sourceShapeKeys": 31,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 265,
-    "Shoes": 54
+    "Clothes.Outfit": 264,
+    "Shoes": 56
   },
   "fullBodyRetained": true,
   "renderBodyUsesClothingMasks": true,
@@ -85,6 +85,66 @@
       "role": "Props.PaperCrown",
       "vertices": 48,
       "triangles": 48
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 24,
+      "triangles": 22
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 24,
+      "triangles": 22
     }
   ],
   "packedTextures": [
@@ -145,6 +205,13 @@
       ]
     },
     {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
+      ]
+    },
+    {
       "name": "normal.png",
       "size": [
         1024,
@@ -173,10 +240,10 @@
       ]
     },
     {
-      "name": "straight.png",
+      "name": "soft.png",
       "size": [
-        512,
-        512
+        1024,
+        1024
       ]
     },
     {
@@ -225,7 +292,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "altan",
   "episode": 1,
   "scriptAge": 3,
@@ -237,7 +304,14 @@
   ],
   "wardrobe": "toddler-dress",
   "casting": "Mongolian",
-  "dnaHash": "449ba41facecfac350d56ed8cfbfa80ea2249fc663df27cdf2eea92e0d0747ee",
+  "dnaHash": "56c042da08054c640eb7a8a83166bdaeea5b410ba579bf065214621fa91d67f7",
   "baseStage": "child",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "182184d9a2368c6878c2a69336cdfdb9a0526e4e01497197ea7ca5754b662c5d",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T17:57:40.636021+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

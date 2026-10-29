@@ -12,11 +12,13 @@ from mathutils.bvhtree import BVHTree
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 REPO = ROOT.parents[1]
+sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(REPO / 'artifacts/character-master/scripts'))
 import build_character as master
 from dna import compile_dna, validate_dna
 from appearance import apply_appearance, grey_color, rgb as color
 from facial import add_expressions
+from report_export import export_facts
 
 
 def world_surface(obj):
@@ -160,31 +162,37 @@ def add_age_wrinkles(dna,parts,height):
         quad_faces=[(index,index+1,index+len(points)+1,index+len(points)) for index in range(len(points)-1)]
         parts.mesh(name,vertices,quad_faces,creases)
         count+=1
+    # Crow's feet fan out from the outer eye corner; they are short and broken, never lines across the cheek.
     per_side=2+(1 if features['head_age']>=.45 else 0)
     for eye in [eye_l,eye_r]:
         outward=1 if eye.x>=0 else -1
         for index in range(per_side):
+            angle=math.radians([14,-10,-32][index])
+            length=span*(.2+.04*(index==0))
             points=[]
-            for column in range(12):
-                t=column/11
-                x=eye.x+outward*span*(.4+.55*t)
-                z=eye.z-span*(.15+.3*index+.25*t)
+            for column in range(8):
+                t=column/7
+                x=eye.x+outward*(span*.36+math.cos(angle)*length*t)
+                z=eye.z+span*.02+math.sin(angle)*length*t+span*.012*math.sin(t*math.pi)
                 hit,normal,_,_=tree.ray_cast(Vector((x,-height,z)),Vector((0,1,0)),height*2)
                 if hit is None:continue
                 points.append(hit+normal*.0002)
             ribbon(f'Details.Wrinkle.Eye.{outward}.{index}',points)
+    # Forehead lines: gently waved and broken into segments, shorter at the top.
     forehead=3-(1 if years>=60 else 0)
     mid=(eye_l+eye_r)*.5
     for index in range(forehead):
-        points=[]
-        for column in range(25):
-            t=column/24
-            x=(t-.5)*span*1.8
-            z=mid.z+span*(.6+.24*index)
-            hit,normal,_,_=tree.ray_cast(Vector((x,-height,z)),Vector((0,1,0)),height*2)
-            if hit is None:continue
-            points.append(hit+normal*.0004)
-        ribbon(f'Details.Wrinkle.Forehead.{index+1}',points)
+        reach=span*(.85-.1*index)
+        for part,(start,end) in enumerate([(-1,-.42),(-.3,.32),(.44,1)]):
+            points=[]
+            for column in range(10):
+                t=start+(end-start)*column/9
+                x=t*reach
+                z=mid.z+span*(.62+.2*index)+span*.035*math.cos(t*math.pi)+span*.012*math.sin(t*7+index)
+                hit,normal,_,_=tree.ray_cast(Vector((x,-height,z)),Vector((0,1,0)),height*2)
+                if hit is None:continue
+                points.append(hit+normal*.0004)
+            ribbon(f'Details.Wrinkle.Forehead.{index+1}.{part+1}',points)
     return count
 
 def skirt(parts,height,mat,*,deel=False):
@@ -255,6 +263,8 @@ def dress_details(profile,parts,height):
             for i in range(32):faces.append((i,(i+1)%32,(i+1)%32+32,i+32))
             collar=parts.mesh('Clothes.DeelCollar',vertices,faces,mat,'neck01')
             solid=collar.modifiers.new('Collar thickness','SOLIDIFY');solid.thickness=.002
+    if profile['wardrobe'] in ['coat','winter']:
+        pad_coat(bpy.data.objects['Clothes.Top'],parts.rig,height)
     if profile['wardrobe']=='apron':
         cloth=material('Hurel | worn apron','#aaa08b')
         vertices=[]
@@ -301,6 +311,48 @@ def dress_details(profile,parts,height):
         obj['states']='hour-five,turning' if profile['id']=='ganaa' else 'unwell,fed-runner'
 
 
+def shape_hair(hair,rig,style,height):
+    """Shared hair fixes: a soft hairline instead of a helmet edge, denser cards."""
+    head=rig.matrix_world@rig.data.bones['head'].head_local
+    to_world=hair.matrix_world
+    # (Mirroring bobs to remove the swept fringe broke the bob01/braid01 cards into spikes; removed.
+    #  Characters use long01/ponytail01/braid01 instead of the side-swept bobs.)
+    # Hairline: fade alpha over ~1.2 cm from the open edges of the hair mesh.
+    edges={}
+    for polygon in hair.data.polygons:
+        for key in polygon.edge_keys:edges[key]=edges.get(key,0)+1
+    boundary={i for key,count in edges.items() if count==1 for i in key}
+    if len(boundary)>.3*len(hair.data.vertices):
+        # Card hair (long, ponytail, braid, bob) is almost all open edge; fading it made the hair vanish.
+        boundary=set()
+    points=[to_world@v.co for v in hair.data.vertices]
+    from mathutils.kdtree import KDTree
+    tree=KDTree(len(boundary))
+    for i in boundary:tree.insert(points[i],i)
+    tree.balance()
+    reach=.012*height/1.7
+    fade=[min(1,tree.find(p)[2]/reach) if boundary else 1 for p in points]
+    attribute=hair.data.color_attributes.new('Hairline','FLOAT_COLOR','POINT')
+    for i,value in enumerate(fade):attribute.data[i].color=(value,value,value,1)
+    material=hair.data.materials[0];tree_nodes=material.node_tree;shader=tree_nodes.nodes.get('Principled BSDF')
+    cutoff=next((n for n in tree_nodes.nodes if n.type=='MATH' and n.operation=='GREATER_THAN'),None)
+    if cutoff:cutoff.inputs[1].default_value=.18  # denser cards; .35 left ponytails and buns see-through
+    source=shader.inputs['Alpha'].links[0].from_socket if shader.inputs['Alpha'].links else None
+    color=tree_nodes.nodes.new('ShaderNodeVertexColor');color.layer_name='Hairline'
+    multiply=tree_nodes.nodes.new('ShaderNodeMath');multiply.operation='MULTIPLY'
+    if source:tree_nodes.links.new(source,multiply.inputs[0])
+    else:multiply.inputs[0].default_value=1
+    tree_nodes.links.new(color.outputs['Color'],multiply.inputs[1])
+    tree_nodes.links.new(multiply.outputs[0],shader.inputs['Alpha'])
+    material.surface_render_method='DITHERED'
+
+def pad_coat(top,rig,height):
+    """Padded winter coat: push the outer garment out and thicken it (late-November outdoor roles)."""
+    pad=.008*height/1.7/rig.scale.x
+    for vertex in top.data.vertices:vertex.co+=vertex.normal*pad
+    solid=top.modifiers.get('Fabric edge thickness')
+    if solid:solid.thickness*=3
+
 def build(id,dna_path=None,destination=None):
     dna=validate_dna(json.loads(Path(dna_path or ROOT/'dna'/f'{id}.json').read_text()))
     if dna['id']!=id:raise ValueError('DNA id and requested id differ')
@@ -311,11 +363,12 @@ def build(id,dna_path=None,destination=None):
     rig=bpy.data.objects['Character.Rig'];collection=next(c for c in bpy.data.collections if c.name.startswith('CHARACTER'))
     bpy.context.view_layer.update()
     parts=Parts(rig,collection);height=profile['base']['height_m']
-    recolor(bpy.data.objects['Clothes.Top'],profile['topColor'],plain=id in ['dulmaa','altan'])
+    recolor(bpy.data.objects['Clothes.Top'],profile['topColor'],plain=id in ['dulmaa','altan'] or profile['wardrobe']=='deel')  # plain: no printed logo under a deel
     recolor(bpy.data.objects['Clothes.Bottom'],profile['bottomColor'])
     recolor(bpy.data.objects['Hair'],grey_color(profile['hairColor'],dna['hair']['greying']))
     if profile['wardrobe'] in ['dress','toddler-dress']:
         recolor(bpy.data.objects['Clothes.Bottom'],profile['topColor'])
+    shape_hair(bpy.data.objects['Hair'],rig,profile['hairstyle'],height)
     if profile['hairstyle'] in ['bun','bob']:
         hair=bpy.data.objects['Hair']
         import bmesh
@@ -369,11 +422,18 @@ def build(id,dna_path=None,destination=None):
     for obj in [rig,*meshes]:obj.select_set(True)
     bpy.context.view_layer.objects.active=rig
     bpy.ops.export_scene.gltf(filepath=str(output/'character.glb'),use_selection=True,export_format='GLB',export_animations=True,export_animation_mode='ACTIONS',export_force_sampling=True,export_frame_range=False,export_extras=True,export_apply=True,export_morph=True)
+    # Render-only smoothing for Blender final shots, added after the GLB export so runtime cost is unchanged.
+    # Viewport level 0 keeps evaluated vertex counts identical for the morph and neutral-recovery checks.
+    for obj in meshes:
+        if obj.get('role') in ['Body','Hands.L','Hands.R']:
+            smooth=obj.modifiers.new('Render smoothing','SUBSURF');smooth.levels=0;smooth.render_levels=1
     bpy.ops.wm.save_as_mainfile(filepath=str(output/'Character-Master.blend'))
     report.update(name=profile['name'],id=id,episode=1,scriptAge=profile['scriptAge'],skinSource=profile['base']['skin'],skinDetailCount=detail_count,wrinkleParts=wrinkle_count,storyStates=profile['states'],wardrobe=profile['wardrobe'],casting=profile['casting'])
     report['meshes']=[{'name':o.name,'role':o.get('role'),'vertices':len(o.data.vertices),'triangles':sum(len(p.vertices)-2 for p in o.data.polygons)} for o in meshes]
     report['packedTextures']=[{'name':i.name,'size':list(i.size)} for i in bpy.data.images if i.packed_file and i.users]
     report.update(dnaHash=profile['dnaHash'],baseStage=dna['base'],expressions=expressions,sourceIndexMap=True)
+    report.update(export_facts(output/'character.glb'))
+    report['blenderVersion']=bpy.app.version_string
     (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     (output/'episode-recipe.json').write_text(json.dumps(profile,ensure_ascii=False,indent=2)+'\n')
     (output/'dna.json').write_text(json.dumps(dna,ensure_ascii=False,indent=2)+'\n')

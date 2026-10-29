@@ -24,7 +24,7 @@
     "forehead_slope": 0,
     "forehead_height": 0,
     "temple_width": 0,
-    "head_round": 0.68,
+    "head_round": 0.45,
     "head_square": 0,
     "head_oval": 0,
     "head_diamond": 0,
@@ -34,11 +34,11 @@
     "head_fullness": 0.18,
     "eye_size": 0,
     "eye_spacing": 0,
-    "eye_tilt": 0,
+    "eye_tilt": 0.4,
     "eye_depth": 0,
-    "upper_lid_fold": 0.55,
+    "upper_lid_fold": 0.35,
     "eye_opening": -0.032,
-    "inner_lid_fold": 0.27,
+    "inner_lid_fold": 0.4,
     "lower_lid_height": 0,
     "brow_height": 0.12,
     "brow_angle": 0,
@@ -70,7 +70,7 @@
     "chin_cleft": 0,
     "cheek_height": 0,
     "cheekbone_prominence": 0.15,
-    "cheek_fullness": 0.5,
+    "cheek_fullness": 0.3,
     "cheek_hollow": 0,
     "ear_size": 0,
     "ear_angle": 0,
@@ -138,9 +138,12 @@
     "volume": 1
   },
   "brows": {
-    "thickness": 0.68,
-    "color": "#30251f",
-    "greying": 0
+    "thickness": 0.75,
+    "color": "#1c1713",
+    "greying": 0,
+    "style": "arched",
+    "lift": 0.15,
+    "arch": 0.25
   },
   "eyes": {
     "color": "brown",
@@ -165,9 +168,12 @@
     "soft full cheeks",
     "broad short nose"
   ],
-  "face_design": "Compact rounded face, soft full cheeks, broad short nose, small full mouth and open eyes",
+  "face_design": "Compact rounded face, soft full cheeks, broad short nose, small full mouth and open eyes | Artistic 2026-10-29: thin plucked 1990s party brows; round soft face. | Eye type: upturned.",
   "states": [
     "normal"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
 }

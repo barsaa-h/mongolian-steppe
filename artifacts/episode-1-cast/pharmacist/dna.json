@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "pharmacist",
+  "name": "Эмийн сангийн худалдагч",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beat 20: pharmacy assistant distracted by an alarmed caller.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "female",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 8457492,
+  "face": {
+    "head_height": -0.052,
+    "head_width": -0.2,
+    "head_depth": 0.08,
+    "skull_depth": 0.185,
+    "forehead_slope": 0.029,
+    "forehead_height": -0.095,
+    "temple_width": -0.087,
+    "head_round": 0,
+    "head_square": 0,
+    "head_oval": 0.4,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0.443,
+    "head_triangular": 0,
+    "head_fullness": -0.226,
+    "eye_size": 0.2,
+    "eye_spacing": 0.042,
+    "eye_tilt": 0.133,
+    "eye_depth": -0.337,
+    "upper_lid_fold": -0.3,
+    "eye_opening": 0.2,
+    "inner_lid_fold": 0,
+    "lower_lid_height": 0.104,
+    "brow_height": 0.092,
+    "brow_angle": 0.048,
+    "brow_depth": -0.026,
+    "nose_bridge_width": -0.25,
+    "nose_tip_width": 0.339,
+    "nose_tip_angle": -0.155,
+    "nose_width": 0.02,
+    "nose_length": 0.15,
+    "nose_projection": 0.243,
+    "nose_curve": -0.398,
+    "nostril_width": 0.167,
+    "nostril_angle": 0.613,
+    "nose_hump": 0.141,
+    "mouth_width": -0.15,
+    "upper_lip_fullness": -0.015,
+    "lower_lip_fullness": -0.223,
+    "mouth_corner_tilt": 0.474,
+    "philtrum_length": 0.288,
+    "cupids_bow": -0.36,
+    "mouth_depth": -0.065,
+    "upper_lip_height": -0.26,
+    "lower_lip_height": 0.309,
+    "jaw_width": 0.347,
+    "chin_width": 0.095,
+    "chin_length": 0.2,
+    "chin_projection": 0.101,
+    "chin_prognathism": -0.121,
+    "chin_cleft": -0.222,
+    "cheek_height": -0.316,
+    "cheekbone_prominence": 0.087,
+    "cheek_fullness": 0.006,
+    "cheek_hollow": -0.353,
+    "ear_size": -0.172,
+    "ear_angle": -0.132,
+    "ear_lobe": -0.028,
+    "nose_mid_width": 0.463,
+    "nose_base_width": 0.117
+  },
+  "asymmetry": {
+    "eye_size": 0.022,
+    "eye_spacing": -0.029,
+    "eye_tilt": -0.005,
+    "eye_depth": 0.008,
+    "upper_lid_fold": 0.011,
+    "eye_opening": 0.005,
+    "inner_lid_fold": 0.014,
+    "lower_lid_height": -0.016,
+    "cheek_height": 0.025,
+    "cheekbone_prominence": -0.009,
+    "cheek_fullness": -0.031,
+    "cheek_hollow": -0.025,
+    "ear_size": -0.03,
+    "ear_angle": -0.03,
+    "ear_lobe": 0.001
+  },
+  "age": {
+    "years": 24,
+    "features": {
+      "head_age": 0.0,
+      "eye_bags_left": 0.1,
+      "eye_bags_right": 0.09,
+      "sagging": 0.0,
+      "lip_thinning": 0.0,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.63,
+    "weight": 0.35,
+    "muscle": 0.3,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "young_asian_female",
+    "tone": 1,
+    "ruddiness": 0.15,
+    "freckles": 0,
+    "pimples": 2,
+    "look": "young",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "braid01",
+    "style": "long",
+    "color": "#120e0c",
+    "greying": 0,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.8,
+    "color": "#17120f",
+    "greying": 0,
+    "style": "arched",
+    "lift": 0.15,
+    "arch": 0.25
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "female_elegantsuit01",
+    "shoes": "shoes02",
+    "wardrobe": "dress",
+    "top_color": "#a6a7a5",
+    "bottom_color": "#3b3a40",
+    "accent_color": "#d3d0c8"
+  },
+  "signature_traits": [
+    "Narrow oval face",
+    "Open round eyes",
+    "Narrow nose bridge"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: round.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
+}

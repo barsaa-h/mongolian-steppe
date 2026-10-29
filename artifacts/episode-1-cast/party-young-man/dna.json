@@ -29,16 +29,16 @@
     "head_oval": 0,
     "head_diamond": 0,
     "head_rectangular": 0,
-    "head_heart": 0.75,
+    "head_heart": 0.6,
     "head_triangular": 0,
     "head_fullness": 0,
-    "eye_size": 0,
+    "eye_size": 0.15,
     "eye_spacing": 0.16,
-    "eye_tilt": 0,
+    "eye_tilt": 0.2,
     "eye_depth": 0,
-    "upper_lid_fold": 0.32,
-    "eye_opening": -0.024,
-    "inner_lid_fold": 0.216,
+    "upper_lid_fold": 0.1,
+    "eye_opening": 0,
+    "inner_lid_fold": 0.35,
     "lower_lid_height": 0,
     "brow_height": 0,
     "brow_angle": 0.18,
@@ -54,8 +54,8 @@
     "nostril_angle": 0,
     "nose_hump": 0,
     "mouth_width": 0.28,
-    "upper_lip_fullness": 0.2,
-    "lower_lip_fullness": 0.25,
+    "upper_lip_fullness": 0.3,
+    "lower_lip_fullness": 0.3,
     "mouth_corner_tilt": 0,
     "philtrum_length": 0,
     "cupids_bow": 0,
@@ -63,8 +63,8 @@
     "upper_lip_height": 0,
     "lower_lip_height": 0,
     "jaw_width": 0,
-    "chin_width": -0.45,
-    "chin_length": 0.12,
+    "chin_width": -0.4,
+    "chin_length": 0.1,
     "chin_projection": 0,
     "chin_prognathism": 0,
     "chin_cleft": 0,
@@ -125,9 +125,10 @@
     "tone": 1,
     "ruddiness": 0,
     "freckles": 0,
-    "pimples": 7,
+    "pimples": 3,
     "look": "young",
-    "detail": 0.06
+    "detail": 0.06,
+    "oiliness": 0.35
   },
   "hair": {
     "asset": "short02",
@@ -138,9 +139,12 @@
     "volume": 1
   },
   "brows": {
-    "thickness": 1,
-    "color": "#30251f",
-    "greying": 0
+    "thickness": 1.15,
+    "color": "#18130f",
+    "greying": 0,
+    "style": "soft",
+    "lift": 0.13,
+    "arch": 0.1
   },
   "eyes": {
     "color": "brown",
@@ -165,9 +169,12 @@
     "narrow chin",
     "wider spaced open almond eyes and fuller wide lips"
   ],
-  "face_design": "Heart-shaped face, narrow chin, wider spaced open almond eyes and fuller wide lips",
+  "face_design": "Heart-shaped face, narrow chin, wider spaced open almond eyes and fuller wide lips | Artistic 2026-10-29: Base M; full dark natural brows, a few blemishes, clean shaven. | Face type: heart-shaped young face, narrow chin, open eyes, fuller lips. | Eye type: almond.",
   "states": [
     "normal"
   ],
-  "review": "draft"
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
 }

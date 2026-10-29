@@ -12,7 +12,7 @@
   "pimples": 0,
   "topColor": "#bd8b72",
   "bottomColor": "#aaa08a",
-  "hairColor": "#29231f",
+  "hairColor": "#110d0b",
   "accentColor": "#ad9470",
   "base": {
     "name": "altan",
@@ -36,7 +36,7 @@
     "shoes": "shoes02",
     "targets": {
       "head/head-scale-horiz-incr": 0.16,
-      "head/head-round": 0.48,
+      "head/head-round": 0.25,
       "eyes/l-eye-eyefold-down": 0.38,
       "eyes/r-eye-eyefold-down": 0.369,
       "eyes/l-eye-height2-decr": 0.016,
@@ -52,15 +52,18 @@
       "chin/chin-height-decr": 0.38,
       "cheek/l-cheek-bones-incr": 0.24,
       "cheek/r-cheek-bones-incr": 0.24,
-      "cheek/l-cheek-volume-incr": 0.45,
-      "cheek/r-cheek-volume-incr": 0.45,
+      "cheek/l-cheek-volume-incr": 0.15,
+      "cheek/r-cheek-volume-incr": 0.15,
       "mouth/mouth-upperlip-middle-down": 0.1,
       "mouth/mouth-lowerlip-middle-up": 0.12
+    },
+    "sculpt": {
+      "base-c": 1
     }
   },
   "states": [
     "normal"
   ],
-  "faceDesign": "Toddler round cheeks and short button nose; echoes her mother without adult facial creases",
-  "dnaHash": "449ba41facecfac350d56ed8cfbfa80ea2249fc663df27cdf2eea92e0d0747ee"
+  "faceDesign": "Toddler round cheeks and short button nose; echoes her mother without adult facial creases | Artistic 2026-10-29: Base C (small closed mouth, button nose, full rosy cheeks, soft fine brows).",
+  "dnaHash": "56c042da08054c640eb7a8a83166bdaeea5b410ba579bf065214621fa91d67f7"
 }

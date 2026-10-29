@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "hospital-guard",
+  "name": "Эмнэлгийн харуул",
+  "episode": 1,
+  "category": "featured",
+  "script_age": null,
+  "source": {
+    "facts": "EP01 v4 beat 20: clinic guard asking people about injuries.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "male",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 11435036,
+  "face": {
+    "head_height": 0.319,
+    "head_width": 0.146,
+    "head_depth": 0.136,
+    "skull_depth": 0.317,
+    "forehead_slope": 0.478,
+    "forehead_height": -0.005,
+    "temple_width": 0.063,
+    "head_round": 0,
+    "head_square": 0,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0.6,
+    "head_heart": 0,
+    "head_triangular": 0.466,
+    "head_fullness": -0.426,
+    "eye_size": 0.128,
+    "eye_spacing": -0.354,
+    "eye_tilt": 0.293,
+    "eye_depth": -0.5,
+    "upper_lid_fold": -0.2,
+    "eye_opening": -0.05,
+    "inner_lid_fold": 0.1,
+    "lower_lid_height": 0.098,
+    "brow_height": 0.185,
+    "brow_angle": -0.143,
+    "brow_depth": -0.042,
+    "nose_bridge_width": 0.24,
+    "nose_tip_width": -0.036,
+    "nose_tip_angle": -0.107,
+    "nose_width": 0.042,
+    "nose_length": -0.036,
+    "nose_projection": 0.2,
+    "nose_curve": 0.3,
+    "nostril_width": 0.139,
+    "nostril_angle": 0.183,
+    "nose_hump": 0.375,
+    "mouth_width": 0.277,
+    "upper_lip_fullness": -0.7,
+    "lower_lip_fullness": 0.098,
+    "mouth_corner_tilt": 0.128,
+    "philtrum_length": 0.143,
+    "cupids_bow": 0.171,
+    "mouth_depth": 0.385,
+    "upper_lip_height": -0.674,
+    "lower_lip_height": -0.207,
+    "jaw_width": 0.264,
+    "chin_width": -0.246,
+    "chin_length": 0.35,
+    "chin_projection": 0.35,
+    "chin_prognathism": 0.109,
+    "chin_cleft": -0.181,
+    "cheek_height": -0.344,
+    "cheekbone_prominence": 0.575,
+    "cheek_fullness": 0.199,
+    "cheek_hollow": 0.25,
+    "ear_size": -0.081,
+    "ear_angle": -0.042,
+    "ear_lobe": 0.467,
+    "nose_mid_width": -0.402,
+    "nose_base_width": -0.206
+  },
+  "asymmetry": {
+    "eye_size": 0.024,
+    "eye_spacing": 0.027,
+    "eye_tilt": 0.029,
+    "eye_depth": 0.028,
+    "upper_lid_fold": -0.001,
+    "eye_opening": 0.015,
+    "inner_lid_fold": 0.005,
+    "lower_lid_height": 0.026,
+    "cheek_height": 0.01,
+    "cheekbone_prominence": -0.018,
+    "cheek_fullness": 0.032,
+    "cheek_hollow": 0.027,
+    "ear_size": -0.027,
+    "ear_angle": -0.029,
+    "ear_lobe": 0.007
+  },
+  "age": {
+    "years": 50,
+    "features": {
+      "head_age": 0.3,
+      "eye_bags_left": 0.25,
+      "eye_bags_right": 0.23,
+      "sagging": 0.11,
+      "lip_thinning": 0.11,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.77,
+    "weight": 0.5,
+    "muscle": 0.45,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_male",
+    "tone": 0.97,
+    "ruddiness": 0.15,
+    "freckles": 6,
+    "pimples": 0,
+    "look": "weathered",
+    "detail": 0.2,
+    "undertone": -0.06
+  },
+  "hair": {
+    "asset": "short02",
+    "style": "cap",
+    "color": "#2a2520",
+    "greying": 0.35,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 1.1,
+    "color": "#211b16",
+    "greying": 0.3,
+    "style": "straight",
+    "lift": 0.1
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 0.92,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "stubble",
+    "coverage": 0.2,
+    "greying": 0.4
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#2c3442",
+    "bottom_color": "#24282e",
+    "accent_color": "#8a8070"
+  },
+  "signature_traits": [
+    "Long face with a projecting chin",
+    "Convex nose",
+    "Deep-set eyes"
+  ],
+  "face_design": "Artistic 2026-10-29 from EP01 v4.0; eye type: deepset.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-m": 1
+  }
+}

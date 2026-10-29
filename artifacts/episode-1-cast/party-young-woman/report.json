@@ -2,9 +2,9 @@
   "name": "Залуу эмэгтэй зочин",
   "bodyHeightM": 1.62,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.07613644878146615,
-  "waistWidthM": 0.3627573781221819,
-  "sourceShapeKeys": 61,
+  "headHeightFraction": 0.07989270623177654,
+  "waistWidthM": 0.3618198677704797,
+  "sourceShapeKeys": 38,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
@@ -109,9 +109,76 @@
       "role": "Details.Blemish.05",
       "vertices": 13,
       "triangles": 12
+    },
+    {
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
     }
   ],
   "packedTextures": [
+    {
+      "name": "arched.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
     {
       "name": "brown.png",
       "size": [
@@ -169,6 +236,13 @@
       ]
     },
     {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
+      ]
+    },
+    {
       "name": "normal.png",
       "size": [
         1024,
@@ -194,13 +268,6 @@
       "size": [
         2048,
         2048
-      ]
-    },
-    {
-      "name": "straight.png",
-      "size": [
-        512,
-        512
       ]
     },
     {
@@ -249,7 +316,7 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "party-young-woman",
   "episode": 1,
   "scriptAge": null,
@@ -261,7 +328,14 @@
   ],
   "wardrobe": "guest",
   "casting": "Mongolian",
-  "dnaHash": "311c7434737ba2f0d009b6dc0dc2d41cce950e079c3fd947b139725f76a8c53d",
+  "dnaHash": "88233270ed44f9bc0268b47348d53c5b22ad9183568aa27610bfd44fe393dffd",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "6cb03fdefbf431058e5afda85e350e24704c0df586eccb2062e48da5698c973b",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:04:52.671617+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

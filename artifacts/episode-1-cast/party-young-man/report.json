@@ -2,13 +2,13 @@
   "name": "Залуу эрэгтэй зочин",
   "bodyHeightM": 1.73,
   "sourceBodyVertices": 19158,
-  "headHeightFraction": 0.09883419705174142,
-  "waistWidthM": 0.3288321867918195,
-  "sourceShapeKeys": 65,
+  "headHeightFraction": 0.09198760541719825,
+  "waistWidthM": 0.3310221331781371,
+  "sourceShapeKeys": 42,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 267,
+    "Clothes.Outfit": 264,
     "Shoes": 0
   },
   "fullBodyRetained": true,
@@ -53,14 +53,14 @@
     {
       "name": "Clothes.Top",
       "role": "Clothes.Top",
-      "vertices": 4003,
-      "triangles": 7820
+      "vertices": 4002,
+      "triangles": 7818
     },
     {
       "name": "Clothes.Bottom",
       "role": "Clothes.Bottom",
-      "vertices": 4513,
-      "triangles": 8852
+      "vertices": 4514,
+      "triangles": 8854
     },
     {
       "name": "Hands.L",
@@ -99,28 +99,64 @@
       "triangles": 12
     },
     {
-      "name": "Details.Blemish.04",
-      "role": "Details.Blemish.04",
-      "vertices": 13,
-      "triangles": 12
+      "name": "Details.Lashes.eye.L.Upper",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
     },
     {
-      "name": "Details.Blemish.05",
-      "role": "Details.Blemish.05",
-      "vertices": 13,
-      "triangles": 12
+      "name": "Details.WetLine.eye.L.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
     },
     {
-      "name": "Details.Blemish.06",
-      "role": "Details.Blemish.06",
-      "vertices": 13,
-      "triangles": 12
+      "name": "Details.Caruncle.eye.L",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
     },
     {
-      "name": "Details.Blemish.07",
-      "role": "Details.Blemish.07",
-      "vertices": 13,
-      "triangles": 12
+      "name": "Details.Lashes.eye.L.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.L.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.Lashes.eye.R.Upper",
+      "role": "Eyelashes",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.WetLine.eye.R.Upper",
+      "role": "Eyes.WetLine",
+      "vertices": 20,
+      "triangles": 18
+    },
+    {
+      "name": "Details.Caruncle.eye.R",
+      "role": "Eyes.Caruncle",
+      "vertices": 6,
+      "triangles": 4
+    },
+    {
+      "name": "Details.Lashes.eye.R.Lower",
+      "role": "Eyelashes",
+      "vertices": 22,
+      "triangles": 20
+    },
+    {
+      "name": "Details.WetLine.eye.R.Lower",
+      "role": "Eyes.WetLine",
+      "vertices": 22,
+      "triangles": 20
     }
   ],
   "packedTextures": [
@@ -174,6 +210,13 @@
       ]
     },
     {
+      "name": "lashes.png",
+      "size": [
+        512,
+        96
+      ]
+    },
+    {
       "name": "male_casualsuit01_diffuse.png",
       "size": [
         2048,
@@ -209,10 +252,10 @@
       ]
     },
     {
-      "name": "straight.png",
+      "name": "soft.png",
       "size": [
-        512,
-        512
+        1024,
+        1024
       ]
     },
     {
@@ -261,19 +304,26 @@
     "viseme_M"
   ],
   "controlMorphs": 0,
-  "talkCheck": false,
+  "talkCheck": true,
   "id": "party-young-man",
   "episode": 1,
   "scriptAge": null,
   "skinSource": "young_asian_male",
-  "skinDetailCount": 7,
+  "skinDetailCount": 3,
   "wrinkleParts": 0,
   "storyStates": [
     "normal"
   ],
   "wardrobe": "guest",
   "casting": "Mongolian",
-  "dnaHash": "445a2ef7a26122e355302bc0ae1fa9d2d845b0fa6970f9a1d803283877e8c1f8",
+  "dnaHash": "32dfc1fde0c628da30e409dde8024a6dfb6908a572354ddd2eba799a1af7d9b0",
   "baseStage": "adult",
-  "sourceIndexMap": true
+  "sourceIndexMap": true,
+  "glbSha256": "6c405a28c8f6b200497862f29c130f3392efabd52d33c798910133cb14bd58d2",
+  "clips": [
+    "Deformation_Check",
+    "Talk_Check"
+  ],
+  "exportInspectedAt": "2026-10-28T18:03:44.395852+00:00",
+  "blenderVersion": "5.2.2 LTS"
 }

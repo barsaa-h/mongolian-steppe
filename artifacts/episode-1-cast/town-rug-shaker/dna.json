@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "town-rug-shaker",
+  "name": "town-rug-shaker",
+  "episode": 1,
+  "category": "background",
+  "script_age": null,
+  "source": {
+    "facts": "Someone shaking a rug from a balcony (beat 03). Age and look are artistic.",
+    "references": [
+      "artifacts/character-master/sources/story/EP01_AyaGaa_Huvaalts_25min_Beat_Sheet_v4.0.md"
+    ]
+  },
+  "base": "adult",
+  "sex": "female",
+  "ancestry_preset": "mongolian",
+  "casting": "Mongolian",
+  "seed": 158978622,
+  "face": {
+    "head_height": 0.003,
+    "head_width": 0.197,
+    "head_depth": 0.0,
+    "skull_depth": -0.342,
+    "forehead_slope": 0.185,
+    "forehead_height": -0.403,
+    "temple_width": -0.375,
+    "head_round": 0,
+    "head_square": 0.394,
+    "head_oval": 0,
+    "head_diamond": 0,
+    "head_rectangular": 0,
+    "head_heart": 0,
+    "head_triangular": 0,
+    "head_fullness": 0.06,
+    "eye_size": -0.241,
+    "eye_spacing": 0.096,
+    "eye_tilt": 0.2,
+    "eye_depth": 0.112,
+    "upper_lid_fold": 0.1,
+    "eye_opening": 0,
+    "inner_lid_fold": 0.35,
+    "lower_lid_height": 0.593,
+    "brow_height": 0.008,
+    "brow_angle": -0.045,
+    "brow_depth": 0.204,
+    "nose_bridge_width": -0.7,
+    "nose_tip_width": -0.038,
+    "nose_tip_angle": -0.644,
+    "nose_width": 0.426,
+    "nose_length": 0.54,
+    "nose_projection": -0.201,
+    "nose_curve": -0.513,
+    "nostril_width": -0.283,
+    "nostril_angle": 0.18,
+    "nose_hump": 0.078,
+    "mouth_width": 0.286,
+    "upper_lip_fullness": 0.01,
+    "lower_lip_fullness": 0.121,
+    "mouth_corner_tilt": 0.432,
+    "philtrum_length": 0.09,
+    "cupids_bow": 0.071,
+    "mouth_depth": 0.407,
+    "upper_lip_height": 0.557,
+    "lower_lip_height": -0.161,
+    "jaw_width": -0.323,
+    "chin_width": -0.391,
+    "chin_length": -0.234,
+    "chin_projection": -0.473,
+    "chin_prognathism": 0.215,
+    "chin_cleft": -0.104,
+    "cheek_height": -0.541,
+    "cheekbone_prominence": 0.561,
+    "cheek_fullness": -0.172,
+    "cheek_hollow": 0.182,
+    "ear_size": 0.143,
+    "ear_angle": -0.099,
+    "ear_lobe": -0.2,
+    "nose_mid_width": 0.121,
+    "nose_base_width": 0.208
+  },
+  "asymmetry": {
+    "eye_size": 0.019,
+    "eye_spacing": 0.005,
+    "eye_tilt": 0.022,
+    "eye_depth": 0.007,
+    "upper_lid_fold": -0.017,
+    "eye_opening": -0.029,
+    "inner_lid_fold": 0.034,
+    "lower_lid_height": -0.019,
+    "cheek_height": 0.0,
+    "cheekbone_prominence": -0.01,
+    "cheek_fullness": 0.007,
+    "cheek_hollow": 0.006,
+    "ear_size": 0.007,
+    "ear_angle": 0.011,
+    "ear_lobe": -0.026
+  },
+  "age": {
+    "years": 52,
+    "features": {
+      "head_age": 0.34,
+      "eye_bags_left": 0.27,
+      "eye_bags_right": 0.25,
+      "sagging": 0.13,
+      "lip_thinning": 0.13,
+      "brow_droop": 0
+    }
+  },
+  "body": {
+    "height_m": 1.58,
+    "weight": 0.62,
+    "muscle": 0.52,
+    "proportions": 0.5,
+    "height": 0.5,
+    "shoulders": 0,
+    "chest": 0,
+    "belly": 0,
+    "hips": 0,
+    "arm_thickness": 0,
+    "leg_thickness": 0,
+    "posture": 0
+  },
+  "skin": {
+    "asset": "middleage_asian_female",
+    "tone": 1,
+    "ruddiness": 0.27,
+    "freckles": 0,
+    "pimples": 0,
+    "look": "tired",
+    "detail": 0.06
+  },
+  "hair": {
+    "asset": "long01",
+    "style": "long",
+    "color": "#2a2622",
+    "greying": 0.31,
+    "length": 1,
+    "volume": 1
+  },
+  "brows": {
+    "thickness": 0.9,
+    "color": "#15110e",
+    "greying": 0.3,
+    "style": "arched",
+    "lift": 0.09,
+    "arch": 0.1
+  },
+  "eyes": {
+    "color": "brown",
+    "iris_scale": 1,
+    "sclera_tint": "#f0eadf"
+  },
+  "facial_hair": {
+    "style": "none",
+    "coverage": 0,
+    "greying": 0
+  },
+  "clothing": {
+    "asset": "male_casualsuit05",
+    "shoes": "shoes02",
+    "wardrobe": "coat",
+    "top_color": "#2e3a4a",
+    "bottom_color": "#2a2a2c",
+    "accent_color": "#2e3a4a"
+  },
+  "signature_traits": [
+    "almond eyes",
+    "nose bridge width",
+    "nose tip angle"
+  ],
+  "face_design": "Background draft for EP01 v4.0; eye type almond; wardrobe coat.",
+  "states": [
+    "normal"
+  ],
+  "review": "draft",
+  "sculpt": {
+    "base-f": 1
+  }
+}

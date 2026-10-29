@@ -54,5 +54,8 @@
     "eyes/r-eye-bag-incr": 0.23,
     "mouth/mouth-upperlip-middle-down": 0.1,
     "mouth/mouth-lowerlip-middle-up": 0.12
+  },
+  "sculpt": {
+    "base-m": 1
   }
 }
