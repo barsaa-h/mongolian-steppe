@@ -1,0 +1,1 @@
+[WARN ] Patching input material line to cater for non-normalized key ('bumpTexture', 'bumpmapTexture')

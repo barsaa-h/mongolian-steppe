@@ -20,7 +20,8 @@ class RecipeTests(unittest.TestCase):
         self.assertEqual(set(principals), set(canon))
         for id,p in principals.items():
             self.assertEqual((p['name'],p['scriptAge']), (canon[id]['name'],canon[id]['age']))
-        self.assertEqual(len(self.profiles),13)
+        # 13 v4.0 gallery actors + 10 new v4.2 roles + Tungalag (cousin) and Pasha (yard-loader).
+        self.assertEqual(len(self.profiles),25)
         self.assertNotIn('radio', {p['id'] for p in self.profiles})
     def test_valid_local_assets_and_unique_face_recipes(self):
         for recipe in self.recipes:

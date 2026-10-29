@@ -308,8 +308,8 @@
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "7f4d850c2c0ec4801a2fb35da0044b308d94983630ac26fa14ca8dc5ff1e86cf"
+    "faceDesign": "Artistic choices for the Naran bus driver who calls for a push and jokes the passenger off (script states no age or look): windshield squint, wide calling mouth, forward wheel-slump. Draft.",
+    "dnaHash": "19347519fb632711f5166142e4693fd8d9868796f562785921ba96e03ffdd3fc"
   },
   {
     "id": "bus-passenger",
@@ -322,7 +322,7 @@
     "wardrobe": "coat",
     "hairstyle": "ponytail",
     "skinLook": "adult",
-    "pimples": 1,
+    "pimples": 0,
     "topColor": "#5b4a63",
     "bottomColor": "#2f2a33",
     "hairColor": "#29231f",
@@ -330,8 +330,8 @@
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "2278dcdbc9fc20390cced5ee02ac1cd20b04b2ebbd9d6fc1ad6de85d5c54b575"
+    "faceDesign": "Artistic choices for the passenger who complains they push the bus every morning (script states no age or look): thin downturned mouth, chin-up narrow face, protruding eyes and an uneven brow. Draft.",
+    "dnaHash": "783e8590f735d3dea5c1293aa296c44f3e964f920d2691875dee4890fe709938"
   },
   {
     "id": "kiosk-boy",
@@ -343,7 +343,7 @@
     "casting": "Mongolian",
     "wardrobe": "coat",
     "hairstyle": "short",
-    "skinLook": "toddler",
+    "skinLook": "young",
     "pimples": 0,
     "topColor": "#7a5a3a",
     "bottomColor": "#2a2a2c",
@@ -352,8 +352,8 @@
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "f9f77e5d4e9ef744e6797e6546428fd4ea143048a57eee3261a2e65f4518d518"
+    "faceDesign": "Artistic choices for the boy who asks the kiosk seller for bread until his mother pays (script states no age; production reads him as 7): round child face, hungry wide eyes, small body. Not a scaled-down adult. Draft.",
+    "dnaHash": "e44a5b27068ca15cfe46cb69322a4e9d43125627136c221268b218069c1a6817"
   },
   {
     "id": "kiosk-seller",
@@ -374,8 +374,8 @@
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "074fefb76269a772a005db8ac477b817bded33878dd8df1c37aa7e280549855a"
+    "faceDesign": "Artistic choices for the seller who holds the loaf until the boy’s mother comes (script states no age or look): coin-counting eyes, square jaw, cold-reddened nose. Draft.",
+    "dnaHash": "376dad872f956ea0f5c932474e7e3b02a61ed8f57bfa2f8d8bdee9825b7dcdc1"
   },
   {
     "id": "door-neighbour",
@@ -388,7 +388,7 @@
     "wardrobe": "dress",
     "hairstyle": "long",
     "skinLook": "young",
-    "pimples": 1,
+    "pimples": 0,
     "topColor": "#7a5a3a",
     "bottomColor": "#3a2f28",
     "hairColor": "#110d0b",
@@ -396,8 +396,8 @@
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "59472ee16a2c3199076dcfd64fae147f828909e0f46fad432d9c5904f1a6154d"
+    "faceDesign": "Artistic choices for the neighbour who brings an extra plate and tells Altan her father will come (script states no age or look): kind wide-set eyes, half-smile, full cheeks. Draft.",
+    "dnaHash": "49859a88d7c1aa161d3d9630b122caf493c2a42cbbe00759ff9044e15bdfa1ed"
   },
   {
     "id": "older-neighbour-woman",
@@ -413,13 +413,13 @@
     "pimples": 0,
     "topColor": "#345e59",
     "bottomColor": "#323c38",
-    "hairColor": "#68645d",
+    "hairColor": "#8a8680",
     "accentColor": "#ad9470",
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "c67a277f5a4197c11f30376e834bb397e8aee99c9577422823b9d159b3ff2b21"
+    "faceDesign": "Artistic choices for the older neighbour who coughs and blames yesterday’s coal dust (script states no age or look): pinched mouth, irritated red nose, forward stoop. Draft.",
+    "dnaHash": "a97f2731a178281c4f1161ac18c813bc37ea0120ac51657858778922a327f79a"
   },
   {
     "id": "car-driver",
@@ -440,8 +440,8 @@
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "86fd06a0df8c61be42c786e6ffeb72456b0c3dcf852b31c3a63056f34848818b"
+    "faceDesign": "Artistic choices for the driver who steers and counts while Bataa and Togoo push (script states no age or look): uneven squint, clenched jaw, braced shoulders. Draft.",
+    "dnaHash": "0eb8d434151c529a7878325118ae608820d6fe1d56ec30a75ed136d91bcce3b4"
   },
   {
     "id": "second-driver",
@@ -453,7 +453,7 @@
     "casting": "Mongolian",
     "wardrobe": "coat",
     "hairstyle": "short",
-    "skinLook": "adult",
+    "skinLook": "young",
     "pimples": 0,
     "topColor": "#28344a",
     "bottomColor": "#2a2a2a",
@@ -462,8 +462,8 @@
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "23870ca5d1e47ed668b2d0bbcf39726b049b08a29c5606425e236ef5c7e202ce"
+    "faceDesign": "Artistic choices for the second driver who carries a plate, cries out and runs through the rear door (script states no age or look): wide startled eyes, narrow jaw, slight frame. Draft.",
+    "dnaHash": "d04ade310475abc0ba71c709e4275143d91b48f956108322b3a1b01d4dbf2ace"
   },
   {
     "id": "gate-bleeding-man",
@@ -475,17 +475,17 @@
     "casting": "Mongolian",
     "wardrobe": "jacket",
     "hairstyle": "receding",
-    "skinLook": "weathered",
+    "skinLook": "tired",
     "pimples": 0,
-    "topColor": "#4b5141",
-    "bottomColor": "#343b43",
+    "topColor": "#6b5346",
+    "bottomColor": "#3a342e",
     "hairColor": "#29231f",
-    "accentColor": "#ad9470",
+    "accentColor": "#8d7356",
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "0883c0c9edffc424fe436b3c49bee7761168df6741d3a3b457c288c526a4c9e5"
+    "faceDesign": "Artistic choices: he is the man at the hospital gate pulling a sleeve back. The wound is his own right forearm, not a bite on the left wrist (that mark is Ganaa’s). Visible here: pain squint, drained face, head dropped toward that arm. The shared builder only meshes a forearm bandage for Ganaa and Dasha, so no bandage mesh is in this build. Draft.",
+    "dnaHash": "5277e22dc6ddca921ba9a8973cc2f9d24ce61cbe4d66b845a79fd0d08b38bc6d"
   },
   {
     "id": "orderly",
@@ -497,7 +497,7 @@
     "casting": "Mongolian",
     "wardrobe": "coat",
     "hairstyle": "cap",
-    "skinLook": "weathered",
+    "skinLook": "tired",
     "pimples": 0,
     "topColor": "#2c3442",
     "bottomColor": "#24282e",
@@ -506,7 +506,51 @@
     "states": [
       "normal"
     ],
-    "faceDesign": "Artistic draft: age, body, skin, wardrobe and signature traits are choices for Naran in late 1998; inspect before approval.",
-    "dnaHash": "a27d2cacefa4e5af1b53c6e0502afe364ce929ee2c4dc1209c76e7bc30094dbd"
+    "faceDesign": "Artistic choices for the tired orderly who asks the bleeding man what happened to his arm (script states no age or look): deep bags, half-shut eyes, forward slump. Draft.",
+    "dnaHash": "0b65b11d3fb69eb0c7c4321dd54fec92426e26e532ffb6eb3f87c40bb837939f"
+  },
+  {
+    "id": "cousin",
+    "name": "Тунгалаг",
+    "episode": 1,
+    "category": "featured",
+    "scriptAge": null,
+    "ageNote": "EP01 v4.2: Tungalag is a cousin who rocks her infant, takes the infant to the bedroom and later responds to crying.",
+    "casting": "Mongolian",
+    "wardrobe": "dress",
+    "hairstyle": "long",
+    "skinLook": "young",
+    "pimples": 0,
+    "topColor": "#5e6c74",
+    "bottomColor": "#3d4548",
+    "hairColor": "#110d0b",
+    "accentColor": "#c4b39a",
+    "states": [
+      "normal"
+    ],
+    "faceDesign": "Artistic choices for Tungalag, the cousin who rocks her infant to sleep and carries the baby to the bedroom (script states no age or look): hushing mouth, mild new-mother bags, forward rocking head. Eye type: low soft lid. Draft.",
+    "dnaHash": "217e8cea3b4b8f11062368678b5be3c016be4a9f6c51bbaaac1d9d268b660a36"
+  },
+  {
+    "id": "yard-loader",
+    "name": "Паша",
+    "episode": 1,
+    "category": "featured",
+    "scriptAge": null,
+    "ageNote": "EP01 v4.2: Pasha is a Russian loader who knows Ganaa and helps with the cargo strap.",
+    "casting": "Russian casting",
+    "wardrobe": "coat",
+    "hairstyle": "short",
+    "skinLook": "weathered",
+    "pimples": 0,
+    "topColor": "#4b4a3a",
+    "bottomColor": "#2c2b25",
+    "hairColor": "#15110e",
+    "accentColor": "#7a6a4a",
+    "states": [
+      "normal"
+    ],
+    "faceDesign": "Artistic choices on top of the script fact that Pasha is a Russian loader who knows Ganaa and helps with the strap: broad face, broken nose, wide shoulders and thick arms. Eye color blue is an artistic choice. Hand size is not a separate DNA control; thickness is the upper-arm morph. Draft.",
+    "dnaHash": "2040344947618a6de8bc1e20e2e483da4c1813af9c7d2b5d368790d98b60e672"
   }
 ]
