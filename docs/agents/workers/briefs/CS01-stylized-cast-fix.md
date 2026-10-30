@@ -76,7 +76,7 @@ Rebuild those 12 first (`blender -b --factory-startup --python scripts/build-cas
 
 ## Rules
 - Blender is headless only, and **always through the lock**: `flock /home/barsaa/ms-workers/.blender.lock blender -b ...`. One heavy job at a time. Never use the Blender MCP.
-- Iteration builds go to `~/.cache/khaniad-builds/<id>-cs01`, not `/tmp` (a RAM disk).
+- Iteration builds go to `~/.cache/khaniad-builds/<id>-cs01` (if your sandbox denies that path, use `.cache/cs01/` inside your worktree; it is git-ignored or must stay uncommitted), never `/tmp` (a RAM disk).
 - Only touch `scripts/build-cast.py`, `assets/cast/**` and `artifacts/stylized-cast-qa/**`. Don't touch `src/`, `episodes/` or the MPFB/DNA cast. Don't commit.
 - Keep a three.js/GLTFLoader-compatible GLB (skinned mesh + morph targets + clips). `npm test` must still pass. If a legacy test pins the old rig names, update it and say so.
 
