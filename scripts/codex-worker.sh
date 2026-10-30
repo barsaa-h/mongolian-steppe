@@ -20,10 +20,11 @@ stamp=$(date +%Y%m%d-%H%M%S)
 cp "$brief" "$runs/$stamp-brief.md"
 
 # Rules first, then the brief. workspace-write: writes only inside the worktree.
+# SANDBOX=danger-full-access only for jobs that need the GPU/display (e.g. Godot renders).
 { cat "$repo/docs/agents/workers/WORKER_RULES.md"; echo; echo "---"; echo; cat "$brief"; } |
 codex exec - \
   -C "$tree" -m "$model" -c model_reasoning_effort="\"$effort\"" \
-  -s workspace-write --skip-git-repo-check \
+  -s "${SANDBOX:-workspace-write}" --skip-git-repo-check \
   -c mcp_servers.blender.enabled=false \
   -o "$runs/$stamp-report.md" > "$runs/$stamp-log.txt" 2>&1 || true
 
