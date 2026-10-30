@@ -1,0 +1,8 @@
+.godot/
+.godot-home/
+imports/
+out/
+__pycache__/
+*.tmp
+!compare/*.log
+!compare/logs/*.log

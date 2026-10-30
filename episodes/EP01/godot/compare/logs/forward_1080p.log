@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.335 - Forward+ - Using Device #0: Intel - Intel(R) Iris(R) Xe Graphics (ADL GT2)
+
+Movie Maker mode enabled, recording movie in 960×540 @ 24 FPS...
+SHOT camera=S001 still=-1.0 renderer=forward_plus viewport=(1920.0, 1080.0)
+--------------------------------------------------------------------------------
+Done recording movie at path: /home/barsaa/ms-workers/G01/episodes/EP01/godot/out/forward_1080p.avi
+192 frames at 24 FPS (movie length: 00:00:08:00), recorded in 00:00:18 (44% of real-time speed).
+CPU render time: 0.27 seconds (average: 1.40 ms/frame)
+GPU render time: 5.92 seconds (average: 30.86 ms/frame)
+Encoding time: 2.47 seconds (average: 12.88 ms/frame)
+--------------------------------------------------------------------------------

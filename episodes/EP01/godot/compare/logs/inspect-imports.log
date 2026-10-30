@@ -1,0 +1,78 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ASSET apartment
+MORPH_MESHES 0
+ASSET ganaa
+RIG Character_Rig/Skeleton3D bones=137 transform=[X: (1.06262, 0.0, 0.0), Y: (0.0, 1.06262, 0.0), Z: (0.0, 0.0, 1.06262), O: (0.0, 0.0175, 0.0)]
+BONE root index=0 rest=(0.0, 0.848261, -0.075822)
+BONE head index=77 rest=(-0.0, 1.469382, 0.040265)
+BONE upperleg01.L index=2 rest=(0.104047, 0.84342, -0.013181)
+BONE lowerleg01.L index=4 rest=(0.14356, 0.464229, 0.017062)
+BONE foot.L index=6 rest=(0.173515, 0.065284, 0.001383)
+BONE upperarm01.R index=50 rest=(-0.173071, 1.279945, 0.005773)
+BONE lowerarm01.R index=52 rest=(-0.32769, 1.106918, 0.009037)
+BONE wrist.R index=54 rest=(-0.446851, 0.994435, 0.176679)
+BONE wrist.L index=28 rest=(0.446851, 0.994435, 0.176679)
+ANIMATIONS ["Deformation_Check", "Talk_Check"]
+MORPH_MESHES 27
+ASSET altan
+RIG Character_Rig/Skeleton3D bones=137 transform=[X: (1.234605, 0.0, 0.0), Y: (0.0, 1.234605, 0.0), Z: (0.0, 0.0, 1.234605), O: (0.0, 0.00961, 0.0)]
+BONE root index=0 rest=(0.0, 0.362396, -0.033863)
+BONE head index=77 rest=(-0.0, 0.667116, 0.008913)
+BONE upperleg01.L index=2 rest=(0.045166, 0.359934, 0.014018)
+BONE lowerleg01.L index=4 rest=(0.065815, 0.187264, 0.02183)
+BONE foot.L index=6 rest=(0.08438, 0.032649, -0.000069)
+BONE upperarm01.R index=50 rest=(-0.074022, 0.573548, 0.001832)
+BONE lowerarm01.R index=52 rest=(-0.14791, 0.491046, 0.000022)
+BONE wrist.R index=54 rest=(-0.206387, 0.435611, 0.082394)
+BONE wrist.L index=28 rest=(0.206387, 0.435611, 0.082394)
+ANIMATIONS ["Deformation_Check", "Talk_Check"]
+MORPH_MESHES 14
+ALTAN_MESH Body_Skin
+ALTAN_MESH Clothes_BirthdaySkirt
+ALTAN_MESH Clothes_Top
+ALTAN_MESH Details_Caruncle_eye_L
+ALTAN_MESH Details_Caruncle_eye_R
+ALTAN_MESH Details_Lashes_eye_L_Lower
+ALTAN_MESH Details_Lashes_eye_L_Upper
+ALTAN_MESH Details_Lashes_eye_R_Lower
+ALTAN_MESH Details_Lashes_eye_R_Upper
+ALTAN_MESH Details_WetLine_eye_L_Lower
+ALTAN_MESH Details_WetLine_eye_L_Upper
+ALTAN_MESH Details_WetLine_eye_R_Lower
+ALTAN_MESH Details_WetLine_eye_R_Upper
+ALTAN_MESH Eyebrows
+ALTAN_MESH Eyes
+ALTAN_MESH Hair
+ALTAN_MESH Hands_L
+ALTAN_MESH Hands_R
+ALTAN_MESH Props_PaperCrown
+ALTAN_MESH Shoes
+ALTAN_MESH Teeth
+ALTAN_MESH Tongue
+ASSET party-guest-01
+RIG Character_Rig/Skeleton3D bones=137 transform=[X: (1.061857, 0.0, 0.0), Y: (0.0, 1.061857, 0.0), Z: (0.0, 0.0, 1.061857), O: (0.0, 0.017895, 0.0)]
+BONE root index=0 rest=(0.0, 0.847878, -0.069321)
+BONE head index=77 rest=(-0.0, 1.473963, 0.045304)
+BONE upperleg01.L index=2 rest=(0.103117, 0.849968, -0.014771)
+BONE lowerleg01.L index=4 rest=(0.143708, 0.460201, 0.017705)
+BONE foot.L index=6 rest=(0.177637, 0.065981, 0.005376)
+BONE upperarm01.R index=50 rest=(-0.174726, 1.283228, 0.008196)
+BONE lowerarm01.R index=52 rest=(-0.330441, 1.106788, 0.008397)
+BONE wrist.R index=54 rest=(-0.452992, 0.991203, 0.180761)
+BONE wrist.L index=28 rest=(0.452992, 0.991203, 0.180761)
+ANIMATIONS ["Deformation_Check", "Talk_Check"]
+MORPH_MESHES 14
+ASSET party-guest-02
+RIG Character_Rig/Skeleton3D bones=137 transform=[X: (1.105611, 0.0, 0.0), Y: (0.0, 1.105611, 0.0), Z: (0.0, 0.0, 1.105611), O: (0.0, 0.011632, 0.0)]
+BONE root index=0 rest=(0.0, 0.783611, -0.059082)
+BONE head index=77 rest=(0.0, 1.361761, 0.046908)
+BONE upperleg01.L index=2 rest=(0.090312, 0.77038, 0.017501)
+BONE lowerleg01.L index=4 rest=(0.124624, 0.423692, 0.045777)
+BONE foot.L index=6 rest=(0.160181, 0.066988, 0.028055)
+BONE upperarm01.R index=50 rest=(-0.144262, 1.188179, 0.028999)
+BONE lowerarm01.R index=52 rest=(-0.290529, 1.030215, 0.035681)
+BONE wrist.R index=54 rest=(-0.393541, 0.920032, 0.163676)
+BONE wrist.L index=28 rest=(0.393541, 0.920032, 0.163676)
+ANIMATIONS ["Deformation_Check", "Talk_Check"]
+MORPH_MESHES 14

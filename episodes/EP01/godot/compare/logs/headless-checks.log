@@ -1,0 +1,8 @@
+import: exit 0
+build: exit 0
+validate: exit 0
+VALIDATION PASS: 0 failures; four rigs, 549 tracks, three times, two camera matrices
+runtime-8s: exit 0
+SHOT complete: 192 frames / 8 s at 24 fps
+runtime-S004: exit 0
+SHOT camera=S004 still=4.0 renderer=forward_plus viewport=(64.0, 64.0)

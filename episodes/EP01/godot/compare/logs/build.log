@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CAMERA CAM_B23_S001 Blender=[0.28000000119209, 0.94999998807907, 0.77999997138977] Godot=(0.28, 0.78, -0.95) vertical_fov=32.2688026428223
+CAMERA CAM_B23_S004 Blender=[0.30000001192093, 0.69999998807907, 1.10000002384186] Godot=(0.3, 1.1, -0.7) vertical_fov=32.2688026428223
+BUILD PASS: apartment, four rigged actors, 8 s animation, two cameras, dressing and lighting saved

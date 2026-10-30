@@ -1,0 +1,58 @@
+WorkerThreadPool: 16 threads, 4 max low-priority.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+SDL: Init OK!
+Accessibility: AccessKit driver loaded.
+ERROR: X11 Display is not available
+   at: DisplayServerX11 (platform/linuxbsd/x11/display_server_x11.cpp:6943)
+WARNING: Display driver x11 failed, falling back to wayland.
+     at: setup2 (main/main.cpp:3380)
+Connecting to the default Wayland display.
+ERROR: Can't connect to a Wayland display.
+   at: init (platform/linuxbsd/wayland/wayland_thread.cpp:5589)
+ERROR: Could not initialize the Wayland thread.
+   at: DisplayServerWayland (platform/linuxbsd/wayland/display_server_wayland.cpp:2296)
+ERROR: Can't create the Wayland display server.
+   at: create_func (platform/linuxbsd/wayland/display_server_wayland.cpp:2264)
+ERROR: Unable to create DisplayServer, all display drivers failed.
+Use "--headless" command line argument to run the engine in headless mode if this is desired (e.g. for continuous integration).
+   at: setup2 (main/main.cpp:3390)
+WARNING: 6 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+     at: cleanup (core/object/object.cpp:2536)
+Leaked instance: NavigationServer2DManager:3137339554
+Leaked instance: NavigationServer3DManager:3154116771
+Leaked instance: GDScriptEditorTranslationParserPlugin:9223372040092778664 - Reference count: 2
+Leaked instance: AccessibilityServer:3338666158
+Leaked instance: DisplayServer:3355443375
+Leaked instance: NativeMenu:3372220592
+Hint: Leaked instances typically happen when nodes are removed from the scene tree (with `remove_child()`) but not freed (with `free()` or `queue_free()`).
+Orphan StringName: add_icon_radio_check_item (static: 0, total: 1)
+Orphan StringName: add_filter (static: 0, total: 1)
+Orphan StringName: add_tab (static: 0, total: 1)
+Orphan StringName: filters (static: 0, total: 1)
+Orphan StringName: add_icon_item (static: 0, total: 1)
+Orphan StringName: add_item (static: 0, total: 1)
+Orphan StringName: set_filters (static: 0, total: 1)
+Orphan StringName: add_icon_check_item (static: 0, total: 1)
+Orphan StringName: add_multistate_item (static: 0, total: 1)
+Orphan StringName: set_tab_title (static: 0, total: 1)
+Orphan StringName: atr (static: 0, total: 1)
+Orphan StringName: add_check_item (static: 0, total: 1)
+Orphan StringName: text (static: 0, total: 1)
+Orphan StringName: AudioStream (static: 0, total: 1)
+Orphan StringName: tr (static: 0, total: 1)
+Orphan StringName: add_submenu_item (static: 0, total: 1)
+Orphan StringName: add_submenu_node_item (static: 0, total: 1)
+Orphan StringName: set_tooltip_text (static: 0, total: 1)
+Orphan StringName: AudioStreamRandomizer (static: 0, total: 6)
+Orphan StringName: tr_n (static: 0, total: 1)
+Orphan StringName: placeholder_text (static: 0, total: 1)
+Orphan StringName: set_text (static: 0, total: 1)
+Orphan StringName: atr_n (static: 0, total: 1)
+Orphan StringName: tooltip_text (static: 0, total: 1)
+Orphan StringName: add_separator (static: 0, total: 1)
+Orphan StringName: set_placeholder (static: 0, total: 1)
+Orphan StringName: set_item_text (static: 0, total: 1)
+Orphan StringName: add_radio_check_item (static: 0, total: 1)
+StringName: 28 unclaimed string names at exit.
