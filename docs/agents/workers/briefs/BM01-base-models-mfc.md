@@ -1,6 +1,6 @@
 # Brief BM01: Finish the three base models (Base M, Base F, Base C child)
 
-**Worker:** Codex. **Priority:** #1. The EP01 cast is rebuilt on these bases this week.
+**Worker:** Grok (reassigned from Codex, whose sandbox cannot write the MPFB log folder). **Priority:** #1. The EP01 cast is rebuilt on these bases this week.
 
 ## Why
 The user's direction, 31 Oct 2026:
