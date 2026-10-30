@@ -29,7 +29,7 @@ The final episode look is **PS2-era stylized realism** (Silent Hill 2 cutscene, 
 7. Keep everything that works: the 137-bone rig, expressions (neutral recovers exactly), clothes fitting, UVs, GLB export. `qa_actor.py` must pass for every base build.
 
 ## Rules
-- Blender headless only, through the **new lock** (the old one is held by a stuck process):
+- Blender headless only, through the **new lock** (the file already exists; the old one is held by a stuck process):
   `timeout 900 flock -w 600 /home/barsaa/ms-workers/.blender-v2.lock blender -b --factory-startup --python-exit-code 1 ...`. If it times out or won't start, stop and report; don't wait forever. Never use the Blender MCP.
 - Builds go in `~/.cache/khaniad-builds/<id>-bm01`. If the sandbox denies that, use `.cache/bm01/` inside your worktree. Never use `/tmp`.
 - Write only under `artifacts/character-master/**` (scripts, `sculpt/*.target`, presets, `work/`), `work/sculpt/**` and `artifacts/episode-1-cast/dna/bases/**`. Do **not** rebuild or overwrite the published cast (`artifacts/episode-1-cast/<id>/`, `assets/cast/**`). Don't touch `src/` or `episodes/`. No commits.
