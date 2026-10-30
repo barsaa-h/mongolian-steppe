@@ -4,11 +4,11 @@
   "sourceBodyVertices": 19158,
   "headHeightFraction": 0.1330265055548928,
   "waistWidthM": 0.4557697300134227,
-  "sourceShapeKeys": 31,
+  "sourceShapeKeys": 35,
   "rigBones": 137,
   "fingerBones": 30,
   "garmentCorrections": {
-    "Clothes.Outfit": 264,
+    "Clothes.Outfit": 360,
     "Shoes": 56
   },
   "fullBodyRetained": true,
@@ -53,8 +53,8 @@
     {
       "name": "Clothes.Top",
       "role": "Clothes.Top",
-      "vertices": 1810,
-      "triangles": 3464
+      "vertices": 1311,
+      "triangles": 2524
     },
     {
       "name": "Hands.L",
@@ -71,8 +71,8 @@
     {
       "name": "Body.Skin",
       "role": "Body",
-      "vertices": 5533,
-      "triangles": 10830
+      "vertices": 6340,
+      "triangles": 12468
     },
     {
       "name": "Clothes.BirthdaySkirt",
@@ -89,14 +89,14 @@
     {
       "name": "Details.Lashes.eye.L.Upper",
       "role": "Eyelashes",
-      "vertices": 24,
-      "triangles": 22
+      "vertices": 18,
+      "triangles": 16
     },
     {
       "name": "Details.WetLine.eye.L.Upper",
       "role": "Eyes.WetLine",
-      "vertices": 24,
-      "triangles": 22
+      "vertices": 18,
+      "triangles": 16
     },
     {
       "name": "Details.Caruncle.eye.L",
@@ -119,14 +119,14 @@
     {
       "name": "Details.Lashes.eye.R.Upper",
       "role": "Eyelashes",
-      "vertices": 24,
-      "triangles": 22
+      "vertices": 20,
+      "triangles": 18
     },
     {
       "name": "Details.WetLine.eye.R.Upper",
       "role": "Eyes.WetLine",
-      "vertices": 24,
-      "triangles": 22
+      "vertices": 20,
+      "triangles": 18
     },
     {
       "name": "Details.Caruncle.eye.R",
@@ -177,14 +177,14 @@
       ]
     },
     {
-      "name": "female_elegantsuit01_ao.png",
+      "name": "female_casualsuit02_ao.png",
       "size": [
         2048,
         2048
       ]
     },
     {
-      "name": "female_elegantsuit01_diffuse.png",
+      "name": "female_casualsuit02_diffuse.png",
       "size": [
         2048,
         2048
@@ -304,14 +304,14 @@
   ],
   "wardrobe": "toddler-dress",
   "casting": "Mongolian",
-  "dnaHash": "56c042da08054c640eb7a8a83166bdaeea5b410ba579bf065214621fa91d67f7",
+  "dnaHash": "0e817d36976fa19054607b0da92d88e6189171ad6ab4e5ee713fca90d20ea0c8",
   "baseStage": "child",
   "sourceIndexMap": true,
-  "glbSha256": "182184d9a2368c6878c2a69336cdfdb9a0526e4e01497197ea7ca5754b662c5d",
+  "glbSha256": "9405635059e5ef483a4f44ef43d6756b116cdb31b04bb10d6f3959fd0cf810bf",
   "clips": [
     "Deformation_Check",
     "Talk_Check"
   ],
-  "exportInspectedAt": "2026-10-28T17:57:40.636021+00:00",
+  "exportInspectedAt": "2026-10-30T10:18:38.073715+00:00",
   "blenderVersion": "5.2.2 LTS"
 }

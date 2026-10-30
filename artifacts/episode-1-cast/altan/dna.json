@@ -32,14 +32,14 @@
     "head_heart": 0,
     "head_triangular": 0,
     "head_fullness": 0,
-    "eye_size": 0,
+    "eye_size": 0.3,
     "eye_spacing": 0,
     "eye_tilt": 0,
     "eye_depth": 0,
-    "upper_lid_fold": 0.38,
-    "eye_opening": -0.016,
-    "inner_lid_fold": 0.315,
-    "lower_lid_height": 0,
+    "upper_lid_fold": 0.26,
+    "eye_opening": 0.3,
+    "inner_lid_fold": 0.34,
+    "lower_lid_height": -0.06,
     "brow_height": 0,
     "brow_angle": 0,
     "brow_depth": 0,
@@ -53,9 +53,9 @@
     "nostril_width": 0,
     "nostril_angle": 0,
     "nose_hump": 0,
-    "mouth_width": -0.2,
+    "mouth_width": -0.08,
     "upper_lip_fullness": 0,
-    "lower_lip_fullness": 0.08,
+    "lower_lip_fullness": -0.12,
     "mouth_corner_tilt": 0,
     "philtrum_length": 0,
     "cupids_bow": 0,
@@ -63,14 +63,14 @@
     "upper_lip_height": 0,
     "lower_lip_height": 0,
     "jaw_width": 0,
-    "chin_width": -0.1,
-    "chin_length": -0.38,
+    "chin_width": 0.02,
+    "chin_length": -0.08,
     "chin_projection": 0,
     "chin_prognathism": 0,
     "chin_cleft": 0,
     "cheek_height": 0,
-    "cheekbone_prominence": 0.24,
-    "cheek_fullness": 0.15,
+    "cheekbone_prominence": 0.08,
+    "cheek_fullness": 0.12,
     "cheek_hollow": 0,
     "ear_size": 0,
     "ear_angle": 0,
@@ -123,11 +123,13 @@
   "skin": {
     "asset": "young_asian_female",
     "tone": 1,
-    "ruddiness": 0.5,
+    "ruddiness": 0.4,
     "freckles": 0,
     "pimples": 0,
     "look": "toddler",
-    "detail": 0.06
+    "detail": 0.01,
+    "pores": 0,
+    "undertone": 0.12
   },
   "hair": {
     "asset": "ponytail01",
@@ -135,7 +137,7 @@
     "color": "#110d0b",
     "greying": 0,
     "length": 1,
-    "volume": 1
+    "volume": 1.08
   },
   "brows": {
     "thickness": 0.5,
@@ -156,18 +158,19 @@
     "greying": 0
   },
   "clothing": {
-    "asset": "female_elegantsuit01",
+    "asset": "female_casualsuit02",
     "shoes": "shoes02",
     "wardrobe": "toddler-dress",
-    "top_color": "#bd8b72",
-    "bottom_color": "#aaa08a",
-    "accent_color": "#ad9470"
+    "top_color": "#74313f",
+    "bottom_color": "#eee8db",
+    "accent_color": "#d4b678"
   },
   "signature_traits": [
-    "Toddler round cheeks and short button nose; echoes her mother without adult facial creases",
-    "Individual eyelids and nose"
+    "Round toddler cheeks and a short button nose",
+    "Open almond eyes with a visible inner fold",
+    "Small relaxed mouth and soft rounded chin"
   ],
-  "face_design": "Toddler round cheeks and short button nose; echoes her mother without adult facial creases | Artistic 2026-10-29: Base C (small closed mouth, button nose, full rosy cheeks, soft fine brows).",
+  "face_design": "Artistic choices CH01d, 2026-10-30: three-year-old Altan keeps her round face and short button nose, with alert almond eyes and a strong inner fold; reduced lower-lip volume and chin compression for a relaxed neutral mouth. Muted cherry short-sleeved party dress (female_casualsuit02 top + shared birthday skirt), white socks, dark ponytail with the hair kept off her face (bob variants covered one eye; cardigan built a drum-shaped skirt; manager review), ochre paper crown. Lower skin detail and pores, lightly rosy cheeks. These are artistic choices, not new script facts. Shared toddler adapter currently supplies socks rather than full tights; cream bottom colour is reserved, not applied to tights. Draft pending human review.",
   "states": [
     "normal"
   ],

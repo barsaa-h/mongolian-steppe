@@ -165,18 +165,18 @@
     "ageNote": "EP1 birthday: ALTAN is explicitly a three-year-old girl wearing a paper crown. Her fate after the cut is not established.",
     "casting": "Mongolian",
     "wardrobe": "toddler-dress",
-    "hairstyle": "ponytail",
+    "hairstyle": "bob",
     "skinLook": "toddler",
     "pimples": 0,
-    "topColor": "#bd8b72",
-    "bottomColor": "#aaa08a",
-    "hairColor": "#29231f",
-    "accentColor": "#ad9470",
+    "topColor": "#74313f",
+    "bottomColor": "#eee8db",
+    "hairColor": "#110d0b",
+    "accentColor": "#d4b678",
     "states": [
       "normal"
     ],
-    "faceDesign": "Toddler round cheeks and short button nose; echoes her mother without adult facial creases",
-    "dnaHash": "449ba41facecfac350d56ed8cfbfa80ea2249fc663df27cdf2eea92e0d0747ee"
+    "faceDesign": "Artistic choices CH01d, 2026-10-30: three-year-old Altan keeps her round face and short button nose, with alert almond eyes and a strong inner fold; reduced lower-lip volume and chin compression for a relaxed neutral mouth. Muted cherry knit cardigan (male_casualsuit03) over the shared birthday skirt, warm cream legwear palette, fuller dark bob (bob02), ochre paper crown. Lower skin detail and pores, lightly rosy cheeks. These are artistic choices, not new script facts. Shared toddler adapter currently supplies socks rather than full tights; cream bottom colour is reserved, not applied to tights. Draft pending human review.",
+    "dnaHash": "22a2eacfb230ffac4ceefb92377f03b0f12023e4060c1236faec04e115e1bc79"
   },
   {
     "id": "yard-guard",
