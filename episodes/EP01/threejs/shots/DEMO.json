@@ -1,0 +1,21 @@
+{
+  "id": "DEMO",
+  "duration": 12,
+  "fps": 24,
+  "note": "Ganaa walks in, kneels to Altan, gives the mitten with his right hand, hides the bitten left wrist. Tsetsegmaa watches from the table and speaks.",
+  "props": [
+    { "id": "mitten", "holder": "ganaa", "hand": "R", "offset": [0, 0.045, 0.02] }
+  ],
+  "actors": [
+    { "id": "ganaa", "sheet": "DEMO_ganaa.json", "home": [0.25, 0, -1.05], "face": "path" },
+    { "id": "altan", "sheet": "DEMO_altan.json", "home": [1.05, 0, -2.35], "face": [1.18, 0, -1.82] },
+    { "id": "tsetsegmaa", "sheet": "DEMO_tsetsegmaa.json", "home": [2.25, 0, -2.45], "face": [1.15, 0, -2.05] }
+  ],
+  "cameras": [
+    { "t": 0.0, "pos": [3.1, 1.65, -0.35], "look": [1.2, 0.85, -1.6], "fov": 38 },
+    { "t": 4.0, "pos": [0.35, 0.9, -1.25], "look": [1.15, 0.65, -1.9], "fov": 32 },
+    { "t": 7.5, "pos": [0.55, 1.05, -1.15], "look": [1.2, 0.72, -2.05], "fov": 34 },
+    { "t": 10.0, "pos": [2.6, 1.35, -1.2], "look": [1.7, 0.9, -2.1], "fov": 36 }
+  ],
+  "stills": [0.4, 2.2, 3.4, 4.8, 6.4, 9.6]
+}

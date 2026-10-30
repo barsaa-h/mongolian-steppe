@@ -1,0 +1,13 @@
+{
+  "actor": "tsetsegmaa",
+  "cues": [
+    { "t": 0.0, "do": "face", "mix": "worried", "w": 0.3 },
+    { "t": 0.2, "do": "gesture", "name": "pour_tea" },
+    { "t": 2.8, "do": "lookAt", "target": "ganaa.head" },
+    { "t": 4.6, "do": "lookAt", "target": "altan.head" },
+    { "t": 6.4, "do": "lookAt", "target": "ganaa.head" },
+    { "t": 8.8, "do": "face", "mix": "worried", "w": 0.75 },
+    { "t": 8.8, "do": "gesture", "name": "hand_on_chest" },
+    { "t": 8.8, "do": "say", "dur": 1.8, "intensity": 0.85, "line": "Хүүхээ, юу өгөөд байгаа юм бэ?" }
+  ]
+}
