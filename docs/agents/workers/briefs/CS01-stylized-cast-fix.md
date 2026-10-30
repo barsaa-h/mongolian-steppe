@@ -1,5 +1,7 @@
 # Brief CS01: Fix the stylized cast builder (hands, eyes, mouth, hair, rig) for the 12 EP01 main characters
 
+> **RETIRED 31 Oct 2026.** The user rejected the Vinrax PSX base. Superseded by BM01 (base models) and BM02 (PS2 export).
+
 **Worker:** Codex. **Priority:** #1. EP01 must be finished in one week, using this cast.
 
 > **Round 2 (your first run stopped early).** `AGENTS.md` now has an explicit EP01 exception: the user chose this stylized Vinrax builder over the MPFB workflow, so there is no conflict. Do the whole brief. Your versioned-`.blend` save change is good; keep it.
