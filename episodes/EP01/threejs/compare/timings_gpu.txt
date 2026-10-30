@@ -1,0 +1,6 @@
+{"step":"launch_load_compile","seconds":6.2846466659999995}
+{"step":"gpu_1920x1080","seconds":152.27381007,"frames":192,"secondsPerFrame":0.79309276078125,"renderSeconds":2.394499999996275,"renderSecondsPerFrame":0.012471354166647264}
+{"step":"encode_1080","seconds":4.263837964000006}
+{"step":"gpu_960x540","seconds":36.978315472999995,"frames":192,"secondsPerFrame":0.19259539308854165,"renderSeconds":1.148299999989569,"renderSecondsPerFrame":0.005980729166612339}
+{"step":"encode_540","seconds":1.1793857459999855}
+{"step":"failed","error":"Traceback (most recent call last):\n  File \"/home/barsaa/ms-workers/T01/episodes/EP01/threejs/analyze.py\", line 104, in <module>\n    main()\n    ~~~~^^\n  File \"/home/barsaa/ms-workers/T01/episodes/EP01/threejs/analyze.py\", line 83, in main\n    raise RuntimeError('Motion acceptance failed: less than 2x the measured Godot baseline')\nRuntimeError: Motion acceptance failed: less than 2x the measured Godot baseline\n\n\n1 !== 0\n"}
