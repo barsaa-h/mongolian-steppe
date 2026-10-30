@@ -12,7 +12,7 @@ You are a worker on ХАНИАД, an animated Mongolian horror series. Claude is
 - Never touch files outside the paths the brief lets you change. If you must change something else, stop and say so in your report.
 - **Never use the Blender MCP tools.** The open Blender window belongs to someone else's work. Run Blender headless only: `/home/barsaa/apps/blender-5.2.2-linux-x64/blender -b <file> --python <script>`.
 - **No paid services.** Don't use ElevenLabs or other paid APIs, and don't install anything system-wide.
-- This laptop has 14 GB RAM and an Intel Iris Xe. Run one Blender process at a time, use Eevee for previews, and keep test renders ≤ 960×540 unless the brief says otherwise. `/tmp` is a small RAM disk, so write renders inside the worktree.
+- This laptop has 14 GB RAM and an Intel Iris Xe. Run one Blender process at a time **and always through the shared lock**, so two workers queue instead of colliding: `flock /home/barsaa/ms-workers/.blender.lock /home/barsaa/apps/blender-5.2.2-linux-x64/blender -b ...`. Keep each Blender run short (build, or a handful of stills), so the other worker isn't blocked for long; use Eevee for previews, and keep test renders ≤ 960×540 unless the brief says otherwise. `/tmp` is a small RAM disk, so write renders inside the worktree.
 
 ## Story rules (never break)
 - Read `docs/agents/00-production-master-plan.md` and the plan the brief names before starting.
