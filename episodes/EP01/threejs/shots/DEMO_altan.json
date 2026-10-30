@@ -1,0 +1,10 @@
+{
+  "actor": "altan",
+  "cues": [
+    { "t": 0.0, "do": "face", "mix": "warm", "w": 0.45 },
+    { "t": 0.4, "do": "lookAt", "target": "ganaa.head" },
+    { "t": 3.55, "do": "take", "prop": "mitten", "hand": "R", "from": "ganaa.hand.R", "dur": 1.5 },
+    { "t": 3.7, "do": "hand", "hand": "R", "pose": "hold_child_hand" },
+    { "t": 5.6, "do": "gesture", "name": "nod" }
+  ]
+}

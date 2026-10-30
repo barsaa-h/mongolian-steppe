@@ -1,0 +1,16 @@
+{
+  "actor": "ganaa",
+  "cues": [
+    { "t": 0.0, "do": "sick", "w": 0.42 },
+    { "t": 0.0, "do": "face", "mix": "tired", "w": 0.6 },
+    { "t": 0.0, "do": "hand", "hand": "R", "pose": "grip_small" },
+    { "t": 0.0, "do": "walkTo", "path": [[1.18, 0, -1.82]], "speed": 0.7 },
+    { "t": 0.35, "do": "lookAt", "target": "altan.head" },
+    { "t": 2.15, "do": "gesture", "name": "kneel_to_child", "side": "R" },
+    { "t": 3.55, "do": "give", "prop": "mitten", "hand": "R", "to": "altan.hand.R", "dur": 1.5 },
+    { "t": 5.1, "do": "hand", "hand": "R", "pose": "relaxed" },
+    { "t": 5.2, "do": "gesture", "name": "hide_wrist_behind_back", "side": "L" },
+    { "t": 5.2, "do": "face", "mix": "pain_hidden", "w": 0.72 },
+    { "t": 7.5, "do": "lookAt", "target": "tsetsegmaa.head" }
+  ]
+}
