@@ -1,0 +1,477 @@
+{
+	"actors": {
+		"altan": {
+			"blend_shapes": [
+				"EXP.smile",
+				"EXP.frown",
+				"EXP.blink",
+				"EXP.viseme_A",
+				"EXP.viseme_E",
+				"EXP.viseme_O",
+				"EXP.viseme_M"
+			],
+			"bones": 137,
+			"materials": {
+				"Clothes.Top | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"Everyday cloth": {
+					"albedo_texture": false,
+					"normal_enabled": false,
+					"roughness": 0.899999976158142,
+					"transparency": 0
+				},
+				"Eyelashes | Lash line": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.550000011920929,
+					"transparency": 4
+				},
+				"Eyes | Wet line and caruncle": {
+					"albedo_texture": false,
+					"normal_enabled": false,
+					"roughness": 0.449999988079071,
+					"transparency": 0
+				},
+				"Hair | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 4
+				},
+				"Paper crown | ochre": {
+					"albedo_texture": false,
+					"normal_enabled": false,
+					"roughness": 0.899999976158142,
+					"transparency": 0
+				},
+				"brown | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": true,
+					"roughness": 0.360000014305115,
+					"transparency": 2
+				},
+				"eyebrow001 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.920000016689301,
+					"transparency": 4
+				},
+				"shoes02 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"teeth | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"tongue01 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"young_asian_female | Painted diffuse.001": {
+					"albedo_texture": true,
+					"normal_enabled": true,
+					"roughness": 1.0,
+					"transparency": 0
+				}
+			},
+			"morph_meshes": 14,
+			"posed_bones_checked": [
+				"root",
+				"head",
+				"upperleg01.L",
+				"upperleg01.R",
+				"lowerleg01.L",
+				"lowerleg01.R",
+				"foot.L",
+				"foot.R",
+				"upperarm01.L",
+				"upperarm01.R",
+				"lowerarm01.L",
+				"lowerarm01.R",
+				"wrist.L",
+				"wrist.R"
+			],
+			"source_clips": [
+				"Deformation_Check",
+				"Talk_Check"
+			]
+		},
+		"ganaa": {
+			"blend_shapes": [
+				"EXP.smile",
+				"EXP.frown",
+				"EXP.blink",
+				"EXP.viseme_A",
+				"EXP.viseme_E",
+				"EXP.viseme_O",
+				"EXP.viseme_M"
+			],
+			"bones": 137,
+			"materials": {
+				"Clothes.Bottom | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"Clothes.Top | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"Eyelashes | Lash line": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.550000011920929,
+					"transparency": 4
+				},
+				"Eyes | Wet line and caruncle": {
+					"albedo_texture": false,
+					"normal_enabled": false,
+					"roughness": 0.449999988079071,
+					"transparency": 0
+				},
+				"Forearm scarf | worn linen": {
+					"albedo_texture": false,
+					"normal_enabled": false,
+					"roughness": 0.899999976158142,
+					"transparency": 0
+				},
+				"Hair | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 4
+				},
+				"Skin | soft age creases": {
+					"albedo_texture": false,
+					"normal_enabled": false,
+					"roughness": 0.949999988079071,
+					"transparency": 4
+				},
+				"brown | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": true,
+					"roughness": 0.360000014305115,
+					"transparency": 2
+				},
+				"eyebrow001 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.920000016689301,
+					"transparency": 0
+				},
+				"middleage_asian_male | Painted diffuse.001": {
+					"albedo_texture": true,
+					"normal_enabled": true,
+					"roughness": 1.0,
+					"transparency": 0
+				},
+				"shoes02 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"teeth | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"tongue01 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				}
+			},
+			"morph_meshes": 27,
+			"posed_bones_checked": [
+				"root",
+				"head",
+				"upperleg01.L",
+				"upperleg01.R",
+				"lowerleg01.L",
+				"lowerleg01.R",
+				"foot.L",
+				"foot.R",
+				"upperarm01.L",
+				"upperarm01.R",
+				"lowerarm01.L",
+				"lowerarm01.R",
+				"wrist.L",
+				"wrist.R"
+			],
+			"source_clips": [
+				"Deformation_Check",
+				"Talk_Check"
+			]
+		},
+		"party_guest_01": {
+			"blend_shapes": [
+				"EXP.smile",
+				"EXP.frown",
+				"EXP.blink",
+				"EXP.viseme_A",
+				"EXP.viseme_E",
+				"EXP.viseme_O",
+				"EXP.viseme_M"
+			],
+			"bones": 137,
+			"materials": {
+				"Clothes.Bottom | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"Clothes.Top | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"Eyelashes | Lash line": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.550000011920929,
+					"transparency": 4
+				},
+				"Eyes | Wet line and caruncle": {
+					"albedo_texture": false,
+					"normal_enabled": false,
+					"roughness": 0.449999988079071,
+					"transparency": 0
+				},
+				"Hair | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 4
+				},
+				"brown | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": true,
+					"roughness": 0.360000014305115,
+					"transparency": 2
+				},
+				"eyebrow001 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.920000016689301,
+					"transparency": 0
+				},
+				"middleage_asian_male | Painted diffuse.001": {
+					"albedo_texture": true,
+					"normal_enabled": true,
+					"roughness": 1.0,
+					"transparency": 0
+				},
+				"shoes02 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"teeth | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"tongue01 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				}
+			},
+			"morph_meshes": 14,
+			"posed_bones_checked": [
+				"root",
+				"head",
+				"upperleg01.L",
+				"upperleg01.R",
+				"lowerleg01.L",
+				"lowerleg01.R",
+				"foot.L",
+				"foot.R",
+				"upperarm01.L",
+				"upperarm01.R",
+				"lowerarm01.L",
+				"lowerarm01.R",
+				"wrist.L",
+				"wrist.R"
+			],
+			"source_clips": [
+				"Deformation_Check",
+				"Talk_Check"
+			]
+		},
+		"party_guest_02": {
+			"blend_shapes": [
+				"EXP.smile",
+				"EXP.frown",
+				"EXP.blink",
+				"EXP.viseme_A",
+				"EXP.viseme_E",
+				"EXP.viseme_O",
+				"EXP.viseme_M"
+			],
+			"bones": 137,
+			"materials": {
+				"Clothes.Bottom | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"Clothes.Top | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"Eyelashes | Lash line": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.550000011920929,
+					"transparency": 4
+				},
+				"Eyes | Wet line and caruncle": {
+					"albedo_texture": false,
+					"normal_enabled": false,
+					"roughness": 0.449999988079071,
+					"transparency": 0
+				},
+				"Hair | Cast fabric": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 4
+				},
+				"brown | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": true,
+					"roughness": 0.360000014305115,
+					"transparency": 2
+				},
+				"eyebrow001 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.920000016689301,
+					"transparency": 0
+				},
+				"middleage_asian_female | Painted diffuse.001": {
+					"albedo_texture": true,
+					"normal_enabled": true,
+					"roughness": 1.0,
+					"transparency": 0
+				},
+				"shoes02 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"teeth | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				},
+				"tongue01 | Painted diffuse": {
+					"albedo_texture": true,
+					"normal_enabled": false,
+					"roughness": 0.930000007152557,
+					"transparency": 0
+				}
+			},
+			"morph_meshes": 14,
+			"posed_bones_checked": [
+				"root",
+				"head",
+				"upperleg01.L",
+				"upperleg01.R",
+				"lowerleg01.L",
+				"lowerleg01.R",
+				"foot.L",
+				"foot.R",
+				"upperarm01.L",
+				"upperarm01.R",
+				"lowerarm01.L",
+				"lowerarm01.R",
+				"wrist.L",
+				"wrist.R"
+			],
+			"source_clips": [
+				"Deformation_Check",
+				"Talk_Check"
+			]
+		}
+	},
+	"cameras": {
+		"CAM_B23_S001": {
+			"basis_matches_json": true,
+			"blender_position": [
+				0.280000001192093,
+				0.949999988079071,
+				0.779999971389771
+			],
+			"godot_position": [
+				0.280000001192093,
+				0.779999971389771,
+				-0.949999988079071
+			],
+			"vertical_fov": 32.2688026428223
+		},
+		"CAM_B23_S004": {
+			"basis_matches_json": true,
+			"blender_position": [
+				0.300000011920929,
+				0.699999988079071,
+				1.10000002384186
+			],
+			"godot_position": [
+				0.300000011920929,
+				1.10000002384186,
+				-0.699999988079071
+			],
+			"vertical_fov": 32.2688026428223
+		}
+	},
+	"failures": 0,
+	"samples": [
+		{
+			"head_y": 1.02633261680603,
+			"left_wrist_distance_to_altan": 1.04018795490265,
+			"right_wrist_distance_to_altan": 0.59447968006134,
+			"time": 0.0
+		},
+		{
+			"head_y": 1.02633261680603,
+			"left_wrist_distance_to_altan": 1.04018795490265,
+			"right_wrist_distance_to_altan": 0.614546716213226,
+			"time": 4.0
+		},
+		{
+			"head_y": 1.02633261680603,
+			"left_wrist_distance_to_altan": 1.04018795490265,
+			"right_wrist_distance_to_altan": 0.59447968006134,
+			"time": 8.0
+		}
+	]
+}

@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SHOT camera=S001 still=-1.0 renderer=forward_plus viewport=(64.0, 64.0)
+ACTOR ganaa: bones=137 required_bones=14 morph_meshes=27 blend_shapes=["EXP.smile", "EXP.frown", "EXP.blink", "EXP.viseme_A", "EXP.viseme_E", "EXP.viseme_O", "EXP.viseme_M"]
+ACTOR altan: bones=137 required_bones=14 morph_meshes=14 blend_shapes=["EXP.smile", "EXP.frown", "EXP.blink", "EXP.viseme_A", "EXP.viseme_E", "EXP.viseme_O", "EXP.viseme_M"]
+ACTOR party_guest_01: bones=137 required_bones=14 morph_meshes=14 blend_shapes=["EXP.smile", "EXP.frown", "EXP.blink", "EXP.viseme_A", "EXP.viseme_E", "EXP.viseme_O", "EXP.viseme_M"]
+ACTOR party_guest_02: bones=137 required_bones=14 morph_meshes=14 blend_shapes=["EXP.smile", "EXP.frown", "EXP.blink", "EXP.viseme_A", "EXP.viseme_E", "EXP.viseme_O", "EXP.viseme_M"]
+CAMERA CAM_B23_S001 JSON=[0.28000000119209, 0.94999998807907, 0.77999997138977] converted=(0.28, 0.78, -0.95) fov=32.2688026428223 basis PASS
+CAMERA CAM_B23_S004 JSON=[0.30000001192093, 0.69999998807907, 1.10000002384186] converted=(0.3, 1.1, -0.7) fov=32.2688026428223 basis PASS
+POSE t=0.0 head=(1.414828, 1.026333, -2.714828) left_wrist=(1.775697, 0.665695, -2.684969) right_wrist=(1.034294, 0.55526, -2.561769) left_distance=1.04018795490265 right_distance=0.59447968006134
+POSE t=4.0 head=(1.414828, 1.026333, -2.714828) left_wrist=(1.775697, 0.665695, -2.684969) right_wrist=(1.023562, 0.580135, -2.551027) left_distance=1.04018795490265 right_distance=0.61454671621323
+POSE t=8.0 head=(1.414828, 1.026333, -2.714828) left_wrist=(1.775697, 0.665695, -2.684969) right_wrist=(1.034294, 0.55526, -2.561769) left_distance=1.04018795490265 right_distance=0.59447968006134
+VALIDATION PASS: 0 failures; four rigs, 549 tracks, three times, two camera matrices

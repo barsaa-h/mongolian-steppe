@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/barsaa/ms-workers/G01/episodes/EP01/godot/tools/verify_outputs.py", line 29, in <module>
+    main()
+    ~~~~^^
+  File "/home/barsaa/ms-workers/G01/episodes/EP01/godot/tools/verify_outputs.py", line 21, in main
+    assert (stream['width'], stream['height']) == (width, height), stream
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'width': 960, 'height': 540, 'r_frame_rate': '24/1', 'duration': '8.000000', 'nb_frames': '192'}
