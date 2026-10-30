@@ -1,0 +1,5 @@
+{"step":"launch_load_compile","seconds":6.058804632}
+{"step":"gpu_1920x1080","seconds":67.04599723199999,"frames":192,"secondsPerFrame":0.34919790224999997,"renderSeconds":3.6785000000009314,"renderSecondsPerFrame":0.019158854166671516}
+{"step":"encode_1080","seconds":12.873317258999988}
+{"step":"gpu_960x540","seconds":23.344781568000005,"frames":192,"secondsPerFrame":0.12158740400000002,"renderSeconds":3.358,"renderSecondsPerFrame":0.017489583333333333}
+{"step":"encode_540","seconds":2.841048437000005}

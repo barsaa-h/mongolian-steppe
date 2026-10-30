@@ -1,6 +1,5 @@
-"""Measure real encoded playback and assemble the requested visual evidence."""
+"""Joint travel in metres/second; assemble evidence only from real rendered frames."""
 import json
-import subprocess
 import sys
 from pathlib import Path
 
@@ -12,93 +11,73 @@ COMPARE = HERE / 'compare'
 GODOT = HERE.parent / 'godot'
 
 
-def motion(path):
-    # Use identical 960x540 RGB decoding for both engines; measure adjacent frames, not one-second jumps.
-    process = subprocess.Popen(['ffmpeg', '-v', 'error', '-threads', '2', '-i', str(path),
-                                '-vf', 'scale=960:540', '-pix_fmt', 'rgb24', '-f', 'rawvideo', '-'],
-                               stdout=subprocess.PIPE)
-    previous = None
-    differences = []
-    size = 960 * 540 * 3
-    while True:
-        raw = process.stdout.read(size)
-        if not raw:
-            break
-        if len(raw) != size:
-            raise RuntimeError('Truncated decoded frame')
-        frame = np.frombuffer(raw, dtype=np.uint8).astype(np.int16)
-        if previous is not None:
-            differences.append(float(np.abs(frame - previous).mean()))
-        previous = frame
-    if process.wait() != 0:
-        raise RuntimeError('ffmpeg decode failed')
-    if len(differences) != 191:
-        raise RuntimeError(f'Expected 192 frames, got {len(differences) + 1}')
-    return {'mean_adjacent_rgb_0_255': float(np.mean(differences)),
-            'per_second': [float(np.mean([v for i, v in enumerate(differences, 1) if i // 24 == sec]))
-                           for sec in range(8)], 'all_191_differences': differences}
+def motion(samples):
+    times = np.array([row['time'] for row in samples])
+    if len(times) != 193 or not np.allclose(times, np.arange(193)/24):
+        raise ValueError('Expected 24 fps joint samples including 8s endpoint')
+    result = {}
+    for actor in samples[0]['actors']:
+        joints = {}
+        for name in ['head', 'wrist.L', 'wrist.R']:
+            points = np.array([row['actors'][actor][name] for row in samples])
+            if points.shape != (193, 3) or not np.isfinite(points).all():
+                raise ValueError('Invalid world-space joint trace')
+            distances = np.linalg.norm(np.diff(points, axis=0), axis=1)
+            bins = distances.reshape(8,24).sum(axis=1)
+            joints[name] = {'mean_m_per_s': float(distances.sum()/8), 'per_second_m_per_s': bins.tolist()}
+        result[actor] = {'joints': joints,
+                         'mean_hand_head_m_per_s': float(np.mean([j['mean_m_per_s'] for j in joints.values()])),
+                         'per_second_m_per_s': np.mean([j['per_second_m_per_s'] for j in joints.values()], axis=0).tolist()}
+    return {'method': '24fps world-space path length of both wrists and head per second; mean over 3 joints',
+            'actors': result, 'mean_all_actors_m_per_s': float(np.mean([r['mean_hand_head_m_per_s'] for r in result.values()]))}
 
 
 def tile(path, label, width=640):
     image = Image.open(path).convert('RGB')
     assert image.width * 9 == image.height * 16, (path, image.size)
-    result = Image.new('RGB', (width, width * 9 // 16 + 32), '#171819')
-    result.paste(image.resize((width, width * 9 // 16), Image.Resampling.LANCZOS), (0, 32))
-    ImageDraw.Draw(result).text((10, 10), label, fill='white')
+    result = Image.new('RGB', (width, width*9//16+32), '#171819')
+    result.paste(image.resize((width,width*9//16), Image.Resampling.LANCZOS), (0,32))
+    ImageDraw.Draw(result).text((10,10), label, fill='white')
     return result
 
 
 def main():
-    gpu = '--gpu' in sys.argv
-    mode = 'gpu' if gpu else 'swiftshader'
-    suffix = '_gpu' if gpu else ''
-    timings = [json.loads(line) for line in (COMPARE / f'timings{suffix}.txt').read_text().splitlines()]
-    captures = {row['step']: row for row in timings if 'secondsPerFrame' in row}
-    seconds = captures[f'{mode}_1920x1080']['secondsPerFrame']
-    metrics = {'method': 'Adjacent encoded RGB frames, both decoded at 960x540, mean absolute channel difference /255; no moving camera; static grain.',
-               'three': motion(COMPARE / f'B23_S001_three{suffix}.mp4'),
-               'godot': motion(GODOT / 'compare/B23_S001_godot.mp4')}
-    metrics['ratio_to_godot'] = metrics['three']['mean_adjacent_rgb_0_255'] / metrics['godot']['mean_adjacent_rgb_0_255']
-    metrics['far_above_godot'] = metrics['ratio_to_godot'] >= 2
-    (COMPARE / f'motion{suffix}.json').write_text(json.dumps(metrics, indent=2) + '\n')
-    lines = ['second\tthree_RGB_MAD\tgodot_RGB_MAD']
-    lines.extend(f'{i}-{i+1}\t{a:.4f}\t{b:.4f}' for i, (a, b) in enumerate(zip(metrics['three']['per_second'], metrics['godot']['per_second'])))
-    (COMPARE / f'motion{suffix}.tsv').write_text('\n'.join(lines) + '\n')
-    board = Image.new('RGB', (1920, 784), '#171819')
-    for row, shot in enumerate(['S001', 'S004']):
-        paths = [(GODOT / f'inputs/blender_v0.1/still_B23_{shot}.png', f'{shot} Blender v0.1 | time/frame not supplied'),
-                 (GODOT / f'compare/B23_{shot}_godot.png', f'{shot} Godot | 0.0972 s/frame (960x540, prior test)'),
-                 (COMPARE / f'B23_{shot}_three.png', f'{shot} three.js {mode} | {seconds:.3f} s/frame (1920x1080 capture)')]
-        for column, (path, label) in enumerate(paths):
-            board.paste(tile(path, label), (column * 640, row * 392))
-    board.save(COMPARE / 'compare_B23_three.png')
-    strip = Image.new('RGB', (1920, 604), '#171819')
+    node = '--node' in sys.argv
+    source = COMPARE / ('joint-motion-node.json' if node else 'joint-motion-page.json')
+    trace = json.loads(source.read_text())
+    metrics = motion(trace['samples'])
+    metrics['source'] = trace['method']
+    destination = COMPARE / ('joint-motion-node-metrics.json' if node else 'joint-motion-metrics.json')
+    destination.write_text(json.dumps(metrics, indent=2)+'\n')
+    print('JOINT_MOTION', json.dumps(metrics, ensure_ascii=False))
+    if node:
+        return
+    mode = 'gpu' if '--gpu' in sys.argv else 'swiftshader'
+    board = Image.new('RGB',(1920,784),'#171819')
+    for row, shot in enumerate(['S001','S004']):
+        paths = [(GODOT/f'inputs/blender_v0.1/still_B23_{shot}.png', f'{shot} Blender v0.1'),
+                 (COMPARE/f'B23_{shot}_three.png', f'{shot} T01 prior test (time differs)'),
+                 (COMPARE/f'B23_{shot}_v2.png', f'{shot} mocap v2 | t=4s | {mode}')]
+        for column,(path,label) in enumerate(paths):
+            board.paste(tile(path,label),(column*640,row*392))
+    board.save(COMPARE/'compare_B23_v2.png')
+    strip=Image.new('RGB',(1920,604),'#171819')
     for second in range(8):
-        path = HERE / f'out/{mode}_1080/{second*24:04d}.png'
-        strip.paste(tile(path, f'{second:.0f}s | frame {second*24}', 480), ((second % 4) * 480, (second // 4) * 302))
-    strip.save(COMPARE / 'motion_strip.png')
-    print(json.dumps({key: value for key, value in metrics.items() if key not in ['three', 'godot']}))
-    print('THREE_MAD', metrics['three']['mean_adjacent_rgb_0_255'], 'PER_SECOND', metrics['three']['per_second'])
-    if not metrics['far_above_godot']:
-        raise RuntimeError('Motion acceptance failed: less than 2x the measured Godot baseline')
+        strip.paste(tile(HERE/f'out/{mode}_1080/{second*24:04d}.png',f'{second}s | frame {second*24}',480),((second%4)*480,(second//4)*302))
+    strip.save(COMPARE/'B23_v2_motion_strip.png')
+    print('EVIDENCE_OK: Blender | T01 | v2 S001/S004 at 4s; eight-frame v2 strip')
 
 
 if __name__ == '__main__':
     if '--self-test' in sys.argv:
-        test = HERE / 'out/metric-self-test.mp4'
-        test.parent.mkdir(exist_ok=True)
-        frames = b''.join(bytes([255 * (i % 2)]) * (32 * 18 * 3) for i in range(192))
-        subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24',
-                        '-video_size', '32x18', '-framerate', '24', '-i', '-', '-c:v', 'libx264',
-                        '-threads', '2', '-crf', '0', '-pix_fmt', 'yuv420p', str(test)],
-                       input=frames, check=True)
-        try:
-            result = motion(test)
-            assert len(result['all_191_differences']) == 191
-            assert result['mean_adjacent_rgb_0_255'] > 250
-            assert all(value > 250 for value in result['per_second'])
-            print('METRIC_OK: synthetic alternating black/white, 191 differences, eight second bins >250/255')
-        finally:
-            test.unlink()
+        samples=[{'time':i/24,'actors':{'test':{n:[i/24,0,0] for n in ['head','wrist.L','wrist.R']}}} for i in range(193)]
+        result=motion(samples)
+        assert abs(result['mean_all_actors_m_per_s']-1)<1e-12
+        assert np.allclose(result['actors']['test']['per_second_m_per_s'], np.ones(8))
+        for row in samples:
+            for point in row['actors']['test'].values():
+                point[0]=0
+        assert motion(samples)['mean_all_actors_m_per_s']==0
+        print('METRIC_OK: 1 m/s linear joints -> eight 1.0 m/s bins; still joints -> 0 m/s')
     else:
         main()

@@ -1,0 +1,13 @@
+LINEUP_WRITTEN /home/barsaa/ms-workers/M01/episodes/EP01/threejs/compare/retarget_lineup.png (CPU skeleton diagnostic, not mesh acceptance)
+CLIP_OK kneel 157 frames minFootY=0.0657 maxStep=0.615 directionError=3.88e-5
+CLIP_OK hand_over 178 frames minFootY=0.0736 maxStep=0.285 directionError=3.43e-5
+CLIP_OK take_object 178 frames minFootY=0.0742 maxStep=0.280 directionError=4.20e-5
+CLIP_OK converse_A 412 frames minFootY=0.0755 maxStep=0.374 directionError=1.87e-5
+CLIP_OK converse_B 412 frames minFootY=0.0633 maxStep=0.757 directionError=4.49e-5
+CLIP_OK sip 309 frames minFootY=0.0513 maxStep=0.408 directionError=2.17e-5
+CLIP_OK laugh 479 frames minFootY=0.0729 maxStep=1.012 directionError=4.32e-5
+CLIP_OK wait_normal 739 frames minFootY=0.0588 maxStep=0.817 directionError=3.13e-5
+CLIP_OK wait_old 998 frames minFootY=0.0600 maxStep=0.142 directionError=3.25e-5
+CLIP_OK walk 193 frames minFootY=0.0565 maxStep=0.477 directionError=2.70e-5
+CLIP_OK sit_talk 1413 frames minFootY=0.0282 maxStep=1.029 directionError=4.12e-5
+RETARGET_OK: 11 clips, finite normalized rotations, uniform 24 fps, CMU limb direction error <0.002 rad; see warnings and lineup for contact quality

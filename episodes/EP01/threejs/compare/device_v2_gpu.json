@@ -1,0 +1,38 @@
+{
+  "renderer": "ANGLE (Intel, Vulkan 1.4.335 (Intel(R) Iris(R) Xe Graphics (ADL GT2) (0x000046A6)), Intel open-source Mesa driver)",
+  "three": "186",
+  "actors": {
+    "ganaa": {
+      "bones": 137,
+      "clips": [
+        "Deformation_Check",
+        "Talk_Check"
+      ],
+      "meshes": 27
+    },
+    "altan": {
+      "bones": 137,
+      "clips": [
+        "Deformation_Check",
+        "Talk_Check"
+      ],
+      "meshes": 14
+    },
+    "party-guest-01": {
+      "bones": 137,
+      "clips": [
+        "Deformation_Check",
+        "Talk_Check"
+      ],
+      "meshes": 14
+    },
+    "party-guest-02": {
+      "bones": 137,
+      "clips": [
+        "Deformation_Check",
+        "Talk_Check"
+      ],
+      "meshes": 14
+    }
+  }
+}

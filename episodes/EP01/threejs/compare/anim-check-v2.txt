@@ -1,0 +1,6 @@
+ANIM_OK: ease bounds, two-bone contact, repeatable seek, normalized quaternion
+REAL_RIG_OK ganaa 137 joints, contact error < 0.1 mm, pose restore, life finite
+REAL_RIG_OK altan 137 joints, contact error < 0.1 mm, pose restore, life finite
+REAL_RIG_OK party-guest-01 137 joints, contact error < 0.1 mm, pose restore, life finite
+REAL_RIG_OK party-guest-02 137 joints, contact error < 0.1 mm, pose restore, life finite
+METRIC_OK: 1 m/s linear joints -> eight 1.0 m/s bins; still joints -> 0 m/s

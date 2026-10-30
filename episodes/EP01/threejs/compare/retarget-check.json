@@ -1,0 +1,79 @@
+[
+  {
+    "name": "kneel",
+    "frames": 157,
+    "minFootY": 0.0657177036860345,
+    "maxQuaternionStepRad": 0.6150096901192699,
+    "maxDirectionErrorRad": 0.00003881202453557675
+  },
+  {
+    "name": "hand_over",
+    "frames": 178,
+    "minFootY": 0.07363119293465653,
+    "maxQuaternionStepRad": 0.28532722946847644,
+    "maxDirectionErrorRad": 0.00003425487543690541
+  },
+  {
+    "name": "take_object",
+    "frames": 178,
+    "minFootY": 0.07422577985981776,
+    "maxQuaternionStepRad": 0.28041626896399224,
+    "maxDirectionErrorRad": 0.00004201181232385937
+  },
+  {
+    "name": "converse_A",
+    "frames": 412,
+    "minFootY": 0.07546641525686912,
+    "maxQuaternionStepRad": 0.37374330665229144,
+    "maxDirectionErrorRad": 0.000018663494707388296
+  },
+  {
+    "name": "converse_B",
+    "frames": 412,
+    "minFootY": 0.0632624955009039,
+    "maxQuaternionStepRad": 0.7567867161632861,
+    "maxDirectionErrorRad": 0.0000448821961005959
+  },
+  {
+    "name": "sip",
+    "frames": 309,
+    "minFootY": 0.051288100644475226,
+    "maxQuaternionStepRad": 0.40842088710496477,
+    "maxDirectionErrorRad": 0.000021724043072490708
+  },
+  {
+    "name": "laugh",
+    "frames": 479,
+    "minFootY": 0.07292238889270833,
+    "maxQuaternionStepRad": 1.0122242059887183,
+    "maxDirectionErrorRad": 0.00004316214648225461
+  },
+  {
+    "name": "wait_normal",
+    "frames": 739,
+    "minFootY": 0.05879738310333216,
+    "maxQuaternionStepRad": 0.8170645488889017,
+    "maxDirectionErrorRad": 0.00003130415856039075
+  },
+  {
+    "name": "wait_old",
+    "frames": 998,
+    "minFootY": 0.06001708327593963,
+    "maxQuaternionStepRad": 0.14195176786913452,
+    "maxDirectionErrorRad": 0.00003246642623250401
+  },
+  {
+    "name": "walk",
+    "frames": 193,
+    "minFootY": 0.056488741399051995,
+    "maxQuaternionStepRad": 0.4770783413829119,
+    "maxDirectionErrorRad": 0.0000270156901781405
+  },
+  {
+    "name": "sit_talk",
+    "frames": 1413,
+    "minFootY": 0.02817115932570538,
+    "maxQuaternionStepRad": 1.0287542879318838,
+    "maxDirectionErrorRad": 0.000041156106235098975
+  }
+]
