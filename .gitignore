@@ -13,3 +13,5 @@ output/
 __pycache__/
 episodes/*/renders/
 .worker-runs/
+# 157MB - exceeds GitHub's 100MB per-file limit
+episodes/EP01/threejs/compare/panels/EP01_motion_comic_sample_20s.mp4

@@ -1,0 +1,10 @@
+     1	beds/freight_yard_predawn
+     2	beds/apartment_night
+     3	beds/cafe_interior
+     4	beds/kamaz_cab_moving
+     5	beds/steppe_wind
+     6	score/dread_low
+     7	score/cold_morning
+     8	score/birthday_warmth_wrong
+     9	score/cafe_attack_pulse
+    10	score/door_finale

@@ -1,0 +1,9 @@
+# E07 round 3 (DeepSeek): freight yard, two small fixes
+
+Continue in this worktree (`~/ms-workers/E07`) from `EP01-Map_yard_v013.blend` and `build_freightyard_ps2.py` / `render_freightyard_ps2.py`. Keep `check_freightyard_ps2.py` and `check_map.py` passing (≤ 30k tris, ≤ 14 textures, nearest filtering, no mipmaps, keys parented to the boxcar door, the KAMAZ bay clear, the door slides clear). Blender only via `bash .cache/e07/run_blender.sh --python <script> -- <args>` (it adds `-b`, your own lock, and a safe runner that always exits Blender). Write only under `assets/maps/episode-1/`, with no commits, and new versions only (`v014`+). You can view images: open and judge every render.
+
+The manager reviewed `r12-contact.jpg`. **The hero shot, office interior and steam pipe are excellent; don't change them.** Fix only these:
+1. **`keys` close-up:** the keys read as a big orange blob. The guard's key ring is a story prop: a **steel ring with 4–6 visible keys** (old Soviet flat and barrel keys) and a small leather or plywood tag, hanging from a nail or the door handle on the boxcar door. Make them small and real-scale (key length ~6 cm) and lit by the yard lamp so the metal glints. Frame the close-up so the ring fills about 1/4 of the frame, with the rusty door and its stencil behind.
+2. **`morning`** is washed out to almost pure white. It should be a cold blue-grey overcast dawn: readable shapes, mid-grey fog density (the far end fades but the mid-ground stays clear), lamps still faintly on, a pale sky, white-grey snow with clear tyre and foot tracks, and darker rails and cars. The exposure must keep detail in the snow.
+
+Render `r13-keys`, `r13-morning` (plus `r13-hero` to confirm nothing changed) and judge them. Do one more round if needed (`r14-*`). Update `previews/freightyard-ps2/report.md`. Keep it focused; this is a small job.

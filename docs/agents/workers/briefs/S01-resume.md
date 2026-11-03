@@ -1,0 +1,5 @@
+# S01 RESUME (DeepSeek): finish subtitles + edit tool
+
+**You run non-interactively: a message without a tool call ENDS your run.** Never announce a next step as a message; just do it. Your only text-only message is the final `## Report:`.
+
+You were doing job S01 in `~/ms-workers/E09` and the session was cut off by a restart just before your report. The original brief is `docs/agents/workers/briefs/S01-subtitles-and-edit-tools.md` in the main checkout `/home/barsaa/mongolian-steppe` (read it there; read-only). Inspect what exists (`episodes/EP01/subs/`, `episodes/EP01/threejs/tools/subs.mjs`, `edit.mjs`, `subs-check.mjs`, `out/subs/`, `out/master/dryrun_B01-B03.mp4`, `out/master/evidence/`), re-run `subs-check.mjs`, `subs.mjs`, the dry-run `edit.mjs` and the ffprobe/ebur128 checks, fix anything failing or missing, and deliver the full report as the brief asks (with 20 sample English lines including the protected and profane ones, and your translation doubts). `npm test` must pass. Same write limits as the brief. No commits.

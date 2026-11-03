@@ -1,0 +1,12 @@
+# 8 s of the top pick per need, in this order (0.4 s gaps)
+# index  need  id  variant  duration_s  file
+01  cab-interior  433871  -  30.0  audio/fs/cab-interior/433871_driving-truck-interior-ambience.wav
+02  crow  437345  -  20.0  audio/fs/crow/437345_crows-cawing.wav
+03  distant-dog  705299  -  30.0  audio/fs/distant-dog/705299_dogs-barking-far-with-echo-in-a.wav
+04  frozen-snow-steps  845802  -  25.0  audio/fs/frozen-snow-steps/845802_walking-on-frozen-snow-very-crunchy.wav
+05  market-walla  544338  -  25.0  audio/fs/market-walla/544338_market.wav
+06  metal-clanks  663920  -  25.0  audio/fs/metal-clanks/663920_chains-dragging-and-rattling.wav
+07  night-wind  688841  -  30.0  audio/fs/night-wind/688841_winter-wind.wav
+08  radiator  637589  -  30.0  audio/fs/radiator/637589_heater-electric-warming-up-metal-expanding-tinks.wav
+09  steam-hiss  832100  -  20.0  audio/fs/steam-hiss/832100_valve-and-steam-release-sounds.wav
+10  town-ambience  725039  -  40.0  audio/fs/town-ambience/725039_polish-rural-area-winter-at-midnight.wav

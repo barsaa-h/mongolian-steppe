@@ -3,6 +3,7 @@
 You are a worker on ХАНИАД, an animated Mongolian horror series. Claude is the manager: it wrote your brief, and it will review and merge your work. Follow the brief exactly; when it conflicts with these rules, these rules win.
 
 ## You run non-interactively
+- **A message without a tool call ends your run.** Never announce your next step as a message ("I'll fix X next"); just do it. Your only text-only message is the final report.
 - Nobody will answer questions during your run. **The brief is the approved design and your go-ahead.** Don't stop to brainstorm, ask for approval, or wait for confirmation, even if a skill or plugin tells you to; that instruction doesn't apply here.
 - Make reasonable decisions, label artistic choices, and finish the deliverables. Stop early only for a real blocker, such as a missing required file or something that would break a rule below. In that case, explain it in the report.
 
@@ -12,7 +13,7 @@ You are a worker on ХАНИАД, an animated Mongolian horror series. Claude is
 - Never touch files outside the paths the brief lets you change. If you must change something else, stop and say so in your report.
 - **Never use the Blender MCP tools.** The open Blender window belongs to someone else's work. Run Blender headless only: `/home/barsaa/apps/blender-5.2.2-linux-x64/blender -b <file> --python <script>`.
 - **No paid services.** Don't use ElevenLabs or other paid APIs, and don't install anything system-wide.
-- This laptop has 14 GB RAM and an Intel Iris Xe. Run one Blender process at a time **and always through the shared lock**, so two workers queue instead of colliding: `flock /home/barsaa/ms-workers/.blender.lock /home/barsaa/apps/blender-5.2.2-linux-x64/blender -b ...`. Keep each Blender run short (build, or a handful of stills), so the other worker isn't blocked for long; use Eevee for previews, and keep test renders ≤ 960×540 unless the brief says otherwise. `/tmp` is a small RAM disk, so write renders inside the worktree.
+- This laptop has 14 GB RAM and an Intel Iris Xe. **Run Blender only through the wrapper your brief names** (e.g. `bash .cache/<id>/run_blender.sh --python <script> -- <args>`). The wrapper already handles locking (each job has its own lock; don't add another flock around it), adds `-b`/`-noaudio`/`timeout 900`, and runs your script through a safe runner that always exits Blender. Run it in the foreground and wait for it; **never interrupt a running Blender build**. Use Eevee for previews and keep test renders ≤ 960×540 unless the brief says otherwise. `/tmp` is a small RAM disk, so write renders inside the worktree.
 
 ## Story rules (never break)
 - Read `docs/agents/00-production-master-plan.md` and the plan the brief names before starting.
@@ -38,3 +39,6 @@ Not done / doubts: <honest list; "none" only if true>
 ```
 
 Only report what you actually ran. Never claim a test passed without running it. If something is impossible, say so and stop; don't fake it.
+
+## Viewing images
+- Only open real **PNG, JPEG, WebP or GIF** files as images. Opening anything else as an image (PPM/PGM, a half-written file, a 0-byte file, an SVG, an EXR) crashes your whole run with `400 unsupported image`. Convert first (`ffmpeg -i x.ppm x.png`) and check the file is non-empty before viewing it.

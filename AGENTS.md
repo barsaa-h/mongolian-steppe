@@ -4,14 +4,16 @@ Production plans for every department (story, characters, environments, props, l
 
 # Character work
 
-**Output style (user decisions, 30–31 Oct 2026):** EP01 is rendered in three.js
-in a PS2-era (Silent Hill 2) style. Characters are still created with the DNA
-workflow below; `artifacts/character-master/scripts/ps2_export.py` converts a
-built actor into the low-poly episode GLB in `assets/cast/ps2/`. The downloaded
-Vinrax PSX cast (`scripts/build-cast.py`, `assets/cast/<id>.glb`) is retired as a
-character base. Don't delete it, and don't build new characters on it.
+**Output style (user decision, 31 Oct 2026, final):** EP01 is rendered in three.js
+in a PS2-era (Silent Hill 2) style, and its cast is the **low-poly Vinrax-based
+cast** seen in HOUR 5: `scripts/build-cast.py` + `assets/cast/roster.json` →
+`assets/cast/<id>.glb`. The user chose fixing that pack (hands, eyes, mouth, hair,
+Mongolian faces, a child base, more per-character controls) over the realistic
+MakeHuman cast, which is too detailed for the look and for the laptop. For EP01
+characters, change `build-cast.py`/`roster.json`, not the MPFB/DNA cast. The
+MPFB/DNA workflow below stays for the archived realistic cast only.
 
-When creating, regenerating or changing a 3D character, read
+When creating, regenerating or changing a realistic MPFB character, read
 [the DNA workflow](artifacts/character-master/DNA.md) and use the shared
 MakeHuman/MPFB generator.
 
